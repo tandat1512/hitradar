@@ -3,10 +3,16 @@
 -- HitRadar — analytics layer views
 -- Feature 1.2 — Database Architecture
 -- Skeleton: views chưa validate bằng data thật (chờ Feature 1.6)
+--
+-- FIX (SQL review):
+--   - ROUND(AVG(<double precision>)) → ROUND(AVG(col)::numeric, n)
+--   - vw_genre_trends: dùng CTE DISTINCT để tránh duplicate weighting
+--   - percentile_cont: cast kết quả sang ::numeric trước ROUND
 -- =============================================================
 
 -- -------------------------------------------------------------
 -- vw_tracks_overview — tổng quan tất cả track
+-- Không có aggregate — không cần cast
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_tracks_overview AS
 SELECT
@@ -29,19 +35,22 @@ FROM clean.tracks t;
 
 -- -------------------------------------------------------------
 -- vw_tracks_by_decade — thống kê theo thập kỷ
+-- FIX: AVG(double precision) → ::numeric trước ROUND
+-- popularity là SMALLINT → AVG trả về NUMERIC → không cần cast
+-- duration_min là NUMERIC  → AVG trả về NUMERIC → không cần cast
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_tracks_by_decade AS
 SELECT
     t.decade,
-    COUNT(*)                    AS track_count,
-    ROUND(AVG(t.popularity), 2) AS avg_popularity,
-    ROUND(AVG(t.danceability), 4) AS avg_danceability,
-    ROUND(AVG(t.energy), 4)       AS avg_energy,
-    ROUND(AVG(t.valence), 4)      AS avg_valence,
-    ROUND(AVG(t.tempo), 2)        AS avg_tempo,
-    ROUND(AVG(t.loudness), 2)     AS avg_loudness,
-    ROUND(AVG(t.acousticness), 4) AS avg_acousticness,
-    ROUND(AVG(t.duration_min), 2) AS avg_duration_min
+    COUNT(*)                                    AS track_count,
+    ROUND(AVG(t.popularity), 2)                 AS avg_popularity,
+    ROUND(AVG(t.danceability)::numeric, 4)      AS avg_danceability,
+    ROUND(AVG(t.energy)::numeric, 4)            AS avg_energy,
+    ROUND(AVG(t.valence)::numeric, 4)           AS avg_valence,
+    ROUND(AVG(t.tempo)::numeric, 2)             AS avg_tempo,
+    ROUND(AVG(t.loudness)::numeric, 2)          AS avg_loudness,
+    ROUND(AVG(t.acousticness)::numeric, 4)      AS avg_acousticness,
+    ROUND(AVG(t.duration_min), 2)               AS avg_duration_min
 FROM clean.tracks t
 WHERE t.decade IS NOT NULL
 GROUP BY t.decade
@@ -49,18 +58,19 @@ ORDER BY t.decade;
 
 -- -------------------------------------------------------------
 -- vw_audio_trends — xu hướng audio features theo năm
+-- FIX: AVG(double precision) → ::numeric trước ROUND
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_audio_trends AS
 SELECT
     t.release_year,
-    COUNT(*)                        AS track_count,
-    ROUND(AVG(t.danceability), 4)   AS avg_danceability,
-    ROUND(AVG(t.energy), 4)         AS avg_energy,
-    ROUND(AVG(t.valence), 4)        AS avg_valence,
-    ROUND(AVG(t.acousticness), 4)   AS avg_acousticness,
-    ROUND(AVG(t.instrumentalness), 4) AS avg_instrumentalness,
-    ROUND(AVG(t.speechiness), 4)    AS avg_speechiness,
-    ROUND(AVG(t.tempo), 2)          AS avg_tempo
+    COUNT(*)                                        AS track_count,
+    ROUND(AVG(t.danceability)::numeric, 4)          AS avg_danceability,
+    ROUND(AVG(t.energy)::numeric, 4)                AS avg_energy,
+    ROUND(AVG(t.valence)::numeric, 4)               AS avg_valence,
+    ROUND(AVG(t.acousticness)::numeric, 4)          AS avg_acousticness,
+    ROUND(AVG(t.instrumentalness)::numeric, 4)      AS avg_instrumentalness,
+    ROUND(AVG(t.speechiness)::numeric, 4)           AS avg_speechiness,
+    ROUND(AVG(t.tempo)::numeric, 2)                 AS avg_tempo
 FROM clean.tracks t
 WHERE t.release_year IS NOT NULL
 GROUP BY t.release_year
@@ -69,6 +79,7 @@ ORDER BY t.release_year;
 -- -------------------------------------------------------------
 -- vw_popularity_stats — phân phối popularity (target analysis)
 -- LƯU Ý: View này chỉ dùng cho EDA — không dùng để train model
+-- popularity là SMALLINT → tính toán trên INTEGER/BIGINT, không cần cast
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_popularity_stats AS
 SELECT
@@ -92,6 +103,7 @@ ORDER BY 1;
 
 -- -------------------------------------------------------------
 -- vw_top_artists — top nghệ sĩ theo số track và popularity
+-- popularity là SMALLINT → AVG = NUMERIC → không cần cast
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_top_artists AS
 SELECT
@@ -108,23 +120,37 @@ ORDER BY track_count DESC, avg_track_popularity DESC;
 
 -- -------------------------------------------------------------
 -- vw_genre_trends — xu hướng genre theo thập kỷ
+-- FIX: dùng CTE DISTINCT (track_id, genre_id) để tránh duplicate
+--      weighting khi một track có nhiều artist cùng genre
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_genre_trends AS
+WITH track_genres AS (
+    -- Mỗi (track_id, genre_id) chỉ xuất hiện 1 lần
+    -- dù track có nhiều artist cùng thuộc genre đó
+    SELECT DISTINCT
+        t.track_id,
+        g.genre_id,
+        g.genre_name,
+        t.decade,
+        t.popularity
+    FROM clean.tracks          t
+    JOIN clean.track_artists   ta  ON t.track_id   = ta.track_id
+    JOIN clean.artist_genres   ag  ON ta.artist_id  = ag.artist_id
+    JOIN clean.genres          g   ON ag.genre_id   = g.genre_id
+    WHERE t.decade IS NOT NULL
+)
 SELECT
-    g.genre_name,
-    t.decade,
-    COUNT(DISTINCT t.track_id)      AS track_count,
-    ROUND(AVG(t.popularity), 2)     AS avg_popularity
-FROM clean.genres g
-JOIN clean.artist_genres   ag  ON g.genre_id   = ag.genre_id
-JOIN clean.track_artists   ta  ON ag.artist_id  = ta.artist_id
-JOIN clean.tracks          t   ON ta.track_id   = t.track_id
-WHERE t.decade IS NOT NULL
-GROUP BY g.genre_name, t.decade
-ORDER BY t.decade, track_count DESC;
+    genre_name,
+    decade,
+    COUNT(DISTINCT track_id)            AS track_count,
+    ROUND(AVG(popularity)::numeric, 2)  AS avg_popularity
+FROM track_genres
+GROUP BY genre_name, decade
+ORDER BY decade, track_count DESC;
 
 -- -------------------------------------------------------------
 -- vw_explicit_by_decade — tỷ lệ explicit content theo thập kỷ
+-- Không có DOUBLE PRECISION aggregate — không cần cast
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_explicit_by_decade AS
 SELECT
@@ -140,17 +166,20 @@ ORDER BY decade;
 
 -- -------------------------------------------------------------
 -- vw_duration_trends — xu hướng thời lượng theo năm
+-- duration_min là NUMERIC(8,4) → AVG/MIN/MAX = NUMERIC → ROUND OK
+-- FIX: PERCENTILE_CONT trả về input type; cast rõ ràng sang ::numeric
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_duration_trends AS
 SELECT
     release_year,
-    ROUND(AVG(duration_min), 4)         AS avg_duration_min,
-    ROUND(PERCENTILE_CONT(0.5)
-          WITHIN GROUP (ORDER BY duration_min)::NUMERIC, 4)
-                                        AS median_duration_min,
-    ROUND(MIN(duration_min), 4)         AS min_duration_min,
-    ROUND(MAX(duration_min), 4)         AS max_duration_min,
-    COUNT(*)                            AS track_count
+    ROUND(AVG(duration_min), 4)                                 AS avg_duration_min,
+    ROUND(
+        (PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY duration_min))::numeric,
+        4
+    )                                                           AS median_duration_min,
+    ROUND(MIN(duration_min), 4)                                 AS min_duration_min,
+    ROUND(MAX(duration_min), 4)                                 AS max_duration_min,
+    COUNT(*)                                                    AS track_count
 FROM clean.tracks
 WHERE release_year IS NOT NULL
   AND duration_min IS NOT NULL
@@ -165,6 +194,7 @@ ORDER BY release_year;
 --   - artists.popularity KHÔNG có ở đây
 --   - artists.followers  KHÔNG có ở đây
 --   - Không có aggregate từ toàn dataset
+-- Không có DOUBLE PRECISION ROUND ở đây — không cần cast
 -- -------------------------------------------------------------
 CREATE OR REPLACE VIEW analytics.vw_ml_training_dataset AS
 SELECT
@@ -174,7 +204,7 @@ SELECT
     -- ─── Input features ──────────────────────────────────
     t.duration_ms,
     t.duration_min,
-    t.explicit::INTEGER             AS explicit_int, -- 0/1 cho sklearn
+    t.explicit::INTEGER             AS explicit_int,   -- 0/1 cho sklearn
     t.release_year,
     t.decade,
     t.danceability,
@@ -190,7 +220,7 @@ SELECT
     t.tempo,
     t.time_signature,
     -- ─── Derived feature ─────────────────────────────────
-    COUNT(ta.artist_id)             AS n_artists    -- số nghệ sĩ trong track
+    COUNT(ta.artist_id)             AS n_artists        -- số nghệ sĩ trong track
 FROM clean.tracks t
 LEFT JOIN clean.track_artists ta ON t.track_id = ta.track_id
 GROUP BY

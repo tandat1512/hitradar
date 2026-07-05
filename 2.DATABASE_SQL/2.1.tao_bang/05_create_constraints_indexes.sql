@@ -57,11 +57,16 @@ CREATE INDEX IF NOT EXISTS idx_clean_artist_relations_related
 -- =============================================================
 -- UNIQUE CONSTRAINTS (bổ sung sau CREATE TABLE)
 -- =============================================================
-
--- Đảm bảo không import duplicate track IDs
-ALTER TABLE raw.raw_tracks
-    ADD CONSTRAINT IF NOT EXISTS uq_raw_tracks_id UNIQUE (id);
-
--- Đảm bảo không import duplicate artist IDs
-ALTER TABLE raw.raw_artists
-    ADD CONSTRAINT IF NOT EXISTS uq_raw_artists_id UNIQUE (id);
+-- NOTE: PostgreSQL không hỗ trợ ADD CONSTRAINT IF NOT EXISTS.
+-- Unique enforcement cho raw tables đã được bao phủ bởi
+-- CREATE UNIQUE INDEX IF NOT EXISTS ở trên (idx_raw_tracks_id,
+-- idx_raw_artists_id). Không cần ALTER TABLE thêm constraint riêng.
+--
+-- Nếu cần thêm constraint sau khi bảng đã tồn tại, dùng:
+--   DO $$ BEGIN
+--     IF NOT EXISTS (
+--       SELECT 1 FROM pg_constraint WHERE conname = 'uq_raw_tracks_id'
+--     ) THEN
+--       ALTER TABLE raw.raw_tracks ADD CONSTRAINT uq_raw_tracks_id UNIQUE (id);
+--     END IF;
+--   END $$;

@@ -29,6 +29,14 @@ CREATE TABLE IF NOT EXISTS clean.tracks (
                             CONSTRAINT chk_release_month
                             CHECK (release_month BETWEEN 1 AND 12),
     decade              SMALLINT,                        -- (release_year / 10) * 10
+    -- release_precision: ghi lại độ chi tiết của raw release_date
+    -- day   = raw có YYYY-MM-DD
+    -- month = raw có YYYY-MM
+    -- year  = raw chỉ có YYYY
+    -- unknown = không parse được hoặc chưa xác định
+    release_precision   TEXT
+                            CONSTRAINT chk_release_precision
+                            CHECK (release_precision IN ('day', 'month', 'year', 'unknown')),
     danceability        DOUBLE PRECISION
                             CONSTRAINT chk_danceability
                             CHECK (danceability BETWEEN 0 AND 1),

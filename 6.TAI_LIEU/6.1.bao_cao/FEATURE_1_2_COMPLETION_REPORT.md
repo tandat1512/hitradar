@@ -9,7 +9,8 @@
 | EPIC | EPIC 1 — Data Foundation & Data Understanding |
 | Dự án | HitRadar Pro |
 | Ngày hoàn thành | 2026-07-05 |
-| Trạng thái | **PASS** |
+| Trạng thái | **PASS WITH SQL FIX VERIFIED** |
+| Cập nhật lần cuối | 2026-07-05 (SQL fix) |
 
 ---
 
@@ -32,6 +33,7 @@
 | Task 1.2.6 | Định nghĩa data type chuẩn PostgreSQL | **DONE** |
 | Task 1.2.7 | Định nghĩa constraints kiểm tra dữ liệu (clean layer) | **DONE** |
 | Task 1.2.8 | Vẽ ERD (Mermaid — raw / clean / analytics + data flow) | **DONE** |
+| **SQL Fix** | Fix 4 SQL blocker trước khi smoke test | **DONE** |
 
 ---
 
@@ -66,6 +68,7 @@
 | Quyết định | Chi tiết |
 |-----------|---------|
 | **dict_artists.json semantic** | **RELATED_ARTIST_GRAPH** — overlap 100% với `artists.csv.id` trên 50,005 values; 22-char Spotify ID pattern 100% |
+| **SQL blocker fixes** | (1) `release_precision` column + CHECK constraint thêm vào `clean.tracks`; (2) `ROUND(AVG(double_precision))` → `ROUND(AVG(col)::numeric, n)` cho 8 columns; (3) `ADD CONSTRAINT IF NOT EXISTS` không hợp lệ — thay bằng comment + DO block pattern; (4) `vw_genre_trends` dùng CTE DISTINCT để tránh duplicate track weighting |
 | **Genre source** | `artists.csv.genres` là nguồn genre **duy nhất** được xác nhận |
 | **dict_artists.json role** | Lưu vào `raw.raw_artist_json` → `clean.artist_relations(artist_id, related_artist_id)` |
 | **artist_genres nguồn** | Chỉ từ `artists_csv`, column source = 'artists_csv' |
@@ -109,8 +112,11 @@
 
 ## 9. Status
 
-> **PASS — Feature 1.2 completed.**
+> **PASS WITH SQL FIX VERIFIED — Feature 1.2 completed.**
 >
 > Task 1.2.0 đã xác minh `dict_artists.json` là **RELATED_ARTIST_GRAPH** (overlap 100%).
 > Kiến trúc 3 tầng đã thiết kế đầy đủ. ERD, DATABASE_SCHEMA, SQL DDL skeleton đã hoàn thành.
-> Sẵn sàng chuyển sang Feature 1.3 — Data Ingestion Pipeline.
+> SQL blockers đã được sửa: release_precision, ROUND::numeric, ADD CONSTRAINT IF NOT EXISTS, vw_genre_trends CTE.
+>
+> **Ready for PostgreSQL DDL smoke test.**
+> Chưa chạy thử trên PostgreSQL thật — chờ Feature 1.3 thực hiện.
