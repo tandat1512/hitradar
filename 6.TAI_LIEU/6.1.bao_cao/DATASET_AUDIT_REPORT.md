@@ -12,7 +12,8 @@
 | **Sanity: PASS** | 12 |
 | **Sanity: WARNING** | 5 |
 | **Sanity: FAIL** | 0 |
-| **Trạng thái audit** | **PASS** |
+| **Trạng thái audit** | **PASS WITH WARNINGS** |
+| **Cập nhật lần cuối** | 2026-07-05 (re-audit) |
 
 ---
 
@@ -79,11 +80,13 @@
 |--------|-----------|
 | Load status | **OK** |
 | File size | 317.17 MB |
-| Số keys | 573,856 |
-| Key type | `str` (Spotify artist ID) |
-| Value type | `list` (genre strings) |
-| Empty list ratio | **50.82%** — khoảng 291,688 artist có list genre rỗng |
-| Unique genres | 1,079,349 |
+| Số keys (artist IDs) | **573,856** |
+| Key type | `str` (Spotify artist ID, 22-char alphanumeric) |
+| Value type | `list` |
+| Empty list count | **126,904** |
+| Empty list ratio | **22.11%** — khoảng 126,904 artist không có giá trị |
+| Total value assignments | **8,864,472** (tổng số phần tử trong tất cả các list) |
+| Unique strings trong values | **1,079,349** |
 
 **Sample records:**
 ```
@@ -92,10 +95,19 @@
 "0DmRESX2JknGPQyO15yxg7" → []
 ```
 
-> **Rủi ro parse:**
-> - 50.82% keys có value là list rỗng → sẽ cho NULL trong bảng artist_genres
-> - Cần `explode` + join qua `id_artists` trong `tracks.csv`
-> - Kích thước 317 MB → nên dùng streaming parse trong Feature 1.4
+**Sample value strings:**
+```
+"0001ZVMPt41Vwzt1zsmuzp", "0001cekkfdEBoMlwVQvpLg", "0002XY9y3JhjzTZqNCqEcv", ...
+```
+
+> ⚠️ **CRITICAL WARNING — Nội dung values cần xác minh lại:**
+>
+> Sample value strings nhìn giống **Spotify Artist IDs** (22-char alphanumeric), **KHÔNG phải genre names** như "pop", "rock".
+> Nếu đúng, `dict_artists.json` là mapping `artist_id → [related_artist_ids]`, không phải `artist_id → [genre_names]`.
+>
+> Tác động: file này **không thể dùng trực tiếp làm nguồn genre** như đã giả định trong contract. Genre thực tế phải lấy từ `artists.csv.genres`.
+>
+> **Cần xác minh thủ công tại Feature 1.2/1.4:** đọc 5–10 cặp key-value rồi đối chiếu với `artists.csv` để xác định đây là related artists hay genre IDs.
 
 ---
 
@@ -162,7 +174,7 @@ Không có duplicate. Cả hai file đều có `id` làm khóa chính hợp lệ
 | `tracks.valence` range [0-1] | **PASS** | All values in [0-1] |
 | `tracks.duration_ms > 0` | **PASS** | All positive |
 | `tracks.tempo > 0` | **WARNING** | 328 non-positive values (0.056% of rows) |
-| `tracks.release_date` parsability | **WARNING** | Mixed formats: `YYYY-MM-DD` và `YYYY` — manual parse cần thiết |
+| `tracks.release_date` parsability | **WARNING** | Mixed formats: `YYYY-MM-DD` (448,081), `YYYY` (136,489), `YYYY-MM` (2,102) — parse errors: 0 |
 | `tracks.artists` list-string format | **WARNING** | List-string dạng `['Artist Name']` — cần parse trong Feature 1.4 |
 | `artists.popularity` range [0-100] | **PASS** | All values in [0-100] |
 | `artists.followers >= 0` | **PASS** | All non-negative |
@@ -180,16 +192,45 @@ Không có duplicate. Cả hai file đều có `id` làm khóa chính hợp lệ
 |---|------|--------|------|---------|
 | R1 | `artists` trong tracks.csv là list-string `['Name']` — cần parse thành bảng riêng | **Cao** | tracks.csv | Feature 1.4 |
 | R2 | `genres` trong artists.csv là list-string — nhiều giá trị rỗng `[]` | **Cao** | artists.csv | Feature 1.4 |
-| R3 | `dict_artists.json` có 50.82% empty genre list — join sẽ cho nhiều NULL | **Cao** | dict_artists.json | Feature 1.4 |
-| R4 | `release_date` có 2 format: `YYYY-MM-DD` và `YYYY` — cần normalize | **Trung bình** | tracks.csv | Feature 1.4 |
+| R3 | `dict_artists.json` values có thể là **related artist IDs, không phải genre names** — cần xác minh | **Rất cao** | dict_artists.json | Feature 1.2 / 1.4 |
+| R4 | `release_date` có 3 format: `YYYY-MM-DD` (76.4%), `YYYY` (23.3%), `YYYY-MM` (0.4%) | **Trung bình** | tracks.csv | Feature 1.4 |
 | R5 | Không có cột `year` sẵn — phải parse từ `release_date` | **Trung bình** | tracks.csv | Feature 1.4 |
-| R6 | `tempo` có 328 giá trị = 0 (0.056%) — có thể là lỗi dữ liệu hoặc track đặc biệt | **Thấp** | tracks.csv | Feature 1.4 / 1.5 |
-| R7 | `duration_ms` max = 5,621,218 ms (~93 phút) — có thể là outlier cần lọc | **Thấp** | tracks.csv | Feature 1.4 / 1.5 |
-| R8 | `popularity` (tracks) phân bố lệch — mean ≠ median, nhiều bài có popularity = 0 | **Trung bình** | tracks.csv | Feature 1.7 EDA |
-| R9 | `followers` (artists) phân bố cực kỳ lệch phải — cần log-transform nếu dùng làm feature | **Trung bình** | artists.csv | Feature 1.8 / EPIC 2 |
-| R10 | `popularity` của artists.csv **không được dùng trực tiếp làm ML feature** — leakage risk | **Cao** | artists.csv | Feature 1.8 / EPIC 2 |
-| R11 | `id_artists` trong tracks.csv là list-string các Spotify ID → khớp với `artists.id` qua explode | **Trung bình** | tracks.csv | Feature 1.4 |
-| R12 | `dict_artists.json` kích thước 317 MB — cần streaming parse trong Feature 1.4 | **Thấp** | dict_artists.json | Feature 1.4 |
+| R6 | `tempo` có 328 giá trị = 0 (0.056%) — có thể là lỗi dữ liệu | **Thấp** | tracks.csv | Feature 1.4 / 1.5 |
+| R7 | `duration_ms` max = 5,621,218 ms (~93 phút), min = 3,344 ms (~3.3s) — 26 bài dưới 10s, 83 bài trên 60 phút | **Thấp** | tracks.csv | Feature 1.4 / 1.5 |
+| R8 | `time_signature` có 337 giá trị = 0 — không hợp lệ (thường 3–5) | **Thấp** | tracks.csv | Feature 1.4 / 1.5 |
+| R9 | `loudness` max = +5.376 dB — bất thường, loudness thường âm | **Thấp** | tracks.csv | Feature 1.5 |
+| R10 | `popularity` (tracks) phân bố lệch — nhiều bài có popularity = 0 | **Trung bình** | tracks.csv | Feature 1.7 EDA |
+| R11 | `followers` (artists) phân bố cực kỳ lệch phải — cần log-transform nếu dùng làm feature | **Trung bình** | artists.csv | EPIC 2 |
+| R12 | `popularity` của artists.csv **không được dùng trực tiếp làm ML feature** — leakage risk | **Cao** | artists.csv | Feature 1.8 / EPIC 2 |
+| R13 | `id_artists` trong tracks.csv là list-string Spotify IDs — cần explode để join với `artists.id` | **Trung bình** | tracks.csv | Feature 1.4 |
+| R14 | `dict_artists.json` kích thước 317 MB — nên dùng streaming parse trong Feature 1.4 | **Thấp** | dict_artists.json | Feature 1.4 |
+
+---
+
+## 9b. Outlier Detail
+
+| Field | Condition | Count | % | Note |
+|-------|-----------|-------|---|------|
+| `duration_ms` | min = 3,344 ms | — | — | ~3.3 giây — likely silence/test track |
+| `duration_ms` | max = 5,621,218 ms | — | — | ~93 phút — likely audiobook/compilation |
+| `duration_ms` | < 10 giây | 26 | 0.004% | Quá ngắn — cần lọc ở Feature 1.4 |
+| `duration_ms` | > 60 phút | 83 | 0.014% | Quá dài — cần xem xét loại bỏ |
+| `tempo` | = 0 | 328 | 0.056% | Không hợp lệ — cần xử lý |
+| `time_signature` | = 0 | 337 | 0.057% | Không hợp lệ (thường 3–5) |
+| `loudness` | max = +5.376 dB | — | — | Bất thường — loudness thường âm |
+
+---
+
+## 9c. Release Date Format Breakdown
+
+| Format | Count | % | Ghi chú |
+|--------|-------|---|---------|
+| `YYYY-MM-DD` | 448,081 | 76.4% | Full date — parse trực tiếp |
+| `YYYY` | 136,489 | 23.3% | Chỉ năm — gán month=01, day=01 khi normalize |
+| `YYYY-MM` | 2,102 | 0.4% | Tháng-năm — gán day=01 khi normalize |
+| Parse error | 0 | 0.0% | Không có lỗi |
+| **Min year** | **1900** | — | Bài hát cổ nhất |
+| **Max year** | **2021** | — | Bài hát mới nhất trong dataset |
 
 ---
 
@@ -201,9 +242,10 @@ Dựa trên kết quả audit, Feature 1.2 nên thiết kế schema với ít nh
 |----------|-------|---------|
 | `raw_tracks` | `tracks.csv` | Import nguyên bản, giữ `artists` và `id_artists` dạng text |
 | `raw_artists` | `artists.csv` | Import nguyên bản, giữ `genres` dạng text |
-| `raw_artist_genres_json` | `dict_artists.json` | Lưu dạng JSONB hoặc text — parse thành bảng riêng ở Feature 1.4 |
+| `raw_artist_json` | `dict_artists.json` | Lưu dạng JSONB hoặc text — xác minh nội dung values trước khi parse ở Feature 1.4 |
 
 > **Feature 1.2 sẽ thiết kế raw/clean/analytics layers dựa trên kết quả audit này.**
+> Ưu tiên xác minh `dict_artists.json` values là genre hay related-artist trước khi thiết kế genre pipeline.
 
 ---
 
@@ -211,9 +253,10 @@ Dựa trên kết quả audit, Feature 1.2 nên thiết kế schema với ít nh
 
 **Feature 1.2 — Database Architecture:**
 
-- Thiết kế raw schema (raw_tracks, raw_artists, raw_artist_genres_json)
+- Thiết kế raw schema (raw_tracks, raw_artists, raw_artist_json)
+- Xác minh nội dung dict_artists.json (genre names hay related artist IDs?)
 - Thiết kế clean schema (clean_tracks, clean_artists, clean_genres, clean_track_artists, clean_artist_genres)
-- Thiết kế analytics views/marts (vw_tracks_by_decade, vw_audio_trends, vw_ml_training_dataset…)
+- Thiết kế analytics views/marts (vw_tracks_by_decade, vw_audio_trends, vw_ml_training_dataset...)
 - Định nghĩa primary keys, foreign keys, data types, constraints
 - Chuẩn bị ERD
 - Chuẩn bị SQL scripts cho Feature 1.3 (import)

@@ -21,7 +21,7 @@
 | Source | Column | Data Type | Meaning | Role | ML Usage | Risk Note |
 |--------|--------|-----------|---------|------|----------|-----------|
 | tracks.csv | `id` | object | Spotify track ID — mã định danh duy nhất của bài hát | ID | no | Dùng làm primary key, không encode làm feature |
-| tracks.csv | `name` | object | Tên bài hát | artist_metadata | no | Text tự do, 71 missing (0.01%), không dùng làm numeric feature |
+| tracks.csv | `name` | object | Tên bài hát | dashboard_only | no | Text tự do, 71 missing (0.01%), không dùng làm numeric feature |
 | tracks.csv | `popularity` | int64 | Độ phổ biến bài hát (0–100) do Spotify tính theo lượt nghe gần đây | target | target_only | **Target chính của mô hình.** Không được dùng làm input feature. Phân bố lệch — mean 27.57, median 27. |
 | tracks.csv | `duration_ms` | int64 | Thời lượng bài hát tính bằng milliseconds | technical_metadata | yes | Cần tạo `duration_min`. Max = 5,621,218 ms (~93 phút) — cần kiểm tra outlier ở Feature 1.4. |
 | tracks.csv | `explicit` | int64 | Nội dung explicit: 1 = có, 0 = không | technical_metadata | yes | Boolean, encode sẵn. Chỉ 4.4% bài là explicit. |
@@ -51,7 +51,7 @@
 | artists.csv | `followers` | float64 | Số lượng người theo dõi nghệ sĩ trên Spotify | artist_metadata | caution | 11 missing (0.001%). Phân bố cực lệch phải — max = 78.9M, median = 57. Nếu dùng làm feature cần log-transform. **Rủi ro leakage** nếu join vào training set. |
 | artists.csv | `genres` | object | Danh sách genre của nghệ sĩ — list-string Python: `['pop', 'rock']` | genre_metadata | caution | **Cần parse.** Nhiều giá trị là `[]`. 49,155 unique combinations. Tách thành bảng artist_genres ở Feature 1.4. |
 | artists.csv | `name` | object | Tên nghệ sĩ | artist_metadata | no | 3 missing (0.0003%). Text, không dùng làm numeric feature. |
-| artists.csv | `popularity` | int64 | Độ phổ biến của nghệ sĩ (0–100) | artist_metadata | caution | **Leakage risk cao.** Không được dùng trực tiếp làm ML feature mà chưa có rule leakage-safe từ EPIC 2. Chỉ dùng cho EDA/dashboard. Mean = 8.80, median = 2 — phân bố lệch mạnh. |
+| artists.csv | `popularity` | int64 | Độ phổ biến của nghệ sĩ (0–100) | artist_metadata | dashboard_only | **Leakage risk cao.** Không được dùng trực tiếp làm ML feature. Chỉ dùng cho EDA/dashboard. Mean = 8.80, median = 2 — phân bố lệch mạnh. |
 
 ---
 

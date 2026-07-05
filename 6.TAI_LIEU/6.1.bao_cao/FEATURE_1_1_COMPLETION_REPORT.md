@@ -9,7 +9,7 @@
 | EPIC | EPIC 1 — Data Foundation & Data Understanding |
 | Dự án | HitRadar Pro |
 | Ngày hoàn thành | 2026-07-05 |
-| Trạng thái | **PASS** |
+| Trạng thái | **PASS WITH WARNINGS** |
 
 ---
 
@@ -28,7 +28,7 @@
 | Task 1.1.3 | Lập data dictionary draft cho từng cột (25 columns) | **DONE** |
 | Task 1.1.4 | Phân loại cột theo vai trò (ID / target / audio_feature / time / …) | **DONE** |
 | Task 1.1.5 | Gắn nhãn cột dùng cho EDA / ML / dashboard | **DONE** |
-| Task 1.1.6 | Xác định rủi ro dữ liệu ban đầu (12 risks) | **DONE** |
+| Task 1.1.6 | Xác định rủi ro dữ liệu ban đầu (14 risks, bao gồm outlier và release_date formats) | **DONE** |
 
 ---
 
@@ -65,10 +65,29 @@
 | # | Rủi ro | Mức |
 |---|--------|-----|
 | 1 | `artists` và `id_artists` trong tracks.csv là list-string — cần parse thành bảng riêng | **Cao** |
-| 2 | `genres` trong artists.csv là list-string, 50.82% empty trong dict_artists.json | **Cao** |
+| 2 | `dict_artists.json` values có thể là related artist IDs, không phải genre names — cần xác minh | **Rất cao** |
 | 3 | `popularity` của artists.csv có leakage risk nếu dùng làm ML feature trực tiếp | **Cao** |
-| 4 | `release_date` có 2 format khác nhau (`YYYY-MM-DD` và `YYYY`) | **Trung bình** |
-| 5 | Không có cột `year` sẵn — phải derive từ `release_date` | **Trung bình** |
+| 4 | `release_date` có 3 format: `YYYY-MM-DD` (76.4%), `YYYY` (23.3%), `YYYY-MM` (0.4%) | **Trung bình** |
+| 5 | Outlier: 328 tempo=0, 337 time_signature=0, 26 tracks dưới 10s, 83 tracks trên 60 phút | **Thấp** |
+
+**Missing values (đã xác nhận chính xác):**
+
+| File | Column | Missing count |
+|------|--------|--------------|
+| tracks.csv | `name` | 71 (0.01%) |
+| artists.csv | `name` | 3 (0.0003%) |
+| artists.csv | `followers` | 11 (0.001%) |
+
+**Active warnings — sẽ xử lý ở Feature 1.4 / 1.5:**
+
+| Warning | Xử lý ở |
+|---------|---------|
+| `dict_artists.json` values chưa xác minh là genre hay related artist | Feature 1.2 |
+| 328 tracks có `tempo = 0` | Feature 1.4 |
+| 337 tracks có `time_signature = 0` | Feature 1.4 |
+| 26 tracks `duration_ms < 10s`, 83 tracks `> 60 phút` | Feature 1.4 |
+| `genres` trong artists.csv: nhiều giá trị là list rỗng `[]` | Feature 1.4 |
+| `loudness` max = +5.376 dB | Feature 1.5 |
 
 ---
 
@@ -82,7 +101,7 @@
 | `duration_ms` | tracks.csv | Cần đơn vị phút | Convert → `duration_min` |
 | `tempo` | tracks.csv | 328 giá trị = 0 | Kiểm tra, xử lý outlier |
 | `genres` | artists.csv | List-string, nhiều empty | Parse → `clean_artist_genres` |
-| `dict_artists.json` | — | 50.82% empty, 317MB | Streaming parse → `raw_artist_genres_json` |
+| `dict_artists.json` | — | Values cần xác minh (genre hay related artist?), 317MB | Xác minh ở Feature 1.2, streaming parse ở Feature 1.4 |
 
 ---
 
@@ -115,8 +134,10 @@
 
 ## 9. Status
 
-> **PASS — Feature 1.1 completed.**
+> **PASS WITH WARNINGS — Feature 1.1 completed.**
 >
-> Audit đã chạy trên 3 file raw thật. Schema, missing, duplicate, sanity checks đã ghi nhận đầy đủ.
-> Data dictionary draft đã phân loại 25 cột. 12 data risks đã xác định.
+> Audit đã chạy trên 3 file raw thật. Schema, missing, duplicate, outlier, release_date formats và sanity checks đã ghi nhận đầy đủ.
+> Data dictionary draft đã phân loại 25 cột. 14 data risks đã xác định.
+> 6 active warnings còn lại sẽ được xử lý ở Feature 1.4 / 1.5.
+> Critical finding: `dict_artists.json` values cần xác minh tại Feature 1.2.
 > Sẵn sàng chuyển sang Feature 1.2 — Database Architecture.
