@@ -56,7 +56,7 @@
 | Duplicate artists | **0** (sạch) |
 | tracks.id unique | **YES** |
 | artists.id unique | **YES** |
-| Missing values | Gần như 0 — chỉ 71 track name và 3 artist name bị thiếu |
+| Missing values | Gần như 0 — tracks.name: 71, artists.name: 3, artists.followers: 11 |
 | Audio features range | **Tất cả trong range chuẩn** |
 | Sanity PASS / WARN / FAIL | **12 / 5 / 0** |
 

@@ -13,6 +13,7 @@
 | **Sanity: WARNING** | 5 |
 | **Sanity: FAIL** | 0 |
 | **Trạng thái audit** | **PASS WITH WARNINGS** |
+| **Critical data warning** | 1 — `dict_artists.json` semantic meaning chưa xác minh |
 | **Cập nhật lần cuối** | 2026-07-05 (re-audit) |
 
 ---
