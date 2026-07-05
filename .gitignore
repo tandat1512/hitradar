@@ -10,6 +10,7 @@
 # Temp / extracted files
 # ============================================================
 6.TAI_LIEU/6.1.bao_cao/_extracted/
+9.SCRIPTS/_audit_results.json
 *.docx
 *.pptx
 *.xlsx
