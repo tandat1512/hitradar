@@ -122,22 +122,28 @@
 
 **Feature 1.2 — Database Architecture**
 
-| Việc cần làm | Output |
-|-------------|--------|
-| Thiết kế raw schema | `raw_tracks`, `raw_artists`, `raw_artist_genres_json` |
-| Thiết kế clean schema | `clean_tracks`, `clean_artists`, `clean_genres`, `clean_track_artists`, `clean_artist_genres` |
-| Thiết kế analytics views | `vw_tracks_by_decade`, `vw_audio_trends`, `vw_popularity_stats`, `vw_top_artists`, `vw_genre_trends`, `vw_ml_training_dataset`... |
-| Định nghĩa keys, types, constraints | PKs, FKs, NOT NULL, CHECK |
-| Vẽ ERD | `DATABASE_SCHEMA.md` + ERD diagram |
+> **Lưu ý bắt buộc:** Feature 1.2 phải xác minh semantic của `dict_artists.json` (task 1.2.0) trước khi thiết kế genre pipeline.
+
+| Task | Việc cần làm | Output |
+|------|-------------|--------|
+| **1.2.0** | **Verify `dict_artists.json` semantic meaning** — đọc 10 cặp key-value, đối chiếu với `artists.csv`, xác định values là genre names hay related artist IDs | Ghi chú vào `DATABASE_SCHEMA.md` |
+| 1.2.1 | Thiết kế raw schema | `raw_tracks`, `raw_artists`, `raw_artist_json` |
+| 1.2.2 | Thiết kế clean schema | `clean_tracks`, `clean_artists`, `clean_genres`, `clean_track_artists`, `clean_artist_genres` |
+| 1.2.3 | Thiết kế analytics views | `vw_tracks_by_decade`, `vw_audio_trends`, `vw_popularity_stats`, `vw_top_artists`, `vw_genre_trends`, `vw_ml_training_dataset`... |
+| 1.2.4 | Định nghĩa keys, types, constraints | PKs, FKs, NOT NULL, CHECK |
+| 1.2.5 | Vẽ ERD | `DATABASE_SCHEMA.md` + ERD diagram |
 
 ---
 
 ## 9. Status
 
-> **PASS WITH WARNINGS — Feature 1.1 completed.**
+> **PASS WITH WARNINGS — Feature 1.1 hotfix completed.**
 >
-> Audit đã chạy trên 3 file raw thật. Schema, missing, duplicate, outlier, release_date formats và sanity checks đã ghi nhận đầy đủ.
-> Data dictionary draft đã phân loại 25 cột. 14 data risks đã xác định.
-> 6 active warnings còn lại sẽ được xử lý ở Feature 1.4 / 1.5.
-> Critical finding: `dict_artists.json` values cần xác minh tại Feature 1.2.
-> Sẵn sàng chuyển sang Feature 1.2 — Database Architecture.
+> Tất cả mâu thuẫn tài liệu đã được giải quyết:
+> - `dict_artists.json` value không còn gọi là "genre" — đánh dấu `unknown_need_review`.
+> - `artists.popularity` chỉ nằm ở `dashboard_only`, không còn xuất hiện đồng thời ở `caution`.
+> - `release_date` ghi đủ 3 format + normalize rule.
+> - `genre_list` chỉ lấy từ `artists.csv.genres`.
+> - Next Step Feature 1.2 dùng tên `raw_artist_json` và có task bắt buộc 1.2.0 xác minh dict_artists.json.
+>
+> **Được phép chuyển sang Feature 1.2 — Database Architecture.**

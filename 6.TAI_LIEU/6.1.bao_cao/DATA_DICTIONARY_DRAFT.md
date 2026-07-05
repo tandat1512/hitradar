@@ -27,7 +27,7 @@
 | tracks.csv | `explicit` | int64 | Nội dung explicit: 1 = có, 0 = không | technical_metadata | yes | Boolean, encode sẵn. Chỉ 4.4% bài là explicit. |
 | tracks.csv | `artists` | object | Tên nghệ sĩ — dạng list-string Python: `['Artist A', 'Artist B']` | artist_metadata | caution | **Cần parse.** Không dùng trực tiếp. Phải tách thành bảng track_artists ở Feature 1.4. |
 | tracks.csv | `id_artists` | object | Spotify artist ID tương ứng — dạng list-string: `['id1', 'id2']` | ID | no | Dùng để join với `artists.csv.id`. Cần explode ở Feature 1.4. |
-| tracks.csv | `release_date` | object | Ngày/năm phát hành — 2 format: `YYYY-MM-DD` hoặc `YYYY` | time | caution | **Cần parse.** Tạo `release_year`, `release_month`, `decade` ở Feature 1.4. 19,700 unique values. |
+| tracks.csv | `release_date` | object | Ngày/năm phát hành — 3 format: `YYYY-MM-DD` (76.4%), `YYYY-MM` (0.4%), `YYYY` (23.3%) | time | caution | **Cần parse.** Normalize rule: `YYYY-MM-DD` giữ nguyên · `YYYY-MM` gán day=01 · `YYYY` gán month=01, day=01. Tạo `release_year`, `release_month`, `decade` ở Feature 1.4. |
 | tracks.csv | `danceability` | float64 | Mức độ phù hợp để nhảy (0–1): nhịp, beat strength, regularity | audio_feature | yes | Không có missing. Range OK [0, 0.991]. |
 | tracks.csv | `energy` | float64 | Cường độ và hoạt động âm nhạc (0–1): nhanh, mạnh, ồn | audio_feature | yes | Không có missing. Range OK [0, 1]. |
 | tracks.csv | `key` | int64 | Tông bài hát: 0–11 (C, C#, D… B theo pitch class notation) | audio_feature | yes | Categorical — cần one-hot hoặc encode ở EPIC 2. 12 unique values. |
@@ -59,8 +59,8 @@
 
 | Source | Key/Field | Data Type | Meaning | Role | ML Usage | Risk Note |
 |--------|-----------|-----------|---------|------|----------|-----------|
-| dict_artists.json | key | str | Spotify artist ID — giống `artists.csv.id` | ID | no | 573,856 keys. Dùng để map artist → genre. |
-| dict_artists.json | value | list[str] | Danh sách genre của artist | genre_metadata | caution | **50.82% là list rỗng []** — join sẽ cho nhiều NULL. 1,079,349 unique genre strings (cần làm sạch). Nguồn bổ sung cho `artists.csv.genres`. |
+| dict_artists.json | key | str | Spotify artist ID — 22-char alphanumeric | ID | no | 573,856 keys. Có thể join với `artists.csv.id`, nhưng semantic của value chưa xác minh. |
+| dict_artists.json | value | list[str] | **list[str] chưa xác minh** — sample strings giống Spotify Artist IDs, có thể là related_artist_ids | unknown_need_review | need_review | **Không dùng làm nguồn genre cho đến khi xác minh ở Feature 1.2.** Empty list count: 126,904 (22.11%). Total assignments: 8,864,472. Unique strings: 1,079,349 — độ dài và format giống artist ID, không giống genre names. Genre hiện chỉ lấy từ `artists.csv.genres`. |
 
 ---
 
@@ -74,7 +74,7 @@
 | `duration_min` | `duration_ms` | Thời lượng tính bằng phút (float) | technical_metadata | yes |
 | `main_artist_id` | `id_artists` (explode) | ID của nghệ sĩ chính (đầu tiên trong list) | ID | no |
 | `main_artist_name` | `artists` (explode) | Tên nghệ sĩ chính | artist_metadata | no |
-| `genre_list` | `artists.csv.genres` hoặc `dict_artists.json` | Danh sách genre sau khi parse | genre_metadata | caution |
+| `genre_list` | `artists.csv.genres` | Danh sách genre sau khi parse — nguồn duy nhất đã xác nhận | genre_metadata | caution |
 | `n_artists` | `id_artists` | Số nghệ sĩ trong một track | ML_candidate | yes |
 | `is_explicit` | `explicit` | Boolean rõ ràng hơn | technical_metadata | yes |
 
@@ -86,6 +86,7 @@
 |----------|---------|
 | **target_only** | `tracks.popularity` |
 | **yes** (ML candidate) | `duration_ms`, `explicit`, `danceability`, `energy`, `key`, `loudness`, `mode`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, `tempo`, `time_signature` |
-| **caution** | `release_date` (cần parse), `artists` (cần parse), `id_artists` (chỉ dùng để join), `artists.followers` (leakage risk), `artists.genres` (cần parse), `artists.popularity` (leakage risk), `dict_artists.json value` |
+| **caution** | `release_date` (cần parse), `artists` (cần parse), `id_artists` (chỉ dùng để join), `artists.followers` (leakage risk), `artists.genres` (cần parse) |
 | **no** | `id` (tracks), `name` (tracks), `id` (artists), `name` (artists), tất cả raw ID fields |
-| **dashboard_only** | `artists.popularity` (cho đến khi EPIC 2 xác nhận leakage-safe rule) |
+| **dashboard_only** | `artists.popularity` — leakage risk, chỉ dùng EDA/dashboard, không dùng làm ML feature |
+| **need_review** | `dict_artists.json value` — chưa xác minh là genre hay related artist ID |
