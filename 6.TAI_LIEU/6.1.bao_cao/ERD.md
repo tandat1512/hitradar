@@ -69,6 +69,7 @@ erDiagram
         SMALLINT release_year
         SMALLINT release_month
         SMALLINT decade
+        TEXT release_precision
         DOUBLE_PRECISION danceability
         DOUBLE_PRECISION energy
         SMALLINT key

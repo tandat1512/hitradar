@@ -135,6 +135,7 @@ Schema này là căn cứ để Feature 1.3 thực hiện import dữ liệu và
 | `release_year` | SMALLINT | NULL | extracted | |
 | `release_month` | SMALLINT | NULL | extracted | NULL nếu chỉ có YYYY |
 | `decade` | SMALLINT | NULL | `(release_year / 10) * 10` | 1920, 1930…2020 |
+| `release_precision` | TEXT | NULL | ghi lại độ chi tiết của raw release_date | `CHECK (IN ('day','month','year','unknown'))` |
 | `danceability` | DOUBLE PRECISION | NULL | | |
 | `energy` | DOUBLE PRECISION | NULL | | |
 | `key` | SMALLINT | NULL | | 0–11 |

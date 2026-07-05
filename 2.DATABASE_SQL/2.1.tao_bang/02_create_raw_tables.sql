@@ -11,7 +11,7 @@
 -- 586,672 rows · 20 columns
 -- -------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS raw.raw_tracks (
-    id                  TEXT,           -- Spotify track ID (candidate PK)
+    id                  TEXT NOT NULL,  -- Spotify track ID (candidate PK)
     name                TEXT,           -- 71 missing (0.01%)
     popularity          SMALLINT,       -- 0–100; nhiều giá trị = 0
     duration_ms         INTEGER,        -- min 3,344 · max 5,621,218
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS raw.raw_tracks (
 -- 1,162,095 rows · 5 columns
 -- -------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS raw.raw_artists (
-    id          TEXT,               -- Spotify artist ID (candidate PK)
+    id          TEXT NOT NULL,      -- Spotify artist ID (candidate PK)
     followers   DOUBLE PRECISION,   -- 11 missing; DOUBLE vì NaN trong CSV
     genres      TEXT,               -- list-string ['pop', 'rock']
     name        TEXT,               -- 3 missing (0.0003%)
