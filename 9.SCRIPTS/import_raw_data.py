@@ -5,15 +5,18 @@ Import 3 raw files vào PostgreSQL raw layer.
 Usage:
   python 9.SCRIPTS/import_raw_data.py [--reset] [--host HOST] [--port PORT]
                                        [--user USER] [--database DATABASE]
+                                       [--base-dir PATH]
 
 Password: đặt biến môi trường PGPASSWORD trước khi chạy, hoặc dùng .pgpass.
   Windows: $env:PGPASSWORD = "your_password"
   Linux/Mac: export PGPASSWORD=your_password
 
 Ví dụ:
-  $env:PGPASSWORD="postgres"; python 9.SCRIPTS/import_raw_data.py --database hitradar --user postgres --reset
+  $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/import_raw_data.py --database hitradar --user postgres --reset
+  $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/import_raw_data.py --base-dir "X:\\DUAN1\\HitRadar_Pro" --database hitradar --user postgres --reset
 """
 import sys, os, io, json, csv, argparse, time
+from pathlib import Path
 from datetime import datetime, timezone
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -25,15 +28,6 @@ try:
 except ImportError:
     print("ERROR: psycopg2 not installed. Run: pip install psycopg2-binary")
     sys.exit(1)
-
-# ── Paths ─────────────────────────────────────────────────────────────────
-BASE     = r"x:\DUAN1\HitRadar_Pro"
-RAW_DIR  = os.path.join(BASE, "1.DỮ_LIỆU", "1.1.raw")
-LOG_DIR  = os.path.join(BASE, "6.TAI_LIEU", "6.1.bao_cao")
-
-TRACKS_CSV  = os.path.join(RAW_DIR, "tracks.csv")
-ARTISTS_CSV = os.path.join(RAW_DIR, "artists.csv")
-DICT_JSON   = os.path.join(RAW_DIR, "dict_artists.json")
 
 EXPECTED = {
     "raw.raw_tracks":      586_672,
@@ -50,7 +44,29 @@ def parse_args():
     p.add_argument("--database", default="hitradar")
     p.add_argument("--reset",    action="store_true",
                    help="TRUNCATE raw tables before import")
+    p.add_argument("--base-dir", dest="base_dir", default=None,
+                   help="Project root directory. Defaults to parent of this script's folder.")
     return p.parse_args()
+
+def resolve_paths(args):
+    """Resolve BASE, RAW_DIR, LOG_DIR from --base-dir or script location."""
+    if args.base_dir:
+        base = Path(args.base_dir).resolve()
+    else:
+        base = Path(__file__).resolve().parents[1]
+
+    raw_dir = base / "1.DỮ_LIỆU" / "1.1.raw"
+    log_dir = base / "6.TAI_LIEU" / "6.1.bao_cao"
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    return {
+        "base":        base,
+        "raw_dir":     raw_dir,
+        "log_dir":     log_dir,
+        "tracks_csv":  raw_dir / "tracks.csv",
+        "artists_csv": raw_dir / "artists.csv",
+        "dict_json":   raw_dir / "dict_artists.json",
+    }
 
 # ── DB connection ─────────────────────────────────────────────────────────
 def get_conn(args):
@@ -58,6 +74,7 @@ def get_conn(args):
     if not password:
         print("ERROR: PGPASSWORD environment variable is not set.")
         print("  Windows: $env:PGPASSWORD = 'your_password'")
+        print("  Linux/Mac: export PGPASSWORD=your_password")
         sys.exit(1)
     return psycopg2.connect(
         host=args.host, port=args.port, user=args.user,
@@ -66,25 +83,26 @@ def get_conn(args):
     )
 
 # ── A. Tiền điều kiện ─────────────────────────────────────────────────────
-def check_prerequisites(conn):
+def check_prerequisites(conn, paths):
     print("\n=== A. Checking prerequisites ===")
     ok = True
 
-    # Raw files
-    for label, path in [("tracks.csv", TRACKS_CSV),
-                        ("artists.csv", ARTISTS_CSV),
-                        ("dict_artists.json", DICT_JSON)]:
-        if os.path.exists(path) and os.path.getsize(path) > 0:
-            size_mb = os.path.getsize(path) / 1024 / 1024
+    for label, path in [("tracks.csv",        paths["tracks_csv"]),
+                        ("artists.csv",        paths["artists_csv"]),
+                        ("dict_artists.json",  paths["dict_json"])]:
+        if path.exists() and path.stat().st_size > 0:
+            size_mb = path.stat().st_size / 1024 / 1024
             print(f"  [OK] {label} ({size_mb:.1f} MB)")
         else:
-            print(f"  [FAIL] {label} missing or empty")
+            print(f"  [FAIL] {label} not found or empty: {path}")
             ok = False
 
-    # Schema + tables
     cur = conn.cursor()
     for schema in ("raw", "clean", "analytics"):
-        cur.execute("SELECT schema_name FROM information_schema.schemata WHERE schema_name = %s", (schema,))
+        cur.execute(
+            "SELECT schema_name FROM information_schema.schemata WHERE schema_name = %s",
+            (schema,)
+        )
         if cur.fetchone():
             print(f"  [OK] schema '{schema}' exists")
         else:
@@ -94,7 +112,8 @@ def check_prerequisites(conn):
     for table in ("raw.raw_tracks", "raw.raw_artists", "raw.raw_artist_json"):
         s, t = table.split(".")
         cur.execute(
-            "SELECT table_name FROM information_schema.tables WHERE table_schema=%s AND table_name=%s",
+            "SELECT table_name FROM information_schema.tables "
+            "WHERE table_schema=%s AND table_name=%s",
             (s, t)
         )
         if cur.fetchone():
@@ -103,7 +122,7 @@ def check_prerequisites(conn):
             print(f"  [FAIL] table '{table}' missing — run DDL files first")
             ok = False
 
-    # Check release_precision column (DDL sync check)
+    # DDL sync check: release_precision is mandatory — proves 03_create_clean_tables.sql ran correctly
     cur.execute(
         "SELECT column_name FROM information_schema.columns "
         "WHERE table_schema='clean' AND table_name='tracks' AND column_name='release_precision'"
@@ -111,11 +130,13 @@ def check_prerequisites(conn):
     if cur.fetchone():
         print("  [OK] clean.tracks.release_precision exists (DDL up to date)")
     else:
-        print("  [WARN] clean.tracks.release_precision not found — DDL may be outdated")
+        print("  [FAIL] clean.tracks.release_precision NOT FOUND")
+        print("         DDL is outdated — re-run 03_create_clean_tables.sql before importing.")
+        ok = False
 
     cur.close()
     if not ok:
-        print("\nPrerequisite check FAILED. Aborting.")
+        print("\n  Prerequisite check FAILED. Aborting.")
         sys.exit(1)
     print("  Prerequisites: ALL PASS")
     return True
@@ -133,12 +154,11 @@ def truncate_raw_tables_if_reset(conn, reset_flag):
     cur.close()
 
 # ── C. Import tracks.csv ──────────────────────────────────────────────────
-def import_tracks_csv(conn):
+def import_tracks_csv(conn, paths):
     print("\n=== C. Importing tracks.csv → raw.raw_tracks ===")
     t0 = time.time()
     cur = conn.cursor()
 
-    # Dùng COPY với StringIO để kiểm soát NULL handling
     cols = ("id","name","popularity","duration_ms","explicit","artists",
             "id_artists","release_date","danceability","energy","key",
             "loudness","mode","speechiness","acousticness","instrumentalness",
@@ -149,7 +169,7 @@ def import_tracks_csv(conn):
         f"COPY raw.raw_tracks ({col_list}) "
         f"FROM STDIN WITH (FORMAT CSV, HEADER TRUE, NULL '')"
     )
-    with open(TRACKS_CSV, encoding="utf-8", errors="replace") as f:
+    with open(str(paths["tracks_csv"]), encoding="utf-8", errors="replace") as f:
         cur.copy_expert(copy_sql, f)
 
     conn.commit()
@@ -161,7 +181,7 @@ def import_tracks_csv(conn):
     return count
 
 # ── D. Import artists.csv ─────────────────────────────────────────────────
-def import_artists_csv(conn):
+def import_artists_csv(conn, paths):
     print("\n=== D. Importing artists.csv → raw.raw_artists ===")
     t0 = time.time()
     cur = conn.cursor()
@@ -173,7 +193,7 @@ def import_artists_csv(conn):
         f"COPY raw.raw_artists ({col_list}) "
         f"FROM STDIN WITH (FORMAT CSV, HEADER TRUE, NULL '')"
     )
-    with open(ARTISTS_CSV, encoding="utf-8", errors="replace") as f:
+    with open(str(paths["artists_csv"]), encoding="utf-8", errors="replace") as f:
         cur.copy_expert(copy_sql, f)
 
     conn.commit()
@@ -185,16 +205,15 @@ def import_artists_csv(conn):
     return count
 
 # ── E. Import dict_artists.json ───────────────────────────────────────────
-def import_dict_artists_json(conn):
+def import_dict_artists_json(conn, paths):
     print("\n=== E. Importing dict_artists.json → raw.raw_artist_json ===")
     t0 = time.time()
 
     print("  Loading JSON into memory...")
-    with open(DICT_JSON, encoding="utf-8", errors="replace") as f:
+    with open(str(paths["dict_json"]), encoding="utf-8", errors="replace") as f:
         data = json.load(f)
     print(f"  Keys loaded: {len(data):,}")
 
-    # Build CSV in-memory via StringIO → COPY (much faster than executemany)
     print("  Building COPY buffer...")
     buf = io.StringIO()
     writer = csv.writer(buf, quoting=csv.QUOTE_MINIMAL)
@@ -227,17 +246,22 @@ def import_dict_artists_json(conn):
     return count
 
 # ── F. Write import log ───────────────────────────────────────────────────
-def write_import_log(args, results, start_ts):
-    log_path = os.path.join(LOG_DIR, "IMPORT_LOG.md")
+def write_import_log(args, paths, results, start_ts):
+    log_path = paths["log_dir"] / "IMPORT_LOG.md"
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     rows_md = ""
     overall = "PASS"
     for src, tbl, exp, got in results:
-        status = "PASS" if got == exp else f"WARN ({got:,} ≠ {exp:,})"
-        if got != exp:
-            overall = "WARN"
+        if got == exp:
+            status = "PASS"
+        else:
+            status = f"FAIL ({got:,} ≠ {exp:,})"
+            overall = "FAIL"
         rows_md += f"| `{src}` | `{tbl}` | {exp:,} | {got:,} | **{status}** | |\n"
+
+    errors_section = "No import error." if overall == "PASS" else \
+        "**Row count mismatch detected — import FAILED. Re-run with --reset and investigate source files.**"
 
     md = f"""# IMPORT LOG — FEATURE 1.3
 
@@ -250,6 +274,7 @@ def write_import_log(args, results, start_ts):
 | Database | {args.database} @ {args.host}:{args.port} |
 | User | {args.user} |
 | Date/Time | {now} |
+| Base directory | `{paths['base']}` |
 | Scripts | `9.SCRIPTS/import_raw_data.py` |
 | Reset flag | {'Yes — tables were TRUNCATED before import' if args.reset else 'No'} |
 
@@ -274,36 +299,40 @@ def write_import_log(args, results, start_ts):
 
 ## 4. Errors / Warnings
 
-No import error.
+{errors_section}
 
 ---
 
 ## 5. Conclusion
 
-**{overall}** — Raw data import completed. Proceed to validate_raw_import.py.
+**{overall}** — Raw data import {"completed successfully" if overall == "PASS" else "FAILED — see section 4"}.
+{"Proceed to validate_raw_import.py." if overall == "PASS" else "Do NOT proceed to validation until mismatch is resolved."}
 """
-    with open(log_path, "w", encoding="utf-8") as f:
+    with open(str(log_path), "w", encoding="utf-8") as f:
         f.write(md)
     print(f"\n  Import log written → {log_path}")
-    return log_path
+    return log_path, overall
 
 # ── Main ──────────────────────────────────────────────────────────────────
 def main():
-    args = parse_args()
+    args  = parse_args()
+    paths = resolve_paths(args)
     start_ts = datetime.now(timezone.utc)
-    print(f"HitRadar Feature 1.3 — Data Ingestion Pipeline")
+
+    print("HitRadar Feature 1.3 — Data Ingestion Pipeline")
     print(f"Target: {args.database} @ {args.host}:{args.port} (user: {args.user})")
+    print(f"Base directory: {paths['base']}")
     print(f"Started: {start_ts.strftime('%Y-%m-%d %H:%M UTC')}")
 
     conn = get_conn(args)
     print("  [OK] Database connection established")
 
-    check_prerequisites(conn)
+    check_prerequisites(conn, paths)
     truncate_raw_tables_if_reset(conn, args.reset)
 
-    count_tracks  = import_tracks_csv(conn)
-    count_artists = import_artists_csv(conn)
-    count_json    = import_dict_artists_json(conn)
+    count_tracks  = import_tracks_csv(conn, paths)
+    count_artists = import_artists_csv(conn, paths)
+    count_json    = import_dict_artists_json(conn, paths)
 
     results = [
         ("tracks.csv",        "raw.raw_tracks",      EXPECTED["raw.raw_tracks"],      count_tracks),
@@ -311,21 +340,21 @@ def main():
         ("dict_artists.json", "raw.raw_artist_json", EXPECTED["raw.raw_artist_json"], count_json),
     ]
 
-    log_path = write_import_log(args, results, start_ts)
+    log_path, overall = write_import_log(args, paths, results, start_ts)
     conn.close()
 
     print("\n=== IMPORT SUMMARY ===")
-    all_pass = True
     for src, tbl, exp, got in results:
-        ok = got == exp
-        if not ok:
-            all_pass = False
-        print(f"  {tbl}: {got:,} / {exp:,} {'OK' if ok else 'MISMATCH'}")
+        ok_row = got == exp
+        print(f"  {tbl}: {got:,} / {exp:,} {'OK' if ok_row else 'MISMATCH — FAIL'}")
 
-    status = "PASS" if all_pass else "FAIL — row count mismatch"
-    print(f"\nFeature 1.3 import status: {status}")
+    print(f"\nFeature 1.3 import status: {overall}")
     print(f"Log: {log_path}")
-    print("\nNext step: python 9.SCRIPTS/validate_raw_import.py --database", args.database)
+    if overall == "PASS":
+        print(f"\nNext step: python 9.SCRIPTS/validate_raw_import.py --database {args.database}")
+    else:
+        print("\nAborting: resolve row count mismatch before proceeding.")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

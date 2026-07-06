@@ -1,0 +1,2 @@
+# Ignore terminal output logs (large, machine-specific)
+*.txt

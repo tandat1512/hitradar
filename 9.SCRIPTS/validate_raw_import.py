@@ -5,9 +5,18 @@ Kiểm tra row count, column count, ID uniqueness, và sample records.
 Usage:
   python 9.SCRIPTS/validate_raw_import.py [--host HOST] [--port PORT]
                                            [--user USER] [--database DATABASE]
+                                           [--base-dir PATH]
+
 Password: set PGPASSWORD env variable trước khi chạy.
+  Windows: $env:PGPASSWORD = "your_password"
+  Linux/Mac: export PGPASSWORD=your_password
+
+Ví dụ:
+  $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/validate_raw_import.py --database hitradar --user postgres
+  $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/validate_raw_import.py --base-dir "X:\\DUAN1\\HitRadar_Pro" --database hitradar --user postgres
 """
 import sys, os, json, argparse
+from pathlib import Path
 from datetime import datetime, timezone
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -17,8 +26,6 @@ try:
 except ImportError:
     print("ERROR: pip install psycopg2-binary")
     sys.exit(1)
-
-LOG_DIR = r"x:\DUAN1\HitRadar_Pro\6.TAI_LIEU\6.1.bao_cao"
 
 EXPECTED_ROWS = {
     "raw.raw_tracks":      586_672,
@@ -32,17 +39,30 @@ EXPECTED_COLS = {
 }
 
 def parse_args():
-    p = argparse.ArgumentParser()
+    p = argparse.ArgumentParser(description="HitRadar raw import validator")
     p.add_argument("--host",     default="localhost")
     p.add_argument("--port",     type=int, default=5432)
     p.add_argument("--user",     default="postgres")
     p.add_argument("--database", default="hitradar")
+    p.add_argument("--base-dir", dest="base_dir", default=None,
+                   help="Project root directory. Defaults to parent of this script's folder.")
     return p.parse_args()
+
+def resolve_log_dir(args):
+    if args.base_dir:
+        base = Path(args.base_dir).resolve()
+    else:
+        base = Path(__file__).resolve().parents[1]
+    log_dir = base / "6.TAI_LIEU" / "6.1.bao_cao"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    return base, log_dir
 
 def get_conn(args):
     password = os.environ.get("PGPASSWORD")
     if not password:
         print("ERROR: PGPASSWORD not set.")
+        print("  Windows: $env:PGPASSWORD = 'your_password'")
+        print("  Linux/Mac: export PGPASSWORD=your_password")
         sys.exit(1)
     return psycopg2.connect(
         host=args.host, port=args.port, user=args.user,
@@ -72,7 +92,7 @@ def check_column_counts(cur):
         )
         cols = [r[0] for r in cur.fetchall()]
         actual_cnt = len(cols)
-        status = "PASS" if actual_cnt == expected_cnt else "WARN"
+        status = "PASS" if actual_cnt == expected_cnt else "FAIL"
         print(f"  {table}: {actual_cnt} cols → {status}")
         print(f"    Columns: {', '.join(cols)}")
         results[table] = {"expected": expected_cnt, "actual": actual_cnt,
@@ -90,9 +110,7 @@ def check_id_uniqueness(cur):
     for table, id_col in checks:
         cur.execute(f"SELECT COUNT(*) FROM {table} WHERE {id_col} IS NULL")
         null_cnt = cur.fetchone()[0]
-        cur.execute(
-            f"SELECT COUNT(*) - COUNT(DISTINCT {id_col}) FROM {table}"
-        )
+        cur.execute(f"SELECT COUNT(*) - COUNT(DISTINCT {id_col}) FROM {table}")
         dup_cnt = cur.fetchone()[0]
         status = "PASS" if null_cnt == 0 and dup_cnt == 0 else "FAIL"
         print(f"  {table}.{id_col}: nulls={null_cnt}, duplicates={dup_cnt} → {status}")
@@ -104,7 +122,6 @@ def get_samples(cur):
     print("\n=== 4. Sample Records ===")
     samples = {}
 
-    # tracks
     cur.execute(
         "SELECT id, name, popularity, duration_ms, release_date, artists "
         "FROM raw.raw_tracks LIMIT 5"
@@ -115,7 +132,6 @@ def get_samples(cur):
     )) for r in rows]
     print(f"  raw.raw_tracks: {len(rows)} samples")
 
-    # artists
     cur.execute(
         "SELECT id, name, popularity, followers, genres "
         "FROM raw.raw_artists LIMIT 5"
@@ -126,7 +142,6 @@ def get_samples(cur):
     )) for r in rows]
     print(f"  raw.raw_artists: {len(rows)} samples")
 
-    # json — get non-empty ones
     cur.execute(
         "SELECT artist_id, value_count, semantic_status "
         "FROM raw.raw_artist_json WHERE value_count > 0 LIMIT 5"
@@ -139,18 +154,16 @@ def get_samples(cur):
 
     return samples
 
-def write_validation_report(args, row_results, col_results, id_results, samples):
-    report_path = os.path.join(LOG_DIR, "RAW_IMPORT_VALIDATION_REPORT.md")
+def write_validation_report(args, base, log_dir, row_results, col_results, id_results, samples):
+    report_path = log_dir / "RAW_IMPORT_VALIDATION_REPORT.md"
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    # Overall status
     all_statuses = (
         [v["status"] for v in row_results.values()] +
         [v["status"] for v in col_results.values()] +
         [v["status"] for v in id_results.values()]
     )
-    overall = "PASS" if all(s == "PASS" for s in all_statuses) else \
-              "FAIL" if any(s == "FAIL" for s in all_statuses) else "WARNING"
+    overall = "PASS" if all(s == "PASS" for s in all_statuses) else "FAIL"
 
     def row_table(results):
         rows = ""
@@ -161,56 +174,69 @@ def write_validation_report(args, row_results, col_results, id_results, samples)
     def col_table(results):
         rows = ""
         for tbl, v in results.items():
-            rows += f"| `{tbl}` | {v['expected']} | {v['actual']} | {', '.join(v['columns'])} | **{v['status']}** |\n"
+            rows += (f"| `{tbl}` | {v['expected']} | {v['actual']} | "
+                     f"{', '.join(v['columns'])} | **{v['status']}** |\n")
         return rows
 
     def id_table(results):
         rows = ""
         for tbl, v in results.items():
-            rows += f"| `{tbl}.{v['id_col']}` | {v['nulls']} | {v['duplicates']} | **{v['status']}** |\n"
+            rows += (f"| `{tbl}.{v['id_col']}` | {v['nulls']} | "
+                     f"{v['duplicates']} | **{v['status']}** |\n")
         return rows
 
     def sample_section(tbl_key, fields):
         rows_list = samples.get(tbl_key, [])
         if not rows_list:
             return "_No data_\n"
-        header = "| " + " | ".join(fields) + " |"
-        sep    = "| " + " | ".join(["---"] * len(fields)) + " |"
+        header    = "| " + " | ".join(fields) + " |"
+        sep       = "| " + " | ".join(["---"] * len(fields)) + " |"
         data_rows = ""
         for r in rows_list:
             vals = [str(r.get(f, ""))[:60].replace("|", "\\|") for f in fields]
             data_rows += "| " + " | ".join(vals) + " |\n"
         return header + "\n" + sep + "\n" + data_rows
 
+    row_summary  = "PASS" if all(v["status"] == "PASS" for v in row_results.values()) else "FAIL"
+    col_summary  = "PASS" if all(v["status"] == "PASS" for v in col_results.values()) else "FAIL"
+    id_summary   = "PASS" if all(v["status"] == "PASS" for v in id_results.values()) else "FAIL"
+
     md = f"""# RAW IMPORT VALIDATION REPORT — FEATURE 1.3
 
-> **Database:** {args.database} @ {args.host}:{args.port} · **Date:** {now}
-> **Overall status:** **{overall}**
+## 1. Metadata
+
+| Field | Value |
+|-------|-------|
+| Database | `{args.database}` @ `{args.host}:{args.port}` |
+| User | `{args.user}` |
+| Date/Time | {now} |
+| Base directory | `{base}` |
+| Overall status | **{overall}** |
 
 ---
 
-## 1. Row Count Validation
+## 2. Row Count Validation
 
 | Table | Expected | Actual | Status |
 |-------|---------|--------|--------|
 {row_table(row_results)}
 ---
 
-## 2. Column Validation
+## 3. Column Validation
 
 | Table | Expected cols | Actual cols | Columns | Status |
 |-------|-------------|------------|---------|--------|
 {col_table(col_results)}
 ---
 
-## 3. ID Validation
+## 4. ID Validation
 
 | Column | Null count | Duplicate count | Status |
 |--------|-----------|-----------------|--------|
 {id_table(id_results)}
 ---
 
-## 4. Sample Records
+## 5. Sample Records
 
 ### raw.raw_tracks (5 rows)
 
@@ -226,24 +252,27 @@ def write_validation_report(args, row_results, col_results, id_results, samples)
 
 ---
 
-## 5. Validation Summary
+## 6. Validation Summary
 
 | Check | Result |
 |-------|--------|
-| Row counts | {'PASS' if all(v['status']=='PASS' for v in row_results.values()) else 'FAIL'} |
-| Column counts | {'PASS' if all(v['status'] in ('PASS','WARN') for v in col_results.values()) else 'FAIL'} |
-| ID uniqueness | {'PASS' if all(v['status']=='PASS' for v in id_results.values()) else 'FAIL'} |
+| Row counts | {row_summary} |
+| Column counts | {col_summary} |
+| ID uniqueness | {id_summary} |
 | **Overall** | **{overall}** |
 """
-    with open(report_path, "w", encoding="utf-8") as f:
+    with open(str(report_path), "w", encoding="utf-8") as f:
         f.write(md)
     print(f"\n  Validation report written → {report_path}")
     return report_path, overall
 
 def main():
     args = parse_args()
-    print(f"HitRadar Feature 1.3 — Raw Import Validation")
+    base, log_dir = resolve_log_dir(args)
+
+    print("HitRadar Feature 1.3 — Raw Import Validation")
     print(f"Database: {args.database} @ {args.host}:{args.port}")
+    print(f"Base directory: {base}")
 
     conn = get_conn(args)
     cur  = conn.cursor()
@@ -257,7 +286,7 @@ def main():
     conn.close()
 
     report_path, overall = write_validation_report(
-        args, row_results, col_results, id_results, samples
+        args, base, log_dir, row_results, col_results, id_results, samples
     )
 
     print("\n=== VALIDATION SUMMARY ===")
@@ -265,6 +294,9 @@ def main():
         print(f"  {tbl}: {v['actual']:,} rows → {v['status']}")
     print(f"\nOverall: {overall}")
     print(f"Report: {report_path}")
+
+    if overall != "PASS":
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
