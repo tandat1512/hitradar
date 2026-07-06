@@ -155,6 +155,77 @@ python "$project\9.SCRIPTS\import_raw_data.py" `
 # 3. Validate
 python "$project\9.SCRIPTS\validate_raw_import.py" `
     --base-dir $project --database $db --user $u
+
+# 4. Clean (Feature 1.4)
+python "$project\9.SCRIPTS\clean_raw_to_clean.py" `
+    --base-dir $project --database $db --user $u --reset-clean
+
+# 5. Validate clean
+python "$project\9.SCRIPTS\validate_clean_tables.py" `
+    --base-dir $project --database $db --user $u
+```
+
+---
+
+## Feature 1.4 — Data Cleaning & Normalization
+
+### Bước 6 — (Tùy chọn) Mở notebook exploration
+
+```powershell
+jupyter notebook "$project\3.NOTEBOOKS\3.3.lam_sach_python\01_feature_1_4_cleaning_exploration.ipynb"
+```
+
+### Bước 7 — Chạy cleaning script
+
+```powershell
+$env:PGPASSWORD = "your_password"
+$project = "X:\DUAN1\HitRadar_Pro"
+
+python "$project\9.SCRIPTS\clean_raw_to_clean.py" `
+    --base-dir $project --database hitradar --user postgres --reset-clean
+```
+
+**Kết quả mong đợi:**
+```
+clean.tracks:           586,672
+clean.artists:        1,162,095
+clean.genres:             5,366
+clean.track_artists:    730,946
+clean.artist_genres:    468,680
+clean.artist_relations: 8,864,471
+Feature 1.4 cleaning status: PASS
+```
+
+### Bước 8 — Chạy validate clean
+
+```powershell
+python "$project\9.SCRIPTS\validate_clean_tables.py" `
+    --base-dir $project --database hitradar --user postgres
+```
+
+**Kết quả mong đợi:** `Overall: PASS`
+
+### Bước 9 — (Tùy chọn) Mở notebook validation
+
+```powershell
+jupyter notebook "$project\3.NOTEBOOKS\3.3.lam_sach_python\02_feature_1_4_clean_validation.ipynb"
+```
+
+### Bước 10 — Kiểm tra reports
+
+```powershell
+# Reports sinh tự động sau khi chạy scripts:
+# - $project\6.TAI_LIEU\6.1.bao_cao\CLEANING_LOG.md
+# - $project\6.TAI_LIEU\6.1.bao_cao\CLEAN_TABLE_VALIDATION_REPORT.md
+```
+
+### Reset clean tables nếu cần chạy lại
+
+```powershell
+$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
+$project = "X:\DUAN1\HitRadar_Pro"
+& $psql -v ON_ERROR_STOP=1 -U postgres -d hitradar `
+    -f "$project\2.DATABASE_SQL\2.3.lam_sach\01_reset_clean_tables.sql"
 ```
 
 ---
