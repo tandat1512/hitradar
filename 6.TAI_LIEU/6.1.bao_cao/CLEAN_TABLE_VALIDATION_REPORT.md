@@ -1,4 +1,5 @@
 # CLEAN TABLE VALIDATION REPORT — FEATURE 1.4
+> Version: hotfix (extended checks)
 
 ## 1. Metadata
 
@@ -6,7 +7,7 @@
 |-------|-------|
 | Database | `hitradar` @ `localhost:5432` |
 | User | `postgres` |
-| Date/Time | 2026-07-06 05:04 UTC |
+| Date/Time | 2026-07-06 05:23 UTC |
 | Base directory | `X:\DUAN1\HitRadar_Pro` |
 | **Overall** | **PASS** |
 
@@ -37,10 +38,22 @@
 
 ---
 
-## 4. release_precision Validation
+## 4. Missing Value Handling
 
-| Distribution | Count |
-|-------------|-------|
+> Rule: NULL is retained in clean layer — rows are NOT dropped. Status = PASS.
+
+| Column | NULL Count | Rule | Status |
+|--------|-----------|------|--------|
+| clean.tracks.name | 71 | Retained NULL | **PASS** |
+| clean.artists.name | 0 | Retained NULL | **PASS** |
+| clean.artists.followers | 11 | Retained NULL (missing or negative) | **PASS** |
+
+---
+
+## 5. release_precision Validation
+
+| Precision | Count |
+|-----------|-------|
 | day | 448,081 |
 | year | 136,489 |
 | month | 2,102 |
@@ -51,18 +64,32 @@
 
 ---
 
-## 5. Tempo / Time Signature Validation
+## 6. Release Derived Column Consistency
+
+| Check | Count | Status |
+|-------|-------|--------|
+| precision='year' but release_month non-null | 0 | **PASS** |
+| precision='month' but release_month IS NULL | 0 | **PASS** |
+| precision='day' but release_date IS NULL | 0 | **PASS** |
+| release_year non-null but decade IS NULL | 0 | **PASS** |
+| **Overall** | | **PASS** |
+
+---
+
+## 7. Tempo / Time Signature Validation
 
 | Check | Count | Status |
 |-------|-------|--------|
 | tempo <= 0 remaining | 0 | **PASS** |
 | tempo IS NULL (converted) | 328 | INFO |
 | time_signature = 0 remaining | 0 | **PASS** |
+| time_signature outside 1–5 (non-NULL) | 0 | **PASS** |
 | time_signature IS NULL (converted) | 337 | INFO |
+| **ts Overall** | | **PASS** |
 
 ---
 
-## 6. Duration Validation
+## 8. Duration Validation
 
 | Check | Count | Status |
 |-------|-------|--------|
@@ -72,7 +99,31 @@
 
 ---
 
-## 7. FK Sanity Checks
+## 9. Audio Feature Range Validation [0, 1]
+
+| Feature | Out-of-range count | Status |
+|---------|-------------------|--------|
+| danceability | 0 | **PASS** |
+| energy | 0 | **PASS** |
+| speechiness | 0 | **PASS** |
+| acousticness | 0 | **PASS** |
+| instrumentalness | 0 | **PASS** |
+| liveness | 0 | **PASS** |
+| valence | 0 | **PASS** |
+
+---
+
+## 10. Popularity Range Validation [0, 100]
+
+| Column | Out-of-range count | Status |
+|--------|-------------------|--------|
+| clean.tracks.popularity | 0 | **PASS** |
+| clean.artists.popularity | 0 | **PASS** |
+| **Overall** | | **PASS** |
+
+---
+
+## 11. FK Sanity Checks
 
 | Check | Orphan rows | Status |
 |-------|------------|--------|
@@ -84,7 +135,35 @@
 
 ---
 
-## 8. Sample Records
+## 12. Relationship Coverage (WARNING — not structural FAIL)
+
+### track_artists Coverage
+
+| Metric | Value |
+|--------|-------|
+| Inserted into clean.track_artists | 730,946 |
+| Skipped (unknown artist FK) | 26,224 |
+| Estimated total parsed assignments | 757,170 |
+| Coverage ratio | 96.54% |
+| Skip ratio | 3.46% |
+| **Status** | **WARNING — Feature 1.5 data quality gate** |
+
+> Skipped artists are Spotify artist IDs referenced in `id_artists` but absent from `artists.csv`.
+> This is expected for very niche/inactive artists. Feature 1.5 will set an acceptance threshold.
+
+### artist_relations Coverage
+
+| Metric | Value |
+|--------|-------|
+| Total raw value assignments (`raw_artist_json`) | 8,864,472 |
+| Inserted distinct pairs | 8,864,471 |
+| Difference | 1 |
+| Likely cause | ON CONFLICT — 1 duplicate pair collapsed |
+| **Status** | **WARNING — difference=1, not a data loss blocker** |
+
+---
+
+## 13. Sample Records
 
 ### clean.tracks
 
@@ -142,6 +221,9 @@
 
 ---
 
-## 9. Overall Status
+## 14. Overall Status
 
 **PASS**
+
+> Structural checks (row counts, IDs, precision, tempo/ts, duration, FK, release derived, audio range, popularity range): all PASS.
+> Coverage warnings (track_artists skip ratio, artist_relations diff=1) are documented but do not block Feature 1.4 close.

@@ -48,15 +48,40 @@
 
 ## 4. Warnings / Outliers
 
-| Warning | Count |
-|---------|-------|
-| duration_ms < 10,000 (short tracks) | 26 |
-| duration_ms > 3,600,000 (long tracks) | 83 |
-| track_artists skipped (unknown artist FK) | 26,224 |
-| artist_relations skipped (unknown FK) | 0 |
+| Warning | Count | Xử lý |
+|---------|-------|-------|
+| duration_ms < 10,000 ms (short tracks) | **26** | Giữ lại theo rule — không phải lỗi, ghi warning |
+| duration_ms > 3,600,000 ms (long tracks) | **83** | Giữ lại theo rule — không phải lỗi, ghi warning |
+| track_artists skipped (unknown artist FK) | **26,224** | Artist ID referenced in `id_artists` nhưng không có trong `artists.csv` — coverage warning, Feature 1.5 |
+| artist_relations skipped (unknown FK) | **0** | Không có orphan |
+
+### track_artists Coverage Detail
+
+| Metric | Value |
+|--------|-------|
+| Inserted into `clean.track_artists` | 730,946 |
+| Skipped (artist_id not in `clean.artists`) | **26,224** |
+| Estimated total parsed assignments | **757,170** |
+| Coverage ratio | **96.54%** |
+| Skip ratio | **3.46%** |
+| Status | **WARNING** — not a blocker, Feature 1.5 sẽ set threshold |
+
+### artist_relations Insertion Detail
+
+| Metric | Value |
+|--------|-------|
+| Total raw value assignments (`SUM(raw_artist_json.value_count)`) | **8,864,472** |
+| Inserted distinct pairs (`clean.artist_relations`) | **8,864,471** |
+| Difference | **1** |
+| Likely cause | 1 duplicate `(artist_id, related_artist_id)` pair collapsed by `ON CONFLICT DO NOTHING` |
+| Status | **WARNING** — difference=1, not a data loss blocker |
 
 ---
 
 ## 5. Status
 
-**PASS** — Clean layer populated. Proceed to validate_clean_tables.py.
+**PASS** — Clean layer populated. Validation PASS (extended checks, 15 structural checks).
+
+> Hotfix note (2026-07-07): CLEANING_LOG updated with clarified coverage warnings.
+> Duration outliers are retained per rule — NOT errors.
+> track_artists 3.46% skip ratio and artist_relations diff=1 are documented warnings for Feature 1.5.
