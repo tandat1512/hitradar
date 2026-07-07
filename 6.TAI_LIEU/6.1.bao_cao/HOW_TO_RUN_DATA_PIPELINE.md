@@ -305,6 +305,48 @@ Các file này được gitignore (chứa output thực tế có thể lớn).
 
 ---
 
+---
+
+## Feature 1.5 — Data Quality Gates
+
+Chạy 12 quality gates trên clean layer. Read-only — không sửa database.
+
+```powershell
+# Run all 12 gates
+$env:PGPASSWORD = "your_password"
+python "$project\9.SCRIPTS\run_data_quality_gates.py" `
+    --base-dir $project --database hitradar --user postgres
+```
+
+**Kết quả mong đợi (baseline):**
+
+| Gate | Kết quả |
+|------|---------|
+| G01 Null Ratio | PASS |
+| G02 Duplicates | PASS |
+| G03 Audio Range | PASS |
+| G04 Popularity Range | PASS |
+| G05 Duration | WARNING (short=26, long=83) |
+| G06 Tempo/Loudness | WARNING (loudness>0 = 219) |
+| G07 Release Date | PASS |
+| G08 Artist Coverage | PASS (96.54%) |
+| G09 Genre Coverage | PASS (100.00%) |
+| G10 Row Counts | PASS |
+| G11 FK Orphans | PASS |
+| G12 ML-safe Notes | PASS |
+| **Overall** | **PASS_WITH_WARNINGS** |
+
+**Quyết định:**
+- `PASS` hoặc `PASS_WITH_WARNINGS` → **Được chuyển Feature 1.6**.
+- `FAIL` → **Không được chuyển**. Quay lại Feature 1.4 hoặc mở Feature 1.5 follow-up.
+
+**Reports:**
+- `6.TAI_LIEU/6.1.bao_cao/DATA_QUALITY_RULES.md` — Gate definitions
+- `6.TAI_LIEU/6.1.bao_cao/DATA_QUALITY_REPORT.md` — Auto-generated report
+- `2.DATABASE_SQL/2.3.lam_sach/03_data_quality_gates.sql` — Manual SQL checks
+
+---
+
 ## Files quan trọng
 
 | File | Mô tả |
@@ -313,7 +355,13 @@ Các file này được gitignore (chứa output thực tế có thể lớn).
 | `9.SCRIPTS/validate_raw_import.py` | Script validate sau import |
 | `9.SCRIPTS/audit_raw_data.py` | Script audit raw files (Feature 1.1) |
 | `9.SCRIPTS/verify_dict_artists_semantic.py` | Script xác minh dict_artists.json (Feature 1.2) |
+| `9.SCRIPTS/clean_raw_to_clean.py` | Script cleaning Feature 1.4 |
+| `9.SCRIPTS/validate_clean_tables.py` | Script validate clean layer (extended) |
+| `9.SCRIPTS/run_data_quality_gates.py` | Script data quality gates Feature 1.5 |
 | `2.DATABASE_SQL/2.1.tao_bang/` | 5 file DDL (chạy theo thứ tự 01→05) |
+| `2.DATABASE_SQL/2.3.lam_sach/` | SQL cleaning + quality checks |
 | `6.TAI_LIEU/6.1.bao_cao/IMPORT_LOG.md` | Log import lần cuối |
-| `6.TAI_LIEU/6.1.bao_cao/RAW_IMPORT_VALIDATION_REPORT.md` | Validation report |
+| `6.TAI_LIEU/6.1.bao_cao/RAW_IMPORT_VALIDATION_REPORT.md` | Validation report raw layer |
+| `6.TAI_LIEU/6.1.bao_cao/CLEAN_TABLE_VALIDATION_REPORT.md` | Validation report clean layer |
+| `6.TAI_LIEU/6.1.bao_cao/DATA_QUALITY_REPORT.md` | Quality gate report |
 | `6.TAI_LIEU/6.1.bao_cao/evidence/` | Terminal logs (audit trail) |
