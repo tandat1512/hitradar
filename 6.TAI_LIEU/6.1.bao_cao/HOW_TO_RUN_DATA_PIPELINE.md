@@ -347,6 +347,52 @@ python "$project\9.SCRIPTS\run_data_quality_gates.py" `
 
 ---
 
+---
+
+## Feature 1.6 — Analytics Views & Indexes
+
+Tạo 10 analytics views và indexes từ clean layer.
+
+```powershell
+$env:PGPASSWORD = "your_password"
+$views = "$project\2.DATABASE_SQL\2.4.views"
+$idx   = "$project\2.DATABASE_SQL\2.5.indexes"
+
+# 1. Tạo views (DROP + CREATE OR REPLACE — idempotent)
+& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$views\01_create_analytics_views.sql"
+
+# 2. Tạo indexes (CREATE IF NOT EXISTS — idempotent)
+& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$idx\01_create_indexes.sql"
+
+# 3. Validate views
+python "$project\9.SCRIPTS\validate_analytics_views.py" `
+    --base-dir $project --database $db --user $u
+```
+
+**Kết quả mong đợi:**
+
+| Check | Kết quả |
+|-------|---------|
+| 10 views exist | PASS |
+| vw_tracks_overview count | 586,672 |
+| vw_ml_training_dataset count | 586,672 |
+| vw_top_artists count | 81,776 |
+| vw_genre_trends count | 19,103 |
+| ML-safe audit | PASS (no leakage) |
+| Genre dedup CTE | PASS |
+| Overall | PASS |
+
+**Quyết định:**
+- `PASS` hoặc `PASS_WITH_WARNINGS` → **Được chuyển Feature 1.7**.
+- `FAIL` → Kiểm tra views bị lỗi, chạy lại SQL.
+
+**Optional:** Chạy EXPLAIN ANALYZE thủ công:
+```powershell
+& $psql -U $u -d $db -f "$views\02_explain_analyze_queries.sql"
+```
+
+---
+
 ## Files quan trọng
 
 | File | Mô tả |
@@ -358,10 +404,14 @@ python "$project\9.SCRIPTS\run_data_quality_gates.py" `
 | `9.SCRIPTS/clean_raw_to_clean.py` | Script cleaning Feature 1.4 |
 | `9.SCRIPTS/validate_clean_tables.py` | Script validate clean layer (extended) |
 | `9.SCRIPTS/run_data_quality_gates.py` | Script data quality gates Feature 1.5 |
+| `9.SCRIPTS/validate_analytics_views.py` | Script validate analytics views Feature 1.6 |
 | `2.DATABASE_SQL/2.1.tao_bang/` | 5 file DDL (chạy theo thứ tự 01→05) |
 | `2.DATABASE_SQL/2.3.lam_sach/` | SQL cleaning + quality checks |
+| `2.DATABASE_SQL/2.4.views/` | SQL analytics views |
+| `2.DATABASE_SQL/2.5.indexes/` | SQL indexes |
 | `6.TAI_LIEU/6.1.bao_cao/IMPORT_LOG.md` | Log import lần cuối |
 | `6.TAI_LIEU/6.1.bao_cao/RAW_IMPORT_VALIDATION_REPORT.md` | Validation report raw layer |
 | `6.TAI_LIEU/6.1.bao_cao/CLEAN_TABLE_VALIDATION_REPORT.md` | Validation report clean layer |
 | `6.TAI_LIEU/6.1.bao_cao/DATA_QUALITY_REPORT.md` | Quality gate report |
+| `6.TAI_LIEU/6.1.bao_cao/ANALYTICS_VIEW_VALIDATION_REPORT.md` | Analytics view validation |
 | `6.TAI_LIEU/6.1.bao_cao/evidence/` | Terminal logs (audit trail) |
