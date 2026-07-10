@@ -99,7 +99,7 @@ Carry-forward từ Feature 1.5:
 | Time_signature NULL | 337 | Cần impute EPIC 2 |
 
 **Giới hạn notebooks:**  
-- Validation là static check — cần chạy kernel thực tế để xác nhận kết quả biểu đồ.
+- Validation đã chạy thật bằng nbconvert --execute. 42/42 code cells executed, 0 errors, 16 biểu đồ. Không còn là static check.
 - Correlation tính bằng aggregate SQL CORR() — không qua pandas/scipy nhưng kết quả tương đương.
 - Không dùng seaborn, không load raw 586K rows vào RAM — thiết kế nhẹ và production-safe.
 

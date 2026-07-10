@@ -175,7 +175,7 @@ Những warning sau được carry-forward từ Feature 1.5 và cần được x
 
 ## 11. Conclusion
 
-Dataset HitRadar (586,672 tracks, 101 năm, 4,672 genres) đã qua pipeline F1.1–F1.6 sạch và sẵn sàng.
+Dataset HitRadar (586,672 tracks, 101 năm, 5,366 genres trong clean.genres; 4,672 genres xuất hiện trong track-level analytics) đã qua pipeline F1.1–F1.6 sạch và sẵn sàng.
 
 **Status: PASS_WITH_WARNINGS — EXECUTED**
 
