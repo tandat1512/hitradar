@@ -1,8 +1,8 @@
 # EDA INSIGHTS REPORT — FEATURE 1.7
 **Project:** HitRadar Pro  
 **Owner:** Đạt  
-**Date:** 2026-07-04  
-**Status:** PASS_WITH_WARNINGS
+**Date:** 2026-07-10  
+**Status:** PASS_WITH_WARNINGS — EXECUTED
 
 ---
 
@@ -39,7 +39,9 @@ Mục tiêu:
 |--------|---------|
 | Tổng tracks | **586,672** |
 | Artists có track | **81,776** |
-| Unique genres | **4,672** |
+| Genres trong `clean.genres` (total) | **5,366** |
+| Genres xuất hiện trong track-level data (`vw_genre_trends`) | **4,672** |
+| Genres không liên kết với track nào | **694** (thuộc artists bị skip do coverage 96.54%) |
 | Số năm phát hành | **101** (1921–2021) |
 | Số thập kỷ | **12** (1900–2020) |
 | Thập kỷ nhiều tracks nhất | **1990s** (108,875) |
@@ -99,7 +101,10 @@ Mục tiêu:
 - **Genre bias:** Top genres: rock (32,026), adult standards (26,688), classic rock (23,808), filmi (19,557), classical (18,995).
   - Dataset thiên về rock và nhạc cổ điển — đa dạng nhưng có bias.
 - **Coverage warning:** track_artists = 96.54% — 26,224 tracks thiếu artist info.
-- **Genre join coverage = 100%** — sạch, không ảnh hưởng phân tích.
+- **Genre count clarification:**
+  - `clean.genres` (total): **5,366** genres
+  - `vw_genre_trends` (track-linked): **4,672** genres
+  - Chênh lệch **694** genres: thuộc artists bị skip trong 3.46% coverage gap — không phải lỗi data.
 - **Đề xuất:** Sử dụng genre như categorical feature trong ML nhưng cần embedding hoặc top-N truncation (4,672 genres quá nhiều cho one-hot).
 
 ---
@@ -172,12 +177,14 @@ Những warning sau được carry-forward từ Feature 1.5 và cần được x
 
 Dataset HitRadar (586,672 tracks, 101 năm, 4,672 genres) đã qua pipeline F1.1–F1.6 sạch và sẵn sàng.
 
-**Status: PASS_WITH_WARNINGS**
+**Status: PASS_WITH_WARNINGS — EXECUTED**
 
 - ✅ Không có lỗi cấu trúc dữ liệu.
 - ✅ 10 analytics views hoạt động đúng.
-- ✅ 6 EDA notebooks đã tạo và chứa insight có bằng chứng từ actual data.
+- ✅ 6 EDA notebooks đã **execute thật** — 42/42 cells, 0 errors, 16 biểu đồ.
+- ✅ Insight có bằng chứng từ actual DB queries (executed outputs).
 - ⚠️ Các warnings về outliers và coverage được ghi nhận đầy đủ.
 - ⚠️ Class imbalance (popularity) và time bias (release_year) cần chiến lược ML phù hợp ở EPIC 2.
+- ℹ️ Genre: clean.genres=5,366 total; vw_genre_trends=4,672 (track-linked only).
 
 **Dataset sẵn sàng cho Feature 1.8 — ML-safe Dataset Handoff.**
