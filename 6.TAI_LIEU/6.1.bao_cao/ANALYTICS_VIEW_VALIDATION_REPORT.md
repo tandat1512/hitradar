@@ -8,7 +8,7 @@
 | Owner | Đạt |
 | Database | `hitradar` @ `localhost:5432` |
 | User | `postgres` |
-| Date/Time | 2026-07-08 05:58 UTC |
+| Date/Time | 2026-07-08 06:04 UTC |
 | Script | `9.SCRIPTS/validate_analytics_views.py` |
 | **Overall** | **PASS** |
 
@@ -119,10 +119,10 @@ Missing required metrics: None
 
 | View | Timing / Note | Status |
 |------|--------------|--------|
-| `vw_tracks_by_decade` | 315 ms total | Execution Time: 313.801 ms | **PASS** |
-| `vw_top_artists` | 2266 ms total | Execution Time: 2264.360 ms | **PASS** |
-| `vw_genre_trends` | 587 ms total | Execution Time: 585.335 ms | **PASS** |
-| `vw_ml_training_dataset` | 0 ms total | Execution Time: 0.126 ms | **PASS** |
+| `vw_tracks_by_decade` | 333 ms total | Execution Time: 332.823 ms | **PASS** |
+| `vw_top_artists` | 2441 ms total | Execution Time: 2438.853 ms | **PASS** |
+| `vw_genre_trends` | 590 ms total | Execution Time: 588.058 ms | **PASS** |
+| `vw_ml_training_dataset` | 1 ms total | Execution Time: 0.187 ms | **PASS** |
 
 > Threshold: > 10,000 ms = WARNING. Views on large tables without filters may be slow.
 
