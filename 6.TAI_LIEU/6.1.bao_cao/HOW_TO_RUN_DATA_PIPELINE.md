@@ -393,6 +393,58 @@ python "$project\9.SCRIPTS\validate_analytics_views.py" `
 
 ---
 
+## Feature 1.7 — EDA & Data Understanding Notebooks
+
+Chạy 6 EDA notebooks theo thứ tự để phân tích dữ liệu từ analytics views.
+
+```powershell
+$env:PGPASSWORD = "your_password"
+
+# Mở Jupyter Notebook trong thư mục EDA
+jupyter notebook "$project\3.NOTEBOOKS\3.4.eda"
+```
+
+**Thứ tự chạy notebooks:**
+
+| # | File | Mục tiêu |
+|---|------|---------|
+| 01 | `01_dataset_overview.ipynb` | Tổng quan dataset, data quality check |
+| 02 | `02_popularity_analysis.ipynb` | Phân bố popularity (label ML) |
+| 03 | `03_audio_features_distribution.ipynb` | Phân bố và trend 7 audio features |
+| 04 | `04_time_decade_trends.ipynb` | Explicit, duration, track count theo thập kỷ |
+| 05 | `05_artist_genre_analysis.ipynb` | Top artists, genres, coverage warning |
+| 06 | `06_correlation_outlier_analysis.ipynb` | Correlation với target, outlier analysis |
+
+**Lưu ý khi chạy:**
+- Đặt `PGPASSWORD` trước khi mở Jupyter.
+- Chạy từng cell theo thứ tự từ trên xuống dưới (Run All hoặc Shift+Enter từng cell).
+- Mỗi notebook tự đóng connection ở cell cuối.
+
+**Kết quả mong đợi:**
+
+| Check | Kết quả |
+|-------|---------|
+| Kết nối DB thành công | 6/6 notebooks |
+| Biểu đồ render | ✅ |
+| Không lỗi SQL | ✅ |
+| target_popularity đánh dấu là label | ✅ |
+| Insight có bằng chứng | ✅ |
+| Overall | PASS_WITH_WARNINGS |
+
+**Reports tạo ra:**
+```
+6.TAI_LIEU/6.1.bao_cao/
+├── EDA_INSIGHTS_REPORT.md
+├── EDA_NOTEBOOK_VALIDATION_REPORT.md
+└── FEATURE_1_7_COMPLETION_REPORT.md
+```
+
+**Quyết định:**
+- Notebooks chạy pass + có insight → **Được chuyển Feature 1.8 — ML-safe Handoff**.
+- Notebook lỗi SQL → Kiểm tra DB connection, đảm bảo Feature 1.6 đã chạy.
+
+---
+
 ## Files quan trọng
 
 | File | Mô tả |
@@ -414,4 +466,13 @@ python "$project\9.SCRIPTS\validate_analytics_views.py" `
 | `6.TAI_LIEU/6.1.bao_cao/CLEAN_TABLE_VALIDATION_REPORT.md` | Validation report clean layer |
 | `6.TAI_LIEU/6.1.bao_cao/DATA_QUALITY_REPORT.md` | Quality gate report |
 | `6.TAI_LIEU/6.1.bao_cao/ANALYTICS_VIEW_VALIDATION_REPORT.md` | Analytics view validation |
+| `3.NOTEBOOKS/3.4.eda/01_dataset_overview.ipynb` | EDA Notebook 01 — Dataset Overview |
+| `3.NOTEBOOKS/3.4.eda/02_popularity_analysis.ipynb` | EDA Notebook 02 — Popularity Analysis |
+| `3.NOTEBOOKS/3.4.eda/03_audio_features_distribution.ipynb` | EDA Notebook 03 — Audio Features |
+| `3.NOTEBOOKS/3.4.eda/04_time_decade_trends.ipynb` | EDA Notebook 04 — Time & Decade Trends |
+| `3.NOTEBOOKS/3.4.eda/05_artist_genre_analysis.ipynb` | EDA Notebook 05 — Artist & Genre |
+| `3.NOTEBOOKS/3.4.eda/06_correlation_outlier_analysis.ipynb` | EDA Notebook 06 — Correlation & Outlier |
+| `6.TAI_LIEU/6.1.bao_cao/EDA_INSIGHTS_REPORT.md` | EDA insights summary (Feature 1.7) |
+| `6.TAI_LIEU/6.1.bao_cao/EDA_NOTEBOOK_VALIDATION_REPORT.md` | Notebook validation report (Feature 1.7) |
+| `6.TAI_LIEU/6.1.bao_cao/FEATURE_1_7_COMPLETION_REPORT.md` | Feature 1.7 completion report |
 | `6.TAI_LIEU/6.1.bao_cao/evidence/` | Terminal logs (audit trail) |
