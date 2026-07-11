@@ -1,7 +1,7 @@
 # HOW TO RUN DATA PIPELINE — HitRadar EPIC 1
 
 > **Dự án:** HitRadar Pro | **EPIC:** EPIC 1 — Data Foundation & Data Understanding
-> **Cập nhật:** Feature 1.3 hotfix (reproducible pipeline)
+> **Cập nhật:** EPIC 1 pipeline through Feature 1.9 — Documentation & Epic Review
 
 ---
 
@@ -445,6 +445,114 @@ jupyter notebook "$project\3.NOTEBOOKS\3.4.eda"
 
 ---
 
+## Feature 1.8 — ML-Safe Dataset Handoff
+
+Tạo view ML-ready, export CSV/Parquet, validate và bàn giao sang EPIC 2.
+
+```powershell
+$env:PGPASSWORD = "your_password"
+$handoff = "$project\2.DATABASE_SQL\2.6.ml_handoff"
+
+# 1. Tạo view analytics.vw_ml_ready_dataset
+& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$handoff\01_create_ml_ready_dataset.sql"
+
+# 2. Export CSV + Parquet
+python "$project\9.SCRIPTS\export_ml_ready_dataset.py" `
+    --base-dir $project --database $db --user $u
+
+# 3. Validate (read-only)
+python "$project\9.SCRIPTS\validate_ml_ready_dataset.py" `
+    --base-dir $project --database $db --user $u
+```
+
+**Kết quả mong đợi:**
+
+| Check | Kết quả |
+|-------|---------|
+| `analytics.vw_ml_ready_dataset` tồn tại | ✅ |
+| Row count = 586,672 | ✅ |
+| 20 columns (no leakage) | ✅ |
+| CSV export tồn tại | ✅ |
+| Parquet export | ✅ hoặc WARNING nếu thiếu pyarrow |
+| Overall validation | PASS hoặc PASS_WITH_WARNINGS |
+
+**Outputs tạo ra:**
+```
+2.DATABASE_SQL/2.6.ml_handoff/01_create_ml_ready_dataset.sql
+5.DATA/processed/ml_ready_dataset.csv
+5.DATA/processed/ml_ready_dataset.parquet   (nếu có dependency)
+6.TAI_LIEU/6.1.bao_cao/
+├── feature_dictionary.md
+├── ml_excluded_columns.md
+├── data_leakage_risks.md
+├── popularity_limitations.md
+├── handoff_to_epic2.md
+├── ML_READY_DATASET_VALIDATION_REPORT.md
+└── FEATURE_1_8_COMPLETION_REPORT.md
+```
+
+**Quyết định:**
+- Validation PASS hoặc PASS_WITH_WARNINGS + CSV OK + không leakage → **Đóng Feature 1.8, chuyển Feature 1.9**.
+- FAIL (thiếu view, row count sai, leakage columns, thiếu CSV) → Kiểm tra Feature 1.6/1.7 đã chạy, chạy lại pipeline.
+
+---
+
+## Feature 1.9 — Documentation & Epic Review
+
+**Không chạy SQL. Không sửa DB. Chỉ review và hoàn thiện documentation.**
+
+### Docs cần kiểm tra
+
+| # | File | Mục tiêu |
+|---|------|---------|
+| 1 | `DATA_DICTIONARY.md` | Official data dictionary EPIC 1 |
+| 2 | `DATABASE_SCHEMA.md` | Schema 3-layer + ML handoff |
+| 3 | `DATA_CLEANING_RULES.md` | Final cleaning rules |
+| 4 | `DATA_QUALITY_REPORT.md` | Final quality summary |
+| 5 | `EDA_FINDINGS.md` | EDA insights tổng hợp |
+| 6 | `HOW_TO_RUN_DATA_PIPELINE.md` | Pipeline guide đầy đủ F1.2–F1.9 |
+| 7 | `EPIC1_DEFINITION_OF_DONE_REVIEW.md` | DoD checklist F1.0–F1.9 |
+| 8 | `EPIC1_SPRINT_REVIEW_DEMO.md` | Demo script 5 phút |
+| 9 | `FEATURE_1_9_COMPLETION_REPORT.md` | Feature 1.9 completion |
+
+### Quy trình review
+
+```powershell
+# Không cần PGPASSWORD — chỉ đọc docs
+$docs = "$project\6.TAI_LIEU\6.1.bao_cao"
+
+# Kiểm tra từng file tồn tại
+@(
+    "DATA_DICTIONARY.md",
+    "DATABASE_SCHEMA.md",
+    "DATA_CLEANING_RULES.md",
+    "DATA_QUALITY_REPORT.md",
+    "EDA_FINDINGS.md",
+    "EPIC1_DEFINITION_OF_DONE_REVIEW.md",
+    "EPIC1_SPRINT_REVIEW_DEMO.md",
+    "FEATURE_1_9_COMPLETION_REPORT.md"
+) | ForEach-Object {
+    $path = Join-Path $docs $_
+    if (Test-Path $path) { Write-Host "OK: $_" } else { Write-Host "MISSING: $_" }
+}
+```
+
+**Kết quả mong đợi:**
+
+| Check | Kết quả |
+|-------|---------|
+| Tất cả 9 docs F1.9 tồn tại | ✅ |
+| DoD review: features 1.0–1.9 có evidence | ✅ |
+| Không có FAIL gate / FAIL validation | ✅ |
+| EPIC 1 decision | PASS_WITH_WARNINGS |
+| Sprint Review demo script sẵn sàng | ✅ |
+
+**Quyết định:**
+- Docs đủ + DoD PASS_WITH_WARNINGS → **Đóng EPIC 1, Sprint Review, chuyển EPIC 2**.
+- Thiếu evidence file quan trọng → đánh dấu BLOCKED trong DoD review.
+
+---
+
 ## Files quan trọng
 
 | File | Mô tả |
@@ -457,6 +565,9 @@ jupyter notebook "$project\3.NOTEBOOKS\3.4.eda"
 | `9.SCRIPTS/validate_clean_tables.py` | Script validate clean layer (extended) |
 | `9.SCRIPTS/run_data_quality_gates.py` | Script data quality gates Feature 1.5 |
 | `9.SCRIPTS/validate_analytics_views.py` | Script validate analytics views Feature 1.6 |
+| `9.SCRIPTS/export_ml_ready_dataset.py` | Script export ML-ready dataset Feature 1.8 |
+| `9.SCRIPTS/validate_ml_ready_dataset.py` | Script validate ML-ready dataset Feature 1.8 |
+| `2.DATABASE_SQL/2.6.ml_handoff/` | SQL ML handoff view Feature 1.8 |
 | `2.DATABASE_SQL/2.1.tao_bang/` | 5 file DDL (chạy theo thứ tự 01→05) |
 | `2.DATABASE_SQL/2.3.lam_sach/` | SQL cleaning + quality checks |
 | `2.DATABASE_SQL/2.4.views/` | SQL analytics views |
@@ -475,4 +586,16 @@ jupyter notebook "$project\3.NOTEBOOKS\3.4.eda"
 | `6.TAI_LIEU/6.1.bao_cao/EDA_INSIGHTS_REPORT.md` | EDA insights summary (Feature 1.7) |
 | `6.TAI_LIEU/6.1.bao_cao/EDA_NOTEBOOK_VALIDATION_REPORT.md` | Notebook validation report (Feature 1.7) |
 | `6.TAI_LIEU/6.1.bao_cao/FEATURE_1_7_COMPLETION_REPORT.md` | Feature 1.7 completion report |
+| `6.TAI_LIEU/6.1.bao_cao/feature_dictionary.md` | ML feature dictionary (Feature 1.8) |
+| `6.TAI_LIEU/6.1.bao_cao/handoff_to_epic2.md` | EPIC 2 handoff document (Feature 1.8) |
+| `6.TAI_LIEU/6.1.bao_cao/ML_READY_DATASET_VALIDATION_REPORT.md` | ML-ready validation report (Feature 1.8) |
+| `6.TAI_LIEU/6.1.bao_cao/FEATURE_1_8_COMPLETION_REPORT.md` | Feature 1.8 completion report |
+| `6.TAI_LIEU/6.1.bao_cao/DATA_DICTIONARY.md` | Official data dictionary (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/DATABASE_SCHEMA.md` | Database schema final (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/DATA_CLEANING_RULES.md` | Cleaning rules final (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/DATA_QUALITY_REPORT.md` | Quality report final (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/EDA_FINDINGS.md` | EDA findings summary (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/EPIC1_DEFINITION_OF_DONE_REVIEW.md` | EPIC 1 DoD review (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/EPIC1_SPRINT_REVIEW_DEMO.md` | Sprint Review demo (Feature 1.9) |
+| `6.TAI_LIEU/6.1.bao_cao/FEATURE_1_9_COMPLETION_REPORT.md` | Feature 1.9 completion report |
 | `6.TAI_LIEU/6.1.bao_cao/evidence/` | Terminal logs (audit trail) |
