@@ -115,3 +115,38 @@ def test_full_report_generation_commit():
 def test_no_stale_reports():
     reports = glob.glob(str(OUTPUT / "*(*)*.md"))
     assert len(reports) == 0
+
+def test_19_point_fixes():
+    # 1. BUG-007 PSI Train-Val
+    rep = read_report("TEMPORAL_SPLIT_REPORT.md")
+    assert "NOT_COMPUTED" in rep
+    assert "NOT_ASSESSED" in rep
+    
+    # 2. C1/C2/C3 match diag
+    # Checked indirectly by test_split_selection_score being dynamic now, but let's assert directly:
+    assert "|0.708" in rep or "0.708" in rep
+    
+    # 3. Semantic roles NOT Unknown
+    cr = read_report("FEATURE_2_1_COMPLETION_REPORT.md")
+    assert "Unknown" not in cr.split("Baseline Input Features (18)")[1].split("Locked Split")[0]
+    
+    # 4 & 5. Preprocessing & Ablation logic
+    assert "Feature 2.4" in cr.split("| Missing indicator inclusion |")[1].split("\n")[0]
+    assert "Feature 2.4" in cr.split("| Model-based Ablation |")[1].split("\n")[0]
+    
+    # 6. Categorical List
+    assert "Categorical" in cr.split("`release_month`")[1].split("\n")[0]
+    assert "Categorical" in cr.split("`decade`")[1].split("\n")[0]
+    
+    # 13. Year 1900
+    ar = read_report("RELEASE_YEAR_ANOMALY_REPORT.md")
+    assert "KEEP_WITH_EXCEPTION" in ar
+    
+    # 15. Markdown table columns
+    # Split string by |---|---|
+    assert "|---|---|---|---|---|---|---|" not in cr
+    
+    # 18. Target zero
+    ir = read_report("DATA_INTAKE_VALIDATION_REPORT.md")
+    assert "DATA_CHARACTERISTIC" in ir
+    assert "WARNING" not in ir.split("Target — target_popularity")[1].split("\n\n")[0]

@@ -50,7 +50,7 @@ def main():
     except:
         commit_sha = "UNKNOWN"
 
-    def check(cid, desc, expected, actual, pass_cond, note=""):
+    def check(cid, desc, expected, actual, pass_cond, evidence_path="", note=""):
         nonlocal all_pass
         status = "PASS" if pass_cond else "FAIL"
         severity = "ERROR" if not pass_cond else "INFO"
@@ -66,7 +66,7 @@ def main():
             "description": desc,
             "expected": str(expected), 
             "actual": str(actual),
-            "evidence_path": "",
+            "evidence_path": evidence_path,
             "severity": severity,
             "status": status, 
             "validator_version": "2.1.2",
@@ -152,8 +152,8 @@ def main():
     if source_path.exists():
         actual_hash = sha256_file(source_path)
         check("DV-HASH-01", "File SHA-256 matches frozen hash",
-              dv["file_sha256"][:16], actual_hash[:16],
-              actual_hash == dv["file_sha256"])
+              dv["file_sha256"], actual_hash,
+              actual_hash == dv["file_sha256"], evidence_path="7.ML/7.3.data_intake/data_version.json#/file_sha256")
     else:
         check("DV-HASH-01", "Source file exists", True, False, False)
 
@@ -328,13 +328,13 @@ def main():
 
         if sm_path.exists():
             check("SPL-HASH-TRAIN", "Train ID hash matches manifest",
-                  sm["train"]["id_sha256"][:16], train_hash[:16],
+                  sm["train"]["id_sha256"], train_hash,
                   train_hash == sm["train"]["id_sha256"])
             check("SPL-HASH-VAL", "Val ID hash matches manifest",
-                  sm["validation"]["id_sha256"][:16], val_hash[:16],
+                  sm["validation"]["id_sha256"], val_hash,
                   val_hash == sm["validation"]["id_sha256"])
             check("SPL-HASH-TEST", "Test ID hash matches manifest",
-                  sm["test"]["id_sha256"][:16], test_hash[:16],
+                  sm["test"]["id_sha256"], test_hash,
                   test_hash == sm["test"]["id_sha256"])
 
             # Row counts match manifest
@@ -415,7 +415,7 @@ def main():
         # Hash match
         if test_ids_path.exists():
             check("LOCK-HASH-01", "Lock hash matches test_ids.parquet",
-                  lock.get("test_ids_hash", "")[:16], test_hash[:16],
+                  lock.get("test_ids_hash", ""), test_hash,
                   lock.get("test_ids_hash") == test_hash)
 
     # ==============================================================
@@ -461,16 +461,24 @@ def main():
     # ==============================================================
     # SECTION 13: Temporal shift profile check
     # ==============================================================
-    print("\n--- Temporal Shift Profile Check ---")
+    
+    print("
+--- Temporal Shift Profile Check ---")
     ts_path = ROOT / "7.ML" / "7.3.data_intake" / "temporal_shift_profile.json"
     if ts_path.exists():
         with open(ts_path, "r", encoding="utf-8") as f:
             ts = json.load(f)
-        check("SHIFT-FILE-01", "temporal_shift_profile.json exists and parses", True, True, True)
-        check("SHIFT-RISK-01", "Shift risks documented",
-              True, bool(ts.get("risks")), bool(ts.get("risks")))
+        check("SHIFT-FILE-01", "temporal_shift_profile.json exists and parses", True, True, True, evidence_path="7.ML/7.3.data_intake/temporal_shift_profile.json")
+        check("SHIFT-RISK-01", "Shift risks documented", True, bool(ts.get("risks")), bool(ts.get("risks")), evidence_path="7.ML/7.3.data_intake/temporal_shift_profile.json#/risks")
+        
+        # Deep check: PSI train_vs_val should be NOT_COMPUTED
+        psi_val = ts.get("target_shift", {}).get("train_vs_val", {}).get("psi_score", "")
+        sev_val = ts.get("target_shift", {}).get("train_vs_val", {}).get("severity", "")
+        check("SHIFT-PSI-01", "train_vs_val PSI is NOT_COMPUTED", "NOT_COMPUTED", psi_val, psi_val == "NOT_COMPUTED", evidence_path="7.ML/7.3.data_intake/temporal_shift_profile.json#/target_shift/train_vs_val/psi_score")
+        check("SHIFT-PSI-02", "train_vs_val Severity is NOT_ASSESSED", "NOT_ASSESSED", sev_val, sev_val == "NOT_ASSESSED", evidence_path="7.ML/7.3.data_intake/temporal_shift_profile.json#/target_shift/train_vs_val/severity")
     else:
         check("SHIFT-FILE-01", "temporal_shift_profile.json exists", True, False, False)
+
 
     # ==============================================================
     # SUMMARY

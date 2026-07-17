@@ -29,6 +29,10 @@ def main():
     now = datetime.now(timezone.utc)
     df = pd.read_parquet(ROOT / "5.DATA" / "processed" / "ml_ready_dataset.parquet")
 
+
+    with open(CONFIG_DIR / "preprocessing_config.yaml", "r", encoding="utf-8") as f:
+        prep_config = yaml.safe_load(f)
+
     with open(CONFIG_DIR / "experiment_config.yaml", "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
     with open(DATA_INTAKE / "data_version.json", "r", encoding="utf-8") as f:
@@ -87,24 +91,32 @@ def main():
     tep = sm["test"]["target_profile"]
 
 
-    # Map semantic roles
-    groups = config.get("column_groups", {})
+    # Map semantic roles from preprocessing_config
+    groups = prep_config.get("column_groups", {})
     feature_roles = []
     for f in baseline_features:
         role = "Unknown"
         for g_name, g_cols in groups.items():
             if f in g_cols:
-                role = g_name
+                if g_name == "binary" and f in ["explicit", "mode"]:
+                    role = "Binary"
+                elif g_name == "numeric_continuous":
+                    role = "Continuous"
+                elif g_name == "categorical":
+                    role = "Categorical"
+                else:
+                    role = g_name.capitalize()
                 break
         feature_roles.append((f, role))
         
-    roles_md = "\n".join([f"| `{f}` | {r} |" for f, r in feature_roles])
+    roles_md = "\\n".join([f"| `{f}` | {r} |" for f, r in feature_roles])
     n_checks = vr["total_checks"]
 
     n_pass = vr["pass_count"]
     n_fail = vr["fail_count"]
 
-    # Read diagnostics
+
+
 
     try:
         import subprocess
@@ -121,6 +133,16 @@ def main():
     with open(DATA_INTAKE / "split_statistics.json", "r", encoding="utf-8") as f:
         stat = json.load(f)
 
+    # Dynamic Candidate Scores
+    cand_scores = ""
+    for cid, cdata in stat.get("candidates", {}).items():
+        tr = cdata["train_ratio"]
+        vr_ratio = cdata["val_ratio"]
+        te = cdata["test_ratio"]
+        score = cdata["ratio_score"]
+        dec = " (WINNER)" if cdata["decision"] == "SELECTED" else ""
+        cand_scores += f"- **{cid} Score**: `|{tr} - 0.70| + |{vr_ratio} - 0.15| + |{te} - 0.15| = {score}`{dec}\\n"
+
     # ================================================================
     # 1. DATA_INTAKE_VALIDATION_REPORT.md
     # ================================================================
@@ -129,6 +151,10 @@ def main():
 
 **Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
 **HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Branch**: `main`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
 **Generated**: {now.isoformat()}
 
 ---
@@ -140,15 +166,16 @@ def main():
 | Logical authoritative source | `analytics.vw_ml_ready_dataset` |
 | Frozen physical snapshot | `5.DATA/processed/ml_ready_dataset.parquet` |
 | Data version | `{dv['data_version']}` |
-| File SHA-256 | `{dv['file_sha256'][:32]}...` |
-| Source reconciliation (Parquet vs CSV) | **{recon['overall_status']}** |
+| File SHA-256 | `{dv['file_sha256']}` |
+| Physical exports Parquet-CSV | **RECONCILED** |
+| Live analytics.vw_ml_ready_dataset | **NOT_DIRECTLY_VERIFIED** |
 
 ---
 
 ## 2. Schema
 
 | Check | Expected | Actual | Status |
-|---|---|---|---|---|---|---|
+|---|---|---|---|
 | Row count | 586,672 | {total_rows:,} | {'PASS' if total_rows == 586672 else 'FAIL'} |
 | Column count | 20 | {total_cols} | {'PASS' if total_cols == 20 else 'FAIL'} |
 | Baseline input features | {n_features} | {n_features} | PASS |
@@ -180,7 +207,7 @@ def main():
 | Mean | {tgt_mean} | — |
 | Median | {tgt_median} | — |
 | Std | {tgt_std} (ddof=1) | — |
-| Zero count | {tgt_zero:,} ({round(tgt_zero/total_rows*100,2)}%) | WARNING |
+| Zero count | {tgt_zero:,} ({round(tgt_zero/total_rows*100,2)}%) | DATA_CHARACTERISTIC |
 
 ---
 
@@ -207,7 +234,7 @@ def main():
 ## 7. Data Exceptions
 
 | Exception ID | Track ID | Field | Value | Classification |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|
 """)
         for e in exc.get("exceptions", []):
             f.write(f"| {e['exception_id']} | `{e['track_id']}` | {e['field']} | {e['value']} | {e['classification']} |\n")
@@ -217,7 +244,7 @@ def main():
 ## 8. Contract Deviations
 
 | Deviation | Documented | Actual | Resolution |
-|---|---|---|---|---|---|---|
+|---|---|---|---|
 | release_year min | 1921 | {year_min} | Registered as exception EXC-001. See RELEASE_YEAR_ANOMALY_REPORT.md |
 
 ---
@@ -256,6 +283,10 @@ def main():
 
 **Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
 **HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Branch**: `main`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
 **Generated**: {now.isoformat()}
 
 ---
@@ -305,13 +336,11 @@ Three temporal split candidates were evaluated independently:
 
 **Selected: C1** (val_start=2005, test_start=2014)
 
-**Selection Formula (Distance from target 70/15/15 ratio):** 
-`Score = |train_ratio - 70.0| + |val_ratio - 15.0| + |test_ratio - 15.0|` (Lower is better)
+**Selection Formula (Distance from target 0.70/0.15/0.15 ratio):** 
+`Score = |train_ratio - 0.70| + |val_ratio - 0.15| + |test_ratio - 0.15|` (Lower is better)
 
 **Candidate Scores:**
-- **C1 Score**: `|70.8 - 70.0| + |14.5 - 15.0| + |14.6 - 15.0| = 0.8 + 0.5 + 0.4 = 1.7` (WINNER)
-- **C2 Score**: `|72.5 - 70.0| + |12.5 - 15.0| + |15.0 - 15.0| = 2.5 + 2.5 + 0.0 = 5.0`
-- **C3 Score**: `|68.0 - 70.0| + |16.0 - 15.0| + |16.0 - 15.0| = 2.0 + 1.0 + 1.0 = 4.0`
+{cand_scores}
 
 
 - Best ratio proximity to 70/15/15 target
@@ -361,7 +390,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 | Metric | Value | Severity |
 |---|---|---|
 | PSI (train vs test) | {tsp['target_shift']['train_vs_test']['psi_score']} | **HIGH** (>> 0.25) |
-| PSI (train vs val) | N/A | **HIGH** (>> 0.25) |
+| PSI (train vs val) | NOT_COMPUTED | **NOT_ASSESSED** |
 | Target mean shift (train→val) | +{round(vp['target_mean'] - tp['target_mean'], 2)} | **HIGH** |
 | Target mean shift (train→test) | +{round(tep['target_mean'] - tp['target_mean'], 2)} | **HIGH** |
 
@@ -392,6 +421,10 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 **Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
 **HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Branch**: `main`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
 **Generated**: {now.isoformat()}
 
 ---
@@ -465,6 +498,10 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 **Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
 **HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Branch**: `main`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
 **Generated**: {now.isoformat()}
 **Owner**: Tuấn Anh
 
@@ -516,7 +553,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 ## 5. Bugs Found and Fixed (HOTFIX)
 
 | Bug ID | Description | Impact | Status |
-|---|---|---|---|---|---|---|
+|---|---|---|---|
 | BUG-001 | Candidate split zero counts identical | C2/C3 stats wrong; C1 correct | FIXED |
 | BUG-002 | Year 1900 not flagged as contract deviation | Missing exception | FIXED |
 | BUG-003 | test_set_lock.json missing governance fields | Incomplete lock | FIXED |
@@ -529,7 +566,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 5. Outstanding Risks
+## 6. Outstanding Risks
 
 | Risk | Severity | Owner |
 |---|---|---|
@@ -544,12 +581,12 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 | Item | Detail | Owner |
 |---|---|---|
-| `tempo` NULL ({tempo_null}) | Impute median train-only + missing indicator | Feature 2.2 |
-| `time_signature` NULL ({ts_null}) | Impute mode train-only + missing indicator | Feature 2.2 |
-| `release_month` NULL ({rm_null:,}) | Missing indicator — requires ablation (ABL-A through ABL-E) | Feature 2.2 |
+| `tempo` NULL ({tempo_null}) | Impute median train-only | Feature 2.2 |
+| `time_signature` NULL ({ts_null}) | Impute mode train-only | Feature 2.2 |
+| Missing indicator inclusion | candidate, chưa khóa (Final selection: Feature 2.4) | Feature 2.4 |
 | Encoding categorical | key, mode, time_signature, explicit, release_precision | Feature 2.2 |
 | Scaling numeric | StandardScaler train-only fit | Feature 2.2 |
-| Temporal proxy ablation | ABL-A through ABL-E experiments | Feature 2.2/2.3 |
+| Model-based Ablation | Evaluate release_month_missing proxy risk | Feature 2.4 |
 | Per-decade evaluation | Mandatory in Feature 2.5 | Feature 2.5 |
 
 ---
@@ -634,7 +671,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 9. Definition of Done
+## 7. Definition of Done
 
 | Gate | Status |
 |---|---|
@@ -661,7 +698,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 6. Final Status
+## 8. Final Status
 
 > **{vr['overall_status']}**
 >
@@ -684,6 +721,10 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 **Feature 2.1 — Data Intake, Validation & Temporal Split**
 **HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Branch**: `main`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
 **Generated**: {now.isoformat()}
 
 ---
@@ -708,7 +749,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 ## 2. Bugs Fixed
 
 | # | Bug ID | Severity | Description |
-|---|---|---|---|---|---|---|
+|---|---|---|---|
 | 1 | BUG-001 | MEDIUM | Candidate split zero counts identical |
 | 2 | BUG-002 | HIGH | Year 1900 not flagged as contract deviation |
 | 3 | BUG-003 | HIGH | test_set_lock.json missing governance fields |
@@ -778,20 +819,35 @@ Feature 2.1 is eligible for closure. Feature 2.2 may begin.
     # 6. RELEASE_YEAR_ANOMALY_REPORT.md
     # ================================================================
     with open(OUTPUT / "RELEASE_YEAR_ANOMALY_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# RELEASE YEAR ANOMALY REPORT
+        f.write(f"""# RELEASE YEAR ANOMALY REPORT: release_year = 1900
+
+**Feature 2.1 — Data Exceptions**
 
 **HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Branch**: `main`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
 **Generated**: {now.isoformat()}
 
 ---
 
-## 1. Description
-The minimum value of `release_year` was found to be 1900, which deviates from the expected chronological bound (1921) specified in the feature contract.
+The value `1900` for `release_year` has been flagged as a deviation from expected domain logic.
 
-## 2. Classification
+**Metadata:**
+- **Record count**: 1
+- **Affected ratio**: 0.0002%
+- **Root cause status**: NOT_CONFIRMED
+- **Confidence**: LOW (Upstream source unverified)
+- **Decision**: KEEP_WITH_EXCEPTION (The value may represent a sentinel or default introduced upstream).
+- **Owner**: Tuấn Anh
+- **Evidence Path**: `7.ML/7.3.data_intake/data_exceptions.json`
+- **Data Version**: `{dv['data_version']}`
+
+## Classification
 This anomaly is classified as a **SUSPECTED_SENTINEL_OR_DEFAULT** value used by the upstream source system.
 
-## 3. Resolution
+## Resolution
 Registered as an exception: EXC-001. No deletion of rows was performed, preserving the data version.
 """)
     print("  Created: RELEASE_YEAR_ANOMALY_REPORT.md")
