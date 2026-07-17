@@ -1,5 +1,6 @@
 {
   "data_version": "ml-ready-2026-07-17-v1",
+  "previous_data_version": "ml-ready-2026-07-17-v1",
   "canonical_source": "analytics.vw_ml_ready_dataset",
   "actual_source_used": "E:\\Dự án 1 hitrada\\hitradar\\5.DATA\\processed\\ml_ready_dataset.parquet",
   "source_type": "parquet",
@@ -13,5 +14,5 @@
   "schema_hash": "bb6b4eecd81f2c3132367ca1bae7b97f25fb5cd4be507adf1efa17873c69ea96",
   "file_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
   "content_fingerprint": "62e8e0c7dcad30bb",
-  "created_at": "2026-07-17T14:59:26.049224+00:00"
+  "created_at": "2026-07-17T15:48:10.162303+00:00"
 }

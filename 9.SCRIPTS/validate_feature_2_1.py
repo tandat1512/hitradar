@@ -43,15 +43,36 @@ def main():
     results = []
     all_pass = True
 
+    # Commit SHA for results
+    import subprocess
+    try:
+        commit_sha = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('utf-8').strip()
+    except:
+        commit_sha = "UNKNOWN"
+
     def check(cid, desc, expected, actual, pass_cond, note=""):
         nonlocal all_pass
         status = "PASS" if pass_cond else "FAIL"
+        severity = "ERROR" if not pass_cond else "INFO"
         if not pass_cond:
             all_pass = False
+        
+        # Derive category from cid (e.g. CFG-KEY-XXX -> CFG)
+        category = cid.split("-")[0] if "-" in cid else "GENERAL"
+            
         results.append({
-            "check_id": cid, "description": desc,
-            "expected": str(expected), "actual": str(actual),
-            "status": status, "note": note
+            "check_id": cid, 
+            "category": category,
+            "description": desc,
+            "expected": str(expected), 
+            "actual": str(actual),
+            "evidence_path": "",
+            "severity": severity,
+            "status": status, 
+            "validator_version": "2.1.2",
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "repository_commit_sha": commit_sha,
+            "note": note
         })
         mark = "PASS" if pass_cond else "FAIL"
         print(f"  [{cid:>18s}] {desc}: {mark}")

@@ -1,0 +1,242 @@
+[
+  {
+    "original_path": "7.ML\\7.1.config\\experiment_config.yaml",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.1.config\\experiment_config.yaml",
+    "file_size": 4930,
+    "sha256": "dffb70f783c59c1d8dc753a39561df2858f48e4e6cd3cf91170c5f4b96748519",
+    "backup_timestamp": "2026-07-17T15:31:13.895231+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.1.config\\preprocessing_config.yaml",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.1.config\\preprocessing_config.yaml",
+    "file_size": 3993,
+    "sha256": "ee61bf70659cddbf2f3fdfed6190801b41de4f5202cb3c80755005efb151a56f",
+    "backup_timestamp": "2026-07-17T15:31:13.896308+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.1.config\\split_config.yaml",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.1.config\\split_config.yaml",
+    "file_size": 487,
+    "sha256": "280325c10c23b3d63029827a6421e958a5b1edbcd01b3406f2679ae87cdc81d8",
+    "backup_timestamp": "2026-07-17T15:31:13.897464+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\data_exceptions.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\data_exceptions.json",
+    "file_size": 616,
+    "sha256": "baa7870d751371c6987750d7ba38099dd862ee5aa2f03fb6365e8c8229c034ae",
+    "backup_timestamp": "2026-07-17T15:31:13.898789+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\data_version.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\data_version.json",
+    "file_size": 732,
+    "sha256": "e5c6e544de33553bbd23c7c18b3e598499c0187219ff29f9aa84551c797a6a4a",
+    "backup_timestamp": "2026-07-17T15:31:13.899775+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\hotfix_investigation_results.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\hotfix_investigation_results.json",
+    "file_size": 20734,
+    "sha256": "f1e1d1254c17ddf53e19d73c47f99c24b30480c3d342cbe0658d0f49ed648053",
+    "backup_timestamp": "2026-07-17T15:31:13.901091+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\input_manifest.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\input_manifest.json",
+    "file_size": 1373,
+    "sha256": "f0139545baad08b89b28b2f7446808bfa7c10f9940f73280543c8dbe9f628851",
+    "backup_timestamp": "2026-07-17T15:31:13.902105+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\legacy_reference_scan.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\legacy_reference_scan.json",
+    "file_size": 350,
+    "sha256": "4576a5af63d2504800c6be74ae81f83f160ee4ce005fd56e6f7590d3611b579e",
+    "backup_timestamp": "2026-07-17T15:31:13.903026+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\missing_profile_by_split.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\missing_profile_by_split.json",
+    "file_size": 1992,
+    "sha256": "0d4503cf4586adb26b74fa431ba008d85d54c9ad7d31b49aaa1efcc412ade855",
+    "backup_timestamp": "2026-07-17T15:31:13.906274+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\schema_snapshot.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\schema_snapshot.json",
+    "file_size": 4372,
+    "sha256": "f13d02078e6fa7f884586ebbed2ace40012a27688bcf88fc3a02752809280adf",
+    "backup_timestamp": "2026-07-17T15:31:13.907516+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\source_reconciliation.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\source_reconciliation.json",
+    "file_size": 472,
+    "sha256": "fdcdaefac4b397e6c9cab5637d2a4e2bf001e0a909d97c62bec621783afb12ed",
+    "backup_timestamp": "2026-07-17T15:31:13.908728+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\split_candidates.csv",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\split_candidates.csv",
+    "file_size": 691,
+    "sha256": "339bcddb663931fc943451f926cad98a8c6e4698da1bd9a538bc2af4bfac0fe6",
+    "backup_timestamp": "2026-07-17T15:31:13.916583+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\split_candidate_diagnostics.csv",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\split_candidate_diagnostics.csv",
+    "file_size": 1461,
+    "sha256": "e9fbf976dde8d85a85f82ae9f49a96eb31d6ef8f96a982eedd5de970007aa5e7",
+    "backup_timestamp": "2026-07-17T15:31:13.917643+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\split_statistics.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\split_statistics.json",
+    "file_size": 594,
+    "sha256": "731fd1b9b9d53bf293ea54b0facb00567e94f51ee15e8385fb8ad8ddc0331a31",
+    "backup_timestamp": "2026-07-17T15:31:13.918996+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\target_profile.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\target_profile.json",
+    "file_size": 727,
+    "sha256": "0c846c33c34f631a9fa8b13122328f5be4c4c762fe066b34e729c6d96b42b723",
+    "backup_timestamp": "2026-07-17T15:31:13.920159+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\temporal_shift_profile.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\temporal_shift_profile.json",
+    "file_size": 832,
+    "sha256": "e116bb2c81a89fcaacb03e0da3cf0aabb7009835214a4e830ecbee3ed016c3de",
+    "backup_timestamp": "2026-07-17T15:31:13.921287+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\validation_results.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\validation_results.json",
+    "file_size": 19024,
+    "sha256": "37c7e9f3676c36113d4bdb91eca693b4ab0536667e3abe7f7b09fd933e324d14",
+    "backup_timestamp": "2026-07-17T15:31:13.922609+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\warning_profile.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\warning_profile.json",
+    "file_size": 1872,
+    "sha256": "c8f5564dfb34eede164bd249b7ab03d9c1fd4dd5e7c714d308243467c50836ba",
+    "backup_timestamp": "2026-07-17T15:31:13.931504+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.3.data_intake\\year_distribution.csv",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.3.data_intake\\year_distribution.csv",
+    "file_size": 8826,
+    "sha256": "4cad7438f12bb3fab29008fa488eb8061684ae65dd9f013ef356c059cd27aa65",
+    "backup_timestamp": "2026-07-17T15:31:13.947654+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.4.splits\\split_manifest.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.4.splits\\split_manifest.json",
+    "file_size": 2769,
+    "sha256": "76a70404dcada7b0b7d5bf1bc3397a087f38c6cfa9f96e6636cc6a1456b55b85",
+    "backup_timestamp": "2026-07-17T15:31:13.949386+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.4.splits\\split_version.txt",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.4.splits\\split_version.txt",
+    "file_size": 17,
+    "sha256": "fe6cb2f0678d2f29a3398074e4942d5936182962228b84971a8a1662d2012654",
+    "backup_timestamp": "2026-07-17T15:31:13.950373+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.4.splits\\test_ids.parquet",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.4.splits\\test_ids.parquet",
+    "file_size": 2156165,
+    "sha256": "29b0b9596d0e95ae061165a1cdfdd00cf588eecdc8bc727eb79a1a165bbc0d7a",
+    "backup_timestamp": "2026-07-17T15:31:13.958192+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.4.splits\\test_set_lock.json",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.4.splits\\test_set_lock.json",
+    "file_size": 1502,
+    "sha256": "a52dc0984c4b03a763fad461f4abf266c705dde4024faca82302f6e99273dbf2",
+    "backup_timestamp": "2026-07-17T15:31:13.959225+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.4.splits\\train_ids.parquet",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.4.splits\\train_ids.parquet",
+    "file_size": 10107545,
+    "sha256": "ba35e03ca0838ee12779841539e083df425efd3d5656764f02aeed46500ed940",
+    "backup_timestamp": "2026-07-17T15:31:13.992632+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "7.ML\\7.4.splits\\validation_ids.parquet",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\7.ML\\7.4.splits\\validation_ids.parquet",
+    "file_size": 2141622,
+    "sha256": "6c3b6c89c341a3f844b89ecc51e16a44215708355efaf6bf779fef7e418295bd",
+    "backup_timestamp": "2026-07-17T15:31:14.000939+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "9.SCRIPTS\\feature_2_1_data_intake.py",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\feature_2_1_data_intake.py",
+    "file_size": 55960,
+    "sha256": "dfb89d28d6500adabb08bfc60f86a7dd15735f4e8c487f7b19278d6b447adfa9",
+    "backup_timestamp": "2026-07-17T15:31:14.002235+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "9.SCRIPTS\\validate_feature_2_1.py",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\validate_feature_2_1.py",
+    "file_size": 22951,
+    "sha256": "ef7deef5aee51e5fc32ebf981d184823e648e2d38a4635e642124c1ad759f548",
+    "backup_timestamp": "2026-07-17T15:31:14.003435+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "9.SCRIPTS\\validate_temporal_split.py",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\validate_temporal_split.py",
+    "file_size": 7284,
+    "sha256": "cb4afb48cfabb85d58fd928ba519416f82ad6ef163d688e0cf2a89f33712e298",
+    "backup_timestamp": "2026-07-17T15:31:14.004376+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "9.SCRIPTS\\validate_test_set_lock.py",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\validate_test_set_lock.py",
+    "file_size": 6511,
+    "sha256": "e83f32138c7595afdcb78fbff70931b9c968917277c36985e401a67a8ee6e21f",
+    "backup_timestamp": "2026-07-17T15:31:14.005994+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  },
+  {
+    "original_path": "9.SCRIPTS\\regenerate_reports.py",
+    "backup_path": "10.ARCHIVE\\feature_2_1_before_targeted_hotfix\\regenerate_reports.py",
+    "file_size": 24859,
+    "sha256": "6b74318cc0f39b48dc58ad877daa0c26b29917165553cec6137794a28762dea2",
+    "backup_timestamp": "2026-07-17T15:31:14.006944+00:00",
+    "repository_commit_sha": "f4b1aed86b05f9a6163b8ce0d454e726980a36a9"
+  }
+]

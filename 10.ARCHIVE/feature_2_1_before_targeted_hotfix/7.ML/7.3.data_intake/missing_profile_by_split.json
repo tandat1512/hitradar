@@ -1,0 +1,84 @@
+{
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "full_dataset": {
+    "total_rows": 586672,
+    "missing": {
+      "release_month": {
+        "missing_count": 136489,
+        "missing_ratio": 0.2326,
+        "source_dtype": "float64"
+      },
+      "tempo": {
+        "missing_count": 328,
+        "missing_ratio": 0.0006,
+        "source_dtype": "float64"
+      },
+      "time_signature": {
+        "missing_count": 337,
+        "missing_ratio": 0.0006,
+        "source_dtype": "float64"
+      }
+    }
+  },
+  "train": {
+    "total_rows": 415524,
+    "missing": {
+      "release_month": {
+        "missing_count": 126895,
+        "missing_ratio": 0.3054,
+        "source_dtype": "float64"
+      },
+      "tempo": {
+        "missing_count": 154,
+        "missing_ratio": 0.0004,
+        "source_dtype": "float64"
+      },
+      "time_signature": {
+        "missing_count": 160,
+        "missing_ratio": 0.0004,
+        "source_dtype": "float64"
+      }
+    }
+  },
+  "validation": {
+    "total_rows": 85272,
+    "missing": {
+      "release_month": {
+        "missing_count": 8455,
+        "missing_ratio": 0.0992,
+        "source_dtype": "float64"
+      },
+      "tempo": {
+        "missing_count": 34,
+        "missing_ratio": 0.0004,
+        "source_dtype": "float64"
+      },
+      "time_signature": {
+        "missing_count": 36,
+        "missing_ratio": 0.0004,
+        "source_dtype": "float64"
+      }
+    }
+  },
+  "test": {
+    "total_rows": 85876,
+    "missing": {
+      "release_month": {
+        "missing_count": 1139,
+        "missing_ratio": 0.0133,
+        "source_dtype": "float64"
+      },
+      "tempo": {
+        "missing_count": 140,
+        "missing_ratio": 0.0016,
+        "source_dtype": "float64"
+      },
+      "time_signature": {
+        "missing_count": 141,
+        "missing_ratio": 0.0016,
+        "source_dtype": "float64"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "target_shift": {
+    "train_mean": 22.8799948980083,
+    "test_mean": 40.84007173133355,
+    "mean_diff": 17.960076833325253,
+    "psi_methodology": {
+      "bins": 10,
+      "handling_zeros": "replaced with 1e-4",
+      "severity_thresholds": {
+        "HIGH": 0.2,
+        "MEDIUM": 0.1,
+        "LOW": 0.0
+      }
+    },
+    "psi_score": 1.4657107725831355,
+    "severity": "HIGH",
+    "conclusion": "Large distribution shift under the configured PSI severity thresholds."
+  },
+  "feature_shift": {
+    "notes": "KS statistics should separate statistical significance from practical severity."
+  },
+  "risks": [
+    "Temporal proxy risk: features may learn to predict release_year instead of true popularity"
+  ]
+}

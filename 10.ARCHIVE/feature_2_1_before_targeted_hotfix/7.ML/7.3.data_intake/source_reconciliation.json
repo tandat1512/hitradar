@@ -1,0 +1,12 @@
+{
+  "physical_exports_reconciled": true,
+  "live_database_directly_verified": false,
+  "live_database_verification_status": "NOT_DIRECTLY_VERIFIED",
+  "parquet_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "csv_sha256": "3a0781c7eecffc6dfeb937217eb572cc238b1eb7d00f5dd65a396b27e8a32bb5",
+  "row_match": true,
+  "column_match": true,
+  "track_id_set_match": true,
+  "numeric_value_match": true,
+  "overall_status": "RECONCILED"
+}

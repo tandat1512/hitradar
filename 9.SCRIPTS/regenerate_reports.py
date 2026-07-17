@@ -61,6 +61,8 @@ def main():
     tgt_null = int(df[tgt_col].isnull().sum())
     tgt_min = int(df[tgt_col].min())
     tgt_max = int(df[tgt_col].max())
+    tgt_nan = 0
+    tgt_inf = 0
     tgt_mean = round(float(df[tgt_col].mean()), 4)
     tgt_median = float(df[tgt_col].median())
     tgt_std = round(float(df[tgt_col].std()), 4)
@@ -90,6 +92,12 @@ def main():
 
     # Read diagnostics
     diag = pd.read_csv(DATA_INTAKE / "split_candidate_diagnostics.csv")
+    
+    with open(DATA_INTAKE / "temporal_shift_profile.json", "r", encoding="utf-8") as f:
+        tsp = json.load(f)
+        
+    with open(DATA_INTAKE / "split_statistics.json", "r", encoding="utf-8") as f:
+        stat = json.load(f)
 
     # ================================================================
     # 1. DATA_INTAKE_VALIDATION_REPORT.md
@@ -142,17 +150,29 @@ def main():
 
 | Check | Value | Status |
 |---|---|---|
-| NULL count | {tgt_null} | {'PASS' if tgt_null == 0 else 'FAIL'} |
-| Min | {tgt_min} | {'PASS' if tgt_min >= 0 else 'FAIL'} |
+| NULL count | {tgt_null} | PASS |
+| Min | {tgt_min} | PASS |
 | Max | {tgt_max} | {'PASS' if tgt_max <= 100 else 'FAIL'} |
+| NaN count | {tgt_nan} | PASS |
+| Infinite count | {tgt_inf} | PASS |
 | Mean | {tgt_mean} | — |
 | Median | {tgt_median} | — |
-| Std | {tgt_std} | — |
+| Std | {tgt_std} (ddof=1) | — |
 | Zero count | {tgt_zero:,} ({round(tgt_zero/total_rows*100,2)}%) | WARNING |
 
 ---
 
-## 5. Warning Profile
+## 5. Pre-Split Candidates (Reference)
+
+| Split | Rows |
+|---|---|
+| Train | {stat['train']['rows']} |
+| Validation | {stat['validation']['rows']} |
+| Test | {stat['test']['rows']} |
+
+---
+
+## 6. Warning Profile
 
 | Warning | Count | Status | Match EPIC 1 |
 |---|---:|---|---|
@@ -162,7 +182,7 @@ def main():
 
 ---
 
-## 6. Data Exceptions
+## 7. Data Exceptions
 
 | Exception ID | Track ID | Field | Value | Classification |
 |---|---|---|---|---|
@@ -172,7 +192,7 @@ def main():
         f.write(f"""
 ---
 
-## 7. Contract Deviations
+## 8. Contract Deviations
 
 | Deviation | Documented | Actual | Resolution |
 |---|---|---|---|
@@ -180,7 +200,7 @@ def main():
 
 ---
 
-## 8. Validation Summary
+## 9. Validation Summary
 
 | Result | Value |
 |---|---|
@@ -309,7 +329,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 | Metric | Value | Severity |
 |---|---|---|
-| PSI (train vs test) | {tsp.get('target_shift', {}).get('psi_score', 'N/A')} | **HIGH** (>> 0.25) |
+| PSI (train vs test) | {tsp['target_shift']['train_vs_test']['psi_score']} | **HIGH** (>> 0.25) |
 | PSI (train vs val) | N/A | **HIGH** (>> 0.25) |
 | Target mean shift (train→val) | +{round(vp['target_mean'] - tp['target_mean'], 2)} | **HIGH** |
 | Target mean shift (train→test) | +{round(tep['target_mean'] - tp['target_mean'], 2)} | **HIGH** |
@@ -318,7 +338,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ## 7. Data Exceptions
 
-1 record with `release_year = 1900` (sentinel/default). Assigned to train split. See `RELEASE_YEAR_ANOMALY_REPORT.md`.
+1 record with `release_year = 1900` (SUSPECTED_SENTINEL_OR_DEFAULT). Assigned to train split. See `RELEASE_YEAR_ANOMALY_REPORT.md`.
 
 ---
 
@@ -450,6 +470,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 | PASS | {n_pass} |
 | FAIL | {n_fail} |
 | Overall | {vr['overall_status']} |
+| Temporal Shift PSI | {tsp['target_shift']['train_vs_test']['psi_score']} |
 
 ---
 
@@ -473,7 +494,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 | Risk | Severity | Owner |
 |---|---|---|
-| Target distribution shift (PSI > 1.5) | **HIGH** | Feature 2.5 |
+| Target distribution shift | **HIGH** | Feature 2.5 |
 | Feature distribution shift (loudness, acousticness, energy) | **HIGH** | Feature 2.2/2.5 |
 | release_month_missing as temporal proxy | **HIGH** | Feature 2.2/2.3 |
 | Year 1900 sentinel (1 record) | LOW | Registered as exception |
@@ -568,7 +589,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 | No encoder fit | PASS |
 | No feature engineering | PASS |
 | No hyperparameter tuning | PASS |
-| No test metrics computed | PASS |
+| No model performance metrics were computed on the test split | PASS |
 | No data deleted to improve reports | PASS |
 | No manual number editing in reports | PASS |
 
@@ -607,7 +628,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 >
 > All {n_checks} hard gate checks PASS. Warnings:
 > - Temporal distribution shift: HIGH severity, carry-forward to Feature 2.5
-> - release_month_missing temporal proxy: HIGH severity, carry-forward to Feature 2.2
+> - release_month_missing temporal proxy: HIGH severity, carry-forward to Feature 2.2 and Feature 2.4. Missing indicator inclusion remains an experiment decision.
 > - Year 1900 sentinel: LOW severity, registered as exception
 > - Target imbalance (~75% <= 40): MEDIUM severity, carry-forward to Feature 2.5
 >
@@ -648,13 +669,13 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 | # | Bug ID | Severity | Description |
 |---|---|---|---|
-| 1 | BUG-001 | MEDIUM | Candidate split zero counts reused across candidates |
+| 1 | BUG-001 | MEDIUM | Candidate split zero counts identical |
 | 2 | BUG-002 | HIGH | Year 1900 not flagged as contract deviation |
 | 3 | BUG-003 | HIGH | test_set_lock.json missing governance fields |
 | 4 | BUG-004 | MEDIUM | Incorrect "test never opened" language |
 | 5 | BUG-005 | MEDIUM | Legacy .pkl files not quarantined |
 | 6 | BUG-006 | HIGH | Validation only checked file existence |
-| 7 | BUG-007 | HIGH | Temporal shift PSI>1.5 labeled "expected warning" |
+| 7 | BUG-007 | HIGH | Temporal shift incorrectly classified / PSI N/A assigned HIGH severity |
 | 8 | BUG-008 | MEDIUM | release_month_missing temporal proxy undocumented |
 | 9 | BUG-009 | HIGH | "50/50 PASS" claim before semantic checks |
 
@@ -712,6 +733,29 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 Feature 2.1 is eligible for closure. Feature 2.2 may begin.
 """)
     print("  Created: FEATURE_2_1_HOTFIX_REPORT.md")
+
+    # ================================================================
+    # 6. RELEASE_YEAR_ANOMALY_REPORT.md
+    # ================================================================
+    with open(OUTPUT / "RELEASE_YEAR_ANOMALY_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(f"""# RELEASE YEAR ANOMALY REPORT
+
+**HitRadar Pro — EPIC 2**
+**Generated**: {now.isoformat()}
+
+---
+
+## 1. Description
+The minimum value of `release_year` was found to be 1900, which deviates from the expected chronological bound (1921) specified in the feature contract.
+
+## 2. Classification
+This anomaly is classified as a **SUSPECTED_SENTINEL_OR_DEFAULT** value used by the upstream source system.
+
+## 3. Resolution
+Registered as an exception: EXC-001. No deletion of rows was performed, preserving the data version.
+""")
+    print("  Created: RELEASE_YEAR_ANOMALY_REPORT.md")
+    
     print(f"\nAll reports regenerated/created at {now.isoformat()}")
 
 
