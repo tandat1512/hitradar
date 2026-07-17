@@ -1,0 +1,69 @@
+{
+  "profile_timestamp": "2026-07-17T19:33:08.110780",
+  "data_version": "ml-ready-2026-07-16-v1",
+  "global": {
+    "tempo": {
+      "null_count": 328,
+      "null_pct": 0.0559,
+      "total_rows": 586672
+    },
+    "release_month": {
+      "null_count": 136489,
+      "null_pct": 23.265,
+      "total_rows": 586672
+    },
+    "time_signature": {
+      "null_count": 337,
+      "null_pct": 0.0574,
+      "total_rows": 586672
+    }
+  },
+  "train_only": {
+    "tempo": {
+      "null_count": 154,
+      "total_rows": 415524,
+      "train_only_median": 114.995,
+      "train_only_mode": null
+    },
+    "release_month": {
+      "null_count": 126895,
+      "total_rows": 415524,
+      "train_only_median": null,
+      "train_only_mode": null
+    },
+    "time_signature": {
+      "null_count": 160,
+      "total_rows": 415524,
+      "train_only_median": null,
+      "train_only_mode": 4
+    }
+  },
+  "val_only": {
+    "tempo": {
+      "null_count": 34,
+      "total_rows": 85272
+    },
+    "release_month": {
+      "null_count": 8455,
+      "total_rows": 85272
+    },
+    "time_signature": {
+      "null_count": 36,
+      "total_rows": 85272
+    }
+  },
+  "test_only": {
+    "tempo": {
+      "null_count": 140,
+      "total_rows": 85876
+    },
+    "release_month": {
+      "null_count": 1139,
+      "total_rows": 85876
+    },
+    "time_signature": {
+      "null_count": 141,
+      "total_rows": 85876
+    }
+  }
+}

@@ -1,0 +1,771 @@
+{
+  "hotfix1": {
+    "anomaly_count": 1,
+    "anomaly_records": [
+      {
+        "track_id": "74CSJTE5QQp1e4bHzm3wti",
+        "target_popularity": "19",
+        "duration_min": "3.8987",
+        "explicit": "False",
+        "release_year": "1900",
+        "release_month": "1.0",
+        "decade": "1900",
+        "release_precision": "day",
+        "danceability": "0.659",
+        "energy": "0.791",
+        "key": "2",
+        "loudness": "-4.895",
+        "mode": "1",
+        "speechiness": "0.0295",
+        "acousticness": "0.139",
+        "instrumentalness": "1.63e-06",
+        "liveness": "0.161",
+        "valence": "0.956",
+        "tempo": "141.999",
+        "time_signature": "4.0"
+      }
+    ],
+    "parquet_csv_match": true,
+    "epic1_documented_range": "1921-2021",
+    "actual_min_year": 1900,
+    "actual_max_year": 2021,
+    "is_contract_deviation": true
+  },
+  "hotfix2": {
+    "row_count_parquet": 586672,
+    "row_count_csv": 586672,
+    "row_match": true,
+    "col_count_parquet": 20,
+    "col_count_csv": 20,
+    "col_match": true,
+    "col_names_parquet": [
+      "track_id",
+      "target_popularity",
+      "duration_min",
+      "explicit",
+      "release_year",
+      "release_month",
+      "decade",
+      "release_precision",
+      "danceability",
+      "energy",
+      "key",
+      "loudness",
+      "mode",
+      "speechiness",
+      "acousticness",
+      "instrumentalness",
+      "liveness",
+      "valence",
+      "tempo",
+      "time_signature"
+    ],
+    "col_names_csv": [
+      "track_id",
+      "target_popularity",
+      "duration_min",
+      "explicit",
+      "release_year",
+      "release_month",
+      "decade",
+      "release_precision",
+      "danceability",
+      "energy",
+      "key",
+      "loudness",
+      "mode",
+      "speechiness",
+      "acousticness",
+      "instrumentalness",
+      "liveness",
+      "valence",
+      "tempo",
+      "time_signature"
+    ],
+    "col_names_match": true,
+    "col_order_match": true,
+    "null_comparison": {
+      "track_id": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "target_popularity": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "duration_min": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "explicit": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "release_year": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "release_month": {
+        "parquet": 136489,
+        "csv": 136489,
+        "match": true
+      },
+      "decade": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "release_precision": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "danceability": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "energy": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "key": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "loudness": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "mode": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "speechiness": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "acousticness": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "instrumentalness": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "liveness": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "valence": {
+        "parquet": 0,
+        "csv": 0,
+        "match": true
+      },
+      "tempo": {
+        "parquet": 328,
+        "csv": 328,
+        "match": true
+      },
+      "time_signature": {
+        "parquet": 337,
+        "csv": 337,
+        "match": true
+      }
+    },
+    "all_null_match": true,
+    "track_id_set_match": true,
+    "pq_only_ids": 0,
+    "csv_only_ids": 0,
+    "parquet_track_id_hash": "cf45efdde035aa11fdf7ff1654a5bced0680251ee98d8b4bd0356662cc733742",
+    "csv_track_id_hash": "cf45efdde035aa11fdf7ff1654a5bced0680251ee98d8b4bd0356662cc733742",
+    "track_id_hash_match": true,
+    "target_mean_parquet": 27.570053,
+    "target_mean_csv": 27.570053,
+    "target_mean_match": true,
+    "parquet_file_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+    "csv_file_sha256": "332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e",
+    "parquet_file_size": 26440492,
+    "csv_file_size": 72546749,
+    "numeric_values_match": true,
+    "overall_status": "RECONCILED",
+    "reconciliation_timestamp": "2026-07-16T12:20:23.936087+00:00",
+    "reconciliation_note": "Parquet and CSV are two exports of analytics.vw_ml_ready_dataset. Database view is the logical authoritative source. Parquet is the frozen physical snapshot used for ML pipeline."
+  },
+  "hotfix3": {
+    "diagnostics_rows": [
+      {
+        "candidate": "C1",
+        "split": "train",
+        "rows": 415524,
+        "ratio": 0.7083,
+        "min_year": 1900,
+        "max_year": 2004,
+        "unique_years": 84,
+        "target_mean": 22.88,
+        "target_median": 22.0,
+        "target_std": 15.7718,
+        "target_zero_count": 35952,
+        "bucket_0_20": 191117,
+        "bucket_21_40": 166481,
+        "bucket_41_60": 52252,
+        "bucket_61_80": 5609,
+        "bucket_81_100": 65,
+        "missing_tempo": 154,
+        "missing_time_signature": 160,
+        "missing_release_month": 126895,
+        "track_id_hash": "d3684ebb6ba7744cc3bcf6454bf47521"
+      },
+      {
+        "candidate": "C1",
+        "split": "val",
+        "rows": 85272,
+        "ratio": 0.1453,
+        "min_year": 2005,
+        "max_year": 2013,
+        "unique_years": 9,
+        "target_mean": 37.0603,
+        "target_median": 39.0,
+        "target_std": 16.0365,
+        "target_zero_count": 3144,
+        "bucket_0_20": 11499,
+        "bucket_21_40": 36295,
+        "bucket_41_60": 32932,
+        "bucket_61_80": 4480,
+        "bucket_81_100": 66,
+        "missing_tempo": 34,
+        "missing_time_signature": 36,
+        "missing_release_month": 8455,
+        "track_id_hash": "d292e4009b798e3e383b83c51f01ac5d"
+      },
+      {
+        "candidate": "C1",
+        "split": "test",
+        "rows": 85876,
+        "ratio": 0.1464,
+        "min_year": 2014,
+        "max_year": 2021,
+        "unique_years": 8,
+        "target_mean": 40.8401,
+        "target_median": 45.0,
+        "target_std": 21.7856,
+        "target_zero_count": 5594,
+        "bucket_0_20": 17372,
+        "bucket_21_40": 16227,
+        "bucket_41_60": 37629,
+        "bucket_61_80": 14043,
+        "bucket_81_100": 605,
+        "missing_tempo": 140,
+        "missing_time_signature": 141,
+        "missing_release_month": 1139,
+        "track_id_hash": "f446764fc87d1c73a5c85095a769b69a"
+      },
+      {
+        "candidate": "C2",
+        "split": "train",
+        "rows": 406273,
+        "ratio": 0.6925,
+        "min_year": 1900,
+        "max_year": 2003,
+        "unique_years": 83,
+        "target_mean": 22.5884,
+        "target_median": 22.0,
+        "target_std": 15.6886,
+        "target_zero_count": 35918,
+        "bucket_0_20": 190006,
+        "bucket_21_40": 161727,
+        "bucket_41_60": 49202,
+        "bucket_61_80": 5275,
+        "bucket_81_100": 63,
+        "missing_tempo": 152,
+        "missing_time_signature": 158,
+        "missing_release_month": 125353,
+        "track_id_hash": "c93be9e3a6effae1f4c33a4cf702754c"
+      },
+      {
+        "candidate": "C2",
+        "split": "val",
+        "rows": 94523,
+        "ratio": 0.1611,
+        "min_year": 2004,
+        "max_year": 2013,
+        "unique_years": 10,
+        "target_mean": 36.9256,
+        "target_median": 38.0,
+        "target_std": 15.8541,
+        "target_zero_count": 3178,
+        "bucket_0_20": 12610,
+        "bucket_21_40": 41049,
+        "bucket_41_60": 35982,
+        "bucket_61_80": 4814,
+        "bucket_81_100": 68,
+        "missing_tempo": 36,
+        "missing_time_signature": 38,
+        "missing_release_month": 9997,
+        "track_id_hash": "c46af3289450e7acd1d8be48282c8d66"
+      },
+      {
+        "candidate": "C2",
+        "split": "test",
+        "rows": 85876,
+        "ratio": 0.1464,
+        "min_year": 2014,
+        "max_year": 2021,
+        "unique_years": 8,
+        "target_mean": 40.8401,
+        "target_median": 45.0,
+        "target_std": 21.7856,
+        "target_zero_count": 5594,
+        "bucket_0_20": 17372,
+        "bucket_21_40": 16227,
+        "bucket_41_60": 37629,
+        "bucket_61_80": 14043,
+        "bucket_81_100": 605,
+        "missing_tempo": 140,
+        "missing_time_signature": 141,
+        "missing_release_month": 1139,
+        "track_id_hash": "f446764fc87d1c73a5c85095a769b69a"
+      },
+      {
+        "candidate": "C3",
+        "split": "train",
+        "rows": 398063,
+        "ratio": 0.6785,
+        "min_year": 1900,
+        "max_year": 2002,
+        "unique_years": 82,
+        "target_mean": 22.3077,
+        "target_median": 22.0,
+        "target_std": 15.6035,
+        "target_zero_count": 35824,
+        "bucket_0_20": 189018,
+        "bucket_21_40": 157610,
+        "bucket_41_60": 46382,
+        "bucket_61_80": 4995,
+        "bucket_81_100": 58,
+        "missing_tempo": 151,
+        "missing_time_signature": 157,
+        "missing_release_month": 123974,
+        "track_id_hash": "6569de8690f0627b1456c063e8d98137"
+      },
+      {
+        "candidate": "C3",
+        "split": "val",
+        "rows": 92176,
+        "ratio": 0.1571,
+        "min_year": 2003,
+        "max_year": 2012,
+        "unique_years": 10,
+        "target_mean": 36.959,
+        "target_median": 38.0,
+        "target_std": 15.2843,
+        "target_zero_count": 2567,
+        "bucket_0_20": 11542,
+        "bucket_21_40": 41579,
+        "bucket_41_60": 34599,
+        "bucket_61_80": 4397,
+        "bucket_81_100": 59,
+        "missing_tempo": 30,
+        "missing_time_signature": 31,
+        "missing_release_month": 10700,
+        "track_id_hash": "ac073eb1866a0b564c2502931645c0d7"
+      },
+      {
+        "candidate": "C3",
+        "split": "test",
+        "rows": 96433,
+        "ratio": 0.1644,
+        "min_year": 2013,
+        "max_year": 2021,
+        "unique_years": 9,
+        "target_mean": 40.3181,
+        "target_median": 45.0,
+        "target_std": 21.5349,
+        "target_zero_count": 6299,
+        "bucket_0_20": 19428,
+        "bucket_21_40": 19814,
+        "bucket_41_60": 41832,
+        "bucket_61_80": 14740,
+        "bucket_81_100": 619,
+        "missing_tempo": 147,
+        "missing_time_signature": 149,
+        "missing_release_month": 1815,
+        "track_id_hash": "9ce9ffc488b8583b26ec1742ef1a3735"
+      }
+    ]
+  },
+  "hotfix5": {
+    "legacy_files": [],
+    "references_found": [
+      {
+        "script": "hotfix_investigation.py",
+        "artifact": "encoder.pkl"
+      },
+      {
+        "script": "hotfix_investigation.py",
+        "artifact": "scaler.pkl"
+      },
+      {
+        "script": "hotfix_investigation.py",
+        "artifact": "popularity_model.pkl"
+      },
+      {
+        "script": "validate_feature_2_1.py",
+        "artifact": "encoder.pkl"
+      },
+      {
+        "script": "validate_feature_2_1.py",
+        "artifact": "scaler.pkl"
+      },
+      {
+        "script": "validate_feature_2_1.py",
+        "artifact": "popularity_model.pkl"
+      }
+    ]
+  },
+  "hotfix7": {
+    "splits": {
+      "train": {
+        "rows": 415524,
+        "target_mean": 22.88,
+        "target_std": 15.7718,
+        "target_median": 22.0,
+        "feature_stats": {
+          "duration_min": {
+            "mean": 3.824637,
+            "std": 2.135584,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "danceability": {
+            "mean": 0.544404,
+            "std": 0.165399,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "energy": {
+            "mean": 0.495359,
+            "std": 0.250392,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "loudness": {
+            "mean": -11.393526,
+            "std": 5.076661,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "speechiness": {
+            "mean": 0.110551,
+            "std": 0.20232,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "acousticness": {
+            "mean": 0.515013,
+            "std": 0.349114,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "instrumentalness": {
+            "mean": 0.125911,
+            "std": 0.277473,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "liveness": {
+            "mean": 0.217884,
+            "std": 0.186382,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "valence": {
+            "mean": 0.563294,
+            "std": 0.260065,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "tempo": {
+            "mean": 117.033442,
+            "std": 29.916955,
+            "null_count": 154,
+            "null_ratio": 0.000371
+          }
+        },
+        "release_month_null_ratio": 0.3054
+      },
+      "validation": {
+        "rows": 85272,
+        "target_mean": 37.0603,
+        "target_std": 16.0365,
+        "target_median": 39.0,
+        "feature_stats": {
+          "duration_min": {
+            "mean": 4.029763,
+            "std": 2.017418,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "danceability": {
+            "mean": 0.591702,
+            "std": 0.154512,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "energy": {
+            "mean": 0.661854,
+            "std": 0.221473,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "loudness": {
+            "mean": -7.240884,
+            "std": 3.657685,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "speechiness": {
+            "mean": 0.079815,
+            "std": 0.103533,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "acousticness": {
+            "mean": 0.299817,
+            "std": 0.299015,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "instrumentalness": {
+            "mean": 0.068959,
+            "std": 0.213302,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "liveness": {
+            "mean": 0.209146,
+            "std": 0.185395,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "valence": {
+            "mean": 0.55016,
+            "std": 0.252176,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "tempo": {
+            "mean": 122.378976,
+            "std": 28.814487,
+            "null_count": 34,
+            "null_ratio": 0.000399
+          }
+        },
+        "release_month_null_ratio": 0.0992
+      },
+      "test": {
+        "rows": 85876,
+        "target_mean": 40.8401,
+        "target_std": 21.7856,
+        "target_median": 45.0,
+        "feature_stats": {
+          "duration_min": {
+            "mean": 3.68619,
+            "std": 2.051884,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "danceability": {
+            "mean": 0.628538,
+            "std": 0.160077,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "energy": {
+            "mean": 0.648915,
+            "std": 0.212793,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "loudness": {
+            "mean": -7.404691,
+            "std": 3.944392,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "speechiness": {
+            "mean": 0.102218,
+            "std": 0.107654,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "acousticness": {
+            "mean": 0.283612,
+            "std": 0.286827,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "instrumentalness": {
+            "mean": 0.097339,
+            "std": 0.256616,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "liveness": {
+            "mean": 0.199584,
+            "std": 0.172024,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "valence": {
+            "mean": 0.501177,
+            "std": 0.244903,
+            "null_count": 0,
+            "null_ratio": 0.0
+          },
+          "tempo": {
+            "mean": 121.961535,
+            "std": 28.449014,
+            "null_count": 140,
+            "null_ratio": 0.00163
+          }
+        },
+        "release_month_null_ratio": 0.0133
+      }
+    },
+    "psi_target": {
+      "validation": 0.8709,
+      "test": 1.5385
+    },
+    "ks_tests": {
+      "duration_min_train_vs_validation": {
+        "statistic": 0.1811,
+        "p_value": 0.0
+      },
+      "duration_min_train_vs_test": {
+        "statistic": 0.0828,
+        "p_value": 0.0
+      },
+      "danceability_train_vs_validation": {
+        "statistic": 0.109,
+        "p_value": 0.0
+      },
+      "danceability_train_vs_test": {
+        "statistic": 0.2009,
+        "p_value": 0.0
+      },
+      "energy_train_vs_validation": {
+        "statistic": 0.2952,
+        "p_value": 0.0
+      },
+      "energy_train_vs_test": {
+        "statistic": 0.2927,
+        "p_value": 0.0
+      },
+      "loudness_train_vs_validation": {
+        "statistic": 0.4261,
+        "p_value": 0.0
+      },
+      "loudness_train_vs_test": {
+        "statistic": 0.424,
+        "p_value": 0.0
+      },
+      "speechiness_train_vs_validation": {
+        "statistic": 0.0496,
+        "p_value": 1.1700111367318215e-151
+      },
+      "speechiness_train_vs_test": {
+        "statistic": 0.1708,
+        "p_value": 0.0
+      },
+      "acousticness_train_vs_validation": {
+        "statistic": 0.2692,
+        "p_value": 0.0
+      },
+      "acousticness_train_vs_test": {
+        "statistic": 0.3017,
+        "p_value": 0.0
+      },
+      "instrumentalness_train_vs_validation": {
+        "statistic": 0.1563,
+        "p_value": 0.0
+      },
+      "instrumentalness_train_vs_test": {
+        "statistic": 0.1564,
+        "p_value": 0.0
+      },
+      "liveness_train_vs_validation": {
+        "statistic": 0.0399,
+        "p_value": 2.4033630582726004e-98
+      },
+      "liveness_train_vs_test": {
+        "statistic": 0.0674,
+        "p_value": 2.784367632168719e-281
+      },
+      "valence_train_vs_validation": {
+        "statistic": 0.0345,
+        "p_value": 1.7847897034755722e-73
+      },
+      "valence_train_vs_test": {
+        "statistic": 0.1156,
+        "p_value": 0.0
+      },
+      "tempo_train_vs_validation": {
+        "statistic": 0.1124,
+        "p_value": 0.0
+      },
+      "tempo_train_vs_test": {
+        "statistic": 0.1142,
+        "p_value": 0.0
+      }
+    },
+    "risks": [
+      {
+        "metric": "PSI_target_train_vs_validation",
+        "value": 0.8709,
+        "severity": "HIGH"
+      },
+      {
+        "metric": "PSI_target_train_vs_test",
+        "value": 1.5385,
+        "severity": "HIGH"
+      },
+      {
+        "metric": "target_mean_shift_train_vs_validation",
+        "delta": 14.18,
+        "severity": "HIGH"
+      },
+      {
+        "metric": "target_mean_shift_train_vs_test",
+        "delta": 17.96,
+        "severity": "HIGH"
+      },
+      {
+        "metric": "release_month_null_shift_train_vs_validation",
+        "train_ratio": 0.3054,
+        "other_ratio": 0.0992,
+        "severity": "HIGH"
+      },
+      {
+        "metric": "release_month_null_shift_train_vs_test",
+        "train_ratio": 0.3054,
+        "other_ratio": 0.0133,
+        "severity": "HIGH"
+      }
+    ],
+    "timestamp": "2026-07-16T12:20:23.936087+00:00"
+  }
+}

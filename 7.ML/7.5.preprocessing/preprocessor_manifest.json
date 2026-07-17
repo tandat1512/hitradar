@@ -1,0 +1,171 @@
+{
+  "feature_version": "2.2",
+  "data_version": "ml-ready-2026-07-16-v1",
+  "split_version": "temporal-split-v1",
+  "created_at": "2026-07-17T14:20:21.690217+00:00",
+  "source_hash": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "preprocessing_config_hash": "7342253362697c76488d3670d94488e9fbad8f1e4123dc6061ac9aba04e20343",
+  "artifact_paths": {
+    "ridge": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessor_ridge.pkl",
+    "histgb": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessor_histgb.pkl",
+    "xgb": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessor_xgb.pkl"
+  },
+  "ridge_feature_count": 58,
+  "histgb_feature_count": 21,
+  "xgb_feature_count": 21,
+  "column_roles": {
+    "duration_min": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 65514
+    },
+    "explicit": {
+      "source_dtype": "bool",
+      "semantic_role": "binary",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 2
+    },
+    "release_year": {
+      "source_dtype": "int64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 101
+    },
+    "release_month": {
+      "source_dtype": "float64",
+      "semantic_role": "categorical",
+      "missing_count": 136489,
+      "missing_ratio": 0.23265,
+      "unique_count": 12
+    },
+    "decade": {
+      "source_dtype": "int64",
+      "semantic_role": "categorical",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 12
+    },
+    "release_precision": {
+      "source_dtype": "str",
+      "semantic_role": "categorical",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 3
+    },
+    "danceability": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 1285
+    },
+    "energy": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 2571
+    },
+    "key": {
+      "source_dtype": "int64",
+      "semantic_role": "categorical",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 12
+    },
+    "loudness": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 29196
+    },
+    "mode": {
+      "source_dtype": "int64",
+      "semantic_role": "binary",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 2
+    },
+    "speechiness": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 1655
+    },
+    "acousticness": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 5217
+    },
+    "instrumentalness": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 5402
+    },
+    "liveness": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 1782
+    },
+    "valence": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "unique_count": 1805
+    },
+    "tempo": {
+      "source_dtype": "float64",
+      "semantic_role": "continuous",
+      "missing_count": 328,
+      "missing_ratio": 0.000559,
+      "unique_count": 122705
+    },
+    "time_signature": {
+      "source_dtype": "float64",
+      "semantic_role": "categorical",
+      "missing_count": 337,
+      "missing_ratio": 0.000574,
+      "unique_count": 4
+    }
+  },
+  "column_groups": {
+    "numeric": [
+      "duration_min",
+      "release_year",
+      "danceability",
+      "energy",
+      "loudness",
+      "speechiness",
+      "acousticness",
+      "instrumentalness",
+      "liveness",
+      "valence",
+      "tempo"
+    ],
+    "categorical": [
+      "release_month",
+      "decade",
+      "release_precision",
+      "key",
+      "time_signature"
+    ],
+    "binary": [
+      "explicit",
+      "mode"
+    ]
+  },
+  "warnings": []
+}

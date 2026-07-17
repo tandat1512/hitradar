@@ -1,0 +1,139 @@
+{
+  "archived_at": "2026-07-17T19:21:29.283476",
+  "archive_dir": "10.ARCHIVE\\feature_2_2_pre_hotfix",
+  "files": [
+    {
+      "original_path": "COLUMN_CLASSIFICATION_REPORT.md",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\COLUMN_CLASSIFICATION_REPORT.md",
+      "sha256": "2f2753efb05674e3d555b5ecc8beabd97e1af0c4cdabb8915a01acaad9aa7e62",
+      "file_size": 1993,
+      "modified_time": "2026-07-17T19:21:05.606100"
+    },
+    {
+      "original_path": "column_roles.json",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\column_roles.json",
+      "sha256": "e9fd70d626aa43c281d42a159777a63827f19f5c9dac627147a8c4441df9a0e2",
+      "file_size": 3065,
+      "modified_time": "2026-07-17T19:21:06.115624"
+    },
+    {
+      "original_path": "FEATURE_2_2_COMPLETION_REPORT.md",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\FEATURE_2_2_COMPLETION_REPORT.md",
+      "sha256": "ed9d959b471929b6ef119367bdb5d8a8128a6b0d68db211b2b5200bc7fe675cb",
+      "file_size": 2425,
+      "modified_time": "2026-07-17T19:21:05.616695"
+    },
+    {
+      "original_path": "feature_2_2_preprocessing.py",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\feature_2_2_preprocessing.py",
+      "sha256": "737da2cc00dd1dbab95d34960ade4f8f784887d34488959e6e3bb6277d3f90f0",
+      "file_size": 19829,
+      "modified_time": "2026-07-17T19:21:06.351353"
+    },
+    {
+      "original_path": "feature_2_2_validation_results.json",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\feature_2_2_validation_results.json",
+      "sha256": "35331294342c1752064b539b13f79d4752d77804b1925736dae32cb7136a4f4c",
+      "file_size": 13841,
+      "modified_time": "2026-07-17T19:21:06.181923"
+    },
+    {
+      "original_path": "histgb_feature_names.json",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\histgb_feature_names.json",
+      "sha256": "8eba4969103890281d9121154521e62aa3aa7c91bcc9de59e4c2941a40fe2284",
+      "file_size": 29,
+      "modified_time": "2026-07-17T19:21:06.198528"
+    },
+    {
+      "original_path": "MISSING_VALUE_STRATEGY_REPORT.md",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\MISSING_VALUE_STRATEGY_REPORT.md",
+      "sha256": "097e0fd4d9ffcd8f2d6a456a76aabc94b1aa4c3713e6a75269ef74f08befe090",
+      "file_size": 1513,
+      "modified_time": "2026-07-17T19:21:05.619245"
+    },
+    {
+      "original_path": "OUTLIER_PREPROCESSING_REPORT.md",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\OUTLIER_PREPROCESSING_REPORT.md",
+      "sha256": "5a756ab2d92e059320ad680f326f288af7af5bee955d3826f5cf73fcb24dd9e5",
+      "file_size": 1057,
+      "modified_time": "2026-07-17T19:21:05.633006"
+    },
+    {
+      "original_path": "preprocessing_config.yaml",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\preprocessing_config.yaml",
+      "sha256": "ee61bf70659cddbf2f3fdfed6190801b41de4f5202cb3c80755005efb151a56f",
+      "file_size": 3993,
+      "modified_time": "2026-07-17T19:21:06.312137"
+    },
+    {
+      "original_path": "PREPROCESSING_REPORT.md",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\PREPROCESSING_REPORT.md",
+      "sha256": "dbac22fadc5cba7684af25b86ac4012098e2fb8e52fb872aad0fc61ae0c2957d",
+      "file_size": 2356,
+      "modified_time": "2026-07-17T19:21:05.641687"
+    },
+    {
+      "original_path": "PREPROCESSING_VALIDATION_REPORT.md",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\PREPROCESSING_VALIDATION_REPORT.md",
+      "sha256": "32c1f834aec8c1c23e556369c4517a1a1cd0c5e1c42b9d8d5946dfc0ceae9e9b",
+      "file_size": 1859,
+      "modified_time": "2026-07-17T19:21:05.643210"
+    },
+    {
+      "original_path": "preprocessor_histgb.pkl",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\preprocessor_histgb.pkl",
+      "sha256": "109775b9825aa1b5e9a51df924ab7ff214422b3f8090d0f2bb9f070d3a306072",
+      "file_size": 1819,
+      "modified_time": "2026-07-17T19:21:05.682611"
+    },
+    {
+      "original_path": "preprocessor_manifest.json",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\preprocessor_manifest.json",
+      "sha256": "4629382da2eca33dfebca952c0a67cea5c30b3e9053f9f310cf5a470b8fdef1e",
+      "file_size": 4624,
+      "modified_time": "2026-07-17T19:21:06.231578"
+    },
+    {
+      "original_path": "preprocessor_ridge.pkl",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\preprocessor_ridge.pkl",
+      "sha256": "3a18b9db1b9a1d5433adec23f4955f655584268b1ce477cf965661e42696424a",
+      "file_size": 2696,
+      "modified_time": "2026-07-17T19:21:06.048237"
+    },
+    {
+      "original_path": "preprocessor_xgb.pkl",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\preprocessor_xgb.pkl",
+      "sha256": "109775b9825aa1b5e9a51df924ab7ff214422b3f8090d0f2bb9f070d3a306072",
+      "file_size": 1819,
+      "modified_time": "2026-07-17T19:21:06.056831"
+    },
+    {
+      "original_path": "ridge_feature_names.json",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\ridge_feature_names.json",
+      "sha256": "0e2ce8bcdca2e92e7e671941c41b555eccfafe7a24b3c0a14ebabf608461a549",
+      "file_size": 2457,
+      "modified_time": "2026-07-17T19:21:06.260789"
+    },
+    {
+      "original_path": "test_preprocessing_leakage.py",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\test_preprocessing_leakage.py",
+      "sha256": "f2379d1110ca9db8419096ac2ffb21c561c0cc4056287a0a4804daa07337031f",
+      "file_size": 32141,
+      "modified_time": "2026-07-17T19:21:06.432550"
+    },
+    {
+      "original_path": "validate_feature_2_2.py",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\validate_feature_2_2.py",
+      "sha256": "f313c90e8e6f0b82603478c70cc122a0d6594a19a1452cca6d16b2200d6bda6b",
+      "file_size": 19936,
+      "modified_time": "2026-07-17T19:21:06.395352"
+    },
+    {
+      "original_path": "xgboost_feature_names.json",
+      "archived_path": "10.ARCHIVE\\feature_2_2_pre_hotfix\\xgboost_feature_names.json",
+      "sha256": "49f39ac5a739aad18cef9eda9eba4870f0271c0a5c9325dd7b040371252fa9f3",
+      "file_size": 26,
+      "modified_time": "2026-07-17T19:21:06.274975"
+    }
+  ]
+}

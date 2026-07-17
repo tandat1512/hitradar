@@ -1,0 +1,409 @@
+{
+  "feature": "2.1",
+  "timestamp": "2026-07-16T00:30:32.534822+00:00",
+  "checks": [
+    {
+      "check_id": "F20",
+      "description": "Feature 2.0 file exists: EPIC2_SCOPE_LOCK.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20",
+      "description": "Feature 2.0 file exists: ML_CONTRACT.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20",
+      "description": "Feature 2.0 file exists: EXPERIMENT_DESIGN.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20",
+      "description": "Feature 2.0 file exists: experiment_config.yaml",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20",
+      "description": "Feature 2.0 file exists: EPIC2_DEFINITION_OF_DONE.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20",
+      "description": "Feature 2.0 file exists: FEATURE_2_0_COMPLETION_REPORT.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-01",
+      "description": "experiment_config.yaml parsed",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-01",
+      "description": "data_version.json exists",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-02",
+      "description": "data_version parseable",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-03",
+      "description": "Canonical source correct",
+      "expected": "analytics.vw_ml_ready_dataset",
+      "actual": "analytics.vw_ml_ready_dataset",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCH-01",
+      "description": "Row count",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCH-02",
+      "description": "Column count",
+      "expected": "20",
+      "actual": "20",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCH-03",
+      "description": "All 20 official columns present",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCH-04",
+      "description": "target_popularity not in input_features",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCH-05",
+      "description": "track_id not in input_features",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCH-06",
+      "description": "No forbidden leakage columns in features",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ID-01",
+      "description": "track_id NULL count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ID-02",
+      "description": "track_id duplicate count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-01",
+      "description": "target NULL count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-02",
+      "description": "target NaN count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-03",
+      "description": "target infinite count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-04",
+      "description": "target min >= 0",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-05",
+      "description": "target max <= 100",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "WRN-01",
+      "description": "tempo NULL count",
+      "expected": "328",
+      "actual": "328",
+      "status": "PASS",
+      "note": "EXPECTED_WARNING"
+    },
+    {
+      "check_id": "WRN-02",
+      "description": "time_signature NULL count",
+      "expected": "337",
+      "actual": "337",
+      "status": "PASS",
+      "note": "EXPECTED_WARNING"
+    },
+    {
+      "check_id": "WRN-03",
+      "description": "release_month NULL count",
+      "expected": "136489",
+      "actual": "136489",
+      "status": "PASS",
+      "note": "EXPECTED_WARNING — missing-by-design"
+    },
+    {
+      "check_id": "WRN-04",
+      "description": "release_year NULL (for split)",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: year_distribution.csv",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: split_candidates.csv",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: split_config.yaml",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: split_manifest.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: split_version.txt",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: test_set_lock.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: train_ids.parquet",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: validation_ids.parquet",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL",
+      "description": "Split artifact exists: test_ids.parquet",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-S",
+      "description": "Split strategy = temporal",
+      "expected": "temporal",
+      "actual": "temporal",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-B1",
+      "description": "train.end_year not null",
+      "expected": "not null",
+      "actual": "2004",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-B2",
+      "description": "test.start_year not null",
+      "expected": "not null",
+      "actual": "2014",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CHR-01",
+      "description": "Chronology: max(train) < min(val)",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CHR-02",
+      "description": "Chronology: max(val) < min(test)",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "OVL-01",
+      "description": "Zero track overlap train-val",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "OVL-02",
+      "description": "Zero track overlap train-test",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "OVL-03",
+      "description": "Zero track overlap val-test",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ROW-01",
+      "description": "Row sum matches source",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "REP-01",
+      "description": "Train ID hash reproducible",
+      "expected": "d3684ebb6ba7744c",
+      "actual": "d3684ebb6ba7744c",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "REP-02",
+      "description": "Val ID hash reproducible",
+      "expected": "d292e4009b798e3e",
+      "actual": "d292e4009b798e3e",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "REP-03",
+      "description": "Test ID hash reproducible",
+      "expected": "f446764fc87d1c73",
+      "actual": "f446764fc87d1c73",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCOPE-01",
+      "description": "No NEW model .pkl from Feature 2.1",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": "Pre-existing EPIC 1 files: ['encoder.pkl', 'popularity_model.pkl', 'scaler.pkl']"
+    },
+    {
+      "check_id": "SCOPE-02",
+      "description": "No model .joblib from Feature 2.1",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    }
+  ],
+  "pass_count": 50,
+  "fail_count": 0,
+  "overall_status": "PASS_WITH_WARNINGS"
+}

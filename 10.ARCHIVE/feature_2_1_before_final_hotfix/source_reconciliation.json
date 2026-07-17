@@ -1,0 +1,174 @@
+{
+  "row_count_parquet": 586672,
+  "row_count_csv": 586672,
+  "row_match": true,
+  "col_count_parquet": 20,
+  "col_count_csv": 20,
+  "col_match": true,
+  "col_names_parquet": [
+    "track_id",
+    "target_popularity",
+    "duration_min",
+    "explicit",
+    "release_year",
+    "release_month",
+    "decade",
+    "release_precision",
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "time_signature"
+  ],
+  "col_names_csv": [
+    "track_id",
+    "target_popularity",
+    "duration_min",
+    "explicit",
+    "release_year",
+    "release_month",
+    "decade",
+    "release_precision",
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "time_signature"
+  ],
+  "col_names_match": true,
+  "col_order_match": true,
+  "null_comparison": {
+    "track_id": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "target_popularity": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "duration_min": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "explicit": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "release_year": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "release_month": {
+      "parquet": 136489,
+      "csv": 136489,
+      "match": true
+    },
+    "decade": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "release_precision": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "danceability": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "energy": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "key": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "loudness": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "mode": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "speechiness": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "acousticness": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "instrumentalness": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "liveness": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "valence": {
+      "parquet": 0,
+      "csv": 0,
+      "match": true
+    },
+    "tempo": {
+      "parquet": 328,
+      "csv": 328,
+      "match": true
+    },
+    "time_signature": {
+      "parquet": 337,
+      "csv": 337,
+      "match": true
+    }
+  },
+  "all_null_match": true,
+  "track_id_set_match": true,
+  "pq_only_ids": 0,
+  "csv_only_ids": 0,
+  "parquet_track_id_hash": "cf45efdde035aa11fdf7ff1654a5bced0680251ee98d8b4bd0356662cc733742",
+  "csv_track_id_hash": "cf45efdde035aa11fdf7ff1654a5bced0680251ee98d8b4bd0356662cc733742",
+  "track_id_hash_match": true,
+  "target_mean_parquet": 27.570053,
+  "target_mean_csv": 27.570053,
+  "target_mean_match": true,
+  "parquet_file_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "csv_file_sha256": "332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e",
+  "parquet_file_size": 26440492,
+  "csv_file_size": 72546749,
+  "numeric_values_match": true,
+  "overall_status": "RECONCILED",
+  "reconciliation_timestamp": "2026-07-16T12:21:34.162349+00:00",
+  "reconciliation_note": "Parquet and CSV are two exports of analytics.vw_ml_ready_dataset. Database view is the logical authoritative source. Parquet is the frozen physical snapshot used for ML pipeline."
+}

@@ -1,0 +1,144 @@
+# Feature 2.2 — Preprocessing Configuration
+# All preprocessing parameters learned from train split only
+
+data:
+  source_path: 5.DATA/processed/ml_ready_dataset.parquet
+  identifier: track_id
+  target: target_popularity
+
+split:
+  version: temporal-split-v1
+
+# 18 baseline features
+input_features:
+  - duration_min
+  - explicit
+  - release_year
+  - release_month
+  - decade
+  - release_precision
+  - danceability
+  - energy
+  - key
+  - loudness
+  - mode
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  - valence
+  - tempo
+  - time_signature
+
+# Column classification groups
+column_groups:
+  numeric_continuous:
+    - duration_min
+    - release_year
+    - danceability
+    - energy
+    - loudness
+    - speechiness
+    - acousticness
+    - instrumentalness
+    - liveness
+    - valence
+    - tempo
+  binary:
+    - explicit
+    - mode
+  categorical:
+    - release_month
+    - decade
+    - release_precision
+    - key
+    - time_signature
+
+# Missing value strategy
+missing_strategy:
+  tempo:
+    imputation: median_train_only
+    indicator: true
+    strategy_note: "328 nulls in full dataset; median computed on train split only"
+  time_signature:
+    imputation: mode_train_only
+    indicator: true
+    strategy_note: "337 nulls in full dataset; mode computed on train split only"
+  release_month:
+    imputation: sentinel_zero
+    indicator: true
+    strategy_note: "136,489 nulls - missing by design (year-only precision); sentinel 0 used"
+  default:
+    imputation: none
+    indicator: false
+
+# Outlier strategy (config-driven)
+outlier_strategy:
+  mode: none  # Options: none, iqr_clip, quantile_clip
+  default_mode: none
+  columns:
+    duration_min:
+      enabled: false
+      note: "Baseline: no clipping. Can be enabled in Feature 2.3/2.4 if validation shows benefit."
+    tempo:
+      enabled: false
+      note: "Baseline: no clipping. Extreme values are musically valid."
+    loudness:
+      enabled: false
+      note: "Baseline: no clipping. Positive loudness values are rare but valid."
+
+# Encoding strategy by model
+encoding_strategy:
+  ridge:
+    categorical_method: onehot
+    handle_unknown: ignore
+    binary_method: passthrough
+    notes: "OneHotEncoder for categoricals; binary passthrough as 0/1"
+  histgb:
+    categorical_method: ordinal
+    ordinal_unknown_sentinel: -1
+    binary_method: passthrough
+    notes: "OrdinalEncoder for categoricals with -1 for unknown; no scaling"
+  xgboost:
+    categorical_method: ordinal
+    ordinal_unknown_sentinel: -1
+    binary_method: passthrough
+    notes: "OrdinalEncoder for categoricals with -1 for unknown; no scaling"
+
+# Scaling strategy by model
+scaling_strategy:
+  ridge:
+    method: standard
+    fit_scope: train_only
+    features: numeric_continuous_only
+    notes: "StandardScaler fit on train; no scaling on one-hot features"
+  histgb:
+    method: none
+    notes: "No scaling for tree-based model"
+  xgboost:
+    method: none
+    notes: "No scaling for tree-based model"
+
+# Output paths
+output_paths:
+  preprocessing_dir: 7.ML/7.5.preprocessing
+  ridge_preprocessor: 7.ML/7.5.preprocessing/preprocessor_ridge.pkl
+  histgb_preprocessor: 7.ML/7.5.preprocessing/preprocessor_histgb.pkl
+  xgb_preprocessor: 7.ML/7.5.preprocessing/preprocessor_xgb.pkl
+  ridge_features: 7.ML/7.5.preprocessing/ridge_feature_names.json
+  histgb_features: 7.ML/7.5.preprocessing/histgb_feature_names.json
+  xgb_features: 7.ML/7.5.preprocessing/xgboost_feature_names.json
+  column_roles: 7.ML/7.5.preprocessing/column_roles.json
+  outlier_thresholds: 7.ML/7.5.preprocessing/outlier_thresholds.json
+  missing_profile: 7.ML/7.5.preprocessing/missing_value_profile.json
+  manifest: 7.ML/7.5.preprocessing/preprocessor_manifest.json
+
+# Reproducibility
+random_seed: 1512
+float_dtype: float32
+
+# Validation thresholds
+validation_thresholds:
+  max_missing_ratio_per_column: 0.5  # Flag if >50% missing
+  min_category_count: 1  # Minimum samples per category for encoding
+  outlier_clip_threshold_pct: 0.01  # Flag if >1% values clipped

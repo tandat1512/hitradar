@@ -1,0 +1,191 @@
+project:
+  name: HitRadar Pro
+  epic: EPIC 2 - Feature Engineering & ML Modeling
+  feature: 2.0 - ML Contract & Experiment Design
+  contract_version: '1.0'
+  status: feature_2_1_completed
+data:
+  source_priority:
+  - 5.DATA/processed/ml_ready_dataset.parquet
+  - 5.DATA/processed/ml_ready_dataset.csv
+  - analytics.vw_ml_ready_dataset
+  expected_rows: 586672
+  expected_columns: 20
+  identifier_column: track_id
+  target_column: target_popularity
+  target_range:
+    min: 0
+    max: 100
+  baseline_features:
+  - duration_min
+  - explicit
+  - release_year
+  - release_month
+  - decade
+  - release_precision
+  - danceability
+  - energy
+  - key
+  - loudness
+  - mode
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  - valence
+  - tempo
+  - time_signature
+  forbidden_columns:
+  - track_id
+  - target_popularity
+  - artists.popularity
+  - artist_popularity_dashboard_only
+  - avg_artist_popularity
+  - avg_genre_popularity
+  - avg_track_popularity
+  - popularity_bucket
+  - popularity_group
+  data_version: ml-ready-2026-07-16-v1
+warnings_carry_forward:
+  tempo_null_count: 328
+  time_signature_null_count: 337
+  release_month_null_count: 136489
+  duration_short_under_10s_count: 26
+  duration_long_over_60min_count: 83
+  loudness_positive_count: 219
+  target_popularity_zero_count: 44690
+  popularity_imbalance_note: Approximately 75% of tracks have target_popularity <=
+    40.
+  genre_high_cardinality_note: Do not one-hot all 4,672 track-linked genres by default.
+split:
+  primary_strategy: temporal
+  split_column: release_year
+  random_split_allowed: false
+  random_split_usage: comparison_only
+  target_ratios:
+    train_min: 0.65
+    train_max: 0.75
+    validation_min: 0.1
+    validation_max: 0.2
+    test_min: 0.1
+    test_max: 0.2
+  final_year_cutoffs:
+    train_end_year: 2004
+    validation_start_year: 2005
+    validation_end_year: 2013
+    test_start_year: 2014
+  shuffle: false
+  split_version: temporal-split-v1
+leakage_rules:
+  split_before_impute: true
+  split_before_scale: true
+  split_before_encode: true
+  split_before_kmeans: true
+  validation_test_not_used_for_feature_selection: true
+  test_used_only_after_model_selection: true
+  aggregate_features_train_only: true
+  track_id_never_in_model_matrix: true
+models:
+  sanity_baseline:
+    name: DummyRegressor
+    sklearn_class: sklearn.dummy.DummyRegressor
+    params:
+      strategy: median
+  candidates:
+    ridge:
+      name: Ridge Regression
+      sklearn_class: sklearn.linear_model.Ridge
+      params:
+        alpha:
+        - 0.1
+        - 1.0
+        - 10.0
+        - 100.0
+        random_state: 1512
+    hist_gradient_boosting:
+      name: HistGradientBoostingRegressor
+      sklearn_class: sklearn.ensemble.HistGradientBoostingRegressor
+      params:
+        learning_rate:
+        - 0.03
+        - 0.05
+        - 0.1
+        max_iter:
+        - 200
+        - 500
+        max_leaf_nodes:
+        - 31
+        - 63
+        l2_regularization:
+        - 0.0
+        - 0.1
+        random_state: 1512
+    xgboost:
+      name: XGBoostRegressor
+      sklearn_class: xgboost.XGBRegressor
+      params:
+        n_estimators:
+        - 300
+        - 600
+        learning_rate:
+        - 0.03
+        - 0.05
+        - 0.1
+        max_depth:
+        - 4
+        - 6
+        - 8
+        subsample:
+        - 0.8
+        - 1.0
+        colsample_bytree:
+        - 0.8
+        - 1.0
+        objective: reg:squarederror
+        random_state: 1512
+metrics:
+  primary: mae
+  secondary:
+  - rmse
+  - r2
+  - median_absolute_error
+  - within_5_points_rate
+  - within_10_points_rate
+  breakdowns:
+  - popularity_bucket
+  - decade
+  - release_year_group
+  - explicit
+  - duration_outlier_flag
+  not_primary:
+  - mape
+preprocessing_policy:
+  fit_scope: train_only
+  ridge:
+    numeric_imputer: median
+    categorical_imputer: most_frequent_or_constant
+    scaler: StandardScaler
+  tree_models:
+    scaling_required: false
+    numeric_nan_allowed_when_model_supports_it: true
+  special_columns:
+    release_month:
+      add_missing_indicator: true
+      null_meaning: raw release date has year-only precision
+    tempo:
+      imputation: median_train_only
+    time_signature:
+      imputation: mode_or_unknown_train_only
+artifacts:
+  base_dir: 4.MODELS
+  reports_dir: 6.TAI_LIEU/6.1.bao_cao/epic2_feature_2_0
+  config_snapshot: 4.MODELS/experiment_config.yaml
+  split_manifest: 4.MODELS/4.2.evaluation/split_manifest.json
+  model_registry: 4.MODELS/4.1.trained/model_registry.json
+  inference_pipeline: 4.MODELS/4.1.trained/inference_pipeline.pkl
+  evaluation_report: 4.MODELS/4.2.evaluation/model_evaluation_report.md
+reproducibility:
+  random_seed: 1512
+  python_min_version: '3.10'
+  require_config_snapshot_per_run: true
+  require_split_manifest_per_run: true

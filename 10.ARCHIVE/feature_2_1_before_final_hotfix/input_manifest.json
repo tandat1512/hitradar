@@ -1,0 +1,49 @@
+{
+  "data_version": "ml-ready-2026-07-16-v1",
+  "source_priority": [
+    "5.DATA/processed/ml_ready_dataset.parquet",
+    "5.DATA/processed/ml_ready_dataset.csv",
+    "analytics.vw_ml_ready_dataset"
+  ],
+  "actual_source_used": "E:\\Dự án 1 hitrada\\hitradar\\5.DATA\\processed\\ml_ready_dataset.parquet",
+  "expected_rows": 586672,
+  "expected_columns": 20,
+  "actual_rows": 586672,
+  "actual_columns": 20,
+  "identifier_column": "track_id",
+  "target_column": "target_popularity",
+  "baseline_features": [
+    "duration_min",
+    "explicit",
+    "release_year",
+    "release_month",
+    "decade",
+    "release_precision",
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "time_signature"
+  ],
+  "forbidden_columns": [
+    "track_id",
+    "target_popularity",
+    "artists.popularity",
+    "artist_popularity_dashboard_only",
+    "avg_artist_popularity",
+    "avg_genre_popularity",
+    "avg_track_popularity",
+    "popularity_bucket",
+    "popularity_group"
+  ],
+  "schema_hash": "bb6b4eecd81f2c3132367ca1bae7b97f25fb5cd4be507adf1efa17873c69ea96",
+  "file_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "created_at": "2026-07-16T00:27:17.957431+00:00"
+}

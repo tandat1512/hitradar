@@ -1,0 +1,259 @@
+{
+  "extraction_timestamp": "2026-07-17T19:37:53.699766",
+  "note": "All statistics fitted on TRAIN SET ONLY (1900-2004)",
+  "preprocessors": {
+    "ridge": {
+      "numeric_imputer_median": {
+        "duration_min": 3.5173,
+        "release_year": 1983.0,
+        "danceability": 0.558,
+        "energy": 0.484,
+        "loudness": -10.655,
+        "speechiness": 0.0429,
+        "acousticness": 0.552,
+        "instrumentalness": 6.22e-05,
+        "liveness": 0.143,
+        "valence": 0.582,
+        "tempo": 114.995
+      },
+      "categorical_imputer_most_frequent": {
+        "release_month": 1.0,
+        "decade": 1990,
+        "release_precision": "day",
+        "key": 0,
+        "time_signature": 4.0
+      },
+      "scaler_mean": {
+        "duration_min": 3.8246370017134987,
+        "release_year": 1978.382926136637,
+        "danceability": 0.544403715790183,
+        "energy": 0.495358725215872,
+        "loudness": -11.393526484631453,
+        "speechiness": 0.1105506283632233,
+        "acousticness": 0.5150132032415696,
+        "instrumentalness": 0.12591107220819978,
+        "liveness": 0.21788359919041983,
+        "valence": 0.5632940204515263,
+        "tempo": 117.03344245612345
+      },
+      "scaler_scale": {
+        "duration_min": 2.135581759728712,
+        "release_year": 19.26276696407741,
+        "danceability": 0.16539908726365904,
+        "energy": 0.2503912692639482,
+        "loudness": 5.076654941551704,
+        "speechiness": 0.20231939971890542,
+        "acousticness": 0.34911370719831447,
+        "instrumentalness": 0.27747216975341393,
+        "liveness": 0.18638135680726847,
+        "valence": 0.26006470223778566,
+        "tempo": 29.916918576551947
+      },
+      "ohe_categories": {
+        "release_month": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0,
+          NaN
+        ],
+        "decade": [
+          1900,
+          1920,
+          1930,
+          1940,
+          1950,
+          1960,
+          1970,
+          1980,
+          1990,
+          2000
+        ],
+        "release_precision": [
+          "day",
+          "month",
+          "year"
+        ],
+        "key": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "time_signature": [
+          1.0,
+          3.0,
+          4.0,
+          5.0,
+          NaN
+        ]
+      }
+    },
+    "histgb": {
+      "numeric_imputer_median": {
+        "duration_min": 3.5173,
+        "release_year": 1983.0,
+        "danceability": 0.558,
+        "energy": 0.484,
+        "loudness": -10.655,
+        "speechiness": 0.0429,
+        "acousticness": 0.552,
+        "instrumentalness": 6.22e-05,
+        "liveness": 0.143,
+        "valence": 0.582,
+        "tempo": 114.995
+      },
+      "categorical_imputer_most_frequent": {
+        "release_month": 1.0,
+        "decade": 1990,
+        "release_precision": "day",
+        "key": 0,
+        "time_signature": 4.0
+      },
+      "ordinal_categories": {
+        "release_month": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "decade": [
+          1900,
+          1920,
+          1930,
+          1940,
+          1950,
+          1960,
+          1970,
+          1980,
+          1990,
+          2000
+        ],
+        "release_precision": [
+          "day",
+          "month",
+          "year"
+        ],
+        "key": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "time_signature": [
+          1.0,
+          3.0,
+          4.0,
+          5.0
+        ]
+      }
+    },
+    "xgb": {
+      "numeric_imputer_median": {
+        "duration_min": 3.5173,
+        "release_year": 1983.0,
+        "danceability": 0.558,
+        "energy": 0.484,
+        "loudness": -10.655,
+        "speechiness": 0.0429,
+        "acousticness": 0.552,
+        "instrumentalness": 6.22e-05,
+        "liveness": 0.143,
+        "valence": 0.582,
+        "tempo": 114.995
+      },
+      "categorical_imputer_most_frequent": {
+        "release_month": 1.0,
+        "decade": 1990,
+        "release_precision": "day",
+        "key": 0,
+        "time_signature": 4.0
+      },
+      "ordinal_categories": {
+        "release_month": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "decade": [
+          1900,
+          1920,
+          1930,
+          1940,
+          1950,
+          1960,
+          1970,
+          1980,
+          1990,
+          2000
+        ],
+        "release_precision": [
+          "day",
+          "month",
+          "year"
+        ],
+        "key": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "time_signature": [
+          1.0,
+          3.0,
+          4.0,
+          5.0
+        ]
+      }
+    }
+  }
+}

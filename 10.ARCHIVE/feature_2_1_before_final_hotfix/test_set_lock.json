@@ -1,0 +1,29 @@
+{
+  "status": "locked",
+  "data_version": "ml-ready-2026-07-16-v1",
+  "split_version": "temporal-split-v1",
+  "test_ids_hash": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53",
+  "test_row_count": 85876,
+  "test_start_year": 2014,
+  "test_end_year": 2021,
+  "lock_timestamp": "2026-07-16T12:21:10.535678+00:00",
+  "lock_owner": "Feature 2.1 — Data Intake, Validation & Temporal Split",
+  "permitted_stage": "Feature 2.5 — Final model evaluation only",
+  "prohibited_actions": [
+    "Do NOT use test set for hyperparameter tuning",
+    "Do NOT use test set for model selection",
+    "Do NOT use test set for feature selection",
+    "Do NOT compute model metrics on test before Feature 2.5",
+    "Do NOT read y_test in Feature 2.2, 2.3, or 2.4 scripts"
+  ],
+  "descriptive_audit_performed": true,
+  "descriptive_audit_fields": [
+    "target_popularity distribution (mean, median, std, buckets)",
+    "release_year range",
+    "missing value counts (tempo, time_signature, release_month)",
+    "row count"
+  ],
+  "descriptive_audit_note": "Test labels were read during Feature 2.1 pre-lock descriptive audit to document data quality and temporal distribution shift. No model was trained, no model metric was computed, no model was selected using test data.",
+  "final_evaluation_status": "NOT_STARTED",
+  "model_metrics_on_test": null
+}

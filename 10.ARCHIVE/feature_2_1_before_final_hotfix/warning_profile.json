@@ -1,0 +1,101 @@
+{
+  "data_version": "ml-ready-2026-07-16-v1",
+  "warnings": {
+    "tempo_null_count": {
+      "actual": 328,
+      "expected": 328,
+      "match": true
+    },
+    "time_signature_null_count": {
+      "actual": 337,
+      "expected": 337,
+      "match": true
+    },
+    "release_month_null_count": {
+      "actual": 136489,
+      "expected": 136489,
+      "match": true
+    },
+    "release_year_null_count": {
+      "actual": 0,
+      "expected": 0
+    },
+    "target_null_count": {
+      "actual": 0,
+      "expected": 0
+    },
+    "danceability_range_violations": {
+      "value": 0
+    },
+    "energy_range_violations": {
+      "value": 0
+    },
+    "speechiness_range_violations": {
+      "value": 0
+    },
+    "acousticness_range_violations": {
+      "value": 0
+    },
+    "instrumentalness_range_violations": {
+      "value": 0
+    },
+    "liveness_range_violations": {
+      "value": 0
+    },
+    "valence_range_violations": {
+      "value": 0
+    },
+    "duration_short_under_10s": {
+      "actual": 26,
+      "expected": 26
+    },
+    "duration_long_over_60min": {
+      "actual": 83,
+      "expected": 83
+    },
+    "loudness_positive": {
+      "actual": 219,
+      "expected": 219
+    },
+    "target_zero_count": {
+      "actual": 44690,
+      "expected": 44690
+    },
+    "target_le40_pct": {
+      "value": 74.83
+    },
+    "release_year_target_corr": {
+      "value": 0.5909
+    },
+    "key_domain": {
+      "value": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "mode_domain": {
+      "value": [
+        0,
+        1
+      ]
+    },
+    "time_signature_domain": {
+      "value": [
+        1.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    }
+  }
+}

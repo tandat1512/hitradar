@@ -1,0 +1,62 @@
+{
+  "model": "XGBoostRegressor",
+  "categorical_strategy": "ordinal_encoding",
+  "alternative_candidates": [
+    {
+      "strategy": "ordinal_encoding",
+      "status": "IMPLEMENTED",
+      "description": "Convert categories to integers. XGBoost treats these as ordered, which may introduce unintended ordinal relationships."
+    },
+    {
+      "strategy": "native_categorical",
+      "status": "NOT_IMPLEMENTED",
+      "description": "Use XGBoost's built-in categorical feature support (enable_categorical=True). Requires special DMatrix format."
+    },
+    {
+      "strategy": "target_encoding",
+      "status": "NOT_IMPLEMENTED",
+      "description": "Encode categories using target mean. HIGH LEAKAGE RISK if not done carefully with proper cross-validation."
+    },
+    {
+      "strategy": "leave_one_out_encoding",
+      "status": "NOT_IMPLEMENTED",
+      "description": "Encode using leave-one-out target mean. Requires careful implementation to avoid leakage."
+    }
+  ],
+  "implementation": {
+    "encoder_type": "OrdinalEncoder",
+    "handle_unknown": "use_encoded_value",
+    "unknown_value": -1,
+    "encoded_missing_value": -1
+  },
+  "categorical_features": [
+    "decade",
+    "release_precision",
+    "key",
+    "mode",
+    "time_signature"
+  ],
+  "ordinal_mappings": {
+    "decade": [1900, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000],
+    "release_precision": ["day", "month", "year"],
+    "key": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "mode": [0, 1],
+    "time_signature": [1, 3, 4, 5]
+  },
+  "missing_indicators": [
+    "release_month_missing",
+    "tempo_missing"
+  ],
+  "output_schema": {
+    "input_features": 20,
+    "output_features": 20,
+    "note": "Ordinal encoding preserves 20 features (no expansion)"
+  },
+  "leakage_contract": {
+    "no_target": true,
+    "no_track_id": true,
+    "train_only_fitting": true,
+    "temporal_isolation": "enforced via train/val/test split"
+  },
+  "recommendation": "Use ordinal_encoding for baseline. Consider native_categorical in Feature 2.4 if validation shows improvement is worth the complexity."
+}

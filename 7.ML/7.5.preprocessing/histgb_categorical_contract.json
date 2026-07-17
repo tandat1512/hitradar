@@ -1,0 +1,19 @@
+{
+  "categorical_columns": [
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature",
+    "release_month"
+  ],
+  "categorical_output_indices": [
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "unknown_code": -1,
+  "missing_code": -1,
+  "strategy": "Ordinal Codes"
+}

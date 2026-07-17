@@ -1,0 +1,332 @@
+{
+  "splits": {
+    "train": {
+      "rows": 415524,
+      "target_mean": 22.88,
+      "target_std": 15.7718,
+      "target_median": 22.0,
+      "feature_stats": {
+        "duration_min": {
+          "mean": 3.824637,
+          "std": 2.135584,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "danceability": {
+          "mean": 0.544404,
+          "std": 0.165399,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "energy": {
+          "mean": 0.495359,
+          "std": 0.250392,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "loudness": {
+          "mean": -11.393526,
+          "std": 5.076661,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "speechiness": {
+          "mean": 0.110551,
+          "std": 0.20232,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "acousticness": {
+          "mean": 0.515013,
+          "std": 0.349114,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "instrumentalness": {
+          "mean": 0.125911,
+          "std": 0.277473,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "liveness": {
+          "mean": 0.217884,
+          "std": 0.186382,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "valence": {
+          "mean": 0.563294,
+          "std": 0.260065,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "tempo": {
+          "mean": 117.033442,
+          "std": 29.916955,
+          "null_count": 154,
+          "null_ratio": 0.000371
+        }
+      },
+      "release_month_null_ratio": 0.3054
+    },
+    "validation": {
+      "rows": 85272,
+      "target_mean": 37.0603,
+      "target_std": 16.0365,
+      "target_median": 39.0,
+      "feature_stats": {
+        "duration_min": {
+          "mean": 4.029763,
+          "std": 2.017418,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "danceability": {
+          "mean": 0.591702,
+          "std": 0.154512,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "energy": {
+          "mean": 0.661854,
+          "std": 0.221473,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "loudness": {
+          "mean": -7.240884,
+          "std": 3.657685,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "speechiness": {
+          "mean": 0.079815,
+          "std": 0.103533,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "acousticness": {
+          "mean": 0.299817,
+          "std": 0.299015,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "instrumentalness": {
+          "mean": 0.068959,
+          "std": 0.213302,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "liveness": {
+          "mean": 0.209146,
+          "std": 0.185395,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "valence": {
+          "mean": 0.55016,
+          "std": 0.252176,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "tempo": {
+          "mean": 122.378976,
+          "std": 28.814487,
+          "null_count": 34,
+          "null_ratio": 0.000399
+        }
+      },
+      "release_month_null_ratio": 0.0992
+    },
+    "test": {
+      "rows": 85876,
+      "target_mean": 40.8401,
+      "target_std": 21.7856,
+      "target_median": 45.0,
+      "feature_stats": {
+        "duration_min": {
+          "mean": 3.68619,
+          "std": 2.051884,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "danceability": {
+          "mean": 0.628538,
+          "std": 0.160077,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "energy": {
+          "mean": 0.648915,
+          "std": 0.212793,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "loudness": {
+          "mean": -7.404691,
+          "std": 3.944392,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "speechiness": {
+          "mean": 0.102218,
+          "std": 0.107654,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "acousticness": {
+          "mean": 0.283612,
+          "std": 0.286827,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "instrumentalness": {
+          "mean": 0.097339,
+          "std": 0.256616,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "liveness": {
+          "mean": 0.199584,
+          "std": 0.172024,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "valence": {
+          "mean": 0.501177,
+          "std": 0.244903,
+          "null_count": 0,
+          "null_ratio": 0.0
+        },
+        "tempo": {
+          "mean": 121.961535,
+          "std": 28.449014,
+          "null_count": 140,
+          "null_ratio": 0.00163
+        }
+      },
+      "release_month_null_ratio": 0.0133
+    }
+  },
+  "psi_target": {
+    "validation": 0.8709,
+    "test": 1.5385
+  },
+  "ks_tests": {
+    "duration_min_train_vs_validation": {
+      "statistic": 0.1811,
+      "p_value": 0.0
+    },
+    "duration_min_train_vs_test": {
+      "statistic": 0.0828,
+      "p_value": 0.0
+    },
+    "danceability_train_vs_validation": {
+      "statistic": 0.109,
+      "p_value": 0.0
+    },
+    "danceability_train_vs_test": {
+      "statistic": 0.2009,
+      "p_value": 0.0
+    },
+    "energy_train_vs_validation": {
+      "statistic": 0.2952,
+      "p_value": 0.0
+    },
+    "energy_train_vs_test": {
+      "statistic": 0.2927,
+      "p_value": 0.0
+    },
+    "loudness_train_vs_validation": {
+      "statistic": 0.4261,
+      "p_value": 0.0
+    },
+    "loudness_train_vs_test": {
+      "statistic": 0.424,
+      "p_value": 0.0
+    },
+    "speechiness_train_vs_validation": {
+      "statistic": 0.0496,
+      "p_value": 1.1700111367318215e-151
+    },
+    "speechiness_train_vs_test": {
+      "statistic": 0.1708,
+      "p_value": 0.0
+    },
+    "acousticness_train_vs_validation": {
+      "statistic": 0.2692,
+      "p_value": 0.0
+    },
+    "acousticness_train_vs_test": {
+      "statistic": 0.3017,
+      "p_value": 0.0
+    },
+    "instrumentalness_train_vs_validation": {
+      "statistic": 0.1563,
+      "p_value": 0.0
+    },
+    "instrumentalness_train_vs_test": {
+      "statistic": 0.1564,
+      "p_value": 0.0
+    },
+    "liveness_train_vs_validation": {
+      "statistic": 0.0399,
+      "p_value": 2.4033630582726004e-98
+    },
+    "liveness_train_vs_test": {
+      "statistic": 0.0674,
+      "p_value": 2.784367632168719e-281
+    },
+    "valence_train_vs_validation": {
+      "statistic": 0.0345,
+      "p_value": 1.7847897034755722e-73
+    },
+    "valence_train_vs_test": {
+      "statistic": 0.1156,
+      "p_value": 0.0
+    },
+    "tempo_train_vs_validation": {
+      "statistic": 0.1124,
+      "p_value": 0.0
+    },
+    "tempo_train_vs_test": {
+      "statistic": 0.1142,
+      "p_value": 0.0
+    }
+  },
+  "risks": [
+    {
+      "metric": "PSI_target_train_vs_validation",
+      "value": 0.8709,
+      "severity": "HIGH"
+    },
+    {
+      "metric": "PSI_target_train_vs_test",
+      "value": 1.5385,
+      "severity": "HIGH"
+    },
+    {
+      "metric": "target_mean_shift_train_vs_validation",
+      "delta": 14.18,
+      "severity": "HIGH"
+    },
+    {
+      "metric": "target_mean_shift_train_vs_test",
+      "delta": 17.96,
+      "severity": "HIGH"
+    },
+    {
+      "metric": "release_month_null_shift_train_vs_validation",
+      "train_ratio": 0.3054,
+      "other_ratio": 0.0992,
+      "severity": "HIGH"
+    },
+    {
+      "metric": "release_month_null_shift_train_vs_test",
+      "train_ratio": 0.3054,
+      "other_ratio": 0.0133,
+      "severity": "HIGH"
+    }
+  ],
+  "timestamp": "2026-07-16T12:20:23.936087+00:00"
+}

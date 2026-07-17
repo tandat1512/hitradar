@@ -1,0 +1,11 @@
+{
+  "status": "locked",
+  "purpose": "Test set is locked until candidate model is selected. Do NOT use for tuning or model selection.",
+  "test_start_year": 2014,
+  "test_end_year": 2021,
+  "test_rows": 85876,
+  "test_id_sha256": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53",
+  "data_version": "ml-ready-2026-07-16-v1",
+  "split_version": "temporal-split-v1",
+  "locked_at": "2026-07-16T00:27:53.441596+00:00"
+}

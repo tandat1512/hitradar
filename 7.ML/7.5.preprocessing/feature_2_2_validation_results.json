@@ -1,0 +1,538 @@
+{
+  "feature": "2.2",
+  "timestamp": "2026-07-17T14:23:33.360265+00:00",
+  "checks": [
+    {
+      "check_id": "CFG-PARSE-01",
+      "description": "preprocessing_config.yaml parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-DATA",
+      "description": "Config has key: data",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-SPLIT",
+      "description": "Config has key: split",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-INPUT",
+      "description": "Config has key: input_features",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-COLUM",
+      "description": "Config has key: column_groups",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-MISSI",
+      "description": "Config has key: missing_strategy",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-OUTLI",
+      "description": "Config has key: outlier_strategy",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-ENCOD",
+      "description": "Config has key: encoding_strategy",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-SCALI",
+      "description": "Config has key: scaling_strategy",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-OUTPU",
+      "description": "Config has key: output_paths",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-VERSION-01",
+      "description": "Data version matches",
+      "expected": "ml-ready-2026-07-16-v1",
+      "actual": "ml-ready-2026-07-16-v1",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SV-VERSION-01",
+      "description": "Split version matches",
+      "expected": "temporal-split-v1",
+      "actual": "temporal-split-v1",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-HASH-01",
+      "description": "Source file hash matches",
+      "expected": "be198ad630340053",
+      "actual": "be198ad630340053",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-RIDGE-01",
+      "description": "Artifact exists: preprocessor_ridge.pkl",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-HISTGB-01",
+      "description": "Artifact exists: preprocessor_histgb.pkl",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-XGB-01",
+      "description": "Artifact exists: preprocessor_xgb.pkl",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-MANIFEST-01",
+      "description": "Artifact exists: preprocessor_manifest.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-RIDGE-FN-01",
+      "description": "Artifact exists: ridge_feature_names.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-HISTGB-FN-01",
+      "description": "Artifact exists: histgb_feature_names.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-XGB-FN-01",
+      "description": "Artifact exists: xgboost_feature_names.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ART-COL-ROLES-01",
+      "description": "Artifact exists: column_roles.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "HASH-PREPR",
+      "description": "Artifact hash exists: preprocessor_ridge.pkl",
+      "expected": "True",
+      "actual": "ac40",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "HASH-PREPR",
+      "description": "Artifact hash exists: preprocessor_histgb.pkl",
+      "expected": "True",
+      "actual": "bc7c",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "HASH-PREPR",
+      "description": "Artifact hash exists: preprocessor_xgb.pkl",
+      "expected": "True",
+      "actual": "bc7c",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-FEATU",
+      "description": "Manifest has key: feature_version",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-DATA_",
+      "description": "Manifest has key: data_version",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-SPLIT",
+      "description": "Manifest has key: split_version",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-CREAT",
+      "description": "Manifest has key: created_at",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-SOURC",
+      "description": "Manifest has key: source_hash",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-PREPR",
+      "description": "Manifest has key: preprocessing_config_hash",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-ARTIF",
+      "description": "Manifest has key: artifact_paths",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-COLUM",
+      "description": "Manifest has key: column_groups",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-COLUM",
+      "description": "Manifest has key: column_roles",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "MAN-VERSION",
+      "description": "Feature version = 2.2",
+      "expected": "2.2",
+      "actual": "2.2",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SERIAL-LOAD-01",
+      "description": "Ridge preprocessor loads",
+      "expected": "True",
+      "actual": "success",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SERIAL-TRANS-01",
+      "description": "Ridge transform succeeds",
+      "expected": "100",
+      "actual": "100",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SERIAL-NAN-01",
+      "description": "Ridge output has no NaN",
+      "expected": "0",
+      "actual": "0.0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SERIAL-INF-01",
+      "description": "Ridge output has no Inf",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "IMP-TEMPO-01",
+      "description": "Imputer produces complete output",
+      "expected": "0",
+      "actual": "0.0",
+      "status": "PASS",
+      "note": "Verified via transform output"
+    },
+    {
+      "check_id": "IMP-TEMPO-02",
+      "description": "Imputer fitted on train only",
+      "expected": "True",
+      "actual": "verified",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCALE-MEAN-01",
+      "description": "Scaler mean set",
+      "expected": "True",
+      "actual": "scaler accessible",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCALE-VAR-01",
+      "description": "Scaler variance set",
+      "expected": "True",
+      "actual": "scaler accessible",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SCALE-NONNEG-01",
+      "description": "Scaler variance non-negative",
+      "expected": "True",
+      "actual": "scaler accessible",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "OHE-CAT-01",
+      "description": "Ridge OHE categories set",
+      "expected": "True",
+      "actual": "encoder verified via transform",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "OUTLIER-MODE",
+      "description": "Outlier mode = none (default)",
+      "expected": "none",
+      "actual": "none",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "FN-RIDGE-01",
+      "description": "Ridge features > 0",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "FN-RIDGE-02",
+      "description": "Ridge features no track_id",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "FN-RIDGE-03",
+      "description": "Ridge features no target",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHAPE-RIDGE-01",
+      "description": "Ridge train shape valid",
+      "expected": "415524",
+      "actual": "415524",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHAPE-RIDGE-02",
+      "description": "Ridge val shape valid",
+      "expected": "85272",
+      "actual": "85272",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHAPE-RIDGE-03",
+      "description": "Ridge test shape valid",
+      "expected": "85876",
+      "actual": "85876",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHAPE-RIDGE-04",
+      "description": "Ridge feature count consistent",
+      "expected": "58",
+      "actual": "58/58",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHAPE-HIST-01",
+      "description": "HistGB feature count consistent",
+      "expected": "21",
+      "actual": "21/21",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHAPE-XGB-01",
+      "description": "XGB feature count consistent",
+      "expected": "21",
+      "actual": "21/21",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-DIR-01",
+      "description": "Legacy directory exists",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-NEW-01",
+      "description": "New ridge preprocessor in 7.5",
+      "expected": "7.5",
+      "actual": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-NEW-02",
+      "description": "New histgb preprocessor in 7.5",
+      "expected": "7.5",
+      "actual": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-NEW-03",
+      "description": "New xgb preprocessor in 7.5",
+      "expected": "7.5",
+      "actual": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "GOV-LOCK-01",
+      "description": "Test set lock hash unchanged",
+      "expected": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53",
+      "actual": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "GOV-LOCK-02",
+      "description": "Prohibited actions documented",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "COL-COUNT-01",
+      "description": "Column roles has 18 columns",
+      "expected": "18",
+      "actual": "18",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "COL-TEMPO-01",
+      "description": "tempo has semantic_role",
+      "expected": "True",
+      "actual": "continuous",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "COL-TIME_-01",
+      "description": "time_signature has semantic_role",
+      "expected": "True",
+      "actual": "categorical",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "COL-RELEA-01",
+      "description": "release_month has semantic_role",
+      "expected": "True",
+      "actual": "categorical",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "COL-EXPLI-01",
+      "description": "explicit has semantic_role",
+      "expected": "True",
+      "actual": "binary",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "COL-MODE-01",
+      "description": "mode has semantic_role",
+      "expected": "True",
+      "actual": "binary",
+      "status": "PASS",
+      "note": ""
+    }
+  ],
+  "total_checks": 66,
+  "pass_count": 66,
+  "fail_count": 0,
+  "overall_status": "PASS"
+}

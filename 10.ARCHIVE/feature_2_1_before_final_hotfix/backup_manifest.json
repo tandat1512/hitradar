@@ -1,0 +1,389 @@
+[
+  {
+    "original_path": "hitradar\\7.ML\\7.1.config\\experiment_config.yaml",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/experiment_config.yaml",
+    "file_name": "experiment_config.yaml",
+    "file_size": 4930,
+    "sha256": "0c0273935f2536758d6f8840c57f7e9dfcc5563a834e509ca7dc0395f0a00260",
+    "backup_timestamp": "2026-07-17T14:50:27.916526+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.1.config\\split_config.yaml",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/split_config.yaml",
+    "file_name": "split_config.yaml",
+    "file_size": 487,
+    "sha256": "292c8cc1b61a08c73ae7b7f9a075f347124e69ec4a1dded5234dd72a8272bc93",
+    "backup_timestamp": "2026-07-17T14:50:27.925433+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\9.SCRIPTS\\feature_2_1_data_intake.py",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/feature_2_1_data_intake.py",
+    "file_name": "feature_2_1_data_intake.py",
+    "file_size": 55902,
+    "sha256": "a0422a34af8a50773dd05c04007e1320811aadec8b9128acbba62c266943de18",
+    "backup_timestamp": "2026-07-17T14:50:27.941433+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\9.SCRIPTS\\validate_feature_2_1.py",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/validate_feature_2_1.py",
+    "file_name": "validate_feature_2_1.py",
+    "file_size": 22969,
+    "sha256": "7d19dacc6c90800db1c2d63bd6dd546e5ec21bd5e878a4ebbf198782d9d6bb5b",
+    "backup_timestamp": "2026-07-17T14:50:27.951997+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\9.SCRIPTS\\validate_temporal_split.py",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/validate_temporal_split.py",
+    "file_name": "validate_temporal_split.py",
+    "file_size": 7284,
+    "sha256": "cb4afb48cfabb85d58fd928ba519416f82ad6ef163d688e0cf2a89f33712e298",
+    "backup_timestamp": "2026-07-17T14:50:27.964592+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\9.SCRIPTS\\validate_test_set_lock.py",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/validate_test_set_lock.py",
+    "file_name": "validate_test_set_lock.py",
+    "file_size": 6511,
+    "sha256": "e83f32138c7595afdcb78fbff70931b9c968917277c36985e401a67a8ee6e21f",
+    "backup_timestamp": "2026-07-17T14:50:27.975565+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\9.SCRIPTS\\regenerate_reports.py",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/regenerate_reports.py",
+    "file_name": "regenerate_reports.py",
+    "file_size": 24863,
+    "sha256": "6d97ed2bfced3ece96369e01f0f151041d0cddc090d4cd3409ce33dafbafde6e",
+    "backup_timestamp": "2026-07-17T14:50:27.989583+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\data_exceptions.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/data_exceptions.json",
+    "file_name": "data_exceptions.json",
+    "file_size": 1394,
+    "sha256": "cd81adf4e433b41fb2e31de5765a14541addab5845032fbf15325a7ef21c41c0",
+    "backup_timestamp": "2026-07-17T14:50:28.340825+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\data_version.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/data_version.json",
+    "file_name": "data_version.json",
+    "file_size": 732,
+    "sha256": "c6e1c500c33f49dd54c46a70b35e39c4a07493b5e8cf3d0286dce4d17c826c10",
+    "backup_timestamp": "2026-07-17T14:50:28.349535+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\hotfix_investigation_results.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/hotfix_investigation_results.json",
+    "file_name": "hotfix_investigation_results.json",
+    "file_size": 20734,
+    "sha256": "f1e1d1254c17ddf53e19d73c47f99c24b30480c3d342cbe0658d0f49ed648053",
+    "backup_timestamp": "2026-07-17T14:50:28.359783+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\input_manifest.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/input_manifest.json",
+    "file_name": "input_manifest.json",
+    "file_size": 1373,
+    "sha256": "e009ae33ee705a3045d1fff5feec7381a0efae8b47d87c708d99fbe39ab52d12",
+    "backup_timestamp": "2026-07-17T14:50:28.396703+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\schema_snapshot.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/schema_snapshot.json",
+    "file_name": "schema_snapshot.json",
+    "file_size": 4372,
+    "sha256": "b3895597c5fdb54791b5fe90de73230ff1b45e75ad052366e4762fa414c89716",
+    "backup_timestamp": "2026-07-17T14:50:28.407092+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\source_reconciliation.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/source_reconciliation.json",
+    "file_name": "source_reconciliation.json",
+    "file_size": 3849,
+    "sha256": "1ed4fd7489576532e28c8253d950d092d25d490334f14622bb9db686f58d96ec",
+    "backup_timestamp": "2026-07-17T14:50:28.427130+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\split_candidates.csv",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/split_candidates.csv",
+    "file_name": "split_candidates.csv",
+    "file_size": 691,
+    "sha256": "339bcddb663931fc943451f926cad98a8c6e4698da1bd9a538bc2af4bfac0fe6",
+    "backup_timestamp": "2026-07-17T14:50:28.440246+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\split_candidate_diagnostics.csv",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/split_candidate_diagnostics.csv",
+    "file_name": "split_candidate_diagnostics.csv",
+    "file_size": 1461,
+    "sha256": "e9fbf976dde8d85a85f82ae9f49a96eb31d6ef8f96a982eedd5de970007aa5e7",
+    "backup_timestamp": "2026-07-17T14:50:28.476726+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\target_profile.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/target_profile.json",
+    "file_name": "target_profile.json",
+    "file_size": 727,
+    "sha256": "e4b66251d137fded1b8ee176d62667783f916c8527ee86de1b9fed89e5e3fc63",
+    "backup_timestamp": "2026-07-17T14:50:28.486413+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\temporal_shift_profile.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/temporal_shift_profile.json",
+    "file_name": "temporal_shift_profile.json",
+    "file_size": 8162,
+    "sha256": "d17bb7630b6840abe341e9e0ca088b07492ab95e2d7c5440790b3fb8f8971e7f",
+    "backup_timestamp": "2026-07-17T14:50:28.524277+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\validation_results.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/validation_results.json",
+    "file_name": "validation_results.json",
+    "file_size": 19024,
+    "sha256": "6431c07e85efdffe1bb7e80a6564046c2770f6f8fc4bbe73f3d32aa12376bb2b",
+    "backup_timestamp": "2026-07-17T14:50:28.537994+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\warning_profile.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/warning_profile.json",
+    "file_name": "warning_profile.json",
+    "file_size": 1872,
+    "sha256": "329378982b47677bada4ad2fcf17ad7b3532d2aa57399c461cf33b8e1b5f135f",
+    "backup_timestamp": "2026-07-17T14:50:28.555906+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.3.data_intake\\year_distribution.csv",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/year_distribution.csv",
+    "file_name": "year_distribution.csv",
+    "file_size": 8805,
+    "sha256": "bb6e1bed5e023368854b8eda13f4f96fe2ba8542ec746a3532febb9ce91b3d65",
+    "backup_timestamp": "2026-07-17T14:50:28.592145+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.4.splits\\split_manifest.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/split_manifest.json",
+    "file_name": "split_manifest.json",
+    "file_size": 2987,
+    "sha256": "011a6c985a377d02813b006bdf343d106b92def4b01f6af529dded4b02e66eb8",
+    "backup_timestamp": "2026-07-17T14:50:28.626981+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.4.splits\\split_version.txt",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/split_version.txt",
+    "file_name": "split_version.txt",
+    "file_size": 17,
+    "sha256": "fe6cb2f0678d2f29a3398074e4942d5936182962228b84971a8a1662d2012654",
+    "backup_timestamp": "2026-07-17T14:50:28.637185+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.4.splits\\test_ids.parquet",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/test_ids.parquet",
+    "file_name": "test_ids.parquet",
+    "file_size": 2156165,
+    "sha256": "29b0b9596d0e95ae061165a1cdfdd00cf588eecdc8bc727eb79a1a165bbc0d7a",
+    "backup_timestamp": "2026-07-17T14:50:28.652539+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.4.splits\\test_set_lock.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/test_set_lock.json",
+    "file_name": "test_set_lock.json",
+    "file_size": 1383,
+    "sha256": "16f0ce19831a20bb2721cbfc6588422d699a96c4444118ad472ea7547a5c18de",
+    "backup_timestamp": "2026-07-17T14:50:28.664189+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.4.splits\\train_ids.parquet",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/train_ids.parquet",
+    "file_name": "train_ids.parquet",
+    "file_size": 10107545,
+    "sha256": "ba35e03ca0838ee12779841539e083df425efd3d5656764f02aeed46500ed940",
+    "backup_timestamp": "2026-07-17T14:50:28.708361+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\7.ML\\7.4.splits\\validation_ids.parquet",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/validation_ids.parquet",
+    "file_name": "validation_ids.parquet",
+    "file_size": 2141622,
+    "sha256": "6c3b6c89c341a3f844b89ecc51e16a44215708355efaf6bf779fef7e418295bd",
+    "backup_timestamp": "2026-07-17T14:50:28.724270+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\4.MODELS\\legacy_epic1\\DO_NOT_USE.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/DO_NOT_USE.md",
+    "file_name": "DO_NOT_USE.md",
+    "file_size": 868,
+    "sha256": "763c253f5943bef7c6783b25e0de7269c8517dff7ab3a5704ef50ea50290f9e8",
+    "backup_timestamp": "2026-07-17T14:50:28.760292+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\4.MODELS\\legacy_epic1\\encoder.pkl",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/encoder.pkl",
+    "file_name": "encoder.pkl",
+    "file_size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backup_timestamp": "2026-07-17T14:50:28.761130+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\4.MODELS\\legacy_epic1\\legacy_artifact_manifest.json",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/legacy_artifact_manifest.json",
+    "file_name": "legacy_artifact_manifest.json",
+    "file_size": 1439,
+    "sha256": "3d4a2edfaab204d33571169b1c4bd6c992091f72d6575de69dae605bc30d9c45",
+    "backup_timestamp": "2026-07-17T14:50:28.777678+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\4.MODELS\\legacy_epic1\\popularity_model.pkl",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/popularity_model.pkl",
+    "file_name": "popularity_model.pkl",
+    "file_size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backup_timestamp": "2026-07-17T14:50:28.778712+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "hitradar\\4.MODELS\\legacy_epic1\\scaler.pkl",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/scaler.pkl",
+    "file_name": "scaler.pkl",
+    "file_size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backup_timestamp": "2026-07-17T14:50:28.779679+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\DATA_INTAKE_VALIDATION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/DATA_INTAKE_VALIDATION_REPORT.md",
+    "file_name": "DATA_INTAKE_VALIDATION_REPORT.md",
+    "file_size": 2654,
+    "sha256": "7661bfdae99baf4f4ca80fb902e8ea17fd4ae38697999aab31f9e191d47a1231",
+    "backup_timestamp": "2026-07-17T14:50:28.790670+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\FEATURE_2_1_COMPLETION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/FEATURE_2_1_COMPLETION_REPORT.md",
+    "file_name": "FEATURE_2_1_COMPLETION_REPORT.md",
+    "file_size": 7276,
+    "sha256": "bbe1867b447ee1df978817e1078b3be815ab9b7745efed58fa4e71f82fb78e7b",
+    "backup_timestamp": "2026-07-17T14:50:28.801767+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\FEATURE_2_1_HOTFIX_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/FEATURE_2_1_HOTFIX_REPORT.md",
+    "file_name": "FEATURE_2_1_HOTFIX_REPORT.md",
+    "file_size": 3109,
+    "sha256": "1723240dc05a3b3b9c60d0db915f8ee4ee2d1c8bf29c0e20809f3c0037427820",
+    "backup_timestamp": "2026-07-17T14:50:28.813996+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\FEATURE_2_1_VALIDATION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/FEATURE_2_1_VALIDATION_REPORT.md",
+    "file_name": "FEATURE_2_1_VALIDATION_REPORT.md",
+    "file_size": 7689,
+    "sha256": "b9a20cad33c17c6a6ee61e58666767c73980996913960385fef21eef0f545d2d",
+    "backup_timestamp": "2026-07-17T14:50:28.826018+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\HOTFIX_CHANGELOG.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/HOTFIX_CHANGELOG.md",
+    "file_name": "HOTFIX_CHANGELOG.md",
+    "file_size": 3775,
+    "sha256": "7c8215f32c7bcdd07511a70d69518e604b9f710e662cffc16413de20c56a1707",
+    "backup_timestamp": "2026-07-17T14:50:28.835816+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\LEGACY_ARTIFACT_AUDIT_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/LEGACY_ARTIFACT_AUDIT_REPORT.md",
+    "file_name": "LEGACY_ARTIFACT_AUDIT_REPORT.md",
+    "file_size": 2409,
+    "sha256": "e922ce354b23a0b5ff955010ec81348744385c9eee20039164411a8294f74ec2",
+    "backup_timestamp": "2026-07-17T14:50:28.844676+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\RELEASE_YEAR_ANOMALY_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/RELEASE_YEAR_ANOMALY_REPORT.md",
+    "file_name": "RELEASE_YEAR_ANOMALY_REPORT.md",
+    "file_size": 4685,
+    "sha256": "2aea8bccb1828e642e998bf378bfee0e6fb2a30757c3c3ecd1d43fcb0ce2bb31",
+    "backup_timestamp": "2026-07-17T14:50:28.858391+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\SOURCE_RECONCILIATION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/SOURCE_RECONCILIATION_REPORT.md",
+    "file_name": "SOURCE_RECONCILIATION_REPORT.md",
+    "file_size": 2607,
+    "sha256": "33e7b22c84633d26a52ea3a3f47ae6de374d9c736c64abda005252b5a5b7423b",
+    "backup_timestamp": "2026-07-17T14:50:28.869820+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md",
+    "file_name": "TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md",
+    "file_size": 4427,
+    "sha256": "cb51bb4423f57d48d8636ed10c7e96571b68cc5f1956b30fb584ae031d56400d",
+    "backup_timestamp": "2026-07-17T14:50:28.879515+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\TEMPORAL_PROXY_RISK_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/TEMPORAL_PROXY_RISK_REPORT.md",
+    "file_name": "TEMPORAL_PROXY_RISK_REPORT.md",
+    "file_size": 3696,
+    "sha256": "3a35b7d4770e1297590a62d15eb3871fe98ca4b2b3c334eab1b16d8b9857fe24",
+    "backup_timestamp": "2026-07-17T14:50:28.890978+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\TEMPORAL_SPLIT_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/TEMPORAL_SPLIT_REPORT.md",
+    "file_name": "TEMPORAL_SPLIT_REPORT.md",
+    "file_size": 4385,
+    "sha256": "048673e0b83dd6dcc961a568963c2f916c970d224c2935269fb403e4acb72495",
+    "backup_timestamp": "2026-07-17T14:50:28.908516+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  },
+  {
+    "original_path": "Output epic2\\F 2.1\\TEST_SET_GOVERNANCE_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_1_before_final_hotfix/TEST_SET_GOVERNANCE_REPORT.md",
+    "file_name": "TEST_SET_GOVERNANCE_REPORT.md",
+    "file_size": 3850,
+    "sha256": "6f3f987bc3ad626e5b6fc0d4c6c4fd4917fa89e6adeca54d203eb3ec2663b7ae",
+    "backup_timestamp": "2026-07-17T14:50:28.919386+00:00",
+    "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+  }
+]

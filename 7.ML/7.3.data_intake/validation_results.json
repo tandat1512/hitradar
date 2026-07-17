@@ -1,0 +1,755 @@
+{
+  "feature": "2.1",
+  "hotfix": true,
+  "timestamp": "2026-07-17T15:01:33.659971+00:00",
+  "checks": [
+    {
+      "check_id": "F20-PREREQ-01",
+      "description": "Feature 2.0: EPIC2_SCOPE_LOCK.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20-PREREQ-02",
+      "description": "Feature 2.0: ML_CONTRACT.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20-PREREQ-03",
+      "description": "Feature 2.0: EXPERIMENT_DESIGN.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20-PREREQ-04",
+      "description": "Feature 2.0: experiment_config.yaml",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20-PREREQ-05",
+      "description": "Feature 2.0: EPIC2_DEFINITION_OF_DONE.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "F20-PREREQ-06",
+      "description": "Feature 2.0: FEATURE_2_0_COMPLETION_REPORT.md",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-PARSE-01",
+      "description": "experiment_config.yaml parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-PROJE",
+      "description": "Config has key: project",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-DATA",
+      "description": "Config has key: data",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-SPLIT",
+      "description": "Config has key: split",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-LEAKA",
+      "description": "Config has key: leakage_rules",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-KEY-REPRO",
+      "description": "Config has key: reproducibility",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-PARSE-02",
+      "description": "split_config.yaml parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-SPLIT-01",
+      "description": "Split strategy = temporal",
+      "expected": "temporal",
+      "actual": "temporal",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "CFG-SPLIT-02",
+      "description": "Split status = locked",
+      "expected": "locked",
+      "actual": "locked",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-PARSE-01",
+      "description": "data_version.json parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-KEY-DATA_V",
+      "description": "data_version has key: data_version",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-KEY-ACTUAL",
+      "description": "data_version has key: actual_source_used",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-KEY-ROWS",
+      "description": "data_version has key: rows",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-KEY-COLUMN",
+      "description": "data_version has key: columns",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-KEY-FILE_S",
+      "description": "data_version has key: file_sha256",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-KEY-SCHEMA",
+      "description": "data_version has key: schema_hash",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-ROWS-01",
+      "description": "data_version rows = 586672",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-COLS-01",
+      "description": "data_version cols = 20",
+      "expected": "20",
+      "actual": "20",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DV-HASH-01",
+      "description": "File SHA-256 matches frozen hash",
+      "expected": "be198ad630340053",
+      "actual": "be198ad630340053",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DATA-ROWS-01",
+      "description": "Row count = 586672",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DATA-COLS-01",
+      "description": "Column count = 20",
+      "expected": "20",
+      "actual": "20",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DATA-SCHEMA-01",
+      "description": "All 20 official columns present",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DATA-LEAK-01",
+      "description": "No forbidden leakage columns in features",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DATA-LEAK-02",
+      "description": "target_popularity not in features",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "DATA-LEAK-03",
+      "description": "track_id not in features",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ID-NULL-01",
+      "description": "track_id NULL count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "ID-DUP-01",
+      "description": "track_id duplicate count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-NULL-01",
+      "description": "target NULL count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-NAN-01",
+      "description": "target NaN count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-INF-01",
+      "description": "target infinite count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-MIN-01",
+      "description": "target min >= 0",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TGT-MAX-01",
+      "description": "target max <= 100",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPLIT-RY-NULL-01",
+      "description": "release_year NULL count (for split)",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "EXC-FILE-01",
+      "description": "data_exceptions.json exists and parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "EXC-YEAR1900-01",
+      "description": "Year 1900 anomaly registered in exceptions",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SS-PARSE-01",
+      "description": "schema_snapshot.json parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SS-COLS-01",
+      "description": "schema_snapshot column count",
+      "expected": "20",
+      "actual": "20",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SS-DV-01",
+      "description": "schema_snapshot data_version matches",
+      "expected": "ml-ready-2026-07-17-v1",
+      "actual": "ml-ready-2026-07-17-v1",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "IM-PARSE-01",
+      "description": "input_manifest.json parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "IM-ROWS-01",
+      "description": "input_manifest actual_rows matches",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "IM-HASH-01",
+      "description": "input_manifest schema_hash matches data_version",
+      "expected": "bb6b4eecd81f2c31",
+      "actual": "bb6b4eecd81f2c31",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TP-PARSE-01",
+      "description": "target_profile.json parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TP-COUNT-01",
+      "description": "target_profile count",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "TP-NULL-01",
+      "description": "target_profile null_count",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-MANIFEST-01",
+      "description": "split_manifest.json parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-MANIFEST-02",
+      "description": "Manifest strategy = temporal",
+      "expected": "temporal",
+      "actual": "temporal",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-MANIFEST-03",
+      "description": "Manifest status = locked",
+      "expected": "locked",
+      "actual": "locked",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-MANIFEST-04",
+      "description": "Manifest data_version matches",
+      "expected": "ml-ready-2026-07-17-v1",
+      "actual": "ml-ready-2026-07-17-v1",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-RECON-01",
+      "description": "Row reconciliation match",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-RECON-02",
+      "description": "Total rows = source",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-FILE-TRAIN",
+      "description": "Split file exists: train_ids.parquet",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-FILE-VAL",
+      "description": "Split file exists: validation_ids.parquet",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-FILE-TEST",
+      "description": "Split file exists: test_ids.parquet",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-FILE-VER",
+      "description": "Split file exists: split_version.txt",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-FILE-LOCK",
+      "description": "Split file exists: test_set_lock.json",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-HASH-TRAIN",
+      "description": "Train ID hash matches manifest",
+      "expected": "d3684ebb6ba7744c",
+      "actual": "d3684ebb6ba7744c",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-HASH-VAL",
+      "description": "Val ID hash matches manifest",
+      "expected": "d292e4009b798e3e",
+      "actual": "d292e4009b798e3e",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-HASH-TEST",
+      "description": "Test ID hash matches manifest",
+      "expected": "f446764fc87d1c73",
+      "actual": "f446764fc87d1c73",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-ROWS-TRAIN",
+      "description": "Train rows match manifest",
+      "expected": "415524",
+      "actual": "415524",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-ROWS-VAL",
+      "description": "Val rows match manifest",
+      "expected": "85272",
+      "actual": "85272",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-ROWS-TEST",
+      "description": "Test rows match manifest",
+      "expected": "85876",
+      "actual": "85876",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-UNION-01",
+      "description": "Union of splits = source IDs",
+      "expected": "586672",
+      "actual": "586672",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-MISSING-01",
+      "description": "No missing IDs",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-EXTRA-01",
+      "description": "No extra IDs",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-INTERSECT-TV",
+      "description": "Train-Val intersection = 0",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-INTERSECT-TT",
+      "description": "Train-Test intersection = 0",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-INTERSECT-VT",
+      "description": "Val-Test intersection = 0",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-CHRONO-01",
+      "description": "max(train) < min(val)",
+      "expected": "2004 < 2005",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-CHRONO-02",
+      "description": "max(val) < min(test)",
+      "expected": "2013 < 2014",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-BOUND-01",
+      "description": "Train end matches config",
+      "expected": "2004",
+      "actual": "2004",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-BOUND-02",
+      "description": "Val start matches config",
+      "expected": "2005",
+      "actual": "2005",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SPL-BOUND-03",
+      "description": "Test start matches config",
+      "expected": "2014",
+      "actual": "2014",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-CONTENT-01",
+      "description": "test_set_lock has data_version",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-CONTENT-02",
+      "description": "test_set_lock has split_version",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-CONTENT-03",
+      "description": "test_set_lock has test_ids_hash",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-CONTENT-04",
+      "description": "test_set_lock has prohibited_actions",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-CONTENT-05",
+      "description": "test_set_lock has descriptive_audit_performed",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-CONTENT-06",
+      "description": "test_set_lock has lock_owner",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LOCK-HASH-01",
+      "description": "Lock hash matches test_ids.parquet",
+      "expected": "f446764fc87d1c73",
+      "actual": "f446764fc87d1c73",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-CLEAN-01",
+      "description": "No pkl/joblib in 4.1.trained",
+      "expected": "0",
+      "actual": "0",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-QUARANTINE-01",
+      "description": "legacy_epic1 directory exists",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-MANIFEST-01",
+      "description": "legacy_artifact_manifest.json exists",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "LEGACY-DONOT-01",
+      "description": "DO_NOT_USE.md exists",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "RECON-FILE-01",
+      "description": "source_reconciliation.json exists and parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "RECON-STATUS-01",
+      "description": "Reconciliation status",
+      "expected": "RECONCILED",
+      "actual": "RECONCILED",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHIFT-FILE-01",
+      "description": "temporal_shift_profile.json exists and parses",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "check_id": "SHIFT-RISK-01",
+      "description": "Shift risks documented",
+      "expected": "True",
+      "actual": "True",
+      "status": "PASS",
+      "note": ""
+    }
+  ],
+  "total_checks": 93,
+  "pass_count": 93,
+  "fail_count": 0,
+  "overall_status": "PASS_WITH_WARNINGS"
+}

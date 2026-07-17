@@ -1,0 +1,23 @@
+[
+  "tempo_missing",
+  "time_signature_missing",
+  "release_month_missing",
+  "duration_min",
+  "release_year",
+  "danceability",
+  "energy",
+  "loudness",
+  "speechiness",
+  "acousticness",
+  "instrumentalness",
+  "liveness",
+  "valence",
+  "tempo",
+  "decade",
+  "release_precision",
+  "key",
+  "time_signature",
+  "release_month",
+  "explicit",
+  "mode"
+]

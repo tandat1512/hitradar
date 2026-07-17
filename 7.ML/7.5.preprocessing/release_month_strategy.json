@@ -1,0 +1,19 @@
+{
+  "release_month_strategy": {
+    "decision": "missing_indicator_only",
+    "rationale": "release_month has 23.26% missing values globally, with extreme temporal skew (train: 126,895 vs val: 8,455 vs test: 1,139). The missingness is a strong temporal proxy — missing in older releases, present in newer ones. Ablation study required to determine if including the indicator provides net benefit.",
+    "train_missing_count": 126895,
+    "val_missing_count": 8455,
+    "test_missing_count": 1139,
+    "temporal_proxy_risk": "HIGH",
+    "requires_ablation": true,
+    "ablation_variants": [
+      "ABL-A: release_month present + release_month_missing indicator",
+      "ABL-B: release_month missing-only (all as 0) + release_month_missing indicator",
+      "ABL-C: release_month dropped entirely",
+      "ABL-D: release_month as decade proxy (extract from release_year)",
+      "ABL-E: release_month present + NO release_month_missing indicator"
+    ]
+  },
+  "recorded_timestamp": "2026-07-17"
+}

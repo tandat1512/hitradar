@@ -1,0 +1,28 @@
+{
+  "exceptions": [
+    {
+      "exception_id": "EXC-001",
+      "track_id": "74CSJTE5QQp1e4bHzm3wti",
+      "field": "release_year",
+      "value": 1900,
+      "reason": "release_year=1900 is outside EPIC 1 documented range (1921-2021). Track has release_precision='day' and release_month=1, suggesting the original release_date was '1900-01-01' \u2014 a common Spotify API default/sentinel for unknown release dates. Track exists on Spotify with target_popularity=19.",
+      "source_evidence": {
+        "parquet_value": 1900,
+        "csv_value": 1900,
+        "release_precision": "day",
+        "release_month": 1.0,
+        "target_popularity": 19,
+        "epic1_documented_range": "1921-2021",
+        "epic1_source": "feature_dictionary.md line 17, DATA_DICTIONARY.md line 129"
+      },
+      "classification": "SENTINEL_OR_DEFAULT",
+      "impact": "1 row out of 586,672 (0.00017%). Assigned to train split (year < 2005). Negligible impact on model training. Does not affect split boundaries.",
+      "decision": "KEEP_WITH_EXCEPTION \u2014 Record retained in dataset. Registered as formal exception. EPIC 1 docs should note actual min_year includes 1900.",
+      "approved_by": "pending_review",
+      "approved_at": null,
+      "created_at": "2026-07-16T12:21:10.535678+00:00"
+    }
+  ],
+  "total": 1,
+  "created_at": "2026-07-16T12:21:10.535678+00:00"
+}

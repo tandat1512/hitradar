@@ -1,0 +1,201 @@
+{
+  "data_version": "ml-ready-2026-07-16-v1",
+  "columns": [
+    {
+      "name": "track_id",
+      "dtype": "str",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 586672,
+      "role": "identifier"
+    },
+    {
+      "name": "target_popularity",
+      "dtype": "int64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 101,
+      "min": 0.0,
+      "max": 100.0,
+      "role": "target"
+    },
+    {
+      "name": "duration_min",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 65514,
+      "min": 0.0557,
+      "max": 93.687,
+      "role": "input_feature"
+    },
+    {
+      "name": "explicit",
+      "dtype": "bool",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "release_year",
+      "dtype": "int64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 101,
+      "min": 1900.0,
+      "max": 2021.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "release_month",
+      "dtype": "float64",
+      "nullable": true,
+      "null_count": 136489,
+      "unique_count": 12,
+      "min": 1.0,
+      "max": 12.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "decade",
+      "dtype": "int64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 12,
+      "min": 1900.0,
+      "max": 2020.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "release_precision",
+      "dtype": "str",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 3,
+      "role": "input_feature"
+    },
+    {
+      "name": "danceability",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 1285,
+      "min": 0.0,
+      "max": 0.991,
+      "role": "input_feature"
+    },
+    {
+      "name": "energy",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 2571,
+      "min": 0.0,
+      "max": 1.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "key",
+      "dtype": "int64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 12,
+      "min": 0.0,
+      "max": 11.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "loudness",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 29196,
+      "min": -60.0,
+      "max": 5.376,
+      "role": "input_feature"
+    },
+    {
+      "name": "mode",
+      "dtype": "int64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "speechiness",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 1655,
+      "min": 0.0,
+      "max": 0.971,
+      "role": "input_feature"
+    },
+    {
+      "name": "acousticness",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 5217,
+      "min": 0.0,
+      "max": 0.996,
+      "role": "input_feature"
+    },
+    {
+      "name": "instrumentalness",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 5402,
+      "min": 0.0,
+      "max": 1.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "liveness",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 1782,
+      "min": 0.0,
+      "max": 1.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "valence",
+      "dtype": "float64",
+      "nullable": false,
+      "null_count": 0,
+      "unique_count": 1805,
+      "min": 0.0,
+      "max": 1.0,
+      "role": "input_feature"
+    },
+    {
+      "name": "tempo",
+      "dtype": "float64",
+      "nullable": true,
+      "null_count": 328,
+      "unique_count": 122705,
+      "min": 30.506,
+      "max": 246.381,
+      "role": "input_feature"
+    },
+    {
+      "name": "time_signature",
+      "dtype": "float64",
+      "nullable": true,
+      "null_count": 337,
+      "unique_count": 4,
+      "min": 1.0,
+      "max": 5.0,
+      "role": "input_feature"
+    }
+  ]
+}

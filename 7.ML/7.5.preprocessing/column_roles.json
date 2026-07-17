@@ -1,0 +1,128 @@
+{
+  "duration_min": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 65514
+  },
+  "explicit": {
+    "source_dtype": "bool",
+    "semantic_role": "binary",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 2
+  },
+  "release_year": {
+    "source_dtype": "int64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 101
+  },
+  "release_month": {
+    "source_dtype": "float64",
+    "semantic_role": "categorical",
+    "missing_count": 136489,
+    "missing_ratio": 0.23265,
+    "unique_count": 12
+  },
+  "decade": {
+    "source_dtype": "int64",
+    "semantic_role": "categorical",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 12
+  },
+  "release_precision": {
+    "source_dtype": "str",
+    "semantic_role": "categorical",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 3
+  },
+  "danceability": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 1285
+  },
+  "energy": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 2571
+  },
+  "key": {
+    "source_dtype": "int64",
+    "semantic_role": "categorical",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 12
+  },
+  "loudness": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 29196
+  },
+  "mode": {
+    "source_dtype": "int64",
+    "semantic_role": "binary",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 2
+  },
+  "speechiness": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 1655
+  },
+  "acousticness": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 5217
+  },
+  "instrumentalness": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 5402
+  },
+  "liveness": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 1782
+  },
+  "valence": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 0,
+    "missing_ratio": 0.0,
+    "unique_count": 1805
+  },
+  "tempo": {
+    "source_dtype": "float64",
+    "semantic_role": "continuous",
+    "missing_count": 328,
+    "missing_ratio": 0.000559,
+    "unique_count": 122705
+  },
+  "time_signature": {
+    "source_dtype": "float64",
+    "semantic_role": "categorical",
+    "missing_count": 337,
+    "missing_ratio": 0.000574,
+    "unique_count": 4
+  }
+}

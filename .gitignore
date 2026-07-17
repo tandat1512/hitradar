@@ -70,3 +70,8 @@ desktop.ini
 .idea/
 *.suo
 *.user
+
+# ============================================================
+# Feature 2.1 — Split ID files (large, regeneratable)
+# ============================================================
+7.ML/7.4.splits/*_ids.parquet
