@@ -110,7 +110,7 @@ def main():
 
     # Required top-level keys
     for key in ["project", "data", "split", "leakage_rules", "reproducibility"]:
-        check(f"CFG-KEY-{key[:5].upper()}", f"Config has key: {key}",
+        check(f"CFG-KEY-{key.upper()}", f"Config has key: {key}",
               True, key in config, key in config)
 
     sc_path = ROOT / "7.ML" / "7.1.config" / "split_config.yaml"
@@ -141,7 +141,7 @@ def main():
         return results, "FAIL"
 
     for key in ["data_version", "actual_source_used", "rows", "columns", "file_sha256", "schema_hash"]:
-        check(f"DV-KEY-{key[:6].upper()}", f"data_version has key: {key}",
+        check(f"DV-KEY-{key.upper()}", f"data_version has key: {key}",
               True, key in dv, key in dv)
 
     check("DV-ROWS-01", "data_version rows = 586672", 586672, dv.get("rows"), dv.get("rows") == 586672)

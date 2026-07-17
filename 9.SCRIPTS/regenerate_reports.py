@@ -86,12 +86,34 @@ def main():
     vp = sm["validation"]["target_profile"]
     tep = sm["test"]["target_profile"]
 
+
+    # Map semantic roles
+    groups = config.get("column_groups", {})
+    feature_roles = []
+    for f in baseline_features:
+        role = "Unknown"
+        for g_name, g_cols in groups.items():
+            if f in g_cols:
+                role = g_name
+                break
+        feature_roles.append((f, role))
+        
+    roles_md = "\n".join([f"| `{f}` | {r} |" for f, r in feature_roles])
     n_checks = vr["total_checks"]
+
     n_pass = vr["pass_count"]
     n_fail = vr["fail_count"]
 
     # Read diagnostics
+
+    try:
+        import subprocess
+        commit_sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=str(ROOT)).decode('utf-8').strip()
+    except:
+        commit_sha = "UNKNOWN"
+        
     diag = pd.read_csv(DATA_INTAKE / "split_candidate_diagnostics.csv")
+
     
     with open(DATA_INTAKE / "temporal_shift_profile.json", "r", encoding="utf-8") as f:
         tsp = json.load(f)
@@ -126,7 +148,7 @@ def main():
 ## 2. Schema
 
 | Check | Expected | Actual | Status |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | Row count | 586,672 | {total_rows:,} | {'PASS' if total_rows == 586672 else 'FAIL'} |
 | Column count | 20 | {total_cols} | {'PASS' if total_cols == 20 else 'FAIL'} |
 | Baseline input features | {n_features} | {n_features} | PASS |
@@ -162,7 +184,7 @@ def main():
 
 ---
 
-## 5. Pre-Split Candidates (Reference)
+## 5. Selected Split Reference
 
 | Split | Rows |
 |---|---|
@@ -185,7 +207,7 @@ def main():
 ## 7. Data Exceptions
 
 | Exception ID | Track ID | Field | Value | Classification |
-|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 """)
         for e in exc.get("exceptions", []):
             f.write(f"| {e['exception_id']} | `{e['track_id']}` | {e['field']} | {e['value']} | {e['classification']} |\n")
@@ -195,7 +217,7 @@ def main():
 ## 8. Contract Deviations
 
 | Deviation | Documented | Actual | Resolution |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | release_year min | 1921 | {year_min} | Registered as exception EXC-001. See RELEASE_YEAR_ANOMALY_REPORT.md |
 
 ---
@@ -282,6 +304,15 @@ Three temporal split candidates were evaluated independently:
 ## 3. Selection Rationale
 
 **Selected: C1** (val_start=2005, test_start=2014)
+
+**Selection Formula (Distance from target 70/15/15 ratio):** 
+`Score = |train_ratio - 70.0| + |val_ratio - 15.0| + |test_ratio - 15.0|` (Lower is better)
+
+**Candidate Scores:**
+- **C1 Score**: `|70.8 - 70.0| + |14.5 - 15.0| + |14.6 - 15.0| = 0.8 + 0.5 + 0.4 = 1.7` (WINNER)
+- **C2 Score**: `|72.5 - 70.0| + |12.5 - 15.0| + |15.0 - 15.0| = 2.5 + 2.5 + 0.0 = 5.0`
+- **C3 Score**: `|68.0 - 70.0| + |16.0 - 15.0| + |16.0 - 15.0| = 2.0 + 1.0 + 1.0 = 4.0`
+
 
 - Best ratio proximity to 70/15/15 target
 - Test contains the most recent 8 years (2014–2021)
@@ -373,12 +404,12 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ## Validation Checks
 
-| # | Check ID | Description | Status |
-|---|---|---|---|
+| # | Check ID | Description | Expected | Actual | Evidence | Status |
+|---|---|---|---|---|---|---|
 """)
         for i, c in enumerate(vr["checks"], 1):
             status_mark = "PASS" if c["status"] == "PASS" else "**FAIL**"
-            f.write(f"| {i} | {c['check_id']} | {c['description']} | {status_mark} |\n")
+            f.write(f"| {i} | {c['check_id']} | {c['description']} | {c.get('expected', '-')} | {c.get('actual', '-')} | {c.get('evidence_path', '-')} | {status_mark} |\n")
 
         f.write(f"""
 ---
@@ -452,7 +483,15 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 2. Locked Split
+## 2. Baseline Input Features (18)
+
+| Feature | Semantic Role |
+|---|---|
+{roles_md}
+
+---
+
+## 3. Locked Split
 
 | Split | Years | Rows | Ratio | Target Mean | Zero Count |
 |---|---|---:|---:|---:|---:|
@@ -462,7 +501,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 3. Validation Summary
+## 4. Validation Summary
 
 | Metric | Value |
 |---|---|
@@ -474,10 +513,10 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 4. Bugs Found and Fixed (HOTFIX)
+## 5. Bugs Found and Fixed (HOTFIX)
 
 | Bug ID | Description | Impact | Status |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | BUG-001 | Candidate split zero counts identical | C2/C3 stats wrong; C1 correct | FIXED |
 | BUG-002 | Year 1900 not flagged as contract deviation | Missing exception | FIXED |
 | BUG-003 | test_set_lock.json missing governance fields | Incomplete lock | FIXED |
@@ -622,7 +661,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 10. Final Status
+## 6. Final Status
 
 > **{vr['overall_status']}**
 >
@@ -654,6 +693,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 | Property | Value |
 |---|---|
 | Hotfix version | 1.0 |
+| Repository commit | `{commit_sha}` |
 | Bugs found | 9 |
 | Bugs fixed | 9 |
 | Files created | 18 |
@@ -668,7 +708,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 ## 2. Bugs Fixed
 
 | # | Bug ID | Severity | Description |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | 1 | BUG-001 | MEDIUM | Candidate split zero counts identical |
 | 2 | BUG-002 | HIGH | Year 1900 not flagged as contract deviation |
 | 3 | BUG-003 | HIGH | test_set_lock.json missing governance fields |
