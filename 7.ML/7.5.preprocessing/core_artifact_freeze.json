@@ -1,0 +1,179 @@
+{
+  "frozen_at": "2026-07-18T12:33:01.783129+00:00",
+  "artifacts": [
+    {
+      "path": "encoder_categories.json",
+      "bytes": 6417,
+      "sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+      "modified_time": "2026-07-18T11:29:08.863511+00:00"
+    },
+    {
+      "path": "encoding_config.json",
+      "bytes": 811,
+      "sha256": "842f7073cde6a63854625f8f9cdf66b4ba8e07c732845ba896bd034b94a52031",
+      "modified_time": "2026-07-18T11:29:07.564623+00:00"
+    },
+    {
+      "path": "imputer_statistics.json",
+      "bytes": 939,
+      "sha256": "649ea9b97cba23287e9a2824f01607abb0c629396aa04ec2526ad67a7fba81db",
+      "modified_time": "2026-07-18T11:29:07.506737+00:00"
+    },
+    {
+      "path": "missing_profile_by_split.json",
+      "bytes": 1670,
+      "sha256": "72da061cf904e6b57caea7c260692d311836e843c82f445fcbd409aa7610a0aa",
+      "modified_time": "2026-07-18T11:29:07.444087+00:00"
+    },
+    {
+      "path": "missing_value_strategy.json",
+      "bytes": 1158,
+      "sha256": "f4822de5aa6f655a790cedb91cd051b14efee2fd5f970cfe8377937bc22397b7",
+      "modified_time": "2026-07-18T11:29:07.444618+00:00"
+    },
+    {
+      "path": "outlier_config.json",
+      "bytes": 298,
+      "sha256": "95de0d9359b85ca6097888ffc6ce45db09b0a8f6d975aca3bcb739afb531902b",
+      "modified_time": "2026-07-18T11:29:07.507259+00:00"
+    },
+    {
+      "path": "outlier_profile_by_split.json",
+      "bytes": 1155,
+      "sha256": "e1d4b4607e70ad3b2f229b3f77a50e1119c73338991003095eb78afed4fb670c",
+      "modified_time": "2026-07-18T11:29:07.564106+00:00"
+    },
+    {
+      "path": "outlier_thresholds.json",
+      "bytes": 2340,
+      "sha256": "d5c2e0ea57a66c9b84b4805f9d1a2dd4a33590abf01ba0bde90a11310e7f3164",
+      "modified_time": "2026-07-18T11:29:07.563587+00:00"
+    },
+    {
+      "path": "p22_a/feature_names.json",
+      "bytes": 686,
+      "sha256": "984f3bd47d145ba7fe075d185de621fb9a67236ebe83474bfebcbd2333eba827",
+      "modified_time": "2026-07-18T11:29:09.273121+00:00"
+    },
+    {
+      "path": "p22_a/output_schema.json",
+      "bytes": 856,
+      "sha256": "3787bfb0a3840853344cc3a1e74f4a42037c8b7b43f3d65ed74673488a2351ac",
+      "modified_time": "2026-07-18T11:29:09.276251+00:00"
+    },
+    {
+      "path": "p22_a/preprocessor.joblib",
+      "bytes": 21,
+      "sha256": "8de5435e74c3cb43106edb0fff153872bcf2cbeb5311d1b34158258e6f81030c",
+      "modified_time": "2026-07-18T11:29:09.269989+00:00"
+    },
+    {
+      "path": "p22_b/feature_names.json",
+      "bytes": 708,
+      "sha256": "9932151588f711039cfb5d986d4eeb6659ba06c78d6de6cd2c2dd058debac26c",
+      "modified_time": "2026-07-18T11:29:09.280413+00:00"
+    },
+    {
+      "path": "p22_b/output_schema.json",
+      "bytes": 856,
+      "sha256": "ffccec29d2d9f8afc6b65f888445b8c1166d2877097a365abb0cfe04fef6533a",
+      "modified_time": "2026-07-18T11:29:09.282499+00:00"
+    },
+    {
+      "path": "p22_b/preprocessor.joblib",
+      "bytes": 21,
+      "sha256": "3b49992a59836ab640dadd460b2d1aee3f65f2f96dda459f18dc70d831bd8306",
+      "modified_time": "2026-07-18T11:29:09.277286+00:00"
+    },
+    {
+      "path": "p22_c/feature_names.json",
+      "bytes": 686,
+      "sha256": "984f3bd47d145ba7fe075d185de621fb9a67236ebe83474bfebcbd2333eba827",
+      "modified_time": "2026-07-18T11:29:09.286740+00:00"
+    },
+    {
+      "path": "p22_c/output_schema.json",
+      "bytes": 856,
+      "sha256": "543b72fdbb06f18430dfed6f4cad82b5f73061be8794fc90ba5a0cfa06b724c5",
+      "modified_time": "2026-07-18T11:29:09.288800+00:00"
+    },
+    {
+      "path": "p22_c/preprocessor.joblib",
+      "bytes": 21,
+      "sha256": "bdd730234a3eca1caadf0be8f67a8a4091f38dd6743bc80b6c4900511e39812e",
+      "modified_time": "2026-07-18T11:29:09.283013+00:00"
+    },
+    {
+      "path": "p22_d/feature_names.json",
+      "bytes": 191,
+      "sha256": "3beb75e896bd6d1f83a4a1b79e4c5ab2a443cd632949287a4b3799c59133b1a1",
+      "modified_time": "2026-07-18T11:29:09.292966+00:00"
+    },
+    {
+      "path": "p22_d/output_schema.json",
+      "bytes": 856,
+      "sha256": "28e3cd2a3a7354c6cfa788a5e7b7288c57dd52d9c473d4b6cb52c74143e5a97e",
+      "modified_time": "2026-07-18T11:29:09.295549+00:00"
+    },
+    {
+      "path": "p22_d/preprocessor.joblib",
+      "bytes": 21,
+      "sha256": "bb9b4d53f09dab5d694f242819ed3e90e97d1a8282169863abe803d18d657ee9",
+      "modified_time": "2026-07-18T11:29:09.289322+00:00"
+    },
+    {
+      "path": "preprocessing_candidates.json",
+      "bytes": 2658,
+      "sha256": "5a6ca20a2907e238069becb9181b39328ea8c16874687993f865801323536d2d",
+      "modified_time": "2026-07-18T11:29:09.269389+00:00"
+    },
+    {
+      "path": "preprocessing_fit_audit.json",
+      "bytes": 8672,
+      "sha256": "54525ce825e7bf675390aa666fccb0a82e4f51f5bab99f816bff12a40747f34a",
+      "modified_time": "2026-07-18T11:29:09.311306+00:00"
+    },
+    {
+      "path": "preprocessing_input_contract.json",
+      "bytes": 4485,
+      "sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+      "modified_time": "2026-07-18T11:29:02.592407+00:00"
+    },
+    {
+      "path": "preprocessing_split_verification.json",
+      "bytes": 1237,
+      "sha256": "95fc26b75864a823abbafe668f25b2d1c426c3b4a002dd9310cbf436fc7f8e8c",
+      "modified_time": "2026-07-18T11:29:07.424185+00:00"
+    },
+    {
+      "path": "preprocessing_validation_results.json",
+      "bytes": 43816,
+      "sha256": "3b3614fd0621257e1bce0c77ec45da8d99f914a1ad95d3b753eaa1998dcc5790",
+      "modified_time": "2026-07-18T11:29:18.686675+00:00"
+    },
+    {
+      "path": "scaler_statistics.json",
+      "bytes": 16435,
+      "sha256": "63207090645700af5725ab0d43b3de4338880894753d8343e64b175612510cd7",
+      "modified_time": "2026-07-18T11:29:09.265614+00:00"
+    },
+    {
+      "path": "scaling_config.json",
+      "bytes": 131,
+      "sha256": "c86dff71c66acf46befb18bc7412f1549a53203467d5923acb22733435368877",
+      "modified_time": "2026-07-18T11:29:09.004566+00:00"
+    },
+    {
+      "path": "semantic_roles.json",
+      "bytes": 6312,
+      "sha256": "88d25b8407de6b18c9c353039b3dce70d79b67ff13ffe306931471892403a39a",
+      "modified_time": "2026-07-18T11:29:07.426254+00:00"
+    },
+    {
+      "path": "unknown_category_profile.json",
+      "bytes": 2816,
+      "sha256": "8d4931dd7a26e59fbb84947487782cd7ef3029fa2e7e8245f0c8ebfe4e6ac366",
+      "modified_time": "2026-07-18T11:29:08.956321+00:00"
+    }
+  ]
+}

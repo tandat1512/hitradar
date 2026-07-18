@@ -1,58 +1,137 @@
 {
-  "feature_id": "2.2",
-  "generation_session_id": "KNOWN",
-  "input_contract_valid": true,
-  "split_evidence_complete": true,
-  "exactly_18_features": true,
-  "semantic_roles_valid": true,
-  "feature_2_1_split_reused": true,
-  "imputer_train_only": true,
-  "release_month_strategy_valid": true,
-  "time_signature_strategy_consistent": true,
-  "outlier_evidence_complete": true,
-  "outlier_thresholds_train_only": true,
-  "encoder_train_only": true,
-  "encoder_categories_valid": true,
-  "unknown_categories_safe": true,
-  "unknown_category_warning_documented": true,
-  "scaler_train_only": true,
-  "scaler_statistics_complete": true,
-  "p22b_scaling_documented": true,
-  "kmeans_status_valid": true,
-  "validation_transform_only": true,
-  "test_transform_only": true,
-  "component_level_fit_audit_complete": true,
-  "output_schema_consistent": true,
-  "feature_order_consistent": true,
-  "no_unexpected_nan": true,
-  "no_inf": true,
-  "target_excluded": true,
-  "identifier_excluded": true,
-  "serialization_valid": true,
-  "reproducibility_valid": true,
-  "validation_evidence_complete": true,
-  "tests_collected": 100,
-  "tests_failed": 0,
-  "tests_errors": 0,
-  "tests_skipped": 0,
-  "report_manifest_complete": true,
-  "report_source_map_complete": true,
-  "reports_consistent_with_artifacts": true,
-  "all_reports_same_generation_session": true,
-  "generator_idempotent": true,
-  "completion_generated_after_evidence": true,
-  "review_package_generated_after_completion": true,
-  "direct_evidence": {
-    "imputer_train_only": [
+  "generated_at": "2026-07-18T14:42:50.018483+00:00",
+  "input_contract_verified": {
+    "value": true,
+    "evidence": [
       {
-        "path": "preprocessing_fit_audit.json"
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/0/status",
+        "validation_check_id": "CONTRACT-1",
+        "testcase": "test_input_contract_complete"
       }
     ]
   },
-  "warning_items": [],
-  "blocking_items": [],
-  "final_status": "PASS_WITH_WARNINGS",
-  "feature_2_2_decision": "ELIGIBLE_FOR_CLOSURE",
-  "feature_2_3_gate": "MAY_BEGIN",
-  "generated_at": "2026-07-18T11:31:33.637996+00:00"
+  "split_integrity_verified": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/13/status",
+        "validation_check_id": "SPLIT-UNION",
+        "testcase": "test_split_counts_complete"
+      }
+    ]
+  },
+  "semantic_roles_locked": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/14/status",
+        "validation_check_id": "SEMANTIC-ROLES",
+        "testcase": "test_semantic_roles_exact"
+      }
+    ]
+  },
+  "missing_strategy_complete": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/16/status",
+        "validation_check_id": "MISSING-STRATEGY",
+        "testcase": "test_missing_profiles_reconcile"
+      }
+    ]
+  },
+  "outlier_strategy_complete": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/17/status",
+        "validation_check_id": "OUTLIER-TEMPO",
+        "testcase": "test_outlier_q1_q3_iqr_recompute"
+      }
+    ]
+  },
+  "encoding_strategy_complete": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/20/status",
+        "validation_check_id": "ENCODE-P22-A-RELEASE_MONTH",
+        "testcase": "test_encoder_categories_match_fitted_objects"
+      }
+    ]
+  },
+  "scaling_strategy_complete": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/30/status",
+        "validation_check_id": "SCALE-P22-A-TEMPO",
+        "testcase": "test_p22a_scaler_statistics"
+      }
+    ]
+  },
+  "candidate_schemas_validated": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/63/status",
+        "validation_check_id": "SCHEMA-P22-A-NO-NAN",
+        "testcase": "test_candidate_schema_shapes"
+      }
+    ]
+  },
+  "fit_audit_complete": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/67/status",
+        "validation_check_id": "LEAKAGE-AUDIT-P22-A_IMPUTER",
+        "testcase": "test_component_level_fit_audit"
+      }
+    ]
+  },
+  "validation_results_pass": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/0/status",
+        "validation_check_id": "OVERALL-PASS",
+        "testcase": "test_validation_results_pass"
+      }
+    ]
+  },
+  "test_transform_only": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_fit_audit.json",
+        "pointer": "#/0/test_fit_called",
+        "validation_check_id": "TEST-TRANSFORM-ONLY",
+        "testcase": "test_test_transform_only"
+      }
+    ]
+  },
+  "scaler_statistics_complete": {
+    "value": true,
+    "evidence": [
+      {
+        "path": "preprocessing_validation_results.json",
+        "pointer": "#/30/status",
+        "validation_check_id": "SCALER-STATS",
+        "testcase": "test_standard_scaler_mean_and_scale"
+      }
+    ]
+  },
+  "feature_2_2_decision": "NOT_CLOSED",
+  "feature_2_3_gate": "BLOCKED_AS_FORMAL_GATE"
 }

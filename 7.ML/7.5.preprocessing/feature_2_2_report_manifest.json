@@ -1,365 +1,375 @@
 {
-  "repository_root": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar",
+  "generated_at": "2026-07-18T12:14:39.739467+00:00",
   "files": [
     {
       "path": "7.ML/7.5.preprocessing/encoder_categories.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 6417,
       "sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
-      "modified_at": "2026-07-18T18:29:08.863511",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:08.863511+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/encoding_config.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 811,
       "sha256": "842f7073cde6a63854625f8f9cdf66b4ba8e07c732845ba896bd034b94a52031",
-      "modified_at": "2026-07-18T18:29:07.564623",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.564623+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/feature_2_2_closure_gate.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 1893,
-      "sha256": "0bd2f33cb0da438efd9a1b886489303bc1f7217567fb9a8d594dffecfeeb7a5b",
-      "modified_at": "2026-07-18T18:30:38.043150",
-      "generation_session_id": "KNOWN"
+      "sha256": "ed1427265956b49cf3206976937335fc5c90fd85aac24f2262bdd8f085c8bd0f",
+      "modified_time": "2026-07-18T11:31:33.638526+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/feature_2_2_generation_context.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 1310,
       "sha256": "c66c9642d31dfdaac82955fca2ed91424a7d11e9fea14537f2bcee95f181a66c",
-      "modified_at": "2026-07-18T18:24:42.676824",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:24:42.676824+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
-      "path": "7.ML/7.5.preprocessing/feature_2_2_report_manifest.json",
-      "category": "Artifact",
+      "path": "7.ML/7.5.preprocessing/feature_2_2_junit_selection.json",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
-      "bytes": 11881,
-      "sha256": "d9c3a12bc2c3b8c7ce8cb8a3f65f11d23816e1f53fcc07f2b3627e30930c5f1e",
-      "modified_at": "2026-07-18T18:30:38.041578",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 12338,
+      "sha256": "1852d135e903c4a19b3cce0960137345e6f1daa937300667341977e8cf81c070",
+      "modified_time": "2026-07-18T12:12:37.827018+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/feature_2_2_test_summary.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
-      "bytes": 14454,
-      "sha256": "223ed8dfe5a0106a94be9acd0c0b58510f455f158d5fc2bc24859029c47064bc",
-      "modified_at": "2026-07-18T18:31:22.729927",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 13055,
+      "sha256": "b5212fe374a1c4a36f3fb8282136cdc36da703d26586315d708023014ca076ff",
+      "modified_time": "2026-07-18T12:13:06.660605+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/imputer_statistics.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 939,
       "sha256": "649ea9b97cba23287e9a2824f01607abb0c629396aa04ec2526ad67a7fba81db",
-      "modified_at": "2026-07-18T18:29:07.506737",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.506737+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/missing_profile_by_split.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 1670,
       "sha256": "72da061cf904e6b57caea7c260692d311836e843c82f445fcbd409aa7610a0aa",
-      "modified_at": "2026-07-18T18:29:07.444087",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.444087+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/missing_value_strategy.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 1158,
       "sha256": "f4822de5aa6f655a790cedb91cd051b14efee2fd5f970cfe8377937bc22397b7",
-      "modified_at": "2026-07-18T18:29:07.444618",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.444618+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/outlier_config.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 298,
       "sha256": "95de0d9359b85ca6097888ffc6ce45db09b0a8f6d975aca3bcb739afb531902b",
-      "modified_at": "2026-07-18T18:29:07.507259",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.507259+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/outlier_profile_by_split.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 1155,
       "sha256": "e1d4b4607e70ad3b2f229b3f77a50e1119c73338991003095eb78afed4fb670c",
-      "modified_at": "2026-07-18T18:29:07.564106",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.564106+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/outlier_thresholds.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 2340,
       "sha256": "d5c2e0ea57a66c9b84b4805f9d1a2dd4a33590abf01ba0bde90a11310e7f3164",
-      "modified_at": "2026-07-18T18:29:07.563587",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.563587+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/preprocessing_candidates.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 2658,
       "sha256": "5a6ca20a2907e238069becb9181b39328ea8c16874687993f865801323536d2d",
-      "modified_at": "2026-07-18T18:29:09.269389",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:09.269389+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 8672,
       "sha256": "54525ce825e7bf675390aa666fccb0a82e4f51f5bab99f816bff12a40747f34a",
-      "modified_at": "2026-07-18T18:29:09.311306",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:09.311306+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 4485,
       "sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
-      "modified_at": "2026-07-18T18:29:02.592407",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:02.592407+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/preprocessing_split_verification.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 1237,
       "sha256": "95fc26b75864a823abbafe668f25b2d1c426c3b4a002dd9310cbf436fc7f8e8c",
-      "modified_at": "2026-07-18T18:29:07.424185",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.424185+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/preprocessing_validation_results.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 43816,
       "sha256": "3b3614fd0621257e1bce0c77ec45da8d99f914a1ad95d3b753eaa1998dcc5790",
-      "modified_at": "2026-07-18T18:29:18.686675",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:18.686675+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/report_artifact_consistency.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
-      "bytes": 49,
-      "sha256": "f2d1fb96c91a62feed1fd704640626c2beb3e19940b3434e15fc28d015690b79",
-      "modified_at": "2026-07-18T18:31:28.827493",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 1504,
+      "sha256": "fcce1c673fd67749ddc2f7096762d9b95ee07fee754532b6dd94ddf4aaa7fc1e",
+      "modified_time": "2026-07-18T12:14:21.729704+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/report_source_map.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
-      "bytes": 154,
-      "sha256": "42e469fd6cf9edc212dd441de5e5d9d4186b2e7cbb4e3870258766cad1488346",
-      "modified_at": "2026-07-18T18:31:28.827493",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 1569,
+      "sha256": "d797b43530f9aa4f8bb2880e7ae97320998111d8be6e2b6049ecd6315e247aa4",
+      "modified_time": "2026-07-18T12:14:21.728179+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/scaler_statistics.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 16435,
       "sha256": "63207090645700af5725ab0d43b3de4338880894753d8343e64b175612510cd7",
-      "modified_at": "2026-07-18T18:29:09.265614",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:09.265614+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/scaling_config.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 131,
       "sha256": "c86dff71c66acf46befb18bc7412f1549a53203467d5923acb22733435368877",
-      "modified_at": "2026-07-18T18:29:09.004566",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:09.004566+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/semantic_roles.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 6312,
       "sha256": "88d25b8407de6b18c9c353039b3dce70d79b67ff13ffe306931471892403a39a",
-      "modified_at": "2026-07-18T18:29:07.426254",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:07.426254+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "7.ML/7.5.preprocessing/unknown_category_profile.json",
-      "category": "Artifact",
+      "category": "core_artifact",
       "exists": true,
-      "valid": true,
+      "parse_status": "VALID",
       "bytes": 2816,
       "sha256": "8d4931dd7a26e59fbb84947487782cd7ef3029fa2e7e8245f0c8ebfe4e6ac366",
-      "modified_at": "2026-07-18T18:29:08.956321",
-      "generation_session_id": "KNOWN"
+      "modified_time": "2026-07-18T11:29:08.956321+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 78942,
-      "sha256": "22115bbdf6b42cd0134054ab88b2cfcfbe2fb18b3ca7269ff6765375acfd8c06",
-      "modified_at": "2026-07-18T18:31:16.276828",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 78941,
+      "sha256": "2cfcfbcc2b7d30876d95f6dff0088d05a9f80bbc795f336ec36fbc7a260c1ee5",
+      "modified_time": "2026-07-18T11:31:39.546788+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/CANDIDATE_SCHEMA_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 584,
-      "sha256": "28ac85667b9e69248238271a41dd3605c6b3822167e985c9b5c6be6970ecce94",
-      "modified_at": "2026-07-18T18:31:28.825975",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 106,
+      "sha256": "4a34ddf330f699a13d1166581fa0409d098c2cb0cfc51a47c38868212ddee6a2",
+      "modified_time": "2026-07-18T12:14:21.714891+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/CLOSURE_GATE_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 580,
-      "sha256": "95bab6fd051da2a656214faae784940cff809afc4d434506c6a3eac429f643ed",
-      "modified_at": "2026-07-18T18:31:28.827493",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 102,
+      "sha256": "3d1c58f5b4c2f94b2b75ddf5190fc925430bbff64aca778f4e585beb09cc8b81",
+      "modified_time": "2026-07-18T12:14:21.716418+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/COLUMN_CLASSIFICATION_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 1939,
-      "sha256": "3b6cc9ea5908a84a30d1ebe773769cdc2e27b999c92dec3b85d9b4ee29841206",
-      "modified_at": "2026-07-18T18:31:28.823403",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 111,
+      "sha256": "9d8513e28177716e075dfa2e8d28c20b40d21fec4ae8f7dbd214d213041f4b91",
+      "modified_time": "2026-07-18T12:14:21.713848+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/ENCODING_STRATEGY_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 648,
-      "sha256": "504b695d800f8bf8a2ac417906935e3513009331d1469fa9cc1b8f547b071865",
-      "modified_at": "2026-07-18T18:31:28.825469",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 107,
+      "sha256": "49bc63bbf4772a463db9ef26435632a2789df3f693e7272000a1088a06c69376",
+      "modified_time": "2026-07-18T12:14:21.714891+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/FEATURE_2_2_COMPLETION_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 590,
-      "sha256": "39d2d8fa6dc55f6144072b333333feefea7ae0cc96b94379260a26c1c7b50ca3",
-      "modified_at": "2026-07-18T18:31:28.827493",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 112,
+      "sha256": "ae63bc2f3dff10cd014963d18644a194443aa2805bc6704ce801697a50e6a461",
+      "modified_time": "2026-07-18T12:14:21.716418+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
+    },
+    {
+      "path": "Output epic2/F 2.2/FEATURE_2_2_REPORTING_PREFLIGHT.md",
+      "category": "report",
+      "exists": true,
+      "parse_status": "VALID",
+      "bytes": 8124,
+      "sha256": "f7b4e741085776fb803946e23567d6a817b441967c6c72c59395b70b7c9fbf6b",
+      "modified_time": "2026-07-18T12:11:52.990041+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/LEAKAGE_SAFETY_AUDIT_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 588,
-      "sha256": "cdfc66492100faa43c5265ff6e64a031789549461c8195fbbb8e1a6eb2eeb4c8",
-      "modified_at": "2026-07-18T18:31:28.825975",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 110,
+      "sha256": "60146c1910bc977475ee0d1d848e1bf4dba62dfdd15b741fc9088e2e8856ec14",
+      "modified_time": "2026-07-18T12:14:21.714891+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/MISSING_VALUE_STRATEGY_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 801,
-      "sha256": "ffcd92a6a7b04fa09c15364fa39d2009c807d62622ab8b1ae8aae4507f9be2c1",
-      "modified_at": "2026-07-18T18:31:28.823403",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 112,
+      "sha256": "2006d33d77f7be601fcdcd80cdfd8150aa4673bfa8a156aa5c827743b864144a",
+      "modified_time": "2026-07-18T12:14:21.714373+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/OUTLIER_PREPROCESSING_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 790,
-      "sha256": "eb1241314a7eedf9ff8abb228e218eedc39166f3e0b946f9e11952ce4f4a0f04",
-      "modified_at": "2026-07-18T18:31:28.824941",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 111,
+      "sha256": "fe92ef113e6f193eeed2cef06ab317e73bc39d70c5d01f8495d8ff3872463802",
+      "modified_time": "2026-07-18T12:14:21.714891+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/PREPROCESSING_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 581,
-      "sha256": "252970d3cf371204b2f92018140a330a8d818a79e76a19a651f122f1cab29e73",
-      "modified_at": "2026-07-18T18:31:28.823403",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 103,
+      "sha256": "b83f882f0b4236a038180bea3d89238ece78283298936a73838e44d6b88d590a",
+      "modified_time": "2026-07-18T12:14:21.713342+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/PREPROCESSING_VALIDATION_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 592,
-      "sha256": "992b6eb6744f2a19367831908c4dd9eabe199c7101bf42d4a3ab6680ea1bf4e2",
-      "modified_at": "2026-07-18T18:31:28.825975",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 114,
+      "sha256": "68984c81b9324f0621a51c0f34389982931f5e8f63292965f88167309768b387",
+      "modified_time": "2026-07-18T12:14:21.716418+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/SCALING_STRATEGY_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 645,
-      "sha256": "37e165e7ddd2a96faf3a4be8c8a9317b81a62a68c5b733620734010f20259220",
-      "modified_at": "2026-07-18T18:31:28.825975",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 106,
+      "sha256": "edf39c72b0d9c804519b7773c1c5d81b9768bf1667394fe04120796830e7f0cb",
+      "modified_time": "2026-07-18T12:14:21.714891+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     },
     {
       "path": "Output epic2/F 2.2/TEST_COVERAGE_REPORT.md",
-      "category": "Artifact",
+      "category": "report",
       "exists": true,
-      "valid": true,
-      "bytes": 581,
-      "sha256": "051f112518687b80e6e859d798fcde10725b53cc105d6b427c27bf919115d5d4",
-      "modified_at": "2026-07-18T18:31:28.825975",
-      "generation_session_id": "KNOWN"
+      "parse_status": "VALID",
+      "bytes": 103,
+      "sha256": "d94aa03a7d70c703712b1eac75916b4b7c9d2b6a99bec79ac0edebf19ff17ddf",
+      "modified_time": "2026-07-18T12:14:21.716418+00:00",
+      "generation_session": "2026-07-18T12:14:39.739467+00:00"
     }
   ]
 }

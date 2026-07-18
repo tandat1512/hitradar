@@ -1,0 +1,688 @@
+{
+  "checks": [
+    {
+      "report": "PREPROCESSING_REPORT.md",
+      "field": "train_rows",
+      "report_value": "415524",
+      "artifact_value": "415524",
+      "source": "preprocessing_split_verification.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "PREPROCESSING_REPORT.md",
+      "field": "train_validation_overlap",
+      "report_value": "0",
+      "artifact_value": "0",
+      "source": "preprocessing_split_verification.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "PREPROCESSING_REPORT.md",
+      "field": "union_reconciles",
+      "report_value": "True",
+      "artifact_value": "True",
+      "source": "preprocessing_split_verification.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "MISSING_VALUE_STRATEGY_REPORT.md",
+      "field": "missing_tempo",
+      "report_value": "328",
+      "artifact_value": "328",
+      "source": "missing_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "MISSING_VALUE_STRATEGY_REPORT.md",
+      "field": "missing_time_signature",
+      "report_value": "337",
+      "artifact_value": "337",
+      "source": "missing_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "MISSING_VALUE_STRATEGY_REPORT.md",
+      "field": "missing_release_month",
+      "report_value": "136489",
+      "artifact_value": "136489",
+      "source": "missing_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "PREPROCESSING_REPORT.md",
+      "field": "imputer_tempo",
+      "report_value": "114.7315",
+      "artifact_value": "114.7315",
+      "source": "imputer_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "PREPROCESSING_REPORT.md",
+      "field": "imputer_time_signature",
+      "report_value": "4.0",
+      "artifact_value": "4.0",
+      "source": "imputer_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outlier_lower_duration_min",
+      "report_value": "0.3898999999999999",
+      "artifact_value": "0.3898999999999999",
+      "source": "outlier_thresholds.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outlier_upper_duration_min",
+      "report_value": "6.8683000000000005",
+      "artifact_value": "6.8683000000000005",
+      "source": "outlier_thresholds.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outlier_lower_tempo",
+      "report_value": "33.36149999999997",
+      "artifact_value": "33.36149999999997",
+      "source": "outlier_thresholds.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outlier_upper_tempo",
+      "report_value": "196.10150000000004",
+      "artifact_value": "196.10150000000004",
+      "source": "outlier_thresholds.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outlier_lower_loudness",
+      "report_value": "-23.570875",
+      "artifact_value": "-23.570875",
+      "source": "outlier_thresholds.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outlier_upper_loudness",
+      "report_value": "1.7541249999999993",
+      "artifact_value": "1.7541249999999993",
+      "source": "outlier_thresholds.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_duration_min",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_tempo",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_loudness",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_danceability",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_energy",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_speechiness",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_acousticness",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_instrumentalness",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_liveness",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "outliers_train_valence",
+      "report_value": "125",
+      "artifact_value": "125",
+      "source": "outlier_profile_by_split.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-A_release_month",
+      "report_value": "13",
+      "artifact_value": "13",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-D_release_month",
+      "report_value": "13",
+      "artifact_value": "13",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-A_decade",
+      "report_value": "10",
+      "artifact_value": "10",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-D_decade",
+      "report_value": "10",
+      "artifact_value": "10",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-A_release_precision",
+      "report_value": "3",
+      "artifact_value": "3",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-D_release_precision",
+      "report_value": "3",
+      "artifact_value": "3",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-A_key",
+      "report_value": "12",
+      "artifact_value": "12",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-D_key",
+      "report_value": "12",
+      "artifact_value": "12",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-A_time_signature",
+      "report_value": "4",
+      "artifact_value": "4",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "categories_P22-D_time_signature",
+      "report_value": "4",
+      "artifact_value": "4",
+      "source": "encoder_categories.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_duration_min",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_duration_min",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_duration_min",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_release_year",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_release_year",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_release_year",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_danceability",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_danceability",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_danceability",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_energy",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_energy",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_energy",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_loudness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_loudness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_loudness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_speechiness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_speechiness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_speechiness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_acousticness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_acousticness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_acousticness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_instrumentalness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_instrumentalness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_instrumentalness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_liveness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_liveness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_liveness",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_valence",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_valence",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_valence",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-A_tempo",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-B_tempo",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "scaler_mean_P22-C_tempo",
+      "report_value": "0.5",
+      "artifact_value": "0.5",
+      "source": "scaler_statistics.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "CANDIDATE_SCHEMA_REPORT.md",
+      "field": "schema_outlier_P22-A",
+      "report_value": "NONE",
+      "artifact_value": "NONE",
+      "source": "preprocessing_candidates.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "CANDIDATE_SCHEMA_REPORT.md",
+      "field": "schema_outlier_P22-B",
+      "report_value": "NONE",
+      "artifact_value": "NONE",
+      "source": "preprocessing_candidates.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "CANDIDATE_SCHEMA_REPORT.md",
+      "field": "schema_outlier_P22-C",
+      "report_value": "IQR",
+      "artifact_value": "IQR",
+      "source": "preprocessing_candidates.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "CANDIDATE_SCHEMA_REPORT.md",
+      "field": "schema_outlier_P22-D",
+      "report_value": "NONE",
+      "artifact_value": "NONE",
+      "source": "preprocessing_candidates.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "TEST_COVERAGE_REPORT.md",
+      "field": "junit_collected_core",
+      "report_value": "81",
+      "artifact_value": "81",
+      "source": "pytest_feature_2_2_final.xml",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "PREPROCESSING_VALIDATION_REPORT.md",
+      "field": "validation_checks_total",
+      "report_value": "81",
+      "artifact_value": "81",
+      "source": "preprocessing_validation_results.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "CLOSURE_GATE_REPORT.md",
+      "field": "closure_decision",
+      "report_value": "ELIGIBLE_FOR_CLOSURE",
+      "artifact_value": "ELIGIBLE_FOR_CLOSURE",
+      "source": "feature_2_2_closure_gate.json",
+      "match": true,
+      "status": "MATCH"
+    },
+    {
+      "report": "CLOSURE_GATE_REPORT.md",
+      "field": "gate_passed",
+      "report_value": "True",
+      "artifact_value": "True",
+      "source": "feature_2_2_closure_gate.json",
+      "match": true,
+      "status": "MATCH"
+    }
+  ],
+  "summary": {
+    "total_checks": 75,
+    "matched": 75,
+    "mismatched": 0,
+    "unsourced_claim": 0,
+    "missing_source": 0,
+    "stale_report": 0,
+    "reports_consistent_with_artifacts": true
+  }
+}

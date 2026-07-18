@@ -1,3 +1,70 @@
 {
-  "reports_consistent_with_artifacts": true
+  "checks": [
+    {
+      "report": "PREPROCESSING_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "COLUMN_CLASSIFICATION_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "MISSING_VALUE_STRATEGY_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "OUTLIER_PREPROCESSING_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "ENCODING_STRATEGY_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "SCALING_STRATEGY_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "CANDIDATE_SCHEMA_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "PREPROCESSING_VALIDATION_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "TEST_COVERAGE_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "CLOSURE_GATE_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    },
+    {
+      "report": "FEATURE_2_2_COMPLETION_REPORT.md",
+      "field": "all",
+      "status": "MATCH"
+    }
+  ],
+  "summary": {
+    "total_checks": 12,
+    "matched": 12,
+    "mismatched": 0,
+    "reports_consistent_with_artifacts": true
+  }
 }

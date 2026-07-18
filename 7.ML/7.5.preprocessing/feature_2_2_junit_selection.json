@@ -1,38 +1,13 @@
 {
   "canonical_junit_path": "7.ML/7.5.preprocessing/pytest_feature_2_2_final.xml",
   "canonical_junit_sha256": "60761d6b3fa7380a64e64361e06791ae283643f5e6af1622e564050ad8bd1203",
-  "generated_at": "2026-07-18T12:13:06.377084+00:00",
-  "pytest_version": "9.1.1",
-  "test_files": [
-    "tests/test_feature_2_2_artifacts.py",
-    "tests/test_feature_2_2_reports.py",
-    "tests/test_feature_2_2_preprocessing.py",
-    "tests/test_feature_2_2_review_package.py",
-    "tests/test_feature_2_2_leakage_safety.py"
-  ],
-  "core_tests": {
-    "collected": 81,
-    "passed": 81,
-    "failed": 0,
-    "errors": 0,
-    "skipped": 0,
-    "duration_seconds": 1.319
-  },
-  "reporting_tests": {
-    "collected": 0,
-    "passed": 0,
-    "failed": 0,
-    "errors": 0,
-    "skipped": 0,
-    "duration_seconds": 0
-  },
-  "combined_summary": {
-    "collected": 81,
-    "passed": 81,
-    "failed": 0,
-    "errors": 0,
-    "skipped": 0
-  },
+  "selection_reason": "Largest valid core testsuite",
+  "tests": 81,
+  "passed": 81,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 1.319,
   "testcases": [
     {
       "name": "test_input_contract_complete",
@@ -440,11 +415,5 @@
       "status": "PASS"
     }
   ],
-  "overall_status": "PASS",
-  "collected": 81,
-  "passed": 81,
-  "failed": 0,
-  "errors": 0,
-  "skipped": 0,
-  "duration_seconds": 1.319
+  "rejected_junit_files": []
 }

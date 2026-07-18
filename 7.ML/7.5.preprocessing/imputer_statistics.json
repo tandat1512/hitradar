@@ -14,7 +14,8 @@
     "fit_row_count": 415524,
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
     "validation_fit_called": false,
-    "test_fit_called": false
+    "test_fit_called": false,
+    "statistic_value": 114.7315
   },
   {
     "shared_statistics_id": "time_signature_mode",
@@ -31,6 +32,7 @@
     "fit_row_count": 415524,
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
     "validation_fit_called": false,
-    "test_fit_called": false
+    "test_fit_called": false,
+    "statistic_value": 4.0
   }
 ]

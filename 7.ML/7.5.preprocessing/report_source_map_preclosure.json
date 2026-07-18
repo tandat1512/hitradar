@@ -1,0 +1,881 @@
+{
+  "reports": {
+    "PREPROCESSING_REPORT.md": {
+      "fields": [
+        {
+          "report": "PREPROCESSING_REPORT.md",
+          "field_id": "split-union",
+          "rendered_value": "True",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_split_verification.json",
+          "source_pointer": "#/checks/union_reconciles",
+          "source_sha256": "95fc26b75864a823abbafe668f25b2d1c426c3b4a002dd9310cbf436fc7f8e8c",
+          "validation_check_id": "SPLIT-UNION",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "COLUMN_CLASSIFICATION_REPORT.md": {
+      "fields": [
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "input-rows",
+          "rendered_value": "586672",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "INPUT-ROWS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "input-cols",
+          "rendered_value": "20",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "INPUT-COLS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "input-identifier",
+          "rendered_value": "track_id",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "INPUT-IDENTIFIER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "input-target",
+          "rendered_value": "target_popularity",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "INPUT-TARGET",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "split-train",
+          "rendered_value": "415524",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "SPLIT-TRAIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "split-val",
+          "rendered_value": "85272",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "SPLIT-VAL",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "split-test",
+          "rendered_value": "85876",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "SPLIT-TEST",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "hash-train",
+          "rendered_value": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "HASH-TRAIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "hash-val",
+          "rendered_value": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "HASH-VAL",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "hash-test",
+          "rendered_value": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "HASH-TEST",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "years-train",
+          "rendered_value": "1900-2004",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "YEARS-TRAIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "years-val",
+          "rendered_value": "2005-2013",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "YEARS-VAL",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "years-test",
+          "rendered_value": "2014-2021",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "YEARS-TEST",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "COLUMN_CLASSIFICATION_REPORT.md",
+          "field_id": "semantic-roles",
+          "rendered_value": "PASS",
+          "source_path": "7.ML/7.5.preprocessing/semantic_roles.json",
+          "source_pointer": "#/validation_status",
+          "source_sha256": "88d25b8407de6b18c9c353039b3dce70d79b67ff13ffe306931471892403a39a",
+          "validation_check_id": "SEMANTIC-ROLES",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "MISSING_VALUE_STRATEGY_REPORT.md": {
+      "fields": [
+        {
+          "report": "MISSING_VALUE_STRATEGY_REPORT.md",
+          "field_id": "missing-profile",
+          "rendered_value": "dict",
+          "source_path": "7.ML/7.5.preprocessing/missing_profile_by_split.json",
+          "source_pointer": "#/",
+          "source_sha256": "72da061cf904e6b57caea7c260692d311836e843c82f445fcbd409aa7610a0aa",
+          "validation_check_id": "MISSING-PROFILE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "MISSING_VALUE_STRATEGY_REPORT.md",
+          "field_id": "missing-strategy",
+          "rendered_value": "True",
+          "source_path": "7.ML/7.5.preprocessing/missing_value_strategy.json",
+          "source_pointer": "#/strategies",
+          "source_sha256": "0176133e393bb433c9e3a40e24d509c747d504adf97237a8f4cd42d3cf0726b2",
+          "validation_check_id": "MISSING-STRATEGY",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "OUTLIER_PREPROCESSING_REPORT.md": {
+      "fields": [
+        {
+          "report": "OUTLIER_PREPROCESSING_REPORT.md",
+          "field_id": "outlier-duration_min",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/outlier_thresholds.json",
+          "source_pointer": "#/0/fitted_on_split",
+          "source_sha256": "d1f60250733d6739559fd51c0e767209b506b52dfea6254689143504a52f9ee0",
+          "validation_check_id": "OUTLIER-DURATION_MIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "OUTLIER_PREPROCESSING_REPORT.md",
+          "field_id": "outlier-tempo",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/outlier_thresholds.json",
+          "source_pointer": "#/1/fitted_on_split",
+          "source_sha256": "d1f60250733d6739559fd51c0e767209b506b52dfea6254689143504a52f9ee0",
+          "validation_check_id": "OUTLIER-TEMPO",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "OUTLIER_PREPROCESSING_REPORT.md",
+          "field_id": "outlier-loudness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/outlier_thresholds.json",
+          "source_pointer": "#/2/fitted_on_split",
+          "source_sha256": "d1f60250733d6739559fd51c0e767209b506b52dfea6254689143504a52f9ee0",
+          "validation_check_id": "OUTLIER-LOUDNESS",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "ENCODING_STRATEGY_REPORT.md": {
+      "fields": [
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-a-release_month",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/0/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-A-RELEASE_MONTH",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-d-release_month",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/1/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-D-RELEASE_MONTH",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-a-decade",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/2/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-A-DECADE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-d-decade",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/3/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-D-DECADE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-a-release_precision",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/4/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-A-RELEASE_PRECISION",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-d-release_precision",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/5/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-D-RELEASE_PRECISION",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-a-key",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/6/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-A-KEY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-d-key",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/7/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-D-KEY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-a-time_signature",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/8/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-A-TIME_SIGNATURE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "ENCODING_STRATEGY_REPORT.md",
+          "field_id": "encode-p22-d-time_signature",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+          "source_pointer": "#/9/fit_split",
+          "source_sha256": "0271a9fde38ede4aa6b4e0ab4374436a700bc2b3c9bdb4078102d42a84686bbe",
+          "validation_check_id": "ENCODE-P22-D-TIME_SIGNATURE",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "SCALING_STRATEGY_REPORT.md": {
+      "fields": [
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-duration_min",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/0/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-DURATION_MIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-duration_min",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/1/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-DURATION_MIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-duration_min",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/2/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-DURATION_MIN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-release_year",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/4/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-RELEASE_YEAR",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-release_year",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/5/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-RELEASE_YEAR",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-release_year",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/6/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-RELEASE_YEAR",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-danceability",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/8/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-DANCEABILITY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-danceability",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/9/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-DANCEABILITY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-danceability",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/10/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-DANCEABILITY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-energy",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/12/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-ENERGY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-energy",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/13/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-ENERGY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-energy",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/14/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-ENERGY",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-loudness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/16/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-LOUDNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-loudness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/17/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-LOUDNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-loudness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/18/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-LOUDNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-speechiness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/20/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-SPEECHINESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-speechiness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/21/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-SPEECHINESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-speechiness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/22/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-SPEECHINESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-acousticness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/24/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-ACOUSTICNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-acousticness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/25/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-ACOUSTICNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-acousticness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/26/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-ACOUSTICNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-instrumentalness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/28/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-INSTRUMENTALNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-instrumentalness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/29/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-INSTRUMENTALNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-instrumentalness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/30/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-INSTRUMENTALNESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-liveness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/32/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-LIVENESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-liveness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/33/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-LIVENESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-liveness",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/34/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-LIVENESS",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-valence",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/36/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-VALENCE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-valence",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/37/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-VALENCE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-valence",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/38/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-VALENCE",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-a-tempo",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/40/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-A-TEMPO",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-b-tempo",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/41/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-B-TEMPO",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "SCALING_STRATEGY_REPORT.md",
+          "field_id": "scale-p22-c-tempo",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+          "source_pointer": "#/42/fit_split",
+          "source_sha256": "b4c3f960dc7a95787afeee17f07299a1bfe4aea41df3631ff9a7be69a619343d",
+          "validation_check_id": "SCALE-P22-C-TEMPO",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "CANDIDATE_SCHEMA_REPORT.md": {
+      "fields": [
+        {
+          "report": "CANDIDATE_SCHEMA_REPORT.md",
+          "field_id": "schema-p22-a-no-nan",
+          "rendered_value": "False",
+          "source_path": "7.ML/7.5.preprocessing/p22_a/output_schema.json",
+          "source_pointer": "#/contains_nan",
+          "source_sha256": "3787bfb0a3840853344cc3a1e74f4a42037c8b7b43f3d65ed74673488a2351ac",
+          "validation_check_id": "SCHEMA-P22-A-NO-NAN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "CANDIDATE_SCHEMA_REPORT.md",
+          "field_id": "schema-p22-b-no-nan",
+          "rendered_value": "False",
+          "source_path": "7.ML/7.5.preprocessing/p22_b/output_schema.json",
+          "source_pointer": "#/contains_nan",
+          "source_sha256": "ffccec29d2d9f8afc6b65f888445b8c1166d2877097a365abb0cfe04fef6533a",
+          "validation_check_id": "SCHEMA-P22-B-NO-NAN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "CANDIDATE_SCHEMA_REPORT.md",
+          "field_id": "schema-p22-c-no-nan",
+          "rendered_value": "False",
+          "source_path": "7.ML/7.5.preprocessing/p22_c/output_schema.json",
+          "source_pointer": "#/contains_nan",
+          "source_sha256": "543b72fdbb06f18430dfed6f4cad82b5f73061be8794fc90ba5a0cfa06b724c5",
+          "validation_check_id": "SCHEMA-P22-C-NO-NAN",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "CANDIDATE_SCHEMA_REPORT.md",
+          "field_id": "schema-p22-d-no-nan",
+          "rendered_value": "False",
+          "source_path": "7.ML/7.5.preprocessing/p22_d/output_schema.json",
+          "source_pointer": "#/contains_nan",
+          "source_sha256": "28e3cd2a3a7354c6cfa788a5e7b7288c57dd52d9c473d4b6cb52c74143e5a97e",
+          "validation_check_id": "SCHEMA-P22-D-NO-NAN",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "LEAKAGE_SAFETY_AUDIT_REPORT.md": {
+      "fields": [
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-a_imputer",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/0/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-A_IMPUTER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-a_encoder",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/1/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-A_ENCODER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-a_scaler",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/2/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-A_SCALER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-b_imputer",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/3/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-B_IMPUTER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-b_indicator",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/4/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-B_INDICATOR",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-b_encoder",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/5/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-B_ENCODER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-b_scaler",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/6/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-B_SCALER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-c_imputer",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/7/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-C_IMPUTER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-c_encoder",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/8/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-C_ENCODER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-c_scaler",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/9/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-C_SCALER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-d_imputer",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/10/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-D_IMPUTER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-d_encoder",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/11/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-D_ENCODER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-d_scaler",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/12/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-D_SCALER",
+          "testcase": "test_preclosure_report"
+        },
+        {
+          "report": "LEAKAGE_SAFETY_AUDIT_REPORT.md",
+          "field_id": "leakage-audit-p22-c_clipper",
+          "rendered_value": "train",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+          "source_pointer": "#/13/fit_split",
+          "source_sha256": "d3663995607951ba37da29bcde0e4005d4940078e9405f5269b8c0c28b0e0419",
+          "validation_check_id": "LEAKAGE-AUDIT-P22-C_CLIPPER",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "PREPROCESSING_VALIDATION_REPORT.md": {
+      "fields": [
+        {
+          "report": "PREPROCESSING_VALIDATION_REPORT.md",
+          "field_id": "input-rows",
+          "rendered_value": "586672",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "INPUT-ROWS",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    },
+    "TEST_COVERAGE_REPORT.md": {
+      "fields": [
+        {
+          "report": "TEST_COVERAGE_REPORT.md",
+          "field_id": "input-rows",
+          "rendered_value": "586672",
+          "source_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+          "source_pointer": "#/checks",
+          "source_sha256": "64ad189ece3f76139b953a1f436c7db76f0d844340253337224b1a55931d41a4",
+          "validation_check_id": "INPUT-ROWS",
+          "testcase": "test_preclosure_report"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_rendered_fields": 83,
+    "mapped_fields": 83,
+    "unmapped_fields": 0,
+    "invalid_pointers": 0,
+    "complete": true
+  }
+}

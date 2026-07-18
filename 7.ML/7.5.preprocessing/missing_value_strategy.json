@@ -34,7 +34,7 @@
       "column": "release_month",
       "strategy": "explicit_missing_category",
       "statistic_source": "NOT_APPLICABLE",
-      "transformer_fit_split": "NOT_APPLICABLE",
+      "transformer_fit_split": "train",
       "constant_value": "__MISSING__",
       "applies_to_candidates": [
         "P22-A",

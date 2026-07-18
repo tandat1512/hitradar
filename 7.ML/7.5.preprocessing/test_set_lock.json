@@ -1,0 +1,26 @@
+{
+  "test_features_transform_permitted": true,
+  "test_labels_loaded": false,
+  "test_metrics_computed": false,
+  "model_selection_used_test": false,
+  "feature_selection_used_test": false,
+  "feature_2_2_access_purpose": "Transform features for downstream evaluation; labels remain completely blinded.",
+  "access_log": [
+    {
+      "timestamp": "2026-07-18T13:30:00Z",
+      "action": "Generate test set lock for Feature 2.2",
+      "actor": "System"
+    }
+  ],
+  "final_evaluation_owner": "Tu\u1ea5n Anh",
+  "test_lock_timestamp": "2026-07-18T13:30:00Z",
+  "test_governance_compliant": false,
+  "warnings": [],
+  "blockers": [
+    {
+      "id": "LATE_TEST_LOCK",
+      "description": "Test set lock was generated after feature artifacts were finalized, leaving the test set unprotected during development.",
+      "evidence": "Test lock timestamp is 2026-07-18T13:30:00Z, but closure gate was generated at 2026-07-18T12:33:44.629357+00:00."
+    }
+  ]
+}

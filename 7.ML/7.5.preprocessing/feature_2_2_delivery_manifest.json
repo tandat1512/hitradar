@@ -1,0 +1,26 @@
+{
+  "manifest_version": "delivery-1.0",
+  "generated_at": "2026-07-18T12:34:06.865137+00:00",
+  "files": [
+    {
+      "path": "feature_2_2_closure_gate.json",
+      "bytes": 2241,
+      "sha256": "61bbcab99b7c0487e5ac1cb8db51d86690b433026d91e915992fcd0c811fa937"
+    },
+    {
+      "path": "CLOSURE_GATE_REPORT.md",
+      "bytes": 102,
+      "sha256": "713b0519be2eedf8ceca185df8d0a24729177ad6ad0211edcc3863361c894ff9"
+    },
+    {
+      "path": "FEATURE_2_2_COMPLETION_REPORT.md",
+      "bytes": 112,
+      "sha256": "12adfda95ac5d315f02848282f635aff093898495eb6b290e7b9c31e0964c62c"
+    },
+    {
+      "path": "BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
+      "bytes": 12211,
+      "sha256": "ae8cf7a4dc778984d83cccb81356131616b9098933416764a6621aa0ef040c98"
+    }
+  ]
+}

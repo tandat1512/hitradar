@@ -4,61 +4,121 @@
       "column": "duration_min",
       "train": 17647,
       "validation": 2452,
-      "test": 1953
+      "test": 1953,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "tempo",
       "train": 4232,
       "validation": 773,
-      "test": 620
+      "test": 620,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "loudness",
       "train": 10265,
       "validation": 444,
-      "test": 797
+      "test": 797,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "danceability",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "energy",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "speechiness",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "acousticness",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "instrumentalness",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "liveness",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     },
     {
       "column": "valence",
       "train": 0,
       "validation": 0,
-      "test": 0
+      "test": 0,
+      "train_outliers": 125,
+      "validation_outliers": 25,
+      "test_outliers": 28,
+      "train_clipped": 125,
+      "val_clipped": 25,
+      "test_clipped": 28
     }
   ],
   "release_year_1900_silently_clipped": false

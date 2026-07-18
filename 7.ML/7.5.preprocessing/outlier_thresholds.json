@@ -21,7 +21,9 @@
     "post_transform_outlier_count": 0,
     "fitted_on_split": "train",
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02"
+    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02",
+    "lower_bound": 0.3898999999999999,
+    "upper_bound": 6.8683000000000005
   },
   {
     "column": "tempo",
@@ -45,7 +47,9 @@
     "post_transform_outlier_count": 0,
     "fitted_on_split": "train",
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02"
+    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02",
+    "lower_bound": 33.36149999999997,
+    "upper_bound": 196.10150000000004
   },
   {
     "column": "loudness",
@@ -69,6 +73,8 @@
     "post_transform_outlier_count": 0,
     "fitted_on_split": "train",
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02"
+    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02",
+    "lower_bound": -23.570875,
+    "upper_bound": 1.7541249999999993
   }
 ]
