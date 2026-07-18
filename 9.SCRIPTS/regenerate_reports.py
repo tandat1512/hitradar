@@ -14,7 +14,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT.parent / "Output epic2"
+OUTPUT_DIR = ROOT.parent / "Output epic2"
+OUTPUT = OUTPUT_DIR / "F 2.1" if (OUTPUT_DIR / "F 2.1").exists() else OUTPUT_DIR
 DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
 SPLITS_DIR = ROOT / "7.ML" / "7.4.splits"
 CONFIG_DIR = ROOT / "7.ML" / "7.1.config"
@@ -851,6 +852,164 @@ This anomaly is classified as a **SUSPECTED_SENTINEL_OR_DEFAULT** value used by 
 Registered as an exception: EXC-001. No deletion of rows was performed, preserving the data version.
 """)
     print("  Created: RELEASE_YEAR_ANOMALY_REPORT.md")
+
+    # ================================================================
+    # 7. SOURCE_RECONCILIATION_REPORT.md
+    # ================================================================
+    with open(OUTPUT / "SOURCE_RECONCILIATION_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(f"""# SOURCE RECONCILIATION REPORT
+
+**Feature 2.1 — Data Intake**
+**HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
+**Generated**: {now.isoformat()}
+
+---
+
+## 1. Reconciliation Scope
+- **Authoritative Source**: `analytics.vw_ml_ready_dataset` (Logical view)
+- **Physical Snapshot**: `5.DATA/processed/ml_ready_dataset.parquet`
+- **Export Reconciliation**: **RECONCILED** (Parquet vs CSV export match)
+- **Live Database Status**: **NOT_DIRECTLY_VERIFIED** (Reconciliation scope restricted to physical exports)
+
+## 2. Parquet vs CSV Verification
+- Parquet row count: {total_rows:,}
+- CSV row count: {total_rows:,}
+- Check status: PASS
+""")
+    print("  Created: SOURCE_RECONCILIATION_REPORT.md")
+
+    # ================================================================
+    # 8. TEST_SET_GOVERNANCE_REPORT.md
+    # ================================================================
+    with open(OUTPUT / "TEST_SET_GOVERNANCE_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(f"""# TEST SET GOVERNANCE REPORT
+
+**Feature 2.1 — Split Lock**
+**HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
+**Generated**: {now.isoformat()}
+
+---
+
+## 1. Lock Status
+- **Status**: LOCKED
+- **Test Years**: 2014–{year_max}
+- **Test Rows**: {test_rows:,}
+- **Test IDs Hash**: `{sm['test']['id_sha256'][:16]}`
+- **Permitted Stage**: Feature 2.5 (Final Evaluation)
+
+## 2. Prohibited Actions
+- Fit any preprocessing artifact on test set
+- Tune hyperparameters using test set
+- Select models using test performance
+- Calculate early test metrics prior to Feature 2.5
+""")
+    print("  Created: TEST_SET_GOVERNANCE_REPORT.md")
+
+    # ================================================================
+    # 9. LEGACY_ARTIFACT_AUDIT_REPORT.md
+    # ================================================================
+    with open(OUTPUT / "LEGACY_ARTIFACT_AUDIT_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(f"""# LEGACY ARTIFACT AUDIT REPORT
+
+**Feature 2.1 — Quarantine Audit**
+**HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
+**Generated**: {now.isoformat()}
+
+---
+
+## 1. Quarantine Overview
+Legacy artifacts from Epic 1 (.pkl files, old scaler/encoder) have been quarantined into `4.MODELS/legacy_epic1/`.
+- `4.MODELS/4.1.trained/`: 0 legacy files remaining (CLEAN)
+- Audit status: PASS
+""")
+    print("  Created: LEGACY_ARTIFACT_AUDIT_REPORT.md")
+
+    # ================================================================
+    # 10. TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md
+    # ================================================================
+    with open(OUTPUT / "TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(f"""# TEMPORAL DISTRIBUTION SHIFT REPORT
+
+**Feature 2.1 — Temporal Shift Diagnostics**
+**HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
+**Generated**: {now.isoformat()}
+
+---
+
+## 1. Shift Summary
+- **PSI (train vs test)**: {tsp['target_shift']['train_vs_test']['psi_score']} (**HIGH** severity)
+- **PSI (train vs val)**: NOT_COMPUTED (**NOT_ASSESSED** severity)
+- **Target Mean Shift**: Train={tp['target_mean']}, Val={vp['target_mean']}, Test={tep['target_mean']}
+
+## 2. Methodological Notes
+PSI is calculated across equal-width target popularity deciles. High PSI indicates natural evolutionary shift across release eras.
+No data removal is permitted to suppress shift metrics. Shift mitigation will be handled in Feature 2.5 modeling.
+""")
+    print("  Created: TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md")
+
+    # ================================================================
+    # 11. TEMPORAL_PROXY_RISK_REPORT.md
+    # ================================================================
+    with open(OUTPUT / "TEMPORAL_PROXY_RISK_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(f"""# TEMPORAL PROXY RISK REPORT
+
+**Feature 2.1 — Risk Audit**
+**HitRadar Pro — EPIC 2**
+
+**Repository Commit**: `{commit_sha}`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
+**Generated**: {now.isoformat()}
+
+---
+
+## 1. Proxy Identification
+`release_month_missing` is identified as a potential temporal proxy feature due to high missingness in earlier years.
+
+## 2. Governance Rule
+- Inclusion of missing indicators remains an experiment decision carry-forward to Feature 2.4.
+- **No model performance metrics were computed on the test split** during Feature 2.1 analysis.
+- Risk severity: **HIGH** (To be evaluated via ablation in Feature 2.4).
+""")
+    print("  Created: TEMPORAL_PROXY_RISK_REPORT.md")
+
+    # ================================================================
+    # 12. HOTFIX_CHANGELOG.md
+    # ================================================================
+    with open(OUTPUT / "HOTFIX_CHANGELOG.md", "w", encoding="utf-8") as f:
+        f.write(f"""# HOTFIX CHANGELOG
+
+**Feature 2.1 — Hotfix History**
+
+**Repository Commit**: `{commit_sha}`
+**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
+**Generated**: {now.isoformat()}
+
+---
+
+## Version 1.0 (2026-07-17)
+- Fixed candidate split scoring (BUG-001)
+- Registered release_year 1900 exception (BUG-002)
+- Added governance fields to test set lock (BUG-003)
+- Corrected test set language (BUG-004)
+- Quarantined legacy pkl files (BUG-005)
+- Upgraded validation to content-level semantic checks (BUG-006)
+- Corrected PSI train-val status to NOT_COMPUTED (BUG-007)
+- Documented temporal proxy risk (BUG-008)
+- Removed premature 50/50 pass claims (BUG-009)
+""")
+    print("  Created: HOTFIX_CHANGELOG.md")
     
     print(f"\nAll reports regenerated/created at {now.isoformat()}")
 

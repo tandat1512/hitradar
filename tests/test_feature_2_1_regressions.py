@@ -6,7 +6,8 @@ from pathlib import Path
 ROOT = Path("E:/Dự án 1 hitrada/hitradar")
 DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
 SPLITS = ROOT / "7.ML" / "7.4.splits"
-OUTPUT = ROOT.parent / "Output epic2"
+OUTPUT_DIR = ROOT.parent / "Output epic2"
+OUTPUT = OUTPUT_DIR / "F 2.1" if (OUTPUT_DIR / "F 2.1").exists() else OUTPUT_DIR
 
 def load_json(path):
     if not path.exists(): return {}
@@ -35,8 +36,8 @@ def test_bug_002_year_1900_registered_exception():
 
 def test_bug_003_test_set_lock_governance_fields():
     lock = load_json(SPLITS / "test_set_lock.json")
-    assert "governance" in lock
-    assert "prohibited_actions" in lock["governance"]
+    assert "prohibited_actions" in lock
+    assert "lock_owner" in lock
 
 def test_bug_004_no_test_never_opened():
     rep = read_report("FEATURE_2_1_COMPLETION_REPORT.md")

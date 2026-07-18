@@ -6,7 +6,8 @@ from pathlib import Path
 
 ROOT = Path("E:/Dự án 1 hitrada/hitradar")
 DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
-OUTPUT = ROOT.parent / "Output epic2"
+OUTPUT_DIR = ROOT.parent / "Output epic2"
+OUTPUT = OUTPUT_DIR / "F 2.1" if (OUTPUT_DIR / "F 2.1").exists() else OUTPUT_DIR
 
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
