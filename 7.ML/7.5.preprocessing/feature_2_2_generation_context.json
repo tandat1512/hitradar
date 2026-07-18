@@ -1,0 +1,15 @@
+{
+  "repository_url": "https://github.com/tandat1512/hitradar.git",
+  "source_branch": "main",
+  "source_commit_sha": "1352fc050d73796e67620d5fd63d44661f2172f2",
+  "source_commit_timestamp": "2026-07-18 14:29:58 +0700",
+  "source_commit_message": "feat(feature_2_1): finalize closure hotfix, dynamic reporting, evidence paths, and manifest artifacts",
+  "working_tree_status": "DIRTY",
+  "generation_started_at": "2026-07-18T10:29:26.294658+00:00",
+  "generator_path": "9.SCRIPTS/feature_2_2_preprocessing.py",
+  "generator_sha256": "02b55614914e1e0a5eb71482aa8c7acf921dcac4959bb14d76f3eae735cd0389",
+  "python_version": "3.13.7",
+  "pandas_version": "3.0.3",
+  "numpy_version": "2.2.3",
+  "scikit_learn_version": "1.6.1"
+}

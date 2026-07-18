@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-07-18T10:32:37.188498+00:00",
+  "repository_url": "https://github.com/tandat1512/hitradar.git",
+  "source_branch": "main",
+  "source_commit_sha": "1352fc050d73796e67620d5fd63d44661f2172f2",
+  "working_tree_status": "DIRTY",
+  "pytest_version": "9.1.1",
+  "test_files": [
+    "tests/test_feature_2_2_preprocessing.py",
+    "tests/test_feature_2_2_leakage_safety.py",
+    "tests/test_feature_2_2_artifacts.py"
+  ],
+  "collected": 11,
+  "passed": 11,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 0.074,
+  "junit_xml_path": "7.ML/7.5.preprocessing/pytest_feature_2_2.xml",
+  "junit_xml_sha256": "d33795d2725cf5e4f2f8af6dc99892b3e6a9cb2d69c10bdfae633a08744637c7",
+  "overall_status": "PASS"
+}

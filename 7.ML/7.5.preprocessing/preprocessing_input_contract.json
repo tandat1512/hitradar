@@ -1,0 +1,46 @@
+{
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "checks": [
+    {
+      "field": "rows",
+      "expected": 586672,
+      "actual": 586672,
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "df.shape[0]",
+      "status": "PASS"
+    },
+    {
+      "field": "columns",
+      "expected": 20,
+      "actual": 20,
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "df.shape[1]",
+      "status": "PASS"
+    },
+    {
+      "field": "identifier",
+      "expected": "track_id",
+      "actual": "track_id",
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "df.columns",
+      "status": "PASS"
+    },
+    {
+      "field": "target",
+      "expected": "target_popularity",
+      "actual": "target_popularity",
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "df.columns",
+      "status": "PASS"
+    },
+    {
+      "field": "train_rows",
+      "expected": 415524,
+      "actual": 415524,
+      "evidence_path": "7.ML/7.4.splits/train_ids.parquet",
+      "evidence_pointer": "len(train_ids)",
+      "status": "PASS"
+    }
+  ]
+}

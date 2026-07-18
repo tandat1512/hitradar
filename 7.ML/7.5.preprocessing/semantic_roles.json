@@ -1,0 +1,79 @@
+{
+  "expected_continuous": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo"
+  ],
+  "expected_categorical": [
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature"
+  ],
+  "expected_binary": [
+    "explicit",
+    "mode"
+  ],
+  "actual_dataset_columns": [
+    "track_id",
+    "target_popularity",
+    "duration_min",
+    "explicit",
+    "release_year",
+    "release_month",
+    "decade",
+    "release_precision",
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "time_signature"
+  ],
+  "missing_features": [],
+  "extra_features": [],
+  "input_feature_count": 18,
+  "continuous": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo"
+  ],
+  "categorical": [
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature"
+  ],
+  "binary": [
+    "explicit",
+    "mode"
+  ],
+  "identifier": "track_id",
+  "target": "target_popularity",
+  "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+  "validation_status": "PASS"
+}

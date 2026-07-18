@@ -1,0 +1,1 @@
+{"columns": ["duration_min", "tempo", "loudness"], "method": "iqr", "factor": 1.5}

@@ -1,0 +1,26 @@
+[
+  {
+    "candidate_id": "ALL",
+    "column": "tempo",
+    "strategy": "median",
+    "fitted_value": 114.995,
+    "fitted_on_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
+    "validation_fit_called": false,
+    "test_fit_called": false,
+    "evidence_path": "7.ML/7.5.preprocessing/imputer_statistics.json"
+  },
+  {
+    "candidate_id": "ALL",
+    "column": "time_signature",
+    "strategy": "most_frequent",
+    "fitted_value": 4,
+    "fitted_on_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
+    "validation_fit_called": false,
+    "test_fit_called": false,
+    "evidence_path": "7.ML/7.5.preprocessing/imputer_statistics.json"
+  }
+]

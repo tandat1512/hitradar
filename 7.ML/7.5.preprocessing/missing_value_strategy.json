@@ -1,0 +1,17 @@
+{
+  "tempo": {
+    "imputation": "median",
+    "fit_split": "train",
+    "evidence_path": "7.ML/7.5.preprocessing/imputer_statistics.json"
+  },
+  "time_signature": {
+    "imputation": "most_frequent",
+    "fit_split": "train",
+    "evidence_path": "7.ML/7.5.preprocessing/imputer_statistics.json"
+  },
+  "release_month": {
+    "imputation": "explicit_missing_category",
+    "fit_split": "N/A",
+    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
+  }
+}

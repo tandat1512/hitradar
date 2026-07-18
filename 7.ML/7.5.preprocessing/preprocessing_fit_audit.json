@@ -1,0 +1,54 @@
+[
+  {
+    "candidate_id": "P22-A",
+    "component_name": "P22-A",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "c3291206ba5b4bfa54f1cd34445e61191dbc2e4bc87b4c841f11e80ebf0e551a",
+    "fitted_statistics_hash": "312941ecbaccfb48e20f7abec75297327f5b49610b6bca2bc490bce090437990",
+    "validation_fit_called": false,
+    "test_fit_called": false,
+    "evidence_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+    "status": "PASS"
+  },
+  {
+    "candidate_id": "P22-B",
+    "component_name": "P22-B",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "c3291206ba5b4bfa54f1cd34445e61191dbc2e4bc87b4c841f11e80ebf0e551a",
+    "fitted_statistics_hash": "bac01d34c8f61db80f232f61a43760459f40537a6146fbc1aae981f30d03b1e6",
+    "validation_fit_called": false,
+    "test_fit_called": false,
+    "evidence_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+    "status": "PASS"
+  },
+  {
+    "candidate_id": "P22-C",
+    "component_name": "P22-C",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "c3291206ba5b4bfa54f1cd34445e61191dbc2e4bc87b4c841f11e80ebf0e551a",
+    "fitted_statistics_hash": "fe7042fc654d30141dc60bc2b80c12939b479f4e1419eb7fb7d6f6b7db8de719",
+    "validation_fit_called": false,
+    "test_fit_called": false,
+    "evidence_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+    "status": "PASS"
+  },
+  {
+    "candidate_id": "P22-D",
+    "component_name": "P22-D",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "c3291206ba5b4bfa54f1cd34445e61191dbc2e4bc87b4c841f11e80ebf0e551a",
+    "fitted_statistics_hash": "0eadb5b8b9a532d9db06333ddbc831582a6cf0868e7d59e6b9fd0cb52e585b58",
+    "validation_fit_called": false,
+    "test_fit_called": false,
+    "evidence_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "candidate_id": "P22-D",
+  "input_feature_count": 18,
+  "output_feature_count": 18,
+  "output_feature_names": [
+    "continuous__duration_min",
+    "continuous__release_year",
+    "continuous__danceability",
+    "continuous__energy",
+    "continuous__loudness",
+    "continuous__speechiness",
+    "continuous__acousticness",
+    "continuous__instrumentalness",
+    "continuous__liveness",
+    "continuous__valence",
+    "continuous__tempo",
+    "categorical__release_month",
+    "categorical__decade",
+    "categorical__release_precision",
+    "categorical__key",
+    "categorical__time_signature",
+    "binary__explicit",
+    "binary__mode"
+  ],
+  "feature_names_sha256": "e189b2e0b5b3839c33223b6451222615ae8035857199f7c390f5b86b0779392f",
+  "train_shape": [
+    415524,
+    18
+  ],
+  "validation_shape": [
+    85272,
+    18
+  ],
+  "test_shape": [
+    85876,
+    18
+  ],
+  "matrix_type": "dense",
+  "contains_nan": false,
+  "contains_inf": false,
+  "duplicate_feature_names": 0,
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "evidence_path": "7.ML/7.5.preprocessing/p22_d/output_schema.json"
+}

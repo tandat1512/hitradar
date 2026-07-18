@@ -1,0 +1,28 @@
+{
+  "MISSING_VALUE_STRATEGY_REPORT.md": {
+    "tempo_train_median": {
+      "value": 114.995,
+      "source_path": "7.ML/7.5.preprocessing/imputer_statistics.json",
+      "source_pointer": "#/0/fitted_value"
+    },
+    "tempo_total_missing": {
+      "value": 328,
+      "source_path": "7.ML/7.5.preprocessing/missing_profile_by_split.json",
+      "source_pointer": "#/tempo/total_missing"
+    }
+  },
+  "OUTLIER_PREPROCESSING_REPORT.md": {
+    "duration_min_lower": {
+      "value": 0.3898999999999999,
+      "source_path": "7.ML/7.5.preprocessing/outlier_thresholds.json",
+      "source_pointer": "#/0/lower_threshold"
+    }
+  },
+  "PREPROCESSING_VALIDATION_REPORT.md": {
+    "total_checks": {
+      "value": 61,
+      "source_path": "7.ML/7.5.preprocessing/preprocessing_validation_results.json",
+      "source_pointer": "length"
+    }
+  }
+}
