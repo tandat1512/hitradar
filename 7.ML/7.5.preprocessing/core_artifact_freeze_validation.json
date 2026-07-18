@@ -1,8 +1,23 @@
 {
-  "core_artifacts_unchanged": true,
-  "changed_files": [],
-  "closure_status": "PASS",
-  "feature_2_2_decision": "CLOSED",
-  "feature_2_3_gate": "PASSED",
-  "validated_at": "2026-07-18T12:34:07.744511+00:00"
+  "core_artifacts_unchanged": false,
+  "changed_files": [
+    "encoder_categories.json",
+    "imputer_statistics.json",
+    "missing_value_strategy.json",
+    "outlier_profile_by_split.json",
+    "outlier_thresholds.json",
+    "p22_a/output_schema.json",
+    "p22_b/output_schema.json",
+    "p22_c/output_schema.json",
+    "p22_d/output_schema.json",
+    "preprocessing_candidates.json",
+    "preprocessing_fit_audit.json",
+    "preprocessing_input_contract.json",
+    "preprocessing_validation_results.json",
+    "scaler_statistics.json"
+  ],
+  "closure_status": "FAIL",
+  "feature_2_2_decision": "NOT_CLOSED",
+  "feature_2_3_gate": "BLOCKED_AS_FORMAL_GATE",
+  "validated_at": "2026-07-18T15:37:14.076321+00:00"
 }

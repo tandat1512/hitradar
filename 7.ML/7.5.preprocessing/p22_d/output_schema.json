@@ -11,7 +11,7 @@
     85876,
     18
   ],
-  "output_feature_count": 18,
+  "output_feature_count": 16,
   "exact_matrix_type": "numpy.ndarray",
   "dtype": "float64",
   "contains_nan": false,

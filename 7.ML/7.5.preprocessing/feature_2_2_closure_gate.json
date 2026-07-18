@@ -1,13 +1,11 @@
 {
-  "generated_at": "2026-07-18T14:42:50.018483+00:00",
+  "generated_at": "2026-07-18T15:37:12.998683+00:00",
   "input_contract_verified": {
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/0/status",
-        "validation_check_id": "CONTRACT-1",
-        "testcase": "test_input_contract_complete"
+        "path": "preprocessing_input_contract.json",
+        "pointer": "#/checks"
       }
     ]
   },
@@ -15,10 +13,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/13/status",
-        "validation_check_id": "SPLIT-UNION",
-        "testcase": "test_split_counts_complete"
+        "path": "preprocessing_split_verification.json",
+        "pointer": "#/checks"
       }
     ]
   },
@@ -26,10 +22,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/14/status",
-        "validation_check_id": "SEMANTIC-ROLES",
-        "testcase": "test_semantic_roles_exact"
+        "path": "semantic_roles.json",
+        "pointer": "#/input_feature_count"
       }
     ]
   },
@@ -37,10 +31,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/16/status",
-        "validation_check_id": "MISSING-STRATEGY",
-        "testcase": "test_missing_profiles_reconcile"
+        "path": "missing_value_strategy.json",
+        "pointer": "#/strategies"
       }
     ]
   },
@@ -48,10 +40,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/17/status",
-        "validation_check_id": "OUTLIER-TEMPO",
-        "testcase": "test_outlier_q1_q3_iqr_recompute"
+        "path": "outlier_config.json",
+        "pointer": "#/methods"
       }
     ]
   },
@@ -59,10 +49,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/20/status",
-        "validation_check_id": "ENCODE-P22-A-RELEASE_MONTH",
-        "testcase": "test_encoder_categories_match_fitted_objects"
+        "path": "encoding_config.json",
+        "pointer": "#/candidates"
       }
     ]
   },
@@ -70,10 +58,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/30/status",
-        "validation_check_id": "SCALE-P22-A-TEMPO",
-        "testcase": "test_p22a_scaler_statistics"
+        "path": "scaling_config.json",
+        "pointer": "#/candidates"
       }
     ]
   },
@@ -81,10 +67,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/63/status",
-        "validation_check_id": "SCHEMA-P22-A-NO-NAN",
-        "testcase": "test_candidate_schema_shapes"
+        "path": "preprocessing_candidates.json",
+        "pointer": "#/"
       }
     ]
   },
@@ -92,10 +76,8 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/67/status",
-        "validation_check_id": "LEAKAGE-AUDIT-P22-A_IMPUTER",
-        "testcase": "test_component_level_fit_audit"
+        "path": "preprocessing_fit_audit.json",
+        "pointer": "#/"
       }
     ]
   },
@@ -104,9 +86,7 @@
     "evidence": [
       {
         "path": "preprocessing_validation_results.json",
-        "pointer": "#/0/status",
-        "validation_check_id": "OVERALL-PASS",
-        "testcase": "test_validation_results_pass"
+        "pointer": "#/"
       }
     ]
   },
@@ -115,9 +95,7 @@
     "evidence": [
       {
         "path": "preprocessing_fit_audit.json",
-        "pointer": "#/0/test_fit_called",
-        "validation_check_id": "TEST-TRANSFORM-ONLY",
-        "testcase": "test_test_transform_only"
+        "pointer": "#/test_fit_called"
       }
     ]
   },
@@ -125,13 +103,9 @@
     "value": true,
     "evidence": [
       {
-        "path": "preprocessing_validation_results.json",
-        "pointer": "#/30/status",
-        "validation_check_id": "SCALER-STATS",
-        "testcase": "test_standard_scaler_mean_and_scale"
+        "path": "scaler_statistics.json",
+        "pointer": "#/"
       }
     ]
-  },
-  "feature_2_2_decision": "NOT_CLOSED",
-  "feature_2_3_gate": "BLOCKED_AS_FORMAL_GATE"
+  }
 }

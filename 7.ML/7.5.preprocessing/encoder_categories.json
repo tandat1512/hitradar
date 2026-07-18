@@ -19,45 +19,12 @@
       "6.0",
       "7.0",
       "8.0",
-      "9.0",
-      "__MISSING__"
+      "9.0"
     ],
-    "category_count": 13,
-    "output_feature_count": 12,
+    "category_count": 12,
+    "output_feature_count": 11,
     "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib"
-  },
-  {
-    "candidate_id": "P22-D",
-    "column": "release_month",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
-    "categories": [
-      "1.0",
-      "10.0",
-      "11.0",
-      "12.0",
-      "2.0",
-      "3.0",
-      "4.0",
-      "5.0",
-      "6.0",
-      "7.0",
-      "8.0",
-      "9.0",
-      "__MISSING__"
-    ],
-    "category_count": 13,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib"
+    "fit_row_count": 415524
   },
   {
     "candidate_id": "P22-A",
@@ -82,36 +49,7 @@
     "category_count": 10,
     "output_feature_count": 9,
     "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib"
-  },
-  {
-    "candidate_id": "P22-D",
-    "column": "decade",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
-    "categories": [
-      "1900",
-      "1920",
-      "1930",
-      "1940",
-      "1950",
-      "1960",
-      "1970",
-      "1980",
-      "1990",
-      "2000"
-    ],
-    "category_count": 10,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib"
+    "fit_row_count": 415524
   },
   {
     "candidate_id": "P22-A",
@@ -129,29 +67,7 @@
     "category_count": 3,
     "output_feature_count": 2,
     "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib"
-  },
-  {
-    "candidate_id": "P22-D",
-    "column": "release_precision",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
-    "categories": [
-      "day",
-      "month",
-      "year"
-    ],
-    "category_count": 3,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib"
+    "fit_row_count": 415524
   },
   {
     "candidate_id": "P22-A",
@@ -178,9 +94,328 @@
     "category_count": 12,
     "output_feature_count": 11,
     "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib"
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-A",
+    "column": "time_signature",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1.0",
+      "3.0",
+      "4.0",
+      "5.0"
+    ],
+    "category_count": 4,
+    "output_feature_count": 3,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-B",
+    "column": "release_month",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1.0",
+      "10.0",
+      "11.0",
+      "12.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0"
+    ],
+    "category_count": 12,
+    "output_feature_count": 11,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-B",
+    "column": "decade",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1900",
+      "1920",
+      "1930",
+      "1940",
+      "1950",
+      "1960",
+      "1970",
+      "1980",
+      "1990",
+      "2000"
+    ],
+    "category_count": 10,
+    "output_feature_count": 9,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-B",
+    "column": "release_precision",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "day",
+      "month",
+      "year"
+    ],
+    "category_count": 3,
+    "output_feature_count": 2,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-B",
+    "column": "key",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "category_count": 12,
+    "output_feature_count": 11,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-B",
+    "column": "time_signature",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1.0",
+      "3.0",
+      "4.0",
+      "5.0"
+    ],
+    "category_count": 4,
+    "output_feature_count": 3,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-C",
+    "column": "release_month",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1.0",
+      "10.0",
+      "11.0",
+      "12.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0"
+    ],
+    "category_count": 12,
+    "output_feature_count": 11,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-C",
+    "column": "decade",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1900",
+      "1920",
+      "1930",
+      "1940",
+      "1950",
+      "1960",
+      "1970",
+      "1980",
+      "1990",
+      "2000"
+    ],
+    "category_count": 10,
+    "output_feature_count": 9,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-C",
+    "column": "release_precision",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "day",
+      "month",
+      "year"
+    ],
+    "category_count": 3,
+    "output_feature_count": 2,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-C",
+    "column": "key",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "category_count": 12,
+    "output_feature_count": 11,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-C",
+    "column": "time_signature",
+    "encoder_type": "OneHotEncoder",
+    "parameters": {
+      "handle_unknown": "ignore",
+      "drop": "first"
+    },
+    "categories": [
+      "1.0",
+      "3.0",
+      "4.0",
+      "5.0"
+    ],
+    "category_count": 4,
+    "output_feature_count": 3,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-D",
+    "column": "release_month",
+    "encoder_type": "OrdinalEncoder",
+    "parameters": {
+      "handle_unknown": "use_encoded_value",
+      "unknown_value": -1
+    },
+    "categories": [
+      "1.0",
+      "10.0",
+      "11.0",
+      "12.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0"
+    ],
+    "category_count": 12,
+    "output_feature_count": 1,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-D",
+    "column": "decade",
+    "encoder_type": "OrdinalEncoder",
+    "parameters": {
+      "handle_unknown": "use_encoded_value",
+      "unknown_value": -1
+    },
+    "categories": [
+      "1900",
+      "1920",
+      "1930",
+      "1940",
+      "1950",
+      "1960",
+      "1970",
+      "1980",
+      "1990",
+      "2000"
+    ],
+    "category_count": 10,
+    "output_feature_count": 1,
+    "fit_split": "train",
+    "fit_row_count": 415524
+  },
+  {
+    "candidate_id": "P22-D",
+    "column": "release_precision",
+    "encoder_type": "OrdinalEncoder",
+    "parameters": {
+      "handle_unknown": "use_encoded_value",
+      "unknown_value": -1
+    },
+    "categories": [
+      "day",
+      "month",
+      "year"
+    ],
+    "category_count": 3,
+    "output_feature_count": 1,
+    "fit_split": "train",
+    "fit_row_count": 415524
   },
   {
     "candidate_id": "P22-D",
@@ -207,30 +442,7 @@
     "category_count": 12,
     "output_feature_count": 1,
     "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib"
-  },
-  {
-    "candidate_id": "P22-A",
-    "column": "time_signature",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
-    "categories": [
-      "1.0",
-      "3.0",
-      "4.0",
-      "5.0"
-    ],
-    "category_count": 4,
-    "output_feature_count": 3,
-    "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib"
+    "fit_row_count": 415524
   },
   {
     "candidate_id": "P22-D",
@@ -249,8 +461,6 @@
     "category_count": 4,
     "output_feature_count": 1,
     "fit_split": "train",
-    "fit_row_count": 415524,
-    "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "source_fitted_object_path": "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib"
+    "fit_row_count": 415524
   }
 ]
