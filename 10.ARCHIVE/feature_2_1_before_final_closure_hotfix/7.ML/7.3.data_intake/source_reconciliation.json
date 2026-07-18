@@ -1,0 +1,14 @@
+{
+  "data_version": "ml-ready-2026-07-17-v1",
+  "timestamp": "2026-07-17T15:48:53.323776+00:00",
+  "overall_status": "RECONCILED",
+  "scope": {
+    "physical_exports_reconciled": true,
+    "live_database_directly_verified": false,
+    "live_database_status": "NOT_DIRECTLY_VERIFIED"
+  },
+  "details": {
+    "rows": 586672,
+    "columns": 20
+  }
+}

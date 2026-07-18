@@ -1,0 +1,65 @@
+{
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "target_column": "target_popularity",
+  "standard_deviation_ddof": 1,
+  "train": {
+    "rows": 415524,
+    "ratio": 0.7083,
+    "release_year_min": 1900,
+    "release_year_max": 2004,
+    "target_mean": 22.8799948980083,
+    "target_median": 22.0,
+    "target_std": 15.771792343138276,
+    "target_min": 0.0,
+    "target_max": 86.0,
+    "target_zero_count": 35952
+  },
+  "validation": {
+    "rows": 85272,
+    "ratio": 0.1453,
+    "release_year_min": 2005,
+    "release_year_max": 2013,
+    "target_mean": 37.06033633549114,
+    "target_median": 39.0,
+    "target_std": 16.036522099270027,
+    "target_min": 0.0,
+    "target_max": 90.0,
+    "target_zero_count": 3144
+  },
+  "test": {
+    "rows": 85876,
+    "ratio": 0.1464,
+    "release_year_min": 2014,
+    "release_year_max": 2021,
+    "target_mean": 40.84007173133355,
+    "target_median": 45.0,
+    "target_std": 21.785609219960108,
+    "target_min": 0.0,
+    "target_max": 100.0,
+    "target_zero_count": 5594
+  },
+  "candidates": {
+    "C1": {
+      "train_ratio": 0.7083,
+      "val_ratio": 0.1453,
+      "test_ratio": 0.1464,
+      "ratio_score": 0.0165,
+      "decision": "SELECTED"
+    },
+    "C2": {
+      "train_ratio": 0.6925,
+      "val_ratio": 0.1611,
+      "test_ratio": 0.1464,
+      "ratio_score": 0.0222,
+      "decision": "REJECTED"
+    },
+    "C3": {
+      "train_ratio": 0.6785,
+      "val_ratio": 0.1571,
+      "test_ratio": 0.1644,
+      "ratio_score": 0.043,
+      "decision": "REJECTED"
+    }
+  }
+}

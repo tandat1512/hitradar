@@ -1,0 +1,11 @@
+{
+  "repository_url": "https://github.com/tandat1512/hitradar.git",
+  "source_branch": "main",
+  "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc",
+  "source_commit_timestamp": "2026-07-18T07:03:55+07:00",
+  "source_commit_message": "fix(epic2): complete generation of all 12 reports, fix output paths and test suite assertions",
+  "working_tree_status": "DIRTY",
+  "generation_started_at": "2026-07-18T10:30:00+07:00",
+  "generator_path": "9.SCRIPTS/regenerate_reports.py",
+  "generator_sha256": "4e5368c353ff6f1ad7e2746a4e5024e2bed17508ee35e13105b57e9dd38f38c5"
+}

@@ -50,7 +50,7 @@ def main():
     except:
         commit_sha = "UNKNOWN"
 
-    def check(cid, desc, expected, actual, pass_cond, evidence_path="", note=""):
+    def check(cid, desc, expected, actual, pass_cond, evidence_path=None, note=""):
         nonlocal all_pass
         status = "PASS" if pass_cond else "FAIL"
         severity = "ERROR" if not pass_cond else "INFO"
@@ -60,13 +60,39 @@ def main():
         # Derive category from cid (e.g. CFG-KEY-XXX -> CFG)
         category = cid.split("-")[0] if "-" in cid else "GENERAL"
             
+        if evidence_path is None:
+            if "F20-PREREQ" in cid: evidence_path = "Output epic2/F 2.0/" + desc.split(": ")[-1]
+            elif cid.startswith("CFG-PARSE-01") or "CFG-KEY" in cid: evidence_path = "7.ML/7.1.config/experiment_config.yaml"
+            elif cid.startswith("CFG-PARSE-02") or cid.startswith("CFG-SPLIT"): evidence_path = "7.ML/7.1.config/split_config.yaml"
+            elif cid.startswith("DV-"): evidence_path = "7.ML/7.3.data_intake/data_version.json"
+            elif cid.startswith("DATA-") or cid.startswith("ID-") or cid.startswith("TGT-") or cid.startswith("SPLIT-RY"): evidence_path = "5.DATA/processed/ml_ready_dataset.parquet"
+            elif cid.startswith("EXC-"): evidence_path = "7.ML/7.3.data_intake/data_exceptions.json"
+            elif cid.startswith("SS-"): evidence_path = "7.ML/7.3.data_intake/schema_snapshot.json"
+            elif cid.startswith("IM-"): evidence_path = "7.ML/7.3.data_intake/input_manifest.json"
+            elif cid.startswith("TP-"): evidence_path = "7.ML/7.3.data_intake/target_profile.json"
+            elif cid.startswith("SPL-MANIFEST"): evidence_path = "7.ML/7.4.splits/split_manifest.json"
+            elif cid.startswith("SPL-FILE"): evidence_path = "7.ML/7.4.splits/" + desc.split(": ")[-1]
+            elif cid.startswith("SPL-HASH-TRAIN") or cid.startswith("SPL-ROWS-TRAIN"): evidence_path = "7.ML/7.4.splits/train_ids.parquet"
+            elif cid.startswith("SPL-HASH-VAL") or cid.startswith("SPL-ROWS-VAL"): evidence_path = "7.ML/7.4.splits/validation_ids.parquet"
+            elif cid.startswith("SPL-HASH-TEST") or cid.startswith("SPL-ROWS-TEST"): evidence_path = "7.ML/7.4.splits/test_ids.parquet"
+            elif cid.startswith("SPL-UNION") or cid.startswith("SPL-MISSING") or cid.startswith("SPL-EXTRA") or cid.startswith("SPL-INTERSECT") or cid.startswith("SPL-CHRONO") or cid.startswith("SPL-BOUND"): evidence_path = "7.ML/7.4.splits/split_manifest.json"
+            elif cid.startswith("LOCK-"): evidence_path = "7.ML/7.4.splits/test_set_lock.json"
+            elif cid.startswith("LEGACY-CLEAN"): evidence_path = "4.MODELS/4.1.trained"
+            elif cid.startswith("LEGACY-QUARANTINE"): evidence_path = "4.MODELS/legacy_epic1"
+            elif cid.startswith("LEGACY-MANIFEST"): evidence_path = "4.MODELS/legacy_epic1/legacy_artifact_manifest.json"
+            elif cid.startswith("LEGACY-DONOT"): evidence_path = "4.MODELS/legacy_epic1/DO_NOT_USE.md"
+            elif cid.startswith("RECON-"): evidence_path = "7.ML/7.3.data_intake/source_reconciliation.json"
+            elif cid.startswith("SHIFT-"): evidence_path = "7.ML/7.3.data_intake/temporal_shift_profile.json"
+            elif cid.startswith("SPL-RECON-"): evidence_path = "7.ML/7.4.splits/split_manifest.json#/row_reconciliation"
+            else: evidence_path = "UNKNOWN"
+            
         results.append({
             "check_id": cid, 
             "category": category,
             "description": desc,
             "expected": str(expected), 
             "actual": str(actual),
-            "evidence_path": evidence_path,
+            "evidence": evidence_path,
             "severity": severity,
             "status": status, 
             "validator_version": "2.1.2",
@@ -462,8 +488,8 @@ def main():
     # SECTION 13: Temporal shift profile check
     # ==============================================================
     
-    print("
---- Temporal Shift Profile Check ---")
+    
+    print("--- Temporal Shift Profile Check ---")
     ts_path = ROOT / "7.ML" / "7.3.data_intake" / "temporal_shift_profile.json"
     if ts_path.exists():
         with open(ts_path, "r", encoding="utf-8") as f:
@@ -478,6 +504,7 @@ def main():
         check("SHIFT-PSI-02", "train_vs_val Severity is NOT_ASSESSED", "NOT_ASSESSED", sev_val, sev_val == "NOT_ASSESSED", evidence_path="7.ML/7.3.data_intake/temporal_shift_profile.json#/target_shift/train_vs_val/severity")
     else:
         check("SHIFT-FILE-01", "temporal_shift_profile.json exists", True, False, False)
+
 
 
     # ==============================================================

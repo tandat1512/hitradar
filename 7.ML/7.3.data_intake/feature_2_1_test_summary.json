@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-07-18T00:17:52.860419+00:00",
+  "repository_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc",
+  "test_suite": "Feature 2.1 Regression & Consistency",
+  "tests": 30,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "time_seconds": 0.115,
+  "junit_xml_hash": "daf033dfb3cdf62d6c5f8cd67118aaa825878c6df99c583778257b0c33b811a2",
+  "status": "PASS"
+}

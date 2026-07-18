@@ -1,0 +1,22 @@
+feature: '2.1'
+strategy: temporal
+status: locked
+source_data_version: ml-ready-2026-07-17-v1
+time_column: release_year
+identifier: track_id
+target: target_popularity
+train:
+  start_year: 1900
+  end_year: 2004
+validation:
+  start_year: 2005
+  end_year: 2013
+test:
+  start_year: 2014
+  end_year: 2021
+require_contiguous_year_ranges: true
+require_zero_track_overlap: true
+allow_row_drop: false
+random_split_diagnostic:
+  enabled: false
+  primary_result_allowed: false

@@ -20,6 +20,22 @@ DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
 SPLITS_DIR = ROOT / "7.ML" / "7.4.splits"
 CONFIG_DIR = ROOT / "7.ML" / "7.1.config"
 
+def get_metadata_header(title, commit_sha, now):
+    gen_hash = hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()
+    return f"""# {title}
+
+**Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
+**HitRadar Pro — EPIC 2**
+
+**Repository URL**: https://github.com/tandat1512/hitradar.git
+**Source Branch**: main
+**Source Commit Used for Generation**: {commit_sha}
+**Generator Path**: 9.SCRIPTS/regenerate_reports.py
+**Generator SHA-256**: {gen_hash}
+**Generated Timestamp**: {now.isoformat()}
+
+---"""
+
 def sha256_series(series):
     h = hashlib.sha256()
     for val in sorted(series.astype(str).values):
@@ -29,6 +45,14 @@ def sha256_series(series):
 def main():
     now = datetime.now(timezone.utc)
     df = pd.read_parquet(ROOT / "5.DATA" / "processed" / "ml_ready_dataset.parquet")
+
+
+    with open(CONFIG_DIR / "preprocessing_config.yaml", "r", encoding="utf-8") as f:
+        prep_config = yaml.safe_load(f)
+
+
+    with open(CONFIG_DIR / "preprocessing_config.yaml", "r", encoding="utf-8") as f:
+        prep_config = yaml.safe_load(f)
 
 
     with open(CONFIG_DIR / "preprocessing_config.yaml", "r", encoding="utf-8") as f:
@@ -110,8 +134,17 @@ def main():
                 break
         feature_roles.append((f, role))
         
-    roles_md = "\\n".join([f"| `{f}` | {r} |" for f, r in feature_roles])
+    roles_md = "\n".join([f"| `{f}` | {r} |" for f, r in feature_roles])
+
+    cat_feats = [f for f, r in feature_roles if r == "Categorical"]
+    bin_feats = [f for f, r in feature_roles if r == "Binary"]
+    cont_feats = [f for f, r in feature_roles if r == "Continuous"]
+
+    summary_md = f"\n\n**Summary of Types:**\n- **Continuous**: `{', '.join(cont_feats)}`\n- **Categorical**: `{', '.join(cat_feats)}`\n- **Binary**: `{', '.join(bin_feats)}`\n"
+    roles_md += summary_md
     n_checks = vr["total_checks"]
+
+
 
     n_pass = vr["pass_count"]
     n_fail = vr["fail_count"]
@@ -125,7 +158,15 @@ def main():
     except:
         commit_sha = "UNKNOWN"
         
+
+    try:
+        import subprocess
+        commit_sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=str(ROOT)).decode('utf-8').strip()
+    except:
+        commit_sha = "UNKNOWN"
+        
     diag = pd.read_csv(DATA_INTAKE / "split_candidate_diagnostics.csv")
+
 
     
     with open(DATA_INTAKE / "temporal_shift_profile.json", "r", encoding="utf-8") as f:
@@ -142,23 +183,13 @@ def main():
         te = cdata["test_ratio"]
         score = cdata["ratio_score"]
         dec = " (WINNER)" if cdata["decision"] == "SELECTED" else ""
-        cand_scores += f"- **{cid} Score**: `|{tr} - 0.70| + |{vr_ratio} - 0.15| + |{te} - 0.15| = {score}`{dec}\\n"
+        cand_scores += f"- **{cid} Score**: `|{tr} - 0.70| + |{vr_ratio} - 0.15| + |{te} - 0.15| = {score}`{dec}\n"
 
     # ================================================================
     # 1. DATA_INTAKE_VALIDATION_REPORT.md
     # ================================================================
     with open(OUTPUT / "DATA_INTAKE_VALIDATION_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# DATA INTAKE VALIDATION REPORT
-
-**Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
-**HitRadar Pro — EPIC 2**
-
-**Repository Commit**: `{commit_sha}`
-**Branch**: `main`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
-
----
+        f.write(get_metadata_header("DATA INTAKE VALIDATION REPORT", commit_sha, now) + f"""
 
 ## 1. Source
 
@@ -176,7 +207,7 @@ def main():
 ## 2. Schema
 
 | Check | Expected | Actual | Status |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | Row count | 586,672 | {total_rows:,} | {'PASS' if total_rows == 586672 else 'FAIL'} |
 | Column count | 20 | {total_cols} | {'PASS' if total_cols == 20 else 'FAIL'} |
 | Baseline input features | {n_features} | {n_features} | PASS |
@@ -235,7 +266,7 @@ def main():
 ## 7. Data Exceptions
 
 | Exception ID | Track ID | Field | Value | Classification |
-|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 """)
         for e in exc.get("exceptions", []):
             f.write(f"| {e['exception_id']} | `{e['track_id']}` | {e['field']} | {e['value']} | {e['classification']} |\n")
@@ -245,7 +276,7 @@ def main():
 ## 8. Contract Deviations
 
 | Deviation | Documented | Actual | Resolution |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | release_year min | 1921 | {year_min} | Registered as exception EXC-001. See RELEASE_YEAR_ANOMALY_REPORT.md |
 
 ---
@@ -280,17 +311,7 @@ def main():
     # 2. TEMPORAL_SPLIT_REPORT.md
     # ================================================================
     with open(OUTPUT / "TEMPORAL_SPLIT_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# TEMPORAL SPLIT REPORT
-
-**Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
-**HitRadar Pro — EPIC 2**
-
-**Repository Commit**: `{commit_sha}`
-**Branch**: `main`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
-
----
+        f.write(get_metadata_header("TEMPORAL SPLIT REPORT", commit_sha, now) + f"""
 
 ## 1. Dataset Overview
 
@@ -342,7 +363,6 @@ Three temporal split candidates were evaluated independently:
 
 **Candidate Scores:**
 {cand_scores}
-
 
 - Best ratio proximity to 70/15/15 target
 - Test contains the most recent 8 years (2014–2021)
@@ -418,17 +438,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
     # 3. FEATURE_2_1_VALIDATION_REPORT.md
     # ================================================================
     with open(OUTPUT / "FEATURE_2_1_VALIDATION_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# FEATURE 2.1 VALIDATION REPORT
-
-**Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
-**HitRadar Pro — EPIC 2**
-
-**Repository Commit**: `{commit_sha}`
-**Branch**: `main`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
-
----
+        f.write(get_metadata_header("FEATURE 2.1 VALIDATION REPORT", commit_sha, now) + f"""
 
 ## Overall Status: {vr['overall_status']}
 
@@ -439,7 +449,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 ## Validation Checks
 
 | # | Check ID | Description | Expected | Actual | Evidence | Status |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|
 """)
         for i, c in enumerate(vr["checks"], 1):
             status_mark = "PASS" if c["status"] == "PASS" else "**FAIL**"
@@ -494,19 +504,23 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
     # ================================================================
     # 4. FEATURE_2_1_COMPLETION_REPORT.md
     # ================================================================
-    with open(OUTPUT / "FEATURE_2_1_COMPLETION_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# FEATURE 2.1 COMPLETION REPORT
+    gen_hash = hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()
+    metadata_header = f"""# FEATURE 2.1 COMPLETION REPORT
 
 **Feature 2.1 — Data Intake, Validation & Temporal Split (HOTFIX)**
 **HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Branch**: `main`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
-**Owner**: Tuấn Anh
+**Repository URL**: https://github.com/tandat1512/hitradar.git
+**Source Branch**: main
+**Source Commit Used for Generation**: {commit_sha}
+**Generator Path**: 9.SCRIPTS/regenerate_reports.py
+**Generator SHA-256**: {gen_hash}
+**Generated Timestamp**: {now.isoformat()}
 
----
+---"""
+
+    with open(OUTPUT / "FEATURE_2_1_COMPLETION_REPORT.md", "w", encoding="utf-8") as f:
+        f.write(metadata_header + f"""
 
 ## 1. Input Contract
 
@@ -578,7 +592,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 6. Carry-Forward to Feature 2.2
+## 7. Carry-Forward to Feature 2.2
 
 | Item | Detail | Owner |
 |---|---|---|
@@ -592,7 +606,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 7. Files Created/Modified
+## 8. Files Created/Modified
 
 ### Config
 - `7.ML/7.1.config/experiment_config.yaml` (updated)
@@ -656,7 +670,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 8. Scope Compliance
+## 9. Scope Compliance
 
 | Prohibition | Status |
 |---|---|
@@ -672,7 +686,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 7. Definition of Done
+## 10. Definition of Done
 
 | Gate | Status |
 |---|---|
@@ -699,7 +713,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 
 ---
 
-## 8. Final Status
+## 11. Final Status
 
 > **{vr['overall_status']}**
 >
@@ -710,25 +724,16 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 > - Target imbalance (~75% <= 40): MEDIUM severity, carry-forward to Feature 2.5
 >
 > No blockers remain. **Feature 2.1 is eligible for closure.**
-> **Feature 2.2 may begin.**
 """)
+        closure_msg = "> **Feature 2.2 may begin.**" if vr['overall_status'] == 'PASS_WITH_WARNINGS' else f"> **Status is {vr['overall_status']}. NOT_CLOSED.**"
+        f.write(f"{closure_msg}\n")
     print("  Regenerated: FEATURE_2_1_COMPLETION_REPORT.md")
 
     # ================================================================
     # 5. FEATURE_2_1_HOTFIX_REPORT.md
     # ================================================================
     with open(OUTPUT / "FEATURE_2_1_HOTFIX_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# FEATURE 2.1 HOTFIX REPORT
-
-**Feature 2.1 — Data Intake, Validation & Temporal Split**
-**HitRadar Pro — EPIC 2**
-
-**Repository Commit**: `{commit_sha}`
-**Branch**: `main`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
-
----
+        f.write(get_metadata_header("FEATURE 2.1 HOTFIX REPORT", commit_sha, now) + f"""
 
 ## 1. Hotfix Summary
 
@@ -750,7 +755,7 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 ## 2. Bugs Fixed
 
 | # | Bug ID | Severity | Description |
-|---|---|---|---|
+|---|---|---|---|---|---|---|
 | 1 | BUG-001 | MEDIUM | Candidate split zero counts identical |
 | 2 | BUG-002 | HIGH | Year 1900 not flagged as contract deviation |
 | 3 | BUG-003 | HIGH | test_set_lock.json missing governance fields |
@@ -811,27 +816,20 @@ See `TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md` for full analysis.
 | Validation depth adequate | PASS ({n_checks} content checks) |
 
 ### Overall: **{vr['overall_status']}**
-
-Feature 2.1 is eligible for closure. Feature 2.2 may begin.
 """)
+        hotfix_msg = "Feature 2.1 is eligible for closure. Feature 2.2 may begin." if vr['overall_status'] == 'PASS_WITH_WARNINGS' else f"Status is {vr['overall_status']}. NOT_CLOSED."
+        f.write(f"{hotfix_msg}\n")
     print("  Created: FEATURE_2_1_HOTFIX_REPORT.md")
 
     # ================================================================
     # 6. RELEASE_YEAR_ANOMALY_REPORT.md
     # ================================================================
     with open(OUTPUT / "RELEASE_YEAR_ANOMALY_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# RELEASE YEAR ANOMALY REPORT: release_year = 1900
+        f.write(get_metadata_header("RELEASE YEAR ANOMALY REPORT: release_year = 1900", commit_sha, now) + f"""
 
 **Feature 2.1 — Data Exceptions**
 
-**HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Branch**: `main`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
-
----
 
 The value `1900` for `release_year` has been flagged as a deviation from expected domain logic.
 
@@ -857,16 +855,11 @@ Registered as an exception: EXC-001. No deletion of rows was performed, preservi
     # 7. SOURCE_RECONCILIATION_REPORT.md
     # ================================================================
     with open(OUTPUT / "SOURCE_RECONCILIATION_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# SOURCE RECONCILIATION REPORT
+        f.write(get_metadata_header("SOURCE RECONCILIATION REPORT", commit_sha, now) + f"""
 
 **Feature 2.1 — Data Intake**
-**HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
 
----
 
 ## 1. Reconciliation Scope
 - **Authoritative Source**: `analytics.vw_ml_ready_dataset` (Logical view)
@@ -885,16 +878,11 @@ Registered as an exception: EXC-001. No deletion of rows was performed, preservi
     # 8. TEST_SET_GOVERNANCE_REPORT.md
     # ================================================================
     with open(OUTPUT / "TEST_SET_GOVERNANCE_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# TEST SET GOVERNANCE REPORT
+        f.write(get_metadata_header("TEST SET GOVERNANCE REPORT", commit_sha, now) + f"""
 
 **Feature 2.1 — Split Lock**
-**HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
 
----
 
 ## 1. Lock Status
 - **Status**: LOCKED
@@ -915,16 +903,11 @@ Registered as an exception: EXC-001. No deletion of rows was performed, preservi
     # 9. LEGACY_ARTIFACT_AUDIT_REPORT.md
     # ================================================================
     with open(OUTPUT / "LEGACY_ARTIFACT_AUDIT_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# LEGACY ARTIFACT AUDIT REPORT
+        f.write(get_metadata_header("LEGACY ARTIFACT AUDIT REPORT", commit_sha, now) + f"""
 
 **Feature 2.1 — Quarantine Audit**
-**HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
 
----
 
 ## 1. Quarantine Overview
 Legacy artifacts from Epic 1 (.pkl files, old scaler/encoder) have been quarantined into `4.MODELS/legacy_epic1/`.
@@ -937,16 +920,11 @@ Legacy artifacts from Epic 1 (.pkl files, old scaler/encoder) have been quaranti
     # 10. TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md
     # ================================================================
     with open(OUTPUT / "TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# TEMPORAL DISTRIBUTION SHIFT REPORT
+        f.write(get_metadata_header("TEMPORAL DISTRIBUTION SHIFT REPORT", commit_sha, now) + f"""
 
 **Feature 2.1 — Temporal Shift Diagnostics**
-**HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
 
----
 
 ## 1. Shift Summary
 - **PSI (train vs test)**: {tsp['target_shift']['train_vs_test']['psi_score']} (**HIGH** severity)
@@ -963,16 +941,11 @@ No data removal is permitted to suppress shift metrics. Shift mitigation will be
     # 11. TEMPORAL_PROXY_RISK_REPORT.md
     # ================================================================
     with open(OUTPUT / "TEMPORAL_PROXY_RISK_REPORT.md", "w", encoding="utf-8") as f:
-        f.write(f"""# TEMPORAL PROXY RISK REPORT
+        f.write(get_metadata_header("TEMPORAL PROXY RISK REPORT", commit_sha, now) + f"""
 
 **Feature 2.1 — Risk Audit**
-**HitRadar Pro — EPIC 2**
 
-**Repository Commit**: `{commit_sha}`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
 
----
 
 ## 1. Proxy Identification
 `release_month_missing` is identified as a potential temporal proxy feature due to high missingness in earlier years.
@@ -988,15 +961,11 @@ No data removal is permitted to suppress shift metrics. Shift mitigation will be
     # 12. HOTFIX_CHANGELOG.md
     # ================================================================
     with open(OUTPUT / "HOTFIX_CHANGELOG.md", "w", encoding="utf-8") as f:
-        f.write(f"""# HOTFIX CHANGELOG
+        f.write(get_metadata_header("HOTFIX CHANGELOG", commit_sha, now) + f"""
 
 **Feature 2.1 — Hotfix History**
 
-**Repository Commit**: `{commit_sha}`
-**Generator Hash**: `{hashlib.sha256(open(Path(__file__).resolve(), 'rb').read()).hexdigest()}`
-**Generated**: {now.isoformat()}
 
----
 
 ## Version 1.0 (2026-07-17)
 - Fixed candidate split scoring (BUG-001)

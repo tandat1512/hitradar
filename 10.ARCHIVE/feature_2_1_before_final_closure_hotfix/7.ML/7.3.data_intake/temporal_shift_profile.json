@@ -1,0 +1,52 @@
+{
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "target_shift": {
+    "psi_methodology": {
+      "metric_name": "Population Stability Index (PSI)",
+      "source_column": "target_popularity",
+      "expected_distribution": "train",
+      "actual_distribution": "test",
+      "binning_strategy": "uniform",
+      "number_of_bins": 10,
+      "bin_edges": [
+        0.0,
+        8.6,
+        17.2,
+        25.799999999999997,
+        34.4,
+        43.0,
+        51.599999999999994,
+        60.199999999999996,
+        68.8,
+        77.39999999999999,
+        86.0
+      ],
+      "bins_derived_from": "train",
+      "smoothing_epsilon": 0.0001,
+      "zero_probability_handling": "replace with epsilon",
+      "missing_value_handling": "drop",
+      "psi_formula": "sum((actual_pct - expected_pct) * ln(actual_pct / expected_pct))",
+      "severity_thresholds": {
+        "LOW_MAX": 0.1,
+        "MEDIUM_MAX": 0.25,
+        "HIGH_MIN": 0.25
+      }
+    },
+    "train_vs_test": {
+      "train_mean": 22.8799948980083,
+      "test_mean": 40.84007173133355,
+      "psi_score": 1.4814411248254633,
+      "severity": "HIGH",
+      "conclusion": "Large distribution shift under the configured PSI severity thresholds."
+    },
+    "train_vs_val": {
+      "psi_score": "NOT_COMPUTED",
+      "severity": "NOT_ASSESSED"
+    }
+  },
+  "risks": [
+    "The model may rely on popularity dynamics specific to the training period.",
+    "Global trends in target_popularity differ significantly between 1900-2004 and 2014-2021."
+  ]
+}

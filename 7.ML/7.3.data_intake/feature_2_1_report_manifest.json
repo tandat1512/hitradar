@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-07-18T00:17:53.023755+00:00",
+  "repository_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc",
+  "files": [
+    {
+      "path": "data_exceptions.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "baa7870d751371c6987750d7ba38099dd862ee5aa2f03fb6365e8c8229c034ae"
+    },
+    {
+      "path": "data_version.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "2ff51c1e6afd7544507e9757fb162053e2a53c643e383f9e6dbf3824ac8e6f17"
+    },
+    {
+      "path": "feature_2_1_test_summary.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "6626363d228151865a617ff00c21315107d6c0023ea5c1bd89bed095570daa98"
+    },
+    {
+      "path": "hotfix_investigation_results.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "f1e1d1254c17ddf53e19d73c47f99c24b30480c3d342cbe0658d0f49ed648053"
+    },
+    {
+      "path": "input_manifest.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "433e8c592b77d152113629723495e04467d56f75ac585a77b8f277b1fa1bca58"
+    },
+    {
+      "path": "legacy_reference_scan.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "4576a5af63d2504800c6be74ae81f83f160ee4ce005fd56e6f7590d3611b579e"
+    },
+    {
+      "path": "missing_profile_by_split.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "0d4503cf4586adb26b74fa431ba008d85d54c9ad7d31b49aaa1efcc412ade855"
+    },
+    {
+      "path": "schema_snapshot.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "f13d02078e6fa7f884586ebbed2ace40012a27688bcf88fc3a02752809280adf"
+    },
+    {
+      "path": "source_reconciliation.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "b5dd24afd1ede2b0158fb712f517c25bda9053cdeedeac2874556612e9e4a4e2"
+    },
+    {
+      "path": "split_statistics.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "99371d20303ac019346d41cafd4a39271e7569c91150af6296da680710c3efa6"
+    },
+    {
+      "path": "target_profile.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "0c846c33c34f631a9fa8b13122328f5be4c4c762fe066b34e729c6d96b42b723"
+    },
+    {
+      "path": "temporal_shift_profile.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "56ec50a7d96bff555782b82aecd7f0f1c3de445753acf65f66d9f7e20fb79005"
+    },
+    {
+      "path": "validation_results.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "37d9dec5f0d4fcd2e5bf54abe256a168f484ec653ac2736c5deb85d38e24e3c1"
+    },
+    {
+      "path": "warning_profile.json",
+      "category": "DATA_INTAKE_JSON",
+      "full_sha256": "c8f5564dfb34eede164bd249b7ab03d9c1fd4dd5e7c714d308243467c50836ba"
+    },
+    {
+      "path": "7.4.splits/split_manifest.json",
+      "category": "SPLIT_ARTIFACT",
+      "full_sha256": "c691e5f57d5fe6f493029cb4de6e7e97738bd5c981f3d3c8fc3d2fe7a5d19e80"
+    },
+    {
+      "path": "7.4.splits/split_version.txt",
+      "category": "SPLIT_ARTIFACT",
+      "full_sha256": "fe6cb2f0678d2f29a3398074e4942d5936182962228b84971a8a1662d2012654"
+    },
+    {
+      "path": "7.4.splits/test_ids.parquet",
+      "category": "SPLIT_ARTIFACT",
+      "full_sha256": "29b0b9596d0e95ae061165a1cdfdd00cf588eecdc8bc727eb79a1a165bbc0d7a"
+    },
+    {
+      "path": "7.4.splits/test_set_lock.json",
+      "category": "SPLIT_ARTIFACT",
+      "full_sha256": "d2770c9fa04105db8596056d865907168723833d5606ec9de70627ac2bba27b7"
+    },
+    {
+      "path": "7.4.splits/train_ids.parquet",
+      "category": "SPLIT_ARTIFACT",
+      "full_sha256": "ba35e03ca0838ee12779841539e083df425efd3d5656764f02aeed46500ed940"
+    },
+    {
+      "path": "7.4.splits/validation_ids.parquet",
+      "category": "SPLIT_ARTIFACT",
+      "full_sha256": "6c3b6c89c341a3f844b89ecc51e16a44215708355efaf6bf779fef7e418295bd"
+    },
+    {
+      "path": "Output epic2/F 2.1/DATA_INTAKE_VALIDATION_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "19fdac2eecd3bf5d25981ed3715e26ea1758eec9e908f74584434b520a0ea3bb"
+    },
+    {
+      "path": "Output epic2/F 2.1/FEATURE_2_1_COMPLETION_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "b576466f8588b69ffde816f4cbe92263379f60faec1fa3f68a63019a192b5db7"
+    },
+    {
+      "path": "Output epic2/F 2.1/FEATURE_2_1_HOTFIX_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "44b130e18ff8c0059040f5a8ed7a69c67fc0f492b0bf41971f053b358fec740d"
+    },
+    {
+      "path": "Output epic2/F 2.1/FEATURE_2_1_VALIDATION_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "c84fc028b4c78311afa6229521c4c9f73a2de67d8c54ee36bff91767ac75fb9e"
+    },
+    {
+      "path": "Output epic2/F 2.1/HOTFIX_CHANGELOG.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "9b14a2a83684baa5120effe7b9dd4e7f7f90663999e3863dd41aa86286270898"
+    },
+    {
+      "path": "Output epic2/F 2.1/LEGACY_ARTIFACT_AUDIT_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "0c6466e41d0382111cc8756a729dbc85486a569ab035aafe033bc2d8ccfb43c1"
+    },
+    {
+      "path": "Output epic2/F 2.1/RELEASE_YEAR_ANOMALY_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "8cc8912fff40cc199eaefc1ea8688538c5534f907b80d1a7aa5af4a83b9d390f"
+    },
+    {
+      "path": "Output epic2/F 2.1/SOURCE_RECONCILIATION_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "4e711e83cac410d1501f28fd0e3dee765d2d1c4feea640a458c3071084dd56be"
+    },
+    {
+      "path": "Output epic2/F 2.1/TEMPORAL_DISTRIBUTION_SHIFT_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "d3cad0785fad112c9a20cf13d5de7e49ea187ef9b330044ea67d77f9046a2a26"
+    },
+    {
+      "path": "Output epic2/F 2.1/TEMPORAL_PROXY_RISK_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "a4346bdb251ff741c478f271ecffab0e5c46e79497db7407bdd7aa9ef6cc3f8c"
+    },
+    {
+      "path": "Output epic2/F 2.1/TEMPORAL_SPLIT_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "140af3703a6492313d52b35edd2555b08304571cf482742efe7dc35dec6594f9"
+    },
+    {
+      "path": "Output epic2/F 2.1/TEST_SET_GOVERNANCE_REPORT.md",
+      "category": "REPORT_MARKDOWN",
+      "full_sha256": "25e7512ea5db7ce741debf7931f81fcae3cbf20cf9f045fa96f7028f5adfd25a"
+    }
+  ]
+}

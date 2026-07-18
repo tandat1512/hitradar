@@ -1,0 +1,18 @@
+{
+  "exceptions": [
+    {
+      "exception_id": "EXC-001",
+      "track_id": "74CSJTE5QQp1e4bHzm3wti",
+      "field": "release_year",
+      "value": 1900,
+      "expected_contract": ">= 1922 (typical Spotify)",
+      "classification": "SUSPECTED_SENTINEL_OR_DEFAULT",
+      "confidence": "HIGH",
+      "root_cause_status": "ROOT_CAUSE_NOT_CONFIRMED",
+      "action": "KEEP_WITH_EXCEPTION",
+      "rationale": "Exists in frozen snapshot, physically reconciled, does not break split integrity, statistically negligible.",
+      "owner": "Tu\u1ea5n Anh",
+      "review_stage": "Feature 2.1"
+    }
+  ]
+}

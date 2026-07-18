@@ -1,0 +1,284 @@
+{
+  "backup_manifest": [
+    {
+      "original_path": "7.ML/7.1.config/experiment_config.yaml",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.1.config/experiment_config.yaml",
+      "file_size_bytes": 4930,
+      "full_sha256": "dffb70f783c59c1d8dc753a39561df2858f48e4e6cd3cf91170c5f4b96748519",
+      "backup_timestamp": "2026-07-18T00:07:05.278372+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.1.config/preprocessing_config.yaml",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.1.config/preprocessing_config.yaml",
+      "file_size_bytes": 3993,
+      "full_sha256": "ee61bf70659cddbf2f3fdfed6190801b41de4f5202cb3c80755005efb151a56f",
+      "backup_timestamp": "2026-07-18T00:07:05.282015+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.1.config/split_config.yaml",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.1.config/split_config.yaml",
+      "file_size_bytes": 487,
+      "full_sha256": "280325c10c23b3d63029827a6421e958a5b1edbcd01b3406f2679ae87cdc81d8",
+      "backup_timestamp": "2026-07-18T00:07:05.284889+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/data_exceptions.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/data_exceptions.json",
+      "file_size_bytes": 616,
+      "full_sha256": "baa7870d751371c6987750d7ba38099dd862ee5aa2f03fb6365e8c8229c034ae",
+      "backup_timestamp": "2026-07-18T00:07:05.288785+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/data_version.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/data_version.json",
+      "file_size_bytes": 786,
+      "full_sha256": "2ff51c1e6afd7544507e9757fb162053e2a53c643e383f9e6dbf3824ac8e6f17",
+      "backup_timestamp": "2026-07-18T00:07:05.291771+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/hotfix_investigation_results.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/hotfix_investigation_results.json",
+      "file_size_bytes": 20734,
+      "full_sha256": "f1e1d1254c17ddf53e19d73c47f99c24b30480c3d342cbe0658d0f49ed648053",
+      "backup_timestamp": "2026-07-18T00:07:05.307099+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/input_manifest.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/input_manifest.json",
+      "file_size_bytes": 1373,
+      "full_sha256": "433e8c592b77d152113629723495e04467d56f75ac585a77b8f277b1fa1bca58",
+      "backup_timestamp": "2026-07-18T00:07:05.310407+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/legacy_reference_scan.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/legacy_reference_scan.json",
+      "file_size_bytes": 350,
+      "full_sha256": "4576a5af63d2504800c6be74ae81f83f160ee4ce005fd56e6f7590d3611b579e",
+      "backup_timestamp": "2026-07-18T00:07:05.313633+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/missing_profile_by_split.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/missing_profile_by_split.json",
+      "file_size_bytes": 1992,
+      "full_sha256": "0d4503cf4586adb26b74fa431ba008d85d54c9ad7d31b49aaa1efcc412ade855",
+      "backup_timestamp": "2026-07-18T00:07:05.315987+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/schema_snapshot.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/schema_snapshot.json",
+      "file_size_bytes": 4372,
+      "full_sha256": "f13d02078e6fa7f884586ebbed2ace40012a27688bcf88fc3a02752809280adf",
+      "backup_timestamp": "2026-07-18T00:07:05.318392+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/source_reconciliation.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/source_reconciliation.json",
+      "file_size_bytes": 359,
+      "full_sha256": "b5dd24afd1ede2b0158fb712f517c25bda9053cdeedeac2874556612e9e4a4e2",
+      "backup_timestamp": "2026-07-18T00:07:05.321418+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/split_candidates.csv",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/split_candidates.csv",
+      "file_size_bytes": 691,
+      "full_sha256": "339bcddb663931fc943451f926cad98a8c6e4698da1bd9a538bc2af4bfac0fe6",
+      "backup_timestamp": "2026-07-18T00:07:05.324617+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/split_candidate_diagnostics.csv",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/split_candidate_diagnostics.csv",
+      "file_size_bytes": 1461,
+      "full_sha256": "e9fbf976dde8d85a85f82ae9f49a96eb31d6ef8f96a982eedd5de970007aa5e7",
+      "backup_timestamp": "2026-07-18T00:07:05.327834+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/split_statistics.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/split_statistics.json",
+      "file_size_bytes": 1626,
+      "full_sha256": "99371d20303ac019346d41cafd4a39271e7569c91150af6296da680710c3efa6",
+      "backup_timestamp": "2026-07-18T00:07:05.331252+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/target_profile.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/target_profile.json",
+      "file_size_bytes": 727,
+      "full_sha256": "0c846c33c34f631a9fa8b13122328f5be4c4c762fe066b34e729c6d96b42b723",
+      "backup_timestamp": "2026-07-18T00:07:05.334321+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/temporal_shift_profile.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/temporal_shift_profile.json",
+      "file_size_bytes": 1603,
+      "full_sha256": "56ec50a7d96bff555782b82aecd7f0f1c3de445753acf65f66d9f7e20fb79005",
+      "backup_timestamp": "2026-07-18T00:07:05.337554+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/validation_results.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/validation_results.json",
+      "file_size_bytes": 42616,
+      "full_sha256": "936579248515b9cc6106dd5825a85ee89ef163b45f1c7656c707855122054522",
+      "backup_timestamp": "2026-07-18T00:07:05.354754+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/warning_profile.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/warning_profile.json",
+      "file_size_bytes": 1872,
+      "full_sha256": "c8f5564dfb34eede164bd249b7ab03d9c1fd4dd5e7c714d308243467c50836ba",
+      "backup_timestamp": "2026-07-18T00:07:05.357920+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.3.data_intake/year_distribution.csv",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.3.data_intake/year_distribution.csv",
+      "file_size_bytes": 8826,
+      "full_sha256": "4cad7438f12bb3fab29008fa488eb8061684ae65dd9f013ef356c059cd27aa65",
+      "backup_timestamp": "2026-07-18T00:07:05.372586+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.4.splits/split_manifest.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.4.splits/split_manifest.json",
+      "file_size_bytes": 2769,
+      "full_sha256": "c691e5f57d5fe6f493029cb4de6e7e97738bd5c981f3d3c8fc3d2fe7a5d19e80",
+      "backup_timestamp": "2026-07-18T00:07:05.375537+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.4.splits/split_version.txt",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.4.splits/split_version.txt",
+      "file_size_bytes": 17,
+      "full_sha256": "fe6cb2f0678d2f29a3398074e4942d5936182962228b84971a8a1662d2012654",
+      "backup_timestamp": "2026-07-18T00:07:05.377847+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.4.splits/test_ids.parquet",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.4.splits/test_ids.parquet",
+      "file_size_bytes": 2156165,
+      "full_sha256": "29b0b9596d0e95ae061165a1cdfdd00cf588eecdc8bc727eb79a1a165bbc0d7a",
+      "backup_timestamp": "2026-07-18T00:07:05.396043+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.4.splits/test_set_lock.json",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.4.splits/test_set_lock.json",
+      "file_size_bytes": 822,
+      "full_sha256": "d2770c9fa04105db8596056d865907168723833d5606ec9de70627ac2bba27b7",
+      "backup_timestamp": "2026-07-18T00:07:05.399717+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.4.splits/train_ids.parquet",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.4.splits/train_ids.parquet",
+      "file_size_bytes": 10107545,
+      "full_sha256": "ba35e03ca0838ee12779841539e083df425efd3d5656764f02aeed46500ed940",
+      "backup_timestamp": "2026-07-18T00:07:05.551514+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "7.ML/7.4.splits/validation_ids.parquet",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/7.ML/7.4.splits/validation_ids.parquet",
+      "file_size_bytes": 2141622,
+      "full_sha256": "6c3b6c89c341a3f844b89ecc51e16a44215708355efaf6bf779fef7e418295bd",
+      "backup_timestamp": "2026-07-18T00:07:05.571203+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "9.SCRIPTS/feature_2_1_data_intake.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/9.SCRIPTS/feature_2_1_data_intake.py",
+      "file_size_bytes": 65755,
+      "full_sha256": "58dbb99a1594504455b5b302f218ded0eff979c7ff6c8e502a5119895225fecc",
+      "backup_timestamp": "2026-07-18T00:07:05.590138+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "9.SCRIPTS/validate_feature_2_1.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/9.SCRIPTS/validate_feature_2_1.py",
+      "file_size_bytes": 25041,
+      "full_sha256": "1ce05d6c4929c0d809fa7c6211a904f63ec4ccfb9afc06a46fa05e782bb8d68b",
+      "backup_timestamp": "2026-07-18T00:07:05.605049+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "9.SCRIPTS/validate_temporal_split.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/9.SCRIPTS/validate_temporal_split.py",
+      "file_size_bytes": 7284,
+      "full_sha256": "cb4afb48cfabb85d58fd928ba519416f82ad6ef163d688e0cf2a89f33712e298",
+      "backup_timestamp": "2026-07-18T00:07:05.608334+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "9.SCRIPTS/validate_test_set_lock.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/9.SCRIPTS/validate_test_set_lock.py",
+      "file_size_bytes": 6511,
+      "full_sha256": "e83f32138c7595afdcb78fbff70931b9c968917277c36985e401a67a8ee6e21f",
+      "backup_timestamp": "2026-07-18T00:07:05.610545+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "9.SCRIPTS/regenerate_reports.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/9.SCRIPTS/regenerate_reports.py",
+      "file_size_bytes": 36992,
+      "full_sha256": "c14f67cf44149b525ea651c4f40a83ebbd0e86c5f87dd6dc34ed1230aa437d38",
+      "backup_timestamp": "2026-07-18T00:07:05.625131+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "tests/test_feature_2_1_regressions.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/tests/test_feature_2_1_regressions.py",
+      "file_size_bytes": 2546,
+      "full_sha256": "7a201325a7ed56feb76a91ef5f7766700a5cca4327daf48ab957c314a1a377d2",
+      "backup_timestamp": "2026-07-18T00:07:05.628138+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "tests/test_feature_2_1_report_consistency.py",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/tests/test_feature_2_1_report_consistency.py",
+      "file_size_bytes": 5691,
+      "full_sha256": "4b4519dc361bbc44e27da898c3cd164eda4644f9916829e79fe0d8b2538bc7d0",
+      "backup_timestamp": "2026-07-18T00:07:05.631393+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "tests/__pycache__/test_feature_2_1_regressions.cpython-313-pytest-9.1.1.pyc",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/tests/test_feature_2_1_regressions.cpython-313-pytest-9.1.1.pyc",
+      "file_size_bytes": 14918,
+      "full_sha256": "44e8fb180394fff73d59df16dc5c9ee7343c189b120b096d1fb430338bfd6f0e",
+      "backup_timestamp": "2026-07-18T00:07:05.633398+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "tests/__pycache__/test_feature_2_1_report_consistency.cpython-313-pytest-9.1.1.pyc",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/tests/test_feature_2_1_report_consistency.cpython-313-pytest-9.1.1.pyc",
+      "file_size_bytes": 29562,
+      "full_sha256": "d81fad4fa905834b7e097b3a6621ff84d6beabdcf055de598eb95fbcc7643d82",
+      "backup_timestamp": "2026-07-18T00:07:05.634979+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    },
+    {
+      "original_path": "BAO_CAO_HOAN_TAT_HOTFIX_2.1.md",
+      "backup_path": "10.ARCHIVE/feature_2_1_before_final_closure_hotfix/Output epic2/BAO_CAO_HOAN_TAT_HOTFIX_2.1.md",
+      "file_size_bytes": 6176,
+      "full_sha256": "7fa830644437a8944b76304440e95b52c4fa0a325a665bfbd25900336bc90e96",
+      "backup_timestamp": "2026-07-18T00:07:05.638342+00:00",
+      "source_commit_sha": "b71946eccd4c86afca5a4a20e5bc21b708c3a4bc"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "feature_id": "Feature 2.1",
+  "feature_name": "Data Intake, Validation & Temporal Split",
+  "epic": "EPIC 2",
+  "status": "PASS_WITH_WARNINGS",
+  "validation": {
+    "total_checks": 95,
+    "passed": 95,
+    "failed": 0,
+    "warnings": [
+      "Temporal distribution shift: HIGH severity",
+      "release_month_missing temporal proxy: HIGH severity",
+      "Year 1900 sentinel: LOW severity",
+      "Target imbalance: MEDIUM severity"
+    ]
+  },
+  "split": {
+    "train_years": "1900-2004",
+    "validation_years": "2005-2013",
+    "test_years": "2014-2021"
+  },
+  "closure_criteria": {
+    "all_gates_passed": true,
+    "source_reconciled": true,
+    "temporal_split_locked": true,
+    "test_set_governed": true,
+    "legacy_artifacts_quarantined": true,
+    "documentation_complete": true
+  },
+  "carry_forward": [
+    "Feature 2.2: imputation, encoding, scaling",
+    "Feature 2.3/2.4: temporal proxy evaluation",
+    "Feature 2.5: shift mitigation, model training"
+  ],
+  "closure_timestamp": "2026-07-18T01:27:44+00:00",
+  "eligible_for_close": true
+}

@@ -7,7 +7,7 @@
   "test_ids_hash": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53",
   "data_version": "ml-ready-2026-07-17-v1",
   "split_version": "temporal-split-v1",
-  "lock_timestamp": "2026-07-17T15:48:47.851370+00:00",
+  "lock_timestamp": "2026-07-18T00:44:57.669887+00:00",
   "lock_owner": "Tuấn Anh",
   "permitted_stage": "Feature 2.5",
   "prohibited_actions": [

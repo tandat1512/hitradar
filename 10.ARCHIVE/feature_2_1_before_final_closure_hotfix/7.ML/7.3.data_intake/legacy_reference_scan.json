@@ -1,0 +1,18 @@
+{
+  "scanned_paths": [
+    "7.ML",
+    "9.SCRIPTS",
+    "tests"
+  ],
+  "file_extensions": [
+    ".py",
+    ".yaml",
+    ".json",
+    ".md"
+  ],
+  "command_used": "python script ast/regex search",
+  "matches": [],
+  "intentional_matches": [],
+  "forbidden_matches": [],
+  "git_commit_sha": "1069e3af4b0dd5b4e45e13a8eb026751f87b0790"
+}

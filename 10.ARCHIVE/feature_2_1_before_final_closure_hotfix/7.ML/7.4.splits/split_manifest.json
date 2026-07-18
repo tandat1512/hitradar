@@ -1,0 +1,104 @@
+{
+  "strategy": "temporal",
+  "status": "locked",
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "time_column": "release_year",
+  "identifier": "track_id",
+  "target": "target_popularity",
+  "selected_candidate": "C1",
+  "train": {
+    "start_year": 1900,
+    "end_year": 2004,
+    "rows": 415524,
+    "ratio": 0.7083,
+    "id_file": "train_ids.parquet",
+    "id_sha256": "d3684ebb6ba7744cc3bcf6454bf475215451927c2e26d7e734e303f9d4973bda",
+    "target_profile": {
+      "row_count": 415524,
+      "row_ratio": 0.7083,
+      "min_year": 1900,
+      "max_year": 2004,
+      "target_mean": 22.88,
+      "target_median": 22.0,
+      "target_std": 15.7718,
+      "target_zero_count": 35952,
+      "buckets": {
+        "0-20": 191117,
+        "21-40": 166481,
+        "41-60": 52252,
+        "61-80": 5609,
+        "81-100": 65
+      },
+      "missing_tempo": 154,
+      "missing_time_signature": 160,
+      "missing_release_month": 126895
+    }
+  },
+  "validation": {
+    "start_year": 2005,
+    "end_year": 2013,
+    "rows": 85272,
+    "ratio": 0.1453,
+    "id_file": "validation_ids.parquet",
+    "id_sha256": "d292e4009b798e3e383b83c51f01ac5d88076621c2348ae9da63af3aab0525e9",
+    "target_profile": {
+      "row_count": 85272,
+      "row_ratio": 0.1453,
+      "min_year": 2005,
+      "max_year": 2013,
+      "target_mean": 37.0603,
+      "target_median": 39.0,
+      "target_std": 16.0364,
+      "target_zero_count": 3144,
+      "buckets": {
+        "0-20": 11499,
+        "21-40": 36295,
+        "41-60": 32932,
+        "61-80": 4480,
+        "81-100": 66
+      },
+      "missing_tempo": 34,
+      "missing_time_signature": 36,
+      "missing_release_month": 8455
+    }
+  },
+  "test": {
+    "start_year": 2014,
+    "end_year": 2021,
+    "rows": 85876,
+    "ratio": 0.1464,
+    "id_file": "test_ids.parquet",
+    "id_sha256": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53",
+    "target_profile": {
+      "row_count": 85876,
+      "row_ratio": 0.1464,
+      "min_year": 2014,
+      "max_year": 2021,
+      "target_mean": 40.8401,
+      "target_median": 45.0,
+      "target_std": 21.7855,
+      "target_zero_count": 5594,
+      "buckets": {
+        "0-20": 17372,
+        "21-40": 16227,
+        "41-60": 37629,
+        "61-80": 14043,
+        "81-100": 605
+      },
+      "missing_tempo": 140,
+      "missing_time_signature": 141,
+      "missing_release_month": 1139
+    }
+  },
+  "row_reconciliation": {
+    "train": 415524,
+    "validation": 85272,
+    "test": 85876,
+    "total": 586672,
+    "source": 586672,
+    "match": true
+  },
+  "created_at": "2026-07-17T15:48:47.851370+00:00",
+  "random_seed": 1512
+}
