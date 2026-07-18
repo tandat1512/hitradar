@@ -57,14 +57,14 @@
     "candidate_id": "P22-D",
     "column": "duration_min",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -124,14 +124,14 @@
     "candidate_id": "P22-D",
     "column": "release_year",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -191,14 +191,14 @@
     "candidate_id": "P22-D",
     "column": "danceability",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -258,14 +258,14 @@
     "candidate_id": "P22-D",
     "column": "energy",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -325,14 +325,14 @@
     "candidate_id": "P22-D",
     "column": "loudness",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -392,14 +392,14 @@
     "candidate_id": "P22-D",
     "column": "speechiness",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -459,14 +459,14 @@
     "candidate_id": "P22-D",
     "column": "acousticness",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -526,14 +526,14 @@
     "candidate_id": "P22-D",
     "column": "instrumentalness",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -593,14 +593,14 @@
     "candidate_id": "P22-D",
     "column": "liveness",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -660,14 +660,14 @@
     "candidate_id": "P22-D",
     "column": "valence",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   },
   {
     "candidate_id": "P22-A",
@@ -727,13 +727,13 @@
     "candidate_id": "P22-D",
     "column": "tempo",
     "scaler": "NONE",
-    "status": "NOT_APPLICABLE",
+    "status": "N/A",
     "fit_split": "N/A",
     "fit_rows": 0,
     "fit_input_hash": "N/A",
     "scaler_type": "NONE",
-    "mean": "NOT_APPLICABLE",
-    "scale": "NOT_APPLICABLE",
-    "var": "NOT_APPLICABLE"
+    "mean": "N/A",
+    "scale": "N/A",
+    "var": "N/A"
   }
 ]

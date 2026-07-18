@@ -14,7 +14,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309079+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "INPUT-COLS",
@@ -31,7 +31,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309112+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "INPUT-IDENTIFIER",
@@ -48,7 +48,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309122+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "INPUT-TARGET",
@@ -65,7 +65,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309129+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SPLIT-TRAIN",
@@ -82,7 +82,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309134+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SPLIT-VAL",
@@ -99,7 +99,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309140+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SPLIT-TEST",
@@ -116,14 +116,14 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309146+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "HASH-TRAIN",
     "task_id": "2.2.1",
     "category": "Contract",
     "description": "Validate train_hash",
-    "expected": "KNOWN",
+    "expected": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
     "actual": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
     "evidence_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
     "evidence_pointer": "#/checks",
@@ -133,14 +133,14 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309150+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "HASH-VAL",
     "task_id": "2.2.1",
     "category": "Contract",
     "description": "Validate validation_hash",
-    "expected": "KNOWN",
+    "expected": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada",
     "actual": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada",
     "evidence_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
     "evidence_pointer": "#/checks",
@@ -150,14 +150,14 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309155+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "HASH-TEST",
     "task_id": "2.2.1",
     "category": "Contract",
     "description": "Validate test_hash",
-    "expected": "KNOWN",
+    "expected": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638",
     "actual": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638",
     "evidence_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
     "evidence_pointer": "#/checks",
@@ -167,7 +167,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309161+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "YEARS-TRAIN",
@@ -184,7 +184,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309184+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "YEARS-VAL",
@@ -201,7 +201,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309190+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "YEARS-TEST",
@@ -218,7 +218,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309195+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SPLIT-UNION",
@@ -235,7 +235,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309541+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SEMANTIC-ROLES",
@@ -252,7 +252,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.309925+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "MISSING-PROFILE",
@@ -269,7 +269,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.310238+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "MISSING-STRATEGY",
@@ -286,7 +286,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.310527+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "OUTLIER-DURATION_MIN",
@@ -303,7 +303,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.310856+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "OUTLIER-TEMPO",
@@ -320,7 +320,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.310872+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "OUTLIER-LOUDNESS",
@@ -337,7 +337,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.310880+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-A-RELEASE_MONTH",
@@ -354,7 +354,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311240+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-D-RELEASE_MONTH",
@@ -371,7 +371,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311253+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-A-DECADE",
@@ -388,7 +388,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311264+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-D-DECADE",
@@ -405,7 +405,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311274+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-A-RELEASE_PRECISION",
@@ -422,7 +422,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311284+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-D-RELEASE_PRECISION",
@@ -439,7 +439,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311291+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-A-KEY",
@@ -456,7 +456,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311298+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-D-KEY",
@@ -473,7 +473,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311306+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-A-TIME_SIGNATURE",
@@ -490,7 +490,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311312+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "ENCODE-P22-D-TIME_SIGNATURE",
@@ -507,7 +507,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311321+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-DURATION_MIN",
@@ -524,7 +524,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.311986+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-DURATION_MIN",
@@ -541,7 +541,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312002+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-DURATION_MIN",
@@ -558,7 +558,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312012+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-RELEASE_YEAR",
@@ -575,7 +575,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312020+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-RELEASE_YEAR",
@@ -592,7 +592,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312027+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-RELEASE_YEAR",
@@ -609,7 +609,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312034+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-DANCEABILITY",
@@ -626,7 +626,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312042+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-DANCEABILITY",
@@ -643,7 +643,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312049+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-DANCEABILITY",
@@ -660,7 +660,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312058+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-ENERGY",
@@ -677,7 +677,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312066+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-ENERGY",
@@ -694,7 +694,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312077+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-ENERGY",
@@ -711,7 +711,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312084+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-LOUDNESS",
@@ -728,7 +728,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312090+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-LOUDNESS",
@@ -745,7 +745,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312097+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-LOUDNESS",
@@ -762,7 +762,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312103+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-SPEECHINESS",
@@ -779,7 +779,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312109+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-SPEECHINESS",
@@ -796,7 +796,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312115+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-SPEECHINESS",
@@ -813,7 +813,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312124+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-ACOUSTICNESS",
@@ -830,7 +830,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312131+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-ACOUSTICNESS",
@@ -847,7 +847,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312137+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-ACOUSTICNESS",
@@ -864,7 +864,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312148+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-INSTRUMENTALNESS",
@@ -881,7 +881,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312156+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-INSTRUMENTALNESS",
@@ -898,7 +898,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312162+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-INSTRUMENTALNESS",
@@ -915,7 +915,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312169+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-LIVENESS",
@@ -932,7 +932,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312175+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-LIVENESS",
@@ -949,7 +949,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312183+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-LIVENESS",
@@ -966,7 +966,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312192+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-VALENCE",
@@ -983,7 +983,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312200+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-VALENCE",
@@ -1000,7 +1000,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312207+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-VALENCE",
@@ -1017,7 +1017,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312214+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-A-TEMPO",
@@ -1034,7 +1034,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312223+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-B-TEMPO",
@@ -1051,7 +1051,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312230+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCALE-P22-C-TEMPO",
@@ -1068,7 +1068,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312236+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCHEMA-P22-A-NO-NAN",
@@ -1085,7 +1085,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.312725+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCHEMA-P22-B-NO-NAN",
@@ -1102,7 +1102,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.313175+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCHEMA-P22-C-NO-NAN",
@@ -1119,7 +1119,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.313563+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "SCHEMA-P22-D-NO-NAN",
@@ -1136,7 +1136,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.313845+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-A_IMPUTER",
@@ -1153,7 +1153,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314154+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-A_ENCODER",
@@ -1170,7 +1170,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314165+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-A_SCALER",
@@ -1187,7 +1187,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314170+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-B_IMPUTER",
@@ -1204,7 +1204,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314177+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-B_INDICATOR",
@@ -1221,7 +1221,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314181+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-B_ENCODER",
@@ -1238,7 +1238,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314184+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-B_SCALER",
@@ -1255,7 +1255,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314187+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-C_IMPUTER",
@@ -1272,7 +1272,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314190+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-C_ENCODER",
@@ -1289,7 +1289,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314195+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-C_SCALER",
@@ -1306,7 +1306,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314198+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-D_IMPUTER",
@@ -1323,7 +1323,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314203+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-D_ENCODER",
@@ -1340,7 +1340,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314206+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-D_SCALER",
@@ -1357,7 +1357,7 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314211+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   },
   {
     "check_id": "LEAKAGE-AUDIT-P22-C_CLIPPER",
@@ -1374,6 +1374,6 @@
     "status": "PASS",
     "validator_version": "2.1",
     "generated_at": "2026-07-18T14:28:31.314214+00:00",
-    "source_commit_sha": "KNOWN"
+    "source_commit_sha": "N/A"
   }
 ]

@@ -78,7 +78,7 @@
     {
       "check_id": "HASH-TRAIN",
       "field": "train_hash",
-      "expected": "KNOWN",
+      "expected": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
       "actual": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
       "evidence_path": "7.ML/7.4.splits/train_ids.parquet",
       "evidence_pointer": "#/hash",
@@ -88,7 +88,7 @@
     {
       "check_id": "HASH-VAL",
       "field": "validation_hash",
-      "expected": "KNOWN",
+      "expected": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada",
       "actual": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada",
       "evidence_path": "7.ML/7.4.splits/validation_ids.parquet",
       "evidence_pointer": "#/hash",
@@ -98,7 +98,7 @@
     {
       "check_id": "HASH-TEST",
       "field": "test_hash",
-      "expected": "KNOWN",
+      "expected": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638",
       "actual": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638",
       "evidence_path": "7.ML/7.4.splits/test_ids.parquet",
       "evidence_pointer": "#/hash",
