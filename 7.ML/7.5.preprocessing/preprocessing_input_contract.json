@@ -1,45 +1,138 @@
 {
   "data_version": "ml-ready-2026-07-17-v1",
   "split_version": "temporal-split-v1",
+  "source_dataset": "5.DATA/processed/ml_ready_dataset.parquet",
+  "source_dataset_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "source_commit_sha": "NOT_AVAILABLE",
   "checks": [
     {
+      "check_id": "INPUT-ROWS",
       "field": "rows",
       "expected": 586672,
       "actual": 586672,
       "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
-      "evidence_pointer": "df.shape[0]",
+      "evidence_pointer": "#/row_count",
+      "extraction_method": "dataframe_shape",
       "status": "PASS"
     },
     {
+      "check_id": "INPUT-COLS",
       "field": "columns",
       "expected": 20,
       "actual": 20,
       "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
-      "evidence_pointer": "df.shape[1]",
+      "evidence_pointer": "#/column_count",
+      "extraction_method": "dataframe_shape",
       "status": "PASS"
     },
     {
+      "check_id": "INPUT-IDENTIFIER",
       "field": "identifier",
       "expected": "track_id",
       "actual": "track_id",
       "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
-      "evidence_pointer": "df.columns",
+      "evidence_pointer": "#/columns",
+      "extraction_method": "column_check",
       "status": "PASS"
     },
     {
+      "check_id": "INPUT-TARGET",
       "field": "target",
       "expected": "target_popularity",
       "actual": "target_popularity",
       "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
-      "evidence_pointer": "df.columns",
+      "evidence_pointer": "#/columns",
+      "extraction_method": "column_check",
       "status": "PASS"
     },
     {
+      "check_id": "SPLIT-TRAIN",
       "field": "train_rows",
       "expected": 415524,
       "actual": 415524,
       "evidence_path": "7.ML/7.4.splits/train_ids.parquet",
-      "evidence_pointer": "len(train_ids)",
+      "evidence_pointer": "#/rows",
+      "extraction_method": "dataframe_shape",
+      "status": "PASS"
+    },
+    {
+      "check_id": "SPLIT-VAL",
+      "field": "validation_rows",
+      "expected": 85272,
+      "actual": 85272,
+      "evidence_path": "7.ML/7.4.splits/validation_ids.parquet",
+      "evidence_pointer": "#/rows",
+      "extraction_method": "dataframe_shape",
+      "status": "PASS"
+    },
+    {
+      "check_id": "SPLIT-TEST",
+      "field": "test_rows",
+      "expected": 85876,
+      "actual": 85876,
+      "evidence_path": "7.ML/7.4.splits/test_ids.parquet",
+      "evidence_pointer": "#/rows",
+      "extraction_method": "dataframe_shape",
+      "status": "PASS"
+    },
+    {
+      "check_id": "HASH-TRAIN",
+      "field": "train_hash",
+      "expected": "KNOWN",
+      "actual": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
+      "evidence_path": "7.ML/7.4.splits/train_ids.parquet",
+      "evidence_pointer": "#/hash",
+      "extraction_method": "sha256",
+      "status": "PASS"
+    },
+    {
+      "check_id": "HASH-VAL",
+      "field": "validation_hash",
+      "expected": "KNOWN",
+      "actual": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada",
+      "evidence_path": "7.ML/7.4.splits/validation_ids.parquet",
+      "evidence_pointer": "#/hash",
+      "extraction_method": "sha256",
+      "status": "PASS"
+    },
+    {
+      "check_id": "HASH-TEST",
+      "field": "test_hash",
+      "expected": "KNOWN",
+      "actual": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638",
+      "evidence_path": "7.ML/7.4.splits/test_ids.parquet",
+      "evidence_pointer": "#/hash",
+      "extraction_method": "sha256",
+      "status": "PASS"
+    },
+    {
+      "check_id": "YEARS-TRAIN",
+      "field": "train_years",
+      "expected": "1900-2004",
+      "actual": "1900-2004",
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "#/train_years",
+      "extraction_method": "min_max",
+      "status": "PASS"
+    },
+    {
+      "check_id": "YEARS-VAL",
+      "field": "validation_years",
+      "expected": "2005-2013",
+      "actual": "2005-2013",
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "#/val_years",
+      "extraction_method": "min_max",
+      "status": "PASS"
+    },
+    {
+      "check_id": "YEARS-TEST",
+      "field": "test_years",
+      "expected": "2014-2021",
+      "actual": "2014-2021",
+      "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "evidence_pointer": "#/test_years",
+      "extraction_method": "min_max",
       "status": "PASS"
     }
   ]

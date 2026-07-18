@@ -1,0 +1,24 @@
+[
+  {
+    "candidate_id": "P22-A",
+    "column": "tempo",
+    "strategy": "median",
+    "fitted_value": 114.995,
+    "fitted_on_split": "train",
+    "train_rows_seen": 415524,
+    "fit_timestamp": "2026-07-18T09:59:36.937839+00:00",
+    "source_data_version": "ml-ready-2026-07-17-v1",
+    "source_split_version": "temporal-split-v1"
+  },
+  {
+    "candidate_id": "P22-A",
+    "column": "time_signature",
+    "strategy": "most_frequent",
+    "fitted_value": 4,
+    "fitted_on_split": "train",
+    "train_rows_seen": 415524,
+    "fit_timestamp": "2026-07-18T09:59:36.946146+00:00",
+    "source_data_version": "ml-ready-2026-07-17-v1",
+    "source_split_version": "temporal-split-v1"
+  }
+]

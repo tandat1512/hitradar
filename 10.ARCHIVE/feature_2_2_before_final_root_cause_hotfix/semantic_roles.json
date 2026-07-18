@@ -1,0 +1,35 @@
+{
+  "continuous": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo"
+  ],
+  "categorical": [
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature"
+  ],
+  "binary": [
+    "explicit",
+    "mode"
+  ],
+  "identifier": "track_id",
+  "target": "target_popularity",
+  "input_feature_count": 18,
+  "excluded_from_X": [
+    "track_id",
+    "target_popularity"
+  ],
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1"
+}

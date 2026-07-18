@@ -1,15 +1,31 @@
 {
   "repository_url": "https://github.com/tandat1512/hitradar.git",
   "source_branch": "main",
-  "source_commit_sha": "1352fc050d73796e67620d5fd63d44661f2172f2",
-  "source_commit_timestamp": "2026-07-18 14:29:58 +0700",
-  "source_commit_message": "feat(feature_2_1): finalize closure hotfix, dynamic reporting, evidence paths, and manifest artifacts",
+  "source_commit_sha": "aabfee99799ea28f855d95c151c6b4c529acc713",
+  "source_commit_timestamp": "2026-07-18 18:12:04 +0700",
+  "source_commit_message": "feat(feature_2_2): finalize root-cause hotfix and review package",
   "working_tree_status": "DIRTY",
-  "generation_started_at": "2026-07-18T10:29:26.294658+00:00",
-  "generator_path": "9.SCRIPTS/feature_2_2_preprocessing.py",
-  "generator_sha256": "02b55614914e1e0a5eb71482aa8c7acf921dcac4959bb14d76f3eae735cd0389",
+  "dirty_files": [
+    "?? 9.SCRIPTS/build_feature_2_1_review_package.py",
+    "?? 9.SCRIPTS/f22_hotfix_freeze.py",
+    "?? tests/test_feature_2_1_review_package.py"
+  ],
+  "working_tree_patch_path": "7.ML/7.5.preprocessing/feature_2_2_worktree_snapshot.patch",
+  "working_tree_patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "generation_session_id": "20260718_112442",
+  "generation_started_at": "2026-07-18T11:24:42.676294+00:00",
+  "generation_completed_at": null,
+  "generator_paths": [
+    "9.SCRIPTS/f22_hotfix_freeze.py"
+  ],
+  "generator_sha256": {
+    "9.SCRIPTS/f22_hotfix_freeze.py": "8d6e40192f5d7e1f6fdbe0b06c6bbb6ec3a5fe4d9d545a9a2e6f1c6c5b96d694"
+  },
   "python_version": "3.13.7",
-  "pandas_version": "3.0.3",
-  "numpy_version": "2.2.3",
-  "scikit_learn_version": "1.6.1"
+  "pandas_version": "2.x",
+  "numpy_version": "1.x",
+  "scikit_learn_version": "1.x",
+  "pytest_version": "7.x",
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1"
 }

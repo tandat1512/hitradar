@@ -1,0 +1,7 @@
+{
+  "files": [
+    "preprocessor.joblib",
+    "output_schema.json",
+    "feature_names.json"
+  ]
+}

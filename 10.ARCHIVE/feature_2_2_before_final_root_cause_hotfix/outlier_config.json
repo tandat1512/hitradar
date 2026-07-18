@@ -1,0 +1,1 @@
+{"mode": "train_iqr", "columns": ["duration_min", "tempo", "loudness"]}

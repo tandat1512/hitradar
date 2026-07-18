@@ -1,1 +1,18 @@
-{"columns": ["duration_min", "tempo", "loudness"], "method": "iqr", "factor": 1.5}
+{
+  "strategy": "IQR_CLIPPING",
+  "target_features": [
+    "duration_min",
+    "tempo",
+    "loudness"
+  ],
+  "factor": 1.5,
+  "bounded_features": [
+    "danceability",
+    "energy",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence"
+  ]
+}

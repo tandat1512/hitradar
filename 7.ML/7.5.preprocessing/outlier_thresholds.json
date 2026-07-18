@@ -1,56 +1,74 @@
 [
   {
     "column": "duration_min",
-    "method": "TRAIN_IQR_CLIP",
+    "Q1": 2.8193,
+    "Q3": 4.4389,
+    "IQR": 1.6196000000000002,
+    "factor": 1.5,
     "lower_threshold": 0.3898999999999999,
     "upper_threshold": 6.8683000000000005,
     "train_row_count": 415524,
     "train_outlier_count": 17647,
-    "validation_outlier_count_before_transform": 2452,
-    "test_outlier_count_before_transform": 1953,
+    "validation_outlier_count": 2452,
+    "test_outlier_count": 1953,
+    "lower_outlier_count": 93,
+    "upper_outlier_count": 17554,
     "values_clipped_by_split": {
       "train": 17647,
       "validation": 2452,
       "test": 1953
     },
+    "post_transform_outlier_count": 0,
     "fitted_on_split": "train",
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "evidence_path": "7.ML/7.5.preprocessing/outlier_thresholds.json"
+    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02"
   },
   {
     "column": "tempo",
-    "method": "TRAIN_IQR_CLIP",
+    "Q1": 94.389,
+    "Q3": 135.074,
+    "IQR": 40.68500000000002,
+    "factor": 1.5,
     "lower_threshold": 33.36149999999997,
     "upper_threshold": 196.10150000000004,
     "train_row_count": 415524,
     "train_outlier_count": 4232,
-    "validation_outlier_count_before_transform": 773,
-    "test_outlier_count_before_transform": 620,
+    "validation_outlier_count": 773,
+    "test_outlier_count": 620,
+    "lower_outlier_count": 23,
+    "upper_outlier_count": 4209,
     "values_clipped_by_split": {
       "train": 4232,
       "validation": 773,
       "test": 620
     },
+    "post_transform_outlier_count": 0,
     "fitted_on_split": "train",
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "evidence_path": "7.ML/7.5.preprocessing/outlier_thresholds.json"
+    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02"
   },
   {
     "column": "loudness",
-    "method": "TRAIN_IQR_CLIP",
+    "Q1": -14.074,
+    "Q3": -7.74275,
+    "IQR": 6.33125,
+    "factor": 1.5,
     "lower_threshold": -23.570875,
     "upper_threshold": 1.7541249999999993,
     "train_row_count": 415524,
     "train_outlier_count": 10265,
-    "validation_outlier_count_before_transform": 444,
-    "test_outlier_count_before_transform": 797,
+    "validation_outlier_count": 444,
+    "test_outlier_count": 797,
+    "lower_outlier_count": 10231,
+    "upper_outlier_count": 34,
     "values_clipped_by_split": {
       "train": 10265,
       "validation": 444,
       "test": 797
     },
+    "post_transform_outlier_count": 0,
     "fitted_on_split": "train",
     "fit_input_hash": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
-    "evidence_path": "7.ML/7.5.preprocessing/outlier_thresholds.json"
+    "threshold_hash": "27c74b23e8b1812df1d85138e3077f59f6cc15ab67d91ac377ca5ecc8eb49d02"
   }
 ]

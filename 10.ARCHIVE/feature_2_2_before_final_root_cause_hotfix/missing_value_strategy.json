@@ -1,0 +1,17 @@
+{
+  "tempo": {
+    "imputation": "SimpleImputer(strategy='median')",
+    "fit_split": "train",
+    "indicator_candidate": "tempo_missing"
+  },
+  "time_signature": {
+    "imputation": "SimpleImputer(strategy='most_frequent')",
+    "fit_split": "train",
+    "indicator_candidate": "time_signature_missing"
+  },
+  "release_month": {
+    "imputation": "Explicit Category '__MISSING__'",
+    "fit_split": "N/A",
+    "indicator_candidate": "release_month_missing"
+  }
+}

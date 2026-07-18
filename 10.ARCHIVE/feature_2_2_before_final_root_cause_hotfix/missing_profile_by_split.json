@@ -1,0 +1,20 @@
+{
+  "tempo": {
+    "total_missing": 328,
+    "train_missing": 154,
+    "validation_missing": 34,
+    "test_missing": 140
+  },
+  "time_signature": {
+    "total_missing": 337,
+    "train_missing": 160,
+    "validation_missing": 36,
+    "test_missing": 141
+  },
+  "release_month": {
+    "total_missing": 136489,
+    "train_missing": 126895,
+    "validation_missing": 8455,
+    "test_missing": 1139
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "split_version": "temporal-split-v1",
+  "source_dataset_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "splits": {
+    "train": {
+      "rows": 415524,
+      "year_min": 1900,
+      "year_max": 2004,
+      "artifact_path": "7.ML/7.4.splits/train_ids.parquet",
+      "sha256": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9"
+    },
+    "validation": {
+      "rows": 85272,
+      "year_min": 2005,
+      "year_max": 2013,
+      "artifact_path": "7.ML/7.4.splits/validation_ids.parquet",
+      "sha256": "1a8fc721bd5162030dd6ce6dca226685406114c81be07cc595657fe32f508ada"
+    },
+    "test": {
+      "rows": 85876,
+      "year_min": 2014,
+      "year_max": 2021,
+      "artifact_path": "7.ML/7.4.splits/test_ids.parquet",
+      "sha256": "b2ba66ec1d9c2ced76d02d96ff1c922c044502f3a4e9c1c21741512304340638"
+    }
+  },
+  "checks": {
+    "train_validation_overlap": 0,
+    "train_test_overlap": 0,
+    "validation_test_overlap": 0,
+    "duplicate_train_ids": 0,
+    "duplicate_validation_ids": 0,
+    "duplicate_test_ids": 0,
+    "union_row_count": 586672,
+    "source_row_count": 586672,
+    "union_reconciles": true,
+    "chronology_valid": true
+  }
+}

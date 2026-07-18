@@ -1,0 +1,578 @@
+[
+  {
+    "original_path": "7.ML/7.5.preprocessing/encoder_categories.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/encoder_categories.json",
+    "size": 8642,
+    "sha256": "043e804a3781ebd049568504b7a65981972513b5a852c755e0c6536d960a0729",
+    "modified_time": "2026-07-18T17:31:41.497720",
+    "archive_timestamp": "2026-07-18T11:24:42.679559+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/encoding_config.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/encoding_config.json",
+    "size": 52,
+    "sha256": "cab655673fe42c50c0b8d9de349e3aa0b747d7a1e2c5e7a3550a6bd28cd888d4",
+    "modified_time": "2026-07-18T17:32:17.105066",
+    "archive_timestamp": "2026-07-18T11:24:42.680725+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/feature_2_2_closure_gate.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_closure_gate.json",
+    "size": 958,
+    "sha256": "0284af5777accf714d086730ee2939aeb845327b2b9b90600d62123b64bcb56f",
+    "modified_time": "2026-07-18T17:33:35.735745",
+    "archive_timestamp": "2026-07-18T11:24:42.682035+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/feature_2_2_report_manifest.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_report_manifest.json",
+    "size": 3820,
+    "sha256": "5aeb8bc909f198fdffd0119c164017a2a89ef49a46e7188852dc1af91f41a954",
+    "modified_time": "2026-07-18T17:33:35.735240",
+    "archive_timestamp": "2026-07-18T11:24:42.683536+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/feature_2_2_test_summary.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_test_summary.json",
+    "size": 757,
+    "sha256": "44e9d9454cda6a3c77dd769f935de589095b0c4866654b01cba1d3dd0141e11a",
+    "modified_time": "2026-07-18T17:32:37.188880",
+    "archive_timestamp": "2026-07-18T11:24:42.685415+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/imputer_statistics.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/imputer_statistics.json",
+    "size": 839,
+    "sha256": "8a41941cad345d1e87ce605a5504cbd86c7748038b776e4abbfa4db92b434684",
+    "modified_time": "2026-07-18T17:29:37.575798",
+    "archive_timestamp": "2026-07-18T11:24:42.686446+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/missing_profile_by_split.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/missing_profile_by_split.json",
+    "size": 419,
+    "sha256": "b06c20b5011cbebc062ef1a0d5ca8e1f28ed152ed5200b391506c43f56395635",
+    "modified_time": "2026-07-18T17:29:37.480413",
+    "archive_timestamp": "2026-07-18T11:24:42.687567+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/missing_value_strategy.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/missing_value_strategy.json",
+    "size": 491,
+    "sha256": "a698ad6efd320e70eb3a632d5c2b9509d289c17d32cab9448f43fa2731a1bc2a",
+    "modified_time": "2026-07-18T17:29:37.480927",
+    "archive_timestamp": "2026-07-18T11:24:42.688618+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/outlier_config.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_config.json",
+    "size": 82,
+    "sha256": "3966ce962d35cd9f294d3c17d3cd966264cf061f2f618e83b66083d7a00c600b",
+    "modified_time": "2026-07-18T17:32:17.104544",
+    "archive_timestamp": "2026-07-18T11:24:42.689644+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/outlier_profile_by_split.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_profile_by_split.json",
+    "size": 67,
+    "sha256": "bc8629508d2eecae7cdbbbf0bf234536e31a428fe3c17028d0f61223ba4d33a8",
+    "modified_time": "2026-07-18T17:32:17.105066",
+    "archive_timestamp": "2026-07-18T11:24:42.690627+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/outlier_thresholds.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_thresholds.json",
+    "size": 1902,
+    "sha256": "0ebb000fe4359b1e486600db75fbe5d257e2dde0530d2936f6bc8db39bd51319",
+    "modified_time": "2026-07-18T17:29:37.752302",
+    "archive_timestamp": "2026-07-18T11:24:42.691815+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/preprocessing_fit_audit.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_fit_audit.json",
+    "size": 2127,
+    "sha256": "0b65a495d82102d1d3ab181335e042f2367e230a7326b3713c82cc9efab6da6b",
+    "modified_time": "2026-07-18T17:31:41.496163",
+    "archive_timestamp": "2026-07-18T11:24:42.692719+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/preprocessing_input_contract.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_input_contract.json",
+    "size": 1275,
+    "sha256": "3414b49f54b09ad973e6630b8bcde8ed25f30414084553c157f60ad4217ed4bd",
+    "modified_time": "2026-07-18T17:29:27.248599",
+    "archive_timestamp": "2026-07-18T11:24:42.693954+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/preprocessing_validation_results.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_validation_results.json",
+    "size": 34005,
+    "sha256": "f893e6aed9b193dbff132c5c76f36f363ccd0b9ecae0bd17038af354fb3c6455",
+    "modified_time": "2026-07-18T17:31:06.658827",
+    "archive_timestamp": "2026-07-18T11:24:42.695123+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/pytest_feature_2_2.xml",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/pytest_feature_2_2.xml",
+    "size": 1371,
+    "sha256": "d33795d2725cf5e4f2f8af6dc99892b3e6a9cb2d69c10bdfae633a08744637c7",
+    "modified_time": "2026-07-18T17:32:18.036610",
+    "archive_timestamp": "2026-07-18T11:24:42.696231+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/report_source_map.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/report_source_map.json",
+    "size": 869,
+    "sha256": "754f113fc96a30edcc2d27a68364c7287f96efbcd74649b9879d0cb31e95fa34",
+    "modified_time": "2026-07-18T17:33:13.120171",
+    "archive_timestamp": "2026-07-18T11:24:42.697098+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/scaler_statistics.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/scaler_statistics.json",
+    "size": 7502,
+    "sha256": "dfe5dd1c8cd769cc348e41763ffc1ca6d738b3fadf970a4125f0267d43790131",
+    "modified_time": "2026-07-18T17:31:41.499284",
+    "archive_timestamp": "2026-07-18T11:24:42.698008+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/scaling_config.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/scaling_config.json",
+    "size": 34,
+    "sha256": "b41b79c504fd2ca74bb93409019200c18cbe6d797df83f4d3c6f11c672ff658f",
+    "modified_time": "2026-07-18T17:32:17.105585",
+    "archive_timestamp": "2026-07-18T11:24:42.698912+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/semantic_roles.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/semantic_roles.json",
+    "size": 1497,
+    "sha256": "783fc5f15bd2fe62832a9a7913a2fd4ff8092f1a0cf57a31c513bae8117b2007",
+    "modified_time": "2026-07-18T17:29:27.249127",
+    "archive_timestamp": "2026-07-18T11:24:42.700049+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/unknown_category_profile.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/unknown_category_profile.json",
+    "size": 2442,
+    "sha256": "43c9c52d63a1954ca0682cf216e878991d2a7d82490a65f09d7b42c47746b984",
+    "modified_time": "2026-07-18T17:29:37.824294",
+    "archive_timestamp": "2026-07-18T11:24:42.701003+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_a/feature_names.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_a/feature_names.json",
+    "size": 1791,
+    "sha256": "a09409a383bffd1b5d7e11d5e39de95539bf6a09068a0c5f5d85af5ad279457b",
+    "modified_time": "2026-07-18T17:31:12.995048",
+    "archive_timestamp": "2026-07-18T11:24:42.702259+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_a/output_schema.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_a/output_schema.json",
+    "size": 2533,
+    "sha256": "dd7921897d124dff309ebd79d2c7579d0dc3a1c22d6a0995fc365c9b201e6df2",
+    "modified_time": "2026-07-18T17:31:12.994529",
+    "archive_timestamp": "2026-07-18T11:24:42.703167+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_a/preprocessor.joblib",
+    "size": 6657,
+    "sha256": "25efcbeddfff6834106225bcc612f1d0045f709b25bd7bf0325ec77fd780a37f",
+    "modified_time": "2026-07-18T17:31:13.000345",
+    "archive_timestamp": "2026-07-18T11:24:42.704183+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_b/feature_names.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_b/feature_names.json",
+    "size": 1904,
+    "sha256": "00db1f282fc2164abd3763beac9a49438c2e09ed7c725271ae339f8fbbf61889",
+    "modified_time": "2026-07-18T17:31:23.527693",
+    "archive_timestamp": "2026-07-18T11:24:42.705278+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_b/output_schema.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_b/output_schema.json",
+    "size": 2652,
+    "sha256": "0a5a4da84b4d66ebd697fa89917cac23a63fc60a7ea904be33c41d3826947fbb",
+    "modified_time": "2026-07-18T17:31:23.526659",
+    "archive_timestamp": "2026-07-18T11:24:42.706583+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_b/preprocessor.joblib",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_b/preprocessor.joblib",
+    "size": 6800,
+    "sha256": "8541608976d6b97e245bd04bd03cb119e67ea409be63c658ab57d32e9687e3a8",
+    "modified_time": "2026-07-18T17:31:23.532431",
+    "archive_timestamp": "2026-07-18T11:24:42.707561+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_c/feature_names.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_c/feature_names.json",
+    "size": 1791,
+    "sha256": "a09409a383bffd1b5d7e11d5e39de95539bf6a09068a0c5f5d85af5ad279457b",
+    "modified_time": "2026-07-18T17:31:32.356913",
+    "archive_timestamp": "2026-07-18T11:24:42.708607+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_c/output_schema.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_c/output_schema.json",
+    "size": 2533,
+    "sha256": "294c84bcce2aec4e060189be587d02b96b901130af7d23703256bae1cec644e0",
+    "modified_time": "2026-07-18T17:31:32.356401",
+    "archive_timestamp": "2026-07-18T11:24:42.709525+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_c/preprocessor.joblib",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_c/preprocessor.joblib",
+    "size": 7190,
+    "sha256": "1bdd0bebe350ea330687c1b5b1ac4af7822826124f20094e64222aa7235c9fc5",
+    "modified_time": "2026-07-18T17:31:32.360656",
+    "archive_timestamp": "2026-07-18T11:24:42.710432+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_d/feature_names.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_d/feature_names.json",
+    "size": 516,
+    "sha256": "ab82b45d5cde703717e3ef1685419af22801bfe011267b64733b3c448406eb8a",
+    "modified_time": "2026-07-18T17:31:41.491450",
+    "archive_timestamp": "2026-07-18T11:24:42.711657+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_d/output_schema.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_d/output_schema.json",
+    "size": 1182,
+    "sha256": "933d1621ff145f98b4e3a299b6f2204c94eeeeaf3f914f6af223d3dc4630730b",
+    "modified_time": "2026-07-18T17:31:41.490937",
+    "archive_timestamp": "2026-07-18T11:24:42.712993+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/p22_d/preprocessor.joblib",
+    "size": 5643,
+    "sha256": "ac86ce5ce20eceac40efe128d37bd1cf5ab548647e7471255f426bf7ad8034ac",
+    "modified_time": "2026-07-18T17:31:41.495121",
+    "archive_timestamp": "2026-07-18T11:24:42.713947+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "7.ML/7.5.preprocessing/src/__pycache__/custom_transformers.cpython-313.pyc",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/src/__pycache__/custom_transformers.cpython-313.pyc",
+    "size": 6212,
+    "sha256": "23c773a8ef125064119d109e946819939263fa18ac9791f8962c007f46fd3058",
+    "modified_time": "2026-07-18T17:04:24.990806",
+    "archive_timestamp": "2026-07-18T11:24:42.739160+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
+    "size": 72358,
+    "sha256": "8d809c23eeb48e434e6cc9764a6c70702d56cd2951957db57b02ccf53cc0542a",
+    "modified_time": "2026-07-18T18:09:49.237352",
+    "archive_timestamp": "2026-07-18T11:24:42.740446+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\CANDIDATE_SCHEMA_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/CANDIDATE_SCHEMA_REPORT.md",
+    "size": 1690,
+    "sha256": "f51cc8535ee61328f2f5ba92993872e079ca501317a5d9303aa60dc82891bdc9",
+    "modified_time": "2026-07-18T17:33:13.126846",
+    "archive_timestamp": "2026-07-18T11:24:42.775844+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\CLOSURE_GATE_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/CLOSURE_GATE_REPORT.md",
+    "size": 2629,
+    "sha256": "e689831cb2eeb56da19143c7f66c4357811456b447685c9cf8b66a40fc7a08fe",
+    "modified_time": "2026-07-18T17:34:02.749465",
+    "archive_timestamp": "2026-07-18T11:24:42.821373+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\COLUMN_CLASSIFICATION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/COLUMN_CLASSIFICATION_REPORT.md",
+    "size": 2950,
+    "sha256": "02c937e1e10cf5fa530cd2dc0443d96128318f9b6733dea52969515896cbfb87",
+    "modified_time": "2026-07-18T17:33:13.123149",
+    "archive_timestamp": "2026-07-18T11:24:42.848944+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\encoder_categories.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/encoder_categories.json",
+    "size": 93,
+    "sha256": "4c7cfb11ed2c808a8c12aee6c60ad172bf384f19ca1bcbaa4133e6989c473320",
+    "modified_time": "2026-07-18T17:06:46.726513",
+    "archive_timestamp": "2026-07-18T11:24:42.890916+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\encoding_config.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/encoding_config.json",
+    "size": 58,
+    "sha256": "850fd27a76d4112167196d36132591874dd391dbe258aa547959d825233ba05b",
+    "modified_time": "2026-07-18T17:06:46.728033",
+    "archive_timestamp": "2026-07-18T11:24:42.906377+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\ENCODING_STRATEGY_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/ENCODING_STRATEGY_REPORT.md",
+    "size": 3641,
+    "sha256": "c0738c970a80f08f14e79cb333bc60aeb6fd2dbd1fef7f7a7b1e33a3df4c2cda",
+    "modified_time": "2026-07-18T17:33:13.125317",
+    "archive_timestamp": "2026-07-18T11:24:42.929519+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\feature_2_2_closure_gate.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_closure_gate.json",
+    "size": 159,
+    "sha256": "47cd651ade0463364652d06dd521b6c2a42ba4e8e0b8170da8a906e25ea1ea7c",
+    "modified_time": "2026-07-18T17:06:38.817248",
+    "archive_timestamp": "2026-07-18T11:24:42.964430+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\FEATURE_2_2_COMPLETION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/FEATURE_2_2_COMPLETION_REPORT.md",
+    "size": 3128,
+    "sha256": "d3c0fdc99679e68fd2067979ef2261883f61e33239b8b2a4da1036664d150709",
+    "modified_time": "2026-07-18T17:34:02.749465",
+    "archive_timestamp": "2026-07-18T11:24:43.032079+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\feature_2_2_report_manifest.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_report_manifest.json",
+    "size": 56,
+    "sha256": "bb679747191b26737fc88d65ceade7dc466b286f85a1b81b55e423a41bd76fc1",
+    "modified_time": "2026-07-18T17:06:38.817248",
+    "archive_timestamp": "2026-07-18T11:24:43.042576+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\feature_2_2_test_summary.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_test_summary.json",
+    "size": 79,
+    "sha256": "72e8c52daf79b35d5bb4f7a3505d1688c020dd39439fa8afdc1f44b4f8184840",
+    "modified_time": "2026-07-18T17:06:38.815721",
+    "archive_timestamp": "2026-07-18T11:24:43.053326+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\imputer_statistics.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/imputer_statistics.json",
+    "size": 709,
+    "sha256": "9af36562fe96e61d0032bb885d9ee538678337d3e6f5396e506ef517289726aa",
+    "modified_time": "2026-07-18T17:06:46.731076",
+    "archive_timestamp": "2026-07-18T11:24:43.088575+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\LEAKAGE_SAFETY_AUDIT_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/LEAKAGE_SAFETY_AUDIT_REPORT.md",
+    "size": 1745,
+    "sha256": "b6edd1808f05839744ddeada6f540ad4545b1e4c888a05463837ceb7625e78de",
+    "modified_time": "2026-07-18T17:33:13.128373",
+    "archive_timestamp": "2026-07-18T11:24:43.119031+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\missing_profile_by_split.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/missing_profile_by_split.json",
+    "size": 419,
+    "sha256": "b06c20b5011cbebc062ef1a0d5ca8e1f28ed152ed5200b391506c43f56395635",
+    "modified_time": "2026-07-18T17:06:46.732596",
+    "archive_timestamp": "2026-07-18T11:24:43.129813+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\missing_value_strategy.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/missing_value_strategy.json",
+    "size": 479,
+    "sha256": "7533e54834133972066802d6d1cad0af582c0f7a157f54019dfb145af0e31396",
+    "modified_time": "2026-07-18T17:06:46.734112",
+    "archive_timestamp": "2026-07-18T11:24:43.139940+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\MISSING_VALUE_STRATEGY_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/MISSING_VALUE_STRATEGY_REPORT.md",
+    "size": 1470,
+    "sha256": "f3c34ee2a44657b18d2d71724fccfaf52dbfac9083a1c517719e6031519a5955",
+    "modified_time": "2026-07-18T17:33:13.124263",
+    "archive_timestamp": "2026-07-18T11:24:43.196740+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\outlier_config.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_config.json",
+    "size": 71,
+    "sha256": "9d3616aa5cdd89af2745a56c9ae8afbb755772116e35ed0fd838317b211a2e77",
+    "modified_time": "2026-07-18T17:37:44.903996",
+    "archive_timestamp": "2026-07-18T11:24:43.198861+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\OUTLIER_PREPROCESSING_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/OUTLIER_PREPROCESSING_REPORT.md",
+    "size": 1577,
+    "sha256": "4042a5dbfdcbc40d8026fff20044a688f74c7357c467c6c561752d6c90f450d4",
+    "modified_time": "2026-07-18T17:33:13.124798",
+    "archive_timestamp": "2026-07-18T11:24:43.229425+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\outlier_profile_by_split.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_profile_by_split.json",
+    "size": 2,
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "modified_time": "2026-07-18T17:06:46.737087",
+    "archive_timestamp": "2026-07-18T11:24:43.231370+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\outlier_thresholds.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_thresholds.json",
+    "size": 1141,
+    "sha256": "2c0c0d83854e6c4b1cc608cc91d340e2e11167bb9cfc867c31f797792973a500",
+    "modified_time": "2026-07-18T17:06:46.737087",
+    "archive_timestamp": "2026-07-18T11:24:43.251906+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\preprocessing_fit_audit.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_fit_audit.json",
+    "size": 1727,
+    "sha256": "b69fd8112853134e56553222afa3c00789f5fc3367cefbe663ca971292c96d31",
+    "modified_time": "2026-07-18T17:06:46.738605",
+    "archive_timestamp": "2026-07-18T11:24:43.266976+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\preprocessing_input_contract.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_input_contract.json",
+    "size": 951,
+    "sha256": "259db352a6563d898981d378e8c46195f5b49ea7885a9de1a0b0e77cce312f28",
+    "modified_time": "2026-07-18T17:06:46.738605",
+    "archive_timestamp": "2026-07-18T11:24:43.284551+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\PREPROCESSING_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/PREPROCESSING_REPORT.md",
+    "size": 765,
+    "sha256": "0f1db350a626604e41255a81530eaa07d66cbce6c3e45d2d82a867d6449c7d6c",
+    "modified_time": "2026-07-18T17:18:39.618214",
+    "archive_timestamp": "2026-07-18T11:24:43.302198+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\PREPROCESSING_VALIDATION_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/PREPROCESSING_VALIDATION_REPORT.md",
+    "size": 8526,
+    "sha256": "118e77e689d6b48fc8318bca264aea7260c14185984f78df901d1580ebbc9eb1",
+    "modified_time": "2026-07-18T17:33:13.128908",
+    "archive_timestamp": "2026-07-18T11:24:43.314158+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\pytest_feature_2_2.xml",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/pytest_feature_2_2.xml",
+    "size": 1469,
+    "sha256": "9c100bb8d8942c4ec92a1204d390266c3435ee88245236aac4c708c1ac517893",
+    "modified_time": "2026-07-18T17:06:46.745744",
+    "archive_timestamp": "2026-07-18T11:24:43.341646+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\scaler_statistics.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/scaler_statistics.json",
+    "size": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "modified_time": "2026-07-18T17:06:46.740127",
+    "archive_timestamp": "2026-07-18T11:24:43.344161+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\scaling_config.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/scaling_config.json",
+    "size": 54,
+    "sha256": "bc50c9ac72a198f7ee32e0f4ae32b9c332e756a2a13bd58886cb3677b47d019d",
+    "modified_time": "2026-07-18T17:06:46.740127",
+    "archive_timestamp": "2026-07-18T11:24:43.352904+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\SCALING_STRATEGY_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/SCALING_STRATEGY_REPORT.md",
+    "size": 3464,
+    "sha256": "e8ee8a9028c26845f7d7bbb17154e07cb0ad694f2fe768f0a45733ce1930507c",
+    "modified_time": "2026-07-18T17:33:13.125317",
+    "archive_timestamp": "2026-07-18T11:24:43.361529+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\semantic_roles.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/semantic_roles.json",
+    "size": 659,
+    "sha256": "0f8f4f55d631d1ad4bb4df6f2856cf2dd2379a42e5ee2739ed44f3848226d6be",
+    "modified_time": "2026-07-18T17:06:46.741660",
+    "archive_timestamp": "2026-07-18T11:24:43.370512+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\TEST_COVERAGE_REPORT.md",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/TEST_COVERAGE_REPORT.md",
+    "size": 1457,
+    "sha256": "fe9437f9f71ec9098091802a9cd7c0c7fb00c3aee9db5f8bf031ceccfec8cb2b",
+    "modified_time": "2026-07-18T17:33:13.129436",
+    "archive_timestamp": "2026-07-18T11:24:43.407529+00:00",
+    "reason": "Root cause hotfix archiving"
+  },
+  {
+    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\unknown_category_profile.json",
+    "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/unknown_category_profile.json",
+    "size": 1962,
+    "sha256": "df0424f371a150453d74d50224a5651c50d1573006780d5bd3a15d69d063cb64",
+    "modified_time": "2026-07-18T17:06:46.744701",
+    "archive_timestamp": "2026-07-18T11:24:43.440500+00:00",
+    "reason": "Root cause hotfix archiving"
+  }
+]

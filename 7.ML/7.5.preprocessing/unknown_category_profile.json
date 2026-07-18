@@ -1,103 +1,101 @@
-[
-  {
-    "column": "release_month",
-    "train_categories": [
-      "1.0",
-      "2.0",
-      "3.0",
-      "4.0",
-      "5.0",
-      "6.0",
-      "7.0",
-      "8.0",
-      "9.0",
-      "10.0",
-      "11.0",
-      "12.0"
-    ],
-    "validation_only_categories": [],
-    "test_only_categories": [],
-    "unknown_count_validation": 0,
-    "unknown_count_test": 0,
-    "handling_strategy": "handle_unknown='ignore' / unknown_value=-1",
-    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
-  },
-  {
-    "column": "decade",
-    "train_categories": [
-      "1920",
-      "1990",
-      "1960",
-      "1930",
-      "1900",
-      "2000",
-      "1970",
-      "1940",
-      "1980",
-      "1950"
-    ],
-    "validation_only_categories": [
-      "2010"
-    ],
-    "test_only_categories": [
-      "2010",
-      "2020"
-    ],
-    "unknown_count_validation": 39587,
-    "unknown_count_test": 85876,
-    "handling_strategy": "handle_unknown='ignore' / unknown_value=-1",
-    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
-  },
-  {
-    "column": "release_precision",
-    "train_categories": [
-      "year",
-      "month",
-      "day"
-    ],
-    "validation_only_categories": [],
-    "test_only_categories": [],
-    "unknown_count_validation": 0,
-    "unknown_count_test": 0,
-    "handling_strategy": "handle_unknown='ignore' / unknown_value=-1",
-    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
-  },
-  {
-    "column": "key",
-    "train_categories": [
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11"
-    ],
-    "validation_only_categories": [],
-    "test_only_categories": [],
-    "unknown_count_validation": 0,
-    "unknown_count_test": 0,
-    "handling_strategy": "handle_unknown='ignore' / unknown_value=-1",
-    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
-  },
-  {
-    "column": "time_signature",
-    "train_categories": [
-      "1.0",
-      "3.0",
-      "4.0",
-      "5.0"
-    ],
-    "validation_only_categories": [],
-    "test_only_categories": [],
-    "unknown_count_validation": 0,
-    "unknown_count_test": 0,
-    "handling_strategy": "handle_unknown='ignore' / unknown_value=-1",
-    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
+{
+  "profiles": [
+    {
+      "column": "release_month",
+      "validation_only_categories": [],
+      "test_only_categories": [],
+      "unknown_row_count_validation": 0,
+      "unknown_row_count_test": 0,
+      "unknown_ratio_validation": 0.0,
+      "unknown_ratio_test": 0.0,
+      "handling": "P22-A: ignore (all-zero), P22-D: -1",
+      "transform_success": true,
+      "generalization_warning": "LOW"
+    },
+    {
+      "column": "decade",
+      "validation_only_categories": [
+        "2010"
+      ],
+      "test_only_categories": [
+        "2010",
+        "2020"
+      ],
+      "unknown_row_count_validation": 39587,
+      "unknown_row_count_test": 85876,
+      "unknown_ratio_validation": 0.4642438315038934,
+      "unknown_ratio_test": 1.0,
+      "handling": "P22-A: ignore (all-zero), P22-D: -1",
+      "transform_success": true,
+      "generalization_warning": "LOW"
+    },
+    {
+      "column": "release_precision",
+      "validation_only_categories": [],
+      "test_only_categories": [],
+      "unknown_row_count_validation": 0,
+      "unknown_row_count_test": 0,
+      "unknown_ratio_validation": 0.0,
+      "unknown_ratio_test": 0.0,
+      "handling": "P22-A: ignore (all-zero), P22-D: -1",
+      "transform_success": true,
+      "generalization_warning": "LOW"
+    },
+    {
+      "column": "key",
+      "validation_only_categories": [],
+      "test_only_categories": [],
+      "unknown_row_count_validation": 0,
+      "unknown_row_count_test": 0,
+      "unknown_ratio_validation": 0.0,
+      "unknown_ratio_test": 0.0,
+      "handling": "P22-A: ignore (all-zero), P22-D: -1",
+      "transform_success": true,
+      "generalization_warning": "LOW"
+    },
+    {
+      "column": "time_signature",
+      "validation_only_categories": [
+        NaN
+      ],
+      "test_only_categories": [
+        NaN
+      ],
+      "unknown_row_count_validation": 36,
+      "unknown_row_count_test": 141,
+      "unknown_ratio_validation": 0.00042217844075429216,
+      "unknown_ratio_test": 0.0016419022777027343,
+      "handling": "P22-A: ignore (all-zero), P22-D: -1",
+      "transform_success": true,
+      "generalization_warning": "LOW"
+    }
+  ],
+  "binary_handling": {
+    "explicit": {
+      "mode": "passthrough",
+      "input_dtype": "int64",
+      "output_dtype": "int64",
+      "missing_count": 0,
+      "strategy": "none",
+      "candidate_mapping": [
+        "P22-A",
+        "P22-B",
+        "P22-C",
+        "P22-D"
+      ]
+    },
+    "mode": {
+      "mode": "passthrough",
+      "input_dtype": "int64",
+      "output_dtype": "int64",
+      "missing_count": 0,
+      "strategy": "none",
+      "candidate_mapping": [
+        "P22-A",
+        "P22-B",
+        "P22-C",
+        "P22-D"
+      ]
+    }
   }
-]
+}

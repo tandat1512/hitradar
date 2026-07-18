@@ -1,1 +1,36 @@
-{"candidates": ["P22-A", "P22-B", "P22-C", "P22-D"]}
+{
+  "candidates": {
+    "P22-A": {
+      "encoder_class": "OneHotEncoder",
+      "encoded_columns": [
+        "release_month",
+        "decade",
+        "release_precision",
+        "key",
+        "time_signature"
+      ],
+      "parameters": {
+        "handle_unknown": "ignore",
+        "drop": "first"
+      },
+      "fit_split": "train",
+      "binary_handling": "passthrough"
+    },
+    "P22-D": {
+      "encoder_class": "OrdinalEncoder",
+      "encoded_columns": [
+        "release_month",
+        "decade",
+        "release_precision",
+        "key",
+        "time_signature"
+      ],
+      "parameters": {
+        "handle_unknown": "use_encoded_value",
+        "unknown_value": -1
+      },
+      "fit_split": "train",
+      "binary_handling": "passthrough"
+    }
+  }
+}

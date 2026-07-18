@@ -1,0 +1,46 @@
+[
+  {
+    "candidate_id": "P22-A",
+    "component_name": "P22-A",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "44d42254c33f5f11db0ad2b5e2ef2db8c8fa0c445bf65a5a56f25e6531f7ac5e",
+    "fitted_statistics_hash": "629b7eb83bc4e14650e547b340c83578bc88e53d6a88ea754fcc30452468f855",
+    "validation_fit_called": false,
+    "test_fit_called": false
+  },
+  {
+    "candidate_id": "P22-B",
+    "component_name": "P22-B",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "44d42254c33f5f11db0ad2b5e2ef2db8c8fa0c445bf65a5a56f25e6531f7ac5e",
+    "fitted_statistics_hash": "22b7ce60ca36c4318648c5dc44ce818b710d5cac33130787bb1914b473e82d9a",
+    "validation_fit_called": false,
+    "test_fit_called": false
+  },
+  {
+    "candidate_id": "P22-C",
+    "component_name": "P22-C",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "44d42254c33f5f11db0ad2b5e2ef2db8c8fa0c445bf65a5a56f25e6531f7ac5e",
+    "fitted_statistics_hash": "c8b719b7e627f2c303ab03c5f112adf9b4e36a9cbcdb1ba6a2c952ab359e071e",
+    "validation_fit_called": false,
+    "test_fit_called": false
+  },
+  {
+    "candidate_id": "P22-D",
+    "component_name": "P22-D",
+    "component_type": "ColumnTransformer",
+    "fit_split": "train",
+    "fit_row_count": 415524,
+    "fit_input_hash": "44d42254c33f5f11db0ad2b5e2ef2db8c8fa0c445bf65a5a56f25e6531f7ac5e",
+    "fitted_statistics_hash": "6aa6a2219be9ae9fedf5aebd68c8a554901ba09313f6d7cd5320db00a0d5ea5f",
+    "validation_fit_called": false,
+    "test_fit_called": false
+  }
+]

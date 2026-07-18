@@ -1,0 +1,20 @@
+[
+  "continuous__duration_min",
+  "continuous__release_year",
+  "continuous__danceability",
+  "continuous__energy",
+  "continuous__loudness",
+  "continuous__speechiness",
+  "continuous__acousticness",
+  "continuous__instrumentalness",
+  "continuous__liveness",
+  "continuous__valence",
+  "continuous__tempo",
+  "categorical__release_month",
+  "categorical__decade",
+  "categorical__release_precision",
+  "categorical__key",
+  "categorical__time_signature",
+  "binary__explicit",
+  "binary__mode"
+]

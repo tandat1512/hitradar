@@ -1,1 +1,6 @@
-{"candidates": ["P22-A", "P22-C"]}
+{
+  "P22-A": "StandardScaler",
+  "P22-B": "StandardScaler (shared_with=P22-A)",
+  "P22-C": "RobustScaler",
+  "P22-D": "NONE"
+}

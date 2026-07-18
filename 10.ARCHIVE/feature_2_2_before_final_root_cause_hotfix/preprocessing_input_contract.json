@@ -1,0 +1,26 @@
+{
+  "source_dataset": "5.DATA/processed/ml_ready_dataset.parquet",
+  "source_full_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "data_version": "ml-ready-2026-07-17-v1",
+  "split_version": "temporal-split-v1",
+  "split_artifact_paths": {
+    "train": "7.ML/7.4.splits/train_ids.parquet",
+    "validation": "7.ML/7.4.splits/validation_ids.parquet",
+    "test": "7.ML/7.4.splits/test_ids.parquet"
+  },
+  "split_full_hashes": {
+    "train": "d3684ebb6ba7744cc3bcf6454bf475215451927c2e26d7e734e303f9d4973bda",
+    "validation": "d292e4009b798e3e383b83c51f01ac5d88076621c2348ae9da63af3aab0525e9",
+    "test": "f446764fc87d1c73a5c85095a769b69a41b2a9c8a22270890e9142ba93d70e53"
+  },
+  "row_counts": {
+    "dataset": 586672,
+    "train": 415524,
+    "validation": 85272,
+    "test": 85876
+  },
+  "feature_count": 18,
+  "identifier": "track_id",
+  "target": "target_popularity",
+  "source_commit": ""
+}

@@ -1,28 +1,193 @@
 {
-  "expected_continuous": [
-    "duration_min",
-    "release_year",
-    "danceability",
-    "energy",
-    "loudness",
-    "speechiness",
-    "acousticness",
-    "instrumentalness",
-    "liveness",
-    "valence",
-    "tempo"
+  "features": [
+    {
+      "column": "duration_min",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/duration_min",
+      "status": "PASS"
+    },
+    {
+      "column": "release_year",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "int64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/release_year",
+      "status": "PASS"
+    },
+    {
+      "column": "danceability",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/danceability",
+      "status": "PASS"
+    },
+    {
+      "column": "energy",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/energy",
+      "status": "PASS"
+    },
+    {
+      "column": "loudness",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/loudness",
+      "status": "PASS"
+    },
+    {
+      "column": "speechiness",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/speechiness",
+      "status": "PASS"
+    },
+    {
+      "column": "acousticness",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/acousticness",
+      "status": "PASS"
+    },
+    {
+      "column": "instrumentalness",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/instrumentalness",
+      "status": "PASS"
+    },
+    {
+      "column": "liveness",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/liveness",
+      "status": "PASS"
+    },
+    {
+      "column": "valence",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/valence",
+      "status": "PASS"
+    },
+    {
+      "column": "tempo",
+      "expected_role": "continuous",
+      "actual_role": "continuous",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/tempo",
+      "status": "PASS"
+    },
+    {
+      "column": "release_month",
+      "expected_role": "categorical",
+      "actual_role": "categorical",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/release_month",
+      "status": "PASS"
+    },
+    {
+      "column": "decade",
+      "expected_role": "categorical",
+      "actual_role": "categorical",
+      "actual_dtype": "int64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/decade",
+      "status": "PASS"
+    },
+    {
+      "column": "release_precision",
+      "expected_role": "categorical",
+      "actual_role": "categorical",
+      "actual_dtype": "str",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/release_precision",
+      "status": "PASS"
+    },
+    {
+      "column": "key",
+      "expected_role": "categorical",
+      "actual_role": "categorical",
+      "actual_dtype": "int64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/key",
+      "status": "PASS"
+    },
+    {
+      "column": "time_signature",
+      "expected_role": "categorical",
+      "actual_role": "categorical",
+      "actual_dtype": "float64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/time_signature",
+      "status": "PASS"
+    },
+    {
+      "column": "explicit",
+      "expected_role": "binary",
+      "actual_role": "binary",
+      "actual_dtype": "bool",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/explicit",
+      "status": "PASS"
+    },
+    {
+      "column": "mode",
+      "expected_role": "binary",
+      "actual_role": "binary",
+      "actual_dtype": "int64",
+      "in_X": true,
+      "source_path": "5.DATA/processed/ml_ready_dataset.parquet",
+      "source_pointer": "#/dtypes/mode",
+      "status": "PASS"
+    }
   ],
-  "expected_categorical": [
-    "release_month",
-    "decade",
-    "release_precision",
-    "key",
-    "time_signature"
-  ],
-  "expected_binary": [
-    "explicit",
-    "mode"
-  ],
+  "input_feature_count": 18,
+  "role_overlap_count": 0,
+  "missing_feature_count": 0,
+  "extra_feature_count": 0,
+  "duplicate_feature_count": 0,
+  "identifier_present_in_X": false,
+  "target_present_in_X": false,
   "actual_dataset_columns": [
     "track_id",
     "target_popularity",
@@ -45,35 +210,5 @@
     "tempo",
     "time_signature"
   ],
-  "missing_features": [],
-  "extra_features": [],
-  "input_feature_count": 18,
-  "continuous": [
-    "duration_min",
-    "release_year",
-    "danceability",
-    "energy",
-    "loudness",
-    "speechiness",
-    "acousticness",
-    "instrumentalness",
-    "liveness",
-    "valence",
-    "tempo"
-  ],
-  "categorical": [
-    "release_month",
-    "decade",
-    "release_precision",
-    "key",
-    "time_signature"
-  ],
-  "binary": [
-    "explicit",
-    "mode"
-  ],
-  "identifier": "track_id",
-  "target": "target_popularity",
-  "evidence_path": "5.DATA/processed/ml_ready_dataset.parquet",
   "validation_status": "PASS"
 }

@@ -1,0 +1,103 @@
+{
+  "P22-A": {
+    "name": "BASELINE_OHE_STANDARD",
+    "intended_models": [
+      "Ridge"
+    ],
+    "exact_transformers": [
+      "SimpleImputer(median)",
+      "SimpleImputer(most_frequent)",
+      "SimpleImputer(constant='__MISSING__')",
+      "IQR_CLIP",
+      "OneHotEncoder",
+      "StandardScaler",
+      "passthrough"
+    ],
+    "columns": "ALL",
+    "missing_strategy": "Impute",
+    "indicators": "No",
+    "outlier_strategy": "IQR",
+    "encoder": "OHE",
+    "scaler": "Standard",
+    "output_mode": "Numpy ndarray",
+    "artifact_paths": [
+      "7.ML/7.5.preprocessing/p22_a/preprocessor.joblib"
+    ]
+  },
+  "P22-B": {
+    "name": "INDICATOR_OHE_STANDARD",
+    "intended_models": [
+      "Ridge ablation candidate"
+    ],
+    "exact_transformers": [
+      "SimpleImputer(median)",
+      "SimpleImputer(most_frequent)",
+      "SimpleImputer(constant='__MISSING__')",
+      "MissingIndicator",
+      "IQR_CLIP",
+      "OneHotEncoder",
+      "StandardScaler",
+      "passthrough"
+    ],
+    "columns": "ALL",
+    "missing_strategy": "Impute + Indicator",
+    "indicators": "Yes",
+    "outlier_strategy": "IQR",
+    "encoder": "OHE",
+    "scaler": "Standard",
+    "output_mode": "Numpy ndarray",
+    "artifact_paths": [
+      "7.ML/7.5.preprocessing/p22_b/preprocessor.joblib"
+    ]
+  },
+  "P22-C": {
+    "name": "ROBUST_CLIPPED_OHE",
+    "intended_models": [
+      "Ridge robust candidate"
+    ],
+    "exact_transformers": [
+      "SimpleImputer(median)",
+      "SimpleImputer(most_frequent)",
+      "SimpleImputer(constant='__MISSING__')",
+      "IQR_CLIP",
+      "OneHotEncoder",
+      "RobustScaler",
+      "passthrough"
+    ],
+    "columns": "ALL",
+    "missing_strategy": "Impute",
+    "indicators": "No",
+    "outlier_strategy": "IQR",
+    "encoder": "OHE",
+    "scaler": "Robust",
+    "output_mode": "Numpy ndarray",
+    "artifact_paths": [
+      "7.ML/7.5.preprocessing/p22_c/preprocessor.joblib"
+    ]
+  },
+  "P22-D": {
+    "name": "TREE_ORDINAL_UNSCALED",
+    "intended_models": [
+      "HistGradientBoosting",
+      "XGBoost"
+    ],
+    "exact_transformers": [
+      "SimpleImputer(median)",
+      "SimpleImputer(most_frequent)",
+      "SimpleImputer(constant='__MISSING__')",
+      "IQR_CLIP",
+      "OrdinalEncoder",
+      "passthrough"
+    ],
+    "columns": "ALL",
+    "missing_strategy": "Impute",
+    "indicators": "No",
+    "outlier_strategy": "IQR",
+    "encoder": "Ordinal",
+    "scaler": "NONE",
+    "output_mode": "Numpy ndarray",
+    "artifact_paths": [
+      "7.ML/7.5.preprocessing/p22_d/preprocessor.joblib"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "column": "duration_min",
+    "method": "TRAIN_IQR_CLIP",
+    "lower_threshold": 0.3898999999999999,
+    "upper_threshold": 6.8683000000000005,
+    "train_min": 0.0557,
+    "train_max": 93.687,
+    "train_outlier_count": 17647,
+    "validation_outlier_count_before_transform": 2452,
+    "test_outlier_count_before_transform": 1953,
+    "fitted_on_split": "train"
+  },
+  {
+    "column": "tempo",
+    "method": "TRAIN_IQR_CLIP",
+    "lower_threshold": 33.36149999999997,
+    "upper_threshold": 196.10150000000004,
+    "train_min": 30.506,
+    "train_max": 246.381,
+    "train_outlier_count": 4232,
+    "validation_outlier_count_before_transform": 773,
+    "test_outlier_count_before_transform": 620,
+    "fitted_on_split": "train"
+  },
+  {
+    "column": "loudness",
+    "method": "TRAIN_IQR_CLIP",
+    "lower_threshold": -23.570875,
+    "upper_threshold": 1.7541249999999993,
+    "train_min": -60.0,
+    "train_max": 5.376,
+    "train_outlier_count": 10265,
+    "validation_outlier_count_before_transform": 444,
+    "test_outlier_count_before_transform": 797,
+    "fitted_on_split": "train"
+  }
+]

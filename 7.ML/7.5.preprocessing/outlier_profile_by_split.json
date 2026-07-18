@@ -1,1 +1,65 @@
-{"train_outliers": 0, "validation_outliers": 0, "test_outliers": 0}
+{
+  "profiles": [
+    {
+      "column": "duration_min",
+      "train": 17647,
+      "validation": 2452,
+      "test": 1953
+    },
+    {
+      "column": "tempo",
+      "train": 4232,
+      "validation": 773,
+      "test": 620
+    },
+    {
+      "column": "loudness",
+      "train": 10265,
+      "validation": 444,
+      "test": 797
+    },
+    {
+      "column": "danceability",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "column": "energy",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "column": "speechiness",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "column": "acousticness",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "column": "instrumentalness",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "column": "liveness",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    {
+      "column": "valence",
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    }
+  ],
+  "release_year_1900_silently_clipped": false
+}

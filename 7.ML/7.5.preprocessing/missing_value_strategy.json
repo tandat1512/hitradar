@@ -1,17 +1,50 @@
 {
-  "tempo": {
-    "imputation": "median",
-    "fit_split": "train",
-    "evidence_path": "7.ML/7.5.preprocessing/imputer_statistics.json"
-  },
-  "time_signature": {
-    "imputation": "most_frequent",
-    "fit_split": "train",
-    "evidence_path": "7.ML/7.5.preprocessing/imputer_statistics.json"
-  },
-  "release_month": {
-    "imputation": "explicit_missing_category",
-    "fit_split": "N/A",
-    "evidence_path": "7.ML/7.5.preprocessing/unknown_category_profile.json"
-  }
+  "strategies": [
+    {
+      "column": "tempo",
+      "strategy": "median",
+      "statistic_source": "train",
+      "transformer_fit_split": "train",
+      "constant_value": null,
+      "applies_to_candidates": [
+        "P22-A",
+        "P22-B",
+        "P22-C",
+        "P22-D"
+      ],
+      "indicator_enabled_by_candidate": [
+        "P22-B"
+      ]
+    },
+    {
+      "column": "time_signature",
+      "strategy": "most_frequent",
+      "statistic_source": "train",
+      "transformer_fit_split": "train",
+      "constant_value": null,
+      "applies_to_candidates": [
+        "P22-A",
+        "P22-B",
+        "P22-C",
+        "P22-D"
+      ],
+      "indicator_enabled_by_candidate": []
+    },
+    {
+      "column": "release_month",
+      "strategy": "explicit_missing_category",
+      "statistic_source": "NOT_APPLICABLE",
+      "transformer_fit_split": "NOT_APPLICABLE",
+      "constant_value": "__MISSING__",
+      "applies_to_candidates": [
+        "P22-A",
+        "P22-B",
+        "P22-C",
+        "P22-D"
+      ],
+      "indicator_enabled_by_candidate": [
+        "P22-B"
+      ]
+    }
+  ]
 }
