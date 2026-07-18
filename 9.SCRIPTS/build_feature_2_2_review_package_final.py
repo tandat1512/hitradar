@@ -222,7 +222,7 @@ def main():
     lines.append("| Candidate | Feature | Scaler | Mean/Center | Scale | Variance | Config | Fit rows | Fit split | Source | Status |")
     lines.append("|---|---|---|---:|---:|---:|---|---:|---|---|---|")
     for s in scal_s:
-        lines.append(f"| {s.get('candidate_id', 'NOT_AVAILABLE')} | {s.get('column', 'NOT_AVAILABLE')} | {s.get('scaler_type', 'NOT_AVAILABLE')} | {s.get('mean', s.get('center', 'NOT_AVAILABLE'))} | {s.get('scale', 'NOT_AVAILABLE')} | {s.get('var', 'NOT_AVAILABLE')} | NOT_AVAILABLE | {s.get('fit_row_count', 'NOT_AVAILABLE')} | {s.get('fit_split', 'NOT_AVAILABLE')} | scaler_stats | PASS |")
+        lines.append(f"| {s.get('candidate_id', 'NOT_AVAILABLE')} | {s.get('column', 'NOT_AVAILABLE')} | {s.get('scaler', 'NOT_AVAILABLE')} | {s.get('mean_', s.get('center_', 'NOT_AVAILABLE'))} | {s.get('scale_', 'NOT_AVAILABLE')} | {s.get('var_', 'NOT_AVAILABLE')} | {s.get('with_mean', 'NOT_AVAILABLE')} | {s.get('fit_rows', 'NOT_AVAILABLE')} | {s.get('fit_split', 'NOT_AVAILABLE')} | scaler_stats | PASS |")
     # P22-D explicitly NOT_APPLICABLE
     lines.append("| P22-D | all | NONE | NOT_APPLICABLE | NOT_APPLICABLE | NOT_APPLICABLE | NONE | NOT_APPLICABLE | NOT_APPLICABLE | scaler_stats | NOT_APPLICABLE |")
     lines.append("")
@@ -232,7 +232,7 @@ def main():
     lines.append("| Candidate | Name | Numeric pipeline | Missing strategy | Indicators | Outlier strategy | Encoder | Scaler | Intended models |")
     lines.append("|---|---|---|---|---|---|---|---|---|")
     for cand_id, c in (cand if isinstance(cand, dict) else {}).items():
-        lines.append(f"| {cand_id} | {c.get('name', 'NOT_AVAILABLE')} | {c.get('numeric_pipeline', 'NOT_AVAILABLE')} | {c.get('missing_strategy', 'NOT_AVAILABLE')} | {c.get('indicators', 'NOT_AVAILABLE')} | {c.get('outlier_strategy', 'NOT_AVAILABLE')} | {c.get('encoder', 'NOT_AVAILABLE')} | {c.get('scaler', 'NOT_AVAILABLE')} | {', '.join(c.get('intended_models', []))} |")
+        lines.append(f"| {cand_id} | {c.get('name', 'NOT_AVAILABLE')} | {', '.join(c.get('exact_transformers', []))} | {c.get('missing_strategy', 'NOT_AVAILABLE')} | {c.get('indicators', 'NOT_AVAILABLE')} | {c.get('outlier_strategy', 'NOT_AVAILABLE')} | {c.get('encoder', 'NOT_AVAILABLE')} | {c.get('scaler', 'NOT_AVAILABLE')} | {', '.join(c.get('intended_models', []))} |")
     lines.append("")
 
     # 16. Reconciliation
@@ -276,8 +276,8 @@ def main():
     lines.append(f"| Failed | {ts.get('combined_summary', {}).get('failed', 'NOT_AVAILABLE')} |")
     lines.append("| Errors | 0 |")
     lines.append("| Skipped | 0 |")
-    lines.append("| Duration | NOT_AVAILABLE |")
-    lines.append("| Pytest version | NOT_AVAILABLE |")
+    lines.append(f"| Duration | {ts.get('core_tests', {}).get('duration_seconds', 'NOT_AVAILABLE')} |")
+    lines.append(f"| Pytest version | {ts.get('pytest_version', 'NOT_AVAILABLE')} |")
     lines.append("")
     lines.append("| Test file | Testcase | Result | Duration |")
     lines.append("|---|---|---|---:|")
@@ -297,8 +297,8 @@ def main():
     lines.append(f"| Failed | 0 |")
     lines.append("| Errors | 0 |")
     lines.append("| Skipped | 0 |")
-    lines.append("| Duration | NOT_AVAILABLE |")
-    lines.append("| Pytest version | NOT_AVAILABLE |")
+    lines.append(f"| Duration | {ts.get('reporting_tests', {}).get('duration_seconds', 'NOT_AVAILABLE')} |")
+    lines.append(f"| Pytest version | {ts.get('pytest_version', 'NOT_AVAILABLE')} |")
     lines.append("")
     lines.append("| Test file | Testcase | Result | Duration |")
     lines.append("|---|---|---|---:|")
@@ -318,8 +318,8 @@ def main():
     lines.append(f"| Failed | 0 |")
     lines.append("| Errors | 0 |")
     lines.append("| Skipped | 0 |")
-    lines.append("| Duration | NOT_AVAILABLE |")
-    lines.append("| Pytest version | NOT_AVAILABLE |")
+    lines.append(f"| Duration | {ts.get('delivery_tests', {}).get('duration_seconds', 'NOT_AVAILABLE')} |")
+    lines.append(f"| Pytest version | {ts.get('pytest_version', 'NOT_AVAILABLE')} |")
     lines.append("")
     lines.append("| Test file | Testcase | Result | Duration |")
     lines.append("|---|---|---|---:|")
@@ -352,7 +352,7 @@ def main():
     lines.append("| Report | Field | Report value | Artifact value | Source | Match | Status |")
     lines.append("|---|---|---|---|---|---|---|")
     for c in c_pre.get("checks", []):
-         lines.append(f"| {c.get('report')} | {c.get('field')} | NOT_AVAILABLE | NOT_AVAILABLE | NOT_AVAILABLE | {c.get('status')} | PASS |")
+        lines.append(f"| {c.get('report', 'NOT_AVAILABLE')} | {c.get('field', 'NOT_AVAILABLE')} | {c.get('report_value', 'NOT_AVAILABLE')} | {c.get('artifact_value', 'NOT_AVAILABLE')} | {c.get('source', 'NOT_AVAILABLE')} | {c.get('match', 'NOT_AVAILABLE')} | {c.get('status', 'NOT_AVAILABLE')} |")
     lines.append("")
 
     # 23. Manifest
