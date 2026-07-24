@@ -1,0 +1,21 @@
+{
+  "contract_id": "F26-INPUT-FROM-F25",
+  "source_feature": "2.5",
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "feature_set_id": "FS23-SELECTED",
+  "raw_input_feature_count": 18,
+  "selected_feature_count": 31,
+  "target": "target_popularity",
+  "identifier": "track_id",
+  "test_prediction_artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\predictions\\final_test_predictions.parquet",
+  "test_rows": 85876,
+  "test_mae": 17.646684646606445,
+  "test_rmse": 21.01337842313573,
+  "test_r2": 0.06962639093399048,
+  "explainability_owner": "Feature 2.6",
+  "shap_status": "NOT_STARTED",
+  "model_selection_locked": true,
+  "test_metrics_must_not_change_model_selection": true,
+  "created_at": "2026-07-21T22:32:22.880242",
+  "git_commit": "564c47218fbe2e71dfafab95e7f4193478f571a8"
+}

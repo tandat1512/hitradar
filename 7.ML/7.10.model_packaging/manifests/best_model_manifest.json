@@ -1,0 +1,14 @@
+{
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_class": "XGBoost",
+  "source_champion_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+  "source_champion_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "packaging_method": "EXTRACT_AND_SERIALIZE",
+  "packaged_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\models\\best_model.joblib",
+  "packaged_hash": "4b5859268e7ea024daacc1d27a8f59f5c45480a29d3598c7304a4e3cb3e3c1fd",
+  "fitted_state": true,
+  "model_matrix_width": 49,
+  "feature_set": "FS23-SELECTED",
+  "source_commit": "564c47218fbe2e71dfafab95e7f4193478f571a8",
+  "created_at": "2026-07-23T16:14:15.967847+00:00"
+}

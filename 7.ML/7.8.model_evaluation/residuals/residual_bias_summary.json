@@ -1,0 +1,12 @@
+{
+  "underprediction_count": 58237,
+  "underprediction_rate": 0.6781522194792492,
+  "overprediction_count": 27639,
+  "overprediction_rate": 0.32184778052075086,
+  "exact_count": 0,
+  "mean_underprediction": 16.591569528140226,
+  "mean_overprediction": -19.869873232346176,
+  "mean_residual": 4.856535101093279,
+  "median_residual": 8.830482482910156,
+  "bias_direction": "UNDER"
+}

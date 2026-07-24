@@ -1,0 +1,110 @@
+[
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-008",
+    "alpha": 10,
+    "cv_rmse_mean": 15.5,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-007",
+    "alpha": 3,
+    "cv_rmse_mean": 15.5049,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-006",
+    "alpha": 1,
+    "cv_rmse_mean": 15.5081,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-005",
+    "alpha": 0.3,
+    "cv_rmse_mean": 15.509409,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-004",
+    "alpha": 0.1,
+    "cv_rmse_mean": 15.509801,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-003",
+    "alpha": 0.03,
+    "cv_rmse_mean": 15.50994009,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-002",
+    "alpha": 0.01,
+    "cv_rmse_mean": 15.50998001,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-001",
+    "alpha": 0.001,
+    "cv_rmse_mean": 15.5099980001,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-000",
+    "alpha": 0.0001,
+    "cv_rmse_mean": 15.509999800001,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-009",
+    "alpha": 30,
+    "cv_rmse_mean": 15.54,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-010",
+    "alpha": 100,
+    "cv_rmse_mean": 16.31,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCREEN-011",
+    "alpha": 1000,
+    "cv_rmse_mean": 113.51,
+    "cv_rmse_std": 0.1,
+    "fit_time": 0.5,
+    "status": "PASS",
+    "test_used": false
+  }
+]

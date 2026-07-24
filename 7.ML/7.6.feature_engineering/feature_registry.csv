@@ -1,0 +1,34 @@
+feature_name,feature_group,baseline_or_engineered,source_columns,formula,dtype,semantic_role,fit_required,fit_split,learned_parameters,missing_handling,encoding_requirement,scaling_requirement,leakage_risk,selected_for_modeling,exclusion_reason,version,status
+duration_min,baseline,baseline,['duration_min'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+release_year,baseline,baseline,['release_year'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+danceability,baseline,baseline,['danceability'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+energy,baseline,baseline,['energy'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+loudness,baseline,baseline,['loudness'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+speechiness,baseline,baseline,['speechiness'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+acousticness,baseline,baseline,['acousticness'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+instrumentalness,baseline,baseline,['instrumentalness'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+liveness,baseline,baseline,['liveness'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+valence,baseline,baseline,['valence'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+tempo,baseline,baseline,['tempo'],none,float64,continuous,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+release_month,baseline,baseline,['release_month'],none,float64,categorical,False,N/A,{},impute,OneHotEncoder,StandardScaler,none,True,,1.0,ACTIVE
+decade,baseline,baseline,['decade'],none,float64,categorical,False,N/A,{},impute,OneHotEncoder,StandardScaler,none,True,,1.0,ACTIVE
+release_precision,baseline,baseline,['release_precision'],none,float64,categorical,False,N/A,{},impute,OneHotEncoder,StandardScaler,none,True,,1.0,ACTIVE
+key,baseline,baseline,['key'],none,float64,categorical,False,N/A,{},impute,OneHotEncoder,StandardScaler,none,True,,1.0,ACTIVE
+time_signature,baseline,baseline,['time_signature'],none,float64,categorical,False,N/A,{},impute,OneHotEncoder,StandardScaler,none,True,,1.0,ACTIVE
+explicit,baseline,baseline,['explicit'],none,float64,binary,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+mode,baseline,baseline,['mode'],none,float64,binary,False,N/A,{},impute,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+release_month_sin,time,engineered,['release_month'],sin(2π × release_month / 12),float64,continuous,False,N/A,{},set to 0 when missing,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+release_month_cos,time,engineered,['release_month'],cos(2π × release_month / 12),float64,continuous,False,N/A,{},set to 0 when missing,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+year_in_decade,time,engineered,['release_year'],release_year % 10,int64,continuous,False,N/A,{},none,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+duration_log,duration,engineered,['duration_min'],"log1p(max(duration_min, 0))",float64,continuous,False,N/A,{},propagate,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+duration_squared,duration,engineered,['duration_min'],duration_min ** 2,float64,continuous,False,N/A,{},propagate,passthrough,StandardScaler,none,True,,1.0,ACTIVE
+duration_bucket,duration,engineered,['duration_min'],"bucketize based on Q25, Q50, Q75",category,categorical,True,train,"{'q25': 2.8193, 'q50': 3.5173, 'q75': 4.4389}",assign 'short',OneHotEncoder,none,low,False,categorical bucket does not improve RMSE,1.0,REJECTED
+long_track_flag,duration,engineered,['duration_min'],duration_min > Q75,int64,binary,True,train,{'threshold': 4.4389},set to 0,passthrough,none,low,False,does not improve RMSE,1.0,REJECTED
+energy_danceability,audio_interaction,engineered,"['energy', 'danceability']",energy * danceability,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+energy_valence,audio_interaction,engineered,"['energy', 'valence']",energy * valence,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+danceability_valence,audio_interaction,engineered,"['danceability', 'valence']",danceability * valence,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+acousticness_instrumentalness,audio_interaction,engineered,"['acousticness', 'instrumentalness']",acousticness * instrumentalness,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+energy_liveness,audio_interaction,engineered,"['energy', 'liveness']",energy * liveness,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+speechiness_explicit,audio_interaction,engineered,"['speechiness', 'explicit']",speechiness * explicit,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+tempo_danceability,audio_interaction,engineered,"['tempo', 'danceability']",tempo * danceability,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE
+loudness_energy,audio_interaction,engineered,"['loudness', 'energy']",loudness * energy,float64,continuous,False,N/A,{},fillna(0),passthrough,StandardScaler,none,True,,1.0,ACTIVE

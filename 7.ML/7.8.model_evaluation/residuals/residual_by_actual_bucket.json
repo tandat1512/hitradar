@@ -1,0 +1,37 @@
+{
+  "B0_VERY_LOW": {
+    "rows": 17110,
+    "mean_residual": -27.80312036700266,
+    "median_residual": -30.268728256225586,
+    "residual_std": 10.137846278033198,
+    "MAE": 28.029066979389448
+  },
+  "B1_LOW": {
+    "rows": 14771,
+    "mean_residual": -3.505675933201419,
+    "median_residual": -2.923809051513672,
+    "residual_std": 6.884677428220976,
+    "MAE": 5.868582185786302
+  },
+  "B2_MEDIUM": {
+    "rows": 37832,
+    "mean_residual": 12.554972684088456,
+    "median_residual": 12.585155487060547,
+    "residual_std": 6.561526069841514,
+    "MAE": 12.67685258378436
+  },
+  "B3_HIGH": {
+    "rows": 15405,
+    "mean_residual": 28.317963004677143,
+    "median_residual": 27.827239990234375,
+    "residual_std": 6.331192753923063,
+    "MAE": 28.317963004677143
+  },
+  "B4_VERY_HIGH": {
+    "rows": 758,
+    "mean_residual": 43.97835139674687,
+    "median_residual": 43.91444206237793,
+    "residual_std": 5.668442037240462,
+    "MAE": 43.97835139674687
+  }
+}

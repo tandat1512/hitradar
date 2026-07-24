@@ -1,0 +1,7 @@
+{
+  "data_version": "1.0.0",
+  "version_assignment_reason": "First packaged release based on ml_ready_dataset.parquet",
+  "processed_dataset_id": "ml_ready_dataset",
+  "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+  "source_manifest_hash": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770"
+}

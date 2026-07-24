@@ -1,0 +1,11 @@
+{
+  "raw": 36.584362,
+  "expected_clipped": 36.584362,
+  "actual_clipped": 36.584362,
+  "clipped_match": true,
+  "expected_display": 37,
+  "actual_display": 37,
+  "display_match": true,
+  "clipped_in_range": true,
+  "is_valid": true
+}

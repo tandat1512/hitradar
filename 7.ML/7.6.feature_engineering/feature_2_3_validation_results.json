@@ -1,0 +1,275 @@
+{
+  "validation_timestamp": "2026-07-19T19:41:49.552475",
+  "total_checks": 22,
+  "passed": 22,
+  "failed": 0,
+  "warnings": 0,
+  "checks": [
+    {
+      "check_id": "BASELINE-COUNT-18",
+      "expected": 18,
+      "actual": 18,
+      "evidence_path": "baseline_feature_set.json",
+      "evidence_pointer": "#/feature_count",
+      "status": "PASS",
+      "message": "Baseline feature count: 18"
+    },
+    {
+      "check_id": "BASELINE-NO-ID",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "baseline_feature_set.json",
+      "evidence_pointer": "#/features",
+      "status": "PASS",
+      "message": "Identifier 'track_id' in features: False"
+    },
+    {
+      "check_id": "BASELINE-NO-TARGET",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "baseline_feature_set.json",
+      "evidence_pointer": "#/features",
+      "status": "PASS",
+      "message": "Target 'target_popularity' in features: False"
+    },
+    {
+      "check_id": "BASELINE-LOCKED",
+      "expected": "LOCKED",
+      "actual": "LOCKED",
+      "evidence_path": "baseline_feature_set.json",
+      "evidence_pointer": "#/status",
+      "status": "PASS",
+      "message": "Baseline status: LOCKED"
+    },
+    {
+      "check_id": "BASELINE-HASH-STABLE",
+      "expected": "823ced641e09acf862ea3d186a92e35a6a1456aa4f4285f3aefa22e5f7b69e6c",
+      "actual": "823ced641e09acf862ea3d186a92e35a6a1456aa4f4285f3aefa22e5f7b69e6c",
+      "evidence_path": "baseline_feature_set.json",
+      "evidence_pointer": "#/feature_list_sha256",
+      "status": "PASS",
+      "message": "Hash match: True"
+    },
+    {
+      "check_id": "TRAIN-VAL-SCHEMA-MATCH",
+      "expected": [
+        "duration_min",
+        "release_year",
+        "danceability",
+        "energy",
+        "loudness",
+        "speechiness",
+        "acousticness",
+        "instrumentalness",
+        "liveness",
+        "valence",
+        "tempo",
+        "release_month",
+        "decade",
+        "release_precision",
+        "key",
+        "time_signature",
+        "explicit",
+        "mode",
+        "release_month_sin",
+        "release_month_cos",
+        "year_in_decade",
+        "duration_log",
+        "duration_squared",
+        "energy_danceability",
+        "energy_valence",
+        "danceability_valence",
+        "acousticness_instrumentalness",
+        "energy_liveness",
+        "speechiness_explicit",
+        "tempo_danceability",
+        "loudness_energy"
+      ],
+      "actual": [
+        "duration_min",
+        "release_year",
+        "danceability",
+        "energy",
+        "loudness",
+        "speechiness",
+        "acousticness",
+        "instrumentalness",
+        "liveness",
+        "valence",
+        "tempo",
+        "release_month",
+        "decade",
+        "release_precision",
+        "key",
+        "time_signature",
+        "explicit",
+        "mode",
+        "release_month_sin",
+        "release_month_cos",
+        "year_in_decade",
+        "duration_log",
+        "duration_squared",
+        "energy_danceability",
+        "energy_valence",
+        "danceability_valence",
+        "acousticness_instrumentalness",
+        "energy_liveness",
+        "speechiness_explicit",
+        "tempo_danceability",
+        "loudness_energy"
+      ],
+      "evidence_path": "train_engineered_schema.json, validation_engineered_schema.json",
+      "evidence_pointer": "#/features",
+      "status": "PASS",
+      "message": "Schema match: True"
+    },
+    {
+      "check_id": "TIME-FEATURES-VALID",
+      "expected": "experiments T0-T3 present",
+      "actual": "T0:True, T3:True",
+      "evidence_path": "time_feature_ablation_results.json",
+      "evidence_pointer": "#/",
+      "status": "PASS",
+      "message": "Time experiments complete: True"
+    },
+    {
+      "check_id": "DURATION-THRESHOLDS-TRAIN-ONLY",
+      "expected": "q25, q50, q75 from train",
+      "actual": {
+        "q25": 2.8193,
+        "q50": 3.5173,
+        "q75": 4.4389
+      },
+      "evidence_path": "duration_thresholds.json",
+      "evidence_pointer": "#/",
+      "status": "PASS",
+      "message": "Thresholds from train: True"
+    },
+    {
+      "check_id": "AUDIO-FEATURES-VALID",
+      "expected": "experiments A0-A9 present",
+      "actual": "A0:True, A9:True",
+      "evidence_path": "audio_interaction_ablation_results.json",
+      "evidence_pointer": "#/",
+      "status": "PASS",
+      "message": "Audio experiments complete: True"
+    },
+    {
+      "check_id": "MOOD-CLUSTER-TRAIN-ONLY-OR-NA",
+      "expected": "NOT_APPLICABLE_OPTIONAL or train-only KMeans",
+      "actual": "NOT_APPLICABLE_OPTIONAL",
+      "evidence_path": "mood_cluster_status.json",
+      "evidence_pointer": "#/status",
+      "status": "PASS",
+      "message": "Mood cluster status: NOT_APPLICABLE_OPTIONAL"
+    },
+    {
+      "check_id": "NO-TARGET-DERIVED-FEATURE",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "feature_registry.json",
+      "evidence_pointer": "#/features",
+      "status": "PASS",
+      "message": "Target in feature formula: False"
+    },
+    {
+      "check_id": "NO-TEST-ACCESS",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "baseline_metrics.json",
+      "evidence_pointer": "#/test_used",
+      "status": "PASS",
+      "message": "Test used: False"
+    },
+    {
+      "check_id": "NO-UNEXPECTED-NAN",
+      "expected": 0,
+      "actual": 0,
+      "evidence_path": "train_engineered_schema.json",
+      "evidence_pointer": "#/nan_count",
+      "status": "PASS",
+      "message": "NaN count in train: 0"
+    },
+    {
+      "check_id": "NO-INF",
+      "expected": 0,
+      "actual": 0,
+      "evidence_path": "validation_engineered_schema.json",
+      "evidence_pointer": "#/inf_count",
+      "status": "PASS",
+      "message": "Inf count in validation: 0"
+    },
+    {
+      "check_id": "NO-DUPLICATE-FEATURE-NAMES",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "selected_feature_set.json",
+      "evidence_pointer": "#/selected_features",
+      "status": "PASS",
+      "message": "Duplicate features: False"
+    },
+    {
+      "check_id": "ABLATION-COMPLETE",
+      "expected": "all required experiments",
+      "actual": "7/7",
+      "evidence_path": "feature_ablation_results.json",
+      "evidence_pointer": "#/",
+      "status": "PASS",
+      "message": "Ablation experiments: True"
+    },
+    {
+      "check_id": "SELECTION-TRAIN-ONLY",
+      "expected": "train_only_temporal_cv, test_used=False",
+      "actual": "train_only_temporal_cv, test_used=False",
+      "evidence_path": "feature_selection_results.json",
+      "evidence_pointer": "#/feature_selection_method, #/test_used",
+      "status": "PASS",
+      "message": "Selection method: train_only_temporal_cv, test_used: False"
+    },
+    {
+      "check_id": "SELECTED-SET-LOCKED",
+      "expected": "LOCKED",
+      "actual": "LOCKED",
+      "evidence_path": "selected_feature_set.json",
+      "evidence_pointer": "#/status",
+      "status": "PASS",
+      "message": "Selected set status: LOCKED"
+    },
+    {
+      "check_id": "REGISTRY-COMPLETE",
+      "expected": 33,
+      "actual": 33,
+      "evidence_path": "feature_registry.json",
+      "evidence_pointer": "#/features",
+      "status": "PASS",
+      "message": "Registry count: 33 (expected: 33)"
+    },
+    {
+      "check_id": "PIPELINE-SAVE-LOAD",
+      "expected": "save/load works",
+      "actual": "transform:True, fit:True",
+      "evidence_path": "feature_engineering_pipeline.joblib",
+      "evidence_pointer": "joblib.load",
+      "status": "PASS",
+      "message": "Pipeline methods: transform=True, fit=True"
+    },
+    {
+      "check_id": "FEATURE-ORDER-STABLE",
+      "expected": "consistent order",
+      "actual": "31 features",
+      "evidence_path": "feature_2_4_input_contract.json",
+      "evidence_pointer": "#/selected_feature_order",
+      "status": "PASS",
+      "message": "Feature order count: 31"
+    },
+    {
+      "check_id": "FEATURE-2-4-CONTRACT-COMPLETE",
+      "expected": "all required fields, test deferred",
+      "actual": "fields:True, test:True",
+      "evidence_path": "feature_2_4_input_contract.json",
+      "evidence_pointer": "#/",
+      "status": "PASS",
+      "message": "Contract complete: True, test deferred: True"
+    }
+  ]
+}

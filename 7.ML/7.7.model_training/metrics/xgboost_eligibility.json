@@ -1,0 +1,10 @@
+{
+  "xgboost_eligible": true,
+  "dependency_available": true,
+  "fresh_training": true,
+  "screening_configs": 12,
+  "full_cv_finalists": 2,
+  "early_stopping_governance_valid": true,
+  "external_validation_count": 1,
+  "test_accessed": false
+}

@@ -1,0 +1,6 @@
+{
+  "Linear": "coefficients",
+  "Ridge": "coefficients",
+  "RandomForest": "feature_importances_",
+  "XGBoost": "feature_importance"
+}

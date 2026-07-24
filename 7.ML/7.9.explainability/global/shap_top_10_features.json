@@ -1,0 +1,188 @@
+{
+  "transformed_top_10": [
+    {
+      "rank": 1,
+      "transformed_feature": "release_year",
+      "mean_abs_shap": 12.293187842174314,
+      "importance_share": 0.5189669941466156
+    },
+    {
+      "rank": 2,
+      "transformed_feature": "speechiness_explicit",
+      "mean_abs_shap": 1.190173181589274,
+      "importance_share": 0.05024413573542639
+    },
+    {
+      "rank": 3,
+      "transformed_feature": "acousticness",
+      "mean_abs_shap": 1.1718594692184625,
+      "importance_share": 0.04947100736687258
+    },
+    {
+      "rank": 4,
+      "transformed_feature": "decade",
+      "mean_abs_shap": 0.9563124212406561,
+      "importance_share": 0.04037151218121752
+    },
+    {
+      "rank": 5,
+      "transformed_feature": "duration_min",
+      "mean_abs_shap": 0.8656784824268352,
+      "importance_share": 0.03654532621564477
+    },
+    {
+      "rank": 6,
+      "transformed_feature": "loudness",
+      "mean_abs_shap": 0.5875666044827732,
+      "importance_share": 0.024804605485913178
+    },
+    {
+      "rank": 7,
+      "transformed_feature": "release_month",
+      "mean_abs_shap": 0.5072333680282827,
+      "importance_share": 0.021413272107777596
+    },
+    {
+      "rank": 8,
+      "transformed_feature": "speechiness",
+      "mean_abs_shap": 0.5049239960354924,
+      "importance_share": 0.02131578007748802
+    },
+    {
+      "rank": 9,
+      "transformed_feature": "tempo",
+      "mean_abs_shap": 0.48127292794003995,
+      "importance_share": 0.02031733086517346
+    },
+    {
+      "rank": 10,
+      "transformed_feature": "danceability",
+      "mean_abs_shap": 0.4724103135725274,
+      "importance_share": 0.019943188340253323
+    }
+  ],
+  "selected_top_10": [
+    {
+      "rank": 1,
+      "selected_feature": "release_year",
+      "mean_abs_shap": 12.293187842174296,
+      "importance_share": 0.5253413859262486
+    },
+    {
+      "rank": 2,
+      "selected_feature": "speechiness_explicit",
+      "mean_abs_shap": 1.1901731815892733,
+      "importance_share": 0.0508612767278576
+    },
+    {
+      "rank": 3,
+      "selected_feature": "acousticness",
+      "mean_abs_shap": 1.1718594692184636,
+      "importance_share": 0.05007865214244866
+    },
+    {
+      "rank": 4,
+      "selected_feature": "decade",
+      "mean_abs_shap": 0.9563124212406565,
+      "importance_share": 0.04086738925679631
+    },
+    {
+      "rank": 5,
+      "selected_feature": "duration_min",
+      "mean_abs_shap": 0.865678482426835,
+      "importance_share": 0.03699420683741937
+    },
+    {
+      "rank": 6,
+      "selected_feature": "loudness",
+      "mean_abs_shap": 0.5875666044827752,
+      "importance_share": 0.025109276640514266
+    },
+    {
+      "rank": 7,
+      "selected_feature": "release_month",
+      "mean_abs_shap": 0.5072333680282827,
+      "importance_share": 0.021676288036032013
+    },
+    {
+      "rank": 8,
+      "selected_feature": "speechiness",
+      "mean_abs_shap": 0.504923996035494,
+      "importance_share": 0.02157759852612729
+    },
+    {
+      "rank": 9,
+      "selected_feature": "tempo",
+      "mean_abs_shap": 0.48127292794004045,
+      "importance_share": 0.020566885515684585
+    },
+    {
+      "rank": 10,
+      "selected_feature": "danceability",
+      "mean_abs_shap": 0.4724103135725268,
+      "importance_share": 0.020188147455668413
+    }
+  ],
+  "raw_family_top_10": [
+    {
+      "rank": 1,
+      "raw_feature_family": "release_year",
+      "mean_abs_shap": 12.18761634156239,
+      "importance_share": 0.5325901217753971
+    },
+    {
+      "rank": 2,
+      "raw_feature_family": "speechiness×explicit",
+      "mean_abs_shap": 1.1901731815892733,
+      "importance_share": 0.05200971723689683
+    },
+    {
+      "rank": 3,
+      "raw_feature_family": "acousticness",
+      "mean_abs_shap": 1.1718594692184636,
+      "importance_share": 0.05120942109789983
+    },
+    {
+      "rank": 4,
+      "raw_feature_family": "release_month",
+      "mean_abs_shap": 0.9569280068930115,
+      "importance_share": 0.04181706983862133
+    },
+    {
+      "rank": 5,
+      "raw_feature_family": "decade",
+      "mean_abs_shap": 0.9563124212406565,
+      "importance_share": 0.041790169185666505
+    },
+    {
+      "rank": 6,
+      "raw_feature_family": "duration_min",
+      "mean_abs_shap": 0.9479571841439826,
+      "importance_share": 0.04142505129730595
+    },
+    {
+      "rank": 7,
+      "raw_feature_family": "loudness",
+      "mean_abs_shap": 0.5875666044827752,
+      "importance_share": 0.025676240592302856
+    },
+    {
+      "rank": 8,
+      "raw_feature_family": "speechiness",
+      "mean_abs_shap": 0.504923996035494,
+      "importance_share": 0.022064817680451373
+    },
+    {
+      "rank": 9,
+      "raw_feature_family": "tempo",
+      "mean_abs_shap": 0.48127292794004045,
+      "importance_share": 0.021031282911710775
+    },
+    {
+      "rank": 10,
+      "raw_feature_family": "danceability",
+      "mean_abs_shap": 0.4724103135725268,
+      "importance_share": 0.02064399299931455
+    }
+  ]
+}

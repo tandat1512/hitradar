@@ -1,0 +1,30 @@
+[
+  {
+    "Model": "RandomForest",
+    "Val_RMSE": 14.5,
+    "Val_MAE": 8.5,
+    "Val_R2": 0.3,
+    "RunID": "EXP24-RF-BEST-001"
+  },
+  {
+    "Model": "Ridge",
+    "Val_RMSE": 15.4,
+    "Val_MAE": 9.3,
+    "Val_R2": 0.11,
+    "RunID": "EXP24-RIDGE-BEST-001"
+  },
+  {
+    "Model": "Linear",
+    "Val_RMSE": 15.8,
+    "Val_MAE": 9.8,
+    "Val_R2": 0.08,
+    "RunID": "EXP24-LINEAR-FS31-001"
+  },
+  {
+    "Model": "Dummy",
+    "Val_RMSE": 16.7,
+    "Val_MAE": 10.2,
+    "Val_R2": -0.01,
+    "RunID": "EXP24-DUMMY-MEAN-001"
+  }
+]

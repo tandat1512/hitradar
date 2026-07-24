@@ -1,0 +1,84 @@
+{
+  "phase": "5/5",
+  "audit_timestamp": "2026-07-23T10:00:00.000000",
+  "phase_1": {
+    "f25_gate_valid": true,
+    "champion_lock": {
+      "declared": "EXP24-XGB-FINAL-001",
+      "actual": "EXP24-XGB-FINAL-001",
+      "hash_declared": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+      "hash_actual": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+      "evidence": "champion_explainability_lock.json",
+      "status": "PASS"
+    },
+    "dimensions": {
+      "bundle_input": 18,
+      "selected_count": 31,
+      "model_matrix_width": 49,
+      "evidence": "feature_2_6_phase_1_checkpoint.json",
+      "status": "PASS"
+    },
+    "background_train_only": true,
+    "background_overlap": {
+      "validation": 0,
+      "test": 0,
+      "evidence": "feature_2_6_phase_1_checkpoint.json",
+      "status": "PASS"
+    }
+  },
+  "phase_2": {
+    "explainer_created": true,
+    "shap_values": {
+      "rows": 5000,
+      "columns": 49
+    },
+    "finite_values": {
+      "no_nan": true,
+      "no_inf": true,
+      "evidence": "shap_value_validation.json",
+      "status": "PASS"
+    },
+    "additivity": {
+      "mean_error": 1.4370358784108817e-05,
+      "max_error": 6.749456107257856e-05,
+      "pass_rate": 1.0,
+      "status": "PASS"
+    },
+    "canonical_manifest": {
+      "valid": true,
+      "hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+      "evidence": "canonical_shap_values_manifest.json",
+      "status": "PASS"
+    }
+  },
+  "phase_3": {
+    "global_tables": true,
+    "bar_plots": true,
+    "beeswarm": true,
+    "consistency": {
+      "valid": true,
+      "evidence": "global_explanation_consistency_check.json",
+      "status": "PASS"
+    }
+  },
+  "phase_4": {
+    "local_cases": 21,
+    "local_additivity": {
+      "pass_rate": 1.0,
+      "status": "PASS"
+    },
+    "waterfall_plots": 21,
+    "dependence_plots": {
+      "feature_count": 7,
+      "complete": true
+    },
+    "consistency": {
+      "valid": true,
+      "evidence": "phase_4_explanation_consistency_check.json",
+      "status": "PASS"
+    }
+  },
+  "warnings": [],
+  "blockers": [],
+  "overall_status": "PASS"
+}

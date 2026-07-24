@@ -1,0 +1,10 @@
+[
+  {
+    "logical_name": "input_contract",
+    "exists": true
+  },
+  {
+    "logical_name": "champion_bundle",
+    "exists": true
+  }
+]

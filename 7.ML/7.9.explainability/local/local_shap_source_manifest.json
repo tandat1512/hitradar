@@ -1,0 +1,111 @@
+{
+  "cases": [
+    {
+      "track_id": "1eeJma41NW6cYmDvc70Y3J",
+      "source": "canonical_sample",
+      "local_shap_computed_on_demand": false
+    },
+    {
+      "track_id": "6kn5loToxIwLHzk5A1fUob",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "7Huqz8HsG7j2gk9INLvhRI",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "1VvfQMzVpJ0yLOFgiWNp7O",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "4iAZLrr85pfvQWlBeqqrNt",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "770z0pY7gsBPNPI4jr6oFN",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "3Ofmpyhv5UAQ70mENzB277",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "3iw6V4LH7yPj1ESORX9RIN",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "5s2zbxZI4Ym5LTKwjZHS2V",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "45S5WTQEGOB1VHr1Q4FuPl",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "6tDDoYIxWvMLTdKpjFkc1B",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "46doqU89HXCjtvNJnC7P5v",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "1QCpd9PQP7msvshreAaRyg",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "3zXZ606TUZE8WBbGppX82E",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "68NZfXQQVNa59N422unllk",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "7HOkU7ho6zlFufUdpNEQ89",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "4iJyoBOLtHqaGxP12qzhQI",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "7lPN2DXiMsVn7XUKtOW1CS",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "00Kih9a1Wff2K1aILudPXF",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "00MGf5IXCqJrlnNEz0O86w",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    },
+    {
+      "track_id": "00OQsMilg3NJQ365MDUnFJ",
+      "source": "computed_on_demand",
+      "local_shap_computed_on_demand": true
+    }
+  ],
+  "computed_count": 20,
+  "extracted_count": 1
+}

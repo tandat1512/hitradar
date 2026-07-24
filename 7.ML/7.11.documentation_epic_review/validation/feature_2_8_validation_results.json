@@ -1,0 +1,30 @@
+[
+  {
+    "check_id": "F28-F27-GATE",
+    "status": "PASS"
+  },
+  {
+    "check_id": "F28-CHAMPION-UNCHANGED",
+    "status": "PASS"
+  },
+  {
+    "check_id": "F28-NO-TRAINING",
+    "status": "PASS"
+  },
+  {
+    "check_id": "F28-NO-TUNING",
+    "status": "PASS"
+  },
+  {
+    "check_id": "F28-NO-REFIT",
+    "status": "PASS"
+  },
+  {
+    "check_id": "F28-NO-FINAL-TEST-RERUN",
+    "status": "PASS"
+  },
+  {
+    "check_id": "F28-NO-SHAP-RECOMPUTE",
+    "status": "PASS"
+  }
+]

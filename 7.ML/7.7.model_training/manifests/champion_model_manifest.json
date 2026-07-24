@@ -1,0 +1,10 @@
+{
+  "model_id": "EXP24-XGB-FINAL-001",
+  "family": "XGBoost",
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+  "artifact_bytes": 3978649,
+  "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "load_status": "PASS",
+  "roundtrip_status": "PASS",
+  "reproducibility_status": "PASS"
+}

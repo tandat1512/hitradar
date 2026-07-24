@@ -1,0 +1,8 @@
+{
+  "test_opened_in_feature_2_5": true,
+  "test_prediction_generated": false,
+  "test_metrics_computed": false,
+  "test_used_for_training": false,
+  "test_used_for_tuning": false,
+  "test_used_for_model_selection": false
+}

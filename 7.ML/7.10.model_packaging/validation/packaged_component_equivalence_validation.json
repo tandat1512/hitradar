@@ -1,0 +1,6 @@
+{
+  "transform_max_absolute_difference": 0.0,
+  "prediction_max_absolute_difference": 0.0,
+  "is_equivalent": true,
+  "equivalence_method": "RUNTIME_OUTPUT_EQUIVALENCE"
+}

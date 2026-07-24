@@ -1,0 +1,34 @@
+{
+  "phase": "5/5",
+  "timestamp": "2026-07-23T10:00:00.000000",
+  "champion_hash": {
+    "declared": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "actual": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "status": "UNCHANGED"
+  },
+  "background_hash": {
+    "declared": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+    "actual": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+    "status": "UNCHANGED"
+  },
+  "shap_values_hash": {
+    "declared": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+    "actual": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+    "status": "UNCHANGED"
+  },
+  "base_values_hash": {
+    "declared": "b67b2bd148062e60edb4c2764f0e4a69f6990d2ab580fb7863447ec5e844cd44",
+    "actual": "b67b2bd148062e60edb4c2764f0e4a69f6990d2ab580fb7863447ec5e844cd44",
+    "status": "UNCHANGED"
+  },
+  "feature_mapping_hash": {
+    "declared": "from shap_feature_mapping.json",
+    "status": "VERIFIED_FROM_MANIFEST"
+  },
+  "training_executed": false,
+  "tuning_executed": false,
+  "model_reselected": false,
+  "overall_status": "PASS",
+  "blockers": [],
+  "warnings": []
+}

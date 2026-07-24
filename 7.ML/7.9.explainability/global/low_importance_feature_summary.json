@@ -1,0 +1,95 @@
+{
+  "bottom_10_transformed": [
+    {
+      "rank": 40,
+      "transformed_feature": "key_3",
+      "mean_abs_shap": 0.019440004906271548,
+      "importance_share": 0.0008206757304880488
+    },
+    {
+      "rank": 41,
+      "transformed_feature": "mode_1",
+      "mean_abs_shap": 0.017036633545344338,
+      "importance_share": 0.0007192154398773875
+    },
+    {
+      "rank": 42,
+      "transformed_feature": "key_10",
+      "mean_abs_shap": 0.013846530669538566,
+      "importance_share": 0.0005845426339518437
+    },
+    {
+      "rank": 43,
+      "transformed_feature": "key_4",
+      "mean_abs_shap": 0.011457138210663523,
+      "importance_share": 0.00048367247414147764
+    },
+    {
+      "rank": 44,
+      "transformed_feature": "duration_squared",
+      "mean_abs_shap": 0.01061236941643496,
+      "importance_share": 0.00044800986754031495
+    },
+    {
+      "rank": 45,
+      "transformed_feature": "key_5",
+      "mean_abs_shap": 0.00842209195909047,
+      "importance_share": 0.0003555455106152917
+    },
+    {
+      "rank": 46,
+      "transformed_feature": "release_precision_month",
+      "mean_abs_shap": 0.007465151170368719,
+      "importance_share": 0.000315147471386162
+    },
+    {
+      "rank": 47,
+      "transformed_feature": "time_signature_5.0",
+      "mean_abs_shap": 0.0004958953454910328,
+      "importance_share": 2.0934628199357303e-05
+    },
+    {
+      "rank": 48,
+      "transformed_feature": "time_signature_1.0",
+      "mean_abs_shap": 0.0002650634182440469,
+      "importance_share": 1.1189869315460644e-05
+    },
+    {
+      "rank": 49,
+      "transformed_feature": "explicit_True",
+      "mean_abs_shap": 0.00020195870377109283,
+      "importance_share": 8.52585210471273e-06
+    }
+  ],
+  "near_zero_features": [
+    "key_5",
+    "release_precision_month",
+    "time_signature_5.0",
+    "time_signature_1.0",
+    "explicit_True"
+  ],
+  "zero_contribution_features": [],
+  "sparse_ohe_features": [
+    {
+      "feature": "release_precision_month",
+      "active_rate": 0.0
+    },
+    {
+      "feature": "release_precision_year",
+      "active_rate": 0.0118
+    },
+    {
+      "feature": "key_3",
+      "active_rate": 0.0284
+    },
+    {
+      "feature": "time_signature_1.0",
+      "active_rate": 0.0046
+    },
+    {
+      "feature": "time_signature_5.0",
+      "active_rate": 0.0128
+    }
+  ],
+  "note": "Features with low SHAP contribution in the explanation sample. This does not imply they should be removed."
+}

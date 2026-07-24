@@ -1,0 +1,443 @@
+[
+  {
+    "transformed_index": 0,
+    "transformed_feature_name": "duration_min",
+    "selected_feature_name": "duration_min",
+    "raw_feature_family": "duration_min",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 1,
+    "transformed_feature_name": "release_year",
+    "selected_feature_name": "release_year",
+    "raw_feature_family": "release_year",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 2,
+    "transformed_feature_name": "danceability",
+    "selected_feature_name": "danceability",
+    "raw_feature_family": "danceability",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 3,
+    "transformed_feature_name": "energy",
+    "selected_feature_name": "energy",
+    "raw_feature_family": "energy",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 4,
+    "transformed_feature_name": "loudness",
+    "selected_feature_name": "loudness",
+    "raw_feature_family": "loudness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 5,
+    "transformed_feature_name": "speechiness",
+    "selected_feature_name": "speechiness",
+    "raw_feature_family": "speechiness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 6,
+    "transformed_feature_name": "acousticness",
+    "selected_feature_name": "acousticness",
+    "raw_feature_family": "acousticness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 7,
+    "transformed_feature_name": "instrumentalness",
+    "selected_feature_name": "instrumentalness",
+    "raw_feature_family": "instrumentalness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 8,
+    "transformed_feature_name": "liveness",
+    "selected_feature_name": "liveness",
+    "raw_feature_family": "liveness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 9,
+    "transformed_feature_name": "valence",
+    "selected_feature_name": "valence",
+    "raw_feature_family": "valence",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 10,
+    "transformed_feature_name": "tempo",
+    "selected_feature_name": "tempo",
+    "raw_feature_family": "tempo",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 11,
+    "transformed_feature_name": "release_month",
+    "selected_feature_name": "release_month",
+    "raw_feature_family": "release_month",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 12,
+    "transformed_feature_name": "decade",
+    "selected_feature_name": "decade",
+    "raw_feature_family": "decade",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 13,
+    "transformed_feature_name": "release_month_sin",
+    "selected_feature_name": "release_month_sin",
+    "raw_feature_family": "release_month_sin",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 14,
+    "transformed_feature_name": "release_month_cos",
+    "selected_feature_name": "release_month_cos",
+    "raw_feature_family": "release_month_cos",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 15,
+    "transformed_feature_name": "year_in_decade",
+    "selected_feature_name": "year_in_decade",
+    "raw_feature_family": "year_in_decade",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 16,
+    "transformed_feature_name": "duration_log",
+    "selected_feature_name": "duration_log",
+    "raw_feature_family": "duration_log",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 17,
+    "transformed_feature_name": "duration_squared",
+    "selected_feature_name": "duration_squared",
+    "raw_feature_family": "duration_squared",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 18,
+    "transformed_feature_name": "energy_danceability",
+    "selected_feature_name": "energy_danceability",
+    "raw_feature_family": "energy_danceability",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 19,
+    "transformed_feature_name": "energy_valence",
+    "selected_feature_name": "energy_valence",
+    "raw_feature_family": "energy_valence",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 20,
+    "transformed_feature_name": "danceability_valence",
+    "selected_feature_name": "danceability_valence",
+    "raw_feature_family": "danceability_valence",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 21,
+    "transformed_feature_name": "acousticness_instrumentalness",
+    "selected_feature_name": "acousticness_instrumentalness",
+    "raw_feature_family": "acousticness_instrumentalness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 22,
+    "transformed_feature_name": "energy_liveness",
+    "selected_feature_name": "energy_liveness",
+    "raw_feature_family": "energy_liveness",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 23,
+    "transformed_feature_name": "speechiness_explicit",
+    "selected_feature_name": "speechiness_explicit",
+    "raw_feature_family": "speechiness_explicit",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 24,
+    "transformed_feature_name": "tempo_danceability",
+    "selected_feature_name": "tempo_danceability",
+    "raw_feature_family": "tempo_danceability",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 25,
+    "transformed_feature_name": "loudness_energy",
+    "selected_feature_name": "loudness_energy",
+    "raw_feature_family": "loudness_energy",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 26,
+    "transformed_feature_name": "release_precision_day",
+    "selected_feature_name": "release_precision_day",
+    "raw_feature_family": "release_precision_day",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 27,
+    "transformed_feature_name": "release_precision_month",
+    "selected_feature_name": "release_precision_month",
+    "raw_feature_family": "release_precision_month",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 28,
+    "transformed_feature_name": "release_precision_year",
+    "selected_feature_name": "release_precision_year",
+    "raw_feature_family": "release_precision_year",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 29,
+    "transformed_feature_name": "key_0",
+    "selected_feature_name": "key_0",
+    "raw_feature_family": "key_0",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 30,
+    "transformed_feature_name": "key_1",
+    "selected_feature_name": "key_1",
+    "raw_feature_family": "key_1",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 31,
+    "transformed_feature_name": "key_10",
+    "selected_feature_name": "key_10",
+    "raw_feature_family": "key_10",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 32,
+    "transformed_feature_name": "key_11",
+    "selected_feature_name": "key_11",
+    "raw_feature_family": "key_11",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 33,
+    "transformed_feature_name": "key_2",
+    "selected_feature_name": "key_2",
+    "raw_feature_family": "key_2",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 34,
+    "transformed_feature_name": "key_3",
+    "selected_feature_name": "key_3",
+    "raw_feature_family": "key_3",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 35,
+    "transformed_feature_name": "key_4",
+    "selected_feature_name": "key_4",
+    "raw_feature_family": "key_4",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 36,
+    "transformed_feature_name": "key_5",
+    "selected_feature_name": "key_5",
+    "raw_feature_family": "key_5",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 37,
+    "transformed_feature_name": "key_6",
+    "selected_feature_name": "key_6",
+    "raw_feature_family": "key_6",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 38,
+    "transformed_feature_name": "key_7",
+    "selected_feature_name": "key_7",
+    "raw_feature_family": "key_7",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 39,
+    "transformed_feature_name": "key_8",
+    "selected_feature_name": "key_8",
+    "raw_feature_family": "key_8",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 40,
+    "transformed_feature_name": "key_9",
+    "selected_feature_name": "key_9",
+    "raw_feature_family": "key_9",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 41,
+    "transformed_feature_name": "time_signature_1.0",
+    "selected_feature_name": "time_signature_1.0",
+    "raw_feature_family": "time_signature_1.0",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 42,
+    "transformed_feature_name": "time_signature_3.0",
+    "selected_feature_name": "time_signature_3.0",
+    "raw_feature_family": "time_signature_3.0",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 43,
+    "transformed_feature_name": "time_signature_4.0",
+    "selected_feature_name": "time_signature_4.0",
+    "raw_feature_family": "time_signature_4.0",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 44,
+    "transformed_feature_name": "time_signature_5.0",
+    "selected_feature_name": "time_signature_5.0",
+    "raw_feature_family": "time_signature_5.0",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 45,
+    "transformed_feature_name": "explicit_False",
+    "selected_feature_name": "explicit_False",
+    "raw_feature_family": "explicit_False",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 46,
+    "transformed_feature_name": "explicit_True",
+    "selected_feature_name": "explicit_True",
+    "raw_feature_family": "explicit_True",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 47,
+    "transformed_feature_name": "mode_0",
+    "selected_feature_name": "mode_0",
+    "raw_feature_family": "mode_0",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  },
+  {
+    "transformed_index": 48,
+    "transformed_feature_name": "mode_1",
+    "selected_feature_name": "mode_1",
+    "raw_feature_family": "mode_1",
+    "transformer": "direct",
+    "category": null,
+    "mapping_status": "MAPPED"
+  }
+]

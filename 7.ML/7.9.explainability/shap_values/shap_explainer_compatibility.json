@@ -1,0 +1,23 @@
+{
+  "shap_version": "0.52.0",
+  "explainer_class": "TreeExplainer",
+  "explainer_parameters": [
+    "model",
+    "data",
+    "model_output",
+    "feature_perturbation",
+    "feature_names",
+    "approximate",
+    "link",
+    "linearize_link"
+  ],
+  "supports_interventional": true,
+  "supports_model_output": true,
+  "tested_parameters": {},
+  "versions": {
+    "shap_version": "0.52.0",
+    "numpy_version": "2.4.6",
+    "sklearn_version": "1.9.0",
+    "xgboost_version": "3.3.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "rows": 50,
+  "mean_abs_diff": 2.519116210919492e-07,
+  "max_abs_diff": 4.765625014613306e-07,
+  "tolerance": 1e-05,
+  "pass_rate": 1.0,
+  "is_consistent": true
+}

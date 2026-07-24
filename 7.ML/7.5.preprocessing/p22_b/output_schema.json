@@ -1,29 +1,30 @@
 {
   "train_shape": [
     415524,
-    65
+    56
   ],
-  "validation_shape": [
+  "val_shape": [
     85272,
-    65
+    56
   ],
   "test_shape": [
     85876,
-    65
+    56
   ],
-  "output_feature_count": 48,
   "exact_matrix_type": "numpy.ndarray",
-  "dtype": "float64",
-  "contains_nan": false,
-  "contains_inf": false,
   "duplicate_feature_name_count": 0,
-  "feature_name_full_sha256": "9932151588f711039cfb5d986d4eeb6659ba06c78d6de6cd2c2dd058debac26c",
-  "feature_order_hash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-  "schema_equality_across_splits": true,
   "feature_order_equality_across_splits": true,
-  "track_id_present": false,
   "target_popularity_present": false,
+  "track_id_present": false,
   "serialization_roundtrip": true,
   "preprocessor_load_success": true,
-  "preprocessor_full_sha256": "3b49992a59836ab640dadd460b2d1aee3f65f2f96dda459f18dc70d831bd8306"
+  "output_mode": "numpy.ndarray",
+  "output_dtype": "float64",
+  "output_shape": [
+    415524,
+    56
+  ],
+  "output_feature_count": 56,
+  "contains_nan": false,
+  "contains_inf": false
 }

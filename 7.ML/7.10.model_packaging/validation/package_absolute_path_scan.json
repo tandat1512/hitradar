@@ -1,0 +1,37 @@
+{
+  "scan_scope": [
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\manifests",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas"
+  ],
+  "patterns_searched": [
+    "E:\\",
+    "C:\\Users\\",
+    "/home/",
+    "/tmp/"
+  ],
+  "findings_count": 4,
+  "findings": [
+    {
+      "file": "best_model_manifest.json",
+      "pattern": "E:\\",
+      "severity": "WARNING"
+    },
+    {
+      "file": "feature_2_7_feature_2_6_artifact_discovery.json",
+      "pattern": "E:\\",
+      "severity": "WARNING"
+    },
+    {
+      "file": "full_inference_pipeline_manifest.json",
+      "pattern": "E:\\",
+      "severity": "WARNING"
+    },
+    {
+      "file": "preprocessing_manifest.json",
+      "pattern": "E:\\",
+      "severity": "WARNING"
+    }
+  ],
+  "has_blocker": false,
+  "no_absolute_path_dependency": true
+}

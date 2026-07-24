@@ -1,0 +1,33 @@
+{
+  "root_class": "Pipeline",
+  "is_pipeline": true,
+  "pipeline_steps": [
+    {
+      "name": "prep_pipe",
+      "class": "Pipeline"
+    },
+    {
+      "name": "model",
+      "class": "XGBRegressor"
+    }
+  ],
+  "preprocessing_step_name": "prep_pipe",
+  "estimator_step_name": "model",
+  "estimator_class": "XGBRegressor",
+  "preprocessing_sub_steps": [
+    {
+      "name": "fe",
+      "class": "FeatureEngineeringTransformer"
+    },
+    {
+      "name": "prep",
+      "class": "ColumnTransformer"
+    }
+  ],
+  "fitted_state": true,
+  "predict_interface": true,
+  "transform_interface": true,
+  "predict_test_status": "OK",
+  "output_dtype": "float32",
+  "output_shape_per_sample": "scalar"
+}

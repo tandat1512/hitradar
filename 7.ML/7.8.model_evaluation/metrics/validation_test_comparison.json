@@ -1,0 +1,7 @@
+{
+  "test_rmse": 21.01337842313573,
+  "val_rmse": 15.25206504973179,
+  "absolute_change": 5.76131337340394,
+  "relative_change_percent": 37.773988995052534,
+  "status": "LARGE_DEGRADATION"
+}

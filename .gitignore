@@ -75,3 +75,7 @@ desktop.ini
 # Feature 2.1 — Split ID files (large, regeneratable)
 # ============================================================
 7.ML/7.4.splits/*_ids.parquet
+
+*.rar
+
+7.ML/7.7.model_training/models/EXP24-RF-FINAL-001.joblib

@@ -1,0 +1,22 @@
+{
+  "session_id": "F28-P1-MODEL-CARD-20260724-121320-p1",
+  "phase": "1/5",
+  "artifacts_created": [
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\checkpoints\\feature_2_8_phase_1_session.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\checkpoints\\feature_2_8_environment_snapshot.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\validation\\feature_2_8_canonical_path_validation.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\validation\\feature_2_7_to_feature_2_8_gate_validation.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\documentation_source_priority.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\manifests\\feature_2_8_documentation_source_manifest.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\feature_2_8_documentation_conflicts.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\documentation_canonical_facts.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\documentation_metric_registry.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\documentation_term_registry.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\validation\\model_card_prohibited_claim_validation.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\validation\\model_card_consistency_validation.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\validation\\model_card_source_manifest.json",
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\checkpoints\\feature_2_8_phase_1_checkpoint.json",
+    "E:\\Dự án 1 hitrada\\Output epic2\\MODEL_CARD.md"
+  ],
+  "generated_at": "2026-07-24T12:13:20.726176+00:00"
+}

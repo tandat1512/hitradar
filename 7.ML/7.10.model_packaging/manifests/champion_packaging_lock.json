@@ -1,0 +1,10 @@
+{
+  "model_id": "EXP24-XGB-FINAL-001",
+  "source_champion_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "lock_timestamp": "2026-07-23T16:14:16.006862+00:00",
+  "training_allowed": false,
+  "tuning_allowed": false,
+  "refit_allowed": false,
+  "model_reselection_allowed": false,
+  "source_artifact_modification_allowed": false
+}

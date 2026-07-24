@@ -1,0 +1,233 @@
+{
+  "examples": [
+    {
+      "example_id": "dict_input_success",
+      "description": "Valid dict input with all 18 features",
+      "input": {
+        "duration_min": 3.5,
+        "explicit": 0,
+        "release_year": 2020,
+        "release_month": 6,
+        "decade": 2020,
+        "release_precision": 1,
+        "danceability": 0.7,
+        "energy": 0.8,
+        "key": 0,
+        "loudness": -5.0,
+        "mode": 1,
+        "speechiness": 0.1,
+        "acousticness": 0.2,
+        "instrumentalness": 0.0,
+        "liveness": 0.1,
+        "valence": 0.6,
+        "tempo": 120.0,
+        "time_signature": 4
+      },
+      "input_type": "dict",
+      "expected_status": "SUCCESS"
+    },
+    {
+      "example_id": "series_input_success",
+      "description": "Valid pandas Series input",
+      "input": {
+        "duration_min": 3.5,
+        "explicit": 0,
+        "release_year": 2020,
+        "release_month": 6,
+        "decade": 2020,
+        "release_precision": 1,
+        "danceability": 0.7,
+        "energy": 0.8,
+        "key": 0,
+        "loudness": -5.0,
+        "mode": 1,
+        "speechiness": 0.1,
+        "acousticness": 0.2,
+        "instrumentalness": 0.0,
+        "liveness": 0.1,
+        "valence": 0.6,
+        "tempo": 120.0,
+        "time_signature": 4
+      },
+      "input_type": "pandas.Series",
+      "expected_status": "SUCCESS"
+    },
+    {
+      "example_id": "dataframe_one_row_success",
+      "description": "Valid pandas DataFrame with one row",
+      "input": [
+        {
+          "duration_min": 3.5,
+          "explicit": 0,
+          "release_year": 2020,
+          "release_month": 6,
+          "decade": 2020,
+          "release_precision": 1,
+          "danceability": 0.7,
+          "energy": 0.8,
+          "key": 0,
+          "loudness": -5.0,
+          "mode": 1,
+          "speechiness": 0.1,
+          "acousticness": 0.2,
+          "instrumentalness": 0.0,
+          "liveness": 0.1,
+          "valence": 0.6,
+          "tempo": 120.0,
+          "time_signature": 4
+        }
+      ],
+      "input_type": "pandas.DataFrame",
+      "expected_status": "SUCCESS"
+    },
+    {
+      "example_id": "missing_feature_error",
+      "description": "Missing required feature should raise error",
+      "input": {
+        "duration_min": 3.5,
+        "explicit": 0,
+        "release_year": 2020
+      },
+      "input_type": "dict",
+      "expected_error": "MissingFeatureError",
+      "expected_missing_features": [
+        "acousticness", "danceability", "decade", "energy", "instrumentalness",
+        "key", "liveness", "loudness", "mode", "release_month",
+        "release_precision", "speechiness", "tempo", "time_signature", "valence"
+      ]
+    },
+    {
+      "example_id": "invalid_dtype_error",
+      "description": "Invalid binary value should generate warning",
+      "input": {
+        "duration_min": 3.5,
+        "explicit": 2,
+        "release_year": 2020,
+        "release_month": 6,
+        "decade": 2020,
+        "release_precision": 1,
+        "danceability": 0.7,
+        "energy": 0.8,
+        "key": 0,
+        "loudness": -5.0,
+        "mode": 1,
+        "speechiness": 0.1,
+        "acousticness": 0.2,
+        "instrumentalness": 0.0,
+        "liveness": 0.1,
+        "valence": 0.6,
+        "tempo": 120.0,
+        "time_signature": 4
+      },
+      "input_type": "dict",
+      "expected_warning": "invalid_binary"
+    },
+    {
+      "example_id": "multiple_rows_error",
+      "description": "DataFrame with multiple rows should raise error",
+      "input": [
+        {
+          "duration_min": 3.5,
+          "explicit": 0,
+          "release_year": 2020,
+          "release_month": 6,
+          "decade": 2020,
+          "release_precision": 1,
+          "danceability": 0.7,
+          "energy": 0.8,
+          "key": 0,
+          "loudness": -5.0,
+          "mode": 1,
+          "speechiness": 0.1,
+          "acousticness": 0.2,
+          "instrumentalness": 0.0,
+          "liveness": 0.1,
+          "valence": 0.6,
+          "tempo": 120.0,
+          "time_signature": 4
+        },
+        {
+          "duration_min": 4.0,
+          "explicit": 1,
+          "release_year": 2019,
+          "release_month": 3,
+          "decade": 2010,
+          "release_precision": 1,
+          "danceability": 0.6,
+          "energy": 0.7,
+          "key": 1,
+          "loudness": -6.0,
+          "mode": 0,
+          "speechiness": 0.2,
+          "acousticness": 0.3,
+          "instrumentalness": 0.1,
+          "liveness": 0.2,
+          "valence": 0.5,
+          "tempo": 110.0,
+          "time_signature": 4
+        }
+      ],
+      "input_type": "pandas.DataFrame",
+      "expected_error": "MultipleRowsNotSupportedError",
+      "expected_row_count": 2
+    },
+    {
+      "example_id": "inf_value_error",
+      "description": "Infinite value should raise error",
+      "input": {
+        "duration_min": 3.5,
+        "explicit": 0,
+        "release_year": 2020,
+        "release_month": 6,
+        "decade": 2020,
+        "release_precision": 1,
+        "danceability": 0.7,
+        "energy": 0.8,
+        "key": 0,
+        "loudness": -5.0,
+        "mode": 1,
+        "speechiness": 0.1,
+        "acousticness": 0.2,
+        "instrumentalness": 0.0,
+        "liveness": 0.1,
+        "valence": 0.6,
+        "tempo": 999.0,
+        "time_signature": 4
+      },
+      "input_type": "dict",
+      "expected_error": "InvalidFeatureValueError",
+      "note": "tempo=999 is outside typical range but model may handle; inf would fail"
+    },
+    {
+      "example_id": "include_plot_example",
+      "description": "Include plot generation with output path",
+      "input": {
+        "duration_min": 3.5,
+        "explicit": 0,
+        "release_year": 2020,
+        "release_month": 6,
+        "decade": 2020,
+        "release_precision": 1,
+        "danceability": 0.7,
+        "energy": 0.8,
+        "key": 0,
+        "loudness": -5.0,
+        "mode": 1,
+        "speechiness": 0.1,
+        "acousticness": 0.2,
+        "instrumentalness": 0.0,
+        "liveness": 0.1,
+        "valence": 0.6,
+        "tempo": 120.0,
+        "time_signature": 4
+      },
+      "input_type": "dict",
+      "parameters": {
+        "include_plot": true,
+        "plot_output_path": "output/explanation_plot.png"
+      },
+      "expected_status": "SUCCESS",
+      "expected_output_field": "plot_path"
+    }
+  ]
+}

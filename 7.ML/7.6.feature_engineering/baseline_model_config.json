@@ -1,0 +1,6 @@
+{
+  "model": "Ridge",
+  "alpha": 1.0,
+  "random_state": 1512,
+  "preprocessing": "P23-A (similar to P22-A)"
+}

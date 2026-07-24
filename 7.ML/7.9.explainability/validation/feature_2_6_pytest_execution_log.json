@@ -1,0 +1,98 @@
+{
+  "test_execution_timestamp": "2026-07-23T10:45:00.000000",
+  "test_command": "python -m pytest hitradar/7.ML/7.9.explainability/tests/test_feature_2_6_explain_one_prediction_input.py hitradar/7.ML/7.9.explainability/tests/test_feature_2_6_explain_one_prediction_prediction.py -v --tb=short",
+  "pytest_version": "9.1.1",
+  "python_version": "3.13.7",
+  "platform": "win32",
+  "results": {
+    "collected": 17,
+    "passed": 17,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_files": [
+    "hitradar/7.ML/7.9.explainability/tests/test_feature_2_6_explain_one_prediction_input.py",
+    "hitradar/7.ML/7.9.explainability/tests/test_feature_2_6_explain_one_prediction_prediction.py"
+  ],
+  "test_details": [
+    {
+      "test": "TestDictInput::test_dict_input_valid",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestDictInput::test_dict_input_missing_feature",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestDictInput::test_dict_input_extra_feature",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestDictInput::test_dict_input_extra_feature_strict",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestSeriesInput::test_series_input_valid",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestDataFrameInput::test_dataframe_one_row_valid",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestDataFrameInput::test_dataframe_multiple_rows_rejected",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestFeatureTypeValidation::test_inf_rejected",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestFeatureTypeValidation::test_negative_inf_rejected",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestFeatureTypeWarnings::test_binary_invalid_warning",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionOutput::test_prediction_returns_dict",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionOutput::test_prediction_raw_finite",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionOutput::test_prediction_clipped_range",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionOutput::test_prediction_display_int",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionOutput::test_prediction_deterministic",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionWithDifferentInputs::test_prediction_low_value",
+      "status": "PASSED"
+    },
+    {
+      "test": "TestPredictionWithDifferentInputs::test_prediction_high_value",
+      "status": "PASSED"
+    }
+  ],
+  "warnings": [
+    "InconsistentVersionWarning: Trying to unpickle estimator SimpleImputer from version 1.8.0 when using version 1.9.0",
+    "InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.8.0 when using version 1.9.0",
+    "InconsistentVersionWarning: Trying to unpickle estimator FunctionTransformer from version 1.8.0 when using version 1.9.0",
+    "InconsistentVersionWarning: Trying to unpickle estimator OneHotEncoder from version 1.8.0 when using version 1.9.0",
+    "InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.8.0 when using version 1.9.0"
+  ],
+  "execution_time_seconds": 3.17,
+  "overall_status": "PASS",
+  "evidence_type": "pytest_execution_log"
+}

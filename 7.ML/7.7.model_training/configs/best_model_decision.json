@@ -1,0 +1,7 @@
+{
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "champion_family": "XGBoost",
+  "runner_up_model_id": "EXP24-RF-FINAL-001",
+  "runner_up_family": "RandomForest",
+  "reason": "Validation RMSE"
+}

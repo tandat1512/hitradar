@@ -1,0 +1,170 @@
+[
+  {
+    "case_id": "case_001",
+    "track_id": "1eeJma41NW6cYmDvc70Y3J",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_001_1eeJma41NW6cYmDvc70Y3J_waterfall.png",
+    "bytes": 61594,
+    "sha256": "a85afb1597e5264088c51cded0e9c792fe368e921f491c2fd1a31ed92dd202ea",
+    "source_shap_hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c"
+  },
+  {
+    "case_id": "case_002",
+    "track_id": "6kn5loToxIwLHzk5A1fUob",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_002_6kn5loToxIwLHzk5A1fUob_waterfall.png",
+    "bytes": 60055,
+    "sha256": "99150c3ff671e6851ead11336ab1368cded405aaa38ade34e04a54447071cadb",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_003",
+    "track_id": "7Huqz8HsG7j2gk9INLvhRI",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_003_7Huqz8HsG7j2gk9INLvhRI_waterfall.png",
+    "bytes": 60121,
+    "sha256": "9d5b2e1bef21fa3add6666ba3fb0db1102c860b4b79775ba80c5216f23cf7a23",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_004",
+    "track_id": "1VvfQMzVpJ0yLOFgiWNp7O",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_004_1VvfQMzVpJ0yLOFgiWNp7O_waterfall.png",
+    "bytes": 61194,
+    "sha256": "aae9f1924b373eacd4d4d8657579ac959b9e95018e8b9ebe11bf2c9bfb0db3d0",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_005",
+    "track_id": "4iAZLrr85pfvQWlBeqqrNt",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_005_4iAZLrr85pfvQWlBeqqrNt_waterfall.png",
+    "bytes": 61244,
+    "sha256": "ead3b066c39155253d1b4c2e5a8af566ba64c388dc568e4047d1f804aaf445c8",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_006",
+    "track_id": "770z0pY7gsBPNPI4jr6oFN",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_006_770z0pY7gsBPNPI4jr6oFN_waterfall.png",
+    "bytes": 60109,
+    "sha256": "ec3e52926150fa5a47dca30ef7d49e4b1c7b08aa121bf8d412e6fb9537a49067",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_007",
+    "track_id": "3Ofmpyhv5UAQ70mENzB277",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_007_3Ofmpyhv5UAQ70mENzB277_waterfall.png",
+    "bytes": 60246,
+    "sha256": "3b85152116ce69020bdf7e85a2a0a386dc6e85c4201ed358f26db1c7ec512685",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_008",
+    "track_id": "3iw6V4LH7yPj1ESORX9RIN",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_008_3iw6V4LH7yPj1ESORX9RIN_waterfall.png",
+    "bytes": 59348,
+    "sha256": "3c94ab05f8cbac45ede0aae9107895a80b765e0078ba5de07451731dd0809d6c",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_009",
+    "track_id": "5s2zbxZI4Ym5LTKwjZHS2V",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_009_5s2zbxZI4Ym5LTKwjZHS2V_waterfall.png",
+    "bytes": 60122,
+    "sha256": "be6d566d940c94079ff0f9e0abe30b06bf5734031f85e7add507eae8fefb4b8b",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_010",
+    "track_id": "45S5WTQEGOB1VHr1Q4FuPl",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_010_45S5WTQEGOB1VHr1Q4FuPl_waterfall.png",
+    "bytes": 58090,
+    "sha256": "1603afdb3855203a95b955d7fd25c3783c5ab4b1d937bc8d4ba84fba2b00ab6b",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_011",
+    "track_id": "6tDDoYIxWvMLTdKpjFkc1B",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_011_6tDDoYIxWvMLTdKpjFkc1B_waterfall.png",
+    "bytes": 62030,
+    "sha256": "5f9efdb1fcb2d217c7e44c23c2ab129d5f8478a280a17f7887488817c40823ad",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_017",
+    "track_id": "46doqU89HXCjtvNJnC7P5v",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_017_46doqU89HXCjtvNJnC7P5v_waterfall.png",
+    "bytes": 59553,
+    "sha256": "9518e7cf574458c7f2ba1991baf46229613657ac3e79f0d155dda86f3e42bfa4",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_018",
+    "track_id": "1QCpd9PQP7msvshreAaRyg",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_018_1QCpd9PQP7msvshreAaRyg_waterfall.png",
+    "bytes": 62517,
+    "sha256": "9469687841511433d05ba73a24bc61e0f1127a800ad9b304fca44cbef49ffc97",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_019",
+    "track_id": "3zXZ606TUZE8WBbGppX82E",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_019_3zXZ606TUZE8WBbGppX82E_waterfall.png",
+    "bytes": 59763,
+    "sha256": "0b14a3dcdbacd88fa357b2eb94b25378f6f6cf892f3f01cd3bc9d59653a4ce47",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_020",
+    "track_id": "68NZfXQQVNa59N422unllk",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_020_68NZfXQQVNa59N422unllk_waterfall.png",
+    "bytes": 62193,
+    "sha256": "792b2b3dd9d539e464575015dcab859dbb35e08c47b10e87e9e6cba7cf803f59",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_021",
+    "track_id": "7HOkU7ho6zlFufUdpNEQ89",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_021_7HOkU7ho6zlFufUdpNEQ89_waterfall.png",
+    "bytes": 60790,
+    "sha256": "7ffae86567faff6503c563da4f2270af9bd34553fc1fdca046e3e3cda6a0c659",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_022",
+    "track_id": "4iJyoBOLtHqaGxP12qzhQI",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_022_4iJyoBOLtHqaGxP12qzhQI_waterfall.png",
+    "bytes": 59145,
+    "sha256": "d5d0d11ac9d8f79ab793d50df1ee9cd7effae6e9596cf5b5bb9e824e3fd6786c",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_023",
+    "track_id": "7lPN2DXiMsVn7XUKtOW1CS",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_023_7lPN2DXiMsVn7XUKtOW1CS_waterfall.png",
+    "bytes": 61696,
+    "sha256": "ddad9cc2512f94d2102163c3e247d13757d0dba9e369885e7c8520f5fbf48bc6",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_025",
+    "track_id": "00Kih9a1Wff2K1aILudPXF",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_025_00Kih9a1Wff2K1aILudPXF_waterfall.png",
+    "bytes": 59244,
+    "sha256": "6b0317d4c65cbc7f4f8ccc6083a9f6e5bfedf39b3c7d07d4eea9f35f82bf4711",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_026",
+    "track_id": "00MGf5IXCqJrlnNEz0O86w",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_026_00MGf5IXCqJrlnNEz0O86w_waterfall.png",
+    "bytes": 60852,
+    "sha256": "4e5920c49d7a7233aa3d6fc2ade89d6d6d2dbd1d5c6aaa15a2b4e55d2ce7edae",
+    "source_shap_hash": "computed_on_demand"
+  },
+  {
+    "case_id": "case_027",
+    "track_id": "00OQsMilg3NJQ365MDUnFJ",
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\local\\local_case_027_00OQsMilg3NJQ365MDUnFJ_waterfall.png",
+    "bytes": 58439,
+    "sha256": "1fea9e241703afbb7db8bb9f0b737c227fc450d4f009ae0fc021bfee5a0a3643",
+    "source_shap_hash": "computed_on_demand"
+  }
+]

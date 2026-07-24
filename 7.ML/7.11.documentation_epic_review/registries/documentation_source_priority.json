@@ -1,0 +1,37 @@
+{
+  "model_identity": [
+    "champion_lock/manifest",
+    "F27_package_manifest",
+    "runtime_inspection",
+    "closure_gate",
+    "markdown"
+  ],
+  "final_test_metrics": [
+    "champion_test_metrics.json",
+    "residual/bucket/temporal_structured",
+    "F25_validation_results",
+    "closure_gate",
+    "markdown"
+  ],
+  "feature_dimensions": [
+    "runtime_dimension_contract",
+    "selected_features.json",
+    "feature_names.json",
+    "feature_mapping",
+    "feature_registry",
+    "markdown"
+  ],
+  "feature_status": [
+    "closure_gate",
+    "validation_results",
+    "checkpoint",
+    "report"
+  ],
+  "package_versions": [
+    "model_version.json",
+    "data_version.json",
+    "package_version.json",
+    "package_manifest",
+    "report"
+  ]
+}

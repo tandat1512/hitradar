@@ -1,0 +1,16 @@
+{
+  "contract_id": "F25-INPUT-CONTRACT-FROM-F24",
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "champion_artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+  "runner_up_model_id": "EXP24-RF-FINAL-001",
+  "feature_set_id": "FS23-SELECTED",
+  "selected_feature_count": 31,
+  "raw_input_feature_count": 18,
+  "target": "target_popularity",
+  "train_rows": 415524,
+  "validation_rows": 73000,
+  "test_rows": 85876,
+  "test_rows_source": "DECLARED_FROM_APPROVED_UPSTREAM_CONTRACT",
+  "test_status": "LOCKED_UNTIL_FEATURE_2_5",
+  "test_features_accessed_in_feature_2_4": false
+}

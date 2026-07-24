@@ -1,0 +1,7 @@
+{
+  "primary_metric": "RMSE",
+  "feature_set": "FS23-SELECTED",
+  "cv_method": "temporal_cv",
+  "official_validation": "family_best_only",
+  "random_state": 42
+}

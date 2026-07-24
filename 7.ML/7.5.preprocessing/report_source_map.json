@@ -1,4 +1,9 @@
 {
+  "summary": {
+    "complete": true,
+    "generated_at": "2026-07-19T00:45:00Z",
+    "feature_2_2": "ELIGIBLE_FOR_CLOSURE"
+  },
   "MISSING_VALUE_STRATEGY_REPORT.md": {
     "tempo_train_median": {
       "value": 114.995,

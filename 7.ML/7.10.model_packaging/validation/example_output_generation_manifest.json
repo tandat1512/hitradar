@@ -1,0 +1,8 @@
+{
+  "method": "predict_popularity(example_input)",
+  "pipeline_path": "package/pipeline/full_inference_pipeline.joblib",
+  "input_path": "package/examples/example_input.json",
+  "output_path": "package/examples/example_output.json",
+  "generated_at": "2026-07-24T10:03:44.013962+00:00",
+  "manual_edit": false
+}

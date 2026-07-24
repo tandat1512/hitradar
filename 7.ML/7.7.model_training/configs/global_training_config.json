@@ -1,0 +1,9 @@
+{
+  "global_random_state": 42,
+  "test_features_accessed": false,
+  "test_labels_loaded": false,
+  "test_predictions_generated": false,
+  "test_metrics_computed": false,
+  "test_used_for_selection": false,
+  "test_status": "DEFERRED_TO_2_5"
+}

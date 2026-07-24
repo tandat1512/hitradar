@@ -1,0 +1,1766 @@
+[
+  {
+    "experiment_id": "EXP24-XGB-SCR-001",
+    "config_id": "cfg_0",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.940552217540029,
+    "cv_std_rmse": 0.244141454717398,
+    "train_val_gap": 2.079036935161124,
+    "total_fit_time": 25.478384971618652,
+    "mean_best_iteration": 296.3333333333333,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-001",
+        "config_id": "cfg_0",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 7,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 5.596677303314209,
+        "wall_time_seconds": 7.219991207122803,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 172,
+        "best_score": 12.711453776948455,
+        "boosted_rounds": 223,
+        "train_metrics": {
+          "MAE": 8.051941871643066,
+          "RMSE": 10.942745672879733,
+          "R2": 0.4788441061973572
+        },
+        "val_metrics": {
+          "MAE": 10.270352363586426,
+          "RMSE": 12.711453681129472,
+          "R2": 0.06848615407943726
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-001",
+        "config_id": "cfg_0",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 7,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 6.00450587272644,
+        "wall_time_seconds": 7.817924737930298,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 212,
+        "best_score": 12.831398583461436,
+        "boosted_rounds": 263,
+        "train_metrics": {
+          "MAE": 8.180731773376465,
+          "RMSE": 11.017269796308359,
+          "R2": 0.47940385341644287
+        },
+        "val_metrics": {
+          "MAE": 10.283428192138672,
+          "RMSE": 12.831398624055527,
+          "R2": 0.034399330615997314
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-001",
+        "config_id": "cfg_0",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 7,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 13.877201795578003,
+        "wall_time_seconds": 16.00510001182556,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 505,
+        "best_score": 13.278804582480875,
+        "boosted_rounds": 556,
+        "train_metrics": {
+          "MAE": 7.920990943908691,
+          "RMSE": 10.624530377948624,
+          "R2": 0.5255796909332275
+        },
+        "val_metrics": {
+          "MAE": 10.624359130859375,
+          "RMSE": 13.278804347435086,
+          "R2": 0.05206000804901123
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-011",
+    "config_id": "cfg_10",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0.1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.942799302495358,
+    "cv_std_rmse": 0.2442338103699322,
+    "train_val_gap": 1.7539278788607628,
+    "total_fit_time": 22.17816948890686,
+    "mean_best_iteration": 290.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-011",
+        "config_id": "cfg_10",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0.1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 7.99621319770813,
+        "wall_time_seconds": 10.47901201248169,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 276,
+        "best_score": 12.701200932016413,
+        "boosted_rounds": 327,
+        "train_metrics": {
+          "MAE": 8.14406681060791,
+          "RMSE": 11.033609543154101,
+          "R2": 0.470153272151947
+        },
+        "val_metrics": {
+          "MAE": 10.262391090393066,
+          "RMSE": 12.701200557642917,
+          "R2": 0.06998825073242188
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-011",
+        "config_id": "cfg_10",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0.1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 3.9182984828948975,
+        "wall_time_seconds": 6.602033615112305,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 138,
+        "best_score": 12.849828276222636,
+        "boosted_rounds": 189,
+        "train_metrics": {
+          "MAE": 8.5141019821167,
+          "RMSE": 11.40198376444417,
+          "R2": 0.4424114227294922
+        },
+        "val_metrics": {
+          "MAE": 10.312978744506836,
+          "RMSE": 12.849828316695701,
+          "R2": 0.03162360191345215
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-011",
+        "config_id": "cfg_10",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0.1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 10.263657808303833,
+        "wall_time_seconds": 13.141885757446289,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 456,
+        "best_score": 13.277369145046153,
+        "boosted_rounds": 507,
+        "train_metrics": {
+          "MAE": 8.342448234558105,
+          "RMSE": 11.131020963305517,
+          "R2": 0.4792686700820923
+        },
+        "val_metrics": {
+          "MAE": 10.630389213562012,
+          "RMSE": 13.27736903314745,
+          "R2": 0.0522649884223938
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-005",
+    "config_id": "cfg_4",
+    "config": {
+      "colsample_bytree": 1.0,
+      "gamma": 0.1,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 1,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 5,
+      "subsample": 0.8
+    },
+    "cv_mean_rmse": 12.943085753424546,
+    "cv_std_rmse": 0.24896884245136702,
+    "train_val_gap": 1.80197114193148,
+    "total_fit_time": 19.079042673110962,
+    "mean_best_iteration": 305.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-005",
+        "config_id": "cfg_4",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 1,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 5,
+          "subsample": 0.8
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 6.395360469818115,
+        "wall_time_seconds": 8.025054931640625,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 297,
+        "best_score": 12.698081351212291,
+        "boosted_rounds": 348,
+        "train_metrics": {
+          "MAE": 8.099343299865723,
+          "RMSE": 10.978836508219747,
+          "R2": 0.4754006862640381
+        },
+        "val_metrics": {
+          "MAE": 10.257856369018555,
+          "RMSE": 12.698081428808694,
+          "R2": 0.0704450011253357
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-005",
+        "config_id": "cfg_4",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 1,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 5,
+          "subsample": 0.8
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 3.8574252128601074,
+        "wall_time_seconds": 5.769574165344238,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 159,
+        "best_score": 12.846595212092138,
+        "boosted_rounds": 210,
+        "train_metrics": {
+          "MAE": 8.47077751159668,
+          "RMSE": 11.353589375136778,
+          "R2": 0.44713467359542847
+        },
+        "val_metrics": {
+          "MAE": 10.300923347473145,
+          "RMSE": 12.846595022110309,
+          "R2": 0.03211081027984619
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-005",
+        "config_id": "cfg_4",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 1,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 5,
+          "subsample": 0.8
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 8.82625699043274,
+        "wall_time_seconds": 10.989248991012573,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 459,
+        "best_score": 13.28458024357995,
+        "boosted_rounds": 510,
+        "train_metrics": {
+          "MAE": 8.312183380126953,
+          "RMSE": 11.090917951122673,
+          "R2": 0.4830141067504883
+        },
+        "val_metrics": {
+          "MAE": 10.622836112976074,
+          "RMSE": 13.284580809354635,
+          "R2": 0.051235198974609375
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-007",
+    "config_id": "cfg_6",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 7,
+      "min_child_weight": 3,
+      "n_estimators": 800,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.944171771149676,
+    "cv_std_rmse": 0.23869074264721518,
+    "train_val_gap": 2.214872103839502,
+    "total_fit_time": 17.797411680221558,
+    "mean_best_iteration": 180.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-007",
+        "config_id": "cfg_6",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 7,
+          "min_child_weight": 3,
+          "n_estimators": 800,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 4.869719743728638,
+        "wall_time_seconds": 6.544792652130127,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 146,
+        "best_score": 12.72230791150824,
+        "boosted_rounds": 197,
+        "train_metrics": {
+          "MAE": 7.8514323234558105,
+          "RMSE": 10.681865790904805,
+          "R2": 0.5033970475196838
+        },
+        "val_metrics": {
+          "MAE": 10.26510238647461,
+          "RMSE": 12.722307836993206,
+          "R2": 0.06689465045928955
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-007",
+        "config_id": "cfg_6",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 7,
+          "min_child_weight": 3,
+          "n_estimators": 800,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 4.780150890350342,
+        "wall_time_seconds": 6.863795518875122,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 141,
+        "best_score": 12.834780237258661,
+        "boosted_rounds": 192,
+        "train_metrics": {
+          "MAE": 8.09262752532959,
+          "RMSE": 10.894745888549867,
+          "R2": 0.4909186363220215
+        },
+        "val_metrics": {
+          "MAE": 10.287402153015137,
+          "RMSE": 12.834780788949635,
+          "R2": 0.03389030694961548
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-007",
+        "config_id": "cfg_6",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 7,
+          "min_child_weight": 3,
+          "n_estimators": 800,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 8.147541046142578,
+        "wall_time_seconds": 10.01285433769226,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 253,
+        "best_score": 13.275426614977182,
+        "boosted_rounds": 304,
+        "train_metrics": {
+          "MAE": 7.927920341491699,
+          "RMSE": 10.611287322475851,
+          "R2": 0.5267617106437683
+        },
+        "val_metrics": {
+          "MAE": 10.614801406860352,
+          "RMSE": 13.27542668750619,
+          "R2": 0.052542269229888916
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-009",
+    "config_id": "cfg_8",
+    "config": {
+      "colsample_bytree": 0.8,
+      "gamma": 0,
+      "learning_rate": 0.03,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.946025173935636,
+    "cv_std_rmse": 0.24461332526608248,
+    "train_val_gap": 1.7942580077731662,
+    "total_fit_time": 28.76923632621765,
+    "mean_best_iteration": 523.3333333333334,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-009",
+        "config_id": "cfg_8",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.8,
+          "gamma": 0,
+          "learning_rate": 0.03,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 8.531308889389038,
+        "wall_time_seconds": 10.698850154876709,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 603,
+        "best_score": 12.694563114532622,
+        "boosted_rounds": 654,
+        "train_metrics": {
+          "MAE": 8.053397178649902,
+          "RMSE": 10.924323117305212,
+          "R2": 0.4805973768234253
+        },
+        "val_metrics": {
+          "MAE": 10.235538482666016,
+          "RMSE": 12.694563078841876,
+          "R2": 0.07096004486083984
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-009",
+        "config_id": "cfg_8",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.8,
+          "gamma": 0,
+          "learning_rate": 0.03,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 4.52275276184082,
+        "wall_time_seconds": 6.364321947097778,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 285,
+        "best_score": 12.866017134031713,
+        "boosted_rounds": 336,
+        "train_metrics": {
+          "MAE": 8.468626022338867,
+          "RMSE": 11.350267959994243,
+          "R2": 0.44745808839797974
+        },
+        "val_metrics": {
+          "MAE": 10.320478439331055,
+          "RMSE": 12.866016994802505,
+          "R2": 0.029182016849517822
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-009",
+        "config_id": "cfg_8",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.8,
+          "gamma": 0,
+          "learning_rate": 0.03,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 800,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 15.715174674987793,
+        "wall_time_seconds": 18.50482439994812,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 682,
+        "best_score": 13.277495112688348,
+        "boosted_rounds": 733,
+        "train_metrics": {
+          "MAE": 8.379159927368164,
+          "RMSE": 11.180710421187955,
+          "R2": 0.4746091365814209
+        },
+        "val_metrics": {
+          "MAE": 10.624114990234375,
+          "RMSE": 13.277495448162524,
+          "R2": 0.05224698781967163
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-008",
+    "config_id": "cfg_7",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.1,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 500,
+      "reg_alpha": 0,
+      "reg_lambda": 1,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.949132661990129,
+    "cv_std_rmse": 0.24930062611312212,
+    "train_val_gap": 1.7041095359361407,
+    "total_fit_time": 10.958678722381592,
+    "mean_best_iteration": 114.33333333333333,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-008",
+        "config_id": "cfg_7",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.1,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 500,
+          "reg_alpha": 0,
+          "reg_lambda": 1,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 2.673067808151245,
+        "wall_time_seconds": 4.3474485874176025,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 101,
+        "best_score": 12.706356533173526,
+        "boosted_rounds": 152,
+        "train_metrics": {
+          "MAE": 8.212006568908691,
+          "RMSE": 11.118757918442409,
+          "R2": 0.4619438648223877
+        },
+        "val_metrics": {
+          "MAE": 10.260308265686035,
+          "RMSE": 12.706356374254986,
+          "R2": 0.06923305988311768
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-008",
+        "config_id": "cfg_7",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.1,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 500,
+          "reg_alpha": 0,
+          "reg_lambda": 1,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 2.367603063583374,
+        "wall_time_seconds": 4.234001636505127,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 72,
+        "best_score": 12.849113944538093,
+        "boosted_rounds": 123,
+        "train_metrics": {
+          "MAE": 8.5020751953125,
+          "RMSE": 11.382911027155947,
+          "R2": 0.4442753195762634
+        },
+        "val_metrics": {
+          "MAE": 10.31374740600586,
+          "RMSE": 12.849114033477658,
+          "R2": 0.031731247901916504
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-008",
+        "config_id": "cfg_7",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.1,
+          "max_depth": 5,
+          "min_child_weight": 5,
+          "n_estimators": 500,
+          "reg_alpha": 0,
+          "reg_lambda": 1,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 5.918007850646973,
+        "wall_time_seconds": 8.25140929222107,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 170,
+        "best_score": 13.2919273620285,
+        "boosted_rounds": 221,
+        "train_metrics": {
+          "MAE": 8.429018020629883,
+          "RMSE": 11.233400432563611,
+          "R2": 0.46964555978775024
+        },
+        "val_metrics": {
+          "MAE": 10.64627456665039,
+          "RMSE": 13.291927578237747,
+          "R2": 0.05018550157546997
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-003",
+    "config_id": "cfg_2",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 1,
+      "n_estimators": 500,
+      "reg_alpha": 0.1,
+      "reg_lambda": 10,
+      "subsample": 1.0
+    },
+    "cv_mean_rmse": 12.953348587164577,
+    "cv_std_rmse": 0.2495028491203803,
+    "train_val_gap": 1.7862385567707388,
+    "total_fit_time": 15.275441646575928,
+    "mean_best_iteration": 318.3333333333333,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-003",
+        "config_id": "cfg_2",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 1,
+          "n_estimators": 500,
+          "reg_alpha": 0.1,
+          "reg_lambda": 10,
+          "subsample": 1.0
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 3.7366952896118164,
+        "wall_time_seconds": 5.504262208938599,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 239,
+        "best_score": 12.709828855330882,
+        "boosted_rounds": 290,
+        "train_metrics": {
+          "MAE": 8.191841125488281,
+          "RMSE": 11.102959219513318,
+          "R2": 0.46347182989120483
+        },
+        "val_metrics": {
+          "MAE": 10.272324562072754,
+          "RMSE": 12.709828840134229,
+          "R2": 0.06872433423995972
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-003",
+        "config_id": "cfg_2",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 1,
+          "n_estimators": 500,
+          "reg_alpha": 0.1,
+          "reg_lambda": 10,
+          "subsample": 1.0
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 4.184034109115601,
+        "wall_time_seconds": 5.910386562347412,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 233,
+        "best_score": 12.853972402334131,
+        "boosted_rounds": 284,
+        "train_metrics": {
+          "MAE": 8.395544052124023,
+          "RMSE": 11.26646506977486,
+          "R2": 0.45558714866638184
+        },
+        "val_metrics": {
+          "MAE": 10.304161071777344,
+          "RMSE": 12.85397251339056,
+          "R2": 0.03099888563156128
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-003",
+        "config_id": "cfg_2",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 5,
+          "min_child_weight": 1,
+          "n_estimators": 500,
+          "reg_alpha": 0.1,
+          "reg_lambda": 10,
+          "subsample": 1.0
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 7.354712247848511,
+        "wall_time_seconds": 9.283284187316895,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 483,
+        "best_score": 13.29624434302029,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.338600158691406,
+          "RMSE": 11.131905801893337,
+          "R2": 0.4791858196258545
+        },
+        "val_metrics": {
+          "MAE": 10.644315719604492,
+          "RMSE": 13.29624440796894,
+          "R2": 0.04956841468811035
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-012",
+    "config_id": "cfg_11",
+    "config": {
+      "colsample_bytree": 1.0,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 500,
+      "reg_alpha": 1,
+      "reg_lambda": 10,
+      "subsample": 1.0
+    },
+    "cv_mean_rmse": 12.956184793521714,
+    "cv_std_rmse": 0.264603200905043,
+    "train_val_gap": 2.028643272289793,
+    "total_fit_time": 24.52459216117859,
+    "mean_best_iteration": 261.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-012",
+        "config_id": "cfg_11",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 7,
+          "min_child_weight": 5,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 1.0
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 7.769715785980225,
+        "wall_time_seconds": 9.958239316940308,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 250,
+        "best_score": 12.717078476216695,
+        "boosted_rounds": 301,
+        "train_metrics": {
+          "MAE": 7.919633865356445,
+          "RMSE": 10.78413578056635,
+          "R2": 0.4938424229621887
+        },
+        "val_metrics": {
+          "MAE": 10.263250350952148,
+          "RMSE": 12.717078696625727,
+          "R2": 0.0676615834236145
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-012",
+        "config_id": "cfg_11",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 7,
+          "min_child_weight": 5,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 1.0
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 6.821871757507324,
+        "wall_time_seconds": 9.281329870223999,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 222,
+        "best_score": 12.826451915764137,
+        "boosted_rounds": 273,
+        "train_metrics": {
+          "MAE": 8.173405647277832,
+          "RMSE": 11.011374401542138,
+          "R2": 0.4799607992172241
+        },
+        "val_metrics": {
+          "MAE": 10.28286361694336,
+          "RMSE": 12.8264518882656,
+          "R2": 0.03514367341995239
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-012",
+        "config_id": "cfg_11",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 7,
+          "min_child_weight": 5,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 1.0
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 9.93300461769104,
+        "wall_time_seconds": 12.835909605026245,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 311,
+        "best_score": 13.325023677982308,
+        "boosted_rounds": 362,
+        "train_metrics": {
+          "MAE": 8.207215309143066,
+          "RMSE": 10.98711438158728,
+          "R2": 0.49264609813690186
+        },
+        "val_metrics": {
+          "MAE": 10.669997215270996,
+          "RMSE": 13.325023795673816,
+          "R2": 0.04544961452484131
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-006",
+    "config_id": "cfg_5",
+    "config": {
+      "colsample_bytree": 1.0,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 5,
+      "min_child_weight": 3,
+      "n_estimators": 300,
+      "reg_alpha": 1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.964358760719563,
+    "cv_std_rmse": 0.2672135912841509,
+    "train_val_gap": 1.635155696508173,
+    "total_fit_time": 18.90659761428833,
+    "mean_best_iteration": 282.6666666666667,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-006",
+        "config_id": "cfg_5",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 5,
+          "min_child_weight": 3,
+          "n_estimators": 300,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 5.361371278762817,
+        "wall_time_seconds": 7.296401262283325,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 299,
+        "best_score": 12.712569560328685,
+        "boosted_rounds": 300,
+        "train_metrics": {
+          "MAE": 8.254145622253418,
+          "RMSE": 11.172718021624043,
+          "R2": 0.45670872926712036
+        },
+        "val_metrics": {
+          "MAE": 10.278745651245117,
+          "RMSE": 12.712569401044275,
+          "R2": 0.06832259893417358
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-006",
+        "config_id": "cfg_5",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 5,
+          "min_child_weight": 3,
+          "n_estimators": 300,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 6.791953086853027,
+        "wall_time_seconds": 8.765542268753052,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 253,
+        "best_score": 12.846212475447823,
+        "boosted_rounds": 300,
+        "train_metrics": {
+          "MAE": 8.486085891723633,
+          "RMSE": 11.37208201111732,
+          "R2": 0.4453321695327759
+        },
+        "val_metrics": {
+          "MAE": 10.304272651672363,
+          "RMSE": 12.846211960853054,
+          "R2": 0.03216850757598877
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-006",
+        "config_id": "cfg_5",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 1.0,
+          "gamma": 0.1,
+          "learning_rate": 0.03,
+          "max_depth": 5,
+          "min_child_weight": 3,
+          "n_estimators": 300,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 6.753273248672485,
+        "wall_time_seconds": 9.056905269622803,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 296,
+        "best_score": 13.334294933548641,
+        "boosted_rounds": 300,
+        "train_metrics": {
+          "MAE": 8.59372615814209,
+          "RMSE": 11.4428091598928,
+          "R2": 0.4496878981590271
+        },
+        "val_metrics": {
+          "MAE": 10.690896034240723,
+          "RMSE": 13.334294920261357,
+          "R2": 0.044120848178863525
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-002",
+    "config_id": "cfg_1",
+    "config": {
+      "colsample_bytree": 0.8,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 3,
+      "n_estimators": 500,
+      "reg_alpha": 1,
+      "reg_lambda": 5,
+      "subsample": 1.0
+    },
+    "cv_mean_rmse": 12.997428276078445,
+    "cv_std_rmse": 0.26295822207312763,
+    "train_val_gap": 1.5412179021648882,
+    "total_fit_time": 16.147083282470703,
+    "mean_best_iteration": 487.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-002",
+        "config_id": "cfg_1",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.8,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_child_weight": 3,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 5,
+          "subsample": 1.0
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 4.015035629272461,
+        "wall_time_seconds": 5.675963401794434,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 495,
+        "best_score": 12.745401932695707,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.387076377868652,
+          "RMSE": 11.314134679889907,
+          "R2": 0.4428684711456299
+        },
+        "val_metrics": {
+          "MAE": 10.308587074279785,
+          "RMSE": 12.74540178745389,
+          "R2": 0.0635039210319519
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-002",
+        "config_id": "cfg_1",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.8,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_child_weight": 3,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 5,
+          "subsample": 1.0
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 6.157881259918213,
+        "wall_time_seconds": 8.03948187828064,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 479,
+        "best_score": 12.886624194428572,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.587998390197754,
+          "RMSE": 11.474141114115715,
+          "R2": 0.43533170223236084
+        },
+        "val_metrics": {
+          "MAE": 10.337932586669922,
+          "RMSE": 12.886624023977403,
+          "R2": 0.026069700717926025
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-002",
+        "config_id": "cfg_1",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.8,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_child_weight": 3,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 5,
+          "subsample": 1.0
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 5.974166393280029,
+        "wall_time_seconds": 8.28822135925293,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 487,
+        "best_score": 13.360259045136395,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.725608825683594,
+          "RMSE": 11.58035532773505,
+          "R2": 0.436378538608551
+        },
+        "val_metrics": {
+          "MAE": 10.716530799865723,
+          "RMSE": 13.360259016804044,
+          "R2": 0.040394723415374756
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-010",
+    "config_id": "cfg_9",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "min_child_weight": 1,
+      "n_estimators": 500,
+      "reg_alpha": 1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 13.03006708315943,
+    "cv_std_rmse": 0.26370422582253555,
+    "train_val_gap": 1.4896643318593377,
+    "total_fit_time": 24.373408794403076,
+    "mean_best_iteration": 494.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-010",
+        "config_id": "cfg_9",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "min_child_weight": 1,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 8.926185846328735,
+        "wall_time_seconds": 11.50052785873413,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 497,
+        "best_score": 12.772844046167815,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.468847274780273,
+          "RMSE": 11.408250439948535,
+          "R2": 0.4335610270500183
+        },
+        "val_metrics": {
+          "MAE": 10.340158462524414,
+          "RMSE": 12.77284378398476,
+          "R2": 0.0594668984413147
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-010",
+        "config_id": "cfg_9",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "min_child_weight": 1,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 7.111902952194214,
+        "wall_time_seconds": 9.498239278793335,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 489,
+        "best_score": 12.924826453485228,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.65865707397461,
+          "RMSE": 11.554681557427479,
+          "R2": 0.42737674713134766
+        },
+        "val_metrics": {
+          "MAE": 10.3900146484375,
+          "RMSE": 12.924826196206602,
+          "R2": 0.020286738872528076
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-010",
+        "config_id": "cfg_9",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "min_child_weight": 1,
+          "n_estimators": 500,
+          "reg_alpha": 1,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 8.335319995880127,
+        "wall_time_seconds": 10.7841477394104,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 496,
+        "best_score": 13.392531440846508,
+        "boosted_rounds": 500,
+        "train_metrics": {
+          "MAE": 8.797256469726562,
+          "RMSE": 11.658276256524267,
+          "R2": 0.4287680983543396
+        },
+        "val_metrics": {
+          "MAE": 10.746906280517578,
+          "RMSE": 13.392531269286927,
+          "R2": 0.03575319051742554
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-004",
+    "config_id": "cfg_3",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 3,
+      "n_estimators": 300,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 13.032285544033499,
+    "cv_std_rmse": 0.26518002449290723,
+    "train_val_gap": 1.476615690290517,
+    "total_fit_time": 10.935003995895386,
+    "mean_best_iteration": 271.0,
+    "status": "COMPLETED",
+    "successful_fold_count": 3,
+    "folds": [
+      {
+        "experiment_id": "EXP24-XGB-SCR-004",
+        "config_id": "cfg_3",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_child_weight": 3,
+          "n_estimators": 300,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 90380,
+        "validation_rows": 10411,
+        "train_years": "1900-1994",
+        "validation_years": "1995-1997",
+        "fit_time": 3.488424301147461,
+        "wall_time_seconds": 5.289566993713379,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 297,
+        "best_score": 12.762988194620604,
+        "boosted_rounds": 300,
+        "train_metrics": {
+          "MAE": 8.467519760131836,
+          "RMSE": 11.407370316342837,
+          "R2": 0.43364834785461426
+        },
+        "val_metrics": {
+          "MAE": 10.32754135131836,
+          "RMSE": 12.7629878893338,
+          "R2": 0.06091785430908203
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-004",
+        "config_id": "cfg_3",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_child_weight": 3,
+          "n_estimators": 300,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 100791,
+        "validation_rows": 9506,
+        "train_years": "1900-1997",
+        "validation_years": "1998-2000",
+        "fit_time": 3.306380033493042,
+        "wall_time_seconds": 5.088943958282471,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 217,
+        "best_score": 12.94090404124285,
+        "boosted_rounds": 268,
+        "train_metrics": {
+          "MAE": 8.700546264648438,
+          "RMSE": 11.603831717258783,
+          "R2": 0.42249488830566406
+        },
+        "val_metrics": {
+          "MAE": 10.408445358276367,
+          "RMSE": 12.940903957577994,
+          "R2": 0.017847836017608643
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      },
+      {
+        "experiment_id": "EXP24-XGB-SCR-004",
+        "config_id": "cfg_3",
+        "stage": "SCREENING",
+        "fold_id": "all",
+        "params": {
+          "colsample_bytree": 0.9,
+          "gamma": 0,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_child_weight": 3,
+          "n_estimators": 300,
+          "reg_alpha": 0,
+          "reg_lambda": 10,
+          "subsample": 0.9
+        },
+        "train_rows": 110297,
+        "validation_rows": 9703,
+        "train_years": "1900-2000",
+        "validation_years": "2001-2004",
+        "fit_time": 4.140199661254883,
+        "wall_time_seconds": 6.0410075187683105,
+        "early_stopping_used": true,
+        "eval_set_source": "fold-validation",
+        "best_iteration": 299,
+        "best_score": 13.392965126411632,
+        "boosted_rounds": 300,
+        "train_metrics": {
+          "MAE": 8.794403076171875,
+          "RMSE": 11.655807527627323,
+          "R2": 0.4290100336074829
+        },
+        "val_metrics": {
+          "MAE": 10.745795249938965,
+          "RMSE": 13.392964785188703,
+          "R2": 0.03569072484970093
+        },
+        "n_features_in_": 49,
+        "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": "COMPLETED"
+      }
+    ]
+  }
+]

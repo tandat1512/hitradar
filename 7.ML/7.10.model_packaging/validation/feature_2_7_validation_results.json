@@ -1,0 +1,92 @@
+[
+  {
+    "check_id": "F27-F26-GATE-VALID",
+    "category": "Prerequisite",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "feature_2_6_handoff_gate_validation.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "F26 valid"
+  },
+  {
+    "check_id": "F27-INPUT-CONTRACT-VALID",
+    "category": "Prerequisite",
+    "expected": 18,
+    "actual": 18,
+    "evidence_path": "raw_input_contract_validation.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "18 fields"
+  },
+  {
+    "check_id": "F27-CHAMPION-HASH-UNCHANGED",
+    "category": "Immutability",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "feature_2_7_source_immutability_check.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "Hash unchanged"
+  },
+  {
+    "check_id": "F27-NO-REFIT",
+    "category": "Governance",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "inference_no_refit_results.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "No fit calls"
+  },
+  {
+    "check_id": "F27-FULL-PIPELINE-SAVED",
+    "category": "Package",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "package/pipeline/full_inference_pipeline.joblib",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "Pipeline saved"
+  },
+  {
+    "check_id": "F27-PREDICTION-CONSISTENCY",
+    "category": "Consistency",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "full_inference_pipeline_validation.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "Predictions match"
+  },
+  {
+    "check_id": "F27-EXAMPLE-OUTPUT",
+    "category": "Schema",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "package/examples/example_output.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "Example OK"
+  },
+  {
+    "check_id": "F27-CLEAN-ENVIRONMENT",
+    "category": "Environment",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "clean_environment_validation.json",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "No external deps"
+  },
+  {
+    "check_id": "F27-HANDOFF-DOCUMENT",
+    "category": "Docs",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "E:\\Dự án 1 hitrada\\hitradar\\..\\Output epic2\\handoff_to_epic3.md",
+    "severity": "BLOCKER",
+    "status": "PASS",
+    "message": "Handoff exists"
+  }
+]

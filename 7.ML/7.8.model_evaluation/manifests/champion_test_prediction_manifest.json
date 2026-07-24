@@ -1,0 +1,9 @@
+{
+  "path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\predictions\\champion_test_predictions_raw.parquet",
+  "rows": 85876,
+  "columns": 10,
+  "champion_id": "EXP24-XGB-FINAL-001",
+  "prediction_count": 85876,
+  "no_nan_inf": true,
+  "generation_timestamp": "2026-07-21T23:12:06.876579"
+}

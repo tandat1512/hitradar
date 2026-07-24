@@ -10,7 +10,6 @@
   "liveness",
   "valence",
   "tempo",
-  "tempo_missing_indicator",
   "release_month_1.0",
   "release_month_10.0",
   "release_month_11.0",
@@ -23,6 +22,7 @@
   "release_month_7.0",
   "release_month_8.0",
   "release_month_9.0",
+  "release_month___MISSING__",
   "decade_1900",
   "decade_1920",
   "decade_1930",
@@ -51,5 +51,8 @@
   "time_signature_1.0",
   "time_signature_3.0",
   "time_signature_4.0",
-  "time_signature_5.0"
+  "time_signature_5.0",
+  "time_signature___MISSING__",
+  "explicit",
+  "mode"
 ]

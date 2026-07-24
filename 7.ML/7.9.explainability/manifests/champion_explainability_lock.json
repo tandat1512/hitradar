@@ -1,0 +1,25 @@
+{
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "model_class": "XGBRegressor",
+  "artifact_path": "hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+  "artifact_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+  "artifact_bytes": 3978699,
+  "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "feature_set_id": "FS23-SELECTED",
+  "bundle_input_count": 18,
+  "selected_count": 31,
+  "model_matrix_width": 49,
+  "preprocessing_identity": "Pipeline(fe=FeatureEngineeringTransformer, prep=ColumnTransformer(num+cat))",
+  "lock_timestamp": "2026-07-23T07:51:49.831653",
+  "git_commit": "564c47218fbe2e71dfafab95e7f4193478f571a8",
+  "training_allowed": false,
+  "tuning_allowed": false,
+  "model_reselection_allowed": false,
+  "artifact_modification_allowed": false,
+  "notes": {
+    "champion_alias": "champion_bundle.joblib",
+    "original_artifact": "EXP24-XGB-FINAL-001.joblib",
+    "original_artifact_sha256": "9a7ae3a37a2e84156bd177743e26824a198efcdfa0505a041b50ab392b4ac8e7",
+    "hash_reference": "ea054a9b is the canonical hash used for immutability tracking"
+  }
+}

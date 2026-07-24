@@ -1,0 +1,10 @@
+{
+  "method": "expanding_window",
+  "fold_count": 3,
+  "year_range": [
+    1900,
+    2004
+  ],
+  "randomized": false,
+  "status": "LOCKED"
+}

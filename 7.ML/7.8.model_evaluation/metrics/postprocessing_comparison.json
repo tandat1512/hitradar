@@ -1,0 +1,21 @@
+{
+  "RAW": {
+    "MAE": 17.646684646606445,
+    "RMSE": 21.01337842313573,
+    "R2": 0.06962639093399048,
+    "changed_rows": 0
+  },
+  "POST_PROCESSING_REFERENCE": {
+    "MAE": 17.64667320251465,
+    "RMSE": 21.013374792403425,
+    "R2": 0.06962668895721436,
+    "changed_rows": 4
+  },
+  "adjustments": {
+    "below_0_count": 4,
+    "above_100_count": 0,
+    "changed_rate": 4.657878801993572e-05,
+    "mean_absolute_adjustment": 9.458151907892898e-06,
+    "max_adjustment": 0.4802478551864624
+  }
+}

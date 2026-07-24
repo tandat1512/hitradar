@@ -1,0 +1,13 @@
+{
+  "best_rmse_year": 2014,
+  "worst_rmse_year": 2021,
+  "rmse_range": 11.260460959893749,
+  "yearly_rmse_mean": 21.10981968397222,
+  "yearly_rmse_std": 3.319113096974996,
+  "yearly_mae_mean": 17.963594675064087,
+  "strongest_underprediction_year": 2019,
+  "strongest_overprediction_year": 2021,
+  "year_rmse_correlation": 0.930338213758189,
+  "year_mean_residual_correlation": 0.12058398147217497,
+  "status": "MODERATELY_VARIABLE"
+}

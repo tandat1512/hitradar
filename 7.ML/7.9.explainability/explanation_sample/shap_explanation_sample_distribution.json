@@ -1,0 +1,15 @@
+{
+  "release_year": {
+    "min": 2014,
+    "max": 2021,
+    "mean": 2017.447,
+    "std": 2.2499340969655397
+  },
+  "target_popularity": {
+    "min": 0,
+    "max": 91,
+    "mean": 40.5182,
+    "std": 21.768115190061486
+  },
+  "sample_size": 5000
+}

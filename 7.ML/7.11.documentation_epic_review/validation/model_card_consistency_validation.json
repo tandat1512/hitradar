@@ -1,0 +1,66 @@
+[
+  {
+    "field": "champion_id",
+    "displayed_value": "EXP24-XGB-FINAL-001",
+    "canonical_value": "EXP24-XGB-FINAL-001",
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "model_version",
+    "displayed_value": "1.0.0",
+    "canonical_value": "1.0.0",
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "test_rmse",
+    "displayed_value": 21.01337842313573,
+    "canonical_value": 21.01337842313573,
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "test_mae",
+    "displayed_value": 17.646684646606445,
+    "canonical_value": 17.646684646606445,
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "test_r2",
+    "displayed_value": 0.06962639093399048,
+    "canonical_value": 0.06962639093399048,
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "raw_feature_count",
+    "displayed_value": 18,
+    "canonical_value": 18,
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "selected_feature_count",
+    "displayed_value": 31,
+    "canonical_value": 31,
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  },
+  {
+    "field": "model_matrix_width",
+    "displayed_value": 49,
+    "canonical_value": 49,
+    "tolerance": 0.001,
+    "source": "canonical_facts",
+    "status": "PASS"
+  }
+]

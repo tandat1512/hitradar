@@ -1,0 +1,21 @@
+{
+  "registry_version": "1.0",
+  "total_features": 33,
+  "baseline_count": 18,
+  "engineered_count": 15,
+  "selected_count": 31,
+  "active_count": 31,
+  "experimental_count": 0,
+  "rejected_count": 2,
+  "generated_at": "2026-07-19T19:37:02.786879",
+  "files": [
+    {
+      "path": "feature_registry.json",
+      "type": "json"
+    },
+    {
+      "path": "feature_registry.csv",
+      "type": "csv"
+    }
+  ]
+}

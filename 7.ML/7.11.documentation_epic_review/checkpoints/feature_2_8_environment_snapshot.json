@@ -1,0 +1,48 @@
+{
+  "os": "Windows",
+  "arch": "AMD64",
+  "python_executable": "E:\\Dự án 1 hitrada\\.venv\\Scripts\\python.exe",
+  "python_version": "3.13.7",
+  "pandas": {
+    "version": "3.0.3",
+    "import_status": "PASS"
+  },
+  "numpy": {
+    "version": "2.4.6",
+    "import_status": "PASS"
+  },
+  "scipy": {
+    "version": "1.18.0",
+    "import_status": "PASS"
+  },
+  "scikit-learn": {
+    "version": "1.9.0",
+    "import_status": "PASS"
+  },
+  "xgboost": {
+    "version": "3.3.0",
+    "import_status": "PASS"
+  },
+  "joblib": {
+    "version": "1.5.3",
+    "import_status": "PASS"
+  },
+  "shap": {
+    "version": "0.52.0",
+    "import_status": "PASS"
+  },
+  "pyarrow": {
+    "version": "25.0.0",
+    "import_status": "PASS"
+  },
+  "matplotlib": {
+    "version": "3.11.1",
+    "import_status": "PASS"
+  },
+  "pytest": {
+    "version": "9.1.1",
+    "import_status": "PASS"
+  },
+  "cpu": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "logical_cores": 12
+}

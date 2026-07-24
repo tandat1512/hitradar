@@ -1,0 +1,200 @@
+[
+  {
+    "logical_name": "best_model",
+    "package_relative_path": "models/best_model.joblib",
+    "artifact_type": "model",
+    "producer_phase": "2.7-P1",
+    "bytes": 3971702,
+    "sha256": "4b5859268e7ea024daacc1d27a8f59f5c45480a29d3598c7304a4e3cb3e3c1fd",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": true
+  },
+  {
+    "logical_name": "feature_engineering_pipeline",
+    "package_relative_path": "preprocessing/feature_engineering_pipeline.joblib",
+    "artifact_type": "preprocessing",
+    "producer_phase": "2.7-P1",
+    "bytes": 954,
+    "sha256": "9a8b19c0bd1a5b143a3fb9de4050310957d3f63119195097d25ac6b720cef334",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": true
+  },
+  {
+    "logical_name": "model_preprocessing_pipeline",
+    "package_relative_path": "preprocessing/model_preprocessing_pipeline.joblib",
+    "artifact_type": "preprocessing",
+    "producer_phase": "2.7-P1",
+    "bytes": 6322,
+    "sha256": "68854f94266920eeb6167652fad50715cffdcf1d5a727d8f107c8c17503d0f8d",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": true
+  },
+  {
+    "logical_name": "full_inference_pipeline",
+    "package_relative_path": "pipeline/full_inference_pipeline.joblib",
+    "artifact_type": "pipeline",
+    "producer_phase": "2.7-P2",
+    "bytes": 3982751,
+    "sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": true
+  },
+  {
+    "logical_name": "input_schema",
+    "package_relative_path": "schemas/input_schema.json",
+    "artifact_type": "schema",
+    "producer_phase": "2.7-P2",
+    "bytes": 9311,
+    "sha256": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "output_schema",
+    "package_relative_path": "schemas/output_schema.json",
+    "artifact_type": "schema",
+    "producer_phase": "2.7-P2",
+    "bytes": 1231,
+    "sha256": "3d77b33b1d23c806358a872d1481262e68b42b474f5218273e50ab5a69fb17e8",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "selected_features",
+    "package_relative_path": "schemas/selected_features.json",
+    "artifact_type": "schema",
+    "producer_phase": "2.7-P2",
+    "bytes": 799,
+    "sha256": "8d86f9c62e8fb321c04580eb2cfe22e80a7a439e3d557de7c5a04f73a817e5e7",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "feature_names",
+    "package_relative_path": "schemas/feature_names.json",
+    "artifact_type": "schema",
+    "producer_phase": "2.7-P2",
+    "bytes": 1223,
+    "sha256": "3044097537901e2218afe542b9fd2e7dd09af55fbd9fea7509a229a68b0a2bc1",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "feature_mapping",
+    "package_relative_path": "schemas/feature_mapping.json",
+    "artifact_type": "schema",
+    "producer_phase": "2.7-P2",
+    "bytes": 13189,
+    "sha256": "cca788e6303027333f5d167316c45f4188705d00a2c24aed07e8892946518646",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "inference_pipeline_module",
+    "package_relative_path": "runtime/inference_pipeline.py",
+    "artifact_type": "runtime",
+    "producer_phase": "2.7-P2",
+    "bytes": 6345,
+    "sha256": "34ef2ebe49bf82923806e926115c2c86eb186735dd637f8cbe3b624a18dd8ffa",
+    "exists": true,
+    "load_required": true,
+    "runtime_required": true
+  },
+  {
+    "logical_name": "example_input",
+    "package_relative_path": "examples/example_input.json",
+    "artifact_type": "example",
+    "producer_phase": "2.7-P3",
+    "bytes": 417,
+    "sha256": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "example_output",
+    "package_relative_path": "examples/example_output.json",
+    "artifact_type": "example",
+    "producer_phase": "2.7-P3",
+    "bytes": 241,
+    "sha256": "4a0e968c07c1335aaac2094e46c0cae5ccba0471dcb5d2c0046786df7dad10d6",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "model_version",
+    "package_relative_path": "metadata/model_version.json",
+    "artifact_type": "metadata",
+    "producer_phase": "2.7-P3",
+    "bytes": 375,
+    "sha256": "5d639f3371e2064d7f0287c4b97993f47e1d25a2695686025cd752a3b1c07c7c",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "data_version",
+    "package_relative_path": "metadata/data_version.json",
+    "artifact_type": "metadata",
+    "producer_phase": "2.7-P3",
+    "bytes": 313,
+    "sha256": "a0951b81bfd37e30b3357512dfe0389967cbc543f93a5b29e2ee933d1112dff8",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "package_version",
+    "package_relative_path": "metadata/package_version.json",
+    "artifact_type": "metadata",
+    "producer_phase": "2.7-P3",
+    "bytes": 295,
+    "sha256": "f2239b341e6084fce0b514074fa938e02121ea1e54313c3e9ef9472fe9ae4fe7",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "requirements_runtime",
+    "package_relative_path": "requirements-runtime.txt",
+    "artifact_type": "requirements",
+    "producer_phase": "2.7-P3",
+    "bytes": 46,
+    "sha256": "2e039d818b34472df2cf8b056edf2d1d98d1164581a3f3127839eb2ac87c2340",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "requirements_explainability",
+    "package_relative_path": "requirements-explainability.txt",
+    "artifact_type": "requirements",
+    "producer_phase": "2.7-P3",
+    "bytes": 64,
+    "sha256": "555ae51570d597bef487036b59f9334cec21a1386391d7c6574bc8a65a5ba166",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  },
+  {
+    "logical_name": "requirements_lock",
+    "package_relative_path": "requirements-lock.txt",
+    "artifact_type": "requirements",
+    "producer_phase": "2.7-P3",
+    "bytes": 117,
+    "sha256": "7bfb26382a88e42f8abde4382672224541d3a1beb0f45efb8d8fad8146f0fd28",
+    "exists": true,
+    "load_required": false,
+    "runtime_required": false
+  }
+]

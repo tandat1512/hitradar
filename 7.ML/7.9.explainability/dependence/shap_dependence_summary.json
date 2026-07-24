@@ -1,0 +1,58 @@
+[
+  {
+    "feature": "release_year",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_release_year.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  },
+  {
+    "feature": "acousticness",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_acousticness.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  },
+  {
+    "feature": "duration_min",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_duration_min.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  },
+  {
+    "feature": "loudness",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_loudness.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  },
+  {
+    "feature": "speechiness",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_speechiness.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  },
+  {
+    "feature": "tempo",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_tempo.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  },
+  {
+    "feature": "danceability",
+    "plot_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\dependence\\shap_dependence_danceability.png",
+    "sample_count": 5000,
+    "observed_association": "Monotonic/Non-linear tendency observed in SHAP values.",
+    "low_sample_ranges": "Extreme low/high values may have sparse data.",
+    "interpretation_limitation": "Association does not imply real-world causality."
+  }
+]

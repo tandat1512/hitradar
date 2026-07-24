@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP24-RIDGE-BEST-001",
+  "model_family": "Ridge",
+  "feature_set": "FS23-SELECTED",
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\ridge_regressor.joblib",
+  "artifact_sha256": "525f9fcf7336b059e1346f9e3a8f17c5c4bfca15d0e85676f0d17460e57f3078",
+  "status": "PASS"
+}

@@ -1,0 +1,9 @@
+{
+  "missing_field_rejected": true,
+  "extra_field_handled": true,
+  "duplicate_col_rejected": true,
+  "inf_rejected": true,
+  "neg_inf_rejected": true,
+  "wrong_type_rejected": true,
+  "all_pass": true
+}

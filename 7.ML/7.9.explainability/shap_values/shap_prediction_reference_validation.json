@@ -1,0 +1,8 @@
+{
+  "prediction_match": true,
+  "estimator_mean": 35.99481201171875,
+  "mean_difference": 0.0,
+  "max_difference": 0.0,
+  "tolerance": 1e-05,
+  "reference_used": "ESTIMATOR"
+}

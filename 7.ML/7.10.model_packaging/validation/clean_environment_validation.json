@@ -1,0 +1,9 @@
+{
+  "clean_env_load_success": true,
+  "clean_env_predict_success": true,
+  "no_train_data_dependency": true,
+  "no_validation_data_dependency": true,
+  "no_test_data_dependency": true,
+  "no_notebook_dependency": true,
+  "is_valid": true
+}

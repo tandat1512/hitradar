@@ -1,0 +1,25 @@
+{
+  "session_id": "F26-P3-GLOBAL-20260723-150721-g3x7",
+  "shap_values_loaded": true,
+  "shap_recomputed": false,
+  "training_executed": false,
+  "tuning_executed": false,
+  "artifacts_created": [
+    "global_explanation_source_validation.json",
+    "shap_global_importance_transformed.csv",
+    "shap_global_importance_selected.csv",
+    "shap_global_importance_raw_family.csv",
+    "shap_top_10_features.json",
+    "shap_top_20_features.json",
+    "shap_summary_bar_transformed.png",
+    "shap_summary_bar_selected.png",
+    "shap_summary_bar_raw_family.png",
+    "shap_summary_beeswarm.png",
+    "global_feature_direction_summary.json",
+    "global_feature_shap_associations.csv",
+    "low_importance_feature_summary.json",
+    "global_explanation_summary.json",
+    "global_explanation_figure_manifest.json",
+    "global_explanation_consistency_check.json"
+  ]
+}

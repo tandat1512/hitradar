@@ -1,0 +1,29 @@
+{
+  "family_best_config_id": "EXP24-XGB-FCV-001",
+  "runner_up_config_id": "EXP24-XGB-FCV-002",
+  "best_params": {
+    "colsample_bytree": 0.9,
+    "gamma": 0.1,
+    "learning_rate": 0.03,
+    "max_depth": 7,
+    "min_child_weight": 5,
+    "n_estimators": 454,
+    "reg_alpha": 0,
+    "reg_lambda": 10,
+    "subsample": 0.9
+  },
+  "runner_up_params": {
+    "colsample_bytree": 0.9,
+    "gamma": 0,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "min_child_weight": 5,
+    "n_estimators": 800,
+    "reg_alpha": 0.1,
+    "reg_lambda": 10,
+    "subsample": 0.9
+  },
+  "decision_rule": "lowest RMSE",
+  "selected_before_external_validation": true,
+  "external_validation_seen_at_selection": false
+}

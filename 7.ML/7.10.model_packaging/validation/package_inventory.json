@@ -1,0 +1,83 @@
+{
+  "file_count": 19,
+  "directory_count": 7,
+  "total_bytes": 8002316,
+  "files": [
+    {
+      "path": "requirements-explainability.txt",
+      "bytes": 64
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 117
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 46
+    },
+    {
+      "path": "examples/example_input.json",
+      "bytes": 417
+    },
+    {
+      "path": "examples/example_output.json",
+      "bytes": 241
+    },
+    {
+      "path": "metadata/artifact_manifest.json",
+      "bytes": 6621
+    },
+    {
+      "path": "metadata/data_version.json",
+      "bytes": 313
+    },
+    {
+      "path": "metadata/model_version.json",
+      "bytes": 375
+    },
+    {
+      "path": "metadata/package_version.json",
+      "bytes": 295
+    },
+    {
+      "path": "models/best_model.joblib",
+      "bytes": 3971702
+    },
+    {
+      "path": "pipeline/full_inference_pipeline.joblib",
+      "bytes": 3982751
+    },
+    {
+      "path": "preprocessing/feature_engineering_pipeline.joblib",
+      "bytes": 954
+    },
+    {
+      "path": "preprocessing/model_preprocessing_pipeline.joblib",
+      "bytes": 6322
+    },
+    {
+      "path": "runtime/inference_pipeline.py",
+      "bytes": 6345
+    },
+    {
+      "path": "schemas/feature_mapping.json",
+      "bytes": 13189
+    },
+    {
+      "path": "schemas/feature_names.json",
+      "bytes": 1223
+    },
+    {
+      "path": "schemas/input_schema.json",
+      "bytes": 9311
+    },
+    {
+      "path": "schemas/output_schema.json",
+      "bytes": 1231
+    },
+    {
+      "path": "schemas/selected_features.json",
+      "bytes": 799
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "ranking": [
+    "XGBoost",
+    "RandomForest",
+    "Ridge"
+  ]
+}

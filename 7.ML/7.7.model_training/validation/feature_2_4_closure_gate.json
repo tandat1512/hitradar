@@ -1,0 +1,9 @@
+{
+  "feature_2_4_status": "PASS_WITH_WARNINGS",
+  "feature_2_4_decision": "ELIGIBLE_FOR_CLOSURE",
+  "feature_2_5_gate": "MAY_BEGIN",
+  "blockers": [],
+  "warnings": [
+    "W24-XGB-MISSING"
+  ]
+}

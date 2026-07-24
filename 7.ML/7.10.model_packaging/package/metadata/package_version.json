@@ -1,0 +1,13 @@
+{
+  "package_version": "2.7.0",
+  "version_assignment_reason": "Feature 2.7 initial packaging release",
+  "includes": [
+    "model",
+    "preprocessing",
+    "inference_pipeline",
+    "schemas",
+    "examples",
+    "metadata"
+  ],
+  "created_at": "2026-07-24T10:03:44.215866+00:00"
+}

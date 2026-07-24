@@ -1,0 +1,16 @@
+{
+  "shap_values_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_values_global.npy",
+  "shap_values_hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+  "hash_matches_manifest": true,
+  "base_values_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_base_values.npy",
+  "base_values_hash": "b67b2bd148062e60edb4c2764f0e4a69f6990d2ab580fb7863447ec5e844cd44",
+  "base_hash_matches": true,
+  "feature_names_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\manifests\\transformed_feature_names.json",
+  "feature_names_hash": "3a8dd613a7829ae959dedf78c0316d27237dcd2f371c0c95ee08ade088052b81",
+  "feature_mapping_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_feature_mapping.json",
+  "feature_mapping_hash": "1f600eceb12d48caa386babd9071ca1993db07483e3e96a7061287eb481e3c17",
+  "transformed_sample_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\explanation_sample\\shap_explanation_sample_transformed.npy",
+  "transformed_sample_hash": "876b130eaa5282079d05808fe345896e43027edbb5b05e9510af8b4de399f113",
+  "transformed_sample_hash_matches": true,
+  "immutable": true
+}

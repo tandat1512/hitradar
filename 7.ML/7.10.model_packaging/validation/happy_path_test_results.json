@@ -1,0 +1,9 @@
+{
+  "dict_single": true,
+  "series": true,
+  "df_single": true,
+  "df_batch": true,
+  "order_invariant": true,
+  "nullable_accepted": true,
+  "all_pass": true
+}

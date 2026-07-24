@@ -1,0 +1,1245 @@
+[
+  {
+    "experiment_id": "EXP24-DUMMY-MEAN-001",
+    "stage": "BASELINE",
+    "feature_count": 31,
+    "train_rows": 415524,
+    "val_rows": 85272,
+    "fit_time": 3.807910442352295,
+    "pred_time": 2.1035778522491455,
+    "train_metrics": {
+      "MAE": 12.984920467474314,
+      "RMSE": 15.77177336493024,
+      "R2": 0.0
+    },
+    "val_metrics": {
+      "MAE": 18.37780582732116,
+      "RMSE": 21.40675380446291,
+      "R2": -0.7819123900409652
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T11:46:26.227402+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-DUMMY-MEAN-001.joblib",
+    "artifact_sha256": "d6c2150e8e791f7916b725aadd9d7c794466831af9d4922cf4632e82f9538653",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-LINEAR-FS31-001",
+    "stage": "BASELINE",
+    "feature_count": 31,
+    "train_rows": 415524,
+    "val_rows": 85272,
+    "fit_time": 5.481400489807129,
+    "pred_time": 2.6040101051330566,
+    "train_metrics": {
+      "MAE": 9.593097828786293,
+      "RMSE": 12.336725188957699,
+      "R2": 0.38815878939837123
+    },
+    "val_metrics": {
+      "MAE": 12.307352093375185,
+      "RMSE": 16.02795144916333,
+      "R2": 0.0010568909617674205
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T11:46:34.359757+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-LINEAR-FS31-001.joblib",
+    "artifact_sha256": "854fdba2f108854724009a76dcd44b2e5179d53b962b1917102ae6573ce414fc",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-FS18-CONTROL",
+    "stage": "CONTROL",
+    "feature_count": 18,
+    "train_rows": 415524,
+    "val_rows": 85272,
+    "fit_time": 3.0771090984344482,
+    "pred_time": 2.0521583557128906,
+    "train_metrics": {
+      "MAE": 9.625171971215336,
+      "RMSE": 12.372052558212738,
+      "R2": 0.38464964285280945
+    },
+    "val_metrics": {
+      "MAE": 12.36092684291078,
+      "RMSE": 16.136922590077948,
+      "R2": -0.01257255091256626
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T11:46:39.533774+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FS18-CONTROL.joblib",
+    "artifact_sha256": "a76cdab8f0b6483b9c3e0b6500e753cf5bfb01578cd2efca807a0ff70fe0f1f7",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-FS31-CONTROL",
+    "stage": "CONTROL",
+    "feature_count": 31,
+    "train_rows": 415524,
+    "val_rows": 85272,
+    "fit_time": 3.896360158920288,
+    "pred_time": 2.1820926666259766,
+    "train_metrics": {
+      "MAE": 9.593098538953779,
+      "RMSE": 12.336725190813913,
+      "R2": 0.38815878921425306
+    },
+    "val_metrics": {
+      "MAE": 12.307357254895232,
+      "RMSE": 16.027957971381614,
+      "R2": 0.0010560779662504016
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T11:46:45.747406+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FS31-CONTROL.joblib",
+    "artifact_sha256": "7aed82bbaef77a61d9d112cb7ddac1d5c66294b3911ea2c20eda258ea25ea304",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-001",
+    "stage": "SCREENING",
+    "alpha": 0.0001,
+    "cv_mean_rmse": 13.260078064853282,
+    "val_metrics": {
+      "RMSE": 13.260078064853282,
+      "MAE": 10.717038322723676,
+      "R2": 0.00443287137268152
+    },
+    "train_metrics": {
+      "RMSE": 12.14014898445186
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-002",
+    "stage": "SCREENING",
+    "alpha": 0.001,
+    "cv_mean_rmse": 13.26007807099157,
+    "val_metrics": {
+      "RMSE": 13.26007807099157,
+      "MAE": 10.717038330350634,
+      "R2": 0.004432870474329831
+    },
+    "train_metrics": {
+      "RMSE": 12.140148984451889
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-003",
+    "stage": "SCREENING",
+    "alpha": 0.01,
+    "cv_mean_rmse": 13.260078132374225,
+    "val_metrics": {
+      "RMSE": 13.260078132374225,
+      "MAE": 10.717038406619297,
+      "R2": 0.004432861490846614
+    },
+    "train_metrics": {
+      "RMSE": 12.140148984454733
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-004",
+    "stage": "SCREENING",
+    "alpha": 0.03,
+    "cv_mean_rmse": 13.260078268778619,
+    "val_metrics": {
+      "RMSE": 13.260078268778619,
+      "MAE": 10.71703857609936,
+      "R2": 0.004432841527774678
+    },
+    "train_metrics": {
+      "RMSE": 12.140148984477731
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-005",
+    "stage": "SCREENING",
+    "alpha": 0.1,
+    "cv_mean_rmse": 13.260078746177598,
+    "val_metrics": {
+      "RMSE": 13.260078746177598,
+      "MAE": 10.717039169215939,
+      "R2": 0.004432771659457287
+    },
+    "train_metrics": {
+      "RMSE": 12.140148984739275
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-006",
+    "stage": "SCREENING",
+    "alpha": 0.3,
+    "cv_mean_rmse": 13.260080110034032,
+    "val_metrics": {
+      "RMSE": 13.260080110034032,
+      "MAE": 10.717040863289528,
+      "R2": 0.004432572056569846
+    },
+    "train_metrics": {
+      "RMSE": 12.140148987037412
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-007",
+    "stage": "SCREENING",
+    "alpha": 1.0,
+    "cv_mean_rmse": 13.26008488188855,
+    "val_metrics": {
+      "RMSE": 13.26008488188855,
+      "MAE": 10.717046786193043,
+      "R2": 0.004431873690350289
+    },
+    "train_metrics": {
+      "RMSE": 12.14014901313426
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-008",
+    "stage": "SCREENING",
+    "alpha": 3.0,
+    "cv_mean_rmse": 13.260098501620833,
+    "val_metrics": {
+      "RMSE": 13.260098501620833,
+      "MAE": 10.717063654485427,
+      "R2": 0.004429880457062274
+    },
+    "train_metrics": {
+      "RMSE": 12.140149241417385
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-009",
+    "stage": "SCREENING",
+    "alpha": 10.0,
+    "cv_mean_rmse": 13.260146003677926,
+    "val_metrics": {
+      "RMSE": 13.260146003677926,
+      "MAE": 10.71712215886331,
+      "R2": 0.004422928939040209
+    },
+    "train_metrics": {
+      "RMSE": 12.140151794601598
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-010",
+    "stage": "SCREENING",
+    "alpha": 30.0,
+    "cv_mean_rmse": 13.260280244949827,
+    "val_metrics": {
+      "RMSE": 13.260280244949827,
+      "MAE": 10.717285700147677,
+      "R2": 0.004403287202090378
+    },
+    "train_metrics": {
+      "RMSE": 12.140173170738256
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-011",
+    "stage": "SCREENING",
+    "alpha": 100.0,
+    "cv_mean_rmse": 13.260731568492579,
+    "val_metrics": {
+      "RMSE": 13.260731568492579,
+      "MAE": 10.717821950785739,
+      "R2": 0.00433729708996126
+    },
+    "train_metrics": {
+      "RMSE": 12.14038065977482
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-SCR-012",
+    "stage": "SCREENING",
+    "alpha": 1000.0,
+    "cv_mean_rmse": 13.26432226517499,
+    "val_metrics": {
+      "RMSE": 13.26432226517499,
+      "MAE": 10.721940365082977,
+      "R2": 0.003818480056061113
+    },
+    "train_metrics": {
+      "RMSE": 12.146654457196155
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-FCV-001",
+    "stage": "FULL_CV",
+    "alpha": 0.0001,
+    "cv_mean_rmse": 13.240091653205779,
+    "val_metrics": {
+      "RMSE": 13.240091653205779,
+      "MAE": 10.70605817031529,
+      "R2": 0.0064238981181454395
+    },
+    "train_metrics": {
+      "RMSE": 12.140211352999936
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-FCV-002",
+    "stage": "FULL_CV",
+    "alpha": 0.001,
+    "cv_mean_rmse": 13.240091654261851,
+    "val_metrics": {
+      "RMSE": 13.240091654261851,
+      "MAE": 10.706058172150884,
+      "R2": 0.006423897962262874
+    },
+    "train_metrics": {
+      "RMSE": 12.14021135299994
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RIDGE-FINAL-001",
+    "stage": "FINAL",
+    "feature_count": 31,
+    "train_rows": 415524,
+    "val_rows": 85272,
+    "fit_time": 4.293425798416138,
+    "pred_time": 2.0525102615356445,
+    "train_metrics": {
+      "MAE": 9.593097828857259,
+      "RMSE": 12.3367251889577,
+      "R2": 0.38815878939837123
+    },
+    "val_metrics": {
+      "MAE": 12.307352093891312,
+      "RMSE": 16.027951449815642,
+      "R2": 0.0010568908804564625
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T11:48:23.088423+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FINAL-001.joblib",
+    "artifact_sha256": "2ad4889312750f5fe530c0eaa72ced1a279fa97536f5a16081e1cea0365b22f9",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-001",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 400,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "max_samples": 0.8,
+      "max_features": 1.0,
+      "max_depth": 30
+    },
+    "cv_mean_rmse": 13.042902346432234,
+    "val_metrics": {
+      "RMSE": 13.042902346432234,
+      "MAE": 10.474711716813625,
+      "R2": 0.036749192511586926
+    },
+    "train_metrics": {
+      "RMSE": 5.986683287069482
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-002",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 300,
+      "min_samples_split": 5,
+      "min_samples_leaf": 1,
+      "max_samples": null,
+      "max_features": 0.5,
+      "max_depth": 12
+    },
+    "cv_mean_rmse": 13.011001027179953,
+    "val_metrics": {
+      "RMSE": 13.011001027179953,
+      "MAE": 10.471652753109748,
+      "R2": 0.04139545490705047
+    },
+    "train_metrics": {
+      "RMSE": 10.565002919331206
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-003",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 400,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_samples": 0.8,
+      "max_features": 0.5,
+      "max_depth": 30
+    },
+    "cv_mean_rmse": 13.010280119978097,
+    "val_metrics": {
+      "RMSE": 13.010280119978097,
+      "MAE": 10.453544330318826,
+      "R2": 0.04152301447961271
+    },
+    "train_metrics": {
+      "RMSE": 7.536711873878445
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-004",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 200,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_samples": 0.8,
+      "max_features": 0.5,
+      "max_depth": 20
+    },
+    "cv_mean_rmse": 13.010762043851548,
+    "val_metrics": {
+      "RMSE": 13.010762043851548,
+      "MAE": 10.452073601827076,
+      "R2": 0.04144818786106408
+    },
+    "train_metrics": {
+      "RMSE": 8.311065947577939
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-005",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 200,
+      "min_samples_split": 2,
+      "min_samples_leaf": 4,
+      "max_samples": null,
+      "max_features": 0.5,
+      "max_depth": null
+    },
+    "cv_mean_rmse": 13.03063075289208,
+    "val_metrics": {
+      "RMSE": 13.03063075289208,
+      "MAE": 10.468833590528781,
+      "R2": 0.03847935795847505
+    },
+    "train_metrics": {
+      "RMSE": 6.6648249441844785
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-006",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 20
+    },
+    "cv_mean_rmse": 13.052118019288088,
+    "val_metrics": {
+      "RMSE": 13.052118019288088,
+      "MAE": 10.485211939447185,
+      "R2": 0.03536142310461843
+    },
+    "train_metrics": {
+      "RMSE": 7.564775852674124
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-007",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 300,
+      "min_samples_split": 2,
+      "min_samples_leaf": 4,
+      "max_samples": null,
+      "max_features": "sqrt",
+      "max_depth": 12
+    },
+    "cv_mean_rmse": 13.203348618900911,
+    "val_metrics": {
+      "RMSE": 13.203348618900911,
+      "MAE": 10.61421310951451,
+      "R2": 0.01296019641340703
+    },
+    "train_metrics": {
+      "RMSE": 10.890628313340365
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-008",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 400,
+      "min_samples_split": 5,
+      "min_samples_leaf": 4,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": null
+    },
+    "cv_mean_rmse": 13.06156313603376,
+    "val_metrics": {
+      "RMSE": 13.06156313603376,
+      "MAE": 10.489240827002554,
+      "R2": 0.033968916769980005
+    },
+    "train_metrics": {
+      "RMSE": 6.396490584290078
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-009",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 200,
+      "min_samples_split": 10,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 0.5,
+      "max_depth": 12
+    },
+    "cv_mean_rmse": 13.01443514224828,
+    "val_metrics": {
+      "RMSE": 13.01443514224828,
+      "MAE": 10.471404306390182,
+      "R2": 0.040888772912420955
+    },
+    "train_metrics": {
+      "RMSE": 10.628569158932786
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-010",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 1,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 12
+    },
+    "cv_mean_rmse": 13.04534641207067,
+    "val_metrics": {
+      "RMSE": 13.04534641207067,
+      "MAE": 10.49674774915047,
+      "R2": 0.03638124796552004
+    },
+    "train_metrics": {
+      "RMSE": 10.553392383989364
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-011",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 400,
+      "min_samples_split": 2,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 30
+    },
+    "cv_mean_rmse": 13.055314507499157,
+    "val_metrics": {
+      "RMSE": 13.055314507499157,
+      "MAE": 10.487522454917181,
+      "R2": 0.03488058591733615
+    },
+    "train_metrics": {
+      "RMSE": 5.041009399681003
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCR-012",
+    "stage": "SCREENING",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 400,
+      "min_samples_split": 2,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 12
+    },
+    "cv_mean_rmse": 13.038508740997004,
+    "val_metrics": {
+      "RMSE": 13.038508740997004,
+      "MAE": 10.490154970120011,
+      "R2": 0.037376969743148414
+    },
+    "train_metrics": {
+      "RMSE": 10.479499941642223
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-FCV-001",
+    "stage": "FULL_CV",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 400,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_samples": 0.8,
+      "max_features": 0.5,
+      "max_depth": 30
+    },
+    "cv_mean_rmse": 12.920065965427137,
+    "val_metrics": {
+      "RMSE": 12.920065965427137,
+      "MAE": 10.35426942906347,
+      "R2": 0.05387602746426708
+    },
+    "train_metrics": {
+      "RMSE": 7.4856854271160485
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-FCV-002",
+    "stage": "FULL_CV",
+    "model": "RandomForestRegressor",
+    "config": {
+      "n_estimators": 200,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_samples": 0.8,
+      "max_features": 0.5,
+      "max_depth": 20
+    },
+    "cv_mean_rmse": 12.930377928582745,
+    "val_metrics": {
+      "RMSE": 12.930377928582745,
+      "MAE": 10.365497432086556,
+      "R2": 0.052338177288899966
+    },
+    "train_metrics": {
+      "RMSE": 8.887008185705726
+    },
+    "test_used": false,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-RF-FINAL-001",
+    "stage": "FINAL",
+    "feature_count": 31,
+    "train_rows": 415524,
+    "val_rows": 85272,
+    "fit_time": 447.6938316822052,
+    "pred_time": 12.522422790527344,
+    "train_metrics": {
+      "MAE": 5.571561090235456,
+      "RMSE": 7.651434689892809,
+      "R2": 0.7646443136261982
+    },
+    "val_metrics": {
+      "MAE": 11.94456197992147,
+      "RMSE": 15.322515648358241,
+      "R2": 0.08705447112851983
+    },
+    "estimators_count": 400,
+    "test_used": false,
+    "timestamp": "2026-07-20T13:43:24.223497+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RF-FINAL-001.joblib",
+    "artifact_sha256": "11d3ad33cef0d24b4d1b0c1c164d5c51dff690394892efbd8edf92a1bef31be0",
+    "selected_as_champion": false,
+    "selected_as_runner_up": true
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-001",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.940552217540029,
+    "val_metrics": {
+      "RMSE": 12.940552217540029,
+      "MAE": 10.39271322886149,
+      "R2": 0.051648497581481934
+    },
+    "train_metrics": {
+      "RMSE": 10.861515282378905
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:30:24.550967+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-002",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.8,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 3,
+      "n_estimators": 500,
+      "reg_alpha": 1,
+      "reg_lambda": 5,
+      "subsample": 1.0
+    },
+    "cv_mean_rmse": 12.997428276078445,
+    "val_metrics": {
+      "RMSE": 12.997428276078445,
+      "MAE": 10.454350153605143,
+      "R2": 0.04332278172175089
+    },
+    "train_metrics": {
+      "RMSE": 11.456210373913557
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:30:46.591186+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-003",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 1,
+      "n_estimators": 500,
+      "reg_alpha": 0.1,
+      "reg_lambda": 10,
+      "subsample": 1.0
+    },
+    "cv_mean_rmse": 12.953348587164577,
+    "val_metrics": {
+      "RMSE": 12.953348587164577,
+      "MAE": 10.406933784484863,
+      "R2": 0.049763878186543785
+    },
+    "train_metrics": {
+      "RMSE": 11.167110030393838
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:31:07.326656+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-004",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 3,
+      "n_estimators": 300,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 13.032285544033499,
+    "val_metrics": {
+      "RMSE": 13.032285544033499,
+      "MAE": 10.493927319844564,
+      "R2": 0.03815213839213053
+    },
+    "train_metrics": {
+      "RMSE": 11.555669853742982
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:31:23.784524+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-005",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 1.0,
+      "gamma": 0.1,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 1,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 5,
+      "subsample": 0.8
+    },
+    "cv_mean_rmse": 12.943085753424546,
+    "val_metrics": {
+      "RMSE": 12.943085753424546,
+      "MAE": 10.393871943155924,
+      "R2": 0.051263670126597084
+    },
+    "train_metrics": {
+      "RMSE": 11.141114611493066
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:31:48.603711+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-006",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 1.0,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 5,
+      "min_child_weight": 3,
+      "n_estimators": 300,
+      "reg_alpha": 1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.964358760719563,
+    "val_metrics": {
+      "RMSE": 12.964358760719563,
+      "MAE": 10.424638112386068,
+      "R2": 0.04820398489634196
+    },
+    "train_metrics": {
+      "RMSE": 11.32920306421139
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:32:13.801846+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-007",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 7,
+      "min_child_weight": 3,
+      "n_estimators": 800,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.944171771149676,
+    "val_metrics": {
+      "RMSE": 12.944171771149676,
+      "MAE": 10.3891019821167,
+      "R2": 0.05110907554626465
+    },
+    "train_metrics": {
+      "RMSE": 10.729299667310174
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:32:37.263745+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-008",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.1,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 500,
+      "reg_alpha": 0,
+      "reg_lambda": 1,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.949132661990129,
+    "val_metrics": {
+      "RMSE": 12.949132661990129,
+      "MAE": 10.406776746114096,
+      "R2": 0.05038326978683472
+    },
+    "train_metrics": {
+      "RMSE": 11.245023126053988
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:32:54.138705+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-009",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.8,
+      "gamma": 0,
+      "learning_rate": 0.03,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.946025173935636,
+    "val_metrics": {
+      "RMSE": 12.946025173935636,
+      "MAE": 10.393377304077148,
+      "R2": 0.0507963498433431
+    },
+    "train_metrics": {
+      "RMSE": 11.15176716616247
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:33:29.745270+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-010",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "min_child_weight": 1,
+      "n_estimators": 500,
+      "reg_alpha": 1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 13.03006708315943,
+    "val_metrics": {
+      "RMSE": 13.03006708315943,
+      "MAE": 10.49235979715983,
+      "R2": 0.038502275943756104
+    },
+    "train_metrics": {
+      "RMSE": 11.540402751300093
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:34:01.559816+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-011",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0.1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.942799302495358,
+    "val_metrics": {
+      "RMSE": 12.942799302495358,
+      "MAE": 10.401919682820639,
+      "R2": 0.05129228035608927
+    },
+    "train_metrics": {
+      "RMSE": 11.188871423634595
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:34:31.844679+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-SCR-012",
+    "stage": "SCREENING",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 1.0,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 500,
+      "reg_alpha": 1,
+      "reg_lambda": 10,
+      "subsample": 1.0
+    },
+    "cv_mean_rmse": 12.956184793521714,
+    "val_metrics": {
+      "RMSE": 12.956184793521714,
+      "MAE": 10.405370394388834,
+      "R2": 0.04941829045613607
+    },
+    "train_metrics": {
+      "RMSE": 10.927541521231921
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:35:03.954911+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-FCV-001",
+    "stage": "FULL_CV",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.862417400358112,
+    "val_metrics": {
+      "RMSE": 12.862417400358112,
+      "MAE": 10.290632883707682,
+      "R2": 0.06216907501220703
+    },
+    "train_metrics": {
+      "RMSE": 11.002307325572287
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:36:38.847686+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-FCV-002",
+    "stage": "FULL_CV",
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "config": {
+      "colsample_bytree": 0.9,
+      "gamma": 0,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "n_estimators": 800,
+      "reg_alpha": 0.1,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_mean_rmse": 12.873527333427987,
+    "val_metrics": {
+      "RMSE": 12.873527333427987,
+      "MAE": 10.302334467569986,
+      "R2": 0.06059157848358154
+    },
+    "train_metrics": {
+      "RMSE": 11.230944009969457
+    },
+    "test_used": false,
+    "timestamp": "2026-07-20T14:37:42.347651+00:00",
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-FINAL-001",
+    "stage": "FINAL",
+    "feature_count": 31,
+    "train_rows": 415524,
+    "fit_time": 20.189730644226074,
+    "pred_time": 2.691601276397705,
+    "train_metrics": {
+      "MAE": 8.458805084228516,
+      "RMSE": 11.279099531552852,
+      "R2": 0.48856812715530396
+    },
+    "val_metrics": {
+      "MAE": 11.90149211883545,
+      "RMSE": 15.25206504973179,
+      "R2": 0.09543037414550781
+    },
+    "early_stopping_used": false,
+    "best_iteration": null,
+    "best_score": null,
+    "boosted_rounds": 454,
+    "n_estimators_configured": 454,
+    "test_used": false,
+    "timestamp": "2026-07-20T14:06:06.368702+00:00",
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-XGB-FINAL-001.joblib",
+    "artifact_sha256": "9a7ae3a37a2e84156bd177743e26824a198efcdfa0505a041b50ab392b4ac8e7",
+    "native_model_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-XGB-FINAL-001_native.json",
+    "external_validation_evaluation_count": 1,
+    "selected_as_champion": false,
+    "selected_as_runner_up": false
+  },
+  {
+    "experiment_id": "EXP24-XGB-FINAL-001",
+    "config_id": "cfg_best",
+    "stage": "FINAL",
+    "fold_id": "all",
+    "params": {
+      "colsample_bytree": 0.9,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 454,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "train_rows": 415524,
+    "validation_rows": 0,
+    "train_years": "1900-2004",
+    "validation_years": "2005-2013",
+    "fit_time": 17.219294786453247,
+    "wall_time_seconds": 22.57867956161499,
+    "early_stopping_used": false,
+    "eval_set_source": null,
+    "best_iteration": null,
+    "best_score": null,
+    "boosted_rounds": 454,
+    "train_metrics": {
+      "MAE": 8.458805084228516,
+      "RMSE": 11.279099531552852,
+      "R2": 0.48856812715530396
+    },
+    "val_metrics": {
+      "MAE": 11.90149211883545,
+      "RMSE": 15.25206504973179,
+      "R2": 0.09543037414550781
+    },
+    "n_features_in_": 49,
+    "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "COMPLETED",
+    "external_validation_evaluation_count": 1,
+    "params_changed_after_validation": false,
+    "final_rounds_changed_after_validation": false,
+    "model_family": "XGBoost",
+    "model_class": "XGBRegressor",
+    "test_used": false,
+    "timestamp": "2026-07-20T14:38:05.505981+00:00",
+    "selected_as_family_best": true,
+    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib",
+    "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "selected_as_champion": true,
+    "selected_as_runner_up": false
+  }
+]

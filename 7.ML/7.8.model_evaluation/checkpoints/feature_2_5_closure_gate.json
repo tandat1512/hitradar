@@ -1,0 +1,16 @@
+{
+  "feature_id": "2.5",
+  "feature_2_4_gate_valid": true,
+  "champion_locked_before_test_labels": true,
+  "canonical_test_prediction_complete": true,
+  "validation_test_comparison_complete": true,
+  "residual_analysis_complete": true,
+  "temporal_robustness_complete": true,
+  "popularity_bucket_analysis_complete": true,
+  "uncertainty_analysis_complete": true,
+  "feature_2_6_contract_complete": true,
+  "feature_2_5_status": "PASS",
+  "feature_2_5_decision": "ELIGIBLE_FOR_CLOSURE",
+  "feature_2_6_gate": "MAY_BEGIN",
+  "pytest_failed": 0
+}

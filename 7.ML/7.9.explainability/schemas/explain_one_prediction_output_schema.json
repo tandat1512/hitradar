@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "explain_one_prediction Output Schema",
+  "type": "object",
+  "required": [
+    "status",
+    "model_id",
+    "model_class",
+    "feature_set_id",
+    "prediction_raw",
+    "prediction_clipped",
+    "prediction_display",
+    "base_value",
+    "reconstructed_prediction",
+    "reconstruction_error",
+    "additivity_valid",
+    "top_positive_contributions",
+    "top_negative_contributions",
+    "explanation_method",
+    "output_space",
+    "background_source",
+    "warnings",
+    "metadata"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["SUCCESS", "ERROR"],
+      "description": "Status of the explanation"
+    },
+    "model_id": {
+      "type": "string",
+      "description": "Unique identifier for the model"
+    },
+    "model_class": {
+      "type": "string",
+      "description": "Model family (e.g., XGBoost, Ridge)"
+    },
+    "feature_set_id": {
+      "type": "string",
+      "description": "Identifier for the feature set used"
+    },
+    "prediction_raw": {
+      "type": "number",
+      "description": "Raw model prediction before clipping"
+    },
+    "prediction_clipped": {
+      "type": "number",
+      "description": "Prediction clipped to [0, 100] range",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "prediction_display": {
+      "type": "integer",
+      "description": "Rounded display prediction",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "base_value": {
+      "type": "number",
+      "description": "SHAP base value (mean prediction)"
+    },
+    "reconstructed_prediction": {
+      "type": "number",
+      "description": "Reconstructed prediction: base_value + sum(SHAP)"
+    },
+    "reconstruction_error": {
+      "type": "number",
+      "description": "Absolute error between raw and reconstructed prediction"
+    },
+    "additivity_valid": {
+      "type": "boolean",
+      "description": "Whether additivity check passes within tolerance"
+    },
+    "top_positive_contributions": {
+      "type": "array",
+      "description": "Top positive SHAP contributions",
+      "items": {
+        "type": "object",
+        "required": ["feature", "shap_value", "direction"],
+        "properties": {
+          "feature": {
+            "type": "string",
+            "description": "Feature name"
+          },
+          "feature_value": {
+            "type": ["number", "string", "null"],
+            "description": "Original feature value"
+          },
+          "shap_value": {
+            "type": "number",
+            "description": "SHAP contribution value"
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["INCREASE_PREDICTION", "DECREASE_PREDICTION"]
+          },
+          "source_raw_feature": {
+            "type": "string"
+          },
+          "mapping_status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "top_negative_contributions": {
+      "type": "array",
+      "description": "Top negative SHAP contributions",
+      "items": {
+        "type": "object",
+        "required": ["feature", "shap_value", "direction"],
+        "properties": {
+          "feature": {
+            "type": "string"
+          },
+          "feature_value": {
+            "type": ["number", "string", "null"]
+          },
+          "shap_value": {
+            "type": "number"
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["INCREASE_PREDICTION", "DECREASE_PREDICTION"]
+          },
+          "source_raw_feature": {
+            "type": "string"
+          },
+          "mapping_status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "all_contributions": {
+      "type": "array",
+      "description": "All contributions sorted by absolute value",
+      "items": {
+        "type": "object"
+      }
+    },
+    "explanation_method": {
+      "type": "string",
+      "description": "SHAP explanation method used"
+    },
+    "output_space": {
+      "type": "string",
+      "enum": ["raw", "probability", "log_odds"],
+      "description": "Output space of SHAP values"
+    },
+    "background_source": {
+      "type": "string",
+      "enum": ["TRAIN", "VALIDATION", "TEST"],
+      "description": "Source of SHAP background data"
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Warnings from input validation",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["champion_artifact_sha256", "generated_at"],
+      "properties": {
+        "champion_artifact_sha256": {
+          "type": "string",
+          "description": "SHA256 hash of champion artifact"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of generation"
+        }
+      }
+    },
+    "plot_path": {
+      "type": ["string", "null"],
+      "description": "Path to saved plot file"
+    },
+    "plot_figure": {
+      "type": ["object", "null"],
+      "description": "Matplotlib figure object (when not saved to file)"
+    }
+  }
+}

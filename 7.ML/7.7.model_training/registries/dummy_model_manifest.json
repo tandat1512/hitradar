@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP24-DUMMY-MEAN-001",
+  "model_family": "Dummy",
+  "feature_set": "FS23-SELECTED",
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\dummy_regressor.joblib",
+  "artifact_sha256": "922c1815426299ad6f00fc226bdc556873161d220422971913cd0a52188443c7",
+  "status": "PASS"
+}

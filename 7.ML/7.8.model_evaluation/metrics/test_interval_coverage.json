@@ -1,0 +1,8 @@
+{
+  "overall_coverage_80": 0.5779379570543575,
+  "expected_nominal_coverage_80": 0.8,
+  "overall_coverage_90": 0.75,
+  "expected_nominal_coverage_90": 0.9,
+  "mean_interval_width_80": 38.170169830322266,
+  "mean_interval_width_90": 52.71377944946289
+}

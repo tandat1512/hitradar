@@ -1,0 +1,8 @@
+{
+  "explainer_class": "TreeExplainer",
+  "background_rows": 1000,
+  "background_columns": 49,
+  "feature_perturbation": "tree_path_dependent",
+  "model_output": "default",
+  "expected_value_shape": "()"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "check_id": "F25-F26-CONTRACT",
+    "status": "PASS",
+    "severity": "BLOCKER"
+  },
+  {
+    "check_id": "F25-NO-TRAINING",
+    "status": "PASS",
+    "severity": "BLOCKER"
+  }
+]

@@ -1,0 +1,123 @@
+{
+  "sample_rows": 5000,
+  "model_id": "EXP24-XGB-FINAL-001",
+  "top_5_transformed": [
+    {
+      "rank": 1,
+      "transformed_feature": "release_year",
+      "mean_abs_shap": 12.293187842174314,
+      "importance_share": 0.5189669941466156
+    },
+    {
+      "rank": 2,
+      "transformed_feature": "speechiness_explicit",
+      "mean_abs_shap": 1.190173181589274,
+      "importance_share": 0.05024413573542639
+    },
+    {
+      "rank": 3,
+      "transformed_feature": "acousticness",
+      "mean_abs_shap": 1.1718594692184625,
+      "importance_share": 0.04947100736687258
+    },
+    {
+      "rank": 4,
+      "transformed_feature": "decade",
+      "mean_abs_shap": 0.9563124212406561,
+      "importance_share": 0.04037151218121752
+    },
+    {
+      "rank": 5,
+      "transformed_feature": "duration_min",
+      "mean_abs_shap": 0.8656784824268352,
+      "importance_share": 0.03654532621564477
+    }
+  ],
+  "top_5_selected": [
+    {
+      "rank": 1,
+      "selected_feature": "release_year",
+      "mean_abs_shap": 12.293187842174296,
+      "importance_share": 0.5253413859262486
+    },
+    {
+      "rank": 2,
+      "selected_feature": "speechiness_explicit",
+      "mean_abs_shap": 1.1901731815892733,
+      "importance_share": 0.0508612767278576
+    },
+    {
+      "rank": 3,
+      "selected_feature": "acousticness",
+      "mean_abs_shap": 1.1718594692184636,
+      "importance_share": 0.05007865214244866
+    },
+    {
+      "rank": 4,
+      "selected_feature": "decade",
+      "mean_abs_shap": 0.9563124212406565,
+      "importance_share": 0.04086738925679631
+    },
+    {
+      "rank": 5,
+      "selected_feature": "duration_min",
+      "mean_abs_shap": 0.865678482426835,
+      "importance_share": 0.03699420683741937
+    }
+  ],
+  "top_5_raw_families": [
+    {
+      "rank": 1,
+      "raw_feature_family": "release_year",
+      "mean_abs_shap": 12.18761634156239,
+      "importance_share": 0.5325901217753971
+    },
+    {
+      "rank": 2,
+      "raw_feature_family": "speechiness×explicit",
+      "mean_abs_shap": 1.1901731815892733,
+      "importance_share": 0.05200971723689683
+    },
+    {
+      "rank": 3,
+      "raw_feature_family": "acousticness",
+      "mean_abs_shap": 1.1718594692184636,
+      "importance_share": 0.05120942109789983
+    },
+    {
+      "rank": 4,
+      "raw_feature_family": "release_month",
+      "mean_abs_shap": 0.9569280068930115,
+      "importance_share": 0.04181706983862133
+    },
+    {
+      "rank": 5,
+      "raw_feature_family": "decade",
+      "mean_abs_shap": 0.9563124212406565,
+      "importance_share": 0.041790169185666505
+    }
+  ],
+  "low_contribution_count": 5,
+  "temporal_features_in_top_10": [
+    "release_year",
+    "decade",
+    "release_month"
+  ],
+  "audio_features_in_top_10": [
+    "acousticness",
+    "loudness",
+    "speechiness",
+    "tempo",
+    "danceability"
+  ],
+  "direction_summary": "Top feature has positive_rate=99.98%, negative_rate=0.02%",
+  "limitations": [
+    "SHAP values describe model behavior, not real-world causality.",
+    "Results are specific to this model and explanation sample.",
+    "Feature interactions are captured at the margin via TreeExplainer.",
+    "OHE grouping sums signed contributions before taking absolute mean."
+  ],
+  "mapping_completeness": "COMPLETE",
+  "additivity_status": "PASS",
+  "no_causality_statement": "SHAP contributions describe how the model uses features for prediction. They do not establish causal relationships between features and actual song popularity."
+}

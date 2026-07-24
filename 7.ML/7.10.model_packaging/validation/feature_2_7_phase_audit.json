@@ -1,0 +1,26 @@
+[
+  {
+    "check_id": "P1-BEST-MODEL",
+    "phase": "1",
+    "declared": true,
+    "actual": true,
+    "evidence_path": "package/models/best_model.joblib",
+    "status": "PASS"
+  },
+  {
+    "check_id": "P2-FULL-PIPELINE",
+    "phase": "2",
+    "declared": true,
+    "actual": true,
+    "evidence_path": "package/pipeline/full_inference_pipeline.joblib",
+    "status": "PASS"
+  },
+  {
+    "check_id": "P3-VERSIONING",
+    "phase": "3",
+    "declared": true,
+    "actual": true,
+    "evidence_path": "package/metadata/model_version.json",
+    "status": "PASS"
+  }
+]

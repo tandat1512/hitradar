@@ -1,0 +1,20 @@
+{
+  "components": [
+    {
+      "logical_role": "feature_engineering_pipeline",
+      "class": "<class 'transformers.FeatureEngineeringTransformer'>",
+      "packaged_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\preprocessing\\feature_engineering_pipeline.joblib",
+      "packaged_hash": "9a8b19c0bd1a5b143a3fb9de4050310957d3f63119195097d25ac6b720cef334",
+      "packaging_method": "EXTRACT_AND_SERIALIZE",
+      "required_at_runtime": true
+    },
+    {
+      "logical_role": "model_preprocessing_pipeline",
+      "class": "<class 'sklearn.compose._column_transformer.ColumnTransformer'>",
+      "packaged_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\preprocessing\\model_preprocessing_pipeline.joblib",
+      "packaged_hash": "68854f94266920eeb6167652fad50715cffdcf1d5a727d8f107c8c17503d0f8d",
+      "packaging_method": "EXTRACT_AND_SERIALIZE",
+      "required_at_runtime": true
+    }
+  ]
+}

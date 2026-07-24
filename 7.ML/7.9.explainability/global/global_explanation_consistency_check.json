@@ -1,0 +1,12 @@
+{
+  "top_feature_json_matches_csv": true,
+  "selected_top_json_matches_csv": true,
+  "feature_count_transformed": 49,
+  "feature_count_selected": 31,
+  "feature_count_raw_family": 26,
+  "importance_share_sum_transformed": 1.0,
+  "importance_share_sum_selected": 1.0,
+  "source_hash_unchanged": true,
+  "shap_recomputed": false,
+  "overall_consistent": true
+}

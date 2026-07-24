@@ -1,12 +1,7 @@
 [
   {
     "candidate_id": "P22-A",
-    "column": "release_month",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "release_month",
     "categories": [
       "1.0",
       "10.0",
@@ -19,21 +14,16 @@
       "6.0",
       "7.0",
       "8.0",
-      "9.0"
+      "9.0",
+      "__MISSING__"
     ],
-    "category_count": 12,
-    "output_feature_count": 11,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 13,
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-A",
-    "column": "decade",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "decade",
     "categories": [
       "1900",
       "1920",
@@ -47,36 +37,24 @@
       "2000"
     ],
     "category_count": 10,
-    "output_feature_count": 9,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-A",
-    "column": "release_precision",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "release_precision",
     "categories": [
       "day",
       "month",
       "year"
     ],
     "category_count": 3,
-    "output_feature_count": 2,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-A",
-    "column": "key",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "key",
     "categories": [
       "0",
       "1",
@@ -92,37 +70,26 @@
       "9"
     ],
     "category_count": 12,
-    "output_feature_count": 11,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-A",
-    "column": "time_signature",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "time_signature",
     "categories": [
       "1.0",
       "3.0",
       "4.0",
-      "5.0"
+      "5.0",
+      "__MISSING__"
     ],
-    "category_count": 4,
-    "output_feature_count": 3,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 5,
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-B",
-    "column": "release_month",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "release_month",
     "categories": [
       "1.0",
       "10.0",
@@ -135,21 +102,16 @@
       "6.0",
       "7.0",
       "8.0",
-      "9.0"
+      "9.0",
+      "__MISSING__"
     ],
-    "category_count": 12,
-    "output_feature_count": 11,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 13,
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-B",
-    "column": "decade",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "decade",
     "categories": [
       "1900",
       "1920",
@@ -163,36 +125,24 @@
       "2000"
     ],
     "category_count": 10,
-    "output_feature_count": 9,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-B",
-    "column": "release_precision",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "release_precision",
     "categories": [
       "day",
       "month",
       "year"
     ],
     "category_count": 3,
-    "output_feature_count": 2,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-B",
-    "column": "key",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "key",
     "categories": [
       "0",
       "1",
@@ -208,37 +158,26 @@
       "9"
     ],
     "category_count": 12,
-    "output_feature_count": 11,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-B",
-    "column": "time_signature",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "time_signature",
     "categories": [
       "1.0",
       "3.0",
       "4.0",
-      "5.0"
+      "5.0",
+      "__MISSING__"
     ],
-    "category_count": 4,
-    "output_feature_count": 3,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 5,
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-C",
-    "column": "release_month",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "release_month",
     "categories": [
       "1.0",
       "10.0",
@@ -251,21 +190,16 @@
       "6.0",
       "7.0",
       "8.0",
-      "9.0"
+      "9.0",
+      "__MISSING__"
     ],
-    "category_count": 12,
-    "output_feature_count": 11,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 13,
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-C",
-    "column": "decade",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "decade",
     "categories": [
       "1900",
       "1920",
@@ -279,36 +213,24 @@
       "2000"
     ],
     "category_count": 10,
-    "output_feature_count": 9,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-C",
-    "column": "release_precision",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "release_precision",
     "categories": [
       "day",
       "month",
       "year"
     ],
     "category_count": 3,
-    "output_feature_count": 2,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-C",
-    "column": "key",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "key",
     "categories": [
       "0",
       "1",
@@ -324,37 +246,26 @@
       "9"
     ],
     "category_count": 12,
-    "output_feature_count": 11,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-C",
-    "column": "time_signature",
-    "encoder_type": "OneHotEncoder",
-    "parameters": {
-      "handle_unknown": "ignore",
-      "drop": "first"
-    },
+    "feature": "time_signature",
     "categories": [
       "1.0",
       "3.0",
       "4.0",
-      "5.0"
+      "5.0",
+      "__MISSING__"
     ],
-    "category_count": 4,
-    "output_feature_count": 3,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 5,
+    "encoder": "OneHotEncoder",
+    "handle_unknown": "ignore"
   },
   {
     "candidate_id": "P22-D",
-    "column": "release_month",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
+    "feature": "release_month",
     "categories": [
       "1.0",
       "10.0",
@@ -367,21 +278,17 @@
       "6.0",
       "7.0",
       "8.0",
-      "9.0"
+      "9.0",
+      "__MISSING__"
     ],
-    "category_count": 12,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 13,
+    "encoder": "OrdinalEncoder",
+    "unknown_value": -1,
+    "handle_unknown": "use_encoded_value"
   },
   {
     "candidate_id": "P22-D",
-    "column": "decade",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
+    "feature": "decade",
     "categories": [
       "1900",
       "1920",
@@ -395,36 +302,26 @@
       "2000"
     ],
     "category_count": 10,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OrdinalEncoder",
+    "unknown_value": -1,
+    "handle_unknown": "use_encoded_value"
   },
   {
     "candidate_id": "P22-D",
-    "column": "release_precision",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
+    "feature": "release_precision",
     "categories": [
       "day",
       "month",
       "year"
     ],
     "category_count": 3,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OrdinalEncoder",
+    "unknown_value": -1,
+    "handle_unknown": "use_encoded_value"
   },
   {
     "candidate_id": "P22-D",
-    "column": "key",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
+    "feature": "key",
     "categories": [
       "0",
       "1",
@@ -440,27 +337,23 @@
       "9"
     ],
     "category_count": 12,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "encoder": "OrdinalEncoder",
+    "unknown_value": -1,
+    "handle_unknown": "use_encoded_value"
   },
   {
     "candidate_id": "P22-D",
-    "column": "time_signature",
-    "encoder_type": "OrdinalEncoder",
-    "parameters": {
-      "handle_unknown": "use_encoded_value",
-      "unknown_value": -1
-    },
+    "feature": "time_signature",
     "categories": [
       "1.0",
       "3.0",
       "4.0",
-      "5.0"
+      "5.0",
+      "__MISSING__"
     ],
-    "category_count": 4,
-    "output_feature_count": 1,
-    "fit_split": "train",
-    "fit_row_count": 415524
+    "category_count": 5,
+    "encoder": "OrdinalEncoder",
+    "unknown_value": -1,
+    "handle_unknown": "use_encoded_value"
   }
 ]

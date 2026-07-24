@@ -1,0 +1,7 @@
+{
+  "requested_rows": 5000,
+  "minimum_rows": 2000,
+  "random_state": 42,
+  "source": "test",
+  "sampling": "random"
+}

@@ -1,0 +1,18 @@
+{
+  "raw_background_path": "hitradar/7.ML/7.9.explainability/background/shap_background_raw.parquet",
+  "raw_background_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.9.explainability/background/shap_background_raw.parquet",
+  "raw_background_sha256": "24f7057efa99879997ae6a659dfa3c973cb5f7e3f541435d627b8c08e2312e23",
+  "raw_rows": 1000,
+  "raw_columns": 18,
+  "transformed_background_path": "hitradar/7.ML/7.9.explainability/background/shap_background_transformed.npy",
+  "transformed_background_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.9.explainability/background/shap_background_transformed.npy",
+  "transformed_background_sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+  "transformed_format": "NPY_DENSE",
+  "transformed_rows": 1000,
+  "transformed_columns": 49,
+  "has_nan": false,
+  "has_inf": false,
+  "feature_name_count_matches_columns": true,
+  "rows_match": true,
+  "columns_match_model_matrix_width": true
+}

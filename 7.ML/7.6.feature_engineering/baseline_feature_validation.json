@@ -1,0 +1,164 @@
+{
+  "validation_timestamp": "2026-07-19T19:31:18.768033",
+  "dataset_shape": {
+    "rows": 586672,
+    "cols": 20
+  },
+  "checks": [
+    {
+      "check_id": "BASELINE-ROWS",
+      "expected": 586672,
+      "actual": 586672,
+      "status": "PASS"
+    },
+    {
+      "check_id": "BASELINE-COLS",
+      "expected": 20,
+      "actual": 20,
+      "status": "PASS"
+    },
+    {
+      "check_id": "BASELINE-ID-POSITION",
+      "expected": "track_id",
+      "actual": "track_id",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BASELINE-TARGET-POSITION",
+      "expected": "target_popularity",
+      "actual": "target_popularity",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BASELINE-FEATURES-18",
+      "expected": 18,
+      "actual": 18,
+      "missing_features": [],
+      "extra_features": [],
+      "status": "PASS"
+    },
+    {
+      "check_id": "BASELINE-NO-ID-IN-X",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "check_id": "BASELINE-NO-TARGET-IN-X",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    }
+  ],
+  "all_pass": true,
+  "feature_details": [
+    {
+      "name": "duration_min",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 65514
+    },
+    {
+      "name": "release_year",
+      "dtype": "int64",
+      "null_count": 0,
+      "unique_count": 101
+    },
+    {
+      "name": "danceability",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 1285
+    },
+    {
+      "name": "energy",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 2571
+    },
+    {
+      "name": "loudness",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 29196
+    },
+    {
+      "name": "speechiness",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 1655
+    },
+    {
+      "name": "acousticness",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 5217
+    },
+    {
+      "name": "instrumentalness",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 5402
+    },
+    {
+      "name": "liveness",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 1782
+    },
+    {
+      "name": "valence",
+      "dtype": "float64",
+      "null_count": 0,
+      "unique_count": 1805
+    },
+    {
+      "name": "tempo",
+      "dtype": "float64",
+      "null_count": 328,
+      "unique_count": 122705
+    },
+    {
+      "name": "release_month",
+      "dtype": "float64",
+      "null_count": 136489,
+      "unique_count": 12
+    },
+    {
+      "name": "decade",
+      "dtype": "int64",
+      "null_count": 0,
+      "unique_count": 12
+    },
+    {
+      "name": "release_precision",
+      "dtype": "str",
+      "null_count": 0,
+      "unique_count": 3
+    },
+    {
+      "name": "key",
+      "dtype": "int64",
+      "null_count": 0,
+      "unique_count": 12
+    },
+    {
+      "name": "time_signature",
+      "dtype": "float64",
+      "null_count": 337,
+      "unique_count": 4
+    },
+    {
+      "name": "explicit",
+      "dtype": "bool",
+      "null_count": 0,
+      "unique_count": 2
+    },
+    {
+      "name": "mode",
+      "dtype": "int64",
+      "null_count": 0,
+      "unique_count": 2
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "shap_summary_bar_transformed": {
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\global\\shap_summary_bar_transformed.png",
+    "exists": true,
+    "bytes": 71225,
+    "sha256": "b2235c0d58bd7385693c8e11b28e43569967a88a17273ca3cd60213fe6298255",
+    "width": 1500,
+    "height": 1200,
+    "status": "OK",
+    "plot_type": "bar",
+    "top_n": 20
+  },
+  "shap_summary_bar_selected": {
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\global\\shap_summary_bar_selected.png",
+    "exists": true,
+    "bytes": 70572,
+    "sha256": "5351af16946efad501548ccc285fd1e711c5ce565e55e78fa57f1e79d0c91c82",
+    "width": 1500,
+    "height": 1200,
+    "status": "OK",
+    "plot_type": "bar",
+    "top_n": 20
+  },
+  "shap_summary_bar_raw_family": {
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\global\\shap_summary_bar_raw_family.png",
+    "exists": true,
+    "bytes": 62083,
+    "sha256": "edcc3c704648a348e1ef866f5d95e9e4cc5922e3b9bb10f7c060d76ebb0d8858",
+    "width": 1500,
+    "height": 1050,
+    "status": "OK",
+    "plot_type": "bar",
+    "top_n": 15
+  },
+  "shap_summary_beeswarm": {
+    "path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\global\\shap_summary_beeswarm.png",
+    "exists": true,
+    "bytes": 318253,
+    "sha256": "c8269b36468398b4788cafa9c8f06a64c4f3f8ed8fe31ffd1f5a467f92b78487",
+    "width": 1684,
+    "height": 1335,
+    "status": "OK",
+    "plot_type": "beeswarm",
+    "top_n": 20
+  },
+  "source_shap_hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c"
+}

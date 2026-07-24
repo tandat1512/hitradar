@@ -9,5 +9,12 @@
   "instrumentalness",
   "liveness",
   "valence",
-  "tempo"
+  "tempo",
+  "release_month",
+  "decade",
+  "release_precision",
+  "key",
+  "time_signature",
+  "explicit",
+  "mode"
 ]

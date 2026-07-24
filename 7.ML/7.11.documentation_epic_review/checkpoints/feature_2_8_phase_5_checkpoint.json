@@ -1,0 +1,15 @@
+{
+  "phase": "5/5",
+  "feature_2_8_status": "PASS",
+  "feature_2_8_decision": "ELIGIBLE_FOR_CLOSURE",
+  "epic_2_final_review_gate": "MAY_BEGIN",
+  "champion_unchanged": true,
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "final_test_rerun": false,
+  "shap_recomputed": false,
+  "blocker_count": 0,
+  "warning_count": 0,
+  "final_report_path": "E:\\Dự án 1 hitrada\\Output epic2\\BAO_CAO_NGHIEM_THU_FEATURE_2_8.md"
+}

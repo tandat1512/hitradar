@@ -1,0 +1,22 @@
+{
+  "champion_id": "EXP24-XGB-FINAL-001",
+  "champion_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "background_hash": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+  "explanation_sample_rows": 5000,
+  "explanation_sample_hash": "c6cb0462e954d663f365902d74fa7edcef8119f374941881e084990894420176",
+  "transformed_sample_hash": "876b130eaa5282079d05808fe345896e43027edbb5b05e9510af8b4de399f113",
+  "shap_values_hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+  "base_values_hash": "b67b2bd148062e60edb4c2764f0e4a69f6990d2ab580fb7863447ec5e844cd44",
+  "shap_values_rows": 5000,
+  "shap_values_columns": 49,
+  "model_matrix_width": 49,
+  "feature_names_count": 49,
+  "explainer_class": "TreeExplainer",
+  "output_space": "raw",
+  "additivity_status": "PASS",
+  "additivity_pass_rate": 1.0,
+  "has_nan": false,
+  "has_inf": false,
+  "generated_at": "2026-07-23T08:24:01.007025",
+  "immutable": true
+}

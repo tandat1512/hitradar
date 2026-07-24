@@ -1,0 +1,13 @@
+{
+  "preferred_explainer": "TreeExplainer",
+  "explanation_sample_size": 5000,
+  "minimum_fallback_size": 2000,
+  "random_state": 42,
+  "model_output": "raw",
+  "feature_perturbation": "tree_path_dependent",
+  "additivity_tolerance": 0.05,
+  "global_top_n": 15,
+  "local_case_policy": "top_k_absolute",
+  "dependence_plot_count": 10,
+  "grouped_mapping_policy": "one_to_one"
+}

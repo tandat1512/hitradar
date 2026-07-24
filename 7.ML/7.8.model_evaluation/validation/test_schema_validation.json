@@ -1,0 +1,27 @@
+{
+  "declared_test_rows": 85876,
+  "actual_test_rows": 85876,
+  "target_missing": 0,
+  "features_missing": {
+    "track_id": 0,
+    "duration_min": 0,
+    "explicit": 0,
+    "release_year": 0,
+    "release_month": 1139,
+    "decade": 0,
+    "release_precision": 0,
+    "danceability": 0,
+    "energy": 0,
+    "key": 0,
+    "loudness": 0,
+    "mode": 0,
+    "speechiness": 0,
+    "acousticness": 0,
+    "instrumentalness": 0,
+    "liveness": 0,
+    "valence": 0,
+    "tempo": 140,
+    "time_signature": 141,
+    "target_popularity": 0
+  }
+}

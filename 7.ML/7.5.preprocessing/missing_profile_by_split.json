@@ -1,17 +1,9 @@
 {
   "tempo": {
-    "total_count": 586672,
-    "total_missing": 328,
-    "total_ratio": 0.0005590858264924864,
-    "train_count": 415524,
     "train_missing": 154,
-    "train_ratio": 0.00037061637835600353,
-    "validation_count": 85272,
     "validation_missing": 34,
-    "validation_ratio": 0.00039872408293460925,
-    "test_count": 85876,
     "test_missing": 140,
-    "test_ratio": 0.0016302575806977503,
+    "total_missing": 328,
     "post_transform_missing_by_candidate": {
       "P22-A": 0,
       "P22-B": 0,
@@ -20,18 +12,10 @@
     }
   },
   "time_signature": {
-    "total_count": 586672,
-    "total_missing": 337,
-    "total_ratio": 0.0005744265961218534,
-    "train_count": 415524,
     "train_missing": 160,
-    "train_ratio": 0.0003850559775127309,
-    "validation_count": 85272,
     "validation_missing": 36,
-    "validation_ratio": 0.00042217844075429216,
-    "test_count": 85876,
     "test_missing": 141,
-    "test_ratio": 0.0016419022777027343,
+    "total_missing": 337,
     "post_transform_missing_by_candidate": {
       "P22-A": 0,
       "P22-B": 0,
@@ -40,18 +24,10 @@
     }
   },
   "release_month": {
-    "total_count": 586672,
-    "total_missing": 136489,
-    "total_ratio": 0.2326495895491859,
-    "train_count": 415524,
     "train_missing": 126895,
-    "train_ratio": 0.3053854891654874,
-    "validation_count": 85272,
     "validation_missing": 8455,
-    "validation_ratio": 0.09915329768270945,
-    "test_count": 85876,
     "test_missing": 1139,
-    "test_ratio": 0.013263309888676697,
+    "total_missing": 136489,
     "post_transform_missing_by_candidate": {
       "P22-A": 0,
       "P22-B": 0,

@@ -1,0 +1,16 @@
+{
+  "rows": 5000,
+  "columns": 49,
+  "dtype": "float64",
+  "has_nan": false,
+  "has_inf": false,
+  "min": -12.932950179881415,
+  "max": 17.266426259737223,
+  "mean": 0.3052573758803954,
+  "std": 1.8512322948665791,
+  "all_zero_columns": 0,
+  "all_zero_rows": 0,
+  "columns_match_model_matrix": true,
+  "feature_names_count": 49,
+  "feature_names_match_columns": true
+}

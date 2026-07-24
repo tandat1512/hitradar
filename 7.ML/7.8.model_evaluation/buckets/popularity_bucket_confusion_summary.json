@@ -1,0 +1,6 @@
+{
+  "exact_bucket_accuracy": 0.23305696585774838,
+  "within_one_bucket_accuracy": 0.8400018631515208,
+  "two_or_more_bucket_error_rate": 0.1599981368484792,
+  "mean_absolute_bucket_distance": 0.9328450323722577
+}

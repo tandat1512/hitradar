@@ -1,0 +1,10 @@
+{
+  "session_id": "F28-P3-RETRAIN-20260724-154224-p3",
+  "phase": "3/5",
+  "artifacts_created": [
+    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\feature_lineage_matrix.csv",
+    "E:\\Dự án 1 hitrada\\Output epic2\\FEATURE_ENGINEERING_GUIDE.md",
+    "E:\\Dự án 1 hitrada\\Output epic2\\HOW_TO_RETRAIN_MODEL.md"
+  ],
+  "generated_at": "2026-07-24T15:42:24.609043+00:00"
+}

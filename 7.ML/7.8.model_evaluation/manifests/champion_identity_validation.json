@@ -1,0 +1,9 @@
+{
+  "champion_valid": true,
+  "model_id": "EXP24-XGB-FINAL-001",
+  "artifact_path": "hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+  "artifact_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+  "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "feature_set_id": "FS23-SELECTED",
+  "validation_notes": "Champion artifact exists and hash matches expected value"
+}

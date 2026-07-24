@@ -1,0 +1,8 @@
+{
+  "best_rmse_year": 2014,
+  "worst_rmse_year": 2021,
+  "rmse_max_min_diff": 11.260460803741204,
+  "mean_yearly_rmse": 21.10981935152247,
+  "std_yearly_rmse": 3.3191129931597074,
+  "status": "UNSTABLE"
+}

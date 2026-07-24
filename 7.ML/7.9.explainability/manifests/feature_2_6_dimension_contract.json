@@ -1,0 +1,16 @@
+{
+  "bundle_input_level": "RAW",
+  "bundle_input_feature_count": 18,
+  "raw_feature_count": 18,
+  "selected_engineered_feature_count": 31,
+  "model_matrix_width": 49,
+  "feature_set_id": "FS23-SELECTED",
+  "feature_names_available": true,
+  "feature_name_count": 49,
+  "source_artifacts": [
+    "selected_feature_set.json",
+    "champion_bundle.joblib (runtime)",
+    "FeatureEngineeringTransformer.selected_features",
+    "ColumnTransformer.get_feature_names_out()"
+  ]
+}

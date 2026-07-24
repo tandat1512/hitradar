@@ -1,0 +1,24 @@
+{
+  "raw_path": "hitradar/7.ML/7.9.explainability/explanation_sample/shap_explanation_sample_raw.parquet",
+  "raw_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.9.explainability/explanation_sample/shap_explanation_sample_raw.parquet",
+  "raw_sha256": "c6cb0462e954d663f365902d74fa7edcef8119f374941881e084990894420176",
+  "metadata_path": "hitradar/7.ML/7.9.explainability/explanation_sample/shap_explanation_sample_metadata.parquet",
+  "metadata_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.9.explainability/explanation_sample/shap_explanation_sample_metadata.parquet",
+  "rows": 5000,
+  "columns": 18,
+  "distribution": {
+    "release_year": {
+      "min": 2014,
+      "max": 2021,
+      "mean": 2017.447,
+      "std": 2.2499340969655397
+    },
+    "target_popularity": {
+      "min": 0,
+      "max": 91,
+      "mean": 40.5182,
+      "std": 21.768115190061486
+    },
+    "sample_size": 5000
+  }
+}

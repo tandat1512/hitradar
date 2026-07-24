@@ -1,0 +1,65 @@
+[
+  {
+    "phrase": "dự đoán chính xác bài hát sẽ thành hit",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "đảm bảo thành công",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "gây ra popularity",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "chứng minh nguyên nhân",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "không có bias",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "production-ready tuyệt đối",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "popular = chất lượng",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "R² thấp không ảnh hưởng",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  },
+  {
+    "phrase": "test được dùng để chọn champion",
+    "section": "N/A",
+    "severity": "INFO",
+    "suggested_correction": null,
+    "status": "NOT_FOUND"
+  }
+]

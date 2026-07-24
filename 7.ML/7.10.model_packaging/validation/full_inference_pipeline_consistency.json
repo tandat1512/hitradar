@@ -1,0 +1,9 @@
+{
+  "rows": 20,
+  "mean_absolute_difference": 2.4241332940988514e-07,
+  "max_absolute_difference": 4.6948242271582785e-07,
+  "tolerance": 1e-06,
+  "pass_rate": 1.0,
+  "is_consistent": true,
+  "reference": "champion_bundle vs HitRadarInferencePipeline"
+}

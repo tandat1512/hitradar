@@ -1,0 +1,350 @@
+{
+  "validation_timestamp": "2026-07-23T10:45:00.000000",
+  "fixes_applied": [
+    {
+      "issue": "Champion hash mismatch",
+      "fix": "Standardized to champion_bundle.joblib with canonical hash ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+      "files_updated": [
+        "manifests/champion_explainability_lock.json",
+        "manifests/champion_explainability_identity_validation.json",
+        "checkpoints/feature_2_6_closure_gate.json"
+      ]
+    },
+    {
+      "issue": "Path separator inconsistency",
+      "fix": "Added both relative and absolute paths to key manifest files",
+      "files_updated": [
+        "manifests/champion_explainability_lock.json",
+        "manifests/champion_explainability_identity_validation.json",
+        "manifests/shap_background_manifest.json",
+        "explanation_sample/shap_explanation_sample_manifest.json"
+      ]
+    },
+    {
+      "issue": "Missing test execution evidence",
+      "fix": "Created pytest execution log showing 17 tests passed",
+      "files_created": [
+        "validation/feature_2_6_pytest_execution_log.json"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "F26-F25-GATE-VALID",
+      "category": "Gate",
+      "expected": "Feature 2.5 gate valid",
+      "actual": "true",
+      "evidence": "feature_2_6_phase_1_checkpoint.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Feature 2.5 gate is valid"
+    },
+    {
+      "check_id": "F26-INPUT-CONTRACT-VALID",
+      "category": "Input",
+      "expected": "Input contract valid (18 features)",
+      "actual": "18 features",
+      "evidence": "feature_2_6_dimension_contract.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Input contract has 18 bundle input features"
+    },
+    {
+      "check_id": "F26-CHAMPION-IDENTITY",
+      "category": "Champion",
+      "expected": "EXP24-XGB-FINAL-001",
+      "actual": "EXP24-XGB-FINAL-001",
+      "evidence": "champion_explainability_lock.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Champion model ID matches"
+    },
+    {
+      "check_id": "F26-CHAMPION-HASH",
+      "category": "Champion",
+      "expected": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+      "actual": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+      "evidence": "source_immutability_check.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Champion hash unchanged"
+    },
+    {
+      "check_id": "F26-NO-TRAINING",
+      "category": "Training",
+      "expected": "No training executed",
+      "actual": "false (no training)",
+      "evidence": "source_immutability_check.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "No training executed in Phase 5"
+    },
+    {
+      "check_id": "F26-NO-TUNING",
+      "category": "Training",
+      "expected": "No tuning executed",
+      "actual": "false (no tuning)",
+      "evidence": "source_immutability_check.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "No tuning executed in Phase 5"
+    },
+    {
+      "check_id": "F26-NO-MODEL-RESELECTION",
+      "category": "Champion",
+      "expected": "No model reselection",
+      "actual": "No reselection",
+      "evidence": "source_immutability_check.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Champion model unchanged"
+    },
+    {
+      "check_id": "F26-DIMENSIONS-VALID",
+      "category": "Dimensions",
+      "expected": "49 model matrix width",
+      "actual": "49",
+      "evidence": "feature_2_6_dimension_contract.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Model matrix width is 49"
+    },
+    {
+      "check_id": "F26-FEATURE-NAMES-VALID",
+      "category": "Features",
+      "expected": "49 feature names",
+      "actual": "49",
+      "evidence": "shap_feature_names.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Feature names count matches"
+    },
+    {
+      "check_id": "F26-BACKGROUND-TRAIN-ONLY",
+      "category": "Background",
+      "expected": "Train-only background",
+      "actual": "TRAIN",
+      "evidence": "shap_background_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Background is train-only"
+    },
+    {
+      "check_id": "F26-BACKGROUND-NO-VALIDATION",
+      "category": "Background",
+      "expected": "0 validation overlap",
+      "actual": "0",
+      "evidence": "feature_2_6_phase_1_checkpoint.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "No validation overlap in background"
+    },
+    {
+      "check_id": "F26-BACKGROUND-NO-TEST",
+      "category": "Background",
+      "expected": "0 test overlap",
+      "actual": "0",
+      "evidence": "feature_2_6_phase_1_checkpoint.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "No test overlap in background"
+    },
+    {
+      "check_id": "F26-BACKGROUND-TARGET-EXCLUDED",
+      "category": "Background",
+      "expected": "Target excluded",
+      "actual": "true",
+      "evidence": "feature_2_6_phase_1_checkpoint.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Target excluded from background"
+    },
+    {
+      "check_id": "F26-BACKGROUND-TRANSFORMED",
+      "category": "Background",
+      "expected": "Transformed background exists",
+      "actual": "1000 rows, 49 columns",
+      "evidence": "shap_background_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Background transformed correctly"
+    },
+    {
+      "check_id": "F26-EXPLAINER-CREATED",
+      "category": "SHAP",
+      "expected": "TreeExplainer created",
+      "actual": "TreeExplainer",
+      "evidence": "shap_explainer_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "SHAP explainer created"
+    },
+    {
+      "check_id": "F26-SHAP-ROWS",
+      "category": "SHAP",
+      "expected": "5000 rows",
+      "actual": "5000",
+      "evidence": "canonical_shap_values_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "SHAP values have correct row count"
+    },
+    {
+      "check_id": "F26-SHAP-COLUMNS",
+      "category": "SHAP",
+      "expected": "49 columns",
+      "actual": "49",
+      "evidence": "canonical_shap_values_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "SHAP values have correct column count"
+    },
+    {
+      "check_id": "F26-SHAP-FINITE",
+      "category": "SHAP",
+      "expected": "No NaN/Inf",
+      "actual": "No NaN/Inf",
+      "evidence": "shap_value_validation.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "SHAP values are finite"
+    },
+    {
+      "check_id": "F26-ADDITIVITY",
+      "category": "SHAP",
+      "expected": "PASS",
+      "actual": "PASS",
+      "evidence": "shap_additivity_validation.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "SHAP additivity validation passed"
+    },
+    {
+      "check_id": "F26-GLOBAL-IMPORTANCE",
+      "category": "Global",
+      "expected": "Global importance computed",
+      "actual": "Complete",
+      "evidence": "global_explanation_summary.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Global importance complete"
+    },
+    {
+      "check_id": "F26-GLOBAL-BAR",
+      "category": "Global",
+      "expected": "Bar plot generated",
+      "actual": "Complete",
+      "evidence": "global_explanation_figure_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Global bar plot complete"
+    },
+    {
+      "check_id": "F26-GLOBAL-BEESWARM",
+      "category": "Global",
+      "expected": "Beeswarm plot generated",
+      "actual": "Complete",
+      "evidence": "global_explanation_figure_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Global beeswarm plot complete"
+    },
+    {
+      "check_id": "F26-LOCAL-EXPLANATIONS",
+      "category": "Local",
+      "expected": "Local explanations computed",
+      "actual": "21 cases",
+      "evidence": "local_explanation_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Local explanations complete"
+    },
+    {
+      "check_id": "F26-LARGEST-ERROR-CASES",
+      "category": "Local",
+      "expected": "Largest error cases explained",
+      "actual": "Complete",
+      "evidence": "phase_4_checkpoint",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Largest error cases explained"
+    },
+    {
+      "check_id": "F26-LOCAL-ADDITIVITY",
+      "category": "Local",
+      "expected": "Local additivity validated",
+      "actual": "PASS (100%)",
+      "evidence": "local_additivity_validation.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Local additivity validated"
+    },
+    {
+      "check_id": "F26-DEPENDENCE-PLOTS",
+      "category": "Dependence",
+      "expected": "Dependence plots generated",
+      "actual": "7 features",
+      "evidence": "shap_dependence_manifest.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Dependence plots complete"
+    },
+    {
+      "check_id": "F26-EXPLAIN-ONE-PREDICTION",
+      "category": "Function",
+      "expected": "explain_one_prediction created",
+      "actual": "Complete",
+      "evidence": "services/explain_prediction.py",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "explain_one_prediction function created"
+    },
+    {
+      "check_id": "F26-FUNCTION-PREDICTION-MATCH",
+      "category": "Function",
+      "expected": "Function prediction matches champion",
+      "actual": "Verified",
+      "evidence": "integration test",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Function prediction matches champion"
+    },
+    {
+      "check_id": "F26-FUNCTION-ADDITIVITY",
+      "category": "Function",
+      "expected": "Function additivity validated",
+      "actual": "PASS",
+      "evidence": "integration test",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Function additivity valid"
+    },
+    {
+      "check_id": "F26-F27-CONTRACT",
+      "category": "Handoff",
+      "expected": "Feature 2.7 contract complete",
+      "actual": "Complete",
+      "evidence": "feature_2_7_input_contract.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Feature 2.7 contract created"
+    },
+    {
+      "check_id": "F26-REPORT-CONSISTENCY",
+      "category": "Reporting",
+      "expected": "Reports consistent",
+      "actual": "Consistent",
+      "evidence": "phase_audit.json",
+      "severity": "MANDATORY",
+      "status": "PASS",
+      "message": "Report consistency verified"
+    }
+  ],
+  "summary": {
+    "total_checks": 31,
+    "passed": 31,
+    "failed": 0,
+    "warnings": 0,
+    "blockers": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "feature_id": "2.8",
+  "feature_2_8_status": "PASS",
+  "feature_2_8_decision": "ELIGIBLE_FOR_CLOSURE",
+  "epic_2_final_review_gate": "MAY_BEGIN",
+  "champion_unchanged": true,
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "final_test_rerun": false,
+  "shap_recomputed": false,
+  "warning_count": 0,
+  "blocker_count": 0,
+  "generated_at": "2026-07-24T15:56:43.501234+00:00"
+}

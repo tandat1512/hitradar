@@ -1,0 +1,20 @@
+{
+  "duration_min": 5.1767,
+  "explicit": true,
+  "release_year": 1992,
+  "release_month": 11.0,
+  "decade": 1990,
+  "release_precision": "day",
+  "danceability": 0.785,
+  "energy": 0.793,
+  "key": 1,
+  "loudness": -7.915,
+  "mode": 1,
+  "speechiness": 0.163,
+  "acousticness": 0.22,
+  "instrumentalness": 0.718,
+  "liveness": 0.124,
+  "valence": 0.655,
+  "tempo": 88.902,
+  "time_signature": 4.0
+}

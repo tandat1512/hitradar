@@ -1,0 +1,54 @@
+[
+  {
+    "model_id": "EXP24-XGB-FINAL-001",
+    "family": "XGBoost",
+    "training_complete": true,
+    "eligible": true,
+    "params": {
+      "colsample_bytree": 0.9,
+      "gamma": 0.1,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "min_child_weight": 5,
+      "n_estimators": 454,
+      "reg_alpha": 0,
+      "reg_lambda": 10,
+      "subsample": 0.9
+    },
+    "cv_rmse_mean": 12.862417400358112,
+    "cv_rmse_std": 0.20146868574206608,
+    "val_mae": 11.90149211883545,
+    "val_rmse": 15.25206504973179,
+    "val_r2": 0.09543037414550781,
+    "fit_time": 17.219294786453247,
+    "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib"
+  },
+  {
+    "model_id": "EXP24-RF-FINAL-001",
+    "family": "RandomForest",
+    "training_complete": true,
+    "eligible": true,
+    "params": {},
+    "cv_rmse_mean": 12.920065965427137,
+    "cv_rmse_std": 0.2470086235174475,
+    "val_mae": 11.94456197992147,
+    "val_rmse": 15.322515648358241,
+    "val_r2": 0.08705447112851983,
+    "fit_time": 447.6938316822052,
+    "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RF-FINAL-001.joblib"
+  },
+  {
+    "model_id": "EXP24-RIDGE-FINAL-001",
+    "family": "Ridge",
+    "training_complete": true,
+    "eligible": true,
+    "params": {},
+    "cv_rmse_mean": 13.240091653205779,
+    "cv_rmse_std": 0.24979244003289267,
+    "val_mae": 12.307352093891312,
+    "val_rmse": 16.027951449815642,
+    "val_r2": 0.0010568908804564625,
+    "fit_time": 4.293425798416138,
+    "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FINAL-001.joblib"
+  }
+]

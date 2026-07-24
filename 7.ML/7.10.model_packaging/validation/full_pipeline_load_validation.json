@@ -1,0 +1,14 @@
+{
+  "load_success": true,
+  "prediction_success": true,
+  "sample_prediction": {
+    "status": "SUCCESS",
+    "prediction_raw": 36.568111,
+    "prediction_clipped": 36.568111,
+    "prediction_display": 37,
+    "warnings": [],
+    "model_id": "EXP24-XGB-FINAL-001",
+    "model_version": "1.0.0",
+    "package_version": "1.0.0"
+  }
+}

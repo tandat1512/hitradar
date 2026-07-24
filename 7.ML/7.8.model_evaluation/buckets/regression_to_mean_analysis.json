@@ -1,0 +1,12 @@
+{
+  "Very_Low_0": {
+    "pred_minus_actual": 27.803118669965823,
+    "overprediction_rate": 0.9770894213909994,
+    "mean_residual": -27.80312036700266
+  },
+  "Very_High_4": {
+    "pred_minus_actual": -43.97835053617533,
+    "underprediction_rate": 1.0,
+    "mean_residual": 43.97835139674687
+  }
+}

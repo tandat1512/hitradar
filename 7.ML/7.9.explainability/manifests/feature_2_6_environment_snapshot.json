@@ -1,0 +1,20 @@
+{
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "python_executable": "C:\\Users\\Cuong\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "python_version": "3.13.7",
+  "pandas": "3.0.3",
+  "numpy": "2.4.4",
+  "scipy": "1.16.3",
+  "scikit-learn": "1.8.0",
+  "xgboost": "3.3.0",
+  "shap": "NOT_INSTALLED",
+  "joblib": "1.5.3",
+  "pyarrow": "24.0.0",
+  "matplotlib": "3.10.8",
+  "pytest": "9.1.1",
+  "cpu": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "logical_cores": 12,
+  "total_ram_gb": 15.85,
+  "available_ram_gb": 2.88,
+  "free_disk_gb": 109.41
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "logical_name": "input_schema",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\input_schema.json",
+    "exists": true,
+    "canonical_status": "OFFICIAL"
+  },
+  {
+    "logical_name": "output_schema",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\output_schema.json",
+    "exists": true,
+    "canonical_status": "OFFICIAL"
+  },
+  {
+    "logical_name": "selected_features",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\selected_features.json",
+    "exists": true,
+    "canonical_status": "OFFICIAL"
+  },
+  {
+    "logical_name": "feature_names",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\feature_names.json",
+    "exists": true,
+    "canonical_status": "OFFICIAL"
+  }
+]

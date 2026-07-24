@@ -1,0 +1,153 @@
+{
+  "requested_sample_size": 1000,
+  "actual_sample_size": 1000,
+  "sample_strategy": "deterministic_stratified",
+  "seed": 42,
+  "decade_distribution": {
+    "1920": 18,
+    "1930": 31,
+    "1940": 44,
+    "1950": 85,
+    "1960": 114,
+    "1970": 149,
+    "1980": 198,
+    "1990": 262,
+    "2000": 99
+  },
+  "popularity_bucket_distribution": {
+    "[0,20)": 439,
+    "[20,40)": 408,
+    "[40,60)": 138,
+    "[60,80)": 15,
+    "[80,101)": 0
+  },
+  "numerical_feature_summary": {
+    "duration_min": {
+      "mean": 3.9188,
+      "std": 2.0354,
+      "min": 0.3882,
+      "max": 24.1309,
+      "null_count": 0
+    },
+    "release_year": {
+      "mean": 1978.373,
+      "std": 19.2514,
+      "min": 1923.0,
+      "max": 2004.0,
+      "null_count": 0
+    },
+    "release_month": {
+      "mean": 4.9883,
+      "std": 3.9724,
+      "min": 1.0,
+      "max": 12.0,
+      "null_count": 317
+    },
+    "decade": {
+      "mean": 1973.89,
+      "std": 19.4563,
+      "min": 1920.0,
+      "max": 2000.0,
+      "null_count": 0
+    },
+    "danceability": {
+      "mean": 0.5495,
+      "std": 0.16,
+      "min": 0.0715,
+      "max": 0.943,
+      "null_count": 0
+    },
+    "energy": {
+      "mean": 0.5083,
+      "std": 0.2481,
+      "min": 0.0046,
+      "max": 0.998,
+      "null_count": 0
+    },
+    "key": {
+      "mean": 5.059,
+      "std": 3.5105,
+      "min": 0.0,
+      "max": 11.0,
+      "null_count": 0
+    },
+    "loudness": {
+      "mean": -11.2243,
+      "std": 4.9762,
+      "min": -34.5,
+      "max": -0.007,
+      "null_count": 0
+    },
+    "mode": {
+      "mean": 0.666,
+      "std": 0.4719,
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "speechiness": {
+      "mean": 0.1219,
+      "std": 0.2164,
+      "min": 0.0235,
+      "max": 0.966,
+      "null_count": 0
+    },
+    "acousticness": {
+      "mean": 0.5101,
+      "std": 0.347,
+      "min": 0.0,
+      "max": 0.996,
+      "null_count": 0
+    },
+    "instrumentalness": {
+      "mean": 0.1304,
+      "std": 0.2832,
+      "min": 0.0,
+      "max": 0.96,
+      "null_count": 0
+    },
+    "liveness": {
+      "mean": 0.2213,
+      "std": 0.1894,
+      "min": 0.0251,
+      "max": 0.984,
+      "null_count": 0
+    },
+    "valence": {
+      "mean": 0.5778,
+      "std": 0.2577,
+      "min": 0.0349,
+      "max": 0.981,
+      "null_count": 0
+    },
+    "tempo": {
+      "mean": 118.4938,
+      "std": 31.0859,
+      "min": 45.118,
+      "max": 208.952,
+      "null_count": 0
+    },
+    "time_signature": {
+      "mean": 3.857,
+      "std": 0.4783,
+      "min": 1.0,
+      "max": 5.0,
+      "null_count": 0
+    }
+  },
+  "categorical_distribution": {
+    "explicit": {
+      "False": 981,
+      "True": 19
+    },
+    "release_precision": {
+      "day": 677,
+      "year": 317,
+      "month": 6
+    }
+  },
+  "duplicate_count": 0,
+  "train_only_verification": true,
+  "validation_overlap_count": 0,
+  "test_overlap_count": 0
+}

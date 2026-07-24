@@ -1,0 +1,12 @@
+{
+  "expected_screening_fit_calls": 36,
+  "actual_screening_fit_calls": 36,
+  "expected_full_cv_fit_calls": 6,
+  "actual_full_cv_fit_calls": 6,
+  "expected_final_fit_calls": 1,
+  "actual_final_fit_calls": 1,
+  "expected_total_fit_calls": 43,
+  "actual_total_fit_calls": 43,
+  "failed_fit_calls": 0,
+  "completed_fit_calls": 43
+}

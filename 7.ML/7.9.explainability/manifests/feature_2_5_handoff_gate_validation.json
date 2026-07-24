@@ -1,0 +1,10 @@
+{
+  "gate_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\checkpoints\\feature_2_5_closure_gate.json",
+  "gate_sha256": "106269e111f060036779fc2b63975cc9d7cfb576606e31e7703863a94be3e636",
+  "feature_2_5_status": "PASS",
+  "feature_2_5_decision": "ELIGIBLE_FOR_CLOSURE",
+  "feature_2_6_gate": "MAY_BEGIN",
+  "pytest_failed": 0,
+  "blocker_count": 0,
+  "gate_valid": true
+}

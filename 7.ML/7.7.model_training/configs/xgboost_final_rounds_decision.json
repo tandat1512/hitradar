@@ -1,0 +1,14 @@
+{
+  "decision_made_before_external_validation": true,
+  "early_stopping_used_in_full_cv": true,
+  "best_iterations": [
+    274,
+    453,
+    677
+  ],
+  "aggregation_rule": "MEDIAN_BEST_ITERATION_PLUS_ONE",
+  "configured_n_estimators": 800,
+  "final_rounds": 454,
+  "minimum_rounds_guard": 1,
+  "official_validation_used": false
+}

@@ -1,0 +1,13 @@
+{
+  "prediction_reference": "ESTIMATOR",
+  "output_space": "raw",
+  "sample_rows": 5000,
+  "mean_absolute_error": 1.4370358784108817e-05,
+  "median_absolute_error": 1.1801780591014221e-05,
+  "p95_absolute_error": 3.645763242552391e-05,
+  "max_absolute_error": 6.749456107257856e-05,
+  "tolerance": 0.001,
+  "rows_within_tolerance": 5000,
+  "pass_rate": 1.0,
+  "status": "PASS"
+}

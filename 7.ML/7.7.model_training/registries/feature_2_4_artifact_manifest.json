@@ -1,0 +1,412 @@
+[
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase1.py",
+    "bytes": 12691,
+    "sha256": "c5925ef77438229f6b0b50dd2dc067903abf40ab3ca674688fabd65f6bf78565"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase2.py",
+    "bytes": 9748,
+    "sha256": "e5046fe55a50b38f0641812879098f1fff0d0797daa87c8e6ede0916c020f4c9"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase3.py",
+    "bytes": 7211,
+    "sha256": "de61f4376f563cb8465f3c6f0a320f5b17ba735f8c0d7180a3942d13f58c10a9"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase4.py",
+    "bytes": 6981,
+    "sha256": "1eb7f16bfc87ab59fb98b622a376d9b5ff2dc8b75989bef23672cff61e1be0cb"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase5.py",
+    "bytes": 8833,
+    "sha256": "e195e34791b6407ee379a8509d6680d1131df4727fbb990fdd3aef843a4be675"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\best_model_decision.json",
+    "bytes": 229,
+    "sha256": "2a6ea32797b538e678277a7163db81784f9f9fd11541dda7a9dbc7f5cfcd3609"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\candidate_search_spaces.json",
+    "bytes": 369,
+    "sha256": "62c0f2dcc302a8e22e0363e875833f3580fc2fe90ee6032f2c2137e9fdd5de97"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\dummy_model_config.json",
+    "bytes": 26,
+    "sha256": "99e7da5c61da8d0b1ff0b259d8c2984f47daf227c8f4f02376a18a600af446b2"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\explainability_availability.json",
+    "bytes": 139,
+    "sha256": "431cfe7c32aca250cc5794e984a19065cbd371f84eb5d5dcf41c33189e518704"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\feature_2_5_input_contract.json",
+    "bytes": 1098,
+    "sha256": "332aff48f09aa03eadd91aa36ff5f95bfad8089913f1edda023e08fd49a6e0cc"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\global_training_config.json",
+    "bytes": 250,
+    "sha256": "2f81407db03d1cd5608c2c3a02ee8f0948bcf78b14472d278b40d954d4fbded9"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\linear_model_config.json",
+    "bytes": 29,
+    "sha256": "e834586732a70dfeb5f4b54a69278c7b67dafdca1d091e4bcacac1b569ddff97"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\model_eligibility.json",
+    "bytes": 104,
+    "sha256": "af40d3df76e4f49d7bf57b0b26b36c1c4821fa41e00943cdcd9288b5b95167e6"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\model_search_budget.json",
+    "bytes": 246,
+    "sha256": "8d0bd8feec3d2d05cb005255b374a911ea89c9f211e42d4ef49ef2f416d29e24"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\random_forest_best_params.json",
+    "bytes": 150,
+    "sha256": "feef1da7bb7066e93437f2641b2ff3fb6a8427f96a0fb6cb41e8e44e0ceb9928"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\random_forest_search_space.json",
+    "bytes": 335,
+    "sha256": "ec240d5f91331b86adb13edc5829403a7f0d0e2cd225ff6a07e3703a71e19433"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\ridge_best_params.json",
+    "bytes": 19,
+    "sha256": "fec7ecaa9b64d2ddba4837aab9d88829821a47812b985605a831fe287065961f"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\ridge_search_space.json",
+    "bytes": 144,
+    "sha256": "aca60369fff2a04939753626f83a230d185963135480cf69cb56f7c50658ac68"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\SEARCH_BUDGET_REPORT.md",
+    "bytes": 153,
+    "sha256": "2e9df25ae5c07c3129f1e0790682f5493974b443935f68fa1c6b7c784db33d30"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\tuning_plan.json",
+    "bytes": 167,
+    "sha256": "79dd7962a17dce35e59938835955cbfb2736e0e1ef1d75175eb1264a2a39006c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\xgboost_best_params.json",
+    "bytes": 204,
+    "sha256": "818d3bf3db9d0f66de4c260f7e7c926f2287a949ec2671cf2e81dd42bbbf0cd4"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\xgboost_search_space.json",
+    "bytes": 467,
+    "sha256": "d613a467b656a8e524d95b05b59afd52317a24f9f2ea28d489b507d28eeaed6c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\random_forest_full_cv_results.json",
+    "bytes": 867,
+    "sha256": "11aea108d338a47614fc7463bed4fcbae4b6cd64fe5b3cb6e34c30f923f17f4c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\random_forest_screening_results.json",
+    "bytes": 5339,
+    "sha256": "5c7bf696eff8cf3ac766f0454e94f0c80d05400e6e946215b376d2c703d1613a"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\ridge_full_cv_results.json",
+    "bytes": 165,
+    "sha256": "fc24fc4d2d277fb1d25ff571a2c2c40090ae9757e75979da2500fa4189803b4b"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\ridge_screening_results.json",
+    "bytes": 2447,
+    "sha256": "5f00b114f1e7083fd5e42046b665359b5bd68fc6564902f3cd87261df1bea601"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\screening_sample_manifest.json",
+    "bytes": 2206,
+    "sha256": "63797306eddf85459b796cc3e3b6f260bcb6146a5cb89e9249b08418d20401f0"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\temporal_cv_folds.json",
+    "bytes": 1248,
+    "sha256": "a0e84eb7b777bf22f663d68ae006a3a175ef56a0ac873c73592ba14e24093852"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\temporal_cv_plan.json",
+    "bytes": 149,
+    "sha256": "9845099dfe80bb569edcea4f47d1c3994bd79dba1bedd29abc1286f2fc7cd9e8"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\TEMPORAL_CV_REPORT.md",
+    "bytes": 195,
+    "sha256": "24f4bcc177d0c89244b410000c65a2f4b245c216fae2a7957e4ac8f66f187f2a"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\xgboost_full_cv_results.json",
+    "bytes": 872,
+    "sha256": "bbd3000fcbb4093a017d475dd8304cc3f74ecfae99bfebe2658096402e729b56"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\xgboost_screening_results.json",
+    "bytes": 6144,
+    "sha256": "88b195a444cc6afe012d0360f181ba9bf967f86e2b0419ba3570c34ff03ab3b8"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+    "bytes": 5137,
+    "sha256": "0160123034a28c2434a41c9a1312fe70c49eaa02db9b8776b3f9c74046a5d719"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\dummy_regressor.joblib",
+    "bytes": 415,
+    "sha256": "922c1815426299ad6f00fc226bdc556873161d220422971913cd0a52188443c7"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\linear_regression.joblib",
+    "bytes": 889,
+    "sha256": "11088937aa914f4a1741700ce41b59e80cba35217bbcf2b3474d49ed0456c98b"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\random_forest_regressor.joblib",
+    "bytes": 5137,
+    "sha256": "0160123034a28c2434a41c9a1312fe70c49eaa02db9b8776b3f9c74046a5d719"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\ridge_regressor.joblib",
+    "bytes": 801,
+    "sha256": "525f9fcf7336b059e1346f9e3a8f17c5c4bfca15d0e85676f0d17460e57f3078"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\runner_up_bundle.joblib",
+    "bytes": 801,
+    "sha256": "525f9fcf7336b059e1346f9e3a8f17c5c4bfca15d0e85676f0d17460e57f3078"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\champion_model_manifest.json",
+    "bytes": 287,
+    "sha256": "78844237ea1860f6b8afe23a020b3c6c2b7bbfd17dea75297469f315d156f3b7"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\dummy_model_manifest.json",
+    "bytes": 335,
+    "sha256": "3e3995e3425f313e72bd72e9fef8d08420b852608aa117885b1a1f9a82a5137f"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\experiment_registry.csv",
+    "bytes": 11003,
+    "sha256": "c49ceb2f6fa2f95790a68ca1bb5a8fdfd871ff057e104ab53df1f796f67c2df1"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\experiment_registry.json",
+    "bytes": 24318,
+    "sha256": "7a1b3b6f438f8330bf9f61aeef8cb53cf30aae9bfa280bf6d7f701d4727cee2c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\experiment_registry_manifest.json",
+    "bytes": 135,
+    "sha256": "d9ef8586046eeae48ca680409857eb94b705dc0c113b5dad3f418fe4dec09821"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\feature_2_4_artifact_manifest.json",
+    "bytes": 17971,
+    "sha256": "8edde7628a79367b7d139254a49c66383e16d0fdbc4f9a47e1bb98a5c6307d3c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\linear_model_manifest.json",
+    "bytes": 339,
+    "sha256": "553f3db59efd461b3b7ee108e80e2c69d9e353b5becaa77e21d8f98a1aec5c2f"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\random_forest_model_manifest.json",
+    "bytes": 937,
+    "sha256": "9e0c79675bbcb82b2d17dbf9d06a888a7286decf587020108838b210b269e161"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\ridge_model_manifest.json",
+    "bytes": 335,
+    "sha256": "b1cda9da5d4d7ef9cbab706c822955cc17520aad4b7ce7838f805f2335b6c973"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\runner_up_model_manifest.json",
+    "bytes": 247,
+    "sha256": "cfde014b33b4e56bbdd625475089f9e73c882c3fbfed5f2e79eb9bdfff2ba34a"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\xgboost_model_manifest.json",
+    "bytes": 742,
+    "sha256": "52f04853f065ad5bc1b7d05afd7ea8cc112a8b50ae1bf1de991437caff7c8a52"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\session_checkpoints\\feature_2_4_phase_1_checkpoint.json",
+    "bytes": 384,
+    "sha256": "8928202b054a6d73bf95173dd13dacf338960584bb40164bf2239bbcb5975251"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\session_checkpoints\\feature_2_4_phase_2_checkpoint.json",
+    "bytes": 388,
+    "sha256": "04e3cbcc48aa9b3c19b6350cb79e831fa9d53b74d265f96e43bf859f45458666"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\session_checkpoints\\feature_2_4_phase_3_checkpoint.json",
+    "bytes": 372,
+    "sha256": "bb509ad29097f7402bb31d2f54918d89e895d06e38131ba4e1f2b5fef4c5a411"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\session_checkpoints\\feature_2_4_phase_4_checkpoint.json",
+    "bytes": 432,
+    "sha256": "f5d8e405227545c022ed9549eb4b0b020b9b432ee59f14f643905737427d8f30"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_feature_pipeline.py",
+    "bytes": 335,
+    "sha256": "77dc97010cd5261e7fb16bcff5cae1cad3bf63c8c77e41a998857bb2e58cbee0"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_input_contract.py",
+    "bytes": 764,
+    "sha256": "e8ecbf6bd7e245762f7bab22783f53f33d794f2f12f5de764b4b5140ba7f5754"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_phase_2.py",
+    "bytes": 1995,
+    "sha256": "7e5470ad9f002d63f1062aec9d5e3476cb7952c49dc7b63c6f239f5722498f1c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_phase_3.py",
+    "bytes": 1060,
+    "sha256": "131f2604fd619acd1aa556557d6c79cde415a07b9e1ae8487157823f0dc3cb14"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_phase_4.py",
+    "bytes": 1113,
+    "sha256": "7abf668b72a0f0697549068676b60c1537a4b2779077c44040645e1f4d97c7f9"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_phase_5.py",
+    "bytes": 800,
+    "sha256": "693d00f5f2441c096a0eb30b075f049873176a051979dd67aa909a6965406af5"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_search_budget.py",
+    "bytes": 581,
+    "sha256": "9b509acbcac70d2ce85a22b2710ebe30035741a34fcb629fa865f225b812b48e"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\tests\\test_feature_2_4_temporal_cv.py",
+    "bytes": 360,
+    "sha256": "9ce6133963506fbc564c75f47f1d1f76d128e19ff7b84a77164d778e65faf8cb"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\DUMMY_BASELINE_REPORT.md",
+    "bytes": 28,
+    "sha256": "d9e95cd6a63903b716d18a6fa9ddf668bb01f70ff13a6f138afed903120c80c8"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\dummy_metrics.json",
+    "bytes": 154,
+    "sha256": "18ca9b26b5e82fdb5123d1b21f4264ea892ec7e9b0ff2b644352c375302ee5b2"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\EXPERIMENT_REGISTRY_REPORT.md",
+    "bytes": 33,
+    "sha256": "7da3f811d1a12b076bae6a8a4dc3ab97f393588cdb0a2175581380c58b9c395e"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\FEATURE_2_3_PIPELINE_HANDOFF_REPORT.md",
+    "bytes": 210,
+    "sha256": "802d0d2cb3244c4e340d3a2b328c6fcd02469c03efdde6d4619f4b2f657efc71"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\feature_2_4_closure_gate.json",
+    "bytes": 202,
+    "sha256": "19e3ae1a6421338e4042ecde52c51e7f4eaa46bdaeec4c165aa37a28e1a37126"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\feature_2_4_input_validation.json",
+    "bytes": 426,
+    "sha256": "25b007bdd0ff5bc4d08f2da68bc9538b3ffae93d20f35dc07acd424370840aa9"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\feature_2_4_pipeline_runtime_validation.json",
+    "bytes": 537,
+    "sha256": "39c31d0017660165293d681c287296be8da640a185c9c0ea4f78239d9ccf4284"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\feature_2_4_validation_results.json",
+    "bytes": 41,
+    "sha256": "0dbf0b4ca8a06691bb3fd6dec979547046ae3e63a794d44dc583c785d554311a"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\feature_set_control_comparison.json",
+    "bytes": 363,
+    "sha256": "2da482b4cbc7444681b5249d873f2f39820b811985f905c93de9ed9d349c498c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\FEATURE_SET_CONTROL_REPORT.md",
+    "bytes": 26,
+    "sha256": "d1b1e74346ecb1b54ec5d0d3e64da504eb9f492f5b5fbc49be85ffda1c532d07"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\linear_metrics.json",
+    "bytes": 151,
+    "sha256": "9a17e55ed43d4ff0d8b7b3077cf39b0ef7facdff01eda0d38b3ec369f64a75fe"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\LINEAR_RIDGE_REPORT.md",
+    "bytes": 36,
+    "sha256": "2614d4875dbed845164ff64f04791749dafe551d3134386f34b70c6c95c28bdc"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\model_comparison.json",
+    "bytes": 554,
+    "sha256": "523d979617745b110bee64a12debb3c9aedfd223ca7b8f06ad16918af51bf308"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\MODEL_COMPARISON_REPORT.md",
+    "bytes": 19,
+    "sha256": "c2c7a37fdfa2a40bf9518f6011eda9d82695dffe83df48a7e4e9f02612228ccf"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\MODEL_SELECTION_REPORT.md",
+    "bytes": 29,
+    "sha256": "b6f4b33a5e22e8d7b907e073759ebae078b7a1aa916eec53a39fe03b95324a6c"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\MODEL_TRAINING_INPUT_REPORT.md",
+    "bytes": 179,
+    "sha256": "73141e63329c3fc7ba1f01a0964f3e26a8d3a4913b93f43b9403eafe3d5a94a5"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\random_forest_metrics.json",
+    "bytes": 151,
+    "sha256": "7b24afd16642f1c71f9e8bfb21d180d0540a3fcf03bde8773695a875841a9b53"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\RANDOM_FOREST_REPORT.md",
+    "bytes": 44,
+    "sha256": "6fd8834bd338cf95ecf57ec0a006f37ee4ececac69bea4fe3801b9f2282c1c66"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\ridge_metrics.json",
+    "bytes": 152,
+    "sha256": "dbd8bf9d0e969c8538cbc9e08da5882d8f5a8e018de18204b10ac1369c7b2e3d"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\xgboost_metrics.json",
+    "bytes": 2,
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\validation\\XGBOOST_REPORT.md",
+    "bytes": 92,
+    "sha256": "cabe2831e58f974cca31700863d25d37692550bf2f4661c13ca8bd51321bb851"
+  }
+]

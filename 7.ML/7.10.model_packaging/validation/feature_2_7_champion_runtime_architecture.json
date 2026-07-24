@@ -1,0 +1,11 @@
+{
+  "root_class": "<class 'sklearn.pipeline.Pipeline'>",
+  "steps": [
+    "fe",
+    "prep",
+    "model"
+  ],
+  "estimator_class": "<class 'xgboost.sklearn.XGBRegressor'>",
+  "fe_class": "<class 'transformers.FeatureEngineeringTransformer'>",
+  "preprocessor_class": "<class 'sklearn.compose._column_transformer.ColumnTransformer'>"
+}

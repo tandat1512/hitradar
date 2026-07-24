@@ -1,0 +1,40 @@
+[
+  {
+    "rows": 65658,
+    "proportion": 0.7645675159532349,
+    "actual_mean": 40.56383075938957,
+    "predicted_mean": 35.71158981323242,
+    "MAE": 16.225445556830646,
+    "RMSE": 19.566871978562247,
+    "R2": 0.09015411138534546,
+    "mean_residual": 4.852239081162793,
+    "median_residual": 8.11440658569336,
+    "within_5_rate": 0.17780011575131743,
+    "within_10_rate": 0.353300435590484,
+    "within_15_rate": 0.5159158061470042,
+    "severe_error_rate": 0.48408419385299584,
+    "very_severe_error_rate": 0.23936154010173932,
+    "underprediction_rate": 0.6796886898778519,
+    "overprediction_rate": 0.3203113101221481,
+    "decade": "2010s"
+  },
+  {
+    "rows": 20218,
+    "proportion": 0.23543248404676512,
+    "actual_mean": 41.73716490256207,
+    "predicted_mean": 36.866676330566406,
+    "MAE": 22.26216027840201,
+    "RMSE": 25.143372041430222,
+    "R2": 0.0248451828956604,
+    "mean_residual": 4.870486435379352,
+    "median_residual": 12.438669204711914,
+    "within_5_rate": 0.08759521218715996,
+    "within_10_rate": 0.18196656444752202,
+    "within_15_rate": 0.2945889801167277,
+    "severe_error_rate": 0.7054110198832724,
+    "very_severe_error_rate": 0.42694628548817887,
+    "underprediction_rate": 0.6731625284400039,
+    "overprediction_rate": 0.32683747155999604,
+    "decade": "2020s"
+  }
+]

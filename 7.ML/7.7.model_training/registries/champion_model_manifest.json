@@ -1,0 +1,7 @@
+{
+  "model_id": "EXP24-RF-BEST-001",
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+  "artifact_sha256": "0160123034a28c2434a41c9a1312fe70c49eaa02db9b8776b3f9c74046a5d719",
+  "feature_count": 31,
+  "latency": 15.0
+}

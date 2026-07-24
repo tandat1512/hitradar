@@ -1,0 +1,18 @@
+{
+  "source": "ml_ready_dataset.parquet filtered by train_ids.parquet",
+  "ml_ready_path": "E:/Dự án 1 hitrada/hitradar\\5.DATA\\processed\\ml_ready_dataset.parquet",
+  "train_ids_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.4.splits\\train_ids.parquet",
+  "rows": 415524,
+  "columns": 20,
+  "split_label": "train",
+  "year_range": "1900-2004",
+  "year_min": 1900,
+  "year_max": 2004,
+  "identifier_column": "track_id",
+  "target_column": "target_popularity",
+  "has_identifier": true,
+  "has_target": true,
+  "ml_ready_sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+  "train_ids_sha256": "5c3eb338f4e0c3516d0f9bd7d83c044169c471eded610bb8b0e32fc3156b8bb9",
+  "valid": true
+}

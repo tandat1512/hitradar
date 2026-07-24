@@ -1,0 +1,17 @@
+{
+  "contract_id": "F26-INPUT-FROM-F25",
+  "source_feature": "2.5",
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "champion_artifact_sha256": "UNKNOWN_IN_PYTHON",
+  "feature_set_id": "FS23-SELECTED",
+  "selected_feature_count": 31,
+  "target": "target_popularity",
+  "raw_test_prediction_sha256": "29df7907d39673351411a298e93ec69dd21b21be4aa867105b254db855fd962d",
+  "test_mae": 17.646684646606445,
+  "test_rmse": 21.01337842313573,
+  "test_r2": 0.06962639093399048,
+  "explainability_owner": "Feature 2.6",
+  "shap_status": "NOT_STARTED",
+  "model_selection_locked": true,
+  "created_at": "2026-07-21T23:23:10.281755"
+}

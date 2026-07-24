@@ -1,0 +1,74 @@
+[
+  {
+    "term": "popularity",
+    "definition": "Spotify track popularity score (0-100), reflecting recent streaming activity on the platform. NOT an indicator of artistic quality."
+  },
+  {
+    "term": "target_popularity",
+    "definition": "The target variable for regression. Represents the track's popularity at time of data collection."
+  },
+  {
+    "term": "predicted popularity",
+    "definition": "The model's estimated popularity score. Not a guarantee of actual popularity."
+  },
+  {
+    "term": "champion",
+    "definition": "The model selected as best performer on validation set. Currently XGBoost (EXP24-XGB-FINAL-001)."
+  },
+  {
+    "term": "runner-up",
+    "definition": "Second-best model available as fallback. Currently Random Forest."
+  },
+  {
+    "term": "raw input field",
+    "definition": "One of 18 original fields from the Spotify API track metadata."
+  },
+  {
+    "term": "selected engineered feature",
+    "definition": "One of 31 features after Feature Engineering (FS23-SELECTED), including original and derived features."
+  },
+  {
+    "term": "transformed model feature",
+    "definition": "One of 49 features in the final model matrix after One-Hot Encoding and transformations."
+  },
+  {
+    "term": "validation",
+    "definition": "Temporal validation set (2005-2013, 85,272 rows) used for model selection and hyperparameter tuning."
+  },
+  {
+    "term": "final test",
+    "definition": "Held-out temporal test set (2014-2021, 85,876 rows) used ONLY for final performance evaluation. Never used for model selection."
+  },
+  {
+    "term": "residual",
+    "definition": "Difference: actual - predicted. Convention: positive residual = underprediction."
+  },
+  {
+    "term": "underprediction",
+    "definition": "Model predicts lower than actual popularity. Residual > 0."
+  },
+  {
+    "term": "overprediction",
+    "definition": "Model predicts higher than actual popularity. Residual < 0."
+  },
+  {
+    "term": "SHAP contribution",
+    "definition": "SHAP value quantifying a feature's contribution to a specific prediction relative to the expected value. Explains MODEL BEHAVIOR, not real-world causation."
+  },
+  {
+    "term": "temporal variability",
+    "definition": "Variation in model performance across different time periods. Status: MODERATELY_VARIABLE."
+  },
+  {
+    "term": "model version",
+    "definition": "Semantic version of the trained model artifact (currently 1.0.0). Distinct from package version."
+  },
+  {
+    "term": "data version",
+    "definition": "Semantic version of the processed dataset (currently 1.0.0). Distinct from model version."
+  },
+  {
+    "term": "package version",
+    "definition": "Semantic version of the deployment package (currently 2.7.0). Distinct from model version."
+  }
+]

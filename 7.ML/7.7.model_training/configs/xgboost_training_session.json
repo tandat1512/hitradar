@@ -1,0 +1,17 @@
+{
+  "training_session_id": "F24-P4-XGB-20260720-142945-adf8d1",
+  "phase": "4/5",
+  "fresh_training": true,
+  "reused_metrics": false,
+  "reused_model_artifact": false,
+  "dry_run": false,
+  "mock_run": false,
+  "synthetic_data": false,
+  "resume_mode": false,
+  "started_at_utc": "2026-07-20T14:29:46.365010+00:00",
+  "git_commit": "564c47218fbe2e71dfafab95e7f4193478f571a8",
+  "branch": "main",
+  "device": "cpu",
+  "n_jobs": -1,
+  "test_accessed": false
+}

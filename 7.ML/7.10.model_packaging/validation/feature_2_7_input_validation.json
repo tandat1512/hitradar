@@ -1,0 +1,52 @@
+{
+  "contract_found": true,
+  "is_valid": true,
+  "contract_content": {
+    "contract_id": "F27-INPUT-FROM-F26",
+    "source_feature": "2.6",
+    "source_feature_status": "PASS",
+    "champion_model_id": "EXP24-XGB-FINAL-001",
+    "champion_model_class": "XGBoost",
+    "champion_artifact_path": "hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+    "champion_artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "feature_set_id": "FS23-SELECTED",
+    "bundle_input_feature_count": 18,
+    "selected_feature_count": 31,
+    "model_matrix_width": 49,
+    "shap_background_path": "hitradar/7.ML/7.9.explainability/background/shap_background_transformed.npy",
+    "shap_background_sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+    "canonical_shap_values_path": "hitradar/7.ML/7.9.explainability/shap_values/shap_values_global.npy",
+    "canonical_shap_values_sha256": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+    "global_importance_path": "hitradar/7.ML/7.9.explainability/global/shap_top_10_features.json",
+    "global_summary_bar_path": "hitradar/7.ML/7.9.explainability/global/summary_bar_transformed.png",
+    "global_beeswarm_path": "hitradar/7.ML/7.9.explainability/global/beeswarm.png",
+    "local_explanation_index_path": "hitradar/7.ML/7.9.explainability/local/local_explanations.json",
+    "local_plot_manifest_path": "hitradar/7.ML/7.9.explainability/local/local_plot_manifest.json",
+    "dependence_manifest_path": "hitradar/7.ML/7.9.explainability/dependence/shap_dependence_manifest.json",
+    "explain_one_prediction_module": "hitradar/7.ML/7.9.explainability/services/explain_prediction.py",
+    "explanation_output_schema_path": "hitradar/7.ML/7.9.explainability/schemas/explain_one_prediction_output_schema.json",
+    "background_source": "TRAIN",
+    "shap_additivity_status": "PASS",
+    "model_selection_locked": true,
+    "training_allowed": false,
+    "tuning_allowed": false,
+    "packaging_owner": "Feature 2.7",
+    "created_at": "2026-07-23T10:30:00.000000",
+    "git_commit": "N/A",
+    "notes": {
+      "service_capabilities": [
+        "explain_one_prediction() - single prediction explanation",
+        "Input: dict, Series, or DataFrame (one row)",
+        "Output: SHAP-based explanation with contributions",
+        "Supports optional waterfall plot generation",
+        "Validates input schema and feature types",
+        "Validates SHAP additivity"
+      ],
+      "limitations": [
+        "Single prediction only (no batch)",
+        "Uses pre-computed SHAP explainer",
+        "Background is fixed (train-only)"
+      ]
+    }
+  }
+}

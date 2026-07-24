@@ -1,0 +1,8 @@
+{
+  "os": "Windows",
+  "python_version": "3.13.7",
+  "pandas_version": "3.0.3",
+  "numpy_version": "2.4.4",
+  "sklearn_version": "1.8.0",
+  "xgboost_version": "3.3.0"
+}

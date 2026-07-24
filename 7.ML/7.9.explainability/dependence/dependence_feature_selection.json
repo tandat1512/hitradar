@@ -1,0 +1,51 @@
+[
+  {
+    "ranking": 1,
+    "feature": "release_year",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  },
+  {
+    "ranking": 3,
+    "feature": "acousticness",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  },
+  {
+    "ranking": 5,
+    "feature": "duration_min",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  },
+  {
+    "ranking": 6,
+    "feature": "loudness",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  },
+  {
+    "ranking": 8,
+    "feature": "speechiness",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  },
+  {
+    "ranking": 9,
+    "feature": "tempo",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  },
+  {
+    "ranking": 10,
+    "feature": "danceability",
+    "data_type": "numeric",
+    "selected_plot_type": "dependence_scatter",
+    "reason": "Top numerical feature from global selected ranking."
+  }
+]

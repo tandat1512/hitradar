@@ -1,0 +1,12 @@
+[
+  {
+    "alpha": 10,
+    "cv_rmse_mean": 15.4,
+    "cv_rmse_std": 0.05
+  },
+  {
+    "alpha": 3,
+    "cv_rmse_mean": 15.42,
+    "cv_rmse_std": 0.06
+  }
+]

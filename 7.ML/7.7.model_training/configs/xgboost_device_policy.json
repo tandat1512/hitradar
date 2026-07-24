@@ -1,0 +1,6 @@
+{
+  "device": "cpu",
+  "tree_method": "hist",
+  "logical_core_count": 12,
+  "selected_n_jobs": -1
+}

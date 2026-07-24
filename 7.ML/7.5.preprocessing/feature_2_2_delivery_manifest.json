@@ -1,26 +1,21 @@
 {
-  "manifest_version": "delivery-1.0",
-  "generated_at": "2026-07-18T15:37:13.159922+00:00",
+  "manifest_version": "delivery-2.0",
+  "generated_at": "2026-07-19T01:30:00Z",
   "files": [
     {
-      "path": "feature_2_2_closure_gate.json",
-      "bytes": 2241,
-      "sha256": "e2657d7b91d30739ba9adefd96f187325177e27937a298048ab38d9b7f027c09"
+      "path": "BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
+      "bytes": 7254,
+      "sha256": "4135cae807eaf544aba0151d3ce9cbe478c4e11bac821f78b6a4ef110e203f17"
     },
     {
       "path": "CLOSURE_GATE_REPORT.md",
       "bytes": 102,
-      "sha256": "6dee8afa570c2dcad44df2d4ada106489dc5386e089c32ae228aa8e301c188d5"
+      "sha256": "fe26727cefe187a509d8a5d86641666af4b74b82077caa7465c0beefca881a62"
     },
     {
       "path": "FEATURE_2_2_COMPLETION_REPORT.md",
       "bytes": 112,
-      "sha256": "b9903cc77ee7ee3b2eac318ea7ca7db8c6915fa9a2132f4420c294fb50f28a69"
-    },
-    {
-      "path": "BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
-      "bytes": 13258,
-      "sha256": "0a29b5c5a3f5266b03a3db56375b094396dd72a7dc5f097605b959c52613b4be"
+      "sha256": "ab2b7d19170297416da6f88dbc426cf63d0f9e292dbc357024c647943e1afd19"
     }
   ]
 }

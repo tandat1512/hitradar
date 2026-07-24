@@ -1,0 +1,11 @@
+{
+  "training_session_id": "F24-P3-RF-20260720-182600-6bb370",
+  "started_at_utc": "2026-07-20T11:26:00.754854",
+  "fresh_training": true,
+  "reused_metrics": false,
+  "dry_run": false,
+  "mock_run": false,
+  "synthetic_data": false,
+  "status": "FAILED",
+  "failure_reason": "Pipeline not cloneable: Cannot clone object '<transformers.FeatureEngineeringTransformer object at 0x000002F81C051BE0>' (type <class 'transformers.FeatureEngineeringTransformer'>): it does not seem to be a scikit-learn estimator as it does not implement a 'get_params' method."
+}

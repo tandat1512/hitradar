@@ -3,7 +3,7 @@
     415524,
     18
   ],
-  "validation_shape": [
+  "val_shape": [
     85272,
     18
   ],
@@ -11,19 +11,20 @@
     85876,
     18
   ],
-  "output_feature_count": 11,
   "exact_matrix_type": "numpy.ndarray",
-  "dtype": "float64",
-  "contains_nan": false,
-  "contains_inf": false,
   "duplicate_feature_name_count": 0,
-  "feature_name_full_sha256": "3beb75e896bd6d1f83a4a1b79e4c5ab2a443cd632949287a4b3799c59133b1a1",
-  "feature_order_hash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-  "schema_equality_across_splits": true,
   "feature_order_equality_across_splits": true,
-  "track_id_present": false,
   "target_popularity_present": false,
+  "track_id_present": false,
   "serialization_roundtrip": true,
   "preprocessor_load_success": true,
-  "preprocessor_full_sha256": "bb9b4d53f09dab5d694f242819ed3e90e97d1a8282169863abe803d18d657ee9"
+  "output_mode": "numpy.ndarray",
+  "output_dtype": "object",
+  "output_shape": [
+    415524,
+    18
+  ],
+  "output_feature_count": 18,
+  "contains_nan": false,
+  "contains_inf": false
 }

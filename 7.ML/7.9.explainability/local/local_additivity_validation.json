@@ -1,0 +1,170 @@
+[
+  {
+    "track_id": "1eeJma41NW6cYmDvc70Y3J",
+    "base_value": 21.037200967502216,
+    "prediction": 37.00003433227539,
+    "reconstructed_prediction": 37.00003053489914,
+    "reconstruction_error": 3.7973762516685383e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "6kn5loToxIwLHzk5A1fUob",
+    "base_value": 22.879941940307617,
+    "prediction": 37.000179290771484,
+    "reconstructed_prediction": 37.000144958496094,
+    "reconstruction_error": 3.4332275390625e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "7Huqz8HsG7j2gk9INLvhRI",
+    "base_value": 22.879941940307617,
+    "prediction": 43.00149917602539,
+    "reconstructed_prediction": 43.00152587890625,
+    "reconstruction_error": 2.6702880859375e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "1VvfQMzVpJ0yLOFgiWNp7O",
+    "base_value": 22.879941940307617,
+    "prediction": 33.708377838134766,
+    "reconstructed_prediction": 33.70840072631836,
+    "reconstruction_error": 2.288818359375e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "4iAZLrr85pfvQWlBeqqrNt",
+    "base_value": 22.879941940307617,
+    "prediction": 32.29158401489258,
+    "reconstructed_prediction": 32.291595458984375,
+    "reconstruction_error": 1.1444091796875e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "770z0pY7gsBPNPI4jr6oFN",
+    "base_value": 22.879941940307617,
+    "prediction": 40.29135513305664,
+    "reconstructed_prediction": 40.29136657714844,
+    "reconstruction_error": 1.1444091796875e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "3Ofmpyhv5UAQ70mENzB277",
+    "base_value": 22.879941940307617,
+    "prediction": 28.907737731933594,
+    "reconstructed_prediction": 28.90772819519043,
+    "reconstruction_error": 9.5367431640625e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "3iw6V4LH7yPj1ESORX9RIN",
+    "base_value": 22.879941940307617,
+    "prediction": 26.606311798095703,
+    "reconstructed_prediction": 26.606292724609375,
+    "reconstruction_error": 1.9073486328125e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "5s2zbxZI4Ym5LTKwjZHS2V",
+    "base_value": 22.879941940307617,
+    "prediction": 14.365955352783203,
+    "reconstructed_prediction": 14.365952491760254,
+    "reconstruction_error": 2.86102294921875e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "45S5WTQEGOB1VHr1Q4FuPl",
+    "base_value": 22.879941940307617,
+    "prediction": 27.404861450195312,
+    "reconstructed_prediction": 27.404869079589844,
+    "reconstruction_error": 7.62939453125e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "6tDDoYIxWvMLTdKpjFkc1B",
+    "base_value": 22.879941940307617,
+    "prediction": 36.71135711669922,
+    "reconstructed_prediction": 36.71136474609375,
+    "reconstruction_error": 7.62939453125e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "46doqU89HXCjtvNJnC7P5v",
+    "base_value": 22.879941940307617,
+    "prediction": 53.055381774902344,
+    "reconstructed_prediction": 53.05537414550781,
+    "reconstruction_error": 7.62939453125e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "1QCpd9PQP7msvshreAaRyg",
+    "base_value": 22.879941940307617,
+    "prediction": 51.856719970703125,
+    "reconstructed_prediction": 51.85673141479492,
+    "reconstruction_error": 1.1444091796875e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "3zXZ606TUZE8WBbGppX82E",
+    "base_value": 22.879941940307617,
+    "prediction": 50.85701370239258,
+    "reconstructed_prediction": 50.85700225830078,
+    "reconstruction_error": 1.1444091796875e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "68NZfXQQVNa59N422unllk",
+    "base_value": 22.879941940307617,
+    "prediction": 50.07455062866211,
+    "reconstructed_prediction": 50.07453155517578,
+    "reconstruction_error": 1.9073486328125e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "7HOkU7ho6zlFufUdpNEQ89",
+    "base_value": 22.879941940307617,
+    "prediction": 49.669883728027344,
+    "reconstructed_prediction": 49.66988754272461,
+    "reconstruction_error": 3.814697265625e-06,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "4iJyoBOLtHqaGxP12qzhQI",
+    "base_value": 22.879941940307617,
+    "prediction": 42.9716911315918,
+    "reconstructed_prediction": 42.971656799316406,
+    "reconstruction_error": 3.4332275390625e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "7lPN2DXiMsVn7XUKtOW1CS",
+    "base_value": 22.879941940307617,
+    "prediction": 40.30717849731445,
+    "reconstructed_prediction": 40.307151794433594,
+    "reconstruction_error": 2.6702880859375e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "00Kih9a1Wff2K1aILudPXF",
+    "base_value": 22.879941940307617,
+    "prediction": 35.90571594238281,
+    "reconstructed_prediction": 35.90571594238281,
+    "reconstruction_error": 0.0,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "00MGf5IXCqJrlnNEz0O86w",
+    "base_value": 22.879941940307617,
+    "prediction": 42.88034439086914,
+    "reconstructed_prediction": 42.88035583496094,
+    "reconstruction_error": 1.1444091796875e-05,
+    "within_tolerance": true
+  },
+  {
+    "track_id": "00OQsMilg3NJQ365MDUnFJ",
+    "base_value": 22.879941940307617,
+    "prediction": 19.10407257080078,
+    "reconstructed_prediction": 19.104068756103516,
+    "reconstruction_error": 3.814697265625e-06,
+    "within_tolerance": true
+  }
+]

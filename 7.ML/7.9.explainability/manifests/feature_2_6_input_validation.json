@@ -1,0 +1,20 @@
+{
+  "contract_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\configs\\feature_2_6_input_contract.json",
+  "contract_sha256": "9353b9065f06e317e72b8f3b077a00e25d15ab5acd948d91339084992b0fa700",
+  "source_feature": "2.5",
+  "source_feature_valid": true,
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "feature_set_id": "FS23-SELECTED",
+  "raw_input_feature_count": 18,
+  "selected_feature_count": 31,
+  "target": "target_popularity",
+  "identifier": "track_id",
+  "test_prediction_artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\predictions\\final_test_predictions.parquet",
+  "explainability_owner": "Feature 2.6",
+  "explainability_owner_valid": true,
+  "shap_status": "NOT_STARTED",
+  "shap_status_valid": true,
+  "model_selection_locked": true,
+  "model_selection_locked_valid": true,
+  "overall_valid": true
+}

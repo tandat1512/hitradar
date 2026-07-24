@@ -1,0 +1,19 @@
+{
+  "model_id": "EXP24-XGB-FINAL-001",
+  "test_rows": 85876,
+  "official_metrics": {
+    "MAE": 17.646684646606445,
+    "RMSE": 21.01337842313573,
+    "R2": 0.06962639093399048
+  },
+  "additional_metrics": {
+    "Median_AE": 16.291603088378906,
+    "P80_AE": 28.9378604888916,
+    "P90_AE": 34.11560821533203,
+    "P95_AE": 37.10243797302246,
+    "Mean_Residual": 4.856535101093279,
+    "Residual_Std": 20.444583937530165,
+    "Underprediction_Rate": 0.6781522194792492,
+    "Overprediction_Rate": 0.32184778052075086
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "logical_name": "feature_2_7_phase_1_execution_manifest.json",
+    "type": "manifest",
+    "exists": true
+  },
+  {
+    "logical_name": "feature_2_7_phase_2_execution_manifest.json",
+    "type": "manifest",
+    "exists": true
+  },
+  {
+    "logical_name": "feature_2_7_phase_3_execution_manifest.json",
+    "type": "manifest",
+    "exists": true
+  },
+  {
+    "logical_name": "feature_2_7_validation_results.json",
+    "type": "validation",
+    "exists": true
+  },
+  {
+    "logical_name": "pytest_feature_2_7.xml",
+    "type": "junit",
+    "exists": true
+  }
+]

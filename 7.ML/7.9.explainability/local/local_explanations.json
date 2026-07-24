@@ -1,0 +1,1913 @@
+[
+  {
+    "case_id": "case_001",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "1eeJma41NW6cYmDvc70Y3J",
+    "category": "smallest_absolute_error",
+    "y_true": 37.0,
+    "y_pred_raw": 37.00003433227539,
+    "residual": -3.4332275390625e-05,
+    "absolute_error": 3.4332275390625e-05,
+    "base_value": 21.037200967502216,
+    "reconstructed_prediction": 37.00003053489914,
+    "reconstruction_error": 3.7973762516685383e-06,
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 13.035062965032227
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.4335223934289254
+      },
+      {
+        "feature": "decade",
+        "shap": 0.9944874883149053
+      },
+      {
+        "feature": "release_month",
+        "shap": 0.8352927349611184
+      },
+      {
+        "feature": "release_month_sin",
+        "shap": 0.4809077620924044
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "speechiness_explicit",
+        "shap": -0.33676938841511633
+      },
+      {
+        "feature": "danceability",
+        "shap": -0.3214212435046025
+      },
+      {
+        "feature": "valence",
+        "shap": -0.2715889774638151
+      },
+      {
+        "feature": "key_7",
+        "shap": -0.24341572876235432
+      },
+      {
+        "feature": "duration_min",
+        "shap": -0.20907120859967562
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=37.00, y_true=37.00), feature release_year, acousticness đóng góp dương đẩy prediction lên. feature speechiness_explicit, danceability đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 13.035062965032227,
+      "acousticness": 1.4335223934289254,
+      "decade": 0.9944874883149053,
+      "release_month": 0.8352927349611184,
+      "release_month_sin": 0.4809077620924044,
+      "speechiness_explicit": -0.33676938841511633,
+      "loudness_energy": 0.3218886881952084,
+      "danceability": -0.3214212435046025,
+      "energy_danceability": 0.2772547126744934,
+      "valence": -0.2715889774638151,
+      "key": -0.29803536726127483,
+      "duration_min": -0.20907120859967562,
+      "speechiness": -0.163216133170605,
+      "mode": 0.15346326171698887,
+      "tempo_danceability": -0.10550124714113565,
+      "energy": -0.09812302456761228,
+      "instrumentalness": -0.09632803457798877,
+      "liveness": 0.09184805626823912,
+      "time_signature": 0.08112205368169248,
+      "energy_liveness": -0.07300238167260793,
+      "acousticness_instrumentalness": 0.06404509623394966,
+      "loudness": 0.06009208226543302,
+      "release_precision": 0.10649105464996778,
+      "release_month_cos": -0.055301478615384515,
+      "tempo": 0.04280200561395407,
+      "explicit": -0.03484021065777602,
+      "energy_valence": 0.022218812360333955,
+      "year_in_decade": 0.020715286973179585,
+      "danceability_valence": -0.019211177090153696,
+      "duration_log": 0.0176739822494199,
+      "duration_squared": 0.0063510034222325155
+    }
+  },
+  {
+    "case_id": "case_002",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "6kn5loToxIwLHzk5A1fUob",
+    "category": "smallest_absolute_error",
+    "y_true": 37.0,
+    "y_pred_raw": 37.000179290771484,
+    "residual": -0.000179290771484375,
+    "absolute_error": 0.000179290771484375,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "37.000145",
+    "reconstruction_error": "3.4332275e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 10.875825881958008
+      },
+      {
+        "feature": "decade",
+        "shap": 0.8277589678764343
+      },
+      {
+        "feature": "duration_min",
+        "shap": 0.48284438252449036
+      },
+      {
+        "feature": "mode_0",
+        "shap": 0.46621814370155334
+      },
+      {
+        "feature": "speechiness",
+        "shap": 0.4207369387149811
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "tempo",
+        "shap": -0.2563823163509369
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": -0.17337635159492493
+      },
+      {
+        "feature": "energy",
+        "shap": -0.13974879682064056
+      },
+      {
+        "feature": "key_1",
+        "shap": -0.046730149537324905
+      },
+      {
+        "feature": "danceability_valence",
+        "shap": -0.03912801668047905
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=37.00, y_true=37.00), feature release_year, decade đóng góp dương đẩy prediction lên. feature tempo, speechiness_explicit đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 10.875825881958008,
+      "decade": 0.8277589678764343,
+      "duration_min": 0.48284438252449036,
+      "mode": 0.5099692828953266,
+      "speechiness": 0.4207369387149811,
+      "loudness_energy": 0.3108167350292206,
+      "tempo": -0.2563823163509369,
+      "release_month_sin": 0.19398634135723114,
+      "speechiness_explicit": -0.17337635159492493,
+      "loudness": 0.15368880331516266,
+      "key": 0.09088110271841288,
+      "energy_valence": 0.14238020777702332,
+      "energy": -0.13974879682064056,
+      "release_month": 0.13339374959468842,
+      "energy_liveness": 0.1081894114613533,
+      "release_month_cos": 0.0969381108880043,
+      "valence": 0.09209998697042465,
+      "instrumentalness": 0.07001784443855286,
+      "acousticness_instrumentalness": 0.06807980686426163,
+      "duration_log": 0.049392543733119965,
+      "time_signature": 0.06502081365124468,
+      "release_precision": 0.06161908246576786,
+      "danceability_valence": -0.03912801668047905,
+      "liveness": 0.030524348840117455,
+      "energy_danceability": -0.027603810653090477,
+      "acousticness": 0.02380049228668213,
+      "explicit": -0.023443833846613416,
+      "tempo_danceability": -0.01201748289167881,
+      "year_in_decade": -0.011210921220481396,
+      "danceability": -0.0033483081497251987,
+      "duration_squared": -0.0015019645215943456
+    }
+  },
+  {
+    "case_id": "case_003",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "7Huqz8HsG7j2gk9INLvhRI",
+    "category": "smallest_absolute_error",
+    "y_true": 43.0,
+    "y_pred_raw": 43.00149917602539,
+    "residual": -0.001499176025390625,
+    "absolute_error": 0.001499176025390625,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "43.001526",
+    "reconstruction_error": "2.670288e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 10.83716869354248
+      },
+      {
+        "feature": "danceability",
+        "shap": 2.1787328720092773
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.7854444980621338
+      },
+      {
+        "feature": "loudness",
+        "shap": 0.9477394223213196
+      },
+      {
+        "feature": "decade",
+        "shap": 0.9461535215377808
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "speechiness_explicit",
+        "shap": -0.27747824788093567
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.20043431222438812
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.0739821121096611
+      },
+      {
+        "feature": "key_1",
+        "shap": -0.05791214853525162
+      },
+      {
+        "feature": "energy",
+        "shap": -0.04640943557024002
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=43.00, y_true=43.00), feature release_year, danceability đóng góp dương đẩy prediction lên. feature speechiness_explicit, speechiness đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 10.83716869354248,
+      "danceability": 2.1787328720092773,
+      "acousticness": 1.7854444980621338,
+      "loudness": 0.9477394223213196,
+      "decade": 0.9461535215377808,
+      "loudness_energy": 0.7235466241836548,
+      "duration_min": 0.5906888842582703,
+      "release_month_sin": 0.43439728021621704,
+      "release_month": 0.325026273727417,
+      "key": 0.35636143619194627,
+      "speechiness_explicit": -0.27747824788093567,
+      "energy_valence": 0.23361288011074066,
+      "tempo": 0.2108919769525528,
+      "speechiness": -0.20043431222438812,
+      "energy_danceability": 0.1636032611131668,
+      "mode": 0.1620593830011785,
+      "liveness": 0.15619932115077972,
+      "danceability_valence": 0.11810442805290222,
+      "tempo_danceability": 0.11234436184167862,
+      "acousticness_instrumentalness": 0.09077256172895432,
+      "time_signature": 0.11930587707411178,
+      "year_in_decade": -0.0739821121096611,
+      "duration_log": 0.05509062111377716,
+      "instrumentalness": 0.053208813071250916,
+      "energy": -0.04640943557024002,
+      "release_precision": 0.07177022285759449,
+      "energy_liveness": 0.03579380735754967,
+      "valence": 0.023694317787885666,
+      "explicit": -0.0226488401331153,
+      "release_month_cos": 0.008905217982828617,
+      "duration_squared": 0.00192010507453233
+    }
+  },
+  {
+    "case_id": "case_004",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "1VvfQMzVpJ0yLOFgiWNp7O",
+    "category": "median_absolute_error",
+    "y_true": 50.0,
+    "y_pred_raw": 33.708377838134766,
+    "residual": 16.291622161865234,
+    "absolute_error": 16.291622161865234,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "33.7084",
+    "reconstruction_error": "2.2888184e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 8.909052848815918
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.2038803100585938
+      },
+      {
+        "feature": "duration_min",
+        "shap": 0.7711163759231567
+      },
+      {
+        "feature": "energy",
+        "shap": 0.7350545525550842
+      },
+      {
+        "feature": "release_month_cos",
+        "shap": 0.6050322651863098
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "speechiness",
+        "shap": -1.207153558731079
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": -0.8470428586006165
+      },
+      {
+        "feature": "liveness",
+        "shap": -0.5836531519889832
+      },
+      {
+        "feature": "loudness",
+        "shap": -0.5744245052337646
+      },
+      {
+        "feature": "danceability",
+        "shap": -0.3595182001590729
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=33.71, y_true=50.00), feature release_year, acousticness đóng góp dương đẩy prediction lên. feature speechiness, loudness_energy đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 8.909052848815918,
+      "speechiness": -1.207153558731079,
+      "acousticness": 1.2038803100585938,
+      "loudness_energy": -0.8470428586006165,
+      "duration_min": 0.7711163759231567,
+      "energy": 0.7350545525550842,
+      "release_month_cos": 0.6050322651863098,
+      "liveness": -0.5836531519889832,
+      "decade": 0.5776543021202087,
+      "loudness": -0.5744245052337646,
+      "valence": 0.5705966353416443,
+      "danceability": -0.3595182001590729,
+      "release_month": 0.31806641817092896,
+      "tempo": 0.31490135192871094,
+      "energy_danceability": 0.2736540734767914,
+      "energy_valence": 0.21863171458244324,
+      "mode": 0.14364270714577287,
+      "release_month_sin": -0.12058468163013458,
+      "instrumentalness": -0.10272049903869629,
+      "key": -0.1860308286268264,
+      "danceability_valence": 0.07484212517738342,
+      "acousticness_instrumentalness": 0.0735832080245018,
+      "speechiness_explicit": -0.07213908433914185,
+      "year_in_decade": -0.0672292411327362,
+      "release_precision": 0.09783119475468993,
+      "time_signature": 0.043203090608585626,
+      "duration_log": 0.027538394555449486,
+      "tempo_danceability": -0.021921655163168907,
+      "energy_liveness": 0.015403710305690765,
+      "explicit": -0.005653550354736581,
+      "duration_squared": 0.0028440544847398996
+    }
+  },
+  {
+    "case_id": "case_005",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "4iAZLrr85pfvQWlBeqqrNt",
+    "category": "median_absolute_error",
+    "y_true": 16.0,
+    "y_pred_raw": 32.29158401489258,
+    "residual": -16.291584014892578,
+    "absolute_error": 16.291584014892578,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "32.291595",
+    "reconstruction_error": "1.1444092e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 8.884713172912598
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.534250259399414
+      },
+      {
+        "feature": "danceability",
+        "shap": 1.3575159311294556
+      },
+      {
+        "feature": "decade",
+        "shap": 0.7542722225189209
+      },
+      {
+        "feature": "energy_danceability",
+        "shap": 0.25380390882492065
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "release_month",
+        "shap": -1.87161386013031
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.7243591547012329
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.4838995635509491
+      },
+      {
+        "feature": "release_month_cos",
+        "shap": -0.2857648432254791
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": -0.27553263306617737
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=32.29, y_true=16.00), feature release_year, acousticness đóng góp dương đẩy prediction lên. feature release_month, tempo đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 8.884713172912598,
+      "release_month": -1.87161386013031,
+      "acousticness": 1.534250259399414,
+      "danceability": 1.3575159311294556,
+      "decade": 0.7542722225189209,
+      "tempo": -0.7243591547012329,
+      "year_in_decade": -0.4838995635509491,
+      "release_month_cos": -0.2857648432254791,
+      "loudness_energy": -0.27553263306617737,
+      "energy_danceability": 0.25380390882492065,
+      "liveness": 0.25365304946899414,
+      "mode": -0.24334267526865005,
+      "release_month_sin": -0.20939001441001892,
+      "tempo_danceability": 0.15086854994297028,
+      "danceability_valence": 0.1391078680753708,
+      "valence": 0.13342900574207306,
+      "duration_min": 0.1316291093826294,
+      "speechiness_explicit": -0.12984789907932281,
+      "instrumentalness": -0.07947976887226105,
+      "key": -0.01534338854253292,
+      "time_signature": 0.09619668845880369,
+      "energy": -0.050202976912260056,
+      "release_precision": 0.06381996534764767,
+      "energy_liveness": -0.032320816069841385,
+      "energy_valence": 0.031073197722434998,
+      "loudness": 0.029385529458522797,
+      "speechiness": 0.0177407655864954,
+      "explicit": -0.012566820690381064,
+      "acousticness_instrumentalness": -0.012517634779214859,
+      "duration_log": 0.008653239347040653,
+      "duration_squared": -0.0022769873030483723
+    }
+  },
+  {
+    "case_id": "case_006",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "770z0pY7gsBPNPI4jr6oFN",
+    "category": "median_absolute_error",
+    "y_true": 24.0,
+    "y_pred_raw": 40.29135513305664,
+    "residual": -16.29135513305664,
+    "absolute_error": 16.29135513305664,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "40.291367",
+    "reconstruction_error": "1.1444092e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 11.407679557800293
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 3.8760392665863037
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.0737806558609009
+      },
+      {
+        "feature": "danceability",
+        "shap": 0.8245186805725098
+      },
+      {
+        "feature": "decade",
+        "shap": 0.7766124606132507
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "release_month",
+        "shap": -2.1081156730651855
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.30112990736961365
+      },
+      {
+        "feature": "liveness",
+        "shap": -0.27906110882759094
+      },
+      {
+        "feature": "release_month_sin",
+        "shap": -0.2661658823490143
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.2427525669336319
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=40.29, y_true=24.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature release_month, year_in_decade đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 11.407679557800293,
+      "speechiness_explicit": 3.8760392665863037,
+      "release_month": -2.1081156730651855,
+      "acousticness": 1.0737806558609009,
+      "danceability": 0.8245186805725098,
+      "decade": 0.7766124606132507,
+      "tempo": 0.6796277761459351,
+      "explicit": 0.5207165299216285,
+      "energy_danceability": 0.40367627143859863,
+      "duration_min": 0.3484567105770111,
+      "loudness_energy": 0.3239738941192627,
+      "year_in_decade": -0.30112990736961365,
+      "liveness": -0.27906110882759094,
+      "release_month_sin": -0.2661658823490143,
+      "speechiness": -0.2427525669336319,
+      "key": -0.2841151134343818,
+      "release_precision": 0.2852501003071666,
+      "release_month_cos": -0.19657891988754272,
+      "energy_valence": 0.1533128172159195,
+      "loudness": 0.13169899582862854,
+      "mode": 0.14019904751330614,
+      "tempo_danceability": 0.08832534402608871,
+      "energy_liveness": -0.04428497701883316,
+      "instrumentalness": -0.04138137772679329,
+      "acousticness_instrumentalness": 0.03730439394712448,
+      "valence": 0.03457976132631302,
+      "time_signature": 0.059553507417149376,
+      "energy": -0.029560165479779243,
+      "danceability_valence": 0.027718165889382362,
+      "duration_log": 0.012143516913056374,
+      "duration_squared": -0.0005987609038129449
+    }
+  },
+  {
+    "case_id": "case_007",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "3Ofmpyhv5UAQ70mENzB277",
+    "category": "largest_absolute_error",
+    "y_true": 98.0,
+    "y_pred_raw": 28.907737731933594,
+    "residual": 69.0922622680664,
+    "absolute_error": 69.0922622680664,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "28.907728",
+    "reconstruction_error": "9.536743e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 10.637310981750488
+      },
+      {
+        "feature": "decade",
+        "shap": 0.8657847046852112
+      },
+      {
+        "feature": "acousticness",
+        "shap": 0.7855945825576782
+      },
+      {
+        "feature": "danceability",
+        "shap": 0.6578864455223083
+      },
+      {
+        "feature": "tempo_danceability",
+        "shap": 0.27812761068344116
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "duration_min",
+        "shap": -4.155341148376465
+      },
+      {
+        "feature": "release_month",
+        "shap": -0.699350118637085
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.6220451593399048
+      },
+      {
+        "feature": "duration_log",
+        "shap": -0.469969242811203
+      },
+      {
+        "feature": "mode_0",
+        "shap": -0.3460457921028137
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=28.91, y_true=98.00), feature release_year, decade đóng góp dương đẩy prediction lên. feature duration_min, release_month đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 10.637310981750488,
+      "duration_min": -4.155341148376465,
+      "decade": 0.8657847046852112,
+      "acousticness": 0.7855945825576782,
+      "release_month": -0.699350118637085,
+      "danceability": 0.6578864455223083,
+      "tempo": -0.6220451593399048,
+      "duration_log": -0.469969242811203,
+      "mode": -0.38104649633169174,
+      "speechiness": -0.33934417366981506,
+      "tempo_danceability": 0.27812761068344116,
+      "release_month_sin": -0.25341203808784485,
+      "loudness_energy": -0.1738801896572113,
+      "year_in_decade": 0.15107133984565735,
+      "loudness": -0.10967926681041718,
+      "speechiness_explicit": -0.08952721208333969,
+      "energy": 0.07874348014593124,
+      "energy_danceability": -0.07240664213895798,
+      "duration_squared": -0.0436922125518322,
+      "key": -0.049121766118332744,
+      "release_month_cos": -0.04119684547185898,
+      "energy_valence": 0.04094918817281723,
+      "valence": -0.04013083875179291,
+      "instrumentalness": 0.03924011439085007,
+      "release_precision": 0.055513322819024324,
+      "energy_liveness": -0.031953223049640656,
+      "time_signature": 0.04110668453108701,
+      "danceability_valence": -0.01757553219795227,
+      "explicit": -0.008345978530996945,
+      "liveness": -0.004247107543051243,
+      "acousticness_instrumentalness": -0.0012765470892190933
+    }
+  },
+  {
+    "case_id": "case_008",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "3iw6V4LH7yPj1ESORX9RIN",
+    "category": "largest_absolute_error",
+    "y_true": 92.0,
+    "y_pred_raw": 26.606311798095703,
+    "residual": 65.3936882019043,
+    "absolute_error": 65.3936882019043,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "26.606293",
+    "reconstruction_error": "1.9073486e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 9.871392250061035
+      },
+      {
+        "feature": "decade",
+        "shap": 0.8478977084159851
+      },
+      {
+        "feature": "loudness",
+        "shap": 0.7520912885665894
+      },
+      {
+        "feature": "acousticness",
+        "shap": 0.4533947706222534
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": 0.287776917219162
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "duration_min",
+        "shap": -5.433697700500488
+      },
+      {
+        "feature": "release_month",
+        "shap": -0.7152913808822632
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.6326180100440979
+      },
+      {
+        "feature": "duration_log",
+        "shap": -0.5714912414550781
+      },
+      {
+        "feature": "key_0",
+        "shap": -0.3231576383113861
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=26.61, y_true=92.00), feature release_year, decade đóng góp dương đẩy prediction lên. feature duration_min, release_month đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 9.871392250061035,
+      "duration_min": -5.433697700500488,
+      "decade": 0.8478977084159851,
+      "loudness": 0.7520912885665894,
+      "release_month": -0.7152913808822632,
+      "tempo": -0.6326180100440979,
+      "duration_log": -0.5714912414550781,
+      "acousticness": 0.4533947706222534,
+      "key": -0.42186702659819275,
+      "speechiness": -0.3016020357608795,
+      "release_month_sin": -0.29811763763427734,
+      "loudness_energy": 0.287776917219162,
+      "energy": 0.2865994870662689,
+      "year_in_decade": -0.2681102454662323,
+      "mode": -0.2222798652946949,
+      "instrumentalness": 0.19543951749801636,
+      "danceability": 0.14305372536182404,
+      "danceability_valence": -0.10807624459266663,
+      "speechiness_explicit": -0.10625030845403671,
+      "acousticness_instrumentalness": 0.08083585649728775,
+      "valence": -0.06254122406244278,
+      "release_month_cos": -0.04743742570281029,
+      "release_precision": 0.07165301172062755,
+      "tempo_danceability": -0.03599796071648598,
+      "energy_valence": -0.022038133814930916,
+      "liveness": 0.02092067152261734,
+      "explicit": -0.019712118867573736,
+      "energy_liveness": -0.016913283616304398,
+      "duration_squared": -0.010158633813261986,
+      "time_signature": 0.011565053026060923,
+      "energy_danceability": -0.0020690520759671926
+    }
+  },
+  {
+    "case_id": "case_009",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "5s2zbxZI4Ym5LTKwjZHS2V",
+    "category": "largest_absolute_error",
+    "y_true": 77.0,
+    "y_pred_raw": 14.365955352783203,
+    "residual": 62.6340446472168,
+    "absolute_error": 62.6340446472168,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "14.3659525",
+    "reconstruction_error": "2.861023e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 3.9576146602630615
+      },
+      {
+        "feature": "tempo",
+        "shap": 1.1259955167770386
+      },
+      {
+        "feature": "decade",
+        "shap": 0.5256999731063843
+      },
+      {
+        "feature": "energy_danceability",
+        "shap": 0.35624977946281433
+      },
+      {
+        "feature": "release_precision_year",
+        "shap": 0.06491808593273163
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "duration_min",
+        "shap": -5.122159481048584
+      },
+      {
+        "feature": "instrumentalness",
+        "shap": -1.207147240638733
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": -1.0756256580352783
+      },
+      {
+        "feature": "acousticness",
+        "shap": -1.0628981590270996
+      },
+      {
+        "feature": "loudness",
+        "shap": -1.0039066076278687
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=14.37, y_true=77.00), feature release_year, tempo đóng góp dương đẩy prediction lên. feature duration_min, instrumentalness đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "duration_min": -5.122159481048584,
+      "release_year": 3.9576146602630615,
+      "instrumentalness": -1.207147240638733,
+      "tempo": 1.1259955167770386,
+      "loudness_energy": -1.0756256580352783,
+      "acousticness": -1.0628981590270996,
+      "loudness": -1.0039066076278687,
+      "release_month": -0.9773699045181274,
+      "energy": -0.7398362159729004,
+      "decade": 0.5256999731063843,
+      "duration_log": -0.5131551027297974,
+      "danceability": -0.4845830500125885,
+      "energy_valence": -0.42983278632164,
+      "release_month_cos": -0.41298866271972656,
+      "energy_danceability": 0.35624977946281433,
+      "release_month_sin": -0.33054760098457336,
+      "year_in_decade": -0.25206300616264343,
+      "mode": -0.25059347320348024,
+      "key": -0.30166984943207353,
+      "liveness": -0.1291668862104416,
+      "speechiness_explicit": -0.10097184777259827,
+      "release_precision": 0.10726988315582275,
+      "tempo_danceability": -0.05803726240992546,
+      "danceability_valence": -0.04944916442036629,
+      "time_signature": -0.017551327022374608,
+      "speechiness": -0.03343072533607483,
+      "acousticness_instrumentalness": -0.020393142476677895,
+      "duration_squared": -0.012935267761349678,
+      "explicit": -0.012641803333508506,
+      "energy_liveness": 0.00926787406206131,
+      "valence": 0.0028659312520176172
+    }
+  },
+  {
+    "case_id": "case_010",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "45S5WTQEGOB1VHr1Q4FuPl",
+    "category": "largest_absolute_error",
+    "y_true": 88.0,
+    "y_pred_raw": 27.404861450195312,
+    "residual": 60.59513854980469,
+    "absolute_error": 60.59513854980469,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "27.40487",
+    "reconstruction_error": "7.6293945e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 9.20218563079834
+      },
+      {
+        "feature": "acousticness",
+        "shap": 0.727718710899353
+      },
+      {
+        "feature": "decade",
+        "shap": 0.7034811973571777
+      },
+      {
+        "feature": "energy",
+        "shap": 0.2789922058582306
+      },
+      {
+        "feature": "energy_valence",
+        "shap": 0.2534034550189972
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "release_month",
+        "shap": -3.3081414699554443
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.9244406223297119
+      },
+      {
+        "feature": "release_month_cos",
+        "shap": -0.6509966850280762
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.44663888216018677
+      },
+      {
+        "feature": "mode_0",
+        "shap": -0.3999846279621124
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=27.40, y_true=88.00), feature release_year, acousticness đóng góp dương đẩy prediction lên. feature release_month, tempo đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 9.20218563079834,
+      "release_month": -3.3081414699554443,
+      "tempo": -0.9244406223297119,
+      "acousticness": 0.727718710899353,
+      "decade": 0.7034811973571777,
+      "release_month_cos": -0.6509966850280762,
+      "year_in_decade": -0.44663888216018677,
+      "mode": -0.425194738432765,
+      "danceability": -0.38920485973358154,
+      "energy": 0.2789922058582306,
+      "speechiness_explicit": -0.27157214283943176,
+      "energy_valence": 0.2534034550189972,
+      "release_month_sin": -0.24219979345798492,
+      "loudness": -0.20151245594024658,
+      "energy_danceability": 0.19309048354625702,
+      "liveness": 0.1815924346446991,
+      "danceability_valence": -0.12880030274391174,
+      "loudness_energy": 0.11219943314790726,
+      "instrumentalness": -0.10287600010633469,
+      "key": -0.025651287054643035,
+      "speechiness": 0.047197118401527405,
+      "duration_min": -0.04666062071919441,
+      "acousticness_instrumentalness": -0.035041358321905136,
+      "valence": 0.03424880653619766,
+      "release_precision": 0.044129902962595224,
+      "tempo_danceability": -0.028836337849497795,
+      "explicit": -0.027508973065778264,
+      "time_signature": 0.02921698271893547,
+      "energy_liveness": -0.014132371172308922,
+      "duration_log": -0.012525142170488834,
+      "duration_squared": -0.0005960177513770759
+    }
+  },
+  {
+    "case_id": "case_011",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "6tDDoYIxWvMLTdKpjFkc1B",
+    "category": "largest_absolute_error",
+    "y_true": 97.0,
+    "y_pred_raw": 36.71135711669922,
+    "residual": 60.28864288330078,
+    "absolute_error": 60.28864288330078,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "36.711365",
+    "reconstruction_error": "7.6293945e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 10.903810501098633
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.0560284852981567
+      },
+      {
+        "feature": "decade",
+        "shap": 0.8397658467292786
+      },
+      {
+        "feature": "tempo",
+        "shap": 0.8345757722854614
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": 0.6671687960624695
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "mode_0",
+        "shap": -0.47253137826919556
+      },
+      {
+        "feature": "release_month",
+        "shap": -0.347107857465744
+      },
+      {
+        "feature": "liveness",
+        "shap": -0.2364296019077301
+      },
+      {
+        "feature": "duration_min",
+        "shap": -0.2133893519639969
+      },
+      {
+        "feature": "release_month_sin",
+        "shap": -0.20658810436725616
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=36.71, y_true=97.00), feature release_year, acousticness đóng góp dương đẩy prediction lên. feature mode_0, release_month đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 10.903810501098633,
+      "acousticness": 1.0560284852981567,
+      "decade": 0.8397658467292786,
+      "tempo": 0.8345757722854614,
+      "year_in_decade": 0.6671687960624695,
+      "mode": -0.514444425702095,
+      "release_month": -0.347107857465744,
+      "energy_danceability": 0.3131457269191742,
+      "danceability": 0.3058605492115021,
+      "liveness": -0.2364296019077301,
+      "duration_min": -0.2133893519639969,
+      "release_month_sin": -0.20658810436725616,
+      "key": 0.2564006610773504,
+      "release_month_cos": -0.13971443474292755,
+      "speechiness": 0.13680565357208252,
+      "speechiness_explicit": -0.10809604078531265,
+      "energy_valence": 0.09641183912754059,
+      "valence": 0.08639081567525864,
+      "energy_liveness": -0.08335471153259277,
+      "loudness_energy": 0.0784764289855957,
+      "tempo_danceability": 0.06018110737204552,
+      "release_precision": 0.06440197303891182,
+      "loudness": -0.036403149366378784,
+      "acousticness_instrumentalness": 0.0326770544052124,
+      "danceability_valence": 0.028585687279701233,
+      "time_signature": -0.00587280276522506,
+      "energy": -0.018569301813840866,
+      "instrumentalness": 0.01783793792128563,
+      "duration_log": -0.017540546134114265,
+      "explicit": -0.012966029318022265,
+      "duration_squared": -0.006623403634876013
+    }
+  },
+  {
+    "case_id": "case_017",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "46doqU89HXCjtvNJnC7P5v",
+    "category": "largest_overprediction",
+    "y_true": 0.0,
+    "y_pred_raw": 53.055381774902344,
+    "residual": -53.055381774902344,
+    "absolute_error": 53.055381774902344,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "53.055374",
+    "reconstruction_error": "7.6293945e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 13.82221794128418
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 4.500270843505859
+      },
+      {
+        "feature": "acousticness",
+        "shap": 3.0196573734283447
+      },
+      {
+        "feature": "loudness",
+        "shap": 2.3814430236816406
+      },
+      {
+        "feature": "key_1",
+        "shap": 1.6823906898498535
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "tempo",
+        "shap": -0.62641441822052
+      },
+      {
+        "feature": "mode_0",
+        "shap": -0.31568366289138794
+      },
+      {
+        "feature": "danceability",
+        "shap": -0.2988857626914978
+      },
+      {
+        "feature": "release_month_sin",
+        "shap": -0.1697893589735031
+      },
+      {
+        "feature": "release_month_cos",
+        "shap": -0.1519434005022049
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=53.06, y_true=0.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature tempo, mode_0 đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 13.82221794128418,
+      "speechiness_explicit": 4.500270843505859,
+      "acousticness": 3.0196573734283447,
+      "loudness": 2.3814430236816406,
+      "key": 1.7667112410999835,
+      "loudness_energy": 1.1596415042877197,
+      "decade": 1.036392092704773,
+      "energy": 0.8039105534553528,
+      "duration_min": 0.7414352893829346,
+      "tempo": -0.62641441822052,
+      "energy_danceability": 0.4431523382663727,
+      "valence": 0.44192004203796387,
+      "explicit": 0.422119508497417,
+      "release_precision": 0.406884653493762,
+      "mode": -0.33442658744752407,
+      "liveness": 0.3082607388496399,
+      "danceability": -0.2988857626914978,
+      "energy_valence": 0.23536190390586853,
+      "release_month_sin": -0.1697893589735031,
+      "release_month_cos": -0.1519434005022049,
+      "instrumentalness": 0.1503494679927826,
+      "speechiness": -0.11742385476827621,
+      "duration_log": 0.11338575929403305,
+      "acousticness_instrumentalness": 0.11112796515226364,
+      "release_month": -0.08956358581781387,
+      "danceability_valence": 0.08652910590171814,
+      "year_in_decade": 0.05447715148329735,
+      "time_signature": -0.031128552418522304,
+      "energy_liveness": -0.012103608809411526,
+      "tempo_danceability": 0.0017276990693062544,
+      "duration_squared": 0.00013494634185917675
+    }
+  },
+  {
+    "case_id": "case_018",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "1QCpd9PQP7msvshreAaRyg",
+    "category": "largest_overprediction",
+    "y_true": 0.0,
+    "y_pred_raw": 51.856719970703125,
+    "residual": -51.856719970703125,
+    "absolute_error": 51.856719970703125,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "51.85673",
+    "reconstruction_error": "1.1444092e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 12.829681396484375
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 6.188307285308838
+      },
+      {
+        "feature": "acousticness",
+        "shap": 2.838857412338257
+      },
+      {
+        "feature": "loudness",
+        "shap": 2.353053092956543
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": 1.1021552085876465
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "year_in_decade",
+        "shap": -0.468974232673645
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.42460355162620544
+      },
+      {
+        "feature": "mode_0",
+        "shap": -0.29151514172554016
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.25320708751678467
+      },
+      {
+        "feature": "danceability_valence",
+        "shap": -0.15031541883945465
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=51.86, y_true=0.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature year_in_decade, tempo đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 12.829681396484375,
+      "speechiness_explicit": 6.188307285308838,
+      "acousticness": 2.838857412338257,
+      "loudness": 2.353053092956543,
+      "loudness_energy": 1.1021552085876465,
+      "decade": 0.9399710297584534,
+      "duration_min": 0.8679456114768982,
+      "release_month": 0.7256019711494446,
+      "release_month_sin": 0.49316728115081787,
+      "energy": 0.48838916420936584,
+      "explicit": 0.47894109471235424,
+      "year_in_decade": -0.468974232673645,
+      "tempo": -0.42460355162620544,
+      "release_precision": 0.41442225500941277,
+      "mode": -0.3213104996830225,
+      "instrumentalness": 0.26542434096336365,
+      "speechiness": -0.25320708751678467,
+      "energy_valence": 0.17642535269260406,
+      "energy_danceability": 0.1598585695028305,
+      "danceability_valence": -0.15031541883945465,
+      "acousticness_instrumentalness": 0.14579199254512787,
+      "key": -0.16845678072422743,
+      "valence": 0.12843433022499084,
+      "duration_log": 0.07924670726060867,
+      "liveness": -0.059154197573661804,
+      "tempo_danceability": 0.05634177476167679,
+      "release_month_cos": 0.04929725453257561,
+      "energy_liveness": 0.018917212262749672,
+      "time_signature": 0.02845190717744117,
+      "danceability": -0.0060241445899009705,
+      "duration_squared": 0.00015232933219522238
+    }
+  },
+  {
+    "case_id": "case_019",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "3zXZ606TUZE8WBbGppX82E",
+    "category": "largest_overprediction",
+    "y_true": 0.0,
+    "y_pred_raw": 50.85701370239258,
+    "residual": -50.85701370239258,
+    "absolute_error": 50.85701370239258,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "50.857002",
+    "reconstruction_error": "1.1444092e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 14.298755645751953
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 5.444655418395996
+      },
+      {
+        "feature": "loudness",
+        "shap": 2.499119997024536
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.3348312377929688
+      },
+      {
+        "feature": "key_1",
+        "shap": 1.1192060708999634
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "tempo",
+        "shap": -0.40324410796165466
+      },
+      {
+        "feature": "danceability",
+        "shap": -0.38907167315483093
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.3843343257904053
+      },
+      {
+        "feature": "release_month",
+        "shap": -0.27855655550956726
+      },
+      {
+        "feature": "liveness",
+        "shap": -0.18111422657966614
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=50.86, y_true=0.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature tempo, danceability đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 14.298755645751953,
+      "speechiness_explicit": 5.444655418395996,
+      "loudness": 2.499119997024536,
+      "acousticness": 1.3348312377929688,
+      "key": 1.1841112383408472,
+      "decade": 1.0189380645751953,
+      "loudness_energy": 0.7947008609771729,
+      "duration_min": 0.6814451217651367,
+      "valence": 0.5393016934394836,
+      "explicit": 0.41487241815775633,
+      "tempo": -0.40324410796165466,
+      "danceability": -0.38907167315483093,
+      "speechiness": -0.3843343257904053,
+      "energy_danceability": 0.3382728099822998,
+      "release_precision": 0.4011493902653456,
+      "energy_valence": 0.30230584740638733,
+      "release_month": -0.27855655550956726,
+      "energy": 0.23771390318870544,
+      "liveness": -0.18111422657966614,
+      "mode": 0.17743668146431446,
+      "release_month_sin": -0.14985938370227814,
+      "year_in_decade": 0.14038659632205963,
+      "duration_log": 0.09051042795181274,
+      "tempo_danceability": -0.07278084009885788,
+      "energy_liveness": -0.06481274217367172,
+      "release_month_cos": -0.061344508081674576,
+      "acousticness_instrumentalness": 0.02457832172513008,
+      "instrumentalness": 0.023694034665822983,
+      "danceability_valence": 0.010258547961711884,
+      "time_signature": 0.0027972612115263473,
+      "duration_squared": 0.0023442795500159264
+    }
+  },
+  {
+    "case_id": "case_020",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "68NZfXQQVNa59N422unllk",
+    "category": "largest_overprediction",
+    "y_true": 0.0,
+    "y_pred_raw": 50.07455062866211,
+    "residual": -50.07455062866211,
+    "absolute_error": 50.07455062866211,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "50.07453",
+    "reconstruction_error": "1.9073486e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 13.809808731079102
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 5.365510940551758
+      },
+      {
+        "feature": "loudness",
+        "shap": 1.9065834283828735
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.4353032112121582
+      },
+      {
+        "feature": "decade",
+        "shap": 0.9917659759521484
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "duration_min",
+        "shap": -0.9814506769180298
+      },
+      {
+        "feature": "mode_0",
+        "shap": -0.1961866319179535
+      },
+      {
+        "feature": "instrumentalness",
+        "shap": -0.10555852949619293
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.07628881186246872
+      },
+      {
+        "feature": "tempo_danceability",
+        "shap": -0.07080233097076416
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=50.07, y_true=0.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature duration_min, mode_0 đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 13.809808731079102,
+      "speechiness_explicit": 5.365510940551758,
+      "loudness": 1.9065834283828735,
+      "acousticness": 1.4353032112121582,
+      "decade": 0.9917659759521484,
+      "duration_min": -0.9814506769180298,
+      "release_month_sin": 0.9668853282928467,
+      "loudness_energy": 0.8211482763290405,
+      "release_month_cos": 0.5511999130249023,
+      "explicit": 0.49332920741289854,
+      "tempo": 0.46086230874061584,
+      "release_precision": 0.4568941881880164,
+      "energy": 0.31424787640571594,
+      "key": 0.2939576453063637,
+      "danceability": 0.21849673986434937,
+      "mode": -0.21857940591871738,
+      "year_in_decade": 0.15704350173473358,
+      "release_month": 0.15608221292495728,
+      "liveness": 0.10983619838953018,
+      "instrumentalness": -0.10555852949619293,
+      "energy_danceability": 0.0888192281126976,
+      "speechiness": -0.07628881186246872,
+      "tempo_danceability": -0.07080233097076416,
+      "energy_valence": 0.06732945144176483,
+      "time_signature": 0.07374845651793294,
+      "duration_log": -0.03817884251475334,
+      "acousticness_instrumentalness": -0.03532705828547478,
+      "energy_liveness": -0.013277249410748482,
+      "valence": -0.012729799374938011,
+      "danceability_valence": 0.009952794760465622,
+      "duration_squared": -0.002023169072344899
+    }
+  },
+  {
+    "case_id": "case_021",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "7HOkU7ho6zlFufUdpNEQ89",
+    "category": "largest_overprediction",
+    "y_true": 0.0,
+    "y_pred_raw": 49.669883728027344,
+    "residual": -49.669883728027344,
+    "absolute_error": 49.669883728027344,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "49.669888",
+    "reconstruction_error": "3.8146973e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 12.42241382598877
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 5.286067008972168
+      },
+      {
+        "feature": "acousticness",
+        "shap": 2.32409930229187
+      },
+      {
+        "feature": "loudness",
+        "shap": 1.819076657295227
+      },
+      {
+        "feature": "duration_min",
+        "shap": 1.64533269405365
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "tempo",
+        "shap": -0.4796443283557892
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.21608364582061768
+      },
+      {
+        "feature": "mode_0",
+        "shap": -0.21024048328399658
+      },
+      {
+        "feature": "key_9",
+        "shap": -0.1759650856256485
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.16098621487617493
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=49.67, y_true=0.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature tempo, year_in_decade đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 12.42241382598877,
+      "speechiness_explicit": 5.286067008972168,
+      "acousticness": 2.32409930229187,
+      "loudness": 1.819076657295227,
+      "duration_min": 1.64533269405365,
+      "loudness_energy": 1.0068339109420776,
+      "decade": 0.9331285357475281,
+      "tempo": -0.4796443283557892,
+      "explicit": 0.4300421593943611,
+      "release_precision": 0.4365939679555595,
+      "instrumentalness": 0.30374643206596375,
+      "release_month": 0.30011945962905884,
+      "danceability": 0.2653985917568207,
+      "year_in_decade": -0.21608364582061768,
+      "energy_danceability": 0.21184921264648438,
+      "mode": -0.27020515128970146,
+      "key": -0.1803517946973443,
+      "duration_log": 0.1640312522649765,
+      "valence": 0.1620994657278061,
+      "speechiness": -0.16098621487617493,
+      "tempo_danceability": 0.1149115189909935,
+      "release_month_sin": -0.11114611476659775,
+      "liveness": 0.08851355314254761,
+      "energy_valence": 0.07281142473220825,
+      "release_month_cos": 0.06635697931051254,
+      "time_signature": 0.08724343715948635,
+      "energy": 0.0567585751414299,
+      "acousticness_instrumentalness": 0.05145275965332985,
+      "energy_liveness": -0.049483999609947205,
+      "duration_squared": 0.00915452465415001,
+      "danceability_valence": -0.00018715084297582507
+    }
+  },
+  {
+    "case_id": "case_022",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "4iJyoBOLtHqaGxP12qzhQI",
+    "category": "high_popularity",
+    "y_true": 100.0,
+    "y_pred_raw": 42.9716911315918,
+    "residual": 57.0283088684082,
+    "absolute_error": 57.0283088684082,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "42.971657",
+    "reconstruction_error": "3.4332275e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 13.047013282775879
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 2.9281482696533203
+      },
+      {
+        "feature": "decade",
+        "shap": 1.0206425189971924
+      },
+      {
+        "feature": "acousticness",
+        "shap": 0.5978885293006897
+      },
+      {
+        "feature": "tempo",
+        "shap": 0.5480900406837463
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "speechiness",
+        "shap": -0.3975858688354492
+      },
+      {
+        "feature": "key_0",
+        "shap": -0.3322318494319916
+      },
+      {
+        "feature": "duration_min",
+        "shap": -0.2152606099843979
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.1384696215391159
+      },
+      {
+        "feature": "duration_log",
+        "shap": -0.07890663295984268
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=42.97, y_true=100.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature speechiness, key_0 đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 13.047013282775879,
+      "speechiness_explicit": 2.9281482696533203,
+      "decade": 1.0206425189971924,
+      "acousticness": 0.5978885293006897,
+      "tempo": 0.5480900406837463,
+      "release_month_sin": 0.4256918728351593,
+      "explicit": 0.4173458917066455,
+      "speechiness": -0.3975858688354492,
+      "energy_danceability": 0.37621718645095825,
+      "key": -0.38923073280602694,
+      "release_precision": 0.39215411245822906,
+      "release_month_cos": 0.2401939034461975,
+      "danceability": 0.21836304664611816,
+      "duration_min": -0.2152606099843979,
+      "mode": 0.2119989227503538,
+      "loudness_energy": 0.19934923946857452,
+      "tempo_danceability": 0.1520143300294876,
+      "energy_valence": 0.14839012920856476,
+      "year_in_decade": -0.1384696215391159,
+      "valence": 0.1184915155172348,
+      "release_month": 0.08560489863157272,
+      "duration_log": -0.07890663295984268,
+      "loudness": 0.0725296139717102,
+      "acousticness_instrumentalness": 0.06747964024543762,
+      "energy": 0.0674261599779129,
+      "instrumentalness": -0.06048029661178589,
+      "time_signature": 0.06732587686838087,
+      "energy_liveness": -0.013841320760548115,
+      "danceability_valence": -0.009072837419807911,
+      "liveness": -0.008575058542191982,
+      "duration_squared": 0.0007796026766300201
+    }
+  },
+  {
+    "case_id": "case_023",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "7lPN2DXiMsVn7XUKtOW1CS",
+    "category": "high_popularity",
+    "y_true": 99.0,
+    "y_pred_raw": 40.30717849731445,
+    "residual": 58.69282150268555,
+    "absolute_error": 58.69282150268555,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "40.30715",
+    "reconstruction_error": "2.670288e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 13.145747184753418
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 2.7167272567749023
+      },
+      {
+        "feature": "decade",
+        "shap": 1.0434545278549194
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": 0.6426328420639038
+      },
+      {
+        "feature": "duration_min",
+        "shap": 0.4472731053829193
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "loudness",
+        "shap": -1.000654697418213
+      },
+      {
+        "feature": "acousticness",
+        "shap": -0.9158602952957153
+      },
+      {
+        "feature": "release_month",
+        "shap": -0.3272198438644409
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.2525347173213959
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.21087151765823364
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=40.31, y_true=99.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature loudness, acousticness đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 13.145747184753418,
+      "speechiness_explicit": 2.7167272567749023,
+      "decade": 1.0434545278549194,
+      "loudness": -1.000654697418213,
+      "acousticness": -0.9158602952957153,
+      "loudness_energy": 0.6426328420639038,
+      "duration_min": 0.4472731053829193,
+      "valence": 0.3993782699108124,
+      "explicit": 0.3619199290915276,
+      "release_month": -0.3272198438644409,
+      "energy_valence": 0.30831021070480347,
+      "release_precision": 0.38300208281725645,
+      "year_in_decade": 0.28812822699546814,
+      "mode": 0.267420313321054,
+      "tempo": -0.2525347173213959,
+      "speechiness": -0.21087151765823364,
+      "liveness": 0.17949889600276947,
+      "key": 0.14342274609953165,
+      "release_month_sin": -0.11759892106056213,
+      "danceability": -0.08558088541030884,
+      "tempo_danceability": 0.0704123005270958,
+      "energy": -0.06987246125936508,
+      "danceability_valence": 0.06607509404420853,
+      "energy_liveness": -0.058888327330350876,
+      "acousticness_instrumentalness": 0.03138189762830734,
+      "release_month_cos": -0.028709974139928818,
+      "time_signature": 0.009529003525130975,
+      "instrumentalness": -0.020404640585184097,
+      "duration_log": 0.006071055773645639,
+      "duration_squared": 0.003458508988842368,
+      "energy_danceability": 0.001564808189868927
+    }
+  },
+  {
+    "case_id": "case_025",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "00Kih9a1Wff2K1aILudPXF",
+    "category": "low_popularity",
+    "y_true": 0.0,
+    "y_pred_raw": 35.90571594238281,
+    "residual": -35.90571594238281,
+    "absolute_error": 35.90571594238281,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "35.905716",
+    "reconstruction_error": "0.0",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 8.653422355651855
+      },
+      {
+        "feature": "acousticness",
+        "shap": 1.0735348463058472
+      },
+      {
+        "feature": "duration_min",
+        "shap": 0.9945579767227173
+      },
+      {
+        "feature": "decade",
+        "shap": 0.5748292803764343
+      },
+      {
+        "feature": "release_month_sin",
+        "shap": 0.4721008539199829
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "loudness",
+        "shap": -0.7908168435096741
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": -0.6297110915184021
+      },
+      {
+        "feature": "year_in_decade",
+        "shap": -0.1930474042892456
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": -0.10034245997667313
+      },
+      {
+        "feature": "energy",
+        "shap": -0.09006225317716599
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=35.91, y_true=0.00), feature release_year, acousticness đóng góp dương đẩy prediction lên. feature loudness, loudness_energy đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 8.653422355651855,
+      "acousticness": 1.0735348463058472,
+      "duration_min": 0.9945579767227173,
+      "loudness": -0.7908168435096741,
+      "loudness_energy": -0.6297110915184021,
+      "decade": 0.5748292803764343,
+      "release_month_sin": 0.4721008539199829,
+      "tempo": 0.4254741668701172,
+      "release_month": 0.3956202566623688,
+      "key": 0.38186361180851236,
+      "energy_danceability": 0.3170875310897827,
+      "danceability": 0.3156962990760803,
+      "instrumentalness": 0.31058159470558167,
+      "speechiness": 0.31044307351112366,
+      "liveness": 0.21779775619506836,
+      "year_in_decade": -0.1930474042892456,
+      "duration_log": 0.13358569145202637,
+      "speechiness_explicit": -0.10034245997667313,
+      "mode": 0.08134760521352291,
+      "time_signature": 0.1265772649931023,
+      "energy": -0.09006225317716599,
+      "acousticness_instrumentalness": 0.055467139929533005,
+      "release_precision": 0.09237966500222683,
+      "tempo_danceability": -0.04944617673754692,
+      "energy_liveness": -0.030394718050956726,
+      "valence": -0.02729228511452675,
+      "release_month_cos": 0.02561306767165661,
+      "danceability_valence": -0.016140075400471687,
+      "explicit": -0.007633925387608542,
+      "duration_squared": 0.0028986618854105473,
+      "energy_valence": -0.00021700840443372726
+    }
+  },
+  {
+    "case_id": "case_026",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "00MGf5IXCqJrlnNEz0O86w",
+    "category": "low_popularity",
+    "y_true": 0.0,
+    "y_pred_raw": 42.88034439086914,
+    "residual": -42.88034439086914,
+    "absolute_error": 42.88034439086914,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "42.880356",
+    "reconstruction_error": "1.1444092e-05",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 13.912353515625
+      },
+      {
+        "feature": "speechiness_explicit",
+        "shap": 3.7559468746185303
+      },
+      {
+        "feature": "loudness",
+        "shap": 1.2912782430648804
+      },
+      {
+        "feature": "decade",
+        "shap": 0.9665811061859131
+      },
+      {
+        "feature": "acousticness",
+        "shap": 0.5631628036499023
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "duration_min",
+        "shap": -0.6602185964584351
+      },
+      {
+        "feature": "tempo",
+        "shap": -0.5225285291671753
+      },
+      {
+        "feature": "release_month",
+        "shap": -0.3523640036582947
+      },
+      {
+        "feature": "speechiness",
+        "shap": -0.27563321590423584
+      },
+      {
+        "feature": "danceability",
+        "shap": -0.19617348909378052
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=42.88, y_true=0.00), feature release_year, speechiness_explicit đóng góp dương đẩy prediction lên. feature duration_min, tempo đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 13.912353515625,
+      "speechiness_explicit": 3.7559468746185303,
+      "loudness": 1.2912782430648804,
+      "decade": 0.9665811061859131,
+      "duration_min": -0.6602185964584351,
+      "acousticness": 0.5631628036499023,
+      "tempo": -0.5225285291671753,
+      "explicit": 0.4127411646768451,
+      "release_precision": 0.49139939108863473,
+      "release_month": -0.3523640036582947,
+      "speechiness": -0.27563321590423584,
+      "energy_danceability": 0.23254866898059845,
+      "mode": 0.2430544663220644,
+      "danceability": -0.19617348909378052,
+      "release_month_sin": -0.18365636467933655,
+      "liveness": -0.15941637754440308,
+      "key": -0.25035602803109214,
+      "energy": 0.1407036930322647,
+      "energy_valence": 0.11622218787670135,
+      "acousticness_instrumentalness": 0.11467774212360382,
+      "tempo_danceability": 0.10763297975063324,
+      "loudness_energy": 0.09530124068260193,
+      "duration_log": -0.09028049558401108,
+      "energy_liveness": 0.08604100346565247,
+      "valence": 0.08057557046413422,
+      "danceability_valence": -0.07233361154794693,
+      "instrumentalness": 0.06772960722446442,
+      "year_in_decade": 0.0551997646689415,
+      "release_month_cos": 0.03504977375268936,
+      "time_signature": -0.001187019935969147,
+      "duration_squared": -0.0036382293328642845
+    }
+  },
+  {
+    "case_id": "case_027",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "track_id": "00OQsMilg3NJQ365MDUnFJ",
+    "category": "low_popularity",
+    "y_true": 0.0,
+    "y_pred_raw": 19.10407257080078,
+    "residual": -19.10407257080078,
+    "absolute_error": 19.10407257080078,
+    "base_value": 22.879941940307617,
+    "reconstructed_prediction": "19.104069",
+    "reconstruction_error": "3.8146973e-06",
+    "top_positive_contributions": [
+      {
+        "feature": "release_year",
+        "shap": 7.880022048950195
+      },
+      {
+        "feature": "loudness_energy",
+        "shap": 1.0391777753829956
+      },
+      {
+        "feature": "decade",
+        "shap": 0.6750419735908508
+      },
+      {
+        "feature": "energy_valence",
+        "shap": 0.445428729057312
+      },
+      {
+        "feature": "mode_0",
+        "shap": 0.0861164852976799
+      }
+    ],
+    "top_negative_contributions": [
+      {
+        "feature": "liveness",
+        "shap": -5.104875087738037
+      },
+      {
+        "feature": "acousticness_instrumentalness",
+        "shap": -1.783517599105835
+      },
+      {
+        "feature": "acousticness",
+        "shap": -1.6300489902496338
+      },
+      {
+        "feature": "speechiness",
+        "shap": -1.1811907291412354
+      },
+      {
+        "feature": "loudness",
+        "shap": -1.065487027168274
+      }
+    ],
+    "interpretation": "Trong prediction này (y_pred=19.10, y_true=0.00), feature release_year, loudness_energy đóng góp dương đẩy prediction lên. feature liveness, acousticness_instrumentalness đóng góp âm kéo prediction xuống. SHAP giải thích vì sao model đưa ra prediction đó, nhưng không chứng minh tính nhân quả đối với sai số hoặc popularity thực tế.",
+    "all_selected_feature_grouped_contributions": {
+      "release_year": 7.880022048950195,
+      "liveness": -5.104875087738037,
+      "acousticness_instrumentalness": -1.783517599105835,
+      "acousticness": -1.6300489902496338,
+      "speechiness": -1.1811907291412354,
+      "loudness": -1.065487027168274,
+      "loudness_energy": 1.0391777753829956,
+      "instrumentalness": -0.9091126322746277,
+      "decade": 0.6750419735908508,
+      "energy_valence": 0.445428729057312,
+      "tempo": -0.34415537118911743,
+      "release_month": -0.3309538662433624,
+      "danceability": -0.3092186748981476,
+      "energy_liveness": -0.2623572051525116,
+      "energy_danceability": -0.18616722524166107,
+      "tempo_danceability": -0.15364646911621094,
+      "speechiness_explicit": -0.12275835126638412,
+      "time_signature": -0.1765145317592669,
+      "danceability_valence": -0.11743983626365662,
+      "release_month_sin": -0.11575719714164734,
+      "mode": 0.12374942004680634,
+      "key": -0.015820747255929746,
+      "duration_min": -0.05657454580068588,
+      "release_precision": 0.0456700895447284,
+      "duration_squared": -0.044561926275491714,
+      "energy": -0.04014738276600838,
+      "release_month_cos": -0.03943181782960892,
+      "year_in_decade": 0.03477746248245239,
+      "explicit": -0.018428918170570796,
+      "valence": -0.01712822914123535,
+      "duration_log": 0.005553824827075005
+    }
+  }
+]

@@ -1,0 +1,347 @@
+[
+  {
+    "logical_name": "split_manifest",
+    "source_feature": "2.2",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\split_data\\split_manifest.json",
+    "repository_relative_path": null,
+    "exists": false,
+    "bytes": 0,
+    "sha256": null,
+    "parse_status": "FAIL",
+    "load_status": "NOT_TESTED",
+    "information_types": [
+      "dataset",
+      "split",
+      "row_counts"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "champion_model_manifest",
+    "source_feature": "2.4",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\manifests\\champion_model_manifest.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.7.model_training\\manifests\\champion_model_manifest.json",
+    "exists": true,
+    "bytes": 393,
+    "sha256": "3005497d83dfe7e53b4ae7bd449d8bcee746200b27b67cd05b26a6633b2486c4",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "model_identity",
+      "hash"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "champion_test_metrics",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\champion_test_metrics.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\champion_test_metrics.json",
+    "exists": true,
+    "bytes": 541,
+    "sha256": "50e9e85f52b39aa15af1324749fdd825c6384ba03a8d79236ca0f68cc2fd7460",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "final_test_metrics"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "validation_test_comparison",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\validation_test_comparison.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\validation_test_comparison.json",
+    "exists": true,
+    "bytes": 196,
+    "sha256": "226032570068c881d76978c5a5c18c716c630117db7e1d7f45d46d3f354206a7",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "degradation"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "prediction_tolerance",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\prediction_tolerance_metrics.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\prediction_tolerance_metrics.json",
+    "exists": true,
+    "bytes": 168,
+    "sha256": "146a6abf19d0ba67dc5a729cd06c5753e9b919b9ffde6bd2f46317bd6315a150",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "tolerance"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "severe_error",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\severe_error_metrics.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\severe_error_metrics.json",
+    "exists": true,
+    "bytes": 94,
+    "sha256": "1a9bc30eae6c757f32e21cc9c70325df268c4f7eb136b239a4e011b63ad948e1",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "severe_errors"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "ranking_utility",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\ranking_utility_metrics.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\ranking_utility_metrics.json",
+    "exists": true,
+    "bytes": 140,
+    "sha256": "ffc81fc4c343b51f7a9a6550d47ac041424c4461c15d271ee52ced6d5ba20091",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "ranking"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "test_interval_coverage",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\test_interval_coverage.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\test_interval_coverage.json",
+    "exists": true,
+    "bytes": 258,
+    "sha256": "5be0028486d4b1938ed0ee80ad70d6a7c13818b76013bd6271d400399aba1b4e",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "intervals"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "residual_statistics",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\residuals\\residual_statistics.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\residuals\\residual_statistics.json",
+    "exists": true,
+    "bytes": 969,
+    "sha256": "5b246a0968b02a08aae64f52bd517df2596f31ece67e87339cc78df3546475af",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "residuals"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "temporal_robustness",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\temporal\\temporal_robustness_summary.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\temporal\\temporal_robustness_summary.json",
+    "exists": true,
+    "bytes": 446,
+    "sha256": "21baa3813ad22cb9de18cdef5e5f80bc99dbdc5972afe3a49601e6c458e0bae6",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "temporal"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "bucket_confusion",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\buckets\\popularity_bucket_confusion_summary.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\buckets\\popularity_bucket_confusion_summary.json",
+    "exists": true,
+    "bytes": 217,
+    "sha256": "cbc54143a34f99d37acd4c5a30c6049b7e9d4d0de4d9a1249659fdcf43ddb104",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "buckets"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "popular_song_detection",
+    "source_feature": "2.5",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\popular_song_detection_metrics.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\popular_song_detection_metrics.json",
+    "exists": true,
+    "bytes": 76,
+    "sha256": "28ef79df5b8b1f2569b7de816353e02ae32e99dba5da305e63382317f5bef6f7",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "pop_detection"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "f26_closure_gate",
+    "source_feature": "2.6",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\checkpoints\\feature_2_6_closure_gate.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.9.explainability\\checkpoints\\feature_2_6_closure_gate.json",
+    "exists": true,
+    "bytes": 2120,
+    "sha256": "bdd7b8f77cc4b2b7e4749ba635c21f400e600c14a9f0fdeec84b3753761425e4",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "explainability_status"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "model_version",
+    "source_feature": "2.7",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\model_version.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\model_version.json",
+    "exists": true,
+    "bytes": 375,
+    "sha256": "5d639f3371e2064d7f0287c4b97993f47e1d25a2695686025cd752a3b1c07c7c",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "model_version"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "data_version",
+    "source_feature": "2.7",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\data_version.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\data_version.json",
+    "exists": true,
+    "bytes": 313,
+    "sha256": "a0951b81bfd37e30b3357512dfe0389967cbc543f93a5b29e2ee933d1112dff8",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "data_version"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "package_version",
+    "source_feature": "2.7",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\package_version.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\package_version.json",
+    "exists": true,
+    "bytes": 295,
+    "sha256": "f2239b341e6084fce0b514074fa938e02121ea1e54313c3e9ef9472fe9ae4fe7",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "package_version"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "selected_features",
+    "source_feature": "2.7",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\selected_features.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\selected_features.json",
+    "exists": true,
+    "bytes": 799,
+    "sha256": "8d86f9c62e8fb321c04580eb2cfe22e80a7a439e3d557de7c5a04f73a817e5e7",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "feature_dimensions"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "feature_names",
+    "source_feature": "2.7",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\feature_names.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\feature_names.json",
+    "exists": true,
+    "bytes": 1223,
+    "sha256": "3044097537901e2218afe542b9fd2e7dd09af55fbd9fea7509a229a68b0a2bc1",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "feature_dimensions"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  },
+  {
+    "logical_name": "artifact_manifest",
+    "source_feature": "2.7",
+    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\artifact_manifest.json",
+    "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\artifact_manifest.json",
+    "exists": true,
+    "bytes": 6621,
+    "sha256": "96cd393033bc52785dd9095eb1ac26bb21425a4c0b2823be13584acd542d8884",
+    "parse_status": "PASS",
+    "load_status": "PASS",
+    "information_types": [
+      "package_manifest"
+    ],
+    "required_for_model_card": true,
+    "required_for_ml_report": true,
+    "required_for_dod": true,
+    "notes": null
+  }
+]

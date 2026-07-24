@@ -1,0 +1,10 @@
+{
+  "local_case_count_matches": true,
+  "no_duplicates": true,
+  "prediction_alignment_valid": true,
+  "additivity_valid": true,
+  "plot_count_matches": true,
+  "dependence_source_hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+  "global_shap_recomputed": false,
+  "overall_consistent": true
+}

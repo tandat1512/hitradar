@@ -1,0 +1,24 @@
+{
+  "champion_model_id": "EXP24-XGB-FINAL-001",
+  "champion_family": "XGBoost",
+  "artifact_path": "hitradar/7.ML/7.7.model_training/models/EXP24-XGB-FINAL-001.joblib",
+  "artifact_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.7.model_training/models/EXP24-XGB-FINAL-001.joblib",
+  "artifact_exists": true,
+  "artifact_bytes": 3978699,
+  "artifact_sha256": "9a7ae3a37a2e84156bd177743e26824a198efcdfa0505a041b50ab392b4ac8e7",
+  "alias_path": "hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+  "alias_path_absolute": "E:/Dự án 1 hitrada/hitradar/7.ML/7.7.model_training/models/champion_bundle.joblib",
+  "alias_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "f25_lock_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "f24_manifest_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "hash_f25_lock_vs_alias": true,
+  "hash_f24_manifest_vs_alias": true,
+  "feature_set_id": "FS23-SELECTED",
+  "identity_conflict": false,
+  "overall_valid": true,
+  "notes": {
+    "canonical_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "canonical_file": "champion_bundle.joblib",
+    "explanation": "champion_bundle.joblib is the canonical artifact for immutability tracking; EXP24-XGB-FINAL-001.joblib is the original named artifact with different hash"
+  }
+}

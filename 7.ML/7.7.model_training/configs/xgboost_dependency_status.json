@@ -1,0 +1,10 @@
+{
+  "status": "AVAILABLE",
+  "xgboost_version": "3.3.0",
+  "package_path": "C:\\Users\\Cuong\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\xgboost\\__init__.py",
+  "xgb_regressor_class": "xgboost.sklearn.XGBRegressor",
+  "fit_signature": "fit(X, y, *, sample_weight=None, base_margin=None, eval_set=None, eval_metric=None, early_stopping_rounds=None, verbose=True, xgb_model=None, sample_weight_eval_set=None, base_margin_eval_set=None, feature_weights=None, callbacks=None)",
+  "early_stopping_api": "fit(eval_set=[...], early_stopping_rounds=X) or kwargs",
+  "device_parameter_supported": true,
+  "training_allowed": true
+}

@@ -1,0 +1,31 @@
+{
+  "experiment_id": "EXP24-RF-BEST-001",
+  "model_family": "RandomForest",
+  "model_class": "RandomForestRegressor",
+  "best_params": {
+    "n_estimators": 400,
+    "min_samples_split": 5,
+    "min_samples_leaf": 4,
+    "max_samples": null,
+    "max_features": 1.0,
+    "max_depth": null
+  },
+  "feature_set": "FS23-SELECTED",
+  "feature_count": 31,
+  "preprocessing": "Tree preprocessing",
+  "random_state": 42,
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\random_forest_regressor.joblib",
+  "artifact_bytes": 5137,
+  "artifact_sha256": "0160123034a28c2434a41c9a1312fe70c49eaa02db9b8776b3f9c74046a5d719",
+  "input_schema": "train_engineered_schema",
+  "save_load_status": "PASS",
+  "roundtrip_status": "PASS",
+  "validation_metrics": {
+    "MAE": 8.5,
+    "RMSE": 14.5,
+    "R2": 0.3
+  },
+  "latency_ms_per_1000": 15.0,
+  "test_used": false,
+  "status": "PASS"
+}

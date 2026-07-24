@@ -1,0 +1,15 @@
+{
+  "residual_vs_prediction": {
+    "pearson": 0.10129640617265502,
+    "spearman": 0.0992198281902179
+  },
+  "ae_vs_prediction": {
+    "pearson": -0.0032916621886721377
+  },
+  "residual_vs_actual": {
+    "pearson": 0.9651067396471161
+  },
+  "ae_vs_actual": {
+    "pearson": -0.04191203580053562
+  }
+}

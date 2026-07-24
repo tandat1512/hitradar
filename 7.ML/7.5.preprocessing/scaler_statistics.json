@@ -1,271 +1,227 @@
 [
   {
     "candidate_id": "P22-A",
-    "column": "duration_min",
+    "feature": "duration_min",
     "scaler": "StandardScaler",
-    "mean_": 3.8246370017134987,
-    "scale_": 2.135581759728712,
-    "var_": 4.560709452485982,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 3.824637001713415,
+    "scale_": 2.1355817597287725,
+    "var_": 4.56070945248624,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "release_year",
+    "feature": "release_year",
     "scaler": "StandardScaler",
     "mean_": 1978.382926136637,
-    "scale_": 19.26276696407741,
-    "var_": 371.05419111235204,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "scale_": 19.262766964081603,
+    "var_": 371.0541911125136,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "danceability",
+    "feature": "danceability",
     "scaler": "StandardScaler",
-    "mean_": 0.544403715790183,
-    "scale_": 0.16539908726365904,
-    "var_": 0.027356858067651493,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.5444037157901898,
+    "scale_": 0.16539908726361852,
+    "var_": 0.02735685806763809,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "energy",
+    "feature": "energy",
     "scaler": "StandardScaler",
-    "mean_": 0.495358725215872,
-    "scale_": 0.2503912692639482,
-    "var_": 0.06269578772361104,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.4953587252158851,
+    "scale_": 0.2503912692639562,
+    "var_": 0.06269578772361503,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "loudness",
+    "feature": "loudness",
     "scaler": "StandardScaler",
-    "mean_": -11.393526484631453,
-    "scale_": 5.076654941551704,
-    "var_": 25.77242539558133,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": -11.393526484631145,
+    "scale_": 5.076654941551659,
+    "var_": 25.77242539558088,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "speechiness",
+    "feature": "speechiness",
     "scaler": "StandardScaler",
-    "mean_": 0.1105506283632233,
-    "scale_": 0.20231939971890542,
-    "var_": 0.040933139502618225,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.11055062836323074,
+    "scale_": 0.20231939971891724,
+    "var_": 0.04093313950262301,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "acousticness",
+    "feature": "acousticness",
     "scaler": "StandardScaler",
-    "mean_": 0.5150132032415696,
-    "scale_": 0.34911370719831447,
-    "var_": 0.12188038055375046,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.5150132032415404,
+    "scale_": 0.34911370719834944,
+    "var_": 0.12188038055377487,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "instrumentalness",
+    "feature": "instrumentalness",
     "scaler": "StandardScaler",
-    "mean_": 0.12591107220819978,
-    "scale_": 0.27747216975341393,
-    "var_": 0.07699080498766735,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.1259110722081928,
+    "scale_": 0.27747216975379296,
+    "var_": 0.07699080498787769,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "liveness",
+    "feature": "liveness",
     "scaler": "StandardScaler",
-    "mean_": 0.21788359919041983,
-    "scale_": 0.18638135680726847,
-    "var_": 0.03473801016531832,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.21788359919041772,
+    "scale_": 0.18638135680724477,
+    "var_": 0.03473801016530949,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "valence",
+    "feature": "valence",
     "scaler": "StandardScaler",
-    "mean_": 0.5632940204515263,
-    "scale_": 0.26006470223778566,
-    "var_": 0.06763364935002812,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.563294020451524,
+    "scale_": 0.2600647022377701,
+    "var_": 0.06763364935002003,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-A",
-    "column": "tempo",
+    "feature": "tempo",
     "scaler": "StandardScaler",
-    "mean_": 117.03344245612345,
-    "scale_": 29.916918576551947,
-    "var_": 895.0220171160389,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 117.03268697595922,
+    "scale_": 29.911399945999744,
+    "var_": 894.6918467295535,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "duration_min",
+    "feature": "duration_min",
     "scaler": "StandardScaler",
-    "mean_": 3.8246370017134987,
-    "scale_": 2.135581759728712,
-    "var_": 4.560709452485982,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 3.824637001713415,
+    "scale_": 2.1355817597287725,
+    "var_": 4.56070945248624,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "release_year",
+    "feature": "release_year",
     "scaler": "StandardScaler",
     "mean_": 1978.382926136637,
-    "scale_": 19.26276696407741,
-    "var_": 371.05419111235204,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "scale_": 19.262766964081603,
+    "var_": 371.0541911125136,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "danceability",
+    "feature": "danceability",
     "scaler": "StandardScaler",
-    "mean_": 0.544403715790183,
-    "scale_": 0.16539908726365904,
-    "var_": 0.027356858067651493,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.5444037157901898,
+    "scale_": 0.16539908726361852,
+    "var_": 0.02735685806763809,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "energy",
+    "feature": "energy",
     "scaler": "StandardScaler",
-    "mean_": 0.495358725215872,
-    "scale_": 0.2503912692639482,
-    "var_": 0.06269578772361104,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.4953587252158851,
+    "scale_": 0.2503912692639562,
+    "var_": 0.06269578772361503,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "loudness",
+    "feature": "loudness",
     "scaler": "StandardScaler",
-    "mean_": -11.393526484631453,
-    "scale_": 5.076654941551704,
-    "var_": 25.77242539558133,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": -11.393526484631145,
+    "scale_": 5.076654941551659,
+    "var_": 25.77242539558088,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "speechiness",
+    "feature": "speechiness",
     "scaler": "StandardScaler",
-    "mean_": 0.1105506283632233,
-    "scale_": 0.20231939971890542,
-    "var_": 0.040933139502618225,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.11055062836323074,
+    "scale_": 0.20231939971891724,
+    "var_": 0.04093313950262301,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "acousticness",
+    "feature": "acousticness",
     "scaler": "StandardScaler",
-    "mean_": 0.5150132032415696,
-    "scale_": 0.34911370719831447,
-    "var_": 0.12188038055375046,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.5150132032415404,
+    "scale_": 0.34911370719834944,
+    "var_": 0.12188038055377487,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "instrumentalness",
+    "feature": "instrumentalness",
     "scaler": "StandardScaler",
-    "mean_": 0.12591107220819978,
-    "scale_": 0.27747216975341393,
-    "var_": 0.07699080498766735,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.1259110722081928,
+    "scale_": 0.27747216975379296,
+    "var_": 0.07699080498787769,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "liveness",
+    "feature": "liveness",
     "scaler": "StandardScaler",
-    "mean_": 0.21788359919041983,
-    "scale_": 0.18638135680726847,
-    "var_": 0.03473801016531832,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.21788359919041772,
+    "scale_": 0.18638135680724477,
+    "var_": 0.03473801016530949,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "valence",
+    "feature": "valence",
     "scaler": "StandardScaler",
-    "mean_": 0.5632940204515263,
-    "scale_": 0.26006470223778566,
-    "var_": 0.06763364935002812,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 0.563294020451524,
+    "scale_": 0.2600647022377701,
+    "var_": 0.06763364935002003,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-B",
-    "column": "tempo",
+    "feature": "tempo",
     "scaler": "StandardScaler",
-    "mean_": 117.03344245612345,
-    "scale_": 29.916918576551947,
-    "var_": 895.0220171160389,
-    "with_mean": true,
-    "with_std": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "mean_": 117.03268697595922,
+    "scale_": 29.911399945999744,
+    "var_": 894.6918467295535,
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "duration_min",
+    "feature": "duration_min",
     "scaler": "RobustScaler",
     "center_": 3.5173,
     "scale_": 1.6196000000000002,
@@ -273,14 +229,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "release_year",
+    "feature": "release_year",
     "scaler": "RobustScaler",
     "center_": 1983.0,
     "scale_": 28.0,
@@ -288,14 +242,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "danceability",
+    "feature": "danceability",
     "scaler": "RobustScaler",
     "center_": 0.558,
     "scale_": 0.23700000000000004,
@@ -303,14 +255,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "energy",
+    "feature": "energy",
     "scaler": "RobustScaler",
     "center_": 0.484,
     "scale_": 0.39699999999999996,
@@ -318,14 +268,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "loudness",
+    "feature": "loudness",
     "scaler": "RobustScaler",
     "center_": -10.655,
     "scale_": 6.33125,
@@ -333,14 +281,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "speechiness",
+    "feature": "speechiness",
     "scaler": "RobustScaler",
     "center_": 0.0429,
     "scale_": 0.0361,
@@ -348,14 +294,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "acousticness",
+    "feature": "acousticness",
     "scaler": "RobustScaler",
     "center_": 0.552,
     "scale_": 0.6839999999999999,
@@ -363,14 +307,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "instrumentalness",
+    "feature": "instrumentalness",
     "scaler": "RobustScaler",
     "center_": 6.22e-05,
     "scale_": 0.0212,
@@ -378,14 +320,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "liveness",
+    "feature": "liveness",
     "scaler": "RobustScaler",
     "center_": 0.143,
     "scale_": 0.18489999999999998,
@@ -393,14 +333,12 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "valence",
+    "feature": "valence",
     "scaler": "RobustScaler",
     "center_": 0.582,
     "scale_": 0.42700000000000005,
@@ -408,24 +346,108 @@
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
   },
   {
     "candidate_id": "P22-C",
-    "column": "tempo",
+    "feature": "tempo",
     "scaler": "RobustScaler",
     "center_": 114.995,
-    "scale_": 40.68500000000002,
+    "scale_": 40.66900000000001,
     "quantile_range": [
       25.0,
       75.0
     ],
-    "with_centering": true,
-    "with_scaling": true,
-    "fit_rows": 415524,
-    "fit_split": "train"
+    "fit_split": "train",
+    "fit_rows": 415524
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "duration_min",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "release_year",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "danceability",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "energy",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "loudness",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "speechiness",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "acousticness",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "instrumentalness",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "liveness",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "valence",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
+  },
+  {
+    "candidate_id": "P22-D",
+    "feature": "tempo",
+    "scaler": "NONE",
+    "status": "NOT_APPLICABLE",
+    "fit_split": "NOT_APPLICABLE",
+    "fit_rows": 0
   }
 ]

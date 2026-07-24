@@ -1,0 +1,38 @@
+{
+  "training_session_id": "F24-P4-XGB-20260720-142945-adf8d1",
+  "model_family": "XGBoost",
+  "xgboost_version": "3.3.0",
+  "device": "cpu",
+  "tree_method": "hist",
+  "params": {
+    "colsample_bytree": 0.9,
+    "gamma": 0.1,
+    "learning_rate": 0.03,
+    "max_depth": 7,
+    "min_child_weight": 5,
+    "n_estimators": 454,
+    "reg_alpha": 0,
+    "reg_lambda": 10,
+    "subsample": 0.9
+  },
+  "final_rounds": 454,
+  "raw_input_feature_count": 31,
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib",
+  "artifact_bytes": 3978649,
+  "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "native_booster_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_native_model.json",
+  "save_status": "PASS",
+  "load_status": "PASS",
+  "roundtrip_status": "PASS",
+  "train_metrics": {
+    "MAE": 8.458805084228516,
+    "RMSE": 11.279099531552852,
+    "R2": 0.48856812715530396
+  },
+  "validation_metrics": {
+    "MAE": 11.90149211883545,
+    "RMSE": 15.25206504973179,
+    "R2": 0.09543037414550781
+  },
+  "test_used": false
+}

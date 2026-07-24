@@ -1,0 +1,206 @@
+[
+  {
+    "experiment_id": "EXP24-RF-SCREEN-007",
+    "params": {
+      "n_estimators": 400,
+      "min_samples_split": 5,
+      "min_samples_leaf": 4,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": null
+    },
+    "cv_rmse_mean": 15.013949386065205,
+    "cv_rmse_std": 0.05584289297070437,
+    "fit_time": 5.366361843293692,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-004",
+    "params": {
+      "n_estimators": 200,
+      "min_samples_split": 2,
+      "min_samples_leaf": 4,
+      "max_samples": null,
+      "max_features": 0.5,
+      "max_depth": null
+    },
+    "cv_rmse_mean": 15.083244264080042,
+    "cv_rmse_std": 0.05424678221356553,
+    "fit_time": 5.181824967207101,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-002",
+    "params": {
+      "n_estimators": 400,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_samples": 0.8,
+      "max_features": 0.5,
+      "max_depth": 30
+    },
+    "cv_rmse_mean": 15.20580836121682,
+    "cv_rmse_std": 0.0673235229154987,
+    "fit_time": 5.601115011743209,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-000",
+    "params": {
+      "n_estimators": 400,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "max_samples": 0.8,
+      "max_features": 1.0,
+      "max_depth": 30
+    },
+    "cv_rmse_mean": 15.237454011884736,
+    "cv_rmse_std": 0.06901428612819832,
+    "fit_time": 5.731993941811405,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-010",
+    "params": {
+      "n_estimators": 400,
+      "min_samples_split": 2,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 30
+    },
+    "cv_rmse_mean": 15.260754485190143,
+    "cv_rmse_std": 0.053410482473745836,
+    "fit_time": 5.065051592985279,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-005",
+    "params": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 20
+    },
+    "cv_rmse_mean": 15.318340450985344,
+    "cv_rmse_std": 0.056084844859190755,
+    "fit_time": 5.5247564316322375,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-003",
+    "params": {
+      "n_estimators": 200,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_samples": 0.8,
+      "max_features": 0.5,
+      "max_depth": 20
+    },
+    "cv_rmse_mean": 15.370807257779605,
+    "cv_rmse_std": 0.05041168988591605,
+    "fit_time": 5.969909852161995,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-006",
+    "params": {
+      "n_estimators": 300,
+      "min_samples_split": 2,
+      "min_samples_leaf": 4,
+      "max_samples": null,
+      "max_features": "sqrt",
+      "max_depth": 12
+    },
+    "cv_rmse_mean": 15.423194501864213,
+    "cv_rmse_std": 0.05582458280396084,
+    "fit_time": 5.61185289472238,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-008",
+    "params": {
+      "n_estimators": 200,
+      "min_samples_split": 10,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 0.5,
+      "max_depth": 12
+    },
+    "cv_rmse_mean": 15.425606998421705,
+    "cv_rmse_std": 0.06570351922786027,
+    "fit_time": 5.19967378215836,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-009",
+    "params": {
+      "n_estimators": 300,
+      "min_samples_split": 10,
+      "min_samples_leaf": 1,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 12
+    },
+    "cv_rmse_mean": 15.431423443841362,
+    "cv_rmse_std": 0.06184829137724085,
+    "fit_time": 5.046450412719998,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-001",
+    "params": {
+      "n_estimators": 300,
+      "min_samples_split": 5,
+      "min_samples_leaf": 1,
+      "max_samples": null,
+      "max_features": 0.5,
+      "max_depth": 12
+    },
+    "cv_rmse_mean": 15.439865848419704,
+    "cv_rmse_std": 0.05312037280884873,
+    "fit_time": 5.155994520336202,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  },
+  {
+    "experiment_id": "EXP24-RF-SCREEN-011",
+    "params": {
+      "n_estimators": 400,
+      "min_samples_split": 2,
+      "min_samples_leaf": 2,
+      "max_samples": null,
+      "max_features": 1.0,
+      "max_depth": 12
+    },
+    "cv_rmse_mean": 15.474888553725334,
+    "cv_rmse_std": 0.06931264066149119,
+    "fit_time": 5.808397348116461,
+    "memory_warning": false,
+    "status": "PASS",
+    "test_used": false
+  }
+]

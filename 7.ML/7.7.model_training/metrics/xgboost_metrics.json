@@ -1,0 +1,51 @@
+{
+  "experiment_id": "EXP24-XGB-FINAL-001",
+  "config_id": "cfg_best",
+  "stage": "FINAL",
+  "fold_id": "all",
+  "params": {
+    "colsample_bytree": 0.9,
+    "gamma": 0.1,
+    "learning_rate": 0.03,
+    "max_depth": 7,
+    "min_child_weight": 5,
+    "n_estimators": 454,
+    "reg_alpha": 0,
+    "reg_lambda": 10,
+    "subsample": 0.9
+  },
+  "train_rows": 415524,
+  "validation_rows": 0,
+  "train_years": "1900-2004",
+  "validation_years": "2005-2013",
+  "fit_time": 17.219294786453247,
+  "wall_time_seconds": 22.57867956161499,
+  "early_stopping_used": false,
+  "eval_set_source": null,
+  "best_iteration": null,
+  "best_score": null,
+  "boosted_rounds": 454,
+  "train_metrics": {
+    "MAE": 8.458805084228516,
+    "RMSE": 11.279099531552852,
+    "R2": 0.48856812715530396
+  },
+  "val_metrics": {
+    "MAE": 11.90149211883545,
+    "RMSE": 15.25206504973179,
+    "R2": 0.09543037414550781
+  },
+  "n_features_in_": 49,
+  "prediction_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "status": "COMPLETED",
+  "external_validation_evaluation_count": 1,
+  "params_changed_after_validation": false,
+  "final_rounds_changed_after_validation": false,
+  "model_family": "XGBoost",
+  "model_class": "XGBRegressor",
+  "test_used": false,
+  "timestamp": "2026-07-20T14:38:05.505981+00:00",
+  "selected_as_family_best": true,
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib",
+  "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe"
+}

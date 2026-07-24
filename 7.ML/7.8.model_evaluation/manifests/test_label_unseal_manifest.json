@@ -1,0 +1,7 @@
+{
+  "test_labels_accessed": true,
+  "test_labels_used_for_training": false,
+  "test_labels_used_for_tuning": false,
+  "test_labels_used_for_selection": false,
+  "champion_id": "EXP24-XGB-FINAL-001"
+}

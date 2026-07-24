@@ -1,0 +1,9 @@
+{
+  "session_id": "F26-P3-GLOBAL-20260723-150721-g3x7",
+  "phase": "3/5",
+  "start_time": "2026-07-23T15:07:21.666715",
+  "source_shap_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_values_global.npy",
+  "source_shap_hash": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+  "sample_rows": 5000,
+  "feature_count": 49
+}

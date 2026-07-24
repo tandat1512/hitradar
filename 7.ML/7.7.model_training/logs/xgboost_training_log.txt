@@ -1,0 +1,9 @@
+[2026-07-20T14:21:53.547964+00:00] Starting Session F24-P4-XGB-20260720-142153-b57307
+[2026-07-20T14:22:37.658799+00:00] Starting Session F24-P4-XGB-20260720-142237-1a7f8c
+[2026-07-20T14:22:44.838628+00:00] Stage A: Screening 12 configs x 3 folds
+[2026-07-20T14:26:11.131034+00:00] Stage B: Full CV on Top 2 x 3 folds
+[2026-07-20T14:28:57.650306+00:00] Stage C: Final fit on Full Train (1 fit), n_estimators=454
+[2026-07-20T14:29:45.910009+00:00] Starting Session F24-P4-XGB-20260720-142945-adf8d1
+[2026-07-20T14:29:53.470114+00:00] Stage A: Screening 12 configs x 3 folds
+[2026-07-20T14:35:03.990571+00:00] Stage B: Full CV on Top 2 x 3 folds
+[2026-07-20T14:37:42.350154+00:00] Stage C: Final fit on Full Train (1 fit), n_estimators=454

@@ -1,0 +1,17 @@
+{
+  "EXP24-RIDGE-FS18-CONTROL": {
+    "train_rmse": 15.5,
+    "val_mae": 9.7,
+    "val_rmse": 16.0,
+    "val_r2": 0.05,
+    "feature_count": 18
+  },
+  "EXP24-RIDGE-FS31-CONTROL": {
+    "train_rmse": 15.2,
+    "val_mae": 9.4,
+    "val_rmse": 15.6,
+    "val_r2": 0.09,
+    "feature_count": 31
+  },
+  "improvement_fs31_vs_fs18": 0.40000000000000036
+}

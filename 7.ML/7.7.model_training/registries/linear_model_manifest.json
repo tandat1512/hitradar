@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP24-LINEAR-FS31-001",
+  "model_family": "Linear",
+  "feature_set": "FS23-SELECTED",
+  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\linear_regression.joblib",
+  "artifact_sha256": "11088937aa914f4a1741700ce41b59e80cba35217bbcf2b3474d49ed0456c98b",
+  "status": "PASS"
+}

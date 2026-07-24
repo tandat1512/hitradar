@@ -1,0 +1,13 @@
+{
+  "session_id": "F26-P4-LOCAL-20260723-152838-l4d",
+  "global_shap_recomputed": false,
+  "training_executed": false,
+  "tuning_executed": false,
+  "artifacts_created": [
+    "local_explanation_case_selection.json",
+    "local_explanation_index.csv",
+    "local_explanations.json",
+    "local_contributions_long.csv",
+    "local_plot_manifest.json"
+  ]
+}
