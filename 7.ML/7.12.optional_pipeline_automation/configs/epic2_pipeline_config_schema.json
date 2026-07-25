@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EPIC 2 Pipeline Configuration Schema",
+  "type": "object",
+  "required": [
+    "pipeline",
+    "permissions",
+    "execution",
+    "tracking"
+  ],
+  "properties": {
+    "pipeline": {
+      "type": "object",
+      "required": [
+        "mode",
+        "fail_fast"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "validate",
+            "prepare-data",
+            "train",
+            "full-retrain",
+            "package",
+            "monitor"
+          ]
+        },
+        "fail_fast": {
+          "type": "boolean",
+          "default": true
+        },
+        "resume": {
+          "type": "boolean",
+          "default": false
+        },
+        "dry_run": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_scientific_writes": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "allow_data_preparation": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_preprocessing_fit": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_training": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_tuning": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_champion_lock": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_final_test": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_shap": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_packaging": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_documentation_update": {
+          "type": "boolean",
+          "default": false
+        },
+        "allow_monitoring": {
+          "type": "boolean",
+          "default": true
+        },
+        "auto_retrain": {
+          "type": "boolean",
+          "default": false
+        },
+        "auto_update_baseline": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "execution": {
+      "type": "object"
+    },
+    "tracking": {
+      "type": "object"
+    },
+    "paths": {
+      "type": "object"
+    }
+  }
+}

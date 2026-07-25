@@ -1,0 +1,450 @@
+[
+  {
+    "component": "repository_config",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\input_manifest.json",
+    "exists": true
+  },
+  {
+    "component": "data_version",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\data_version.json",
+    "exists": true
+  },
+  {
+    "component": "schema_snapshot",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\schema_snapshot.json",
+    "exists": true
+  },
+  {
+    "component": "data_validation_results",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\validation_results.json",
+    "exists": true
+  },
+  {
+    "component": "data_closure_gate",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\closure_gate.json",
+    "exists": true
+  },
+  {
+    "component": "split_statistics",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\split_statistics.json",
+    "exists": true
+  },
+  {
+    "component": "data_exceptions",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.3.data_intake\\data_exceptions.json",
+    "exists": true
+  },
+  {
+    "component": "split_manifest",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\split_manifest.json",
+    "exists": true
+  },
+  {
+    "component": "test_set_lock",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\test_set_lock.json",
+    "exists": true
+  },
+  {
+    "component": "train_ids",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\train_ids.parquet",
+    "exists": true
+  },
+  {
+    "component": "validation_ids",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\validation_ids.parquet",
+    "exists": true
+  },
+  {
+    "component": "test_ids",
+    "source_feature": "2.1",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\test_ids.parquet",
+    "exists": true
+  },
+  {
+    "component": "preprocessing_input_contract",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessing_input_contract.json",
+    "exists": true
+  },
+  {
+    "component": "preprocessing_closure_gate",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\feature_2_2_closure_gate.json",
+    "exists": true
+  },
+  {
+    "component": "preprocessor_p22_a",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\p22_a\\preprocessor.joblib",
+    "exists": true
+  },
+  {
+    "component": "encoder_categories",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\encoder_categories.json",
+    "exists": true
+  },
+  {
+    "component": "scaler_statistics",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\scaler_statistics.json",
+    "exists": true
+  },
+  {
+    "component": "imputer_statistics",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\imputer_statistics.json",
+    "exists": true
+  },
+  {
+    "component": "iqr_clipper_module",
+    "source_feature": "2.2",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\src\\iqr_clipper.py",
+    "exists": true
+  },
+  {
+    "component": "fe_pipeline",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_engineering_pipeline.joblib",
+    "exists": true
+  },
+  {
+    "component": "fe_pipeline_module",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\feature_engineering_pipeline.py",
+    "exists": true
+  },
+  {
+    "component": "fe_transformers",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\transformers.py",
+    "exists": true
+  },
+  {
+    "component": "fe_validation",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\validation.py",
+    "exists": true
+  },
+  {
+    "component": "fe_create_artifacts",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\create_artifacts.py",
+    "exists": true
+  },
+  {
+    "component": "feature_registry",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_registry.json",
+    "exists": true
+  },
+  {
+    "component": "selected_feature_set",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\selected_feature_set.json",
+    "exists": true
+  },
+  {
+    "component": "baseline_feature_set",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\baseline_feature_set.json",
+    "exists": true
+  },
+  {
+    "component": "fe_closure_gate",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_2_3_closure_gate.json",
+    "exists": true
+  },
+  {
+    "component": "fe_input_contract_2_4",
+    "source_feature": "2.3",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_2_4_input_contract.json",
+    "exists": true
+  },
+  {
+    "component": "training_phase1",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase1.py",
+    "exists": true
+  },
+  {
+    "component": "training_phase2",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase2.py",
+    "exists": true
+  },
+  {
+    "component": "training_phase3",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase3.py",
+    "exists": true
+  },
+  {
+    "component": "training_phase4",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase4.py",
+    "exists": true
+  },
+  {
+    "component": "training_phase5",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase5.py",
+    "exists": true
+  },
+  {
+    "component": "experiment_registry",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries",
+    "exists": true
+  },
+  {
+    "component": "champion_bundle",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+    "exists": true
+  },
+  {
+    "component": "temporal_cv_folds",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\cv\\temporal_cv_folds.json",
+    "exists": true
+  },
+  {
+    "component": "global_training_config",
+    "source_feature": "2.4",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\configs\\global_training_config.json",
+    "exists": true
+  },
+  {
+    "component": "eval_phase1",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_1.py",
+    "exists": true
+  },
+  {
+    "component": "eval_phase2",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_2.py",
+    "exists": true
+  },
+  {
+    "component": "eval_phase3",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_3.py",
+    "exists": true
+  },
+  {
+    "component": "eval_phase4",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_4.py",
+    "exists": true
+  },
+  {
+    "component": "eval_phase5",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_5.py",
+    "exists": true
+  },
+  {
+    "component": "champion_lock",
+    "source_feature": "2.5",
+    "classification": "NOT_AVAILABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\manifests\\champion_lock.json",
+    "exists": false
+  },
+  {
+    "component": "final_predictions",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\predictions",
+    "exists": true
+  },
+  {
+    "component": "final_metrics",
+    "source_feature": "2.5",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics",
+    "exists": true
+  },
+  {
+    "component": "explainability_phase1",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\scripts\\run_feature_2_6_phase_1.py",
+    "exists": true
+  },
+  {
+    "component": "explainability_phase2",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\run_feature_2_6_phase_2.py",
+    "exists": true
+  },
+  {
+    "component": "explainability_phase3",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\scripts\\run_feature_2_6_phase_3.py",
+    "exists": true
+  },
+  {
+    "component": "explain_prediction_service",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\services\\explain_prediction.py",
+    "exists": true
+  },
+  {
+    "component": "shap_values_global",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_values_global.npy",
+    "exists": true
+  },
+  {
+    "component": "shap_base_values",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_base_values.npy",
+    "exists": true
+  },
+  {
+    "component": "shap_explainer_manifest",
+    "source_feature": "2.6",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\shap_values\\shap_explainer_manifest.json",
+    "exists": true
+  },
+  {
+    "component": "packaging_phase1",
+    "source_feature": "2.7",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_1.py",
+    "exists": true
+  },
+  {
+    "component": "packaging_phase2",
+    "source_feature": "2.7",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_2.py",
+    "exists": true
+  },
+  {
+    "component": "packaging_phase3",
+    "source_feature": "2.7",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_3.py",
+    "exists": true
+  },
+  {
+    "component": "packaging_phase5",
+    "source_feature": "2.7",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_5.py",
+    "exists": true
+  },
+  {
+    "component": "full_inference_pipeline",
+    "source_feature": "2.7",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\pipeline\\full_inference_pipeline.joblib",
+    "exists": true
+  },
+  {
+    "component": "package_manifest",
+    "source_feature": "2.7",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\manifests",
+    "exists": true
+  },
+  {
+    "component": "doc_phase1",
+    "source_feature": "2.8",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\scripts\\run_feature_2_8_phase_1.py",
+    "exists": true
+  },
+  {
+    "component": "doc_phase3",
+    "source_feature": "2.8",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\scripts\\run_feature_2_8_phase_3.py",
+    "exists": true
+  },
+  {
+    "component": "doc_phase5",
+    "source_feature": "2.8",
+    "classification": "VERIFIED_CLI",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\scripts\\run_feature_2_8_phase_5.py",
+    "exists": true
+  },
+  {
+    "component": "canonical_facts_registry",
+    "source_feature": "2.8",
+    "classification": "VERIFIED_CALLABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\registries\\documentation_canonical_facts.json",
+    "exists": true
+  },
+  {
+    "component": "monitoring_module",
+    "source_feature": "2.9",
+    "classification": "NOT_AVAILABLE",
+    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.12.optional_pipeline_automation\\src\\hitradar_automation\\monitoring.py",
+    "exists": false
+  }
+]

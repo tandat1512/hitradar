@@ -79,3 +79,5 @@ desktop.ini
 *.rar
 
 7.ML/7.7.model_training/models/EXP24-RF-FINAL-001.joblib
+
+7.ML/7.7.model_training/models/runner_up_bundle.joblib

@@ -1,0 +1,17 @@
+{
+  "feature_2_8_closure_gate_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\checkpoints\\feature_2_8_closure_gate.json",
+  "feature_2_8_closure_gate_exists": true,
+  "feature_2_8_status": "PASS",
+  "feature_2_8_decision": "ELIGIBLE_FOR_CLOSURE",
+  "epic_2_final_review_gate": "MAY_BEGIN",
+  "blocker_count": 0,
+  "warning_count": 0,
+  "champion_unchanged": true,
+  "training_executed_in_f28": false,
+  "tuning_executed_in_f28": false,
+  "foundation_status": "DEVELOPMENT_ALLOWED",
+  "gate_validation_status": "PASS",
+  "feature_2_8_phase_5_checkpoint.json_exists": true,
+  "feature_2_8_phase_1_checkpoint.json_exists": true,
+  "validated_at": "2026-07-25T11:31:00.549985+00:00"
+}

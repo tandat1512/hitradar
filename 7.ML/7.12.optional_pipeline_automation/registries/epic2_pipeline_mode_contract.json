@@ -1,0 +1,192 @@
+{
+  "validate": {
+    "display_name": "Validate (Read-Only Integrity Check)",
+    "stages": [
+      "P00_PREFLIGHT",
+      "P10_VALIDATE_DATASET",
+      "P99_RUN_SUMMARY"
+    ],
+    "forbidden_stages": [
+      "P20_TEMPORAL_SPLIT",
+      "P30_PREPROCESSING",
+      "P40_FEATURE_ENGINEERING",
+      "P50_TRAIN_CANDIDATES",
+      "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "P65_LOCK_CHAMPION",
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P90_PACKAGING",
+      "P95_DOCUMENTATION",
+      "P98_MONITORING"
+    ],
+    "required_flags": [],
+    "expected_side_effects": [],
+    "training_policy": "FORBIDDEN",
+    "final_test_policy": "FORBIDDEN",
+    "resume_policy": "NOT_APPLICABLE"
+  },
+  "prepare-data": {
+    "display_name": "Prepare Data (Split + Preprocess + Feature Engineering)",
+    "stages": [
+      "P00_PREFLIGHT",
+      "P10_VALIDATE_DATASET",
+      "P20_TEMPORAL_SPLIT",
+      "P30_PREPROCESSING",
+      "P40_FEATURE_ENGINEERING",
+      "P99_RUN_SUMMARY"
+    ],
+    "forbidden_stages": [
+      "P50_TRAIN_CANDIDATES",
+      "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "P65_LOCK_CHAMPION",
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P90_PACKAGING",
+      "P95_DOCUMENTATION",
+      "P98_MONITORING"
+    ],
+    "required_flags": [
+      "allow_data_preparation",
+      "allow_preprocessing_fit"
+    ],
+    "expected_side_effects": [
+      "split_artifacts",
+      "preprocessor_artifacts",
+      "feature_artifacts"
+    ],
+    "training_policy": "FORBIDDEN",
+    "final_test_policy": "FORBIDDEN",
+    "resume_policy": "FROM_LAST_CHECKPOINT"
+  },
+  "train": {
+    "display_name": "Train (Up to Champion Lock, No Final Test)",
+    "stages": [
+      "P00_PREFLIGHT",
+      "P10_VALIDATE_DATASET",
+      "P20_TEMPORAL_SPLIT",
+      "P30_PREPROCESSING",
+      "P40_FEATURE_ENGINEERING",
+      "P50_TRAIN_CANDIDATES",
+      "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "P65_LOCK_CHAMPION",
+      "P99_RUN_SUMMARY"
+    ],
+    "forbidden_stages": [
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P90_PACKAGING",
+      "P95_DOCUMENTATION",
+      "P98_MONITORING"
+    ],
+    "required_flags": [
+      "allow_data_preparation",
+      "allow_preprocessing_fit",
+      "allow_training",
+      "allow_champion_lock"
+    ],
+    "expected_side_effects": [
+      "model_artifacts",
+      "champion_lock"
+    ],
+    "training_policy": "ALLOWED_WITH_DUAL_CONSENT",
+    "final_test_policy": "FORBIDDEN",
+    "resume_policy": "FROM_LAST_CHECKPOINT"
+  },
+  "full-retrain": {
+    "display_name": "Full Retrain (All Stages — HIGH RISK)",
+    "stages": [
+      "P00_PREFLIGHT",
+      "P10_VALIDATE_DATASET",
+      "P20_TEMPORAL_SPLIT",
+      "P30_PREPROCESSING",
+      "P40_FEATURE_ENGINEERING",
+      "P50_TRAIN_CANDIDATES",
+      "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "P65_LOCK_CHAMPION",
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P90_PACKAGING",
+      "P95_DOCUMENTATION",
+      "P99_RUN_SUMMARY"
+    ],
+    "forbidden_stages": [
+      "P98_MONITORING"
+    ],
+    "required_flags": [
+      "allow_data_preparation",
+      "allow_preprocessing_fit",
+      "allow_training",
+      "allow_tuning",
+      "allow_champion_lock",
+      "allow_final_test",
+      "allow_shap",
+      "allow_packaging",
+      "allow_documentation_update"
+    ],
+    "expected_side_effects": [
+      "ALL_SCIENTIFIC_ARTIFACTS"
+    ],
+    "training_policy": "ALLOWED_WITH_DUAL_CONSENT",
+    "final_test_policy": "ALLOWED_WITH_DUAL_CONSENT",
+    "resume_policy": "FROM_LAST_CHECKPOINT"
+  },
+  "package": {
+    "display_name": "Package (Champion Validation + Packaging Only)",
+    "stages": [
+      "P00_PREFLIGHT",
+      "P90_PACKAGING",
+      "P99_RUN_SUMMARY"
+    ],
+    "forbidden_stages": [
+      "P20_TEMPORAL_SPLIT",
+      "P30_PREPROCESSING",
+      "P40_FEATURE_ENGINEERING",
+      "P50_TRAIN_CANDIDATES",
+      "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "P65_LOCK_CHAMPION",
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P95_DOCUMENTATION",
+      "P98_MONITORING"
+    ],
+    "required_flags": [
+      "allow_packaging"
+    ],
+    "expected_side_effects": [
+      "package_artifacts"
+    ],
+    "training_policy": "FORBIDDEN",
+    "final_test_policy": "FORBIDDEN",
+    "resume_policy": "NOT_APPLICABLE"
+  },
+  "monitor": {
+    "display_name": "Monitor (Monitoring & Drift Detection Only)",
+    "stages": [
+      "P00_PREFLIGHT",
+      "P98_MONITORING",
+      "P99_RUN_SUMMARY"
+    ],
+    "forbidden_stages": [
+      "P10_VALIDATE_DATASET",
+      "P20_TEMPORAL_SPLIT",
+      "P30_PREPROCESSING",
+      "P40_FEATURE_ENGINEERING",
+      "P50_TRAIN_CANDIDATES",
+      "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "P65_LOCK_CHAMPION",
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P90_PACKAGING",
+      "P95_DOCUMENTATION"
+    ],
+    "required_flags": [
+      "allow_monitoring"
+    ],
+    "expected_side_effects": [
+      "monitoring_reports"
+    ],
+    "training_policy": "FORBIDDEN",
+    "final_test_policy": "FORBIDDEN",
+    "resume_policy": "NOT_APPLICABLE"
+  }
+}

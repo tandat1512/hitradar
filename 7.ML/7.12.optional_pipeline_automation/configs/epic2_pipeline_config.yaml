@@ -1,0 +1,46 @@
+# ============================================================
+# EPIC 2 Pipeline Configuration — HitRadar Pro
+# ============================================================
+# SAFE DEFAULTS: All scientific operations are DISABLED by default.
+# To enable, set the corresponding permission to true AND pass
+# the matching CLI flag (dual-consent policy).
+
+pipeline:
+  mode: validate
+  fail_fast: true
+  resume: false
+  dry_run: false
+  allow_scientific_writes: false
+
+permissions:
+  allow_data_preparation: false
+  allow_preprocessing_fit: false
+  allow_training: false
+  allow_tuning: false
+  allow_champion_lock: false
+  allow_final_test: false
+  allow_shap: false
+  allow_packaging: false
+  allow_documentation_update: false
+  allow_monitoring: true
+  auto_retrain: false
+  auto_update_baseline: false
+
+execution:
+  max_parallel_stages: 1
+  subprocess_timeout_seconds: 3600
+  stage_retry_default: 0
+  atomic_writes: true
+  create_run_lock: true
+  preserve_failed_run_evidence: true
+
+tracking:
+  backend: local_json
+  mlflow_enabled: false
+  mlflow_required: false
+
+paths:
+  repository_root: null
+  output_root: null
+  checkpoint_root: null
+  log_root: null

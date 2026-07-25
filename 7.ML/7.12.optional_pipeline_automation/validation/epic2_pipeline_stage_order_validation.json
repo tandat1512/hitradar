@@ -1,0 +1,108 @@
+{
+  "stage_count": 14,
+  "stage_order": [
+    "P00_PREFLIGHT",
+    "P10_VALIDATE_DATASET",
+    "P20_TEMPORAL_SPLIT",
+    "P30_PREPROCESSING",
+    "P40_FEATURE_ENGINEERING",
+    "P50_TRAIN_CANDIDATES",
+    "P60_VALIDATE_AND_SELECT_CHAMPION",
+    "P65_LOCK_CHAMPION",
+    "P70_FINAL_TEST",
+    "P80_EXPLAINABILITY",
+    "P90_PACKAGING",
+    "P95_DOCUMENTATION",
+    "P98_MONITORING",
+    "P99_RUN_SUMMARY"
+  ],
+  "checks": [
+    {
+      "check": "acyclic_dependency_graph",
+      "status": "PASS"
+    },
+    {
+      "check": "Dataset before split",
+      "stage_a": "P10_VALIDATE_DATASET",
+      "stage_b": "P20_TEMPORAL_SPLIT",
+      "status": "PASS"
+    },
+    {
+      "check": "Split before preprocessing",
+      "stage_a": "P20_TEMPORAL_SPLIT",
+      "stage_b": "P30_PREPROCESSING",
+      "status": "PASS"
+    },
+    {
+      "check": "Preprocessing before FE",
+      "stage_a": "P30_PREPROCESSING",
+      "stage_b": "P40_FEATURE_ENGINEERING",
+      "status": "PASS"
+    },
+    {
+      "check": "FE before training",
+      "stage_a": "P40_FEATURE_ENGINEERING",
+      "stage_b": "P50_TRAIN_CANDIDATES",
+      "status": "PASS"
+    },
+    {
+      "check": "Training before champion selection",
+      "stage_a": "P50_TRAIN_CANDIDATES",
+      "stage_b": "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "status": "PASS"
+    },
+    {
+      "check": "Selection before lock",
+      "stage_a": "P60_VALIDATE_AND_SELECT_CHAMPION",
+      "stage_b": "P65_LOCK_CHAMPION",
+      "status": "PASS"
+    },
+    {
+      "check": "Lock before final test",
+      "stage_a": "P65_LOCK_CHAMPION",
+      "stage_b": "P70_FINAL_TEST",
+      "status": "PASS"
+    },
+    {
+      "check": "Lock before SHAP",
+      "stage_a": "P65_LOCK_CHAMPION",
+      "stage_b": "P80_EXPLAINABILITY",
+      "status": "PASS"
+    },
+    {
+      "check": "Lock before packaging",
+      "stage_a": "P65_LOCK_CHAMPION",
+      "stage_b": "P90_PACKAGING",
+      "status": "PASS"
+    },
+    {
+      "check": "final_test_depends_champion_lock",
+      "status": "PASS"
+    },
+    {
+      "check": "monitor_cannot_train",
+      "status": "PASS"
+    },
+    {
+      "check": "only_P50_can_train",
+      "value": [
+        "P50_TRAIN_CANDIDATES"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "only_P70_uses_final_test_labels",
+      "value": [
+        "P70_FINAL_TEST"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "P99_is_last_stage",
+      "status": "PASS"
+    }
+  ],
+  "all_checks_pass": true,
+  "validation_status": "PASS",
+  "validated_at": "2026-07-25T11:31:00.569284+00:00"
+}

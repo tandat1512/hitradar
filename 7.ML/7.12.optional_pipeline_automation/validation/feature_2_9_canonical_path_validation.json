@@ -1,0 +1,21 @@
+{
+  "feature_2_9_canonical_directory": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.12.optional_pipeline_automation",
+  "relative_to_repo": "7.ML/7.12.optional_pipeline_automation",
+  "exists": true,
+  "subdirectories_created": [
+    "scripts",
+    "src/hitradar_automation",
+    "configs",
+    "registries",
+    "manifests",
+    "checkpoints",
+    "monitoring",
+    "tracking",
+    "validation",
+    "logs",
+    "tests_support"
+  ],
+  "all_subdirs_exist": true,
+  "validation_status": "PASS",
+  "validated_at": "2026-07-25T11:30:45.623384+00:00"
+}

@@ -1,0 +1,654 @@
+[
+  {
+    "stage_id": "P00_PREFLIGHT",
+    "display_name": "Repository Preflight & Environment Check",
+    "owner_feature": "2.9",
+    "required": true,
+    "optional": false,
+    "dependencies": [],
+    "allowed_modes": [
+      "validate",
+      "prepare-data",
+      "train",
+      "full-retrain",
+      "package",
+      "monitor"
+    ],
+    "implementation_type": "PYTHON_CALLABLE",
+    "module_path": "src/hitradar_automation/orchestrator.py",
+    "callable_name": "run_preflight",
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      ".git",
+      "configs"
+    ],
+    "writes": [
+      "checkpoints/session.json",
+      "checkpoints/environment.json"
+    ],
+    "scientific_side_effects": false,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 60,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "session.json",
+      "environment.json"
+    ],
+    "blocking_failures": [
+      "GIT_NOT_FOUND",
+      "PYTHON_VERSION_MISMATCH"
+    ]
+  },
+  {
+    "stage_id": "P10_VALIDATE_DATASET",
+    "display_name": "Dataset Validation & Schema Check",
+    "owner_feature": "2.1",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P00_PREFLIGHT"
+    ],
+    "allowed_modes": [
+      "validate",
+      "prepare-data",
+      "train",
+      "full-retrain",
+      "package"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "7.3.data_intake/validation_results.json",
+      "7.3.data_intake/schema_snapshot.json"
+    ],
+    "writes": [],
+    "scientific_side_effects": false,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 300,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "dataset_validation_status.json"
+    ],
+    "blocking_failures": [
+      "SCHEMA_MISMATCH",
+      "DATA_MISSING"
+    ]
+  },
+  {
+    "stage_id": "P20_TEMPORAL_SPLIT",
+    "display_name": "Temporal Train/Validation/Test Split",
+    "owner_feature": "2.1",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P10_VALIDATE_DATASET"
+    ],
+    "allowed_modes": [
+      "prepare-data",
+      "train",
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "7.3.data_intake/*"
+    ],
+    "writes": [
+      "7.4.splits/split_manifest.json",
+      "7.4.splits/*.parquet"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 600,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "split_manifest.json",
+      "train_ids.parquet",
+      "validation_ids.parquet",
+      "test_ids.parquet"
+    ],
+    "blocking_failures": [
+      "SPLIT_OVERLAP",
+      "TEMPORAL_LEAKAGE"
+    ]
+  },
+  {
+    "stage_id": "P30_PREPROCESSING",
+    "display_name": "Preprocessing Fit & Transform",
+    "owner_feature": "2.2",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P20_TEMPORAL_SPLIT"
+    ],
+    "allowed_modes": [
+      "prepare-data",
+      "train",
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "7.4.splits/*",
+      "7.5.preprocessing/preprocessing_input_contract.json"
+    ],
+    "writes": [
+      "7.5.preprocessing/p22_*/preprocessor.joblib"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": true,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 1800,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "preprocessor.joblib",
+      "scaler_statistics.json"
+    ],
+    "blocking_failures": [
+      "FIT_ON_VALIDATION",
+      "FIT_ON_TEST",
+      "NAN_IN_OUTPUT"
+    ]
+  },
+  {
+    "stage_id": "P40_FEATURE_ENGINEERING",
+    "display_name": "Feature Engineering & Selection",
+    "owner_feature": "2.3",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P30_PREPROCESSING"
+    ],
+    "allowed_modes": [
+      "prepare-data",
+      "train",
+      "full-retrain"
+    ],
+    "implementation_type": "PYTHON_CALLABLE",
+    "module_path": "7.ML/7.6.feature_engineering/src/feature_engineering_pipeline.py",
+    "callable_name": "FeatureEngineeringPipeline",
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "PARTIAL",
+    "reads": [
+      "7.5.preprocessing/p22_*/preprocessor.joblib",
+      "7.6.feature_engineering/selected_feature_set.json"
+    ],
+    "writes": [
+      "7.6.feature_engineering/feature_engineering_pipeline.joblib"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 1200,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "feature_engineering_pipeline.joblib",
+      "feature_registry.json"
+    ],
+    "blocking_failures": [
+      "FEATURE_COUNT_MISMATCH",
+      "REGISTRY_INCONSISTENCY"
+    ]
+  },
+  {
+    "stage_id": "P50_TRAIN_CANDIDATES",
+    "display_name": "Candidate Model Training & Hyperparameter Tuning",
+    "owner_feature": "2.4",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P40_FEATURE_ENGINEERING"
+    ],
+    "allowed_modes": [
+      "train",
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": "7.ML/7.7.model_training/run_phase2.py",
+    "cli_template": "python {script_path}",
+    "verification_status": "PARTIAL",
+    "reads": [
+      "7.6.feature_engineering/*",
+      "7.7.model_training/configs/*"
+    ],
+    "writes": [
+      "7.7.model_training/models/*",
+      "7.7.model_training/registries/*",
+      "7.7.model_training/metrics/*"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": true,
+    "can_tune": true,
+    "can_use_validation_labels": true,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 7200,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "experiment_registry.json",
+      "champion_bundle.joblib"
+    ],
+    "blocking_failures": [
+      "TRAINING_CRASH",
+      "ALL_CANDIDATES_NAN"
+    ]
+  },
+  {
+    "stage_id": "P60_VALIDATE_AND_SELECT_CHAMPION",
+    "display_name": "Model Validation & Champion Selection",
+    "owner_feature": "2.4",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P50_TRAIN_CANDIDATES"
+    ],
+    "allowed_modes": [
+      "train",
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": "7.ML/7.7.model_training/run_phase5.py",
+    "cli_template": "python {script_path}",
+    "verification_status": "PARTIAL",
+    "reads": [
+      "7.7.model_training/registries/*",
+      "7.7.model_training/metrics/*"
+    ],
+    "writes": [
+      "7.7.model_training/models/champion_bundle.joblib"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": true,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 600,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "champion_bundle.joblib",
+      "champion_selection_report.json"
+    ],
+    "blocking_failures": [
+      "NO_ELIGIBLE_CANDIDATE",
+      "TIE_UNRESOLVED"
+    ]
+  },
+  {
+    "stage_id": "P65_LOCK_CHAMPION",
+    "display_name": "Champion Lock & Immutability Seal",
+    "owner_feature": "2.5",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P60_VALIDATE_AND_SELECT_CHAMPION"
+    ],
+    "allowed_modes": [
+      "train",
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "7.7.model_training/models/champion_bundle.joblib"
+    ],
+    "writes": [
+      "7.8.model_evaluation/manifests/champion_lock.json"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 120,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "champion_lock.json"
+    ],
+    "blocking_failures": [
+      "LOCK_HASH_MISMATCH"
+    ]
+  },
+  {
+    "stage_id": "P70_FINAL_TEST",
+    "display_name": "Final Test Evaluation (Sealed Test Set)",
+    "owner_feature": "2.5",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P65_LOCK_CHAMPION"
+    ],
+    "allowed_modes": [
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "7.8.model_evaluation/manifests/champion_lock.json",
+      "7.4.splits/test_ids.parquet"
+    ],
+    "writes": [
+      "7.8.model_evaluation/predictions/*",
+      "7.8.model_evaluation/metrics/*"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": true,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 1800,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "final_test_metrics.json",
+      "final_predictions.parquet"
+    ],
+    "blocking_failures": [
+      "CHAMPION_NOT_LOCKED",
+      "TEST_SET_TAMPERED"
+    ]
+  },
+  {
+    "stage_id": "P80_EXPLAINABILITY",
+    "display_name": "SHAP Explainability (Global & Local)",
+    "owner_feature": "2.6",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P65_LOCK_CHAMPION"
+    ],
+    "allowed_modes": [
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": "7.ML/7.9.explainability/scripts/run_feature_2_6_phase_1.py",
+    "cli_template": "python {script_path}",
+    "verification_status": "PARTIAL",
+    "reads": [
+      "7.7.model_training/models/champion_bundle.joblib"
+    ],
+    "writes": [
+      "7.9.explainability/shap_values/*"
+    ],
+    "scientific_side_effects": true,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": true,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 3600,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "shap_values_global.npy",
+      "shap_base_values.npy"
+    ],
+    "blocking_failures": [
+      "SHAP_ADDITIVITY_FAILURE"
+    ]
+  },
+  {
+    "stage_id": "P90_PACKAGING",
+    "display_name": "Model Packaging & Clean-Environment Validation",
+    "owner_feature": "2.7",
+    "required": true,
+    "optional": false,
+    "dependencies": [
+      "P65_LOCK_CHAMPION"
+    ],
+    "allowed_modes": [
+      "package",
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": "7.ML/7.10.model_packaging/scripts/run_feature_2_7_phase_1.py",
+    "cli_template": "python {script_path}",
+    "verification_status": "PARTIAL",
+    "reads": [
+      "7.7.model_training/models/champion_bundle.joblib",
+      "7.9.explainability/services/*"
+    ],
+    "writes": [
+      "7.10.model_packaging/package/*"
+    ],
+    "scientific_side_effects": false,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": true,
+    "can_update_documentation": false,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 1200,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "full_inference_pipeline.joblib",
+      "MODEL_PACKAGE_README.md"
+    ],
+    "blocking_failures": [
+      "PACKAGE_LOAD_FAILURE",
+      "CLEAN_ENV_PREDICTION_MISMATCH"
+    ]
+  },
+  {
+    "stage_id": "P95_DOCUMENTATION",
+    "display_name": "Documentation Generation & DoD Review",
+    "owner_feature": "2.8",
+    "required": false,
+    "optional": true,
+    "dependencies": [
+      "P65_LOCK_CHAMPION"
+    ],
+    "allowed_modes": [
+      "full-retrain"
+    ],
+    "implementation_type": "SUBPROCESS",
+    "module_path": null,
+    "callable_name": null,
+    "script_path": "7.ML/7.11.documentation_epic_review/scripts/run_feature_2_8_phase_1.py",
+    "cli_template": "python {script_path}",
+    "verification_status": "PARTIAL",
+    "reads": [
+      "7.7.model_training/registries/*",
+      "7.8.model_evaluation/metrics/*"
+    ],
+    "writes": [
+      "Output epic2/*.md"
+    ],
+    "scientific_side_effects": false,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": true,
+    "checkpoint_required": true,
+    "default_timeout_seconds": 600,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "MODEL_CARD.md",
+      "ML_REPORT.md"
+    ],
+    "blocking_failures": [
+      "METRIC_MISMATCH_IN_DOCS"
+    ]
+  },
+  {
+    "stage_id": "P98_MONITORING",
+    "display_name": "Model Monitoring & Drift Detection",
+    "owner_feature": "2.9",
+    "required": false,
+    "optional": true,
+    "dependencies": [
+      "P00_PREFLIGHT"
+    ],
+    "allowed_modes": [
+      "monitor"
+    ],
+    "implementation_type": "PYTHON_CALLABLE",
+    "module_path": "src/hitradar_automation/monitoring.py",
+    "callable_name": "run_monitoring",
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "7.10.model_packaging/package/*"
+    ],
+    "writes": [
+      "7.12.optional_pipeline_automation/monitoring/*"
+    ],
+    "scientific_side_effects": false,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": false,
+    "default_timeout_seconds": 300,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "monitoring_report.json"
+    ],
+    "blocking_failures": []
+  },
+  {
+    "stage_id": "P99_RUN_SUMMARY",
+    "display_name": "Pipeline Run Summary & Evidence Collection",
+    "owner_feature": "2.9",
+    "required": true,
+    "optional": false,
+    "dependencies": [],
+    "allowed_modes": [
+      "validate",
+      "prepare-data",
+      "train",
+      "full-retrain",
+      "package",
+      "monitor"
+    ],
+    "implementation_type": "PYTHON_CALLABLE",
+    "module_path": "src/hitradar_automation/orchestrator.py",
+    "callable_name": "run_summary",
+    "script_path": null,
+    "cli_template": null,
+    "verification_status": "TEMPLATE",
+    "reads": [
+      "checkpoints/*"
+    ],
+    "writes": [
+      "logs/run_summary.json"
+    ],
+    "scientific_side_effects": false,
+    "can_fit_preprocessing": false,
+    "can_train": false,
+    "can_tune": false,
+    "can_use_validation_labels": false,
+    "can_use_final_test_labels": false,
+    "can_generate_shap": false,
+    "can_package": false,
+    "can_update_documentation": false,
+    "checkpoint_required": false,
+    "default_timeout_seconds": 60,
+    "retry_policy": "NONE",
+    "expected_outputs": [
+      "run_summary.json"
+    ],
+    "blocking_failures": []
+  }
+]

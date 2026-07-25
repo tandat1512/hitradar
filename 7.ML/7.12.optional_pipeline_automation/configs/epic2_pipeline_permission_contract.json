@@ -1,0 +1,48 @@
+{
+  "dual_consent_policy": "Both config permission AND CLI flag must be true for high-risk operations",
+  "high_risk_operations": [
+    {
+      "operation": "training",
+      "config_key": "permissions.allow_training",
+      "cli_flag": "--allow-training"
+    },
+    {
+      "operation": "tuning",
+      "config_key": "permissions.allow_tuning",
+      "cli_flag": "--allow-tuning"
+    },
+    {
+      "operation": "preprocessing_fit",
+      "config_key": "permissions.allow_preprocessing_fit",
+      "cli_flag": "--allow-preprocessing-fit"
+    },
+    {
+      "operation": "champion_lock",
+      "config_key": "permissions.allow_champion_lock",
+      "cli_flag": "--allow-champion-lock"
+    },
+    {
+      "operation": "final_test",
+      "config_key": "permissions.allow_final_test",
+      "cli_flag": "--allow-final-test"
+    },
+    {
+      "operation": "shap",
+      "config_key": "permissions.allow_shap",
+      "cli_flag": "--allow-shap"
+    },
+    {
+      "operation": "packaging",
+      "config_key": "permissions.allow_packaging",
+      "cli_flag": "--allow-packaging"
+    },
+    {
+      "operation": "documentation_update",
+      "config_key": "permissions.allow_documentation_update",
+      "cli_flag": "--allow-documentation-update"
+    }
+  ],
+  "blocked_behavior": "stage_status = BLOCKED_BY_PERMISSION; no source component invoked; no scientific output created",
+  "full_retrain_note": "full-retrain mode does NOT auto-grant all permissions — each must be explicitly set",
+  "validated_at": "2026-07-25T11:31:00.577398+00:00"
+}
