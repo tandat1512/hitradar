@@ -1,0 +1,14 @@
+{
+  "guard": "PreprocessingFitGuard",
+  "config_mode": "prepare-data",
+  "allowed": false,
+  "reason": "BLOCKED: allow_data_preparation is false; BLOCKED: allow_preprocessing_fit is false",
+  "evidence": {
+    "allow_data_preparation": false,
+    "allow_preprocessing_fit": false,
+    "train_split_manifest_valid": true,
+    "validation_split_not_in_fit": true,
+    "test_split_not_in_fit": true,
+    "preprocessing_fit_executed": false
+  }
+}

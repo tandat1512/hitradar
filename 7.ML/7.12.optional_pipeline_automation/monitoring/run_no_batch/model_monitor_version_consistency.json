@@ -1,0 +1,55 @@
+{
+  "model_version": {
+    "model_version": "1.0.0",
+    "version_assignment_reason": "First packaged release of champion EXP24-XGB-FINAL-001",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "model_family": "XGBoost",
+    "source_feature": "Feature 2.4 (Model Training)",
+    "champion_artifact_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "feature_set": "FS23-SELECTED"
+  },
+  "data_version": {
+    "data_version": "1.0.0",
+    "version_assignment_reason": "First packaged release based on ml_ready_dataset.parquet",
+    "processed_dataset_id": "ml_ready_dataset",
+    "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+    "source_manifest_hash": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770"
+  },
+  "package_version": {
+    "package_version": "2.7.0",
+    "version_assignment_reason": "Feature 2.7 initial packaging release",
+    "includes": [
+      "model",
+      "preprocessing",
+      "inference_pipeline",
+      "schemas",
+      "examples",
+      "metadata"
+    ],
+    "created_at": "2026-07-24T10:03:44.215866+00:00"
+  },
+  "schema_version": "1.0.0",
+  "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+  "checks": [
+    {
+      "field": "model_version",
+      "value": "1.0.0",
+      "expected": "1.0.0",
+      "consistent": true
+    },
+    {
+      "field": "package_version",
+      "value": "2.7.0",
+      "expected": "2.7.0",
+      "consistent": true
+    },
+    {
+      "field": "schema_id",
+      "value": "HITRADAR-PREDICTION-INPUT-V1",
+      "expected": "HITRADAR-PREDICTION-INPUT-V1",
+      "consistent": true
+    }
+  ],
+  "inconsistencies_found": 0,
+  "overall_status": "OK"
+}

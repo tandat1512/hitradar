@@ -1,0 +1,8 @@
+{
+  "batch_rows": 0,
+  "minimum_batch_rows": 30,
+  "minimum_drift_rows": 100,
+  "rows_above_minimum": false,
+  "rows_above_drift_minimum": false,
+  "drift_metrics_status": "NOT_ENOUGH_DATA"
+}

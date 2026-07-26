@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-07-26T04:10:16.858385+0000",
+  "open_item_count": 1,
+  "open_items": [
+    {
+      "item_id": "OI-98925f1b",
+      "category": "PERFORMANCE",
+      "description": "Phase 3 — labels not available. Performance metrics deferred to Phase 4.",
+      "severity": "INFO",
+      "blocking": false,
+      "owner": "Tuấn Anh",
+      "recommended_review": "Phase 4 when labeled batch is available",
+      "retraining_candidate": false,
+      "status": "DEFERRED"
+    }
+  ]
+}

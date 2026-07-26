@@ -1,0 +1,15 @@
+{
+  "guard": "FinalTestGuard",
+  "config_mode": "full-retrain",
+  "allowed": true,
+  "reason": null,
+  "evidence": {
+    "mode": "full-retrain",
+    "allow_final_test": true,
+    "champion_lock_exists": true,
+    "final_test_executed": false,
+    "ledger_entry_added": false,
+    "model_version": null,
+    "data_version": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "execution_log": [
+    {
+      "ts": "2026-07-25T12:36:57.191341+00:00",
+      "event": "START",
+      "mode": "validate",
+      "run_id": "EPIC2-VALIDATE-20260101-000000-00000000"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191347+00:00",
+      "event": "RUN_LOCK_ACQUIRED",
+      "run_id": "EPIC2-VALIDATE-20260101-000000-00000000"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191350+00:00",
+      "event": "STAGE_READY",
+      "stage_id": "P00_PREFLIGHT"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191351+00:00",
+      "event": "STAGE_PASS",
+      "stage_id": "P00_PREFLIGHT",
+      "duration_s": 0.5
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191353+00:00",
+      "event": "STAGE_SKIPPED",
+      "stage_id": "P50_TRAIN_CANDIDATES",
+      "reason": "SKIPPED_BY_MODE"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191355+00:00",
+      "event": "STAGE_SKIPPED",
+      "stage_id": "P70_FINAL_TEST",
+      "reason": "SKIPPED_BY_MODE"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191357+00:00",
+      "event": "STAGE_SKIPPED",
+      "stage_id": "P80_EXPLAINABILITY",
+      "reason": "SKIPPED_BY_MODE"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191359+00:00",
+      "event": "STAGE_SKIPPED",
+      "stage_id": "P90_PACKAGING",
+      "reason": "SKIPPED_BY_MODE"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191361+00:00",
+      "event": "MANIFEST_WRITTEN",
+      "run_id": "EPIC2-VALIDATE-20260101-000000-00000000"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191363+00:00",
+      "event": "RUN_LOCK_RELEASED",
+      "run_id": "EPIC2-VALIDATE-20260101-000000-00000000"
+    },
+    {
+      "ts": "2026-07-25T12:36:57.191364+00:00",
+      "event": "END",
+      "run_id": "EPIC2-VALIDATE-20260101-000000-00000000",
+      "status": "PASS"
+    }
+  ]
+}

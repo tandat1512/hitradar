@@ -1,0 +1,579 @@
+{
+  "monitor_run_id": "MON-20260725-165406-fc5d3064",
+  "batch_id": "TEST_MISSING",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "package_version": "2.7.0",
+  "data_version": "1.0.0",
+  "baseline_id": "BASELINE-001",
+  "baseline_version": "1.0.0",
+  "baseline_hash_pre": "141cc7f8008c00989e439328ec8f11bd5a2c6e27cc534224a3bf61b9224fff1a",
+  "baseline_hash_post": "141cc7f8008c00989e439328ec8f11bd5a2c6e27cc534224a3bf61b9224fff1a",
+  "input_rows": 200,
+  "labels_authorized": false,
+  "schema_check_executed": true,
+  "data_quality_check_executed": true,
+  "feature_drift_check_executed": true,
+  "prediction_drift_check_executed": false,
+  "performance_check_executed": false,
+  "artifact_integrity_check_executed": true,
+  "training_executed": false,
+  "refit_executed": false,
+  "auto_retrain_executed": false,
+  "auto_update_baseline_executed": false,
+  "champion_changed": false,
+  "schema_status": "FAIL",
+  "data_quality_status": "PASS",
+  "feature_drift_status": "WARNING",
+  "prediction_drift_status": "NOT_RUN",
+  "artifact_integrity_status": "PASS",
+  "overall_status": "FAIL",
+  "warnings": [
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "duration_min",
+      "severity": "WARNING",
+      "warnings": [
+        "mean_delta=-0.2069 > 0.1",
+        "std_ratio=3.191 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "danceability",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.138 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "energy",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.145 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "loudness",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=4.794 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "speechiness",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.034 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "acousticness",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.156 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "instrumentalness",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.000 outside [0.8,1.25]",
+        "PSI=0.3275 > 0.2"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "liveness",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.114 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "valence",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=0.152 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "tempo",
+      "severity": "WARNING",
+      "warnings": [
+        "mean_delta=-0.4551 > 0.1",
+        "std_ratio=19.998 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "release_month",
+      "severity": "WARNING",
+      "warnings": [
+        "missing_rate_delta=-0.2326 > 0.05",
+        "mean_delta=2.1700 > 0.1",
+        "std_ratio=3.515 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "FEATURE_DRIFT",
+      "feature": "decade",
+      "severity": "WARNING",
+      "warnings": [
+        "std_ratio=30.980 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "category": "CAT_DRIFT",
+      "feature": "key",
+      "warnings": [
+        "unseen_categories=['6', '0', '3', '10', '5', '1', '4', '8', '11', '2', '7', '9'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "category": "CAT_DRIFT",
+      "feature": "mode",
+      "warnings": [
+        "unseen_categories=['1', '0'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "category": "CAT_DRIFT",
+      "feature": "time_signature",
+      "warnings": [
+        "unseen_categories=['4', '3'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "category": "CAT_DRIFT",
+      "feature": "explicit",
+      "warnings": [
+        "unseen_categories=['False', 'True'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "category": "PREDICTION",
+      "message": "Prediction generation skipped — missing runtime dependency: transformers"
+    }
+  ],
+  "blockers": [
+    {
+      "category": "SCHEMA",
+      "field": "release_year",
+      "check": "missing_required_field",
+      "severity": "BLOCKER",
+      "message": "Required field 'release_year' is missing from input batch"
+    }
+  ],
+  "alerts": [
+    {
+      "alert_id": "ALERT-67726748",
+      "category": "SCHEMA",
+      "metric": "missing_required_field",
+      "feature": "release_year",
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "BLOCKER",
+      "evidence": {
+        "check": "missing_required_field"
+      },
+      "message": "Required field 'release_year' is missing from input batch",
+      "recommended_action": "Investigate and resolve before continuing",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-8422b011",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "duration_min",
+        "warnings": [
+          "mean_delta=-0.2069 > 0.1",
+          "std_ratio=3.191 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-cdd2b30f",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "danceability",
+        "warnings": [
+          "std_ratio=0.138 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-e787ab59",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "energy",
+        "warnings": [
+          "std_ratio=0.145 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-8001ca3e",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "loudness",
+        "warnings": [
+          "std_ratio=4.794 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-09adb431",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "speechiness",
+        "warnings": [
+          "std_ratio=0.034 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-8d335f89",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "acousticness",
+        "warnings": [
+          "std_ratio=0.156 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-37ee95b0",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "instrumentalness",
+        "warnings": [
+          "std_ratio=0.000 outside [0.8,1.25]",
+          "PSI=0.3275 > 0.2"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-51d427ae",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "liveness",
+        "warnings": [
+          "std_ratio=0.114 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-404c2e31",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "valence",
+        "warnings": [
+          "std_ratio=0.152 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-a07bf4bc",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "tempo",
+        "warnings": [
+          "mean_delta=-0.4551 > 0.1",
+          "std_ratio=19.998 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-ae84b32d",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "release_month",
+        "warnings": [
+          "missing_rate_delta=-0.2326 > 0.05",
+          "mean_delta=2.1700 > 0.1",
+          "std_ratio=3.515 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-8b43523e",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "decade",
+        "warnings": [
+          "std_ratio=30.980 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-e2ffcdf1",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "key",
+        "warnings": [
+          "unseen_categories=['6', '0', '3', '10', '5', '1', '4', '8', '11', '2', '7', '9'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-90a8b9b1",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "mode",
+        "warnings": [
+          "unseen_categories=['1', '0'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-61808738",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "time_signature",
+        "warnings": [
+          "unseen_categories=['4', '3'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-f63b10f9",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "explicit",
+        "warnings": [
+          "unseen_categories=['False', 'True'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-f076ad4d",
+      "category": "PREDICTION",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {},
+      "message": "Prediction generation skipped — missing runtime dependency: transformers",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    }
+  ],
+  "open_items": [
+    {
+      "item_id": "OI-552f4ecc",
+      "alert_ids": [],
+      "category": "SCHEMA",
+      "description": "Required field 'release_year' is missing from input batch",
+      "severity": "BLOCKER",
+      "blocking": true,
+      "owner": "TBD",
+      "recommended_review": "BLOCKING: resolve before continuing",
+      "retraining_candidate": false,
+      "status": "OPEN"
+    },
+    {
+      "item_id": "OI-b8d8af6b",
+      "category": "PERFORMANCE",
+      "description": "Phase 3 — labels not available. Performance metrics deferred to Phase 4.",
+      "severity": "INFO",
+      "blocking": false,
+      "owner": "Tuấn Anh",
+      "recommended_review": "Phase 4 when labeled batch is available",
+      "retraining_candidate": false,
+      "status": "DEFERRED"
+    }
+  ],
+  "started_at": "2026-07-25T16:54:06.599615+0000",
+  "ended_at": "2026-07-25T16:54:09.201525+0000",
+  "duration_seconds": 0.0,
+  "output_dir": "monitoring\\run_missing_field",
+  "governance": {
+    "auto_retrain": false,
+    "auto_update_baseline": false,
+    "training_executed": false,
+    "refit_executed": false,
+    "auto_retrain_executed": false,
+    "auto_update_baseline_executed": false,
+    "champion_changed": false,
+    "baseline_mutated": false,
+    "governance_violations": [],
+    "overall_status": "PASS"
+  }
+}

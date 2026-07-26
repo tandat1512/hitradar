@@ -1,0 +1,17 @@
+{
+  "mode": "validate",
+  "fail_fast": false,
+  "full_config_hash": "b1f84bd5b071be506603584f11f1aa6972ee392c095c1b417eeacbc5bf892421",
+  "scientific_config_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "execution_config_hash": "0bc927c5dbcdc304db142b0be1bae3110cb69f08cd53deae709fff23809eb09d",
+  "git_commit": "abc1234",
+  "working_tree_dirty": false,
+  "code_fingerprint": {
+    "git_commit": "abc1234",
+    "working_tree_dirty": false,
+    "stage_adapter_module_hash": null,
+    "source_script_hash": null,
+    "registry_hash": null,
+    "mode_contract_hash": null
+  }
+}

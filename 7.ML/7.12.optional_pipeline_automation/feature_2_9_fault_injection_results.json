@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-07-26T05:15:00+0000",
+  "feature": "Feature 2.9",
+  "phase": "5/5",
+  "description": "Fault injection test results for governance enforcement",
+  "faults": [
+    {
+      "fault_id": "FI-01",
+      "injected_condition": "final_test stage without champion lock",
+      "expected_blocker": "BLOCKED_BY_PERMISSION or CHAMPION_NOT_LOCKED",
+      "actual_blocker": "FinalTestGuard.evaluate() checks allow_final_test and mode!=full-retrain",
+      "scientific_action_prevented": "final_test_executed=false",
+      "governance_rule": "P70_FINAL_TEST requires P65_LOCK_CHAMPION and dual consent",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-02",
+      "injected_condition": "training permission missing (allow_training=false)",
+      "expected_blocker": "BLOCKED_BY_PERMISSION",
+      "actual_blocker": "PermissionEvaluator.can_train() returns False",
+      "scientific_action_prevented": "training_executed=false",
+      "governance_rule": "Training requires dual consent: config flag AND CLI flag",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-03",
+      "injected_condition": "tuning permission missing (allow_tuning=false)",
+      "expected_blocker": "BLOCKED_BY_PERMISSION",
+      "actual_blocker": "TuningGuard.evaluate() returns False when allow_tuning=false",
+      "scientific_action_prevented": "tuning_executed=false",
+      "governance_rule": "Tuning requires allow_training AND allow_tuning",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-04",
+      "injected_condition": "stale checkpoint with changed config hash",
+      "expected_blocker": "STALE_CHECKPOINT_REJECTED",
+      "actual_blocker": "ResumeValidator returns stale_reasons=['CONFIG_CHANGED']",
+      "scientific_action_prevented": "stale checkpoint not used for resume",
+      "governance_rule": "Checkpoint invalidated when config changes",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-05",
+      "injected_condition": "stale checkpoint with changed input hashes",
+      "expected_blocker": "STALE_CHECKPOINT_REJECTED",
+      "actual_blocker": "ResumeValidator returns stale_reasons=['INPUT_HASH_CHANGED']",
+      "scientific_action_prevented": "stale checkpoint not used for resume",
+      "governance_rule": "Checkpoint invalidated when input hashes change",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-06",
+      "injected_condition": "stale checkpoint with changed output artifacts",
+      "expected_blocker": "STALE_CHECKPOINT_REJECTED",
+      "actual_blocker": "ResumeValidator returns stale_reasons=['OUTPUT_MISSING']",
+      "scientific_action_prevented": "stale checkpoint not used for resume",
+      "governance_rule": "Checkpoint invalidated when output artifacts missing",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-07",
+      "injected_condition": "baseline mutation attempt (auto_update_baseline=true)",
+      "expected_blocker": "GOVERNANCE_VIOLATION",
+      "actual_blocker": "model_monitor.py governance block returns exit 30",
+      "scientific_action_prevented": "baseline unchanged, auto_retrain_executed=false",
+      "governance_rule": "auto_update_baseline=false is LOCKED",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-08",
+      "injected_condition": "auto_retrain=true in config",
+      "expected_blocker": "GOVERNANCE_VIOLATION",
+      "actual_blocker": "model_monitor.py governance block returns exit 30",
+      "scientific_action_prevented": "auto_retrain_executed=false",
+      "governance_rule": "auto_retrain=false is LOCKED",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-09",
+      "injected_condition": "artifact hash mismatch (corrupted package artifact)",
+      "expected_blocker": "ARTIFACT_INTEGRITY_FAIL",
+      "actual_blocker": "monitor_artifact_integrity() returns status=FAIL, exit 13",
+      "scientific_action_prevented": "corrupted artifact not used for monitoring",
+      "governance_rule": "SHA256 must match artifact_manifest.json",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-10",
+      "injected_condition": "return from final test to candidate selection",
+      "expected_blocker": "NO_RETURN_GOVERNANCE",
+      "actual_blocker": "NoReturnGovernance.can_proceed_to_selection() returns False after P70",
+      "scientific_action_prevented": "P50/P60 re-entered after P70",
+      "governance_rule": "After P70, no return to P50/P60 in same run",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-11",
+      "injected_condition": "test metric in champion selection context",
+      "expected_blocker": "FINAL_TEST_METRIC_ISOLATION",
+      "actual_blocker": "experiment_tracker.log_metric() rejects final_test in non-FINAL_TEST namespace",
+      "scientific_action_prevented": "final_test metrics in candidate selection",
+      "governance_rule": "Final-test metrics must be in FINAL_TEST namespace",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-12",
+      "injected_condition": "empty monitoring batch",
+      "expected_blocker": "SCHEMA_BLOCKER",
+      "actual_blocker": "monitor_data_quality() returns exit 14 for empty batch",
+      "scientific_action_prevented": "no processing on empty data",
+      "governance_rule": "Empty batch produces BLOCKER",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-13",
+      "injected_condition": "concurrent run attempted (lock file exists)",
+      "expected_blocker": "RUN_LOCK_ACQUISITION_FAILED",
+      "actual_blocker": "RunLockManager.acquire() returns acquired=False",
+      "scientific_action_prevented": "concurrent run corrupting checkpoints",
+      "governance_rule": "Only one run per output root at a time",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-14",
+      "injected_condition": "preprocessing fit without allow_preprocessing_fit",
+      "expected_blocker": "BLOCKED_BY_PERMISSION",
+      "actual_blocker": "PreprocessingFitGuard.evaluate() returns False",
+      "scientific_action_prevented": "preprocessing_fit_executed=false",
+      "governance_rule": "Preprocessing fit requires dual consent",
+      "status": "BLOCKED_CORRECTLY"
+    },
+    {
+      "fault_id": "FI-15",
+      "injected_condition": "SHAP without allow_shap",
+      "expected_blocker": "BLOCKED_BY_PERMISSION",
+      "actual_blocker": "SHAPGuard.evaluate() returns False when mode!=full-retrain",
+      "scientific_action_prevented": "shap_executed=false",
+      "governance_rule": "SHAP requires full-retrain mode and dual consent",
+      "status": "BLOCKED_CORRECTLY"
+    }
+  ],
+  "summary": {
+    "total_faults": 15,
+    "blocked_correctly": 15,
+    "not_blocked": 0,
+    "unexpected_block": 0
+  },
+  "status": "PASS"
+}

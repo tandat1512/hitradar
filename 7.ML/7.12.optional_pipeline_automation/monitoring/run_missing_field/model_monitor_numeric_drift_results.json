@@ -1,0 +1,520 @@
+{
+  "rows": 200,
+  "features": [
+    {
+      "feature": "duration_min",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 3.310376,
+      "baseline_mean": 3.5173,
+      "mean_delta": -0.206924,
+      "current_median": 2.387633,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 3.191353,
+      "baseline_std": 1.0,
+      "std_ratio": 3.1914,
+      "psi": {
+        "psi": 0.125844,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 15,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          15.0,
+          20.0,
+          30.0,
+          60.0,
+          120.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "mean_delta=-0.2069 > 0.1",
+        "std_ratio=3.191 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "danceability",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 0.502469,
+      "baseline_mean": 0.558,
+      "mean_delta": -0.055531,
+      "current_median": 0.498031,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 0.13841,
+      "baseline_std": 1.0,
+      "std_ratio": 0.1384,
+      "psi": {
+        "psi": 0.125844,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 10,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.138 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "energy",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 0.395676,
+      "baseline_mean": 0.484,
+      "mean_delta": -0.088324,
+      "current_median": 0.389939,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 0.144734,
+      "baseline_std": 1.0,
+      "std_ratio": 0.1447,
+      "psi": {
+        "psi": 0.084312,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 10,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.145 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "loudness",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": -10.689585,
+      "baseline_mean": -10.655,
+      "mean_delta": -0.034585,
+      "current_median": -10.546659,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 4.793667,
+      "baseline_std": 1.0,
+      "std_ratio": 4.7937,
+      "psi": {
+        "psi": 0.125844,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 8,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          -60.0,
+          -50.0,
+          -40.0,
+          -30.0,
+          -20.0,
+          -15.0,
+          -10.0,
+          -5.0,
+          0.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=4.794 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "speechiness",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 0.037905,
+      "baseline_mean": 0.0429,
+      "mean_delta": -0.004995,
+      "current_median": 0.029431,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 0.034104,
+      "baseline_std": 1.0,
+      "std_ratio": 0.0341,
+      "psi": {
+        "psi": 0.125844,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 8,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.01,
+          0.03,
+          0.05,
+          0.1,
+          0.2,
+          0.3,
+          0.5,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.034 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "acousticness",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 0.522273,
+      "baseline_mean": 0.552,
+      "mean_delta": -0.029727,
+      "current_median": 0.518341,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 0.155945,
+      "baseline_std": 1.0,
+      "std_ratio": 0.1559,
+      "psi": {
+        "psi": 0.042366,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 10,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.156 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "instrumentalness",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 9.4e-05,
+      "baseline_mean": 6.22e-05,
+      "mean_delta": 3.2e-05,
+      "current_median": 7.2e-05,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 9e-05,
+      "baseline_std": 1.0,
+      "std_ratio": 0.0001,
+      "psi": {
+        "psi": 0.327517,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 9,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.01,
+          0.03,
+          0.05,
+          0.1,
+          0.3,
+          0.5,
+          0.7,
+          0.9,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.000 outside [0.8,1.25]",
+        "PSI=0.3275 > 0.2"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "liveness",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 0.157256,
+      "baseline_mean": 0.143,
+      "mean_delta": 0.014256,
+      "current_median": 0.126733,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 0.113709,
+      "baseline_std": 1.0,
+      "std_ratio": 0.1137,
+      "psi": {
+        "psi": 0.042366,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 8,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.3,
+          0.5,
+          0.7,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.114 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "valence",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 0.50059,
+      "baseline_mean": 0.582,
+      "mean_delta": -0.08141,
+      "current_median": 0.506052,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 0.152498,
+      "baseline_std": 1.0,
+      "std_ratio": 0.1525,
+      "psi": {
+        "psi": 0.084312,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 10,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "std_ratio=0.152 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "tempo",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": -0.000559,
+      "current_mean": 114.539914,
+      "baseline_mean": 114.995,
+      "mean_delta": -0.455086,
+      "current_median": 115.358476,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 19.998027,
+      "baseline_std": 1.0,
+      "std_ratio": 19.998,
+      "psi": {
+        "psi": 0.16697,
+        "status": "COMPUTED",
+        "current_n": 200,
+        "bin_count": 10,
+        "epsilon": 1e-06,
+        "bin_policy": "fixed_from_baseline",
+        "bin_edges": [
+          0.0,
+          50.0,
+          80.0,
+          100.0,
+          120.0,
+          140.0,
+          160.0,
+          180.0,
+          200.0,
+          250.0,
+          300.0
+        ],
+        "empty_bin_handling": "epsilon_replacement",
+        "sample_size_ok": true
+      },
+      "warnings": [
+        "mean_delta=-0.4551 > 0.1",
+        "std_ratio=19.998 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "release_month",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": -0.2326,
+      "current_mean": 6.17,
+      "baseline_mean": 4.0,
+      "mean_delta": 2.17,
+      "current_median": 6.0,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 3.514664,
+      "baseline_std": 1.0,
+      "std_ratio": 3.5147,
+      "psi": null,
+      "warnings": [
+        "missing_rate_delta=-0.2326 > 0.05",
+        "mean_delta=2.1700 > 0.1",
+        "std_ratio=3.515 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "decade",
+      "type": "numeric",
+      "status": "WARNING",
+      "valid_count": 200,
+      "missing_rate_delta": 0.0,
+      "current_mean": 1969.8,
+      "baseline_mean": null,
+      "mean_delta": null,
+      "current_median": 1970.0,
+      "baseline_median": null,
+      "median_delta": null,
+      "current_std": 30.979974,
+      "baseline_std": 1.0,
+      "std_ratio": 30.98,
+      "psi": null,
+      "warnings": [
+        "std_ratio=30.980 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    }
+  ],
+  "critical_count": 0,
+  "warning_count": 0,
+  "overall_status": "OK",
+  "top_shifted_features": [
+    {
+      "feature": "release_month",
+      "warnings": [
+        "missing_rate_delta=-0.2326 > 0.05",
+        "mean_delta=2.1700 > 0.1",
+        "std_ratio=3.515 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "feature": "duration_min",
+      "warnings": [
+        "mean_delta=-0.2069 > 0.1",
+        "std_ratio=3.191 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "feature": "instrumentalness",
+      "warnings": [
+        "std_ratio=0.000 outside [0.8,1.25]",
+        "PSI=0.3275 > 0.2"
+      ]
+    },
+    {
+      "feature": "tempo",
+      "warnings": [
+        "mean_delta=-0.4551 > 0.1",
+        "std_ratio=19.998 outside [0.8,1.25]"
+      ]
+    },
+    {
+      "feature": "danceability",
+      "warnings": [
+        "std_ratio=0.138 outside [0.8,1.25]"
+      ]
+    }
+  ]
+}

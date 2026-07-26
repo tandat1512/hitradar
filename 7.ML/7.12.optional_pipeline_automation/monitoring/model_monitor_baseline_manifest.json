@@ -1,0 +1,56 @@
+{
+  "baseline_id": "BASELINE-001",
+  "baseline_version": "1.0.0",
+  "status": "INHERITED_APPROVED_ARTIFACT",
+  "generated_at": "2026-07-24T10:00:00.000000+00:00",
+  "source_data_version": "ml-ready-2026-07-17-v1",
+  "source_model_version": "1.0.0",
+  "source_package_version": "2.7.0",
+  "source_period": "2026-07-17",
+  "source_row_count": 586672,
+  "source_artifacts": [
+    {
+      "artifact": "feature_2.1_target_profile",
+      "path": "hitradar/7.ML/7.3.data_intake/target_profile.json",
+      "role": "prediction_distribution_reference"
+    },
+    {
+      "artifact": "feature_2.1_warning_profile",
+      "path": "hitradar/7.ML/7.3.data_intake/warning_profile.json",
+      "role": "data_quality_reference"
+    },
+    {
+      "artifact": "feature_2.7_input_schema",
+      "path": "hitradar/7.ML/7.10.model_packaging/package/schemas/input_schema.json",
+      "role": "schema_contract"
+    },
+    {
+      "artifact": "feature_2.7_artifact_manifest",
+      "path": "hitradar/7.ML/7.10.model_packaging/package/metadata/artifact_manifest.json",
+      "role": "artifact_hash_reference"
+    },
+    {
+      "artifact": "feature_2.7_example_output",
+      "path": "hitradar/7.ML/7.10.model_packaging/package/examples/example_output.json",
+      "role": "prediction_output_reference"
+    }
+  ],
+  "source_hashes": {
+    "target_profile": "ml-ready-2026-07-17-v1",
+    "input_schema": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+    "full_pipeline": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99"
+  },
+  "previous_baseline_id": null,
+  "immutable": true,
+  "approval_status": "INHERITED_APPROVED_ARTIFACT",
+  "approved_by": null,
+  "approved_at": null,
+  "baseline_file_path": "monitoring/model_monitor_baseline.json",
+  "notes": [
+    "Baseline derived from Feature 2.7 approved artifacts and Feature 2.1 train distribution.",
+    "NOT computed from raw training rows (not stored here).",
+    "Baseline is IMPRECISE — contains summary statistics only, not raw records.",
+    "File must never be overwritten. Versioned via new file on update.",
+    "This is the canonical baseline for Phase 3 monitoring."
+  ]
+}

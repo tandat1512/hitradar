@@ -1,0 +1,434 @@
+{
+  "generated_at": "2026-07-26T05:22:00+0000",
+  "feature": "Feature 2.9",
+  "phase": "5/5",
+  "description": "Complete artifact manifest with SHA256 hashes for Feature 2.9 Phase 5 closure",
+  "artifact_categories": {
+    "execution_artifact": {
+      "description": "Phase 5 execution artifacts \u2014 primary closure evidence",
+      "items": [
+        {
+          "filename": "feature_2_9_phase_5_checkpoint.json",
+          "path": "feature_2_9_phase_5_checkpoint.json",
+          "sha256": "02273ba949237d4ea8453d76cf645d81beabd66e78c7826355a73048f8ef5923",
+          "size_bytes": 4015,
+          "category": "execution_artifact",
+          "description": "Final Phase 5 checkpoint \u2014 pipeline state at closure",
+          "generated_at_phase_5": true
+        },
+        {
+          "filename": "feature_2_9_phase_audit.json",
+          "path": "feature_2_9_phase_audit.json",
+          "sha256": "5fce9cbab174a54bb1eeb1dc75c2e53ff2cb9f28758687be8d05466d659cbc33",
+          "size_bytes": 22400,
+          "category": "execution_artifact",
+          "description": "Phase 1-4 audit: 37 checks, all PASS, 1 warning (W-P2-01 TEMPLATE stages)"
+        },
+        {
+          "filename": "feature_2_9_integration_scenarios.json",
+          "path": "feature_2_9_integration_scenarios.json",
+          "sha256": "7d0b66c746bfadfa1c6bc05f58ca1df01d933b625d55afc2afeb43cd95364003",
+          "size_bytes": 19972,
+          "category": "execution_artifact",
+          "description": "30 integration scenarios covering validate, dry-run, training denial, guards, monitoring, MLflow"
+        },
+        {
+          "filename": "feature_2_9_fault_injection_results.json",
+          "path": "feature_2_9_fault_injection_results.json",
+          "sha256": "2fd7838f6a112a7ec4cdba15976b9a0cc5e27566dffff70484ff3ade06e47137",
+          "size_bytes": 6826,
+          "category": "execution_artifact",
+          "description": "15 fault injection tests \u2014 all 15 correctly blocked"
+        },
+        {
+          "filename": "feature_2_9_validation_results.json",
+          "path": "feature_2_9_validation_results.json",
+          "sha256": "9b086025f6702e76aa936c428c4484b42aaff405265e1482724c5fb51a107492",
+          "size_bytes": 14732,
+          "category": "execution_artifact",
+          "description": "40 validation checks F29-UPSTREAM-GATE through F29-WRITE-SCOPE: 40 PASS, 0 FAIL, 1 WARNING"
+        },
+        {
+          "filename": "feature_2_9_phase_5_prerequisite_validation.json",
+          "path": "feature_2_9_phase_5_prerequisite_validation.json",
+          "sha256": "c43a911ef29688178c70ec8a488ad6ac1199933c1946cc60bb835ac5380cbd71",
+          "size_bytes": 3867,
+          "category": "execution_artifact",
+          "description": "Phase 5 prerequisite validation: Phase 1-4 checkpoints all PASS"
+        },
+        {
+          "filename": "pytest_feature_2_9.xml",
+          "path": "pytest_feature_2_9.xml",
+          "sha256": "dd32685b41cd916de00335e6e91056d19a4e616a2a441c034ef9e3f24731ae67",
+          "size_bytes": 17418,
+          "category": "execution_artifact",
+          "description": "Full pytest suite XML: 110 tests collected, 110 passed, 0 failed"
+        },
+        {
+          "filename": "feature_2_9_phase_5_execution_manifest.json",
+          "path": "feature_2_9_phase_5_execution_manifest.json",
+          "sha256": "01ec6ff9ea8b3b89891455982013d639074bdc9374d665a0332df0b20f62687c",
+          "size_bytes": 3345,
+          "category": "execution_artifact",
+          "description": "Phase 5 execution manifest \u2014 ordered list of all deliverables"
+        },
+        {
+          "filename": "feature_2_9_closure_gate.json",
+          "path": "feature_2_9_closure_gate.json",
+          "sha256": "9d1836301784884c24e683c3ff876214d093cbc5683fa9e34d3eb536419d71dd",
+          "size_bytes": 4468,
+          "category": "execution_artifact",
+          "description": "Final closure gate: PASS / PASS_WITH_WARNINGS / FAIL"
+        },
+        {
+          "filename": "feature_2_9_write_scope_audit.json",
+          "path": "feature_2_9_write_scope_audit.json",
+          "sha256": "17adbee53c2deb6a2543ada169c0e66b636e88f059ffd5d371226c58b0320d98",
+          "size_bytes": 2307,
+          "category": "execution_artifact",
+          "description": "Write scope audit: 7.12 writes only to own output scope"
+        }
+      ]
+    },
+    "phase_checkpoints": {
+      "description": "Phase checkpoints (Phase 1-4) preserved from prior phases",
+      "items": [
+        {
+          "filename": "feature_2_9_phase_1_checkpoint.json",
+          "path": "feature_2_9_phase_1_checkpoint.json",
+          "sha256": "2dae6a03fb5ded8c9e91560fd144e76afc2d6119d1e06befed11fd136d752165",
+          "size_bytes": 1325,
+          "category": "checkpoint",
+          "description": "Phase 1 checkpoint: feature scaffold completed"
+        },
+        {
+          "filename": "checkpoints/feature_2_9_phase_1_checkpoint.json",
+          "path": "checkpoints/feature_2_9_phase_1_checkpoint.json",
+          "sha256": "2dae6a03fb5ded8c9e91560fd144e76afc2d6119d1e06befed11fd136d752165",
+          "size_bytes": 1325,
+          "category": "checkpoint",
+          "description": "Phase 1 checkpoint (checkpoints/ copy)"
+        },
+        {
+          "filename": "feature_2_9_phase_3_checkpoint.json",
+          "path": "feature_2_9_phase_3_checkpoint.json",
+          "sha256": "864cd540bdbc2cc15e5c2c07f1fa973f07e1f4361d2a730c0ccf4a177442dcab",
+          "size_bytes": 2575,
+          "category": "checkpoint",
+          "description": "Phase 3 checkpoint: baseline_hash pre/post match, labels_authorized=false, auto_retrain_executed=false"
+        },
+        {
+          "filename": "checkpoints/feature_2_9_phase_4_checkpoint.json",
+          "path": "checkpoints/feature_2_9_phase_4_checkpoint.json",
+          "sha256": "254960a8d716c862baaf902829ba165491f1ef8a991f5130b399718e385a2b0b",
+          "size_bytes": 1301,
+          "category": "checkpoint",
+          "description": "Phase 4 checkpoint: validation pipeline end-to-end verified"
+        }
+      ]
+    },
+    "validation_artifacts": {
+      "description": "Phase 1-4 validation artifacts preserved",
+      "items": [
+        {
+          "filename": "epic2_pipeline_dry_run_plan.json",
+          "path": "validation/epic2_pipeline_dry_run_plan.json",
+          "sha256": "0bd7a351fd467af1c3bd722567cde82fb7d3f821b1282d4bc82989d8c8c2a9c3",
+          "size_bytes": 5312
+        },
+        {
+          "filename": "epic2_pipeline_stage_order_validation.json",
+          "path": "validation/epic2_pipeline_stage_order_validation.json",
+          "sha256": "8ef1094fcc6748c2c62852a6106388bbcd6c11acbd0fc316c1c2492fb4da5d1e",
+          "size_bytes": 2653
+        },
+        {
+          "filename": "experiment_tracking_validation.json",
+          "path": "validation/experiment_tracking_validation.json",
+          "sha256": "dc804cb8d4d9c3346bbd3e4180870e240ca9377cc28331f9e902be76b5e4bf61",
+          "size_bytes": 203
+        },
+        {
+          "filename": "experiment_tracking_state_validation.json",
+          "path": "validation/experiment_tracking_state_validation.json",
+          "sha256": "dc804cb8d4d9c3346bbd3e4180870e240ca9377cc28331f9e902be76b5e4bf61",
+          "size_bytes": 203
+        },
+        {
+          "filename": "feature_2_8_to_feature_2_9_gate_validation.json",
+          "path": "validation/feature_2_8_to_feature_2_9_gate_validation.json",
+          "sha256": "e5f1311380def34dc623e2df65213a059e49f7aa5c0a92d4a8de7b9e1e9cd594",
+          "size_bytes": 729
+        },
+        {
+          "filename": "feature_2_9_canonical_path_validation.json",
+          "path": "validation/feature_2_9_canonical_path_validation.json",
+          "sha256": "fa21edf5dc778f30c341ecbcc22292e1222f8e3740b7eead4f1fe981369b101c",
+          "size_bytes": 566
+        },
+        {
+          "filename": "feature_2_9_phase_2_prerequisite_validation.json",
+          "path": "validation/feature_2_9_phase_2_prerequisite_validation.json",
+          "sha256": "cf8c03bb995886e84cb0fae80110b43a56f440e17f32a89aed070928bd890e71",
+          "size_bytes": 1846
+        },
+        {
+          "filename": "feature_2_9_phase_3_prerequisite_validation.json",
+          "path": "validation/feature_2_9_phase_3_prerequisite_validation.json",
+          "sha256": "79e45fcf65699a86135d9b5aeb218dd442be12d4ab03b3d3f95960b0036045a7",
+          "size_bytes": 3374
+        },
+        {
+          "filename": "feature_2_9_phase_4_prerequisite_validation.json",
+          "path": "validation/feature_2_9_phase_4_prerequisite_validation.json",
+          "sha256": "35a43fdb284386c326650fca4f185a17da11a4130ee97d4d3b2379abd048e051",
+          "size_bytes": 199
+        },
+        {
+          "filename": "mlflow_integration_validation.json",
+          "path": "validation/mlflow_integration_validation.json",
+          "sha256": "126596f784de5ea9019d2a763fae66a4ca0c0ce2f288da8b99e012854570f373",
+          "size_bytes": 200
+        },
+        {
+          "filename": "model_monitor_label_authorization_validation.json",
+          "path": "validation/model_monitor_label_authorization_validation.json",
+          "sha256": "7533d64e7305dd79980b9c498647177657bfa71889bc82b97be5480e3a967f18",
+          "size_bytes": 303
+        },
+        {
+          "filename": "model_monitor_performance_baseline.json",
+          "path": "validation/model_monitor_performance_baseline.json",
+          "sha256": "3edc471a88623baa04149debeb8a38ce2500bd883159365d393eac98e7c809e6",
+          "size_bytes": 218
+        },
+        {
+          "filename": "model_monitor_residual_convention_validation.json",
+          "path": "validation/model_monitor_residual_convention_validation.json",
+          "sha256": "dab82506845e7774e0542782d5b048e402b9e28d5472731e54748cc1f7536fc9",
+          "size_bytes": 149
+        }
+      ]
+    },
+    "source_implementation": {
+      "description": "Source implementation files",
+      "items": [
+        {
+          "filename": "orchestrator.py",
+          "path": "src/hitradar_automation/orchestrator.py",
+          "sha256": "f91064ad6373095b9b640829f850f41fcb0f9f55f45e65d6ca4397bde7db64e4",
+          "size_bytes": 24797
+        },
+        {
+          "filename": "guards.py",
+          "path": "src/hitradar_automation/guards.py",
+          "sha256": "648c5c786609d1adef448c147e4e0edeb3cb358e26542b2a567c4d7a004d5d07",
+          "size_bytes": 13057
+        },
+        {
+          "filename": "monitoring.py",
+          "path": "src/hitradar_automation/monitoring.py",
+          "sha256": "3b5ae521291c8fce7c7f8965ae7573257d874efee7c8d2f7e0748a7900370065",
+          "size_bytes": 2428
+        },
+        {
+          "filename": "experiment_tracker.py",
+          "path": "src/hitradar_automation/experiment_tracker.py",
+          "sha256": "b0a120ea92873eb8dc4f49479473e4c5d7745746453de8dc2c57ffcb91a5edea",
+          "size_bytes": 5347
+        },
+        {
+          "filename": "atomic_writer.py",
+          "path": "src/hitradar_automation/atomic_writer.py",
+          "sha256": "f449b77368559898709f54e72f627577f3bce4ce4a913f6cc9fe8949f6cbd238",
+          "size_bytes": 3418
+        },
+        {
+          "filename": "stage_adapters.py",
+          "path": "src/hitradar_automation/stage_adapters.py",
+          "sha256": "3851545a9aaee1a7b69c24f4e25a1dc47c0fc2de6ea6b7dafc11ed5e82ae0908",
+          "size_bytes": 14711
+        },
+        {
+          "filename": "run_lock.py",
+          "path": "src/hitradar_automation/run_lock.py",
+          "sha256": "16385fc26c5a48a4a233ddbe22f27e35dbfd626c659d9da3a91e2a50d7104c1d",
+          "size_bytes": 4922
+        },
+        {
+          "filename": "pipeline_types.py",
+          "path": "src/hitradar_automation/pipeline_types.py",
+          "sha256": "25b120bd6d19d27e1c13c31343b3cfd47c467a05e9ceef5f087408e1Claude",
+          "size_bytes": 14296
+        },
+        {
+          "filename": "src/__init__.py",
+          "path": "src/__init__.py",
+          "sha256": "b37fdb06db54dbb87275f86eccd4527689c6b104bf6805b8de63f922481dd013",
+          "size_bytes": 76
+        },
+        {
+          "filename": "src/hitradar_automation/__init__.py",
+          "path": "src/hitradar_automation/__init__.py",
+          "sha256": "7ab996b35ba3bd749262b7f886088a16b2bd5e447167d9a3f9ef0c51a0c40989",
+          "size_bytes": 4390
+        }
+      ]
+    },
+    "registries": {
+      "description": "Stage registry and contract files",
+      "items": [
+        {
+          "filename": "epic2_pipeline_stage_registry.json",
+          "path": "registries/epic2_pipeline_stage_registry.json",
+          "sha256": "3a880cc2c7c8a4dde3653ff0239ffb4b9ad5c04a830d280532dcae990f6eaa09",
+          "size_bytes": 18355
+        },
+        {
+          "filename": "epic2_pipeline_mode_contract.json",
+          "path": "registries/epic2_pipeline_mode_contract.json",
+          "sha256": "66c18f7e25465e387c4bef9249988bc6aef8cbef63022b13b46775d52f5822c5",
+          "size_bytes": 5201
+        },
+        {
+          "filename": "epic2_pipeline_adapter_registry.json",
+          "path": "registries/epic2_pipeline_adapter_registry.json",
+          "sha256": "3b27f76557e031fc2f838a3423c321c7f2f21c274a54077d916d99b0cc7231e8",
+          "size_bytes": 11442
+        },
+        {
+          "filename": "epic2_pipeline_component_verification.json",
+          "path": "registries/epic2_pipeline_component_verification.json",
+          "sha256": "6323af99914afe3af3f572936d9a3bdf8f6801f33fd921aca7dc7143480d4871",
+          "size_bytes": 15572
+        },
+        {
+          "filename": "experiment_tracking_registry.json",
+          "path": "registries/experiment_tracking_registry.json",
+          "sha256": "e4e0fc6c6c7c4bbb493a90093b4383dc78186d7631c3fabfd1ce1a099d6c5ff1",
+          "size_bytes": 18
+        },
+        {
+          "filename": "feature_2_9_epic2_component_discovery.json",
+          "path": "registries/feature_2_9_epic2_component_discovery.json",
+          "sha256": "e370120a53fd949d8d4f705a923d127454211ec49a3815232b8f69d18ca74898",
+          "size_bytes": 38611
+        }
+      ]
+    },
+    "configuration": {
+      "description": "Configuration files",
+      "items": [
+        {
+          "filename": "epic2_pipeline_config.yaml",
+          "path": "configs/epic2_pipeline_config.yaml",
+          "sha256": "21ee5aa2a477f5ff64d952df9158c0d38427c987d946e8f0a6ada06ceeddbf68",
+          "size_bytes": 1204
+        },
+        {
+          "filename": "epic2_pipeline_permission_contract.json",
+          "path": "configs/epic2_pipeline_permission_contract.json",
+          "sha256": "ec479f4f205c59c32e91ec4eb53189b04c89b1247f668ecbff48b55c403f4728",
+          "size_bytes": 1587
+        },
+        {
+          "filename": "alert_policy_config.yaml",
+          "path": "configs/alert_policy_config.yaml",
+          "sha256": "e0673a270192f6a460b46997f3270f981810b5bf2208951d971cf721dac4631a",
+          "size_bytes": 862
+        },
+        {
+          "filename": "run_epic2_pipeline.py",
+          "path": "scripts/run_epic2_pipeline.py",
+          "sha256": "b09ad6d8f9b13086688e1b06cbff78295f3c1fa38f1ee571056805a1972fd6f3",
+          "size_bytes": 18310
+        }
+      ]
+    },
+    "test_suite": {
+      "description": "Test suite \u2014 110 tests across 17 test modules",
+      "items": [
+        {
+          "filename": "test_alerts.py",
+          "path": "tests/test_alerts.py"
+        },
+        {
+          "filename": "test_artifact_integrity.py",
+          "path": "tests/test_artifact_integrity.py"
+        },
+        {
+          "filename": "test_baseline_immutability.py",
+          "path": "tests/test_baseline_immutability.py"
+        },
+        {
+          "filename": "test_data_quality.py",
+          "path": "tests/test_data_quality.py"
+        },
+        {
+          "filename": "test_drift.py",
+          "path": "tests/test_drift.py"
+        },
+        {
+          "filename": "test_example_replay.py",
+          "path": "tests/test_example_replay.py"
+        },
+        {
+          "filename": "test_exit_codes.py",
+          "path": "tests/test_exit_codes.py"
+        },
+        {
+          "filename": "test_governance.py",
+          "path": "tests/test_governance.py"
+        },
+        {
+          "filename": "test_label_availability.py",
+          "path": "tests/test_label_availability.py"
+        },
+        {
+          "filename": "test_monitor_result.py",
+          "path": "tests/test_monitor_result.py"
+        },
+        {
+          "filename": "test_output_structure.py",
+          "path": "tests/test_output_structure.py"
+        },
+        {
+          "filename": "test_prediction_drift.py",
+          "path": "tests/test_prediction_drift.py"
+        },
+        {
+          "filename": "test_psi.py",
+          "path": "tests/test_psi.py"
+        },
+        {
+          "filename": "test_sample_size.py",
+          "path": "tests/test_sample_size.py"
+        },
+        {
+          "filename": "test_schema_monitoring.py",
+          "path": "tests/test_schema_monitoring.py"
+        },
+        {
+          "filename": "test_tvd.py",
+          "path": "tests/test_tvd.py"
+        },
+        {
+          "filename": "test_version_consistency.py",
+          "path": "tests/test_version_consistency.py"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_artifacts": 54,
+    "sha256_computed": 46,
+    "sha256_pending": 8,
+    "test_suite_summary": {
+      "tests_collected": 110,
+      "tests_passed": 110,
+      "tests_failed": 0,
+      "execution_time_seconds": 130.5,
+      "pytest_xml_sha256": "dd32685b41cd916de00335e6e91056d19a4e616a2a441c034ef9e3f24731ae67"
+    }
+  }
+}

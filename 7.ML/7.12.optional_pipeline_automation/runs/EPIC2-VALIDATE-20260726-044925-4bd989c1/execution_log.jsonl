@@ -1,0 +1,1 @@
+{"timestamp": "2026-07-26T04:49:30.502882+00:00", "run_id": "EPIC2-VALIDATE-20260726-044925-4bd989c1", "stage_id": "P00_PREFLIGHT", "event_type": "STAGE_COMPLETE", "severity": "INFO", "status": "FAIL", "duration_seconds": 0.000627, "warnings": [], "blockers": ["MODULE_NOT_FOUND: src/hitradar_automation/orchestrator.py:run_preflight"]}

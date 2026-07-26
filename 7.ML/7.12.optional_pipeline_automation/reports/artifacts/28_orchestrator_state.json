@@ -1,0 +1,10 @@
+{
+  "class": "PipelineOrchestrator",
+  "config_mode": "validate",
+  "fail_fast": true,
+  "dry_run": false,
+  "stage_results_type": "dict",
+  "stage_checkpoints_type": "dict",
+  "no_return_gov_type": "NoReturnGovernance",
+  "has_permission_evaluator": true
+}

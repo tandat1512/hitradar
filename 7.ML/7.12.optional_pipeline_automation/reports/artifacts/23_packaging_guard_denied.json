@@ -1,0 +1,13 @@
+{
+  "guard": "PackagingGuard",
+  "config_mode": "package",
+  "allowed": false,
+  "reason": "BLOCKED: allow_packaging is false",
+  "evidence": {
+    "mode": "package",
+    "allow_packaging": false,
+    "locked_champion_valid": true,
+    "required_preprocessing_valid": true,
+    "packaging_executed": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "run_id": "EPIC2-VALIDATE-20260726-045222-7fdba039",
+  "stage_id": "P00_PREFLIGHT",
+  "status": "FAIL",
+  "started_at": "2026-07-26T04:52:26.704950+00:00",
+  "ended_at": "2026-07-26T04:52:26.707945+00:00",
+  "input_fingerprints": [],
+  "output_fingerprints": [],
+  "full_config_hash": "9ce2f583504d990b0f1ca635de136501bf1246b038c8fc2bef6e4f13518116be",
+  "scientific_config_hash": "cde26178e6956d358128b09ae075e33d2aaeb5a38622ccfa9db2fcb8cdab67ff",
+  "execution_config_hash": "0bc927c5dbcdc304db142b0be1bae3110cb69f08cd53deae709fff23809eb09d",
+  "git_commit": "5888dc7f5332beb7da01d6437d88f13d64f53bf1",
+  "working_tree_dirty": true,
+  "stage_implementation_hash": "",
+  "source_component_hash": "",
+  "environment_fingerprint": {
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "python_major": 3,
+    "python_minor": 13,
+    "platform": "win32",
+    "key_dependencies": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.3",
+      "sklearn": "1.9.0",
+      "xgboost": "3.3.0",
+      "shap": "0.52.0",
+      "joblib": "1.5.3",
+      "yaml": "6.0.3"
+    }
+  },
+  "warnings": [],
+  "blockers": [
+    "EXCEPTION: TypeError: 'module' object is not callable"
+  ],
+  "resume_eligible": false
+}

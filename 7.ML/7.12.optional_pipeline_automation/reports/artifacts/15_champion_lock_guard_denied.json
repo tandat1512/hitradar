@@ -1,0 +1,15 @@
+{
+  "guard": "ChampionLockGuard",
+  "config_mode": "train",
+  "allowed": false,
+  "reason": "BLOCKED: allow_champion_lock is false",
+  "evidence": {
+    "mode": "train",
+    "allow_champion_lock": false,
+    "candidate_registry_complete": true,
+    "validation_ranking_complete": true,
+    "selection_rule_defined": true,
+    "no_final_test_metric_in_selection": true,
+    "champion_lock_executed": false
+  }
+}

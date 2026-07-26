@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-25T16:54:09.195929+0000",
+  "open_item_count": 2,
+  "open_items": [
+    {
+      "item_id": "OI-552f4ecc",
+      "alert_ids": [],
+      "category": "SCHEMA",
+      "description": "Required field 'release_year' is missing from input batch",
+      "severity": "BLOCKER",
+      "blocking": true,
+      "owner": "TBD",
+      "recommended_review": "BLOCKING: resolve before continuing",
+      "retraining_candidate": false,
+      "status": "OPEN"
+    },
+    {
+      "item_id": "OI-b8d8af6b",
+      "category": "PERFORMANCE",
+      "description": "Phase 3 — labels not available. Performance metrics deferred to Phase 4.",
+      "severity": "INFO",
+      "blocking": false,
+      "owner": "Tuấn Anh",
+      "recommended_review": "Phase 4 when labeled batch is available",
+      "retraining_candidate": false,
+      "status": "DEFERRED"
+    }
+  ]
+}

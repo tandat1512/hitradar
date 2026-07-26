@@ -1,6 +1,8 @@
 {
-  "mode": "validate",
+  "mode": "train",
+  "run_id": "EPIC2-TRAIN-20260726-044640-3799c44d",
   "dry_run": true,
+  "fail_fast": true,
   "plan": [
     {
       "stage_id": "P00_PREFLIGHT",
@@ -9,16 +11,7 @@
       "blocked": false,
       "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        ".git",
-        "configs"
-      ],
-      "expected_outputs": [
-        "session.json",
-        "environment.json"
-      ],
-      "scientific_side_effects": false,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": false
     },
     {
       "stage_id": "P10_VALIDATE_DATASET",
@@ -27,209 +20,110 @@
       "blocked": false,
       "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        "7.3.data_intake/validation_results.json",
-        "7.3.data_intake/schema_snapshot.json"
-      ],
-      "expected_outputs": [
-        "dataset_validation_status.json"
-      ],
-      "scientific_side_effects": false,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": false
     },
     {
       "stage_id": "P20_TEMPORAL_SPLIT",
       "display_name": "Temporal Train/Validation/Test Split",
-      "will_run": false,
+      "will_run": true,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        "7.3.data_intake/*"
-      ],
-      "expected_outputs": [
-        "split_manifest.json",
-        "train_ids.parquet",
-        "validation_ids.parquet",
-        "test_ids.parquet"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P30_PREPROCESSING",
       "display_name": "Preprocessing Fit & Transform",
-      "will_run": false,
-      "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
-      "required_permissions": [],
-      "input_artifacts": [
-        "7.4.splits/*",
-        "7.5.preprocessing/preprocessing_input_contract.json"
+      "will_run": true,
+      "blocked": true,
+      "skip_reason": "BLOCKED: preprocessing fit requires --allow-preprocessing-fit",
+      "required_permissions": [
+        "allow_preprocessing_fit (dual consent)"
       ],
-      "expected_outputs": [
-        "preprocessor.joblib",
-        "scaler_statistics.json"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P40_FEATURE_ENGINEERING",
       "display_name": "Feature Engineering & Selection",
-      "will_run": false,
+      "will_run": true,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        "7.5.preprocessing/p22_*/preprocessor.joblib",
-        "7.6.feature_engineering/selected_feature_set.json"
-      ],
-      "expected_outputs": [
-        "feature_engineering_pipeline.joblib",
-        "feature_registry.json"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P50_TRAIN_CANDIDATES",
       "display_name": "Candidate Model Training & Hyperparameter Tuning",
-      "will_run": false,
-      "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
-      "required_permissions": [],
-      "input_artifacts": [
-        "7.6.feature_engineering/*",
-        "7.7.model_training/configs/*"
+      "will_run": true,
+      "blocked": true,
+      "skip_reason": "BLOCKED: training requires --allow-training and config flag",
+      "required_permissions": [
+        "allow_training (dual consent)"
       ],
-      "expected_outputs": [
-        "experiment_registry.json",
-        "champion_bundle.joblib"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "HIGH"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P60_VALIDATE_AND_SELECT_CHAMPION",
       "display_name": "Model Validation & Champion Selection",
-      "will_run": false,
+      "will_run": true,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        "7.7.model_training/registries/*",
-        "7.7.model_training/metrics/*"
-      ],
-      "expected_outputs": [
-        "champion_bundle.joblib",
-        "champion_selection_report.json"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P65_LOCK_CHAMPION",
       "display_name": "Champion Lock & Immutability Seal",
-      "will_run": false,
+      "will_run": true,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        "7.7.model_training/models/champion_bundle.joblib"
-      ],
-      "expected_outputs": [
-        "champion_lock.json"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P70_FINAL_TEST",
       "display_name": "Final Test Evaluation (Sealed Test Set)",
       "will_run": false,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": "FORBIDDEN in mode 'train'",
       "required_permissions": [],
-      "input_artifacts": [
-        "7.8.model_evaluation/manifests/champion_lock.json",
-        "7.4.splits/test_ids.parquet"
-      ],
-      "expected_outputs": [
-        "final_test_metrics.json",
-        "final_predictions.parquet"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "HIGH"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P80_EXPLAINABILITY",
       "display_name": "SHAP Explainability (Global & Local)",
       "will_run": false,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": "FORBIDDEN in mode 'train'",
       "required_permissions": [],
-      "input_artifacts": [
-        "7.7.model_training/models/champion_bundle.joblib"
-      ],
-      "expected_outputs": [
-        "shap_values_global.npy",
-        "shap_base_values.npy"
-      ],
-      "scientific_side_effects": true,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": true
     },
     {
       "stage_id": "P90_PACKAGING",
       "display_name": "Model Packaging & Clean-Environment Validation",
       "will_run": false,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": "FORBIDDEN in mode 'train'",
       "required_permissions": [],
-      "input_artifacts": [
-        "7.7.model_training/models/champion_bundle.joblib",
-        "7.9.explainability/services/*"
-      ],
-      "expected_outputs": [
-        "full_inference_pipeline.joblib",
-        "MODEL_PACKAGE_README.md"
-      ],
-      "scientific_side_effects": false,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": false
     },
     {
       "stage_id": "P95_DOCUMENTATION",
       "display_name": "Documentation Generation & DoD Review",
       "will_run": false,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": "FORBIDDEN in mode 'train'",
       "required_permissions": [],
-      "input_artifacts": [
-        "7.7.model_training/registries/*",
-        "7.8.model_evaluation/metrics/*"
-      ],
-      "expected_outputs": [
-        "MODEL_CARD.md",
-        "ML_REPORT.md"
-      ],
-      "scientific_side_effects": false,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": false
     },
     {
       "stage_id": "P98_MONITORING",
       "display_name": "Model Monitoring & Drift Detection",
       "will_run": false,
       "blocked": false,
-      "skip_reason": "FORBIDDEN in mode validate",
+      "skip_reason": "FORBIDDEN in mode 'train'",
       "required_permissions": [],
-      "input_artifacts": [
-        "7.10.model_packaging/package/*"
-      ],
-      "expected_outputs": [
-        "monitoring_report.json"
-      ],
-      "scientific_side_effects": false,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": false
     },
     {
       "stage_id": "P99_RUN_SUMMARY",
@@ -238,19 +132,40 @@
       "blocked": false,
       "skip_reason": null,
       "required_permissions": [],
-      "input_artifacts": [
-        "checkpoints/*"
-      ],
-      "expected_outputs": [
-        "run_summary.json"
-      ],
-      "scientific_side_effects": false,
-      "estimated_risk": "LOW"
+      "scientific_side_effects": false
     }
   ],
-  "scientific_side_effect_count": 0,
-  "training_in_plan": false,
-  "final_test_in_plan": false,
-  "shap_in_plan": false,
-  "generated_at": "2026-07-25T11:32:22.648908+00:00"
+  "scientific_side_effect_count": 4,
+  "config_fingerprints": {
+    "full_config_hash": "14800900b6da755183619a70445f6da59456e1a3b27f00ce5a4fd9b7862bf867",
+    "scientific_config_hash": "b903ce148c219bb2b50542067ab5e50538698a8aed053cb8b8652e01b512e57c",
+    "execution_config_hash": "92ecc834c4d89649205f5e19a7f9ff92fc01b20ff22e59712ea3488903782cb6",
+    "config_fields": [
+      "pipeline",
+      "permissions",
+      "execution",
+      "tracking",
+      "paths"
+    ],
+    "scientific_fields": [
+      "mode",
+      "fail_fast",
+      "resume",
+      "dry_run",
+      "allow_scientific_writes",
+      "allow_data_preparation",
+      "allow_preprocessing_fit",
+      "allow_training",
+      "allow_tuning",
+      "allow_champion_lock",
+      "allow_final_test",
+      "allow_shap",
+      "allow_packaging",
+      "allow_documentation_update",
+      "allow_monitoring",
+      "auto_retrain",
+      "auto_update_baseline"
+    ]
+  },
+  "generated_at": "2026-07-26T04:46:40.828764+00:00"
 }

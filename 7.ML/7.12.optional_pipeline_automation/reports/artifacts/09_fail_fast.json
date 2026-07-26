@@ -1,0 +1,8 @@
+{
+  "orchestrator_fail_fast_attr": true,
+  "fail_fast_behavior": {
+    "True": "Stop pipeline immediately when any stage fails",
+    "False": "Continue pipeline, mark failed stage and downstream as stale"
+  },
+  "protected_stages": "P00_PREFLIGHT and P10_VALIDATE_DATASET always run regardless of fail_fast"
+}

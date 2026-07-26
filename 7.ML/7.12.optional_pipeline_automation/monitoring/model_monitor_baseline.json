@@ -1,0 +1,231 @@
+{
+  "baseline_id": "BASELINE-001",
+  "baseline_version": "1.0.0",
+  "generated_at": "2026-07-24T10:00:00.000000+00:00",
+  "source": "Feature 2.7 approved artifacts + Feature 2.1/2.5 train distribution",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "package_version": "2.7.0",
+  "data_version": "1.0.0",
+  "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+  "data_split_source": "train",
+  "source_row_count": 586672,
+  "source_artifact_hashes": {
+    "target_profile": "from_F2.1_data_intake_target_profile.json",
+    "warning_profile": "from_F2.1_data_intake_warning_profile.json",
+    "input_schema": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+    "example_output": "4a0e968c07c1335aaac2094e46c0cae5ccba0471dcb5d2c0046786df7dad10d6",
+    "full_pipeline": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99"
+  },
+  "notes": "Baseline is IMPRECISE summary stats from Feature 2.1/2.5 artifacts. NOT computed from raw rows (not stored here). Immutable — must never be overwritten.",
+
+  "schema": {
+    "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+    "schema_version": "1.0.0",
+    "field_count": 18,
+    "required_fields": [
+      "duration_min", "explicit", "release_year", "release_month", "decade",
+      "release_precision", "danceability", "energy", "key", "loudness", "mode",
+      "speechiness", "acousticness", "instrumentalness", "liveness", "valence",
+      "tempo", "time_signature"
+    ],
+    "optional_fields": [],
+    "nullable_policy": "nullable",
+    "additional_properties_policy": "IGNORE_WITH_WARNING",
+    "schema_version": "1.0.0"
+  },
+
+  "numeric_features": {
+    "duration_min": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 3.5173, "std": null, "min": null, "max": null,
+      "quantiles": {"0.25": null, "0.5": null, "0.75": null},
+      "default_value": 3.5173,
+      "histogram_bin_edges": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 15.0, 20.0, 30.0, 60.0, 120.0],
+      "valid_finite_count": 586672,
+      "notes": "Default value from input_schema.json; precise distribution not stored in baseline"
+    },
+    "release_year": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": null, "std": null, "min": 1920, "max": 2024,
+      "quantiles": null,
+      "default_value": 1983.0
+    },
+    "danceability": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 0.558, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 0.558
+    },
+    "energy": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 0.484, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 0.484
+    },
+    "loudness": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": -10.655, "std": null, "min": -60.0, "max": 0.0,
+      "quantiles": null,
+      "default_value": -10.655
+    },
+    "speechiness": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 0.0429, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 0.0429
+    },
+    "acousticness": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 0.552, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 0.552
+    },
+    "instrumentalness": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 6.22e-05, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 6.22e-05
+    },
+    "liveness": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 0.143, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 0.143
+    },
+    "valence": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": 0.582, "std": null, "min": 0.0, "max": 1.0,
+      "quantiles": null,
+      "default_value": 0.582
+    },
+    "tempo": {
+      "count": 586664, "missing_count": 328, "missing_rate": 0.000559,
+      "mean": 114.995, "std": null, "min": 0.0, "max": 300.0,
+      "quantiles": null,
+      "default_value": 114.995
+    },
+    "release_month": {
+      "count": 450183, "missing_count": 136489, "missing_rate": 0.2326,
+      "mean": 4.0, "std": null, "min": 1, "max": 12,
+      "quantiles": null,
+      "default_value": 4.0
+    },
+    "decade": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": null, "std": null, "min": 1920, "max": 2020,
+      "quantiles": null,
+      "default_value": 1980.0
+    },
+    "year_in_decade": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "mean": null, "std": null, "min": 0, "max": 9,
+      "quantiles": null
+    }
+  },
+
+  "categorical_features": {
+    "release_precision": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "categories": ["day", "month", "year"],
+      "category_frequencies": {
+        "day": null, "month": null, "year": null
+      },
+      "rare_category_threshold": 0.01,
+      "rare_categories": []
+    },
+    "key": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "categories": ["0","1","2","3","4","5","6","7","8","9","10","11"],
+      "category_frequencies": {},
+      "rare_category_threshold": 0.01,
+      "rare_categories": []
+    },
+    "mode": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "categories": ["0","1"],
+      "category_frequencies": {},
+      "rare_category_threshold": 0.01,
+      "rare_categories": []
+    },
+    "time_signature": {
+      "count": 586335, "missing_count": 337, "missing_rate": 0.000574,
+      "categories": ["1.0","3.0","4.0","5.0"],
+      "category_frequencies": {},
+      "rare_category_threshold": 0.01,
+      "rare_categories": []
+    },
+    "explicit": {
+      "count": 586672, "missing_count": 0, "missing_rate": 0.0,
+      "categories": ["True","False"],
+      "category_frequencies": {},
+      "rare_category_threshold": 0.01,
+      "rare_categories": []
+    }
+  },
+
+  "prediction": {
+    "model_version": "1.0.0",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "count": null,
+    "mean": 27.5701,
+    "std": 18.3706,
+    "min": 0.0,
+    "max": 100.0,
+    "quantiles": {
+      "0.01": 0.0, "0.05": 0.0, "0.1": 2.0,
+      "0.25": 13.0, "0.5": 27.0, "0.75": 41.0,
+      "0.9": 52.0, "0.95": 59.0, "0.99": 71.0
+    },
+    "buckets": {
+      "0-20": {"count": 219988, "ratio": 0.375},
+      "21-40": {"count": 219003, "ratio": 0.3733},
+      "41-60": {"count": 122813, "ratio": 0.2093},
+      "61-80": {"count": 24132, "ratio": 0.0411},
+      "81-100": {"count": 736, "ratio": 0.0013}
+    },
+    "clipped_rate": null,
+    "near_zero_rate": 0.0762,
+    "near_100_rate": null,
+    "notes": "Distribution from target_profile (train split, n=586672). Prediction distribution assumed similar to train target."
+  },
+
+  "artifact_hashes": {
+    "best_model": "4b5859268e7ea024daacc1d27a8f59f5c45480a29d3598c7304a4e3cb3e3c1fd",
+    "feature_engineering_pipeline": "9a8b19c0bd1a5b143a3fb9de4050310957d3f63119195097d25ac6b720cef334",
+    "model_preprocessing_pipeline": "68854f94266920eeb6167652fad50715cffdcf1d5a727d8f107c8c17503d0f8d",
+    "full_inference_pipeline": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "input_schema": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+    "output_schema": "3d77b33b1d23c806358a872d1481262e68b42b474f5218273e50ab5a69fb17e8",
+    "selected_features": "8d86f9c62e8fb321c04580eb2cfe22e80a7a439e3d557de7c5a04f73a817e5e7",
+    "feature_names": "3044097537901e2218afe542b9fd2e7dd09af55fbd9fea7509a229a68b0a2bc1",
+    "example_input": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+    "example_output": "4a0e968c07c1335aaac2094e46c0cae5ccba0471dcb5d2c0046786df7dad10d6",
+    "model_version": "5d639f3371e2064d7f0287c4b97993f47e1d25a2695686025cd752a3b1c07c7c",
+    "data_version": "a0951b81bfd37e30b3357512dfe0389967cbc543f93a5b29e2ee933d1112dff8",
+    "package_version": "f2239b341e6084fce0b514074fa938e02121ea1e54313c3e9ef9472fe9ae4fe7",
+    "requirements_runtime": "2e039d818b34472df2cf8b056edf2d1d98d1164581a3f3127839eb2ac87c2340",
+    "requirements_explainability": "555ae51570d597bef487036b59f9334cec21a1386391d7c6574bc8a65a5ba166",
+    "requirements_lock": "7bfb26382a88e42f8abde4382672224541d3a1beb0f45efb8d8fad8146f0fd28",
+    "feature_mapping": "cca788e6303027333f5d167316c45f4188705d00a2c24aed07e8892946518646",
+    "inference_pipeline_module": "34ef2ebe49bf82923806e926115c2c86eb186735dd637f8cbe3b624a18dd8ffa"
+  },
+
+  "psi_bins": {
+    "description": "Fixed bin edges for PSI computation — from train distribution",
+    "numeric_features": {
+      "duration_min": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 15.0, 20.0, 30.0, 60.0, 120.0],
+      "danceability": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+      "energy": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+      "loudness": [-60.0, -50.0, -40.0, -30.0, -20.0, -15.0, -10.0, -5.0, 0.0],
+      "speechiness": [0.0, 0.01, 0.03, 0.05, 0.1, 0.2, 0.3, 0.5, 1.0],
+      "acousticness": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+      "instrumentalness": [0.0, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, 0.7, 0.9, 1.0],
+      "liveness": [0.0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 0.7, 1.0],
+      "valence": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+      "tempo": [0.0, 50.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 200.0, 250.0, 300.0],
+      "release_year": [1920, 1950, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2024]
+    },
+    "prediction": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
+  }
+}

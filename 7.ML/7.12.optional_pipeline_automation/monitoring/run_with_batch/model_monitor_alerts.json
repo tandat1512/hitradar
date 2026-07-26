@@ -1,0 +1,366 @@
+{
+  "generated_at": "2026-07-25T16:53:33.350949+0000",
+  "alert_count": 18,
+  "alerts": [
+    {
+      "alert_id": "ALERT-be8dc1fc",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "duration_min",
+        "warnings": [
+          "mean_delta=-0.2069 > 0.1",
+          "std_ratio=3.191 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-b41b67be",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "release_year",
+        "warnings": [
+          "std_ratio=30.039 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-42bbcf34",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "danceability",
+        "warnings": [
+          "std_ratio=0.138 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-3b8d3579",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "energy",
+        "warnings": [
+          "std_ratio=0.145 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-552af63b",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "loudness",
+        "warnings": [
+          "std_ratio=4.794 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-20c27856",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "speechiness",
+        "warnings": [
+          "std_ratio=0.034 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-436ece7f",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "acousticness",
+        "warnings": [
+          "std_ratio=0.156 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-8cd81d34",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "instrumentalness",
+        "warnings": [
+          "std_ratio=0.000 outside [0.8,1.25]",
+          "PSI=0.3275 > 0.2"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-cb20e13e",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "liveness",
+        "warnings": [
+          "std_ratio=0.114 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-ce42aaf0",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "valence",
+        "warnings": [
+          "std_ratio=0.152 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-8345204a",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "tempo",
+        "warnings": [
+          "mean_delta=-0.4551 > 0.1",
+          "std_ratio=19.998 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-066e1b18",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "release_month",
+        "warnings": [
+          "missing_rate_delta=-0.2326 > 0.05",
+          "mean_delta=2.1700 > 0.1",
+          "std_ratio=3.515 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-260db313",
+      "category": "FEATURE_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "decade",
+        "warnings": [
+          "std_ratio=30.980 outside [0.8,1.25]"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-5efb0168",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "key",
+        "warnings": [
+          "unseen_categories=['6', '0', '3', '10', '5', '1', '4', '8', '11', '2', '7', '9'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-a0f53f61",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "mode",
+        "warnings": [
+          "unseen_categories=['1', '0'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-3347e143",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "time_signature",
+        "warnings": [
+          "unseen_categories=['4', '3'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-f5e16ff0",
+      "category": "CAT_DRIFT",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {
+        "feature": "explicit",
+        "warnings": [
+          "unseen_categories=['False', 'True'], rate=1.0000"
+        ]
+      },
+      "message": "",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    },
+    {
+      "alert_id": "ALERT-04fe0fdc",
+      "category": "PREDICTION",
+      "metric": "unknown",
+      "feature": null,
+      "expected": null,
+      "actual": null,
+      "threshold": null,
+      "threshold_source": "PROJECT_CONFIG",
+      "severity": "WARNING",
+      "evidence": {},
+      "message": "Prediction generation skipped — missing runtime dependency: transformers",
+      "recommended_action": "Monitor — no immediate action required",
+      "auto_action_executed": false
+    }
+  ]
+}

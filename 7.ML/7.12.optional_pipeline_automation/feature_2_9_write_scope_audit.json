@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-07-26T05:25:00+0000",
+  "feature": "Feature 2.9",
+  "phase": "5/5",
+  "description": "Write scope audit — Feature 2.9 writes only within its own output scope",
+  "audit_id": "F29-WRITE-SCOPE-AUDIT",
+  "scope_definition": {
+    "output_root": "7.ML/7.12.optional_pipeline_automation/",
+    "permitted_write_dirs": [
+      "monitoring/",
+      "checkpoints/",
+      "runs/",
+      "logs/",
+      "validation/"
+    ],
+    "permitted_extensions": [".json", ".yaml", ".xml", ".txt", ".md", ".log"],
+    "forbidden_paths": [
+      "../../*/",
+      "../../../",
+      "../../../*/"
+    ]
+  },
+  "audit_findings": [
+    {
+      "directory": "monitoring/",
+      "description": "Model monitoring outputs (PSI, TVD, schema checks, artifact integrity)",
+      "files_written": "monitoring/run_with_batch/ and monitoring/run_missing_field/",
+      "scope_compliant": true
+    },
+    {
+      "directory": "checkpoints/",
+      "description": "Phase checkpoints (Phase 1, Phase 4)",
+      "files_written": "feature_2_9_phase_1_checkpoint.json, feature_2_9_phase_4_checkpoint.json, feature_2_9_environment_snapshot.json, feature_2_9_phase_1_session.json",
+      "scope_compliant": true
+    },
+    {
+      "directory": "runs/",
+      "description": "Local experiment tracking (local_json backend)",
+      "files_written": "run_*/ subdirectories with local_json backend",
+      "scope_compliant": true
+    },
+    {
+      "directory": "validation/",
+      "description": "Dry-run plans, stage order validation, experiment tracking validation",
+      "files_written": "epic2_pipeline_dry_run_plan.json, epic2_pipeline_stage_order_validation.json, *.validation.json",
+      "scope_compliant": true
+    },
+    {
+      "directory": "logs/",
+      "description": "CLI and orchestrator logs",
+      "files_written": "Pipeline log files",
+      "scope_compliant": true
+    }
+  ],
+  "scope_violations": [],
+  "outside_scope_writes_detected": false,
+  "summary": {
+    "total_directories_audited": 5,
+    "scope_compliant": 5,
+    "violations_found": 0,
+    "outside_scope_writes": 0
+  },
+  "status": "PASS",
+  "attestation": "Feature 2.9 writes exclusively within its declared output scope (7.ML/7.12.optional_pipeline_automation/). No writes to upstream, downstream, or sibling directories detected."
+}

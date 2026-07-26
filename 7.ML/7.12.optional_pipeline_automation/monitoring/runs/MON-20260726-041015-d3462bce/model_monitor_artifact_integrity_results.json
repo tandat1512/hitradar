@@ -1,0 +1,228 @@
+{
+  "artifact_checks": [
+    {
+      "artifact": "model_version",
+      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\model_version.json",
+      "status": "EXISTS",
+      "severity": "OK"
+    },
+    {
+      "artifact": "model_version_content",
+      "detail": {
+        "model_version": "1.0.0",
+        "version_assignment_reason": "First packaged release of champion EXP24-XGB-FINAL-001",
+        "model_id": "EXP24-XGB-FINAL-001",
+        "model_family": "XGBoost",
+        "source_feature": "Feature 2.4 (Model Training)",
+        "champion_artifact_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+        "feature_set": "FS23-SELECTED"
+      },
+      "status": "READ_OK",
+      "severity": "OK"
+    },
+    {
+      "artifact": "data_version",
+      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\data_version.json",
+      "status": "EXISTS",
+      "severity": "OK"
+    },
+    {
+      "artifact": "data_version_content",
+      "detail": {
+        "data_version": "1.0.0",
+        "version_assignment_reason": "First packaged release based on ml_ready_dataset.parquet",
+        "processed_dataset_id": "ml_ready_dataset",
+        "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+        "source_manifest_hash": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770"
+      },
+      "status": "READ_OK",
+      "severity": "OK"
+    },
+    {
+      "artifact": "package_version",
+      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\package_version.json",
+      "status": "EXISTS",
+      "severity": "OK"
+    },
+    {
+      "artifact": "package_version_content",
+      "detail": {
+        "package_version": "2.7.0",
+        "version_assignment_reason": "Feature 2.7 initial packaging release",
+        "includes": [
+          "model",
+          "preprocessing",
+          "inference_pipeline",
+          "schemas",
+          "examples",
+          "metadata"
+        ],
+        "created_at": "2026-07-24T10:03:44.215866+00:00"
+      },
+      "status": "READ_OK",
+      "severity": "OK"
+    },
+    {
+      "artifact": "input_schema",
+      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\input_schema.json",
+      "status": "EXISTS",
+      "severity": "OK"
+    },
+    {
+      "artifact": "output_schema",
+      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\output_schema.json",
+      "status": "EXISTS",
+      "severity": "OK"
+    },
+    {
+      "artifact": "full_inference_pipeline",
+      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\pipeline\\full_inference_pipeline.joblib",
+      "status": "EXISTS",
+      "severity": "OK"
+    },
+    {
+      "artifact": "full_inference_pipeline_hash",
+      "expected_hash": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "actual_hash": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "pipeline_load",
+      "status": "SKIPPED",
+      "severity": "INFO",
+      "reason": "Runtime dependency not available: inference_pipeline",
+      "detail": "SHA256 hash verified; load test deferred to full runtime environment"
+    },
+    {
+      "artifact": "best_model",
+      "expected_hash": "4b5859268e7ea024...",
+      "actual_hash": "4b5859268e7ea024...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "feature_engineering_pipeline",
+      "expected_hash": "9a8b19c0bd1a5b14...",
+      "actual_hash": "9a8b19c0bd1a5b14...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "model_preprocessing_pipeline",
+      "expected_hash": "68854f94266920ee...",
+      "actual_hash": "68854f94266920ee...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "full_inference_pipeline",
+      "expected_hash": "7ff4b1183938e57b...",
+      "actual_hash": "7ff4b1183938e57b...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "input_schema",
+      "expected_hash": "91d1d8070df43716...",
+      "actual_hash": "91d1d8070df43716...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "output_schema",
+      "expected_hash": "3d77b33b1d23c806...",
+      "actual_hash": "3d77b33b1d23c806...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "selected_features",
+      "expected_hash": "8d86f9c62e8fb321...",
+      "actual_hash": "8d86f9c62e8fb321...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "feature_names",
+      "expected_hash": "3044097537901e22...",
+      "actual_hash": "3044097537901e22...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "feature_mapping",
+      "expected_hash": "cca788e630302733...",
+      "actual_hash": "cca788e630302733...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "inference_pipeline_module",
+      "expected_hash": "34ef2ebe49bf8292...",
+      "actual_hash": "34ef2ebe49bf8292...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "example_input",
+      "expected_hash": "19847ab49e692374...",
+      "actual_hash": "19847ab49e692374...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "example_output",
+      "expected_hash": "4a0e968c07c1335a...",
+      "actual_hash": "4a0e968c07c1335a...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "model_version",
+      "expected_hash": "5d639f3371e2064d...",
+      "actual_hash": "5d639f3371e2064d...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "data_version",
+      "expected_hash": "a0951b81bfd37e30...",
+      "actual_hash": "a0951b81bfd37e30...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "package_version",
+      "expected_hash": "f2239b341e6084fc...",
+      "actual_hash": "f2239b341e6084fc...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "requirements_runtime",
+      "expected_hash": "2e039d818b34472d...",
+      "actual_hash": "2e039d818b34472d...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "requirements_explainability",
+      "expected_hash": "555ae51570d597be...",
+      "actual_hash": "555ae51570d597be...",
+      "match": true,
+      "severity": "OK"
+    },
+    {
+      "artifact": "requirements_lock",
+      "expected_hash": "5de72857d34c6440...",
+      "actual_hash": "5de72857d34c6440...",
+      "match": true,
+      "severity": "OK"
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "overall_status": "OK",
+  "fail_on_mismatch": true
+}

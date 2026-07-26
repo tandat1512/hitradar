@@ -1,0 +1,12 @@
+{
+  "initial_state": {
+    "can_proceed_to_selection": true,
+    "reason": null
+  },
+  "after_final_test": {
+    "can_proceed_to_selection": false,
+    "reason": "NO_RETURN: final_test has already passed in this run. Cannot re-enter P50/P60. New run required for model change."
+  },
+  "transition": "can_proceed_to_selection() -> mark_final_test_passed(run_id) -> can_proceed_to_selection()",
+  "phase2_note": "Phase 2 has no real final test; NoReturnGovernance is a scaffold"
+}

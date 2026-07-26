@@ -1,0 +1,13 @@
+{
+  "guard": "SHAPGuard",
+  "config_mode": "full-retrain",
+  "allowed": true,
+  "reason": null,
+  "evidence": {
+    "mode": "full-retrain",
+    "allow_shap": true,
+    "locked_champion_valid": true,
+    "model_version_fixed": true,
+    "shap_executed": false
+  }
+}

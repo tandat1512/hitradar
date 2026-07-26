@@ -1,0 +1,7 @@
+{
+  "pipeline_loaded": false,
+  "predictions_generated": false,
+  "warnings": [],
+  "error": "Missing runtime dependency: transformers",
+  "note": "Prediction drift monitoring requires full runtime dependencies. SHA256 and schema checks passed."
+}

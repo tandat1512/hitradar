@@ -1,0 +1,201 @@
+{
+  "features": [
+    {
+      "feature": "release_precision",
+      "type": "categorical",
+      "status": "PASS",
+      "total_count": 200,
+      "current_categories": [
+        "day",
+        "month",
+        "year"
+      ],
+      "baseline_categories": [
+        "day",
+        "month",
+        "year"
+      ],
+      "unseen_categories": [],
+      "unseen_count": 0,
+      "unseen_rate": 0.0,
+      "missing_rate_delta": 0.0,
+      "tvd": {
+        "tvd": null,
+        "status": "BASELINE_UNAVAILABLE",
+        "unseen_categories": [],
+        "unseen_count": 0,
+        "unseen_rate": null,
+        "note": "Baseline category frequencies are null/unavailable — TVD cannot be computed"
+      },
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "feature": "key",
+      "type": "categorical",
+      "status": "WARNING",
+      "total_count": 200,
+      "current_categories": [
+        "0",
+        "1",
+        "10",
+        "11",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "baseline_categories": [
+        "0",
+        "1",
+        "10",
+        "11",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "unseen_categories": [
+        "6",
+        "0",
+        "3",
+        "10",
+        "5",
+        "1",
+        "4",
+        "8",
+        "11",
+        "2",
+        "7",
+        "9"
+      ],
+      "unseen_count": 200,
+      "unseen_rate": 1.0,
+      "missing_rate_delta": 0.0,
+      "tvd": {
+        "tvd": null,
+        "status": "BASELINE_UNAVAILABLE",
+        "unseen_categories": [],
+        "unseen_count": 0,
+        "unseen_rate": null,
+        "note": "Baseline category frequencies are null/unavailable — TVD cannot be computed"
+      },
+      "warnings": [
+        "unseen_categories=['6', '0', '3', '10', '5', '1', '4', '8', '11', '2', '7', '9'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "feature": "mode",
+      "type": "categorical",
+      "status": "WARNING",
+      "total_count": 200,
+      "current_categories": [
+        "0",
+        "1"
+      ],
+      "baseline_categories": [
+        "0",
+        "1"
+      ],
+      "unseen_categories": [
+        "1",
+        "0"
+      ],
+      "unseen_count": 200,
+      "unseen_rate": 1.0,
+      "missing_rate_delta": 0.0,
+      "tvd": {
+        "tvd": null,
+        "status": "BASELINE_UNAVAILABLE",
+        "unseen_categories": [],
+        "unseen_count": 0,
+        "unseen_rate": null,
+        "note": "Baseline category frequencies are null/unavailable — TVD cannot be computed"
+      },
+      "warnings": [
+        "unseen_categories=['1', '0'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "feature": "time_signature",
+      "type": "categorical",
+      "status": "WARNING",
+      "total_count": 200,
+      "current_categories": [
+        "3",
+        "4"
+      ],
+      "baseline_categories": [
+        "1.0",
+        "3.0",
+        "4.0",
+        "5.0"
+      ],
+      "unseen_categories": [
+        "4",
+        "3"
+      ],
+      "unseen_count": 200,
+      "unseen_rate": 1.0,
+      "missing_rate_delta": -0.000574,
+      "tvd": {
+        "tvd": null,
+        "status": "BASELINE_UNAVAILABLE",
+        "unseen_categories": [],
+        "unseen_count": 0,
+        "unseen_rate": null,
+        "note": "Baseline category frequencies are null/unavailable — TVD cannot be computed"
+      },
+      "warnings": [
+        "unseen_categories=['4', '3'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    },
+    {
+      "feature": "explicit",
+      "type": "categorical",
+      "status": "WARNING",
+      "total_count": 200,
+      "current_categories": [
+        "False",
+        "True"
+      ],
+      "baseline_categories": [
+        "False",
+        "True"
+      ],
+      "unseen_categories": [
+        "False",
+        "True"
+      ],
+      "unseen_count": 200,
+      "unseen_rate": 1.0,
+      "missing_rate_delta": 0.0,
+      "tvd": {
+        "tvd": null,
+        "status": "BASELINE_UNAVAILABLE",
+        "unseen_categories": [],
+        "unseen_count": 0,
+        "unseen_rate": null,
+        "note": "Baseline category frequencies are null/unavailable — TVD cannot be computed"
+      },
+      "warnings": [
+        "unseen_categories=['False', 'True'], rate=1.0000"
+      ],
+      "severity": "WARNING"
+    }
+  ],
+  "critical_count": 0,
+  "warning_count": 4,
+  "overall_status": "WARNING"
+}

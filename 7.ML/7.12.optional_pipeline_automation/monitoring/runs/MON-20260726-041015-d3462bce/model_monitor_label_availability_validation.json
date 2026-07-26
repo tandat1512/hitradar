@@ -1,0 +1,8 @@
+{
+  "labels_present": false,
+  "labels_authorized": false,
+  "performance_computed": false,
+  "performance_status": "LABELS_NOT_AVAILABLE",
+  "status": "OK",
+  "message": "Phase 3: performance metrics deferred to Phase 4 when labels are available"
+}

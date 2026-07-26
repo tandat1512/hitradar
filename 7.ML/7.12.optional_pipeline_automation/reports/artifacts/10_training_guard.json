@@ -1,0 +1,14 @@
+{
+  "guard": "TrainingGuard",
+  "config_mode": "train",
+  "allowed": true,
+  "reason": null,
+  "evidence": {
+    "mode": "train",
+    "allow_training": true,
+    "train_split_valid": true,
+    "feature_artifacts_valid": true,
+    "final_test_labels_not_in_context": true,
+    "training_executed": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "acquired": true,
+  "run_id": "EPIC2-VALIDATE-20260101-000000-00000000",
+  "run_lock_object": {
+    "run_id": "EPIC2-VALIDATE-20260101-000000-00000000",
+    "pid": 20244,
+    "hostname": "TuanAnh",
+    "started_at": "2026-07-25T12:36:57.016155+00:00",
+    "lock_file_path": "7.ML\\7.12.optional_pipeline_automation\\reports\\artifacts\\EPIC2-VALIDATE-20260101-000000-00000000.lock.json"
+  },
+  "note": "RunLockManager prevents concurrent pipeline runs"
+}

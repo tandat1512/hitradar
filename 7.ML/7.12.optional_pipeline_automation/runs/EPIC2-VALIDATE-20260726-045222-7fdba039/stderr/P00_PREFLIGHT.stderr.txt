@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "E:\Dự án 1 hitrada\hitradar\7.ML\7.12.optional_pipeline_automation\src\hitradar_automation\stage_adapters.py", line 77, in execute
+    output = callable_ref(ctx)
+TypeError: 'module' object is not callable

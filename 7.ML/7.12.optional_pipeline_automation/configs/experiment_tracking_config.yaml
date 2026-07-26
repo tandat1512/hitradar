@@ -1,0 +1,12 @@
+tracking:
+  backend: local_json
+  local_root: "E:\\D\u1EF1 \xE1n 1 hitrada\\hitradar\\7.ML\\7.12.optional_pipeline_automation\\\
+    tracking"
+  mlflow_enabled: false
+  mlflow_required: false
+  mlflow_tracking_uri: null
+  mlflow_experiment_name: hitradar-epic2
+  log_artifact_files: true
+  copy_large_artifacts: false
+  maximum_copy_bytes: 10485760
+  redact_environment_keys: true

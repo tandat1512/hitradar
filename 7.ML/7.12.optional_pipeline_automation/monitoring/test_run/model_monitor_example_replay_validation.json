@@ -1,0 +1,6 @@
+{
+  "status": "PREDICTION_ERROR",
+  "overall_status": "WARNING",
+  "message": "Example replay failed: No module named 'inference_pipeline'",
+  "error": "No module named 'inference_pipeline'"
+}

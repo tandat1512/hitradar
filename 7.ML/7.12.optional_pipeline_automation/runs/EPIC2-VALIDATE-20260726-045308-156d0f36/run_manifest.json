@@ -1,0 +1,32 @@
+{
+  "run_id": "EPIC2-VALIDATE-20260726-045308-156d0f36",
+  "mode": "validate",
+  "dry_run": false,
+  "resume_requested": false,
+  "repository_root": "",
+  "git_commit": "",
+  "working_tree_dirty": false,
+  "config_path": null,
+  "full_config_hash": "",
+  "scientific_config_hash": "",
+  "started_at": "",
+  "ended_at": "",
+  "duration_seconds": 0.0,
+  "stage_total": 14,
+  "stage_passed": 1,
+  "stage_warning": 0,
+  "stage_failed": 1,
+  "stage_skipped": 11,
+  "stage_stale": 0,
+  "training_executed": false,
+  "tuning_executed": false,
+  "preprocessing_fit_executed": false,
+  "final_test_executed": false,
+  "shap_executed": false,
+  "packaging_executed": false,
+  "warnings": [],
+  "blockers": [
+    "SCRIPT_NOT_FOUND: None"
+  ],
+  "status": "FAIL"
+}

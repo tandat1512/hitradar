@@ -1,0 +1,42 @@
+{
+  "function": "get_downstream_stages(stage_id, stage_registry)",
+  "logic": "Find all stages whose dependencies[] include stage_id",
+  "examples": {
+    "P00_PREFLIGHT": [
+      "P10_VALIDATE_DATASET",
+      "P98_MONITORING"
+    ],
+    "P10_VALIDATE_DATASET": [
+      "P20_TEMPORAL_SPLIT"
+    ],
+    "P30_PREPROCESSING": [
+      "P40_FEATURE_ENGINEERING"
+    ],
+    "P50_TRAIN_CANDIDATES": [
+      "P60_VALIDATE_AND_SELECT_CHAMPION"
+    ],
+    "P65_LOCK_CHAMPION": [
+      "P70_FINAL_TEST",
+      "P80_EXPLAINABILITY",
+      "P90_PACKAGING",
+      "P95_DOCUMENTATION"
+    ],
+    "P98_MONITORING": []
+  },
+  "registry_stages": [
+    "P00_PREFLIGHT",
+    "P10_VALIDATE_DATASET",
+    "P20_TEMPORAL_SPLIT",
+    "P30_PREPROCESSING",
+    "P40_FEATURE_ENGINEERING",
+    "P50_TRAIN_CANDIDATES",
+    "P60_VALIDATE_AND_SELECT_CHAMPION",
+    "P65_LOCK_CHAMPION",
+    "P70_FINAL_TEST",
+    "P80_EXPLAINABILITY",
+    "P90_PACKAGING",
+    "P95_DOCUMENTATION",
+    "P98_MONITORING",
+    "P99_RUN_SUMMARY"
+  ]
+}

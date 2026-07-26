@@ -1,0 +1,134 @@
+{
+  "rows_received": 200,
+  "rows_valid": 200,
+  "rows_invalid": 0,
+  "rows_used_for_prediction": 200,
+  "duplicate_rows_count": 0,
+  "duplicate_rows_rate": 0.0,
+  "inf_count": 0,
+  "field_checks": [
+    {
+      "field": "duration_min",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 196
+    },
+    {
+      "field": "explicit",
+      "dtype": "bool",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 2
+    },
+    {
+      "field": "release_month",
+      "dtype": "int64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 12
+    },
+    {
+      "field": "decade",
+      "dtype": "int64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 11
+    },
+    {
+      "field": "release_precision",
+      "dtype": "str",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 3
+    },
+    {
+      "field": "danceability",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "energy",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "loudness",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "speechiness",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "acousticness",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "instrumentalness",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "liveness",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "valence",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "tempo",
+      "dtype": "float64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 200
+    },
+    {
+      "field": "key",
+      "dtype": "int64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 12
+    },
+    {
+      "field": "mode",
+      "dtype": "int64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 2
+    },
+    {
+      "field": "time_signature",
+      "dtype": "int64",
+      "nan_count": 0,
+      "nan_rate": 0.0,
+      "unique_count": 2
+    }
+  ],
+  "range_violations": [],
+  "constant_columns": [],
+  "checks": [],
+  "overall_status": "OK"
+}

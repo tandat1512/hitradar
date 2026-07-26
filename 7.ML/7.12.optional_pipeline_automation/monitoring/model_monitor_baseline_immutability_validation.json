@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-07-25T13:00:00.000000+00:00",
+  "validation_type": "BASELINE_IMMUTABILITY_CHECK",
+  "baseline_id": "BASELINE-001",
+  "baseline_version": "1.0.0",
+  "baseline_file_path": "monitoring/model_monitor_baseline.json",
+  "pre_monitoring_hash": null,
+  "post_monitoring_hash": null,
+  "hashes_match": null,
+  "result": "PENDING",
+  "notes": "Hashes computed and compared by model_monitor.py at runtime. This file is initialized with nulls and populated during each monitoring run."
+}

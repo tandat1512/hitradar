@@ -1,0 +1,122 @@
+# ============================================================
+# model_monitor_config.yaml
+# Feature 2.9 Phase 3/5 — Model Monitoring Core
+# HitRadar Pro — EXP24-XGB-FINAL-001 (v1.0.0)
+# Owner: Tuấn Anh
+# ============================================================
+# Source policy: PROJECT_CONFIG
+# Baseline source: Feature 2.7 approved artifacts + Feature 2.1/2.5 distributions
+# Governance: NO auto-retrain, NO auto-baseline-update, NO champion change
+# ============================================================
+
+monitoring:
+  schema: true
+  data_quality: true
+  feature_drift: true
+  prediction_drift: true
+  performance: false          # Phase 3: labels not available
+  artifact_integrity: true
+
+governance:
+  auto_retrain: false
+  auto_update_baseline: false
+  fail_on_artifact_hash_mismatch: true
+  require_explicit_labels_flag: true
+  champion_changed: false
+
+sample_requirements:
+  minimum_batch_rows: 30
+  minimum_drift_rows: 100
+  minimum_category_count: 5
+
+thresholds:
+  source_policy: PROJECT_CONFIG
+
+  schema:
+    unexpected_columns_severity: WARNING
+
+  data_quality:
+    inf_severity: BLOCKER
+    nan_rate_threshold: 0.05
+    nan_rate_severity: WARNING
+    duplicate_rows_severity: WARNING
+    empty_batch_severity: BLOCKER
+    small_batch_severity: WARNING
+
+  feature_drift:
+    numeric:
+      mean_delta_severity: WARNING
+      mean_delta_threshold: 0.1
+      mean_delta_source: "train_distribution_F2.1"
+      mean_delta_source_type: BASELINE_DERIVED
+      median_delta_severity: WARNING
+      median_delta_threshold: 0.1
+      median_delta_source: "train_distribution_F2.1"
+      median_delta_source_type: BASELINE_DERIVED
+      std_ratio_severity: WARNING
+      std_ratio_low_threshold: 0.8
+      std_ratio_high_threshold: 1.25
+      std_ratio_source: "train_distribution_F2.1"
+      std_ratio_source_type: BASELINE_DERIVED
+      missing_rate_delta_severity: WARNING
+      missing_rate_delta_threshold: 0.05
+      missing_rate_delta_source: "train_distribution_F2.1"
+      missing_rate_delta_source_type: BASELINE_DERIVED
+      psi_severity: WARNING
+      psi_threshold: 0.2
+      psi_source: "Feature 2.5 prediction_distribution"
+      psi_source_type: BASELINE_DERIVED
+      psi_provisional: false
+      psi_notes: "Standard PSI thresholds: <0.1=little, 0.1-0.2=moderate, >0.2=significant"
+    categorical:
+      unseen_category_severity: WARNING
+      unseen_category_threshold: 0.05
+      unseen_category_source: "train_categories_F2.1"
+      unseen_category_source_type: BASELINE_DERIVED
+      missing_rate_delta_severity: WARNING
+      missing_rate_delta_threshold: 0.05
+      missing_rate_delta_source: "train_categories_F2.1"
+      missing_rate_delta_source_type: BASELINE_DERIVED
+      tvd_severity: WARNING
+      tvd_threshold: 0.1
+      tvd_source: "train_categories_F2.1"
+      tvd_source_type: BASELINE_DERIVED
+
+  prediction_drift:
+    mean_delta_severity: WARNING
+    mean_delta_threshold: 2.0
+    mean_delta_source: "F2.7_example_output"
+    mean_delta_source_type: BASELINE_DERIVED
+    std_ratio_severity: WARNING
+    std_ratio_low_threshold: 0.8
+    std_ratio_high_threshold: 1.25
+    std_ratio_source: "F2.7_example_output"
+    std_ratio_source_type: BASELINE_DERIVED
+    clipped_rate_delta_severity: WARNING
+    clipped_rate_delta_threshold: 0.05
+    clipped_rate_delta_source: "F2.5_prediction_distribution"
+    clipped_rate_delta_source_type: BASELINE_DERIVED
+    near_zero_rate_delta_severity: WARNING
+    near_zero_rate_delta_threshold: 0.02
+    near_zero_rate_delta_source: "F2.5_prediction_distribution"
+    near_zero_rate_delta_source_type: BASELINE_DERIVED
+    psi_severity: WARNING
+    psi_threshold: 0.2
+    psi_source: "F2.5_prediction_distribution"
+    psi_source_type: BASELINE_DERIVED
+    psi_provisional: false
+    psi_notes: "PSI threshold for prediction drift"
+
+# Paths — resolved at runtime relative to package location
+paths:
+  package_dir: null          # Resolved from monitored package metadata
+  baseline_dir: null         # Resolved to monitoring/monitoring/ directory
+  output_dir: null           # Resolved to monitoring/monitoring/ directory
+
+monitoring_identifiers:
+  model_id: EXP24-XGB-FINAL-001
+  model_version: "1.0.0"
+  package_version: "2.7.0"
+  data_version: "1.0.0"
+  schema_id: HITRADAR-PREDICTION-INPUT-V1
+  schema_version: "1.0.0"

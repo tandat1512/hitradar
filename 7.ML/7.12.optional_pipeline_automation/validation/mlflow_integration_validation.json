@@ -1,0 +1,8 @@
+{
+  "mlflow_enabled_in_config": false,
+  "mlflow_required": false,
+  "mlflow_importable": false,
+  "actual_status": "NOT_ENABLED_OPTIONAL",
+  "core_pipeline_failed": false,
+  "status": "PASS"
+}

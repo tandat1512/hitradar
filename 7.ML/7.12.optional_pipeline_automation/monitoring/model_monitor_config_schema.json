@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Model Monitor Configuration Schema",
+  "description": "Configuration schema for Feature 2.9 Phase 3/5 — Model Monitoring Core",
+  "type": "object",
+  "required": ["monitoring", "governance", "sample_requirements", "thresholds"],
+  "additionalProperties": true,
+  "properties": {
+    "monitoring": {
+      "type": "object",
+      "description": "Which monitoring components to execute",
+      "properties": {
+        "schema": {"type": "boolean", "default": true},
+        "data_quality": {"type": "boolean", "default": true},
+        "feature_drift": {"type": "boolean", "default": true},
+        "prediction_drift": {"type": "boolean", "default": true},
+        "performance": {"type": "boolean", "default": false},
+        "artifact_integrity": {"type": "boolean", "default": true}
+      }
+    },
+    "governance": {
+      "type": "object",
+      "required": ["auto_retrain", "auto_update_baseline", "fail_on_artifact_hash_mismatch", "require_explicit_labels_flag"],
+      "properties": {
+        "auto_retrain": {
+          "type": "boolean",
+          "default": false,
+          "description": "MUST be false. Monitor never triggers retraining."
+        },
+        "auto_update_baseline": {
+          "type": "boolean",
+          "default": false,
+          "description": "MUST be false. Monitor never updates baseline."
+        },
+        "fail_on_artifact_hash_mismatch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether artifact hash mismatch is a blocker or warning."
+        },
+        "require_explicit_labels_flag": {
+          "type": "boolean",
+          "default": true,
+          "description": "Require --with-labels flag to process targets."
+        },
+        "champion_changed": {
+          "type": "boolean",
+          "default": false,
+          "description": "Monitor never changes champion."
+        }
+      }
+    },
+    "sample_requirements": {
+      "type": "object",
+      "required": ["minimum_batch_rows", "minimum_drift_rows", "minimum_category_count"],
+      "properties": {
+        "minimum_batch_rows": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 30,
+          "description": "Minimum rows required for a valid batch."
+        },
+        "minimum_drift_rows": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 100,
+          "description": "Minimum rows to compute drift metrics."
+        },
+        "minimum_category_count": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 5,
+          "description": "Minimum category count for categorical drift."
+        }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "required": ["source_policy"],
+      "properties": {
+        "source_policy": {
+          "type": "string",
+          "enum": ["PROJECT_CONFIG"],
+          "default": "PROJECT_CONFIG"
+        },
+        "schema": {
+          "type": "object",
+          "properties": {
+            "unexpected_columns_severity": {
+              "type": "string",
+              "enum": ["OK", "INFO", "WARNING", "CRITICAL", "BLOCKER"],
+              "default": "WARNING"
+            }
+          }
+        },
+        "data_quality": {
+          "type": "object",
+          "properties": {
+            "inf_severity": {
+              "type": "string",
+              "enum": ["OK", "INFO", "WARNING", "CRITICAL", "BLOCKER"],
+              "default": "BLOCKER"
+            },
+            "nan_rate_severity": {
+              "type": "string",
+              "enum": ["OK", "INFO", "WARNING", "CRITICAL", "BLOCKER"],
+              "default": "WARNING"
+            },
+            "duplicate_rows_severity": {
+              "type": "string",
+              "enum": ["OK", "INFO", "WARNING", "CRITICAL", "BLOCKER"],
+              "default": "WARNING"
+            }
+          }
+        },
+        "feature_drift": {
+          "type": "object",
+          "properties": {
+            "psi_threshold": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number", "minimum": 0},
+                "metric": {"type": "string"},
+                "severity": {"type": "string", "enum": ["OK", "INFO", "WARNING", "CRITICAL", "BLOCKER"]},
+                "source": {"type": "string"},
+                "source_type": {
+                  "type": "string",
+                  "enum": ["PROJECT_APPROVED", "BASELINE_DERIVED", "INHERITED_FROM_CONTRACT", "PROVISIONAL_DEFAULT"]
+                },
+                "provisional": {"type": "boolean"},
+                "notes": {"type": "string"}
+              }
+            }
+          }
+        },
+        "prediction_drift": {
+          "type": "object",
+          "properties": {
+            "psi_threshold": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number", "minimum": 0},
+                "metric": {"type": "string"},
+                "severity": {"type": "string", "enum": ["OK", "INFO", "WARNING", "CRITICAL", "BLOCKER"]},
+                "source": {"type": "string"},
+                "source_type": {
+                  "type": "string",
+                  "enum": ["PROJECT_APPROVED", "BASELINE_DERIVED", "INHERITED_FROM_CONTRACT", "PROVISIONAL_DEFAULT"]
+                },
+                "provisional": {"type": "boolean"},
+                "notes": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "description": "Path overrides for monitoring",
+      "properties": {
+        "baseline_dir": {"type": "string"},
+        "package_dir": {"type": "string"},
+        "output_dir": {"type": "string"}
+      }
+    },
+    "monitoring_identifiers": {
+      "type": "object",
+      "description": "Explicitly identify the package to monitor",
+      "properties": {
+        "model_id": {"type": "string"},
+        "model_version": {"type": "string"},
+        "package_version": {"type": "string"},
+        "data_version": {"type": "string"},
+        "baseline_id": {"type": "string"},
+        "baseline_version": {"type": "string"}
+      }
+    }
+  }
+}

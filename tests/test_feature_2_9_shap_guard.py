@@ -1,0 +1,59 @@
+"""
+Tests for SHAPGuard (shap_executed flag).
+Feature 2.9 Phase 2 — test_feature_2_9_shap_guard.py
+"""
+import pytest
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "7.ML", "7.12.optional_pipeline_automation", "src"))
+
+from hitradar_automation.guards import SHAPGuard
+from hitradar_automation.pipeline_types import StageResult
+from hitradar_automation import PipelineConfig
+
+
+class TestSHAPGuard:
+    """SHAPGuard evaluates allow_shap permission from config."""
+
+    @pytest.fixture
+    def cfg_allowed(self):
+        return PipelineConfig(mode="full-retrain", allow_shap=True)
+
+    @pytest.fixture
+    def cfg_denied(self):
+        return PipelineConfig(mode="full-retrain", allow_shap=False)
+
+    @pytest.fixture
+    def guard(self, cfg_allowed):
+        return SHAPGuard(cfg_allowed)
+
+    def test_guard_has_evaluate_method(self, guard):
+        """Guard has evaluate() method."""
+        assert hasattr(guard, "evaluate")
+
+    def test_allowed_returns_true(self, guard):
+        """allow_shap=True → allowed."""
+        allowed, reason, evidence = guard.evaluate()
+        assert allowed is True
+        assert reason is None
+
+    def test_denied_returns_false(self, cfg_denied):
+        """allow_shap=False → denied."""
+        guard = SHAPGuard(cfg_denied)
+        allowed, reason, evidence = guard.evaluate()
+        assert allowed is False
+        assert reason is not None
+
+    def test_returns_tuple(self, guard):
+        """evaluate() returns (bool, str|None, dict)."""
+        result = guard.evaluate()
+        assert isinstance(result, tuple)
+        assert len(result) == 3
+
+    def test_guard_name(self, guard):
+        """Guard class name is SHAPGuard."""
+        assert guard.__class__.__name__ == "SHAPGuard"
+
+    def test_phase2_shap_executed_is_false(self):
+        """Phase 2: shap_executed flag must be False."""
+        result = StageResult(stage_id="P80")
+        assert result.shap_executed is False

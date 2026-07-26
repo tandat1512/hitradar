@@ -1,0 +1,29 @@
+{
+  "class": "ResumeValidator",
+  "checkpoints_dir": "7.ML\\7.12.optional_pipeline_automation\\reports\\artifacts",
+  "conditions": [
+    "PASS or PASS_WITH_WARNINGS status",
+    "resume_eligible flag",
+    "full_config_hash match",
+    "scientific_config_hash match",
+    "execution_config_hash match",
+    "git_commit match (or 'unknown')",
+    "working_tree_dirty check",
+    "stage_implementation_hash match",
+    "source_component_hash match",
+    "environment_fingerprint match"
+  ],
+  "stale_reasons": [
+    "INPUT_HASH_CHANGED",
+    "OUTPUT_MISSING",
+    "OUTPUT_HASH_CHANGED",
+    "CONFIG_CHANGED",
+    "CODE_CHANGED",
+    "ENVIRONMENT_INCOMPATIBLE",
+    "DEPENDENCY_STALE",
+    "CHECKPOINT_PARSE_FAIL",
+    "MODE_NOT_COMPATIBLE"
+  ],
+  "total_conditions": 10,
+  "phase2_note": "C1: status check uses CHECKPOINT_PARSE_FAIL label in reasons"
+}

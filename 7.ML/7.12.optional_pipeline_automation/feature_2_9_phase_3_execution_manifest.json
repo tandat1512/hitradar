@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-07-26T04:30:00+0000",
+  "feature": "Feature 2.9 — Phase 3/5: Model Monitoring Core",
+  "phase": 3,
+  "pipeline_stage": "inference",
+  "status": "PASS",
+  "run_id": "MON-20260726-041015-d3462bce",
+  "script": "model_monitor.py",
+  "script_lines": 2130,
+  "pytest_results": {
+    "xml_file": "pytest_feature_2_9_phase_3.xml",
+    "total_tests": 110,
+    "passed": 110,
+    "failed": 0,
+    "skipped": 0
+  },
+  "test_files": [
+    "conftest.py",
+    "test_alerts.py",
+    "test_artifact_integrity.py",
+    "test_baseline_immutability.py",
+    "test_data_quality.py",
+    "test_drift.py",
+    "test_example_replay.py",
+    "test_exit_codes.py",
+    "test_governance.py",
+    "test_label_availability.py",
+    "test_monitor_result.py",
+    "test_output_structure.py",
+    "test_prediction_drift.py",
+    "test_psi.py",
+    "test_sample_size.py",
+    "test_schema_monitoring.py",
+    "test_tvd.py",
+    "test_version_consistency.py"
+  ],
+  "monitoring_artifacts": {
+    "config": "monitoring/model_monitor_config.yaml",
+    "config_schema": "monitoring/model_monitor_config_schema.json",
+    "baseline": "monitoring/model_monitor_baseline.json",
+    "baseline_manifest": "monitoring/model_monitor_baseline_manifest.json",
+    "baseline_immutability_validation": "monitoring/model_monitor_baseline_immutability_validation.json"
+  },
+  "run_artifacts": {
+    "baseline_hash_pre": "141cc7f8008c00989e439328ec8f11bd5a2c6e27cc534224a3bf61b9224fff1a",
+    "baseline_hash_post": "141cc7f8008c00989e439328ec8f11bd5a2c6e27cc534224a3bf61b9224fff1a",
+    "requirements_lock_sha256": "7bfb26382a88e42f8abde4382672224541d3a1beb0f45efb8d8fad8146f0fd28"
+  },
+  "monitoring_output_files": [
+    "model_monitor_results.json",
+    "model_monitor_run_manifest.json",
+    "model_monitor_alerts.json",
+    "model_monitor_open_items.json",
+    "model_monitor_sample_size_validation.json",
+    "model_monitor_label_availability_validation.json",
+    "model_monitor_version_consistency.json",
+    "model_monitor_baseline_immutability_validation.json",
+    "model_monitor_artifact_integrity_results.json",
+    "model_monitor_example_replay_validation.json",
+    "model_monitor_schema_results.json",
+    "model_monitor_data_quality_results.json",
+    "model_monitor_numeric_drift_results.json",
+    "model_monitor_categorical_drift_results.json",
+    "model_monitor_feature_drift_summary.json",
+    "model_monitor_prediction_drift_results.json",
+    "model_monitor_prediction_generation_manifest.json"
+  ],
+  "governance": {
+    "auto_retrain": false,
+    "auto_update_baseline": false,
+    "champion_changed": false,
+    "training_executed": false,
+    "performance_metrics_computed": false,
+    "phase": "Phase 3 — labels not available, performance metrics deferred to Phase 4"
+  },
+  "exit_codes": {
+    "0": "PASS",
+    "2": "PASS_WITH_WARNINGS",
+    "10": "INPUT_ERROR",
+    "11": "CONFIG_ERROR",
+    "12": "BASELINE_ERROR",
+    "13": "ARTIFACT_INTEGRITY_FAIL",
+    "14": "SCHEMA_BLOCKER",
+    "15": "MONITORING_FAILURE",
+    "30": "GOVERNANCE_VIOLATION"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+  "schema_version": "1.0.0",
+  "schema_version_ok": true,
+  "required_fields_checked": [
+    "acousticness",
+    "danceability",
+    "decade",
+    "duration_min",
+    "energy",
+    "explicit",
+    "instrumentalness",
+    "key",
+    "liveness",
+    "loudness",
+    "mode",
+    "release_month",
+    "release_precision",
+    "release_year",
+    "speechiness",
+    "tempo",
+    "time_signature",
+    "valence"
+  ],
+  "missing_required_fields": [
+    "release_year"
+  ],
+  "unexpected_fields": [],
+  "duplicate_columns": [],
+  "field_results": [
+    {
+      "field": "energy",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "liveness",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "danceability",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "tempo",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "key",
+      "expected_dtype": "integer",
+      "actual_dtype": "int64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "time_signature",
+      "expected_dtype": "integer",
+      "actual_dtype": "int64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "release_precision",
+      "expected_dtype": "string",
+      "actual_dtype": "str",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "speechiness",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "instrumentalness",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "explicit",
+      "expected_dtype": "boolean",
+      "actual_dtype": "bool",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "release_month",
+      "expected_dtype": "integer",
+      "actual_dtype": "int64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "decade",
+      "expected_dtype": "integer",
+      "actual_dtype": "int64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "acousticness",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "duration_min",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "valence",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "loudness",
+      "expected_dtype": "number",
+      "actual_dtype": "float64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    },
+    {
+      "field": "mode",
+      "expected_dtype": "integer",
+      "actual_dtype": "int64",
+      "status": "VALID",
+      "severity": "OK",
+      "message": "Column present and in schema"
+    }
+  ],
+  "overall_status": "BLOCKER",
+  "field_count": 17,
+  "expected_field_count": 18,
+  "target_in_batch_but_not_authorized": []
+}

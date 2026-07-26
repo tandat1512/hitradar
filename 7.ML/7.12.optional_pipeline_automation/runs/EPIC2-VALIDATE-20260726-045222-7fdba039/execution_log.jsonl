@@ -1,0 +1,1 @@
+{"timestamp": "2026-07-26T04:52:27.041483+00:00", "run_id": "EPIC2-VALIDATE-20260726-045222-7fdba039", "stage_id": "P00_PREFLIGHT", "event_type": "STAGE_COMPLETE", "severity": "INFO", "status": "FAIL", "duration_seconds": 0.002995, "warnings": [], "blockers": ["EXCEPTION: TypeError: 'module' object is not callable"]}

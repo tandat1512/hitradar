@@ -1,0 +1,29 @@
+alert_rules:
+- rule_id: RULE_RMSE_DEGRADATION
+  category: PERFORMANCE
+  metric: RMSE
+  comparator: REFERENCE_FINAL_TEST
+  warning_threshold_relative: 0.1
+  critical_threshold_relative: 0.2
+  blocker_threshold_relative: null
+  minimum_sample: 100
+  source: Feature 2.5 Analysis
+  source_type: CANONICAL
+  provisional: false
+  cooldown_days: 1
+  required_consecutive_breaches: 2
+  recommended_action: REVIEW_MODEL
+- rule_id: RULE_SEVERE_ERROR_INCREASE
+  category: PERFORMANCE
+  metric: SEVERE_ERROR_RATE
+  comparator: REFERENCE_FINAL_TEST
+  warning_threshold_absolute: 0.05
+  critical_threshold_absolute: 0.1
+  blocker_threshold_absolute: 0.15
+  minimum_sample: 100
+  source: Feature 2.5 Analysis
+  source_type: CANONICAL
+  provisional: false
+  cooldown_days: 0
+  required_consecutive_breaches: 1
+  recommended_action: PREPARE_RETRAIN

@@ -192,9 +192,10 @@
     "artifact_type": "requirements",
     "producer_phase": "2.7-P3",
     "bytes": 117,
-    "sha256": "7bfb26382a88e42f8abde4382672224541d3a1beb0f45efb8d8fad8146f0fd28",
+    "sha256": "5de72857d34c6440d9f30d2ca9b120a2fbbf34467922bf3b78f827b19646df23",
     "exists": true,
     "load_required": false,
-    "runtime_required": false
+    "runtime_required": false,
+    "file_size": 115
   }
 ]

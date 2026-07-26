@@ -1,0 +1,22 @@
+{
+  "run_id": "EPIC2-VALIDATE-20260101-000000-00000000",
+  "stage_id": "P00_PREFLIGHT",
+  "status": "PASS",
+  "started_at": null,
+  "ended_at": null,
+  "input_fingerprints": [],
+  "output_fingerprints": [],
+  "full_config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "scientific_config_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "execution_config_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "git_commit": "abc1234",
+  "working_tree_dirty": false,
+  "stage_implementation_hash": "implhash",
+  "source_component_hash": "srchash",
+  "environment_fingerprint": {
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "warnings": [],
+  "blockers": [],
+  "resume_eligible": true
+}

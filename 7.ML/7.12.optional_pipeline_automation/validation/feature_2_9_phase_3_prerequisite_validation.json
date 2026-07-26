@@ -1,0 +1,100 @@
+{
+  "phase": "3/5",
+  "generated_at": "2026-07-25T13:00:00.000000+00:00",
+  "prerequisite_checks": {
+    "phase_1_checkpoint_exists": true,
+    "phase_1_checkpoint_valid": true,
+    "phase_1_next_phase": "MAY_BEGIN",
+    "phase_1_status": "PASS",
+    "phase_2_prerequisite_validation_exists": true,
+    "phase_2_prerequisite_validation_result": "PASS",
+    "phase_2_next_phase": "MAY_BEGIN",
+    "pipeline_identity_defined": true,
+    "input_schema_exists": true,
+    "artifact_hashes_have_source": true,
+    "blockers_empty": true
+  },
+  "pipeline_identity": {
+    "model_id": "EXP24-XGB-FINAL-001",
+    "model_version": "1.0.0",
+    "model_hash_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "package_version": "2.7.0",
+    "data_version": "1.0.0",
+    "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+    "schema_version": "1.0.0",
+    "feature_set": "FS23-SELECTED",
+    "selected_feature_count": 31,
+    "model_matrix_width": 49,
+    "input_field_count": 18,
+    "champion_unchanged": true,
+    "training_executed": false
+  },
+  "artifact_sources": [
+    {
+      "logical_name": "best_model",
+      "sha256": "4b5859268e7ea024daacc1d27a8f59f5c45480a29d3598c7304a4e3cb3e3c1fd",
+      "source": "Feature 2.4 (Model Training)"
+    },
+    {
+      "logical_name": "full_inference_pipeline",
+      "sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "source": "Feature 2.7 (Model Packaging)"
+    },
+    {
+      "logical_name": "feature_engineering_pipeline",
+      "sha256": "9a8b19c0bd1a5b143a3fb9de4050310957d3f63119195097d25ac6b720cef334",
+      "source": "Feature 2.2 (Feature Engineering)"
+    },
+    {
+      "logical_name": "model_preprocessing_pipeline",
+      "sha256": "68854f94266920eeb6167652fad50715cffdcf1d5a727d8f107c8c17503d0f8d",
+      "source": "Feature 2.2 (Feature Engineering)"
+    },
+    {
+      "logical_name": "input_schema",
+      "sha256": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+      "source": "Feature 2.7 Phase 2"
+    },
+    {
+      "logical_name": "output_schema",
+      "sha256": "3d77b33b1d23c806358a872d1481262e68b42b474f5218273e50ab5a69fb17e8",
+      "source": "Feature 2.7 Phase 2"
+    },
+    {
+      "logical_name": "example_input",
+      "sha256": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+      "source": "Feature 2.7 Phase 3"
+    },
+    {
+      "logical_name": "example_output",
+      "sha256": "4a0e968c07c1335aaac2094e46c0cae5ccba0471dcb5d2c0046786df7dad10d6",
+      "source": "Feature 2.7 Phase 3"
+    },
+    {
+      "logical_name": "model_version",
+      "sha256": "5d639f3371e2064d7f0287c4b97993f47e1d25a2695686025cd752a3b1c07c7c",
+      "source": "Feature 2.7 Phase 3"
+    },
+    {
+      "logical_name": "data_version",
+      "sha256": "a0951b81bfd37e30b3357512dfe0389967cbc543f93a5b29e2ee933d1112dff8",
+      "source": "Feature 2.7 Phase 3"
+    },
+    {
+      "logical_name": "package_version",
+      "sha256": "f2239b341e6084fce0b514074fa938e02121ea1e54313c3e9ef9472fe9ae4fe7",
+      "source": "Feature 2.7 Phase 3"
+    }
+  ],
+  "validation_summary": {
+    "phase_1_status": "PASS",
+    "phase_2_status": "PASS",
+    "pipeline_identity_complete": true,
+    "artifact_hashes_verified": true,
+    "ready_for_phase_3": true
+  },
+  "result": "PASS",
+  "warnings": [],
+  "blockers": [],
+  "next_phase": "MAY_BEGIN"
+}

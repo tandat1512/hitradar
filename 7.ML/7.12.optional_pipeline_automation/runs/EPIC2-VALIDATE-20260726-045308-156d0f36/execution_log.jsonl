@@ -1,0 +1,2 @@
+{"timestamp": "2026-07-26T04:53:12.212877+00:00", "run_id": "EPIC2-VALIDATE-20260726-045308-156d0f36", "stage_id": "P00_PREFLIGHT", "event_type": "STAGE_COMPLETE", "severity": "INFO", "status": "PASS", "duration_seconds": 2.9e-05, "warnings": [], "blockers": []}
+{"timestamp": "2026-07-26T04:53:12.253256+00:00", "run_id": "EPIC2-VALIDATE-20260726-045308-156d0f36", "stage_id": "P10_VALIDATE_DATASET", "event_type": "STAGE_COMPLETE", "severity": "INFO", "status": "FAIL", "duration_seconds": 2.4e-05, "warnings": [], "blockers": ["SCRIPT_NOT_FOUND: None"]}

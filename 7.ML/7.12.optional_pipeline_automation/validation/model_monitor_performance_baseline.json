@@ -1,0 +1,10 @@
+{
+  "comparator": "REFERENCE_FINAL_TEST",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "baseline_metrics": {
+    "MAE": 4.12,
+    "RMSE": 5.85,
+    "R2": 0.82
+  },
+  "timestamp": "2026-07-26T04:37:46.543806+00:00"
+}

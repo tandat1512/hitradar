@@ -1,0 +1,10 @@
+{
+  "target_column_exists": true,
+  "cli_with_labels": true,
+  "config_performance_enabled": true,
+  "target_column_matches_contract": true,
+  "labels_parsed_successfully": true,
+  "rows_aligned": true,
+  "authorization_status": "AUTHORIZED",
+  "timestamp": "2026-07-26T04:37:46.543806+00:00"
+}

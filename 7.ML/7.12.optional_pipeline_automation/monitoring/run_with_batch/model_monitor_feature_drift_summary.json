@@ -1,0 +1,52 @@
+{
+  "total_features_checked": 18,
+  "pass_count": 1,
+  "warning_count": 17,
+  "critical_count": 0,
+  "not_enough_data_count": 0,
+  "overall_status": "WARNING",
+  "numeric_feature_count": 13,
+  "categorical_feature_count": 5,
+  "top_shifted_features": [
+    {
+      "feature": "release_month",
+      "warnings": [
+        "missing_rate_delta=-0.2326 > 0.05",
+        "mean_delta=2.1700 > 0.1",
+        "std_ratio=3.515 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "duration_min",
+      "warnings": [
+        "mean_delta=-0.2069 > 0.1",
+        "std_ratio=3.191 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "instrumentalness",
+      "warnings": [
+        "std_ratio=0.000 outside [0.8,1.25]",
+        "PSI=0.3275 > 0.2"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "tempo",
+      "warnings": [
+        "mean_delta=-0.4551 > 0.1",
+        "std_ratio=19.998 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    },
+    {
+      "feature": "release_year",
+      "warnings": [
+        "std_ratio=30.039 outside [0.8,1.25]"
+      ],
+      "severity": "OK"
+    }
+  ]
+}

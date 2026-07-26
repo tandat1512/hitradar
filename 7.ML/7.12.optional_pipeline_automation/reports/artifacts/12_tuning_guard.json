@@ -1,0 +1,12 @@
+{
+  "guard": "TuningGuard",
+  "config_mode": "train",
+  "allowed": true,
+  "reason": null,
+  "evidence": {
+    "mode": "train",
+    "allow_training": true,
+    "allow_tuning": true,
+    "tuning_executed": false
+  }
+}

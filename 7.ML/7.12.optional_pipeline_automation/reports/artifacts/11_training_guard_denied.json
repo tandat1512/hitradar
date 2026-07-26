@@ -1,0 +1,14 @@
+{
+  "guard": "TrainingGuard",
+  "config_mode": "train",
+  "allowed": false,
+  "reason": "BLOCKED: allow_training is false",
+  "evidence": {
+    "mode": "train",
+    "allow_training": false,
+    "train_split_valid": true,
+    "feature_artifacts_valid": true,
+    "final_test_labels_not_in_context": true,
+    "training_executed": false
+  }
+}
