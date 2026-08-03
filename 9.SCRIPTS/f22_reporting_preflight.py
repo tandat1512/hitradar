@@ -100,9 +100,10 @@ def run_preflight():
         "9.SCRIPTS/build_f22_artifacts.py",
         "9.SCRIPTS/validate_feature_2_2.py",
         "9.SCRIPTS/build_feature_2_2_test_summary.py",
-        "9.SCRIPTS/f22_hotfix_report_gen.py",
+        "9.SCRIPTS/f22_hotfix_report_gen.DEPRECATED.py",
         "9.SCRIPTS/f22_hotfix_manifest_gate.py",
-        "9.SCRIPTS/build_feature_2_2_review_package.py"
+        "9.SCRIPTS/build_feature_2_2_review_package.py",
+        "9.SCRIPTS/fix_f22_dummy_reports.py",
     ]
     for g in generators:
         p = ROOT / g

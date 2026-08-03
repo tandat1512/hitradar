@@ -1,3 +1,22 @@
+"""
+DEPRECATED — DO NOT RUN.
+
+This script created placeholder ('| Dummy | Data |') content for the F 2.2 reports.
+It was superseded by `fix_f22_dummy_reports.py`, which reads the real JSON artifacts
+under `7.ML/7.5.preprocessing/` and renders reports with verified content.
+
+If you need to regenerate the F 2.2 reports, run:
+    python 9.SCRIPTS/fix_f22_dummy_reports.py
+
+DO NOT execute this file. It will overwrite all 10 canonical reports
+(COLUMN_CLASSIFICATION_REPORT.md, OUTLIER_PREPROCESSING_REPORT.md, etc.) with
+non-sourced placeholder data, violating the no-fabrication rule adopted by
+the rest of EPIC 2.
+
+Kept only for git history / archaeological reference. Renamed to
+`f22_hotfix_report_gen.DEPRECATED.py` and excluded from CI / preflight exec.
+"""
+
 import json
 from pathlib import Path
 from datetime import datetime, timezone
