@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 bug closure audit",
+  "total_bugs": 3,
+  "bugs": [
+    {
+      "bug_id": "F35-BUG-001",
+      "severity": "BLOCKER",
+      "scenario": "No live Python environment — E2E execution blocked",
+      "root_cause": "No Python interpreter available in session",
+      "fix_action": "Run in live environment",
+      "fixable": false,
+      "remaining_blocker": true,
+      "closure_condition": "Backend starts, health passes, E2E executes — requires live environment"
+    },
+    {
+      "bug_id": "F35-BUG-002",
+      "severity": "LOW",
+      "scenario": "httpx missing from 5.UNG_DUNG backend requirements",
+      "root_cause": "httpx only declared in epic3/feature_3_2/backend/requirements.txt",
+      "fix_action": "Add httpx>=0.27.0 to 5.UNG_DUNG/5.1.backend_api/requirements.txt",
+      "fixable": true,
+      "fix_status": "FIX_APPLIED",
+      "remaining_blocker": false,
+      "remaining_high": false
+    },
+    {
+      "bug_id": "F35-BUG-003",
+      "severity": "MEDIUM",
+      "scenario": "No requirements.txt in epic3/feature_3_3/frontend/",
+      "root_cause": "Frontend dependencies not declared",
+      "fix_action": "Create requirements.txt with streamlit>=1.30.0, httpx>=0.27.0",
+      "fixable": true,
+      "fix_status": "PENDING",
+      "remaining_blocker": false,
+      "remaining_high": false
+    }
+  ],
+  "remaining_blocker_bugs": 1,
+  "remaining_high_bugs": 0,
+  "remaining_medium_bugs": 1,
+  "remaining_low_bugs": 0,
+  "blocker_F35_BUG_001_reason": "Environmental — not a code defect. All contract and architecture validations PASS.",
+  "can_close_feature": false,
+  "reason": "F35-BUG-001 is BLOCKER and cannot be resolved in this session (no live Python)",
+  "closure_requires": "Live Python environment to execute E2E and confirm PASS",
+  "status": "FAIL"
+}

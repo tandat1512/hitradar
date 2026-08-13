@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 Phase 3 claim audit across all documentation",
+  "documents_audited": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md"],
+  "invalid_claims_checked": {
+    "prediction_probability_mislabels": {
+      "description": "Calling prediction output a probability or likelihood",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md"],
+      "note": "API doc uses 'popularity score (0-100)' throughout; no probability language"
+    },
+    "regression_accuracy_mislabels": {
+      "description": "Using classification accuracy language for regression metrics",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md"],
+      "note": "All references to MAE/RMSE/R² use correct regression terminology"
+    },
+    "causal_shap_claims": {
+      "description": "SHAP described as establishing causation",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md"],
+      "note": "API doc §8: 'do NOT establish causal relationships'; USER_MANUAL §6: 'do NOT prove causation'"
+    },
+    "causal_what_if_claims": {
+      "description": "What-if described as proving real-world causal effects",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md"],
+      "note": "API doc §9: 'does NOT prove that changing...will causally increase'; USER_MANUAL §7: 'NOT a causal relationship'"
+    },
+    "guaranteed_success_claims": {
+      "description": "Prediction described as guarantee of commercial/popularity success",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md"],
+      "note": "USER_MANUAL §5: 'NOT a guarantee of commercial success'"
+    },
+    "unsupported_production_claims": {
+      "description": "Describing the application as production-ready",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md"],
+      "note": "README and USER_MANUAL explicitly state 'student research prototype' and 'academic'"
+    },
+    "unsupported_global_dataset_claims": {
+      "description": "Dashboard described as representing all global music (instead of 'available dataset shows')",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["USER_MANUAL.md"],
+      "note": "USER_MANUAL §8: 'The available dataset shows 1922-2019 data from a curated Spotify-derived sample. It is not a comprehensive representation of all music globally.'"
+    },
+    "unsupported_accuracy_claims": {
+      "description": "Fabricated accuracy percentages or 'high accuracy' claims",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md"],
+      "note": "No accuracy percentage claims anywhere; performance described only as 'test set metrics' with actual MAE/RMSE/R² labels"
+    },
+    "offline_live_equivalence": {
+      "description": "Offline mode described as live inference or equivalent to full model",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["USER_MANUAL.md", "HOW_TO_RUN_APP.md"],
+      "note": "Both docs: 'precomputed validated fallback — not live model inference'"
+    }
+  },
+  "total_invalid_claims_found": 0,
+  "total_documents_audited": 4,
+  "status": "CLEAN"
+}

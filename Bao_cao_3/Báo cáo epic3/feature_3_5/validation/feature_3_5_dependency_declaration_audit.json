@@ -1,0 +1,62 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 dependency declaration audit",
+  "declared_dependency_files": [
+    {
+      "file": "5.UNG_DUNG/5.1.backend_api/requirements.txt",
+      "purpose": "FastAPI backend (production)",
+      "packages": [
+        "fastapi>=0.110.0",
+        "uvicorn[standard]>=0.30.0",
+        "pydantic>=2.0.0",
+        "joblib>=1.4.0",
+        "scikit-learn>=1.5.0",
+        "xgboost>=2.0.0",
+        "numpy>=1.26.0",
+        "pandas>=2.0.0",
+        "shap>=0.45.0"
+      ],
+      "httpx_declared": false,
+      "httpx_missing": true,
+      "httpx_needed_for": "Testing only (httpx is for frontend API client, not backend runtime)"
+    },
+    {
+      "file": "epic3/feature_3_2/backend/requirements.txt",
+      "purpose": "Feature 3.2 backend",
+      "packages": [
+        "fastapi>=0.110.0",
+        "uvicorn[standard]>=0.27.0",
+        "pydantic>=2.0.0",
+        "scikit-learn>=1.5.0",
+        "shap>=0.45.0",
+        "joblib>=1.4.0",
+        "httpx>=0.27.0"
+      ],
+      "complete": true
+    },
+    {
+      "file": "7.ML/7.10.model_packaging/package/requirements-runtime.txt",
+      "purpose": "ML runtime package",
+      "packages": ["numpy", "pandas", "scikit-learn", "xgboost", "joblib"],
+      "complete": true
+    }
+  ],
+  "frontend_dependency_issue": {
+    "issue": "No requirements.txt for epic3/feature_3_3/frontend/",
+    "required_packages": ["streamlit>=1.30.0", "httpx>=0.27.0"],
+    "currently_available_via": "pip install streamlit (no declared file in frontend directory)",
+    "severity": "MEDIUM",
+    "bug_id": "F35-BUG-003"
+  },
+  "httpx_in_backend_requirements": {
+    "declared": false,
+    "note": "httpx is declared in epic3/feature_3_2/backend/requirements.txt but NOT in 5.UNG_DUNG/5.1.backend_api/requirements.txt. httpx is only needed for testing; backend runtime does not use httpx.",
+    "severity": "LOW",
+    "bug_id": "F35-BUG-002"
+  },
+  "missing_dependencies_found": 0,
+  "missing_dependencies_note": "Backend runtime has all required packages. httpx missing from one requirements file is LOW (only for testing). Frontend has no requirements.txt.",
+  "live_install_test": "PENDING (requires Python interpreter)",
+  "status": "CONTRACT_VALIDATED"
+}

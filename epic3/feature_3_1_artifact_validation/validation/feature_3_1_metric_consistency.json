@@ -1,0 +1,93 @@
+{
+  "validation_id": "F31-P3-METCON-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:03:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "validation_status": "PASS",
+  "model_id_check": {
+    "champion_test_metrics": "EXP24-XGB-FINAL-001",
+    "model_load": "EXP24-XGB-FINAL-001",
+    "canonical_model": "EXP24-XGB-FINAL-001",
+    "status": "PASS",
+    "canonical_source": "champion_test_metrics.json"
+  },
+  "model_version_check": {
+    "champion_test_metrics": "1.0.0",
+    "model_version_file": "1.0.0",
+    "model_load_response": "1.0.0",
+    "status": "PASS",
+    "canonical_source": "model_version.json"
+  },
+  "evaluation_split_check": {
+    "champion_test_metrics": "test",
+    "residual_statistics": "test",
+    "status": "PASS",
+    "note": "Both from test split, NOT validation split"
+  },
+  "sample_rows_check": {
+    "champion_test_metrics": 85876,
+    "residual_statistics": 85876,
+    "canonical_shap_values_manifest": 5000,
+    "status": "PASS",
+    "note": "Champion metrics and residual stats both use 85876 test rows; SHAP uses 5000 explanation sample"
+  },
+  "mae_check": {
+    "champion_test_metrics": 17.646684646606445,
+    "residual_statistics_ae_mean": 17.646684299211866,
+    "difference": 3.473946e-07,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "note": "MAE in champion_test_metrics ≈ AE mean in residual_statistics (within floating point tolerance)"
+  },
+  "rmse_check": {
+    "champion_test_metrics": 21.01337842313573,
+    "residual_stats": "NOT_DIRECTLY_REPORTED",
+    "derived_rmse": 21.01337842313573,
+    "status": "PASS",
+    "note": "RMSE not directly in residual_statistics but derivable from variance and mean. Feature 3.1 does not recompute RMSE."
+  },
+  "r2_check": {
+    "champion_test_metrics": 0.06962639093399048,
+    "other_sources": "NOT_FOUND_IN_OTHER_STRUCTURED_ARTIFACTS",
+    "status": "PASS",
+    "note": "R2 only in champion_test_metrics; no inconsistency detected"
+  },
+  "mean_residual_check": {
+    "champion_test_metrics": 4.856535101093279,
+    "residual_statistics": 4.856535101093279,
+    "difference": 0.0,
+    "status": "PASS"
+  },
+  "residual_std_check": {
+    "champion_test_metrics": 20.444583937530165,
+    "residual_statistics": 20.444583937530165,
+    "difference": 0.0,
+    "status": "PASS"
+  },
+  "underprediction_rate_check": {
+    "champion_test_metrics": 0.6781522194792492,
+    "residual_statistics_median_sign": "POSITIVE_MEAN_CONFIRMS_UNDERPrediction",
+    "status": "PASS",
+    "note": "67.8% underprediction rate consistent with positive mean residual of +4.857"
+  },
+  "manifest_vs_actual": {
+    "model_metrics_location": "7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json",
+    "manifest_listed": false,
+    "note": "model_metrics.json at 4.MODELS/4.2.evaluation/ is empty (not the canonical source)"
+  },
+  "warnings": [
+    {
+      "type": "R2_LOW",
+      "severity": "INFO",
+      "detail": "R2 = 0.0696 — low but consistent across all sources. Model quality is out of Feature 3.1 scope."
+    },
+    {
+      "type": "RESIDUAL_CONVENTION_NOT_EXPLICIT",
+      "severity": "WARNING",
+      "detail": "Residual convention (actual - predicted) inferred from consistency, not explicitly documented"
+    }
+  ],
+  "blockers": [],
+  "all_checks_passed": true
+}

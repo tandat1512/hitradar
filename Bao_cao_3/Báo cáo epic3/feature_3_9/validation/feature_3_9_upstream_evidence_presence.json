@@ -1,0 +1,15 @@
+{
+  "feature_id": "3.9",
+  "evidence": [
+    {"source_feature":"3.5","path":"Bao_cao_3/Báo cáo epic3/feature_3_5/validation/feature_3_5_final_validation_results.json","exists":true,"purpose":"E2E evidence"},
+    {"source_feature":"3.5","path":"Bao_cao_3/Báo cáo epic3/feature_3_5/validation/feature_3_5_closure_gate.json","exists":true,"purpose":"E2E closure gate"},
+    {"source_feature":"3.6","path":"Bao_cao_3/Báo cáo epic3/feature_3_6/validation/feature_3_6_final_validation_results.json","exists":true,"purpose":"Performance/reliability evidence"},
+    {"source_feature":"3.6","path":"Bao_cao_3/Báo cáo epic3/feature_3_6/validation/feature_3_6_closure_gate.json","exists":true,"purpose":"Performance/reliability closure gate"},
+    {"source_feature":"3.7","path":"Bao_cao_3/Báo cáo epic3/feature_3_7/validation/feature_3_7_closure_gate.json","exists":true,"purpose":"Documentation gate"},
+    {"source_feature":"3.8","path":"Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_closure_gate.json","exists":true,"purpose":"Defense preparation gate"}
+  ],
+  "required_evidence_count": 6,
+  "missing_evidence_count": 0,
+  "all_evidence_untracked": true,
+  "status": "PASS_WITH_GIT_TRACEABILITY_WARNING"
+}

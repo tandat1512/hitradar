@@ -1,0 +1,45 @@
+{
+  "prerequisite_id": "F31-P2-PREREQ-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "phase": 2,
+  "generated_at": "2026-08-03T21:30:00+07:00",
+  "phase_1_gate_status": "FAIL",
+  "phase_1_blockers": [
+    {
+      "blocker_id": "BLK-GLOBAL-001",
+      "type": "MISSING_HANDOFF_DOCUMENT",
+      "severity": "HIGH",
+      "resolution": "WORKAROUND_ACCEPTED",
+      "note": "MODEL_PACKAGE_README.md accepted as functional handoff substitute"
+    },
+    {
+      "blocker_id": "BLK-GLOBAL-002",
+      "type": "STALE_MANIFEST",
+      "severity": "HIGH",
+      "resolution": "CAN_PROCEED",
+      "note": "Stale sub-entry is for runtime/inference_pipeline.py (Python module), NOT for model artifact. full_inference_pipeline.joblib hash is valid. This does not block Phase 2 deserialization."
+    },
+    {
+      "blocker_id": "BLK-GLOBAL-003",
+      "type": "EMPTY_METRIC_FILE",
+      "severity": "MEDIUM",
+      "resolution": "DEFERRED_TO_PHASE_2",
+      "note": "model_metrics.json is empty but model artifact is valid. Metrics can be computed from test set in Phase 2 or later."
+    }
+  ],
+  "canonical_model_artifact": {
+    "path": "7.ML/7.10.model_packaging/package/pipeline/full_inference_pipeline.joblib",
+    "sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "bytes": 3982751,
+    "status": "FOUND_EXACT"
+  },
+  "required_schema_artifacts": {
+    "input_schema": {"status": "FOUND_EXACT", "sha256": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503"},
+    "output_schema": {"status": "FOUND_EXACT", "sha256": "3d77b33b1d23c806358a872d1481262e68b42b474f5218273e50ab5a69fb17e8"},
+    "selected_features": {"status": "FOUND_EXACT", "sha256": "8d86f9c62e8fb321c04580eb2cfe22e80a7a439e3d557de7c5a04f73a817e5e7"},
+    "feature_names": {"status": "FOUND_EXACT", "sha256": "3044097537901e2218afe542b9fd2e7dd09af55fbd9fea7509a229a68b0a2bc1"},
+    "feature_mapping": {"status": "FOUND_EXACT", "sha256": "cca788e6303027333f5d167316c45f4188705d00a2c24aed07e8892946518646"}
+  },
+  "may_begin_phase_2": true,
+  "reason": "Phase 1 blockers are either workarounds (BLK-001), non-blocking for model load (BLK-002 affects Python module not model), or deferred (BLK-003). Canonical model artifact hash is confirmed VALID."
+}

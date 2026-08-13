@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "page": "pages/3_WhatIf.py",
+  "api": "POST /what-if",
+  "no_model_import": true,
+  "no_causal_claim": true,
+  "target_not_modifiable": true,
+  "uses_session_baseline": true,
+  "saves_to_session": true,
+  "has_model_attribution": true,
+  "reset_button": true,
+  "no_baseline_overwrite": true,
+  "empty_state": true,
+  "status": "PASS"
+}

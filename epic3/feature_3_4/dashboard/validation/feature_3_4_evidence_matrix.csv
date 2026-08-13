@@ -1,0 +1,10 @@
+task_id,requirement,expected,actual,evidence_path,status,warning,blocker,notes
+3.4.1,Canonical data source,ml_ready_dataset.csv,"169681 rows, 20 cols, 1922-2019, SHA unavailable",epic3/feature_3_4/dashboard/validation/feature_3_4_phase_1_gate.json,PASS,,,Feature 3.3 reference confirmed
+3.4.2,Trend data loader,read-only df.copy(),df.copy() semantic copy,epic3/feature_3_4/dashboard/loaders/trend_data_loader.py,PASS,,,No source write
+3.4.3,Popularity trend by year/decade,mean aggregation,aggregate_popularity_by_year() and aggregate_popularity_by_decade(),epic3/feature_3_4/dashboard/analytics/aggregation_engine.py,PASS,,,No interpolation
+3.4.4,Audio feature trends,11+ features mean,12 audio features allow-listed,epic3/feature_3_4/dashboard/analytics/audio_feature_engine.py,PASS,,,is_valid_feature() enforced
+3.4.5,Explicit trend by decade,rate=count/valid,aggregate_explicit_by_decade() rate metric,epic3/feature_3_4/dashboard/analytics/explicit_engine.py,PASS,,,Null excluded from denominator
+3.4.6,Duration trend by decade,minutes aggregation,aggregate_duration_by_decade() mean+median minutes,epic3/feature_3_4/dashboard/analytics/duration_engine.py,PASS,,,duration_min confirmed minutes
+3.4.7,Artist/genre summary,NEVER synthetic,NOT_AVAILABLE_FROM_SOURCE,epic3/feature_3_4/dashboard/analytics/summary_engine.py,PASS,,,No inference, no generation
+3.4.8,Chart captions,data-grounded,8 deterministic generators,epic3/feature_3_4/dashboard/captions/engines.py,PASS,,,Evidence traceability validated
+3.4.9,Dashboard caching,st.cache_data copy,st.cache_data with copy semantics,epic3/feature_3_4/dashboard/cache/dashboard_cache.py,PASS,,,SHA invalidation, no TTL

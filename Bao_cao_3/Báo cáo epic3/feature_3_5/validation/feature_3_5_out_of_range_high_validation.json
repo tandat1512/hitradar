@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 out-of-range HIGH — API contract validation",
+  "scenario": "POST /predict with numeric value above declared maximum",
+  "field": "danceability",
+  "declared_maximum": 1.0,
+  "tested_value": 1.001,
+  "expected_http_status": 422,
+  "expected_error_type": "APIValidationError",
+  "expected_constraint": "less than or equal to 1.0",
+  "request_id_present": true,
+  "traceback_exposed": false,
+  "internal_path_exposed": false,
+  "no_500": true,
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

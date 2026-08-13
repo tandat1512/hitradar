@@ -1,0 +1,28 @@
+{
+  "feature_id": "3.9",
+  "source_feature": "3.8",
+  "validated_at": "2026-08-13T19:45:00+07:00",
+  "feature_3_8_status": "WAITING_FOR_HUMAN_ACTION",
+  "feature_3_8_decision": "NOT_CLOSED",
+  "defense_gate": "WAITING_FOR_HUMAN_ACTION",
+  "technical_delivery_audit_allowed": true,
+  "technical_delivery_audit_condition": "Allowed because Feature 3.8 has no confirmed model/dataset defect; defense and human readiness remain incomplete.",
+  "warnings": [
+    "Frontend redirected-console startup requires UTF-8 on the Vietnamese workspace path.",
+    "Runtime scikit-learn version differs from the serialization version.",
+    "Model Info returns metrics=null.",
+    "Automatic offline UI/banner is not validated.",
+    "Product logic attribution is not proven in the dirty worktree.",
+    "The Feature 3.8 package is untracked and not reproducible from a commit."
+  ],
+  "blockers": [
+    "Actual deck and backup presentation copy are missing.",
+    "Presenter/demo/backup/Q&A ownership is not confirmed.",
+    "Human Rehearsals #1 and #2 are incomplete.",
+    "Offline fallback, screenshots and backup video are incomplete.",
+    "Browser/device/physical checks and human approval are pending.",
+    "A version-controlled package baseline and product-logic hash baseline are missing."
+  ],
+  "defense_status_changed": false,
+  "status": "PASS_WITH_UPSTREAM_HUMAN_AND_TRACEABILITY_EXCEPTIONS"
+}

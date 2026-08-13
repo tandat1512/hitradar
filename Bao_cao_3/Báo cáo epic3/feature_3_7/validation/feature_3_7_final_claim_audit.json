@@ -1,0 +1,88 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 final claim audit — unsupported claims across all documentation",
+  "claim_checks": [
+    {
+      "claim_type": "unsupported_accuracy_claim",
+      "definition": "Fabricated accuracy percentages or 'high accuracy' / 'low accuracy' without defining threshold",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "R² is correctly described as 'low' with context in TECHNICAL_APPENDIX.md"
+    },
+    {
+      "claim_type": "prediction_probability_mislabel",
+      "definition": "Calling prediction output a probability or likelihood",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs use 'regression score' or 'popularity score'"
+    },
+    {
+      "claim_type": "guarantee_claim",
+      "definition": "Prediction described as guarantee of commercial/popularity success",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs include 'not a guarantee' language"
+    },
+    {
+      "claim_type": "SHAP_causal_claim",
+      "definition": "SHAP described as establishing causation",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs: 'SHAP describes model behavior, NOT causal relationships'"
+    },
+    {
+      "claim_type": "what_if_causal_claim",
+      "definition": "What-if described as proving real-world causal effects",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs: 'What-If compares model outputs, NOT real-world effects'"
+    },
+    {
+      "claim_type": "dataset_global_generalization",
+      "definition": "Dashboard described as representing all global music",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs: 'available dataset shows' / 'not comprehensive representation'"
+    },
+    {
+      "claim_type": "production_readiness_overclaim",
+      "definition": "Application described as production-ready",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "API_DOCUMENTATION.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs explicitly state 'academic/student research project' and 'not production'"
+    },
+    {
+      "claim_type": "offline_live_inference_misrepresentation",
+      "definition": "Offline mode described as live inference or equivalent to full model",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["README.md", "USER_MANUAL.md", "HOW_TO_RUN_APP.md", "TECHNICAL_APPENDIX.md"],
+      "note": "All docs: 'precomputed validated fallback' and 'not live inference'"
+    },
+    {
+      "claim_type": "pipeline_artifacts_modified",
+      "definition": "Model artifacts modified for documentation purposes",
+      "expected": 0,
+      "found": 0,
+      "files_checked": ["git status"],
+      "note": "No model artifacts in git diff"
+    },
+    {
+      "claim_type": "training_executed",
+      "definition": "New training executed during Feature 3.7",
+      "expected": 0,
+      "found": 0,
+      "note": "Feature 3.7 is documentation-only"
+    }
+  ],
+  "total_invalid_claims_found": 0,
+  "status": "CLEAN"
+}

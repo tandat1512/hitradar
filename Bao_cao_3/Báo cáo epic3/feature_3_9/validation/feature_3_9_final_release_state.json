@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "release_mode": "FINAL_COMMIT_ONLY",
+  "final_commit_sha": null,
+  "remote_verified": false,
+  "tag": null,
+  "tag_verified": false,
+  "release_record_status": "BLOCKED_NO_FINAL_COMMIT",
+  "release_record_complete": false,
+  "status": "NOT_READY"
+}

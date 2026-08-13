@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final run_all smoke — BLOCKED (no live env). One of the most important final checks.",
+  "command": "python scripts/run_all.py",
+  "expected_verifications": {
+    "backend_starts": "uvicorn child started",
+    "health_polled": "real /health polling (model_loaded=true), NO fixed sleep",
+    "frontend_starts": "streamlit child started after backend ready",
+    "both_ready": "backend + frontend /_stcore/health",
+    "print_urls": "Backend API + Frontend UI URLs printed",
+    "predict_works": "canonical predict succeeds through live stack",
+    "clean_ctrl_c": "Ctrl+C → frontend then backend stopped, own children only, exit 0"
+  },
+  "actual": "BLOCKED",
+  "status": "BLOCKED"
+}

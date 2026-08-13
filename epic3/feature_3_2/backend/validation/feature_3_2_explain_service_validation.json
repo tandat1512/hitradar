@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-05T14:46:05.159894+00:00",
+  "service_available": true,
+  "service_type": "local_per_request_shap",
+  "uses_pretrained_explainer": false,
+  "shap_global_recomputed": false,
+  "prediction_matches_model_service": true,
+  "prediction_difference": 0.0,
+  "base_value_type": "float",
+  "base_value_finite": true,
+  "shap_values_type": "float",
+  "top_k_default": 5,
+  "top_features_sorted_by_abs_shap": true,
+  "no_causality_claim": true,
+  "model_id": "EXP24-XGB-FINAL-001",
+  "warnings": [
+    "SHAP TreeExplainer computed at request time (not from pre-computed artifacts)"
+  ],
+  "blockers": [],
+  "status": "PASS"
+}

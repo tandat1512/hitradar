@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 multiple missing fields — API contract validation",
+  "scenario": "POST /predict with two required fields missing",
+  "fields_removed": ["danceability", "energy"],
+  "tested_payload_fields": 16,
+  "expected_http_status": 422,
+  "expected_error_type": "APIValidationError",
+  "error_detail_contains_both_fields": true,
+  "request_id_present": true,
+  "traceback_exposed": false,
+  "no_500": true,
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

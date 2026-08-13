@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 What-If E2E — frontend render validation",
+  "frontend_page": "epic3/feature_3_3/frontend/pages/3_WhatIf.py",
+  "whatif_component": "epic3/feature_3_3/frontend/components/whatif_comparison.py",
+  "expected_display": [
+    "prediction_before (baseline)",
+    "prediction_after (modified)",
+    "delta (after - before)",
+    "changed_fields list",
+    "model version"
+  ],
+  "delta_sign_displayed": true,
+  "no_causal_claim": true,
+  "no_statements_like": [
+    "this change will increase real popularity",
+    "making energy higher causes popularity increase",
+    "the artist should make the song more energetic to succeed"
+  ],
+  "allowed_statements": [
+    "predicted popularity score changes from X to Y",
+    "modifying energy from 0.793 to 0.95 changes the model prediction",
+    "the model predicts..."
+  ],
+  "frontend_never_computes_delta": true,
+  "frontend_never_calls_predict_directly": true,
+  "actual_live_render_test": "PENDING (requires Streamlit + backend running)",
+  "status": "CONTRACT_VALIDATED"
+}

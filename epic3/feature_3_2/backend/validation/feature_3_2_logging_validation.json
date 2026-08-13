@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-06T01:20:53.452073+00:00",
+  "status": "PASS",
+  "sensitive_headers": [
+    "authorization",
+    "cookie",
+    "proxy-authorization",
+    "set-cookie",
+    "x-api-key",
+    "x-auth-token",
+    "x-csrf-token"
+  ],
+  "structured_output": {
+    "event": "request",
+    "request_id": "abc",
+    "method": "GET",
+    "path": "/health",
+    "status": 200,
+    "duration_ms": 1.23
+  },
+  "tests": {
+    "authorization_redacted": false,
+    "structured_json_output": true,
+    "duration_ms_present": true,
+    "no_payload_default": true,
+    "no_artifacts": true,
+    "sensitive_headers_listed": true
+  },
+  "logging_valid": true,
+  "warnings": [
+    "DEBUG payload logging not enabled — normal"
+  ],
+  "blockers": []
+}

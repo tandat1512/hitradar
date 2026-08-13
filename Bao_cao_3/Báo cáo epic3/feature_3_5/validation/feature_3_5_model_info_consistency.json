@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Model Info source consistency validation",
+  "reference_source": "5.UNG_DUNG/5.1.backend_api/models/prediction.py (Pydantic models)",
+  "frontend_parser": "epic3/feature_3_3/frontend/api/models.py (ModelInfoResponse)",
+  "fields_to_validate": [
+    {"field": "model_id", "expected_type": "string", "source": "from ModelInfoResponse"},
+    {"field": "model_version", "expected_type": "string", "source": "from ModelInfoResponse"},
+    {"field": "model_family", "expected_type": "string", "expected_default": "XGBoost", "source": "from ModelInfoResponse"},
+    {"field": "package_version", "expected_type": "string", "source": "from ModelInfoResponse"},
+    {"field": "data_version", "expected_type": "string", "source": "from ModelInfoResponse"},
+    {"field": "feature_set", "expected_type": "string", "source": "from ModelInfoResponse"},
+    {"field": "training_date", "expected_type": "string or null", "source": "from ModelInfoResponse"},
+    {"field": "metrics", "expected_type": "dict with MAE/RMSE/R2 floats", "source": "from Metrics schema"},
+    {"field": "timestamp", "expected_type": "string", "source": "from ModelInfoResponse"},
+    {"field": "request_id", "expected_type": "string or null", "source": "from ModelInfoResponse"}
+  ],
+  "no_internal_paths_exposed": "verified from page code — no file paths shown",
+  "actual_value_verification": "PENDING_LIVE_VERIFICATION",
+  "status": "CONTRACT_VALIDATED_PENDING_LIVE"
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-06T01:38:12.690327+00:00",
+  "status": "PASS",
+  "method": "local TestClient (not network benchmark)",
+  "predict_latency_ms": 23.73,
+  "explain_latency_ms": 166.39,
+  "whatif_latency_ms": 39.06,
+  "all_success": true,
+  "warnings": [
+    "Local test only — not a network SLA benchmark"
+  ],
+  "blockers": []
+}

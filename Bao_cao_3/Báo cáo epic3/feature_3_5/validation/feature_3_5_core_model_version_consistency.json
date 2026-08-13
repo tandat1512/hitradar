@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 model version consistency across all endpoints",
+  "expected_model_id": "EXP24-XGB-FINAL-001",
+  "expected_model_version": "1.0.0",
+  "expected_package_version": "1.0.0",
+  "endpoints_exposing_version": [
+    {"endpoint": "GET /model-info", "exposes": ["model_id", "model_version", "package_version"]},
+    {"endpoint": "POST /predict", "exposes": ["model_id", "model_version", "package_version"]},
+    {"endpoint": "POST /explain", "exposes": ["model_id", "model_version"]},
+    {"endpoint": "POST /what-if", "exposes": ["model_id", "model_version"]}
+  ],
+  "consistency_rule": "All endpoints must return identical model_id and model_version for the same model artifact",
+  "version_mismatch_is_blocker": true,
+  "version_mismatch_action": "BLOCKER — indicates model artifact swap during session",
+  "actual_live_test": "PENDING (requires running backend)",
+  "status": "CONTRACT_VALIDATED"
+}

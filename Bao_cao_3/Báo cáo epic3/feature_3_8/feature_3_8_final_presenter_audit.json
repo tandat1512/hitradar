@@ -1,0 +1,13 @@
+{
+  "feature_id":"3.8",
+  "generated_at":"2026-08-12T00:20:00+07:00",
+  "assignment_document_exists":true,
+  "required_sections_with_confirmed_primary":0,
+  "presenter_assignment_final":false,
+  "demo_operator_assigned":false,
+  "backup_operator_assigned":false,
+  "qa_ownership_defined":false,
+  "handoffs_practiced":false,
+  "known_contributors_not_treated_as_assignments":["Minh","Đạt"],
+  "status":"HUMAN_CONFIRMATION_REQUIRED"
+}

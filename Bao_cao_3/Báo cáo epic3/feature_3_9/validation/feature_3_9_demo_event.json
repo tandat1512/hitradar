@@ -1,0 +1,16 @@
+{
+  "status": "WAITING_FOR_HUMAN_DEMO",
+  "scheduled_at": null,
+  "actual_started_at": null,
+  "actual_ended_at": null,
+  "participants": [],
+  "lecturer": null,
+  "release_identity": null,
+  "demo_flows": [],
+  "offline_fallback_used": null,
+  "issues": [],
+  "feedback": [],
+  "evidence": [],
+  "recorded_by": "AI_PREPARED_TEMPLATE_REQUIRES_HUMAN_EVIDENCE",
+  "completion_claimed": false
+}

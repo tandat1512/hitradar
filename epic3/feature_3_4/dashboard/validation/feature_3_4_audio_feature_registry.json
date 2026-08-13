@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "audio_features": [
+    {"name": "acousticness",     "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"name": "danceability",     "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"name": "energy",           "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"name": "instrumentalness", "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"name": "key",              "exists": true,  "dtype": "int64",   "range": "0-11 (integer, musical key)", "dashboard_enabled": true},
+    {"name": "liveness",         "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"name": "loudness",         "exists": true,  "dtype": "float64", "range": "typically -60 to 0 dB", "dashboard_enabled": true},
+    {"name": "mode",             "exists": true,  "dtype": "int64",   "range": "0 or 1 (major/minor)", "dashboard_enabled": true},
+    {"name": "speechiness",       "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"name": "tempo",            "exists": true,  "dtype": "float64", "range": "BPM (float)", "dashboard_enabled": true},
+    {"name": "time_signature",    "exists": true,  "dtype": "float64", "range": "3,4,5,6,7 (beats per bar)", "dashboard_enabled": true},
+    {"name": "valence",          "exists": true,  "dtype": "float64", "range": "0.0-1.0 (float)", "dashboard_enabled": true},
+    {"acousticness": false, "note": "Not in dataset"},
+    {"danceability": false, "note": "Not in dataset"},
+    {"energy": false, "note": "Not in dataset"},
+    {"instrumentalness": false, "note": "Not in dataset"},
+    {"liveness": false, "note": "Not in dataset"},
+    {"loudness": false, "note": "Not in dataset"},
+    {"speechiness": false, "note": "Not in dataset"},
+    {"valence": false, "note": "Not in dataset"}
+  ],
+  "audio_feature_count": 11,
+  "confirmed_from": "CSV header: danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature"
+}

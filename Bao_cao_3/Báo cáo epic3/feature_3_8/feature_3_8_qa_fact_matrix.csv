@@ -1,0 +1,30 @@
+qa_id,category,question,claim,source,source_value,answer_value,status
+D01,DATASET,Dataset origin,Dataset is curated Spotify-derived,DATASET_AUDIT_REPORT.md plus project docs,Spotify-derived with raw files; exact upstream URL not established,Spotify-derived; upstream URL not claimed,VERIFIED_WITH_QUALIFIER
+D03,DATASET,Record count,Locked ML pipeline rows,7.ML/7.4.splits/split_manifest.json,586672,586672,VERIFIED
+D03,DATASET,Year range,Locked ML pipeline range,7.ML/7.4.splits/split_manifest.json,1900-2021,1900-2021,VERIFIED
+D04,DATASET,Raw inputs,API input count,ML_READY_DATASET_VALIDATION_REPORT.md,18,18,VERIFIED
+D04,FEATURE_ENGINEERING,Selected features,Selected semantic count,FEATURE_SELECTION_REPORT.md,31,31,VERIFIED
+D04,FEATURE_ENGINEERING,Model matrix width,Transformed count,shap_feature_mapping_validation.json,49,49,VERIFIED
+D05,PREPROCESSING,Missing release month,Null count,ML_READY_DATASET_VALIDATION_REPORT.md,136489,136489,VERIFIED
+D05,PREPROCESSING,Missing tempo,Null count,ML_READY_DATASET_VALIDATION_REPORT.md,328,328,VERIFIED
+D05,PREPROCESSING,Missing time signature,Null count,ML_READY_DATASET_VALIDATION_REPORT.md,337,337,VERIFIED
+D10,DATASET,Train rows,Temporal split train rows,split_manifest.json,415524,415524,VERIFIED
+D10,DATASET,Validation rows,Temporal split validation rows,split_manifest.json,85272,85272,VERIFIED
+D10,DATASET,Test rows,Temporal split test rows,split_manifest.json,85876,85876,VERIFIED
+M04,MODEL_SELECTION,XGBoost CV RMSE,Champion comparison,model_training/metrics/model_comparison.json,12.862417400358112,12.8624,VERIFIED_ROUNDED
+M04,MODEL_SELECTION,Random Forest CV RMSE,Runner comparison,model_training/metrics/model_comparison.json,12.920065965427137,12.9201,VERIFIED_ROUNDED
+M04,MODEL_SELECTION,XGBoost validation RMSE,Champion validation,model_training/metrics/model_comparison.json,15.25206504973179,15.2521,VERIFIED_ROUNDED
+M05,METRICS,Test MAE,Official test metric,champion_test_metrics.json,17.646684646606445,17.65,VERIFIED_ROUNDED
+M05,METRICS,Test RMSE,Official test metric,champion_test_metrics.json,21.01337842313573,21.01,VERIFIED_ROUNDED
+M05,METRICS,Test R2,Official test metric,champion_test_metrics.json,0.06962639093399048,0.0696,VERIFIED_ROUNDED
+M10,OVERFITTING,Train RMSE,Champion training metric,experiment_registry.json,11.279099531552852,11.279,VERIFIED_ROUNDED
+M11,GENERALIZATION,Validation-test degradation,RMSE relative change,validation_test_comparison.json,37.773988995052534 percent,37.77 percent,VERIFIED_ROUNDED
+M12,FEATURE_ENGINEERING,Feature-selection gain,Combined A10 RMSE improvement,FEATURE_SELECTION_REPORT.md,1.0926745028865374 percent,1.09 percent,VERIFIED_ROUNDED
+M14,MODEL_SELECTION,Search budget,Configs per family,SEARCH_BUDGET_REPORT.md,12,12,VERIFIED
+S08,SHAP,Background shape,Train-only transformed background,feature_3_1_shap_asset_validation.json,1000x49,1000x49,VERIFIED
+S09,SHAP,Additivity pass rate,Rows within tolerance,shap_additivity_validation.json,5000/5000; tolerance 0.001,5000/5000; tolerance 0.001,VERIFIED
+S09,SHAP,Max additivity error,Raw-output reconstruction error,shap_additivity_validation.json,0.00006749456107257856,about 6.75e-05,VERIFIED_ROUNDED
+L04,LIMITATIONS,Underprediction rate,Test residual direction,residual_bias_summary.json,0.6781522194792492,67.82 percent,VERIFIED_ROUNDED
+L05,GENERALIZATION,Year-RMSE correlation,Temporal robustness,temporal_robustness_summary.json,0.930338213758189,0.9303,VERIFIED_ROUNDED
+L09,PERFORMANCE,Warm inference,Historical local benchmark,feature_3_1_benchmark_results.json,15.574 ms,about 15.6 ms local,VERIFIED_WITH_ENVIRONMENT
+L09,PERFORMANCE,Explain runtime status,Final technical smoke with historical dry-run context,feature_3_8_final_live_demo_smoke.json,PASS around 400 ms; historical dry-run timeout 300 seconds,PASS around 400 ms; historical dry-run timeout retained as warning,VERIFIED_REVALIDATED

@@ -1,0 +1,5 @@
+# Feature 3.6 — Streamlit page latency final samples (BLOCKED)
+# No live Python environment. Same page methodology as Phase 1 required at
+# live re-benchmark (cold/warm, 10 samples/page, STREAMLIT_SCRIPT_EXECUTION).
+page_id,sample,ms,status
+PENDING,PENDING,PENDING,BLOCKED

@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final API latency summary — BLOCKED (no live env)",
+  "methodology": "identical to Phase 1 (feature_3_6_api_latency_baseline.json)",
+  "metrics": {
+    "startup_ms": "PENDING",
+    "first_prediction_ms": "PENDING",
+    "warm_p50_ms": "PENDING",
+    "warm_p95_ms": "PENDING",
+    "warm_mean_ms": "PENDING",
+    "max_ms": "PENDING",
+    "failure_rate": "PENDING"
+  },
+  "samples_file": "feature_3_6_api_latency_final_samples.csv",
+  "status": "BLOCKED"
+}

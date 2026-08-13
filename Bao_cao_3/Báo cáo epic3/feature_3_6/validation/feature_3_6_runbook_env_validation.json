@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 runbook env traceability — runbook vs actual Settings/.env.example",
+  "canonical_sources": [
+    "5.UNG_DUNG/5.1.backend_api/config.py",
+    "epic3/feature_3_3/frontend/core/config.py",
+    "epic3/feature_3_2/backend/.env.example",
+    "scripts/run_backend.py, run_frontend.py, run_all.py"
+  ],
+  "runbook_variables": [
+    {"variable": "ARTIFACTS_PATH", "source": "config.py:12", "invented": false},
+    {"variable": "BACKEND_PORT", "source": "run scripts parse_port + .env.example PORT=8000", "invented": false},
+    {"variable": "BACKEND_HOST", "source": "run scripts + .env.example HOST=127.0.0.1", "invented": false},
+    {"variable": "BACKEND_HEALTH_TIMEOUT", "source": "run scripts", "invented": false},
+    {"variable": "STREAMLIT_SERVER_PORT", "source": "run scripts (streamlit --server.port)", "invented": false},
+    {"variable": "BACKEND_BASE_URL", "source": "core/config.py:37", "invented": false},
+    {"variable": "BACKEND_CONNECT_TIMEOUT", "source": "core/config.py:54", "invented": false},
+    {"variable": "BACKEND_READ_TIMEOUT", "source": "core/config.py:55", "invented": false},
+    {"variable": "BACKEND_REQUEST_TIMEOUT", "source": "core/config.py:56", "invented": false},
+    {"variable": "API_PREFIX", "source": "core/config.py:46 + .env.example", "invented": false},
+    {"variable": "MODEL_LOAD_STRATEGY", "source": ".env.example", "invented": false},
+    {"variable": "CORS_ALLOWED_ORIGINS", "source": ".env.example", "invented": false},
+    {"variable": "OFFLINE_DEMO_MODE", "source": "feature_3_6 offline contract (explicit activation)", "invented": false}
+  ],
+  "invented_variable_count": 0,
+  "secret_values_documented": false,
+  "status": "TRACEABILITY_VALID"
+}

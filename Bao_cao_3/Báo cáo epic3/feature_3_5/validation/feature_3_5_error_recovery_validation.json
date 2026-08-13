@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 error recovery validation",
+  "tested_scenarios": [
+    "missing_field → valid canonical → succeeds",
+    "backend_down → backend_up → valid canonical → succeeds",
+    "wrong_type → valid canonical → succeeds"
+  ],
+  "expected": {
+    "valid_request_after_error_succeeds": true,
+    "prediction_matches_canonical": true,
+    "no_corrupt_session_state": true,
+    "no_frontend_restart_required": true
+  },
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

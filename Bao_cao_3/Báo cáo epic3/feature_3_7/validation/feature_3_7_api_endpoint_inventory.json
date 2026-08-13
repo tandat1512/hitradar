@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 API endpoint inventory from OpenAPI",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "operation_id": "health_health_get",
+      "summary": "Health",
+      "tags": ["system"],
+      "requires_body": false,
+      "request_schema": null,
+      "response_schema": "HealthResponse",
+      "status_codes": [200],
+      "notes": "Returns healthy/degraded; model_loaded=true when ready"
+    },
+    {
+      "method": "GET",
+      "path": "/model-info",
+      "operation_id": "model_info_model_info_get",
+      "summary": "Model Info",
+      "tags": ["model"],
+      "requires_body": false,
+      "response_schema": "ModelInfoResponse",
+      "status_codes": [200, 503],
+      "notes": "503 if model not loaded"
+    },
+    {
+      "method": "GET",
+      "path": "/features",
+      "operation_id": "features_features_get",
+      "summary": "Features",
+      "tags": ["model"],
+      "requires_body": false,
+      "response_schema": "FeaturesResponse",
+      "status_codes": [200, 503],
+      "notes": "503 if model not loaded"
+    },
+    {
+      "method": "POST",
+      "path": "/predict",
+      "operation_id": "predict_predict_post",
+      "summary": "Predict",
+      "tags": ["prediction"],
+      "requires_body": true,
+      "request_schema": "PredictRequest",
+      "response_schema": "PredictResponse",
+      "status_codes": [200, 422, 503],
+      "notes": "422=validation error, 503=model not loaded"
+    },
+    {
+      "method": "POST",
+      "path": "/explain",
+      "operation_id": "explain_explain_post",
+      "summary": "Explain",
+      "tags": ["explanation"],
+      "requires_body": true,
+      "request_schema": "ExplainRequest",
+      "response_schema": "ExplainResponse",
+      "status_codes": [200, 422, 503],
+      "notes": "Same 18-field input as /predict; returns SHAP values; 422=validation, 503=model not loaded"
+    },
+    {
+      "method": "POST",
+      "path": "/what-if",
+      "operation_id": "what_if_what_if_post",
+      "summary": "What If",
+      "tags": ["what-if"],
+      "requires_body": true,
+      "request_schema": "WhatIfRequest",
+      "response_schema": "WhatIfResponse",
+      "status_codes": [200, 422, 503],
+      "notes": "base_features + changed_features dict; 422 if key not canonical; 503=model not loaded"
+    }
+  ],
+  "total_endpoints": 6,
+  "status": "INVENTORIED"
+}

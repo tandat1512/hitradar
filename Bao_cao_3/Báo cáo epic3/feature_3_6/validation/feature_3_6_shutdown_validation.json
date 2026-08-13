@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 graceful shutdown validation — design contract; live execution BLOCKED",
+  "contract": {
+    "on_ctrl_c": [
+      "frontend child stopped (graceful)",
+      "backend child stopped (graceful)",
+      "parent exits with code 0"
+    ],
+    "graceful_timeout": "5s",
+    "force_fallback": "terminate() → kill() own child only",
+    "never": "killing a process the launcher did not create"
+  },
+  "scripts": {
+    "run_backend.py": "KeyboardInterrupt → terminate_child(backend) → exit 0",
+    "run_frontend.py": "KeyboardInterrupt → terminate_child(frontend) → exit 0",
+    "run_all.py": "KeyboardInterrupt → finally block stops frontend then backend → exit 0"
+  },
+  "tests_expected": [
+    {"case": "Ctrl+C during run_all → both children stopped, parent exits 0", "actual": "BLOCKED"},
+    {"case": "Ctrl+C during run_backend → backend stopped, exit 0", "actual": "BLOCKED"}
+  ],
+  "status": "CONTRACT_DEFINED"
+}

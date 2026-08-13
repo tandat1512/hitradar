@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-13T20:55:04+07:00",
+  "submission_status": "NOT_READY",
+  "technical_package_ready": false,
+  "human_submission_action_required": true,
+  "submission_execution_attempted": false,
+  "confirmation_evidence_present": false,
+  "reasons": [
+    "Official platform requirements are partially unknown.",
+    "No verified final release commit exists."
+  ]
+}

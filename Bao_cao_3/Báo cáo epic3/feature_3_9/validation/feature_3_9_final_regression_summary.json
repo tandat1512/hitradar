@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "scope": "tests/test_feature_3_9_*.py",
+  "collected": 27,
+  "passed": 27,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "failure_details": [
+    "FINAL_SLIDE_MISSING",
+    "Presenter/operator semantic placeholder unresolved"
+  ],
+  "product_source_changed_since_phase_3_by_phase_4_or_5": false,
+  "upstream_regression_rerun_required": false,
+  "status": "FAIL_READINESS_ACCEPTANCE"
+}

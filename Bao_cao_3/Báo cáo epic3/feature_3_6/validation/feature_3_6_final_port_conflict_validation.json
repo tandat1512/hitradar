@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final port conflict validation — BLOCKED (no live env)",
+  "method": "controlled temporary listener/process OWNED by the test occupies the port (never a random user service)",
+  "test_cases": [
+    {"case": "backend port 8000 occupied by test-owned listener → run_backend exits 2, prints port + override hint, kills nothing", "actual": "BLOCKED"},
+    {"case": "frontend port 8501 occupied → run_frontend exits 2, kills nothing", "actual": "BLOCKED"},
+    {"case": "run_all with occupied port → exits 2, kills nothing", "actual": "BLOCKED"}
+  ],
+  "design_evidence": "_common.py is_port_in_use (TCP connect probe, no side effects) + assert_port_free (exit 2, never kills) + message includes override hint",
+  "status": "BLOCKED"
+}

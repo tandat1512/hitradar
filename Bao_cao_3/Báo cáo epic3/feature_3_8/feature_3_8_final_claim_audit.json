@@ -1,0 +1,28 @@
+{
+  "feature_id": "3.8",
+  "generated_at": "2026-08-13T00:00:00+07:00",
+  "scan_scope": {
+    "root": "Bao_cao_3/Báo cáo epic3/feature_3_8",
+    "patterns": ["**/*.md", "**/*.json", "**/*.csv"],
+    "markdown_files": 26,
+    "json_files": 49,
+    "csv_files": 8,
+    "total_files_scanned": 83,
+    "includes_final_reports": true,
+    "includes_validation_subtree": true,
+    "includes_handoff_and_rehearsal_artifacts": true
+  },
+  "unsupported_accuracy_claim_count": 0,
+  "guaranteed_success_claim_count": 0,
+  "causal_shap_claim_count": 0,
+  "causal_what_if_claim_count": 0,
+  "production_ready_overclaim_count": 0,
+  "offline_live_misrepresentation_count": 0,
+  "unsupported_current_project_fact_count": 0,
+  "legacy_dataset_reference_file_count": 11,
+  "legacy_dataset_reference_policy": "Occurrences of 169681 / 1922-2019 are allowed only when explicitly labeled historical, legacy, superseded or non-canonical.",
+  "historical_explain_timeout_reference_file_count": 10,
+  "historical_timeout_policy": "The 2026-08-11 timeout may be retained only as historical recovery context; current status is final-smoke PASS.",
+  "status": "PASS_WITH_CONTEXTUAL_LEGACY_REFERENCES",
+  "note": "Positive unsafe claims are zero across the complete package. Negations, limitations and explicitly tagged historical values are not counted as current claims."
+}

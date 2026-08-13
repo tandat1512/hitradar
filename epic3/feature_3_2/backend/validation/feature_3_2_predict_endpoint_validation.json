@@ -1,0 +1,45 @@
+{
+  "date": "2026-08-06T01:38:12.005182+00:00",
+  "status": "PASS",
+  "endpoint": "POST /predict",
+  "http_status": 200,
+  "response_fields": [
+    "model_id",
+    "model_version",
+    "package_version",
+    "prediction_clipped",
+    "prediction_display",
+    "prediction_raw",
+    "request_id",
+    "status",
+    "timestamp",
+    "warnings"
+  ],
+  "prediction_finite": true,
+  "prediction_clipped_in_range": true,
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "request_id_header": true,
+  "validation_matrix": {
+    "missing_field": {
+      "status": 422,
+      "is_422": true
+    },
+    "wrong_type": {
+      "status": 422,
+      "is_422": true
+    },
+    "out_of_range": {
+      "status": 422,
+      "is_422": true
+    },
+    "invalid_enum": {
+      "status": 422,
+      "is_422": true
+    }
+  },
+  "all_validation_422": true,
+  "no_internal_paths": true,
+  "warnings": [],
+  "blockers": []
+}

@@ -1,0 +1,183 @@
+{
+  "feature_id": "3.9",
+  "phase": "2/5",
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "items": [
+    {
+      "role": "primary_document",
+      "path": "README.md",
+      "exists": true,
+      "bytes": 9283,
+      "sha256": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+      "last_modified": "2026-08-13T19:53:22+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "HOW_TO_RUN_APP.md",
+      "exists": true,
+      "bytes": 7452,
+      "sha256": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+      "last_modified": "2026-08-13T19:53:22+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "USER_MANUAL.md",
+      "exists": true,
+      "bytes": 12061,
+      "sha256": "4b213f781e1ea89ef68210b5d2c52eea6437eb8ba199d694c0b0f4a79d0d88e9",
+      "last_modified": "2026-08-13T19:51:36+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "API_DOCUMENTATION.md",
+      "exists": true,
+      "bytes": 12513,
+      "sha256": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827",
+      "last_modified": "2026-08-13T19:51:36+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "TECHNICAL_APPENDIX.md",
+      "exists": true,
+      "bytes": 27226,
+      "sha256": "de5c075ec9e288f1981718e9222ea1441de464ade5075d03e1b668d532802afb",
+      "last_modified": "2026-08-13T19:52:05+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+      "exists": true,
+      "bytes": 15232,
+      "sha256": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+      "last_modified": "2026-08-13T19:52:05+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md",
+      "exists": true,
+      "bytes": 6824,
+      "sha256": "33e5ef0658344a5a9f18a36c6302d58220af8186b6b2a1f1f2d1a7beede03def",
+      "last_modified": "2026-08-13T19:51:36+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_6/demo_reliability_checklist.md",
+      "exists": true,
+      "bytes": 2387,
+      "sha256": "914bb05c1905ccb7808e1cec5eb73d5dd38312d46dd041d44312659068d614dc",
+      "last_modified": "2026-08-09T19:27:14+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md",
+      "exists": true,
+      "bytes": 9693,
+      "sha256": "5f317caf8f2ab41e4df380ffb8342bc0f15e552709b9eadd6d1ccf31acac5a97",
+      "last_modified": "2026-08-13T10:51:19+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "primary_document",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_8/FINAL_DEFENSE_CHECKLIST.md",
+      "exists": true,
+      "bytes": 3523,
+      "sha256": "757da1986657d56aa2617821e7e727ada6f73b4e4b79e251c2f33b3d2e79e3e8",
+      "last_modified": "2026-08-13T10:55:12+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/Feature 3.1/BAO_CAO_NGHIEM_THU_FEATURE_3_1.md",
+      "exists": true,
+      "bytes": 3689,
+      "sha256": "71834e19d158d13d248979218a8e43c0d05824866fb304b9763f1bc973d62c42",
+      "last_modified": "2026-08-04T08:16:41+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/Feature 3.2/BAO_CAO_NGHIEM_THU_FEATURE_3_2.md",
+      "exists": true,
+      "bytes": 9188,
+      "sha256": "2711ce0ff2ceb6cf600bf0ef3cb930eb9a964d2c04946981a816858537f46ece",
+      "last_modified": "2026-08-06T21:53:09+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/Feature 3.3/BAO_CAO_NGHIEM_THU_FEATURE_3_3.md",
+      "exists": true,
+      "bytes": 13206,
+      "sha256": "226256f9f456a998b26bfff4fdb96eca497201ebd1f298025c4b696546a2053e",
+      "last_modified": "2026-08-08T07:52:06+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/Feature 3.4/BAO_CAO_NGHIEM_THU_FEATURE_3_4.md",
+      "exists": true,
+      "bytes": 10245,
+      "sha256": "28288d190bd15ca80b4633a61c040e5863614b4489df3f4f7da459e0f1a75040",
+      "last_modified": "2026-08-08T22:54:34+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_5/BAO_CAO_NGHIEM_THU_FEATURE_3_5.md",
+      "exists": true,
+      "bytes": 16194,
+      "sha256": "c7f60ae1b1801aece03ce1af2213dcd31b50b758b04b02f3d691fd62110b024a",
+      "last_modified": "2026-08-09T12:43:39+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_6/BAO_CAO_NGHIEM_THU_FEATURE_3_6.md",
+      "exists": true,
+      "bytes": 10983,
+      "sha256": "2e39d70b25c52d82efa8905af88eec2fa5a5fe4c91c7360db00a5770a8bfccbd",
+      "last_modified": "2026-08-10T11:55:58+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_NGHIEM_THU_FEATURE_3_7.md",
+      "exists": true,
+      "bytes": 10040,
+      "sha256": "4eb83d5ad630e7db7c455d83426795db41b654ade3268f02c65cf719636aa362",
+      "last_modified": "2026-08-10T19:13:19+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "feature_acceptance_report",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_8/BAO_CAO_NGHIEM_THU_FEATURE_3_8.md",
+      "exists": true,
+      "bytes": 4996,
+      "sha256": "9ae7fb560d9dcad2594232b3cf68f653c6edb2015de5a9c486b2fd8dc9e4216a",
+      "last_modified": "2026-08-13T11:05:28+07:00",
+      "status": "READY"
+    },
+    {
+      "role": "slide_candidate",
+      "path": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+      "exists": true,
+      "bytes": 41968,
+      "sha256": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+      "last_modified": "2026-08-13T20:45:10+07:00",
+      "status": "READY"
+    }
+  ],
+  "expected_primary_count": 10,
+  "present_primary_count": 10,
+  "acceptance_report_count": 8,
+  "slide_candidate_count": 1,
+  "renderable_nonempty_slide_count": 1
+}

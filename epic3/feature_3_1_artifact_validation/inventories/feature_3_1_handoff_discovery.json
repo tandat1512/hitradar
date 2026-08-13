@@ -1,0 +1,63 @@
+{
+  "discovery_id": "F31-P1-HD-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:09:00+07:00",
+  "feature_id": "3.1",
+  "phase": 1,
+  "handoff_doc_target": "handoff_to_epic3.md",
+  "status": "BLOCKED",
+  "search_result": {
+    "handoff_to_epic3_md_found": false,
+    "handoff_to_epic2_md_found": true,
+    "handoff_to_epic3_md_locations_searched": [
+      "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/package/handoff_to_epic3.md",
+      "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/handoff_to_epic3.md",
+      "H:/dự án/DUAN1 github/6.TAI_LIEU/6.1.bao_cao/handoff_to_epic3.md",
+      "H:/dự án/DUAN1 github/handoff_to_epic3.md",
+      "H:/dự án/DUAN1 github/docs/handoff_to_epic3.md"
+    ],
+    "found_candidates": [
+      {
+        "path": "H:/dự án/DUAN1 github/6.TAI_LIEU/6.1.bao_cao/handoff_to_epic2.md",
+        "note": "This is EPIC 2 handoff document — wrong scope for EPIC 3"
+      }
+    ],
+    "functional_handoff_substitute_found": true,
+    "functional_handoff": {
+      "path": "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/package/MODEL_PACKAGE_README.md",
+      "sha256": "78d7f31df314b3a66ab3b74db7fa07af97116d3960697c050f7e5dbd76174755",
+      "size_bytes": 1689,
+      "role": "De-facto handoff document — contains model architecture, API contract summary, and runtime requirements"
+    }
+  },
+  "blockers": [
+    {
+      "blocker_id": "BLK-001",
+      "type": "MISSING_HANDOFF_DOCUMENT",
+      "severity": "HIGH",
+      "description": "handoff_to_epic3.md not found anywhere in repository",
+      "impact": "Cannot perform structured Artifact Handoff Intake without formal handoff document",
+      "required_action": "EPIC 2 team must provide handoff_to_epic3.md, OR EPIC 3 team must acknowledge MODEL_PACKAGE_README.md as functional substitute"
+    }
+  ],
+  "handoff_candidates_assessed": [
+    {
+      "candidate": "handoff_to_epic3.md",
+      "exists": false,
+      "usable": false,
+      "reason": "File does not exist"
+    },
+    {
+      "candidate": "handoff_to_epic2.md",
+      "exists": true,
+      "usable": false,
+      "reason": "Wrong EPIC — EPIC 2 handoff, not EPIC 3"
+    },
+    {
+      "candidate": "MODEL_PACKAGE_README.md",
+      "exists": true,
+      "usable": true,
+      "reason": "Contains architecture overview, runtime requirements, and field descriptions"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 timeout E2E validation",
+  "scenario": "Backend is slow/unresponsive → request times out",
+  "transport_timeout": "httpx.Timeout(connect=5.0, read=30.0, write=10.0, pool=5.0)",
+  "timeout_config_source": "epic3/feature_3_3/frontend/core/config.py",
+  "expected_frontend_behavior": {
+    "error_type": "APITimeoutError",
+    "user_message": "Request timed out",
+    "hint": "The backend took too long to respond.",
+    "traceback_exposed": false,
+    "loading_state_cleared": true,
+    "retry_possible": true,
+    "no_stale_result": true
+  },
+  "frontend_code_verified": {
+    "source": "epic3/feature_3_3/frontend/components/error_states.py",
+    "render_function": "_render_timeout_error"
+  },
+  "test_type": "FAULT_INJECTION_INTEGRATION_TEST",
+  "fault_injection_note": "Timeout cannot be injected into production endpoint without modifying backend. Test uses fault-injected HTTP transport.",
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

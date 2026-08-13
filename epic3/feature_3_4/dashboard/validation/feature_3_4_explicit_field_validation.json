@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "explicit_column": "explicit",
+  "valid": true,
+  "dtype": "bool",
+  "note": "Represented as Python bool (True/False). Sample values confirmed from CSV: True, False",
+  "confirmed_from": "CSV sample rows: explicit=True, explicit=False"
+}

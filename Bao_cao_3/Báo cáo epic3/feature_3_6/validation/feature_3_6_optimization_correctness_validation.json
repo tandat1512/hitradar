@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 optimization correctness validation — after any code changes; live execution BLOCKED",
+  "required_checks": [
+    {"endpoint": "GET /health", "expected": "200 healthy, model_loaded=true", "actual": "BLOCKED"},
+    {"endpoint": "GET /model-info", "expected": "200, model_version=1.0.0", "actual": "BLOCKED"},
+    {"endpoint": "GET /features", "expected": "200, 18 fields, 31 selected", "actual": "BLOCKED"},
+    {"endpoint": "POST /predict", "expected": "46.421062 ±0.001", "actual": "BLOCKED"},
+    {"endpoint": "POST /explain", "expected": "prediction matches /predict", "actual": "BLOCKED"},
+    {"endpoint": "POST /what-if", "expected": "delta valid, baseline matches /predict", "actual": "BLOCKED"}
+  ],
+  "dashboard_aggregates": {
+    "expected": "match Feature 3.4 validated aggregate values",
+    "mismatch_count": "BLOCKED (expected 0)",
+    "actual": "BLOCKED"
+  },
+  "summary": {
+    "prediction_mismatch_count": "BLOCKED (expected 0)",
+    "dashboard_aggregate_mismatch_count": "BLOCKED (expected 0)"
+  },
+  "note": "No production code was modified in Phase 2 (all decisions ALREADY_OPTIMIZED or NOT_JUSTIFIED), so no correctness regression is possible from this phase. Live run required at final smoke.",
+  "status": "BLOCKED"
+}

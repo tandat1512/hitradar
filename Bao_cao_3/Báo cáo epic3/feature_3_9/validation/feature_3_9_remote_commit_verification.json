@@ -1,0 +1,11 @@
+{
+  "verified_at": "2026-08-13T20:55:04+07:00",
+  "method": "git ls-remote --heads (read-only; no fetch performed)",
+  "fetch_executed": false,
+  "local_current_sha": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+  "local_final_sha": null,
+  "remote_branch_sha": "e093c71a153800e43caafdea672196b6e9299e8b",
+  "local_final_equals_remote_final": false,
+  "remote_commit_verified": false,
+  "status": "NOT_VERIFIED_NO_FINAL_COMMIT_REMOTE_AHEAD"
+}

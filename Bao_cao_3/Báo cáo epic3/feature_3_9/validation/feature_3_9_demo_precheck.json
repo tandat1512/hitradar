@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-08-13T20:55:05+07:00",
+  "precheck_only_not_event_completion": true,
+  "release_identity": "UNRESOLVED_WORKING_TREE_DEMO",
+  "checks": [
+    {
+      "check": "run_all",
+      "current_phase_status": "NOT_RUN",
+      "prior_evidence": "Feature 3.8 smoke passed with warnings",
+      "blocking_note": "Current-event smoke still required."
+    },
+    {
+      "check": "health",
+      "current_phase_status": "NOT_RUN",
+      "prior_evidence": "Feature 3.8 GET /health passed",
+      "blocking_note": null
+    },
+    {
+      "check": "Predict",
+      "current_phase_status": "NOT_RUN",
+      "prior_evidence": "Feature 3.8 live smoke passed",
+      "blocking_note": null
+    },
+    {
+      "check": "Explain",
+      "current_phase_status": "NOT_RUN",
+      "prior_evidence": "Feature 3.8 live smoke passed",
+      "blocking_note": null
+    },
+    {
+      "check": "What-if",
+      "current_phase_status": "NOT_RUN",
+      "prior_evidence": "Feature 3.8 live smoke passed",
+      "blocking_note": null
+    },
+    {
+      "check": "Trends",
+      "current_phase_status": "NOT_RUN",
+      "prior_evidence": "Feature 3.8 dry-run passed",
+      "blocking_note": null
+    },
+    {
+      "check": "Limitations",
+      "current_phase_status": "PASS",
+      "prior_evidence": "Feature 3.9 Phase 2 UI audit",
+      "blocking_note": null
+    },
+    {
+      "check": "backup_assets",
+      "current_phase_status": "FAIL",
+      "prior_evidence": "Feature 3.8 backup audit",
+      "blocking_note": "Screenshots/video/backup PDF are missing."
+    },
+    {
+      "check": "offline_fallback",
+      "current_phase_status": "FAIL",
+      "prior_evidence": "Precomputed evidence exists",
+      "blocking_note": "Automatic offline UI/banner and media were not validated."
+    }
+  ],
+  "current_live_checks_executed": 0,
+  "failed_or_blocked_checks": 2,
+  "status": "BLOCKED_RELEASE_NOT_READY_NO_CURRENT_EVENT_PRECHECK"
+}

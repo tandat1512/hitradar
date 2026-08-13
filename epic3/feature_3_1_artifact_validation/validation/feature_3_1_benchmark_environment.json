@@ -1,0 +1,32 @@
+{
+  "env_id": "F31-P4-BM-ENV-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:27:11+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "benchmark_timestamp": "2026-08-04T07:27:11+07:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_cores": 12,
+  "ram_gb": 16.8,
+  "python_version": "3.13.14",
+  "sklearn_version": "1.8.0",
+  "xgboost_version": "3.3.0",
+  "joblib_version": "1.5.3",
+  "numpy_version": "2.4.6",
+  "psutil_version": "7.2.2",
+  "model_artifact_hash": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "package_version": "1.0.0",
+  "git_commit": "2a6343f",
+  "background_workload_note": "No explicit background workload recorded; user session on Windows 11 desktop",
+  "power_mode": "UNKNOWN",
+  "process_affinity": "NOT_SET",
+  "thread_env": "default Python threads",
+  "notes": [
+    "Benchmark run on desktop Windows 11, not a server/headless environment",
+    "No process affinity restrictions applied",
+    "Memory available: 16.8 GB"
+  ]
+}

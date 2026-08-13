@@ -1,0 +1,50 @@
+{
+  "validation_timestamp": "2026-07-30T15:29:43Z",
+  "results": {
+    "input_schema": {
+      "status": "OK",
+      "field_count": 18
+    },
+    "example_input": {
+      "status": "OK",
+      "field_count": 18
+    },
+    "expected_output": {
+      "status": "OK",
+      "prediction_display": 46
+    },
+    "pipeline_load": {
+      "status": "OK",
+      "load_time_ms": 274.04
+    },
+    "prediction": {
+      "status": "OK",
+      "prediction_display": 46,
+      "prediction_raw": 46.421062,
+      "prediction_clipped": 46.421062,
+      "pred_time_ms": 25.78,
+      "warnings": []
+    },
+    "validation": {
+      "status": "OK",
+      "expected": 46,
+      "actual": 46,
+      "diff": 0,
+      "tolerance": 1
+    },
+    "field_check": {
+      "status": "OK",
+      "expected_count": 18,
+      "actual_count": 18,
+      "missing": [],
+      "extra": []
+    },
+    "metadata": {
+      "status": "OK",
+      "model_id": "EXP24-XGB-FINAL-001",
+      "model_version": "1.0.0",
+      "package_version": "1.0.0"
+    }
+  },
+  "overall": "PASSED"
+}

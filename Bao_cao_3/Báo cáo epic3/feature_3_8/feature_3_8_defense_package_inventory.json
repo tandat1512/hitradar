@@ -1,0 +1,177 @@
+{
+    "feature_id":  "3.8",
+    "generated_at":  "2026-08-13T00:00:00+07:00",
+    "base_git_commit":  "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+    "package_git_tracking_status":  "UNTRACKED",
+    "package_reproducible_from_git_commit":  false,
+    "items":  [
+                  {
+                      "logical_name":  "project_story",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_project_story.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "d9ae3662bae0b5d87595dd039b8594e0bac2415ee5de7cdd5e9249480a7e23d6",
+                      "purpose":  "Final defense narrative"
+                  },
+                  {
+                      "logical_name":  "slide_outline",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md",
+                      "exists":  true,
+                      "status":  "READY_WITH_SEMANTIC_PLACEHOLDER",
+                      "sha256":  "497383757e1c1166d3a30e21d423f5fe19640fde97ab43d927597baddbb9fe10",
+                      "purpose":  "Verified slide facts; presenter remains unconfirmed"
+                  },
+                  {
+                      "logical_name":  "slide_deck",
+                      "path":  null,
+                      "exists":  false,
+                      "status":  "MISSING",
+                      "sha256":  null,
+                      "purpose":  "Actual PPT/PPTX/ODP defense deck"
+                  },
+                  {
+                      "logical_name":  "speaker_notes",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md",
+                      "exists":  true,
+                      "status":  "EMBEDDED_ONLY",
+                      "sha256":  "497383757e1c1166d3a30e21d423f5fe19640fde97ab43d927597baddbb9fe10",
+                      "purpose":  "Speaker notes; not embedded in an actual deck"
+                  },
+                  {
+                      "logical_name":  "demo_script",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "5f317caf8f2ab41e4df380ffb8342bc0f15e552709b9eadd6d1ccf31acac5a97",
+                      "purpose":  "Live demo narration and recovery"
+                  },
+                  {
+                      "logical_name":  "demo_scenario",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_demo_scenario.json",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "ae085524c1d48c4743fe6a623bb905efd49b0bdea0f7011d3d8dfb95e34bf560",
+                      "purpose":  "Canonical demo input and expected prediction"
+                  },
+                  {
+                      "logical_name":  "qa_dataset",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_DATASET.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "23a69d72d88471cfc46cce7322971273743a851c6f471812296bd58401b84c08",
+                      "purpose":  "Dataset Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "qa_model",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_MODEL.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "4bbedcebe0938ace4886d9be4d191e0b3818ef677bc25c01e77998f76ed007a2",
+                      "purpose":  "Model and metrics Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "qa_shap",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_SHAP.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "ee6dc1f97eae2bc5ae6e510ce02a9b4240dec1dbd8a3eb62fd822a70709de86c",
+                      "purpose":  "SHAP Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "qa_limitations",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_LIMITATIONS.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "a30439e758d70685f2340a3eaff39f5a4288d750f4767adbc93d8d7f9f56b6ea",
+                      "purpose":  "Limitations Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "rapid_fire",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_RAPID_FIRE.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "0ff6cdf6b1886b573a0fb4816197292d5eda522e3d89b487f7e1734d32e40a90",
+                      "purpose":  "Rapid-fire Q\u0026A sheet"
+                  },
+                  {
+                      "logical_name":  "presenter_assignment",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_PRESENTER_ASSIGNMENT.md",
+                      "exists":  true,
+                      "status":  "HUMAN_CONFIRMATION_REQUIRED",
+                      "sha256":  "ae009a064984d1547195eb3379269050807169739806791725d4c0ef1dddd525",
+                      "purpose":  "Presenter/operator/Q\u0026A ownership template"
+                  },
+                  {
+                      "logical_name":  "handoff_notes",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_presenter_handoff_notes.md",
+                      "exists":  true,
+                      "status":  "PRACTICE_REQUIRED",
+                      "sha256":  "a6ef647c57c9e9ad06b13745af596cadbb0d63b68a64211faa2f7d47b4a1f840",
+                      "purpose":  "Presenter handoff cues"
+                  },
+                  {
+                      "logical_name":  "rehearsal_1",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_rehearsal_1.json",
+                      "exists":  true,
+                      "status":  "HUMAN_REHEARSAL_REQUIRED",
+                      "sha256":  "2e391888170d6ccef8717d8906c673aedce0651ca27c3b667d7982f32a9293eb",
+                      "purpose":  "R1 actual evidence record"
+                  },
+                  {
+                      "logical_name":  "rehearsal_issues",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_rehearsal_issue_registry.json",
+                      "exists":  true,
+                      "status":  "AWAITING_R1",
+                      "sha256":  "becf7b9dca7c825e2926885317b93a474aee2ab9c500161e1ba6813f451b36cc",
+                      "purpose":  "Human rehearsal issue registry"
+                  },
+                  {
+                      "logical_name":  "rehearsal_2",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_rehearsal_2.json",
+                      "exists":  true,
+                      "status":  "HUMAN_REHEARSAL_REQUIRED",
+                      "sha256":  "e0ed1e773c366cab6cdb3639eb7a107615e6dfc66bd184abaa71ad660070766e",
+                      "purpose":  "R2 actual evidence record"
+                  },
+                  {
+                      "logical_name":  "backup_screenshots",
+                      "path":  "demo/backup/screenshots/README.md",
+                      "exists":  true,
+                      "status":  "MISSING_MEDIA_FILES",
+                      "sha256":  "115c1a80ea1cb16ac43b32130723e4eb46ad091e1454e26661f20180b9d84701",
+                      "purpose":  "Screenshot capture instructions only"
+                  },
+                  {
+                      "logical_name":  "backup_video",
+                      "path":  null,
+                      "exists":  false,
+                      "status":  "MISSING",
+                      "sha256":  null,
+                      "purpose":  "Local fallback demo video"
+                  },
+                  {
+                      "logical_name":  "offline_demo",
+                      "path":  "demo/offline/evidence/example_output.json",
+                      "exists":  true,
+                      "status":  "EVIDENCE_ONLY_UI_NOT_VALIDATED",
+                      "sha256":  "f4fef049b96c83db48f8252e4287fdb59a15b704c17ac7b7dd0287710588b41a",
+                      "purpose":  "Precomputed canonical output; not live inference"
+                  },
+                  {
+                      "logical_name":  "runbook",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md",
+                      "exists":  true,
+                      "status":  "READY",
+                      "sha256":  "8bebc9035605606c2689fc50fa52283a233713a4865487202c405558a1624183",
+                      "purpose":  "Canonical startup and recovery runbook"
+                  },
+                  {
+                      "logical_name":  "reliability_checklist",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_6/demo_reliability_checklist.md",
+                      "exists":  true,
+                      "status":  "READY_WITH_HUMAN_ITEMS_PENDING",
+                      "sha256":  "914bb05c1905ccb7808e1cec5eb73d5dd38312d46dd041d44312659068d614dc",
+                      "purpose":  "Demo reliability checklist"
+                  }
+              ]
+}

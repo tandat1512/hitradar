@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-13",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 canonical demo scenario — synchronized with final live smoke",
+  "scenario_id": "F38-DEMO-CANONICAL-001",
+  "scenario_name": "Canonical Song Prediction",
+  "input_source": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+  "input_hash": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+  "model_version": "1.0.0",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "canonical_input": {
+    "duration_min": 5.1767,
+    "explicit": true,
+    "release_year": 1992,
+    "release_month": 11.0,
+    "decade": 1990,
+    "release_precision": "day",
+    "danceability": 0.785,
+    "energy": 0.793,
+    "key": 1,
+    "loudness": -7.915,
+    "mode": 1,
+    "speechiness": 0.163,
+    "acousticness": 0.22,
+    "instrumentalness": 0.718,
+    "liveness": 0.124,
+    "valence": 0.655,
+    "tempo": 88.902,
+    "time_signature": 4.0
+  },
+  "expected_predict": {
+    "status": "SUCCESS",
+    "prediction_raw": 46.421062,
+    "prediction_clipped": 46.421062,
+    "prediction_display": 46,
+    "tolerance": 0.001
+  },
+  "final_explain_observation": {
+    "status": "PASS",
+    "elapsed_ms": 400,
+    "base_value": 22.879942,
+    "top_features": [
+      {"name": "release_year", "shap_value": 7.736362},
+      {"name": "energy_danceability", "shap_value": 5.928582},
+      {"name": "acousticness", "shap_value": 1.81846},
+      {"name": "duration_min", "shap_value": 1.395095},
+      {"name": "danceability", "shap_value": 1.259571}
+    ],
+    "caution": "Measured values belong only to this canonical input and describe model attribution, not causation."
+  },
+  "what_if": {
+    "feature": "energy",
+    "original": 0.793,
+    "modified": 0.95,
+    "prediction_before": 46.421062,
+    "prediction_after": 44.045479,
+    "delta": -2.375583,
+    "caution": "The negative delta is one model-output comparison, not a general direction or real-world causal effect."
+  },
+  "offline_policy": "Explain and What-if are not available as offline live inference; use only explicitly labeled prepared evidence.",
+  "status": "CANONICAL_SCENARIO_REVALIDATED",
+  "evidence_source": "feature_3_8_final_live_demo_smoke.json"
+}

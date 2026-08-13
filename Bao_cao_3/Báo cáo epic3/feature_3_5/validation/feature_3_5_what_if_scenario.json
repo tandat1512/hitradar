@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 What-If E2E — scenario selection",
+  "baseline": "canonical example_input.json (18 fields, 1992 release)",
+  "baseline_prediction": "46.421062 (from Feature 3.1 validation)",
+  "modification_strategy": "Select one modifiable audio feature from /features metadata; do NOT assume field exists",
+  "modification_rules": [
+    "field must be in canonical input",
+    "field must be modifiable (not target_popularity, not track_id)",
+    "field must be within Pydantic validation range",
+    "new value must be within valid range for that feature"
+  ],
+  "candidate_modifications": [
+    {"field": "energy", "original": 0.793, "range": [0.0, 1.0], "modified": 0.95},
+    {"field": "danceability", "original": 0.785, "range": [0.0, 1.0], "modified": 0.95},
+    {"field": "valence", "original": 0.655, "range": [0.0, 1.0], "modified": 0.9},
+    {"field": "loudness", "original": -7.915, "range": [-60.0, 0.0], "modified": -3.0}
+  ],
+  "selected_modification": "TBD at live test time (must be from actual /features response)",
+  "delta_calculation": "modified_prediction - baseline_prediction",
+  "delta_tolerance": 0.001,
+  "note": "Modification selection deferred to live test — must use actual /features response",
+  "status": "CONTRACT_VALIDATED"
+}

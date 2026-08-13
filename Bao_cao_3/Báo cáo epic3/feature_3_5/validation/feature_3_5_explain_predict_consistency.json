@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Explain vs Predict — prediction consistency validation",
+  "principle": "For the same input, /predict and /explain must return the same prediction_raw",
+  "tolerance": 0.001,
+  "canonical_input_prediction": 46.421062,
+  "expected_explain_prediction": 46.421062,
+  "mismatch_is_blocker": true,
+  "mismatch_action": "BLOCKER — do NOT modify explanation to match prediction",
+  "actual_live_test": "PENDING (requires running backend)",
+  "status": "CONTRACT_VALIDATED"
+}

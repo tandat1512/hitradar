@@ -1,0 +1,11 @@
+demo_step,live_status,offline_status,screenshot,video_coverage,fallback_order,notes
+PRE-01 System Check,REQUIRES_LIVE,NOT_APPLICABLE,N/A,N/A,N/A,No backup needed — if this fails, demo cannot proceed
+HOME-01 Opening,REQUIRES_LIVE,NOT_APPLICABLE,NOT_CAPTURED,NOT_RECORDED,SKIP,Home page cannot be meaningfully captured
+PREDICT-01 Canonical,LIVE_READY,PRECOMPUTED_46,NOT_CAPTURED,NOT_RECORDED,PRIMARY,Predict is the anchor — must work live or use precomputed
+PREDICT-01 Result,live_prediction_displayed,precomputed_46_displayed,NOT_CAPTURED,NOT_RECORDED,FIRST_FALLBACK,Precomputed value = 46 (canonical from Feature 3.1)
+EXPLAIN-01 SHAP,LIVE_REQUIRED,NOT_AVAILABLE,NOT_CAPTURED,NOT_RECORDED,SKIP_IF_OFFLINE,No precomputed SHAP validated — must skip in offline
+WHATIF-01 What-If,LIVE_REQUIRED,NOT_AVAILABLE,NOT_CAPTURED,NOT_RECORDED,SKIP_IF_OFFLINE,No precomputed delta validated — must skip in offline
+TRENDS-01 Dashboard,LIVE_CSV_READ,LIVE_CSV_READ,N/A,N/A,ALWAYS_AVAILABLE,Dashboard does not require backend — runs in both modes
+MODELINFO-01 Model Info,LIVE_OR_STATIC,LIVE_OR_STATIC,N/A,N/A,N/A,Model Info available as static snapshot in offline
+LIMITATIONS-01 Limitations,STATIC,STATIC,N/A,N/A,N/A,Limitations page is static — always available
+BACKUP_CAPTION,FULL_COVERAGE,NOT_APPLICABLE,NOT_CAPTURED,NOT_RECORDED,FINAL,Narrator script as backup if all media fails

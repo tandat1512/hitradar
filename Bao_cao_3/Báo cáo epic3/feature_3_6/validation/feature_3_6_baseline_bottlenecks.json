@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 baseline bottleneck classification — evidence-based from source inspection",
+  "classification_rule": "No bottleneck recorded without evidence. Latency magnitudes require live measurement (BLOCKED); structural findings from source audit.",
+  "bottlenecks": [
+    {
+      "category": "SHAP_COMPUTATION",
+      "evidence": "api.py /explain builds TreeExplainer once (cached global) but computes shap_values + fe/prep transform per request (lines 234-256). First /explain pays TreeExplainer build cost.",
+      "observed_impact": "Expected: first /explain request significantly slower than warm /explain. Per-request SHAP computation is inherent to the feature.",
+      "confidence": "HIGH (structural, from source)",
+      "candidate_optimization": "Keep explainer caching (already done). Per-request SHAP compute is unavoidable; measure only.",
+      "priority": "MEDIUM"
+    },
+    {
+      "category": "ARTIFACT_READING",
+      "evidence": "api.py /model-info reads model_metrics.json from disk on every request (lines 127-141), no cache.",
+      "observed_impact": "Small file (~KB); repeated disk read on each /model-info. Minor.",
+      "confidence": "HIGH (structural)",
+      "candidate_optimization": "Cache metrics dict in PipelineLoader after first read (Phase 2 candidate, low priority).",
+      "priority": "LOW"
+    },
+    {
+      "category": "NETWORK_LOCAL_OVERHEAD",
+      "evidence": "Frontend uses httpx.Client to 127.0.0.1:8000. Every action (predict/explain/what-if) is a real HTTP round-trip.",
+      "observed_impact": "Local HTTP overhead per request (typically <5ms loopback + serialization). Inherent to Streamlit↔FastAPI split.",
+      "confidence": "MEDIUM (requires live measurement)",
+      "candidate_optimization": "None needed — architecture contract. Measure only.",
+      "priority": "LOW"
+    }
+  ],
+  "already_optimized_findings": [
+    {
+      "category": "MODEL_LOADING",
+      "evidence": "Eager load in lifespan, singleton cache. 1 load per backend lifecycle, 0 reloads during requests.",
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "category": "DATASET_LOADING",
+      "evidence": "Feature 3.4 dashboard_cache uses st.cache_data keyed by source SHA-256. 169,681-row CSV loaded once per Streamlit cache lifecycle.",
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "category": "DASHBOARD_AGGREGATION",
+      "evidence": "Aggregations cached via st.cache_data with (version, feature, method, granularity) key.",
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "category": "FRONTEND_SCRIPT_RERUN",
+      "evidence": "Streamlit reruns are stateless; heavy work delegated to backend API or cached loaders. No direct model access.",
+      "classification": "ALREADY_OPTIMIZED"
+    }
+  ],
+  "live_measurement_required": [
+    "backend_startup_ms",
+    "first_prediction_ms",
+    "warm_prediction_p50_p95",
+    "frontend_startup_ms",
+    "page_execution_ms (cold/warm)",
+    "dashboard_stage_timing"
+  ],
+  "status": "BOTTLENECKS_IDENTIFIED_FROM_SOURCE"
+}

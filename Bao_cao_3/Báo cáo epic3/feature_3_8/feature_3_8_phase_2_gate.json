@@ -1,0 +1,33 @@
+{
+  "demo_script_complete": true,
+  "canonical_demo_scenario_valid": true,
+  "demo_steps_complete": true,
+  "demo_timing_plan_complete": true,
+  "predict_demo_valid": true,
+  "explain_demo_status": "SCRIPT_VALID_FINAL_SMOKE_PASS_OFFLINE_NOT_AVAILABLE",
+  "what_if_demo_valid": true,
+  "trends_demo_valid": true,
+  "failure_tree_complete": true,
+  "offline_fallback_documented": true,
+  "offline_disclosure_valid": true,
+  "backup_matrix_complete": true,
+  "guarantee_claim_count": 0,
+  "causal_shap_claim_count": 0,
+  "causal_what_if_claim_count": 0,
+  "offline_live_misrepresentation_count": 0,
+  "training_executed": false,
+  "model_artifacts_modified": false,
+  "pytest_collected": 9,
+  "pytest_passed": 9,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "warnings": [
+    "Historical dry-run /explain timed out after 300 seconds; final smoke passed in about 400 ms. Script retains prompt skip and forbids fabricated SHAP output.",
+    "Feature 3.6 offline UI implementation is not validated; fallback is explicitly labeled evidence-only OFFLINE_PRECOMPUTED.",
+    "Backup screenshots are missing and video is MANUAL_RECORDING_REQUIRED; the matrix does not mark either as available.",
+    "Current Music Trends source and corrected Feature 3.8 story/slide use 586672 rows over 1900-2021; legacy docs with older scope are non-canonical."
+  ],
+  "blockers": [],
+  "status": "PASS_WITH_WARNINGS",
+  "next_phase": "MAY_BEGIN"
+}

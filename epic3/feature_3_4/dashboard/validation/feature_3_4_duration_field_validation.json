@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "duration_column": "duration_min",
+  "valid": true,
+  "unit": "minutes",
+  "note": "Column is 'duration_min' (MINUTES, not milliseconds). Unit confirmed from CSV sample: 5.1767, 4.7782 (realistic song durations in minutes). Dashboard must NOT assume milliseconds.",
+  "confirmed_from": "CSV sample: duration_min=5.1767, 4.7782, 2.8411 (realistic song lengths in minutes)",
+  "derived_possible": "duration_sec = duration_min * 60"
+}

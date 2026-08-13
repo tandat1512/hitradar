@@ -1,0 +1,16 @@
+task_id,requirement,expected,actual,evidence_path,sha256,status,warning_id,blocker_id,notes
+3.6.1,API latency benchmark,Baseline + final valid,BLOCKED,feature_3_6_api_latency_baseline.json;feature_3_6_api_latency_final.json,PENDING_LIVE,FAIL,F36-W02,F36-B01,No live Python env
+3.6.2,Streamlit page benchmark,Baseline + final valid,BLOCKED,feature_3_6_streamlit_page_latency_baseline.json;feature_3_6_streamlit_page_latency_final.json,PENDING_LIVE,FAIL,F36-W02,F36-B01,No live Python env
+3.6.3,Model loading optimization,1 load/process 0 reload/request,ALREADY_OPTIMIZED,feature_3_6_model_loading_architecture.json;feature_3_6_model_load_optimization_validation.json,PENDING_LIVE,PASS,,-,Source audit evidence
+3.6.4,Model/artifact cache,Static metadata cached,ALREADY_OPTIMIZED,feature_3_6_artifact_cache_registry.json,PENDING_LIVE,PASS,,-,7/9 artifacts already cached
+3.6.5,Dashboard data cache,Dataset cached + aggregates cached,ALREADY_OPTIMIZED,feature_3_6_dashboard_cache_key_contract.json,PENDING_LIVE,PASS,,-,st.cache_data 2 layers
+3.6.6,run_backend,Script works + port safety,CREATED live BLOCKED,scripts/run_backend.py;feature_3_6_final_run_backend_smoke.json,PENDING_LIVE,FAIL,,F36-B01,Script + finally teardown
+3.6.7,run_frontend,Script works + port safety,CREATED live BLOCKED,scripts/run_frontend.py;feature_3_6_final_run_frontend_smoke.json,PENDING_LIVE,FAIL,,F36-B01,Script
+3.6.8,run_all,Orchestrator works,CREATED live BLOCKED,scripts/run_all.py;feature_3_6_final_run_all_smoke.json,PENDING_LIVE,FAIL,,F36-B01,Real /health wait no sleep
+3.6.9,Backup screenshots,7 screenshots ready,0 captured (honest),feature_3_6_backup_screenshot_manifest.json,PENDING_LIVE,FAIL,F36-W09,F36-B01,Inventory complete
+3.6.10,Backup demo video,Video ready or manual-required,MANUAL_RECORDING_REQUIRED,feature_3_6_demo_video_shot_list.md;feature_3_6_backup_video_manifest.json,PENDING_LIVE,PASS_WITH_WARNING,F36-W09,,"Acceptance allows manual; honest"
+3.6.11,Offline demo mode,Explicit labeled precomputed fallback,Contract complete implementation deferred,feature_3_6_offline_demo_mode_contract.json;feature_3_6_offline_demo_evidence_registry.json,PENDING_LIVE,FAIL,F36-W10,F36-B01,No fake inference (Explain/What-if NOT_AVAILABLE)
+3.6.12,Demo reliability checklist,Checklist complete,CREATED,demo_reliability_checklist.md,PENDING_LIVE,PASS,,-,9 sections
+3.6.13,Runbook/port/env/fallback,Documented + traceable,CREATED,DEMO_RUNBOOK_FEATURE_3_6.md;feature_3_6_runbook_env_validation.json;feature_3_6_port_documentation_validation.json,PENDING_LIVE,PASS,,-,18 sections
+FINAL,Full test suite,0 failed/errors,BLOCKED,../tests/test_feature_3_6_*.py;pytest_feature_3_6.xml,PENDING_LIVE,FAIL,,F36-B01,No Python env
+FINAL,Re-benchmark + smoke,Complete,BLOCKED,feature_3_6_final_performance_comparison.json;feature_3_6_final_run_all_smoke.json,PENDING_LIVE,FAIL,F36-W02,F36-B01,Single root blocker

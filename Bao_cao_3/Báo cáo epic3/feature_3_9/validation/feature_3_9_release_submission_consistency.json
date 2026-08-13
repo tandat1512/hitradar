@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-13T20:55:04+07:00",
+  "report_model_version_consistent": true,
+  "slide_corresponds_to_release": false,
+  "readme_commands_correspond_to_release": false,
+  "submission_manifest_references_current_files": true,
+  "release_commit_exists": false,
+  "release_submission_consistent": false,
+  "reasons": [
+    "No verified final commit exists.",
+    "No final slide exists.",
+    "README cannot be tied to a final release SHA."
+  ],
+  "status": "FAIL"
+}

@@ -1,0 +1,219 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 negative test contract — actual Pydantic constraints from prediction.py",
+  "source": "5.UNG_DUNG/5.1.backend_api/models/prediction.py",
+  "pydantic_model": "PredictRequest",
+  "pydantic_extra_policy": "allow",
+  "fields": [
+    {
+      "name": "duration_min",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 120.0,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": -0.1,
+      "test_above_max": 120.1
+    },
+    {
+      "name": "explicit",
+      "type": "bool",
+      "required": true,
+      "nullable": false,
+      "allowed_values": [true, false]
+    },
+    {
+      "name": "release_year",
+      "type": "int",
+      "required": true,
+      "minimum": 1900,
+      "maximum": 2100,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": 1899,
+      "test_above_max": 2101
+    },
+    {
+      "name": "release_month",
+      "type": "float",
+      "required": true,
+      "minimum": 1.0,
+      "maximum": 12.0,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": 0.9,
+      "test_above_max": 12.1
+    },
+    {
+      "name": "decade",
+      "type": "int",
+      "required": true,
+      "minimum": 1900,
+      "maximum": 2100,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": 1899,
+      "test_above_max": 2101
+    },
+    {
+      "name": "release_precision",
+      "type": "string",
+      "required": true,
+      "pattern": "^(day|month|year)$",
+      "nullable": false,
+      "allowed_values": ["day", "month", "year"],
+      "test_invalid": "invalid",
+      "test_null": null
+    },
+    {
+      "name": "danceability",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": -0.001,
+      "test_above_max": 1.001
+    },
+    {
+      "name": "energy",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": -0.001,
+      "test_above_max": 1.001
+    },
+    {
+      "name": "key",
+      "type": "int",
+      "required": true,
+      "minimum": 0,
+      "maximum": 11,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": -1,
+      "test_above_max": 12
+    },
+    {
+      "name": "loudness",
+      "type": "float",
+      "required": true,
+      "minimum": -60.0,
+      "maximum": 0.0,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": -60.1,
+      "test_above_max": 0.1
+    },
+    {
+      "name": "mode",
+      "type": "int",
+      "required": true,
+      "minimum": 0,
+      "maximum": 1,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "allowed_values": [0, 1]
+    },
+    {
+      "name": "speechiness",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false
+    },
+    {
+      "name": "acousticness",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false
+    },
+    {
+      "name": "instrumentalness",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false
+    },
+    {
+      "name": "liveness",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false
+    },
+    {
+      "name": "valence",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ge": true,
+      "le": true,
+      "nullable": false
+    },
+    {
+      "name": "tempo",
+      "type": "float",
+      "required": true,
+      "minimum": 0.0,
+      "maximum": 300.0,
+      "ge": true,
+      "le": true,
+      "nullable": false,
+      "test_below_min": -0.001,
+      "test_above_max": 300.1
+    },
+    {
+      "name": "time_signature",
+      "type": "float",
+      "required": true,
+      "nullable": false,
+      "note": "No explicit min/max — any float accepted"
+    }
+  ],
+  "forbidden_field": {
+    "name": "target_popularity",
+    "note": "The target column — must NEVER affect feature matrix"
+  },
+  "extra_field_policy": "allow",
+  "expected_status_codes": {
+    "validation_error": 422,
+    "connection_error": "APIClientError (no HTTP status)",
+    "timeout": "APITimeoutError (no HTTP status)",
+    "service_unavailable": 503,
+    "unexpected_server_error": 500
+  },
+  "error_format": "Feature 3.2 ErrorResponse or FastAPI HTTPException detail",
+  "traceback_exposure_policy": "MUST NOT expose Python traceback to client",
+  "internal_path_exposure_policy": "MUST NOT expose internal file paths",
+  "status": "PASS"
+}

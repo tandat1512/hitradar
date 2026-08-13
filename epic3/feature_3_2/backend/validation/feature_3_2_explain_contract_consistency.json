@@ -1,0 +1,12 @@
+{
+  "date": "2026-08-06T01:38:12.318692+00:00",
+  "status": "PASS",
+  "has_prediction_fields": true,
+  "has_shap_fields": true,
+  "has_model_fields": true,
+  "top_features_sorted": true,
+  "contributions_finite": true,
+  "no_internal_paths": true,
+  "warnings": [],
+  "blockers": []
+}

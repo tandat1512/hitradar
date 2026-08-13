@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-06T01:43:43.633524+00:00",
+  "status": "PASS",
+  "method": "scenario_count",
+  "pytest_available": true,
+  "pytest_cov_available": false,
+  "test_file_count": 3,
+  "estimated_test_count": 133,
+  "test_files": [
+    "test_feature_3_2_middleware_and_get.py",
+    "test_feature_3_2_post_endpoints.py",
+    "test_feature_3_2_services.py"
+  ],
+  "coverage_note": "pytest-cov not installed; coverage estimated via test count. Real coverage requires pytest-cov installation.",
+  "measured_line_coverage": null,
+  "warnings": [
+    "pytest-cov not installed — line coverage not measured"
+  ],
+  "blockers": []
+}

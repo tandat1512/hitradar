@@ -1,0 +1,18 @@
+{
+  "status": "WAITING_FOR_HUMAN_DEFENSE",
+  "scheduled_at": null,
+  "actual_started_at": null,
+  "actual_ended_at": null,
+  "participants": [],
+  "panel": [],
+  "release_identity": null,
+  "slide_identity": null,
+  "demo_status": "WAITING_FOR_HUMAN_DEMO",
+  "questions_received": [],
+  "feedback": [],
+  "outcome": "OUTCOME_UNKNOWN",
+  "score_if_user_provides": null,
+  "required_followup": [],
+  "evidence": [],
+  "completion_claimed": false
+}

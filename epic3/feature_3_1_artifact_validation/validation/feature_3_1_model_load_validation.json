@@ -1,0 +1,47 @@
+{
+  "load_id": "F31-P2-LOAD-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:42:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "artifact_path": "7.ML/7.10.model_packaging/package/pipeline/full_inference_pipeline.joblib",
+  "artifact_sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+  "hash_unchanged": true,
+  "loader": "joblib",
+  "loader_version": "1.5.3",
+  "load_valid": true,
+  "load_duration_ms": 1849.13,
+  "load_error": null,
+  "object_type": "HitRadarInferencePipeline",
+  "object_module": "inference_pipeline",
+  "predict_available": true,
+  "predict_proba_available": false,
+  "transform_available": false,
+  "main_api_method": "predict_popularity()",
+  "champion_pipeline_predict": true,
+  "n_features_in_exposed": false,
+  "model_id_exposed": "EXP24-XGB-FINAL-001",
+  "model_version_exposed": "1.0.0",
+  "package_version_exposed": "1.0.0",
+  "runtime_patches_required": [
+    {"patch": "transformers module conflict", "status": "APPLIED"},
+    {"patch": "__main__.to_string stub", "status": "APPLIED"},
+    {"patch": "sys.path runtime resolution", "status": "APPLIED"},
+    {"patch": "to_str FunctionTransformer post-load", "status": "APPLIED"}
+  ],
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+  "no_refit_status": "PASS",
+  "source_artifacts_modified": false,
+  "sklearn_version_warning": "Pipeline pickled with sklearn 1.9.0, running on 1.8.0 — InconsistentVersionWarning raised but load succeeded",
+  "warnings": [
+    {
+      "type": "SKLEARN_VERSION_MISMATCH",
+      "severity": "WARNING",
+      "detail": "InconsistentVersionWarning: trying to unpickle from sklearn 1.9.0 with 1.8.0"
+    }
+  ],
+  "blockers": [],
+  "status": "PASS"
+}

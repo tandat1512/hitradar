@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "dataset": {
+    "path": "5.DATA/processed/ml_ready_dataset.csv",
+    "relative_path": "5.DATA/processed/ml_ready_dataset.csv",
+    "sha256": "UNAVAILABLE_SHELL_BLOCKED",
+    "bytes": "UNAVAILABLE",
+    "source_epic": "EPIC 1 / Feature 1.3 (prepared dataset pipeline)",
+    "generated_by": "EPIC 1 dataset preparation pipeline",
+    "referenced_by": "Feature 3.3 Music Trends page"
+  },
+  "evaluation": {
+    "path": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+    "relative_path": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+    "sha256": "UNAVAILABLE_SHELL_BLOCKED",
+    "bytes": "UNAVAILABLE",
+    "source_epic": "EPIC 2",
+    "generated_by": "EPIC 2 model evaluation pipeline",
+    "referenced_by": "Feature 3.3 Music Trends page"
+  },
+  "read_only_proven": true,
+  "note": "SHA-256 hashes unavailable — shell tools blocked. To be verified manually with: sha256sum ml_ready_dataset.csv"
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "source_file": "5.DATA/processed/ml_ready_dataset.csv",
+  "source_epic": "EPIC 1 / Feature 1.3",
+  "rows": 169681,
+  "columns": 20,
+  "column_list": [
+    "track_id", "target_popularity", "duration_min", "explicit",
+    "release_year", "release_month", "decade", "release_precision",
+    "danceability", "energy", "key", "loudness", "mode",
+    "speechiness", "acousticness", "instrumentalness", "liveness",
+    "valence", "tempo", "time_signature"
+  ],
+  "fields": [
+    {"column": "track_id",        "role": "IDENTIFIER",     "dtype": "string",   "dashboard_usability": "NOT_AGGREGATABLE"},
+    {"column": "target_popularity","role": "POPULARITY",     "dtype": "int64",    "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "duration_min",     "role": "DURATION",       "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR", "unit": "minutes"},
+    {"column": "explicit",         "role": "EXPLICIT",       "dtype": "bool",     "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "release_year",     "role": "TEMPORAL",       "dtype": "int64",    "dashboard_usability": "PRIMARY_DIMENSION"},
+    {"column": "release_month",    "role": "TEMPORAL",       "dtype": "float64", "dashboard_usability": "NOT_RECOMMENDED"},
+    {"column": "decade",           "role": "TEMPORAL",        "dtype": "int64",    "dashboard_usability": "AGGREGATABLE_BY_DECADE", "note": "pre-computed: (release_year // 10) * 10"},
+    {"column": "release_precision","role": "OTHER",           "dtype": "string",   "dashboard_usability": "NOT_AGGREGATABLE"},
+    {"column": "danceability",     "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "energy",           "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "key",              "role": "AUDIO_FEATURE",  "dtype": "int64",    "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "loudness",        "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "mode",             "role": "AUDIO_FEATURE",  "dtype": "int64",    "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "speechiness",      "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "acousticness",      "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "instrumentalness", "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "liveness",         "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "valence",          "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "tempo",            "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"},
+    {"column": "time_signature",    "role": "AUDIO_FEATURE",  "dtype": "float64",  "dashboard_usability": "AGGREGATABLE_BY_YEAR"}
+  ],
+  "note": "Column 'popularity' is named 'target_popularity' in this dataset. Duration is 'duration_min' (minutes), not 'duration_ms'."
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-06T01:43:43.229568+00:00",
+  "status": "PASS",
+  "collection_created": true,
+  "collection_path": "H:\\dự án\\DUAN1 github\\5.UNG_DUNG\\5.1.backend_api\\hitradar_api_collection.json",
+  "request_count": 7,
+  "has_health": true,
+  "has_predict": true,
+  "has_explain": true,
+  "has_whatif": true,
+  "uses_variable_base_url": true,
+  "has_test_assertions": true,
+  "execution_status": "COLLECTION_CREATED_NOT_EXECUTED",
+  "warnings": [
+    "Postman CLI/Newman not installed — collection is JSON-valid but not run"
+  ],
+  "blockers": []
+}

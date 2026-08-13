@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "resolution_method": "Feature 3.7 closure gate project_summary_path, unique semantic report name, and file integrity",
+  "candidates": [
+    {
+      "role": "final_report_candidate",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+      "exists": true,
+      "bytes": 15232,
+      "sha256": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+      "last_modified": "2026-08-13T19:52:05+07:00",
+      "status": "READY"
+    }
+  ],
+  "final_report_resolved": true,
+  "canonical_path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+  "canonical_source": "Bao_cao_3/Báo cáo epic3/feature_3_7/validation/feature_3_7_closure_gate.json",
+  "ambiguity": false,
+  "status": "PASS"
+}

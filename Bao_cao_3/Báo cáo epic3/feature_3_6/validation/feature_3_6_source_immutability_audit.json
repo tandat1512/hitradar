@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 source immutability audit — hashes before/after",
+  "note": "Phase 5 live hash comparison BLOCKED. Source audit from Phase 1-4: zero production code changes were made in Phases 2-4 (decisions ALREADY_OPTIMIZED/NOT_JUSTIFIED; startup scripts are new additive files).",
+  "artifacts": {
+    "model_pipeline": {"path": "artifacts/epic2/pipeline/full_inference_pipeline.joblib", "hash_before": "PENDING_LIVE", "hash_after": "PENDING_LIVE", "expected": "unchanged", "status": "NOT_MODIFIED (by design)"},
+    "schemas": {"path": "artifacts/epic2/schemas/", "expected": "unchanged", "status": "NOT_MODIFIED (by design)"},
+    "shap_assets": {"path": "7.ML/7.9.explainability/", "expected": "unchanged", "status": "NOT_MODIFIED (by design)"},
+    "trend_dataset": {"path": "5.DATA/processed/ml_ready_dataset.csv", "expected": "unchanged", "status": "NOT_MODIFIED (by design)"},
+    "yearly_evaluation": {"path": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv", "expected": "unchanged", "status": "NOT_MODIFIED (by design)"}
+  },
+  "changes_made_this_feature": [
+    "scripts/ (run_backend.py, run_frontend.py, run_all.py, _common.py) — NEW additive",
+    "demo/backup/, demo/offline/ — NEW additive",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/ + checklist + runbook — reports/evidence"
+  ],
+  "status": "IMMUTABILITY_CONFIRMED_BY_DESIGN"
+}

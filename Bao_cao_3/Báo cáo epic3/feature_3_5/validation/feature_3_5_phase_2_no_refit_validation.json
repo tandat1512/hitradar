@@ -1,0 +1,26 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Phase 2 — no refit/no source mutation",
+  "principle": "Phase 2 E2E tests only consume model predictions; they do NOT train, retrain, or refit",
+  "instrumentation_checked": [
+    "fit() called during Phase 2 E2E",
+    "fit_transform() called during Phase 2 E2E",
+    "partial_fit() called during Phase 2 E2E",
+    "model artifact modified after Phase 2 E2E"
+  ],
+  "expected": {
+    "fit_call_count": 0,
+    "fit_transform_call_count": 0,
+    "partial_fit_call_count": 0,
+    "model_artifact_hash_changed": false
+  },
+  "source_files_not_modified": [
+    "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+    "7.ML/7.4.feature_transformers/ohe_and_scaler.joblib",
+    "5.DATA/processed/ml_ready_dataset.csv"
+  ],
+  "note": "Backend lifespan loads model at startup (PipelineLoader). E2E tests consume predictions without retraining.",
+  "actual_live_test": "PENDING (requires running backend with instrumentation)",
+  "status": "CONTRACT_VALIDATED"
+}

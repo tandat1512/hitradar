@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 dashboard cache key contract — from actual Feature 3.4 + page source",
+  "canonical_trend_source": "5.DATA/processed/ml_ready_dataset.csv",
+  "canonical_eval_source": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+
+  "layers": [
+    {
+      "layer": "Feature 3.4 dashboard_cache.py (available, not imported by the Trends page)",
+      "data_loader": "load_trend_dataset_cached() → st.cache_data, key = source path + SHA-256 fingerprint (get_source_fingerprint)",
+      "agg_key": "make_agg_cache_key(feature, method, granularity, year_min, year_max) = version|feat=…|meth=…|gran=…|ymin=…|ymax=…",
+      "version_source": "_get_source_version_key(): path@sha8 or path@mtime fallback, or 'unavailable' (safe conservative invalidate)",
+      "invalidation": "source path or SHA-256 change → new key → recompute",
+      "returns_copy": true,
+      "mutation_safe": true
+    },
+    {
+      "layer": "Frontend pages/4_Trends.py (the page actually in use)",
+      "data_loader": "load_yearly_features(path) → @st.cache_data, key = function + path string",
+      "agg_key": "implicit (entire aggregation computed inside the cached function)",
+      "version_source": "path string only (no content hash)",
+      "invalidation": "path change or Streamlit cache clear or process restart. Content change at same path is NOT detected.",
+      "returns_copy": "dicts are fresh per call within cache entry; page does not mutate them",
+      "mutation_safe": true,
+      "note": "Path-only keying is acceptable because the source dataset is immutable during a demo session. Content-change invalidation is weaker than Feature 3.4's SHA-256 key — documented, not changed."
+    }
+  ],
+
+  "key_correctness_rules": [
+    "same source + same params → cache reuse",
+    "changed params (feature/granularity/year bounds) → different aggregate",
+    "changed source identity (different path or version) → must not reuse stale aggregate",
+    "source content change at same path: page layer does not detect (accepted for immutable demo dataset); Feature 3.4 layer detects via SHA-256"
+  ],
+
+  "never_cached": ["widget state", "session state", "model objects", "API clients"],
+  "status": "CONTRACT_DOCUMENTED"
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 slide architecture claims vs actual implementation",
+  "canonical_sources": [
+    "README.md",
+    "TECHNICAL_APPENDIX.md",
+    "epic3/feature_3_3/frontend/pages/4_Trends.py",
+    "scripts/run_all.py"
+  ],
+  "validation_results": [
+    {
+      "claim": "Frontend never loads model artifacts",
+      "canonical": "README.md §Architecture: 'The frontend never loads model artifacts directly'",
+      "source_file": "epic3/feature_3_3/frontend/app.py + all pages",
+      "status": "VALIDATED",
+      "evidence": "All pages import HitRadarAPIClient, no direct model/artifact imports found"
+    },
+    {
+      "claim": "Streamlit frontend on port 8501",
+      "canonical": "scripts/run_all.py + README.md",
+      "status": "VALIDATED",
+      "evidence": "run_all.py uses port 8501 as default STREAMLIT_SERVER_PORT"
+    },
+    {
+      "claim": "FastAPI backend on port 8000",
+      "canonical": "scripts/run_all.py + README.md",
+      "status": "VALIDATED",
+      "evidence": "run_all.py uses port 8000 as default BACKEND_PORT"
+    },
+    {
+      "claim": "Model loaded eagerly at FastAPI startup",
+      "canonical": "TECHNICAL_APPENDIX.md §17: 'Eager model load at startup'",
+      "status": "VALIDATED",
+      "evidence": "pipeline_loader.py loads model at import/uvicorn startup, not lazy"
+    },
+    {
+      "claim": "Dashboard reads local CSV without backend",
+      "canonical": "epic3/feature_3_3/frontend/pages/4_Trends.py",
+      "status": "VALIDATED",
+      "evidence": "4_Trends.py uses pd.read_csv directly, no httpx/HitRadarAPIClient calls"
+    },
+    {
+      "claim": "FastAPI handles /predict, /explain, /what-if",
+      "canonical": "openapi.json + api.py",
+      "status": "VALIDATED",
+      "evidence": "openapi.json shows 6 endpoints: GET /health, GET /model-info, GET /features, POST /predict, POST /explain, POST /what-if"
+    },
+    {
+      "claim": "SHAP TreeExplainer on backend",
+      "canonical": "TECHNICAL_APPENDIX.md §15: 'Backend computes SHAP via TreeExplainer'",
+      "status": "VALIDATED",
+      "evidence": "/explain endpoint runs SHAP computation server-side"
+    },
+    {
+      "claim": "run_all.py polls /health until model_loaded==true",
+      "canonical": "scripts/run_all.py + _common.py",
+      "status": "VALIDATED",
+      "evidence": "_common.py wait_for_health() polls require_model=True, no fixed sleep"
+    },
+    {
+      "claim": "Offline fallback is precomputed",
+      "canonical": "offline_demo_mode_contract.json + USER_MANUAL.md",
+      "status": "VALIDATED",
+      "evidence": "OFFLINE_DEMO_MODE=true → precomputed demo shown; no live inference"
+    }
+  ],
+  "validation_status": "PASS",
+  "architecture_mismatch_count": 0,
+  "misrepresentation_count": 0,
+  "no_frontend_model_access_confirmed": true,
+  "no_live_inference_in_offline_confirmed": true
+}

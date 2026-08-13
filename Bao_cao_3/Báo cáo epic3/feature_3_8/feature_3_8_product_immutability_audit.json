@@ -1,0 +1,85 @@
+{
+  "feature_id": "3.8",
+  "generated_at": "2026-08-13T00:00:00+07:00",
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "checks": [
+    {
+      "area": "model",
+      "path": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+      "current_sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "expected_sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "modified_by_feature_3_8": false,
+      "status": "PASS"
+    },
+    {
+      "area": "dataset",
+      "path": "5.DATA/processed/ml_ready_dataset.csv",
+      "current_sha256": "332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e",
+      "expected_sha256": "332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e",
+      "modified_by_feature_3_8": false,
+      "status": "PASS"
+    },
+    {
+      "area": "shap_background_raw",
+      "path": "7.ML/7.9.explainability/background/shap_background_raw.parquet",
+      "current_sha256": "24f7057efa99879997ae6a659dfa3c973cb5f7e3f541435d627b8c08e2312e23",
+      "expected_sha256": "24f7057efa99879997ae6a659dfa3c973cb5f7e3f541435d627b8c08e2312e23",
+      "modified_by_feature_3_8": false,
+      "status": "PASS"
+    },
+    {
+      "area": "shap_background_transformed",
+      "path": "7.ML/7.9.explainability/background/shap_background_transformed.npy",
+      "current_sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+      "expected_sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+      "modified_by_feature_3_8": false,
+      "status": "PASS"
+    },
+    {
+      "area": "shap_values_global",
+      "path": "7.ML/7.9.explainability/shap_values/shap_values_global.npy",
+      "current_sha256": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+      "expected_sha256": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+      "modified_by_feature_3_8": false,
+      "status": "PASS"
+    },
+    {
+      "area": "api_business_logic",
+      "path": "5.UNG_DUNG/5.1.backend_api/api.py",
+      "current_sha256": "81038d81d84c25f54fb178e68220e4ccb0c3c6158b7189769faa80fe2ed56cc9",
+      "expected_sha256": null,
+      "modified_by_feature_3_8": null,
+      "status": "NOT_PROVEN_DIRTY_WORKTREE"
+    },
+    {
+      "area": "prediction_schema",
+      "path": "5.UNG_DUNG/5.1.backend_api/models/prediction.py",
+      "current_sha256": "bdeb85462bc26d06e817785a8a2f4dfacd367391bc0c73f18c8d526851c78e02",
+      "expected_sha256": null,
+      "modified_by_feature_3_8": null,
+      "status": "NOT_PROVEN_DIRTY_WORKTREE"
+    },
+    {
+      "area": "pipeline_loader",
+      "path": "5.UNG_DUNG/5.1.backend_api/pipeline_loader.py",
+      "current_sha256": "c4eecbda0c19a214f0956551bc9e2a553f17a8b218307476688a51249242b512",
+      "expected_sha256": null,
+      "modified_by_feature_3_8": null,
+      "status": "NOT_PROVEN_UNTRACKED_BASELINE"
+    }
+  ],
+  "feature_3_8_write_scope": [
+    "Bao_cao_3/Báo cáo epic3/feature_3_8",
+    "tests/test_feature_3_8_*.py"
+  ],
+  "pre_existing_dirty_worktree": true,
+  "warning": "Model, dataset and three key SHAP artifacts match known hashes. API business logic, prediction schema and pipeline loader have no clean expected baseline in the current dirty/untracked worktree, so Feature 3.8 attribution cannot be proven from git.",
+  "model_artifacts_modified": false,
+  "source_dataset_modified": false,
+  "shap_artifacts_modified": false,
+  "production_business_logic_modified": null,
+  "product_immutability_proven": false,
+  "status": "PARTIAL_NOT_PROVEN_FOR_PRODUCTION_LOGIC"
+}

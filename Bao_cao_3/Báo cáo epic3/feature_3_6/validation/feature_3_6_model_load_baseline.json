@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 model load baseline — from actual source inspection",
+  "lifecycle_evidence": {
+    "source": "5.UNG_DUNG/5.1.backend_api/api.py lifespan (lines 42-58)",
+    "load_point": "eager at startup: `_ = pipeline_loader.pipeline` in lifespan",
+    "load_trigger": "PipelineLoader.pipeline property calls _load_pipeline() on first access (lazy-initialized, cached)",
+    "cache_mechanism": "PipelineLoader._pipeline singleton; schemas/_metadata/_selected_features cached on first access",
+    "loads_per_backend_lifecycle": 1,
+    "reloads_during_prediction_requests": 0,
+    "note": "joblib.load + runtime patches execute exactly once per backend process startup"
+  },
+  "expected": "1 load per backend lifecycle, 0 reloads during requests",
+  "classification": "ALREADY_OPTIMIZED_CANDIDATE",
+  "why": "Pipeline loaded once at startup and cached in a singleton. No lazy reload per request. Model is in-memory before first /predict arrives.",
+  "shap_explainer_evidence": {
+    "source": "api.py _build_shap_explainer (lines 87-96)",
+    "build_point": "lazy, once — cached in module-level global `shap_explainer`",
+    "builds_per_lifecycle": 1,
+    "note": "First /explain request pays TreeExplainer build cost (~seconds), subsequent requests reuse cached explainer"
+  },
+  "status": "BASELINE_RESOLVED_FROM_SOURCE"
+}

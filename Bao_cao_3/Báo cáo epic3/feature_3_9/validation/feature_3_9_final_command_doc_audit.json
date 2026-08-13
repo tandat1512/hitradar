@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "audit_method": "Required commands and default ports are searched in every scoped source document.",
+  "documents": [
+    "README.md",
+    "HOW_TO_RUN_APP.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md"
+  ],
+  "source_sha256": {
+    "README.md": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+    "HOW_TO_RUN_APP.md": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md": "33e5ef0658344a5a9f18a36c6302d58220af8186b6b2a1f1f2d1a7beede03def"
+  },
+  "checks": {
+    "dependency_install": {
+      "status": "PASS",
+      "commands": [
+        "pip install -r 5.UNG_DUNG/5.1.backend_api/requirements.txt",
+        "pip install -r epic3/feature_3_3/frontend/requirements.txt"
+      ]
+    },
+    "run_backend": {
+      "status": "PASS",
+      "command": "python scripts/run_backend.py"
+    },
+    "run_frontend": {
+      "status": "PASS",
+      "command": "python scripts/run_frontend.py"
+    },
+    "run_all": {
+      "status": "PASS",
+      "command": "python scripts/run_all.py"
+    },
+    "health_url": {
+      "status": "PASS",
+      "value": "http://127.0.0.1:8000/health"
+    },
+    "backend_port": {
+      "status": "PASS",
+      "value": 8000
+    },
+    "frontend_port": {
+      "status": "PASS",
+      "value": 8501
+    }
+  },
+  "missing_commands": [],
+  "missing_ports": [],
+  "command_doc_mismatch_count": 0,
+  "port_doc_mismatch_count": 0,
+  "technical_warning_count": 0,
+  "warnings": [],
+  "status": "PASS"
+}

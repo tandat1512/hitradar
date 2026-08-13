@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 API latency baseline statistics",
+  "methodology": {
+    "transport": "actual local HTTP (httpx) against running FastAPI process",
+    "clock": "time.perf_counter() (monotonic high-resolution)",
+    "warmup_requests": 5,
+    "warmup_note": "Warm-up samples excluded from summary",
+    "target_samples": "30-100 sequential requests",
+    "correctness_guard": "every request validated against canonical 46.421062 ±0.001"
+  },
+  "statistics": {
+    "count": "PENDING (live benchmark blocked)",
+    "success_count": "PENDING",
+    "failure_count": "PENDING",
+    "failure_rate_pct": "PENDING",
+    "min_ms": "PENDING",
+    "mean_ms": "PENDING",
+    "median_p50_ms": "PENDING",
+    "p90_ms": "PENDING",
+    "p95_ms": "PENDING",
+    "p99_ms": "PENDING (only if sample size sufficient)",
+    "max_ms": "PENDING",
+    "std_dev_ms": "PENDING"
+  },
+  "first_prediction_metric": {
+    "definition": "backend ready → first actual HTTP POST /predict → complete response",
+    "note": "Model is loaded EAGERLY at startup (lifespan), so first prediction is WARM-MODEL_FIRST-REQUEST, not cold-model",
+    "value_ms": "PENDING"
+  },
+  "status": "BLOCKED"
+}

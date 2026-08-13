@@ -1,0 +1,89 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 slide claim audit — unsupported claims check",
+  "audit_scope": "feature_3_8_slide_outline.md + feature_3_8_project_story.md",
+  "audited_by": "Minh",
+  "claim_categories": {
+    "unsupported_accuracy_claim": {
+      "description": "Claiming model can accurately/predictively determine hit success",
+      "found_count": 0,
+      "details": []
+    },
+    "guaranteed_success_claim": {
+      "description": "Claiming model guarantees/predicts commercial success",
+      "found_count": 0,
+      "details": []
+    },
+    "causal_shap_claim": {
+      "description": "Claiming SHAP proves causation, not just model behavior",
+      "found_count": 0,
+      "details": [],
+      "examples_of_correct_language": [
+        "SHAP describes model behavior, not causal relationships",
+        "SHAP tells us which features drove the prediction",
+        "Within this training data, songs with higher X tended to have higher predicted popularity",
+        "A positive SHAP value does not prove that changing X increases real-world popularity"
+      ]
+    },
+    "causal_what_if_claim": {
+      "description": "Claiming What-If produces real-world effects",
+      "found_count": 0,
+      "details": [],
+      "examples_of_correct_language": [
+        "What-If compares two model predictions",
+        "Delta describes change in model output, not real-world effect",
+        "What-If answers: what would the model predict if...?",
+        "A positive delta does not prove that changing X increases real-world popularity"
+      ]
+    },
+    "global_dataset_claim": {
+      "description": "Claiming dataset represents all music globally",
+      "found_count": 0,
+      "details": [],
+      "examples_of_correct_language": [
+        "Curated Spotify-derived sample",
+        "Available dataset — not all music globally",
+        "Describes the available training dataset"
+      ]
+    },
+    "production_ready_overclaim": {
+      "description": "Overclaiming production readiness",
+      "found_count": 0,
+      "details": [],
+      "examples_of_correct_language": [
+        "Academic / student machine learning project",
+        "Demonstration and academic purposes",
+        "Not production-ready (academic prototype)",
+        "No SLA defined"
+      ]
+    },
+    "unsupported_performance_claim": {
+      "description": "Claims SLAs or guaranteed performance outside benchmark scope",
+      "found_count": 0,
+      "details": [],
+      "examples_of_correct_language": [
+        "Local benchmark — Python 3.13.7",
+        "No SLA defined",
+        "Performance on local hardware only"
+      ]
+    },
+    "live_inference_in_offline_claim": {
+      "description": "Claiming offline mode does live inference",
+      "found_count": 0,
+      "details": [],
+      "examples_of_correct_language": [
+        "Precomputed validated demonstration",
+        "Offline = precomputed not live",
+        "Precomputed fallback when backend unavailable"
+      ]
+    }
+  },
+  "summary": {
+    "total_audited_categories": 8,
+    "all_zero_confirmed": true,
+    "total_unsupported_claims_found": 0
+  },
+  "validation_status": "PASS",
+  "auditor_note": "All slides use accurate, evidence-based language. No causal claims for SHAP/What-If. Dataset scope correctly labeled. Project correctly labeled as academic prototype."
+}

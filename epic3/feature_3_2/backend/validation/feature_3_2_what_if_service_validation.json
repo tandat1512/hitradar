@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-05T14:46:05.296925+00:00",
+  "test_single_change": {
+    "changed_field": "release_year",
+    "delta": -4.01361,
+    "prediction_before_clipped": 46.421062,
+    "prediction_after_clipped": 42.407452,
+    "status": "PASS"
+  },
+  "test_multiple_changes": {
+    "delta": -5.187244,
+    "changes_applied": [
+      "release_year",
+      "danceability"
+    ],
+    "status": "PASS"
+  },
+  "test_invalid_field": {
+    "raises_exception": true,
+    "error_contains_field": true,
+    "status": "PASS"
+  },
+  "test_target_rejected": {
+    "raises_exception": true,
+    "error_contains_target": true,
+    "status": "PASS"
+  },
+  "test_original_immutable": {
+    "original_unchanged": true,
+    "original_value": 1992,
+    "status": "PASS"
+  },
+  "test_categorical_change": {
+    "delta": 0.0,
+    "changed_field": "release_precision",
+    "status": "PASS"
+  },
+  "all_tests_pass": true,
+  "warnings": [],
+  "blockers": [],
+  "status": "PASS"
+}

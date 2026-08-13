@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final performance comparison — baseline vs final",
+  "note": "BLOCKED: no live baseline (Phase 1) and no live final numbers. Classification is INCOMPARABLE, NOT 'IMPROVED/REGRESSED'. No invented SLA threshold.",
+  "comparisons": {
+    "backend_startup": {"baseline_ms": "PENDING", "final_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "first_prediction": {"baseline_ms": "PENDING", "final_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "warm_p50_predict": {"baseline_ms": "PENDING", "final_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "warm_p95_predict": {"baseline_ms": "PENDING", "final_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "page_HOME": {"baseline_median_ms": "PENDING", "final_median_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "page_PREDICT": {"baseline_median_ms": "PENDING", "final_median_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "page_MUSIC_TRENDS": {"baseline_median_ms": "PENDING", "final_median_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "page_MODEL_INFO": {"baseline_median_ms": "PENDING", "final_median_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "page_EXPLAIN": {"baseline_median_ms": "PENDING", "final_median_ms": "PENDING", "classification": "INCOMPARABLE"},
+    "page_WHAT_IF": {"baseline_median_ms": "PENDING", "final_median_ms": "PENDING", "classification": "INCOMPARABLE"}
+  },
+  "context": {
+    "optimization_implemented": "NO — all candidates ALREADY_OPTIMIZED (model loading, artifact cache, dashboard data/aggregation) or NOT_JUSTIFIED (model_metrics.json)",
+    "material_unexplained_regression": false,
+    "expected_at_live_run": "metrics should match baseline (no code changed) — small/no improvement with ALREADY_OPTIMIZED can still PASS per Feature 3.6 acceptance"
+  },
+  "status": "BLOCKED"
+}

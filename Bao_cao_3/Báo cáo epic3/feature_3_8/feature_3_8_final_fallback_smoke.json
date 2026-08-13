@@ -1,0 +1,16 @@
+{
+  "feature_id": "3.8",
+  "executed_at": "2026-08-12T00:18:00+07:00",
+  "api_down_verified": true,
+  "explicit_fallback_documented": true,
+  "offline_banner_contract_documented": true,
+  "offline_banner_in_current_frontend_source": false,
+  "automatic_offline_ui_validated": false,
+  "prepared_input_exists": true,
+  "prepared_output_exists": true,
+  "prepared_output_representation": "OFFLINE_PRECOMPUTED_EVIDENCE_ONLY",
+  "backup_screenshots_accessible": false,
+  "backup_video_accessible": false,
+  "status": "FAIL",
+  "reason": "API-down recovery has an honest documented manual evidence path, but the automatic offline UI/banner and required media are not available."
+}

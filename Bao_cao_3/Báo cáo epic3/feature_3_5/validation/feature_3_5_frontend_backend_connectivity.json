@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 frontend → backend HTTP connectivity validation",
+  "transport": "actual HTTP via httpx",
+  "client_module": "epic3/feature_3_3/frontend/api/client.py",
+  "client_class": "HitRadarAPIClient",
+  "verified_from_source": [
+    "httpx.Client used for HTTP transport (not TestClient)",
+    "X-Request-ID header set on every request",
+    "httpx.ConnectError caught and raised as APIConnectionError",
+    "httpx.TimeoutException caught and raised as APITimeoutError",
+    "No direct backend service import in frontend code",
+    "No direct model access in frontend code"
+  ],
+  "endpoints_tested": [
+    "GET /health",
+    "GET /model-info",
+    "GET /features"
+  ],
+  "actual_connection_test": "PENDING_LIVE_VERIFICATION",
+  "status": "CONTRACT_VALIDATED_PENDING_LIVE"
+}

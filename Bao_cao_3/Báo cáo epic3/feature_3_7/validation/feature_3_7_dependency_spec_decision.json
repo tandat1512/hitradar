@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 dependency specification decision",
+  "existing_files": [
+    {
+      "path": "5.UNG_DUNG/5.1.backend_api/requirements.txt",
+      "canonical": true,
+      "reason": "Most complete backend runtime spec; has all ML packages; httpx gap noted (frontend, not backend)"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/requirements-runtime.txt",
+      "canonical": false,
+      "reason": "Minimal ML-only; no FastAPI; superseded by backend API requirements"
+    },
+    {
+      "path": "5.UNG_DUNG/5.3.config/requirements.txt",
+      "canonical": false,
+      "reason": "Database config (psycopg2-binary); not API runtime"
+    }
+  ],
+  "missing_files": [],
+  "no_environment_yml": true,
+  "canonical_decision": "Use requirements.txt format (not environment.yml). Pip/venv is the project convention.",
+  "primary_spec": "5.UNG_DUNG/5.1.backend_api/requirements.txt (backend runtime)",
+  "frontend_spec": "epic3/feature_3_3/frontend/requirements.txt (CREATED in Phase 1 hotfix)",
+  "version_pin_strategy": "Minimum versions (>=) — consistent with existing spec; no version bumping in Phase 1",
+  "frontend_requirements_hotfix": "Created in Phase 1: epic3/feature_3_3/frontend/requirements.txt with streamlit>=1.30.0 and httpx>=0.27.0",
+  "status": "DECISION_MADE"
+}

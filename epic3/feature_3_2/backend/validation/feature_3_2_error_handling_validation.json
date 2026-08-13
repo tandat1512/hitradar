@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-06T01:20:56.092871+00:00",
+  "status": "PASS",
+  "error_mapping": {
+    "ModelNotLoadedError": {
+      "code": "MODEL_NOT_LOADED",
+      "http": 503
+    },
+    "InvalidFeatureError": {
+      "code": "INVALID_FEATURE",
+      "http": 422
+    },
+    "ExplanationError": {
+      "code": "EXPLANATION_FAILED",
+      "http": 500
+    },
+    "BackendError": {
+      "code": "INTERNAL_ERROR",
+      "http": 500
+    }
+  },
+  "traceback_exposed_to_client": false,
+  "error_response_contract": {
+    "has_error_object": true,
+    "has_request_id": true,
+    "has_timestamp": true,
+    "has_code": true,
+    "has_message": true
+  },
+  "centralized_handlers_count": 4,
+  "warnings": [],
+  "blockers": []
+}

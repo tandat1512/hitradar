@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 feature count terminology validation",
+  "feature_layers": [
+    {
+      "layer": "raw_input_fields",
+      "count": 18,
+      "source": "artifacts/epic2/schemas/input_schema.json field_count",
+      "used_in": "API /predict, /explain request — user-supplied values",
+      "terminology_in_technical_appendix": "18 canonical input fields (raw audio/metadata features)",
+      "documentation_note": "Do NOT call these '18 features' without the 'raw' qualifier when talking about model input"
+    },
+    {
+      "layer": "selected_features",
+      "count": 31,
+      "source": "artifacts/epic2/schemas/selected_features.json feature_count",
+      "features": "18 raw + 13 engineered (e.g. danceability_valence, release_month_sin, duration_log)",
+      "used_in": "API /features response (selected_features), SHAP explanation (31 shap_values entries)",
+      "terminology_in_technical_appendix": "31 selected features (18 raw + 13 engineered)"
+    },
+    {
+      "layer": "transformed_model_features",
+      "count": 49,
+      "source": "feature_3_1_final_validation_results.json F31-FEATURE-NAMES check",
+      "note": "Pipeline-transformed matrix width (e.g. one-hot encoded, polynomial interactions)",
+      "used_in": "Internal model matrix; SHAP additivity: shap_values x 49 features",
+      "terminology_in_technical_appendix": "49 model matrix columns after pipeline transformation"
+    }
+  ],
+  "terminology_rules": [
+    {
+      "term": "raw features",
+      "count": 18,
+      "correct_usage": "18 raw input fields"
+    },
+    {
+      "term": "selected features",
+      "count": 31,
+      "correct_usage": "31 selected features (engineered features included)"
+    },
+    {
+      "term": "transformed/model matrix features",
+      "count": 49,
+      "correct_usage": "49 transformed model matrix columns"
+    },
+    {
+      "term": "18 features (ambiguous)",
+      "correct_usage": "AVOID — specify layer"
+    }
+  ],
+  "terminology_violations": 0,
+  "status": "VALIDATED"
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 no silent clipping — frontend enforcement validation",
+  "principle": "Frontend must not silently change invalid user input to valid before sending to API",
+  "scenario": "User enters value outside range → frontend must show error OR block submission",
+  "tested_field": "danceability",
+  "invalid_value_entered": 1.5,
+  "expected_frontend_behavior": {
+    "value_sent_to_api": 1.5,
+    "api_returns_422": true,
+    "user_informed": true,
+    "silent_modification": false
+  },
+  "frontend_form_validation": {
+    "source": "epic3/feature_3_3/frontend/components/predict_form.py",
+    "build_form_defaults": "Uses slider/number input with range from /features metadata",
+    "streamlit_widget_enforcement": "Widgets may constrain min/max from feature metadata"
+  },
+  "backend_enforcement": "Even if frontend constrains, backend must independently validate",
+  "silent_clipping_detected": false,
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

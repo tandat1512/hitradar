@@ -1,0 +1,44 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 technical architecture validation — all paths match actual implementation",
+  "architecture_checks": [
+    {
+      "claim": "User → Streamlit → HTTP → FastAPI → model",
+      "implementation_source": "epic3/feature_3_3/frontend/app.py + api.py + HitRadarAPIClient",
+      "valid": true,
+      "note": "Frontend never loads model directly"
+    },
+    {
+      "claim": "Dashboard (Music Trends) reads local CSV directly — not via backend",
+      "implementation_source": "epic3/feature_3_3/frontend/pages/4_Trends.py lines 17-23",
+      "valid": true,
+      "note": "Reads ml_ready_dataset.csv and yearly_evaluation.csv from local filesystem; no backend required"
+    },
+    {
+      "claim": "SHAP computation is done by backend, not frontend",
+      "implementation_source": "5.UNG_DUNG/5.1.backend_api/api.py + shap.Explainer",
+      "valid": true,
+      "note": "POST /explain runs shap.Explainer on backend; frontend only displays results"
+    },
+    {
+      "claim": "Offline mode = precomputed fallback — not live model",
+      "implementation_source": "feature_3_6_offline_demo_mode_contract.json",
+      "valid": true,
+      "note": "Precomputed scenarios; SHAP/What-If not available offline"
+    },
+    {
+      "claim": "run_all.py polls /health until model_loaded==true (no fixed sleep)",
+      "implementation_source": "scripts/_common.py wait_for_health + scripts/run_all.py lines 81-88",
+      "valid": true,
+      "note": "Poll-based readiness check"
+    },
+    {
+      "claim": "Backend CORS enabled for Streamlit",
+      "implementation_source": "5.UNG_DUNG/5.1.backend_api/api.py CORSMiddleware",
+      "valid": true
+    }
+  ],
+  "invalid_architecture_claims": 0,
+  "status": "VALIDATED"
+}

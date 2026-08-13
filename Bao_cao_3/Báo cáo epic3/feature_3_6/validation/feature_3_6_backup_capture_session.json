@@ -1,0 +1,27 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 backup capture session — metadata for screenshots/video/offline evidence",
+  "requirement": "Backup assets must come from an ACTUAL validated live run (Feature 3.5/3.6). No fabricated capture metadata.",
+  "canonical_startup": "python scripts/run_all.py  (Feature 3.6.8)",
+  "flows_to_verify_before_capture": [
+    {"flow": "GET /health", "expected": "200, model_loaded=true"},
+    {"flow": "POST /predict (canonical example)", "expected": "46.421062 ±0.001"},
+    {"flow": "POST /explain (canonical example)", "expected": "prediction matches /predict"},
+    {"flow": "POST /what-if (prepared scenario)", "expected": "delta valid, baseline matches /predict"},
+    {"flow": "Music Trends page", "expected": "aggregates from local dataset"},
+    {"flow": "Model Info page", "expected": "metadata via API"},
+    {"flow": "Responsible Use page", "expected": "renders"}
+  ],
+  "run_metadata": {
+    "git_commit": "CAPTURE_LIVE (git rev-parse HEAD at capture time)",
+    "model_version": "1.0.0",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "canonical_scenario_ids": ["F35-CANONICAL-PREDICT", "F35-CANONICAL-EXPLAIN", "F35-CANONICAL-WHATIF"],
+    "timestamp": "CAPTURE_LIVE",
+    "api_status": "CAPTURE_LIVE"
+  },
+  "actual_capture_performed": false,
+  "reason": "No live Python environment — cannot run the system to capture screenshots/video or live-verify flows.",
+  "status": "CAPTURE_REQUIRES_LIVE_ENVIRONMENT"
+}

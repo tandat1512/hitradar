@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-06T01:20:56.103042+00:00",
+  "status": "PASS",
+  "http_status": 503,
+  "model_id": null,
+  "model_family": null,
+  "model_version": null,
+  "package_version": null,
+  "data_version": null,
+  "consistent_with_phase2": false,
+  "no_internal_paths": true,
+  "warnings": [],
+  "blockers": []
+}

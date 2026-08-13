@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "page": "pages/5_Model_Info.py",
+  "api": "GET /model-info",
+  "no_hardcoded_metadata": true,
+  "metrics_from_api": true,
+  "no_accuracy_mislabel": true,
+  "regression_model_labeled": true,
+  "has_accuracy_disclaimer": true,
+  "has_limitation_warning": true,
+  "offline_safe": true,
+  "status": "PASS"
+}

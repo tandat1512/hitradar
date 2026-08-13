@@ -1,0 +1,15 @@
+module_import,source_file,dependency_package,runtime_or_dev,declared_in_backend_requirements,declared_in_frontend_requirements,required,notes
+streamlit,epic3/feature_3_3/frontend/app.py,streamlit,runtime,NO,NO,true,"frontend dependency — no frontend requirements.txt exists yet"
+httpx,epic3/feature_3_3/frontend/api/client.py,httpx,runtime,NO,NO,true,"frontend dependency — no frontend requirements.txt exists yet"
+fastapi,5.UNG_DUNG/5.1.backend_api/api.py,fastapi,runtime,YES (>=0.110.0),NO,true,backend
+uvicorn,5.UNG_DUNG/5.1.backend_api/api.py,uvicorn,runtime,YES (>=0.30.0),NO,true,backend (uvicorn[standard])
+pydantic,5.UNG_DUNG/5.1.backend_api/models/*.py,pydantic,runtime,YES (>=2.0.0),NO,true,backend
+numpy,5.UNG_DUNG/5.1.backend_api/api.py,numpy,runtime,YES (>=1.26.0),NO,true,backend
+pandas,5.UNG_DUNG/5.1.backend_api/config.py,pandas,runtime,YES (>=2.0.0),NO,true,backend
+joblib,5.UNG_DUNG/5.1.backend_api/pipeline_loader.py,joblib,runtime,YES (>=1.4.0),NO,true,backend (model load)
+scikit-learn,5.UNG_DUNG/5.1.backend_api/api.py,scikit-learn,runtime,YES (>=1.5.0),NO,true,backend
+xgboost,artifacts source,xgboost,runtime,YES (>=2.0.0),NO,true,"backend — xgboost deserialized via joblib; scikit-learn>=1.5.0 pulls xgb"
+shap,5.UNG_DUNG/5.1.backend_api/api.py,shap,runtime,YES (>=0.45.0),NO,true,backend (SHAP TreeExplainer)
+matplotlib,not imported,,dev,NO,NO,false,"in requirements-explainability.txt but NOT imported in API; exclude from runtime spec"
+psycopg2-binary,not imported,,dev,NO,NO,false,"in 5.UNG_DUNG/5.3.config/requirements.txt only — database config, not API runtime"
+pytest,tests/,pytest,dev,NO,NO,true,"test dependency — declared in test files but no requirements-dev.txt"

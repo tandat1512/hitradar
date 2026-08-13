@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 model load optimization validation — live execution BLOCKED",
+  "test_plan": {
+    "step_1": "Start backend process",
+    "step_2": "Send multiple prediction requests (e.g. 10)",
+    "step_3": "Instrument/observe PipelineLoader._load_pipeline call count",
+    "expected_model_load_count": 1,
+    "actual_model_load_count": "BLOCKED",
+    "note": "Restart backend → new process loads once again (1 per process lifecycle, correct behavior)"
+  },
+  "frontend_guard": "frontend_direct_model_load_count must remain 0 — no frontend model cache introduced",
+  "load_failure_policy": {
+    "expected": "model load failure must not silently half-initialize — lifespan eager load means startup fails or degrades per Feature 3.2 policy (health reports model_loaded=false → degraded)",
+    "current": "lifespan access to .pipeline raises on failure → startup fails loudly (no half-initialized singleton), health endpoint reports degraded if not loaded"
+  },
+  "thread_safety_note": "Shared model object is read-only inference; no request-specific mutable state stored in shared services. No concurrent optimization added (out of WBS scope).",
+  "status": "BLOCKED"
+}

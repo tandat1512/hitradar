@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final offline fallback smoke — BLOCKED (no live env)",
+  "scenario": "Start frontend/demo context → make live API unavailable → verify offline flow → restore API → verify live recovery",
+  "expected_verifications": {
+    "live_status_unavailable": "API down → UI shows explicit unavailable (APIConnectionError/APIServiceUnavailable)",
+    "offline_option_appears": "offer 'Switch to Offline Demo Mode'",
+    "explicit_switch": "user opts in (env OFFLINE_DEMO_MODE=true or UI)",
+    "banner": "OFFLINE DEMO MODE — Precomputed validated result. No live model inference.",
+    "prepared_predict": "canonical scenario renders (46, precomputed)",
+    "prepared_explain": "NOT_AVAILABLE (no validated SHAP — honest message)",
+    "prepared_what_if": "NOT_AVAILABLE (no validated delta — honest message)",
+    "no_dynamic_fake": "no fake live-looking results",
+    "restore_api": "health OK → 'Switch back to Live' → demo_mode=LIVE"
+  },
+  "status": "BLOCKED"
+}

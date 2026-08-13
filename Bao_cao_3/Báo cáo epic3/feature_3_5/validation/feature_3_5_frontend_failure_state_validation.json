@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 frontend failure state validation",
+  "expected_states_after_error": [
+    {
+      "error_type": "APIValidationError",
+      "loading_flag_cleared": true,
+      "retry_available": true,
+      "stale_result_hidden": true,
+      "error_message_shown": true,
+      "traceback_exposed": false
+    },
+    {
+      "error_type": "APIConnectionError",
+      "loading_flag_cleared": true,
+      "retry_available": true,
+      "stale_result_hidden": true,
+      "error_message_shown": true,
+      "traceback_exposed": false
+    },
+    {
+      "error_type": "APITimeoutError",
+      "loading_flag_cleared": true,
+      "retry_available": true,
+      "stale_result_hidden": true,
+      "error_message_shown": true,
+      "traceback_exposed": false
+    }
+  ],
+  "frontend_code_verified": {
+    "error_component_source": "epic3/feature_3_3/frontend/components/error_states.py",
+    "render_error_never_exposes_traceback": true,
+    "render_error_never_exposes_internal_path": true,
+    "render_error_shows_request_id": true
+  },
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

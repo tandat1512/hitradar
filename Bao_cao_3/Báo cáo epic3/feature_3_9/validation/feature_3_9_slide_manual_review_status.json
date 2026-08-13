@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "actual_slide_deck": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+  "checks": {
+    "title_and_names": "PASS_AUTOMATED_CONTENT_CHECK",
+    "no_old_version": "PASS_AUTOMATED_CONTENT_CHECK",
+    "no_todo": "PASS_AUTOMATED_CONTENT_CHECK",
+    "metrics": "PASS_AUTOMATED_CONTENT_CHECK",
+    "architecture": "PASS_AUTOMATED_CONTENT_CHECK",
+    "limitations": "PASS_AUTOMATED_CONTENT_CHECK",
+    "conclusion": "PASS_AUTOMATED_CONTENT_CHECK",
+    "qa": "PASS_AUTOMATED_CONTENT_CHECK",
+    "speaker_names": "PASS_AUTOMATED_CONTENT_CHECK",
+    "visual_polish": "PENDING_HUMAN_SIGNOFF"
+  },
+  "human_only_visual_polish": "PENDING",
+  "status": "PASS_CONTENT_HUMAN_VISUAL_SIGNOFF_PENDING"
+}

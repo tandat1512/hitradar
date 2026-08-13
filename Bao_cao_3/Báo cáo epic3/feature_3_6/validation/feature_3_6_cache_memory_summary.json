@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 cache memory summary — estimates; exact values CAPTURE_LIVE",
+  "estimates": [
+    {
+      "resource": "Model pipeline in memory",
+      "estimate": "comparable to full_inference_pipeline.joblib file bytes + object overhead (XGBoost trees)",
+      "exact": "CAPTURE_LIVE (file bytes + tracemalloc where feasible)",
+      "note": "loaded once per backend process"
+    },
+    {
+      "resource": "Trend dataset DataFrame (169,681 rows × 20 cols)",
+      "estimate": "~30–60 MB (numeric ~8 B/cell ≈ 27 MB + track_id object column overhead); exact via memory_usage(deep=True)",
+      "exact": "CAPTURE_LIVE",
+      "note": "cached once per Streamlit cache lifecycle"
+    },
+    {
+      "resource": "Cached page aggregation (yearly features dict)",
+      "estimate": "< 1 MB (≈100 years × 10 features)",
+      "exact": "CAPTURE_LIVE",
+      "note": "st.cache_data"
+    },
+    {
+      "resource": "SHAP TreeExplainer",
+      "estimate": "tens of MB (tree-structure dependent)",
+      "exact": "CAPTURE_LIVE",
+      "note": "built once per backend process"
+    },
+    {
+      "resource": "Static JSON metadata (schemas, versions, metrics)",
+      "estimate": "KB — negligible",
+      "exact": "CAPTURE_LIVE",
+      "note": "cached in PipelineLoader"
+    }
+  ],
+  "warning": "Multiple full-DataFrame cache entries would multiply memory (e.g., several distinct cached loaders). Currently only ONE full dataset is cached per layer (path-keyed page loader + SHA-256-keyed F3.4 loader), so memory is ~1–2 DataFrame copies. Acceptable for demo. No change made.",
+  "status": "ESTIMATES_RECORDED"
+}

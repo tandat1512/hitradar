@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Aggregation contract — defines supported aggregation methods and output schema",
+  "supported_aggregations": ["mean", "median"],
+  "default_aggregation": "mean",
+  "default_granularity": "year",
+  "per_point_schema": {
+    "year_chart": {
+      "year": "int",
+      "popularity_value": "float",
+      "aggregation": "string (mean|median)",
+      "valid_rows": "int",
+      "total_rows": "int",
+      "coverage": "float (0-1)"
+    },
+    "decade_chart": {
+      "decade": "int",
+      "decade_label": "string",
+      "popularity_value": "float",
+      "aggregation": "string",
+      "is_single_year_2020": "bool",
+      "valid_rows": "int",
+      "total_rows": "int",
+      "coverage": "float (0-1)"
+    },
+    "audio_chart": {
+      "year": "int",
+      "feature_value": "float",
+      "aggregation": "string",
+      "valid_rows": "int",
+      "total_rows": "int",
+      "coverage": "float (0-1)"
+    }
+  },
+  "never": {
+    "interpolation": "Never interpolate missing years",
+    "fillna": "Never fill missing values for chart aesthetics",
+    "drop_missing_to_hide": "Never drop rows silently to hide missingness",
+    "causal_title": "Never use causal language in chart titles"
+  }
+}

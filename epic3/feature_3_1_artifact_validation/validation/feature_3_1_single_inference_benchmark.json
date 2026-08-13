@@ -1,0 +1,29 @@
+{
+  "benchmark_id": "F31-P4-SINGLE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:29:39+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "run_type": "warm_single_record",
+  "warm_up_iterations": 10,
+  "measured_iterations": 200,
+  "statistics": {
+    "count": 200,
+    "min_ms": 12.267,
+    "max_ms": 27.116,
+    "mean_ms": 15.574,
+    "median_ms": 14.256,
+    "std_ms": 2.993,
+    "p90_ms": 19.624,
+    "p95_ms": 21.0,
+    "p99_ms": 23.507
+  },
+  "prediction_consistency": {
+    "unique_count": 1,
+    "max_abs_diff": 0.0,
+    "all_identical": true,
+    "first_output": 46.421062,
+    "last_output": 46.421062
+  },
+  "status": "PASS"
+}

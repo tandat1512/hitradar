@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-08-13T20:55:04+07:00",
+  "package_mode": "SEPARATE_FILES_NO_ARCHIVE",
+  "reason": "No official ZIP/archive requirement was supplied; canonical originals were not copied or altered.",
+  "files": [
+    {
+      "role": "final_report",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+      "sha256": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+      "bytes": 15232,
+      "status": "READY"
+    },
+    {
+      "role": "final_slide_deck",
+      "path": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+      "sha256": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+      "bytes": 41968,
+      "status": "READY"
+    },
+    {
+      "role": "repository_overview",
+      "path": "README.md",
+      "sha256": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+      "bytes": 9283,
+      "status": "READY"
+    },
+    {
+      "role": "run_guide",
+      "path": "HOW_TO_RUN_APP.md",
+      "sha256": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+      "bytes": 7452,
+      "status": "READY"
+    },
+    {
+      "role": "user_manual",
+      "path": "USER_MANUAL.md",
+      "sha256": "4b213f781e1ea89ef68210b5d2c52eea6437eb8ba199d694c0b0f4a79d0d88e9",
+      "bytes": 12061,
+      "status": "READY"
+    },
+    {
+      "role": "api_reference",
+      "path": "API_DOCUMENTATION.md",
+      "sha256": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827",
+      "bytes": 12513,
+      "status": "READY"
+    },
+    {
+      "role": "technical_appendix",
+      "path": "TECHNICAL_APPENDIX.md",
+      "sha256": "de5c075ec9e288f1981718e9222ea1441de464ade5075d03e1b668d532802afb",
+      "bytes": 27226,
+      "status": "READY"
+    },
+    {
+      "role": "source_repository_url",
+      "path": null,
+      "sha256": null,
+      "bytes": 0,
+      "status": "OFFICIAL_REQUIREMENT_UNKNOWN"
+    },
+    {
+      "role": "demo_video",
+      "path": null,
+      "sha256": null,
+      "bytes": 0,
+      "status": "NOT_REQUIRED_BY_KNOWN_EVIDENCE"
+    }
+  ],
+  "hashes": {
+    "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+    "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+    "README.md": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+    "HOW_TO_RUN_APP.md": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+    "USER_MANUAL.md": "4b213f781e1ea89ef68210b5d2c52eea6437eb8ba199d694c0b0f4a79d0d88e9",
+    "API_DOCUMENTATION.md": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827",
+    "TECHNICAL_APPENDIX.md": "de5c075ec9e288f1981718e9222ea1441de464ade5075d03e1b668d532802afb"
+  },
+  "package_path": null,
+  "package_sha256": null,
+  "submission_package_ready": false,
+  "status": "NOT_READY_RELEASE_MISSING_REQUIREMENTS_PARTIALLY_UNKNOWN"
+}

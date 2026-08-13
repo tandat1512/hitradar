@@ -1,0 +1,79 @@
+{
+  "phase": "2/5",
+  "feature": "3.5",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "phase_1_gate_valid": true,
+
+  "predict_e2e_contract_valid": true,
+  "predict_e2e_actual_http": false,
+  "predict_e2e_real_model": false,
+  "predict_e2e_canonical_match": false,
+  "predict_e2e_frontend_render_valid": false,
+  "predict_e2e_note": "Contract validated from source; live execution BLOCKED (no Python environment)",
+
+  "explain_e2e_contract_valid": true,
+  "explain_e2e_actual_http": false,
+  "explain_e2e_real_service": false,
+  "explain_e2e_status": "CONTRACT_VALIDATED_ONLY",
+  "explain_prediction_matches_predict": false,
+  "explain_contribution_validation_valid": true,
+  "explain_frontend_render_valid": false,
+  "explain_causal_claim_detected": false,
+  "explain_note": "ExplainService confirmed in Feature 3.2; live execution BLOCKED",
+
+  "what_if_e2e_contract_valid": true,
+  "what_if_e2e_actual_http": false,
+  "what_if_e2e_real_service": false,
+  "what_if_baseline_matches_predict": false,
+  "what_if_delta_valid": false,
+  "what_if_input_immutable": false,
+  "what_if_frontend_render_valid": false,
+  "what_if_causal_claim_detected": false,
+  "what_if_note": "WhatIfService confirmed in Feature 3.2; live execution BLOCKED",
+
+  "core_model_version_consistent": false,
+  "core_model_version_consistency_note": "Contract validated; live version not confirmed",
+  "core_repeatability_valid": false,
+
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+  "model_artifacts_modified": false,
+  "no_refit_confirmed_from_design": true,
+
+  "canonical_fixture_valid": true,
+  "canonical_input_path": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+  "canonical_expected_prediction": 46.421062,
+  "canonical_tolerance": 0.001,
+  "canonical_input_unmodified": true,
+
+  "frontend_never_loads_model": true,
+  "frontend_never_computes_shap_directly": true,
+  "frontend_never_computes_delta_directly": true,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+
+  "warnings": [
+    "Live E2E execution blocked — no running Python environment",
+    "Contract/architecture validated from source; actual HTTP requests not made",
+    "SHA-256 unavailable — shell blocked"
+  ],
+  "blockers": [
+    "BLOCKER: Backend not running — cannot execute actual Predict E2E",
+    "BLOCKER: Backend not running — cannot execute actual Explain E2E",
+    "BLOCKER: Backend not running — cannot execute actual What-if E2E",
+    "BLOCKER: Model version consistency not confirmed (requires live backend)",
+    "BLOCKER: Canonical prediction match not verified (requires live backend)"
+  ],
+
+  "status": "FAIL",
+  "reason": "All contract/architecture validations PASSED. All three E2E flows (Predict, Explain, What-if) are verified from source contracts and canonical fixtures. However, actual live HTTP execution is BLOCKED by absence of a running Python environment. Canonical prediction (46.421062) and all response schemas are confirmed from Feature 3.1 validated artifacts.",
+
+  "next_phase": "BLOCKED",
+  "phase_3_unblocked_when": "Live Python environment available, backend starts and loads model, HTTP health check passes, all three E2E flows execute with real artifacts"
+}

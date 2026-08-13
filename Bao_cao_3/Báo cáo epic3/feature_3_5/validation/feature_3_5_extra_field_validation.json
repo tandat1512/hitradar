@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 extra field — Pydantic extra='allow' policy",
+  "scenario": "POST /predict with unknown field included",
+  "extra_field": "__e2e_unknown_field__",
+  "extra_value": 999,
+  "pydantic_extra_policy": "allow",
+  "expected_behavior": "Pydantic accepts extra field (extra='allow')",
+  "expected_http_status": 200,
+  "prediction_returned": true,
+  "extra_field_in_response": false,
+  "model_affected_by_extra": false,
+  "note": "extra='allow' is the contract — extra fields are silently ignored by Pydantic and NOT passed to model",
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

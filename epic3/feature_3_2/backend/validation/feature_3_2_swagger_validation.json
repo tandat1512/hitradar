@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-06T01:43:43.228528+00:00",
+  "status": "PASS",
+  "docs_status": 200,
+  "redoc_status": 200,
+  "openapi_json_status": 200,
+  "docs_loads": true,
+  "openapi_json_valid": true,
+  "paths_in_openapi": [
+    "/health",
+    "/model-info",
+    "/features",
+    "/predict",
+    "/explain",
+    "/what-if"
+  ],
+  "schemas_in_openapi": [
+    "ErrorDetail",
+    "ErrorResponse",
+    "ExplainRequest",
+    "ExplainResponse",
+    "FeaturesResponse",
+    "FieldDescriptor",
+    "HTTPValidationError",
+    "HealthResponse",
+    "Metrics",
+    "ModelInfoResponse",
+    "PredictRequest",
+    "PredictResponse",
+    "PredictionShort",
+    "TopFeature",
+    "ValidationError",
+    "WhatIfRequest",
+    "WhatIfResponse"
+  ],
+  "explain_no_causal_claim": true,
+  "warnings": [],
+  "blockers": []
+}

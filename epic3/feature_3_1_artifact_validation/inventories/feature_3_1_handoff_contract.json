@@ -1,0 +1,98 @@
+{
+  "contract_id": "F31-P1-HC-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:13:00+07:00",
+  "feature_id": "3.1",
+  "phase": 1,
+  "handoff_type": "EPIC_2_TO_EPIC_3",
+  "handoff_document_status": "MISSING",
+  "handoff_substitute": "MODEL_PACKAGE_README.md",
+  "handoff_substitute_usable": true,
+  "handoff_source_package": "7.ML/7.10.model_packaging/package/",
+  "handoff_target": "5.UNG_DUNG/backend/",
+  "handoff_scope": {
+    "model_artifacts": [
+      "full_inference_pipeline.joblib — canonical inference pipeline",
+      "best_model.joblib — base XGBoost model",
+      "feature_engineering_pipeline.joblib — feature engineering",
+      "model_preprocessing_pipeline.joblib — preprocessing"
+    ],
+    "schema_artifacts": [
+      "input_schema.json — 18-field input contract",
+      "output_schema.json — output format",
+      "selected_features.json — 31 selected features",
+      "feature_names.json — 49 transformed feature names",
+      "feature_mapping.json — raw→transformed mapping"
+    ],
+    "metadata_artifacts": [
+      "model_version.json — model_id: EXP24-XGB-FINAL-001",
+      "data_version.json — data lineage",
+      "package_version.json — package 2.7.0"
+    ],
+    "example_artifacts": [
+      "example_input.json — 18-field example",
+      "example_output.json — expected output"
+    ],
+    "runtime_artifacts": [
+      "inference_pipeline.py — HitRadarInferencePipeline class"
+    ],
+    "dependency_artifacts": [
+      "requirements-runtime.txt — runtime deps",
+      "requirements-explainability.txt — SHAP deps"
+    ],
+    "shap_artifacts": [
+      "7.ML/7.9.explainability/ — 134 files: global explanations, local explanations, waterfall images, SHAP configuration"
+    ]
+  },
+  "model_identity": {
+    "model_id": "EXP24-XGB-FINAL-001",
+    "model_family": "XGBoost",
+    "model_version": "1.0.0",
+    "package_version": "2.7.0",
+    "data_version": "1.0.0",
+    "champion_artifact_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+    "canonical_artifact": "pipeline/full_inference_pipeline.joblib",
+    "canonical_artifact_hash": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "canonical_artifact_size": 3982751
+  },
+  "input_contract": {
+    "field_count": 18,
+    "canonical_fields": [
+      "duration_min","explicit","release_year","release_month","decade",
+      "release_precision","danceability","energy","key","loudness",
+      "mode","speechiness","acousticness","instrumentalness",
+      "liveness","valence","tempo","time_signature"
+    ],
+    "transformation": "18 fields → FeatureEngineeringTransformer (31 features) → ColumnTransformer (49 matrix) → XGBRegressor"
+  },
+  "output_contract": {
+    "fields": ["status","model_id","model_version","package_version","prediction_raw","prediction_clipped","prediction_display","warnings"]
+  },
+  "handoff_acceptance_criteria": {
+    "GC-01_handoff_doc": {
+      "required": "handoff_to_epic3.md OR formal acceptance of MODEL_PACKAGE_README.md",
+      "current": "MODEL_PACKAGE_README.md accepted as functional substitute",
+      "status": "ACCEPTED_WITH_NOTE"
+    },
+    "GC-02_manifest_integrity": {
+      "required": "All artifact_manifest.json hashes must match actual files",
+      "current": "inference_pipeline.py hash mismatch — manifest is stale",
+      "status": "FAILED"
+    },
+    "GC-03_model_loadable": {
+      "required": "Phase 2 must confirm full_inference_pipeline.joblib deserializes and predicts",
+      "current": "Deferred to Phase 2",
+      "status": "DEFERRED"
+    },
+    "GC-04_schema_complete": {
+      "required": "input_schema has 18 fields, output_schema has required fields",
+      "current": "Both schemas complete and valid",
+      "status": "PASS"
+    },
+    "GC-05_shap_available": {
+      "required": "SHAP artifacts exist in 7.ML/7.9.explainability/",
+      "current": "134 SHAP artifacts found",
+      "status": "PASS"
+    }
+  }
+}

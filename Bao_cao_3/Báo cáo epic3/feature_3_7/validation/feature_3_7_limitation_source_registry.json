@@ -1,0 +1,189 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 limitation source registry — all limitations traceable to actual evidence",
+  "categories": {
+    "DATA": {
+      "temporal_coverage": {
+        "text": "Dataset covers approximately 1922–2019 (Spotify-derived)",
+        "source": "epic3/feature_3_3/frontend/pages/4_Trends.py (dataset temporal range)",
+        "evidence": "load_yearly_features reads release_year; ml_ready_dataset.csv",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["USER_MANUAL.md §8", "TECHNICAL_APPENDIX.md"]
+      },
+      "sampling": {
+        "text": "Curated Spotify-derived dataset — not a comprehensive sample of all music globally",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §Data Limitations",
+        "evidence": "Limitations page text",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["USER_MANUAL.md §10", "API_DOCUMENTATION.md §12"]
+      },
+      "popularity_definition": {
+        "text": "popularity is a Spotify platform engagement metric, not a universal measure of musical quality or commercial success",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §Data Limitations",
+        "evidence": "Limitations page text",
+        "supported": true,
+        "severity": "warning",
+        "target_documents": ["USER_MANUAL.md §10", "API_DOCUMENTATION.md §12"]
+      },
+      "geographic_bias": {
+        "text": "Music from certain regions or markets may be over- or under-represented",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §Data Limitations",
+        "evidence": "Limitations page text",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["USER_MANUAL.md §10"]
+      }
+    },
+    "MODEL": {
+      "model_type": {
+        "text": "XGBoost regression — predicts a continuous popularity score (0-100), not a probability",
+        "source": "artifacts/epic2/metadata/model_version.json (model_family: XGBoost)",
+        "evidence": "model_version.json model_family field",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §5", "API_DOCUMENTATION.md §7", "README.md"]
+      },
+      "regression_not_classification": {
+        "text": "Output is a regression score — not a probability of being a hit",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §What the Model Outputs",
+        "evidence": "Limitations page: 'The model outputs a popularity score (0-100) — a regression output. This score is: Not a probability of a song being a hit'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §5", "API_DOCUMENTATION.md §7"]
+      },
+      "performance_metrics": {
+        "text": "MAE/RMSE/R² describe model fit to training data, not prediction reliability for new songs",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §Model Performance",
+        "evidence": "Limitations page: 'These metrics describe model fit to the training data, not prediction reliability'",
+        "supported": true,
+        "severity": "warning",
+        "target_documents": ["USER_MANUAL.md §9", "TECHNICAL_APPENDIX.md"]
+      }
+    },
+    "PREDICTION": {
+      "not_causal": {
+        "text": "Predictions reflect model behavior on training data — not causal relationships in the real world",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §No Causal Interpretation",
+        "evidence": "Limitations page warning: 'Correlational does not mean causal'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §5", "API_DOCUMENTATION.md §12", "README.md"]
+      },
+      "not_commercial_guarantee": {
+        "text": "Not a guarantee of commercial success",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §What the Model Outputs",
+        "evidence": "Limitations page: 'Not a guarantee of commercial success'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §5", "README.md"]
+      },
+      "academic_prototype": {
+        "text": "Student research prototype — not a production tool",
+        "source": "epic3/feature_3_3/frontend/pages/0_Home.py (st.warning) + 6_Limitations.py §Project Context",
+        "evidence": "Home page warning + Limitations page",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["README.md", "USER_MANUAL.md §1"]
+      }
+    },
+    "SHAP": {
+      "not_causal": {
+        "text": "SHAP values show how the model weighed each feature — not that a feature causes popularity to change",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §SHAP Explanations",
+        "evidence": "Limitations page: 'SHAP values do NOT establish: That a feature causes popularity to change'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §6", "API_DOCUMENTATION.md §8"]
+      },
+      "model_behavior_only": {
+        "text": "SHAP values describe model behavior for a specific prediction — not real-world feature importance",
+        "source": "openapi.json ExplainResponse description",
+        "evidence": "openapi.json: 'IMPORTANT: SHAP values show feature importance, NOT causal relationships'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §6", "API_DOCUMENTATION.md §8"]
+      }
+    },
+    "WHAT_IF": {
+      "model_comparison_only": {
+        "text": "What-if shows how the model's prediction changes under modified inputs — not real-world causal effect",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §What-If Simulator",
+        "evidence": "Limitations page: 'It does NOT show: How the actual popularity of a song would change'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §7", "API_DOCUMENTATION.md §9"]
+      },
+      "no_real_world_effect": {
+        "text": "Use it to explore model behavior, not to plan production decisions",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §What-If Simulator",
+        "evidence": "Limitations page closing line",
+        "supported": true,
+        "severity": "warning",
+        "target_documents": ["USER_MANUAL.md §7"]
+      }
+    },
+    "DASHBOARD": {
+      "dataset_scope": {
+        "text": "Available dataset (1922–2019) — not a complete representation of global music industry",
+        "source": "epic3/feature_3_3/frontend/pages/4_Trends.py (loads ml_ready_dataset.csv)",
+        "evidence": "USER_MANUAL.md §8: 'The available dataset shows 1922–2019 data from a curated Spotify-derived sample. It is not a comprehensive representation of all music globally.'",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["USER_MANUAL.md §8"]
+      }
+    },
+    "OFFLINE_DEMO": {
+      "precomputed_not_live": {
+        "text": "Offline Demo Mode uses precomputed validated scenarios — not live model inference",
+        "source": "feature_3_6_offline_demo_mode_contract.json",
+        "evidence": "offline contract: 'OFFLINE_MODE_TYPE: precomputed_scenarios'",
+        "supported": true,
+        "severity": "critical",
+        "target_documents": ["USER_MANUAL.md §12", "HOW_TO_RUN_APP.md §11"]
+      },
+      "limited_scenarios": {
+        "text": "Only precomputed examples are available offline — arbitrary new input may not be supported",
+        "source": "feature_3_6_offline_demo_mode_contract.json",
+        "evidence": "offline contract specification",
+        "supported": true,
+        "severity": "warning",
+        "target_documents": ["USER_MANUAL.md §12"]
+      }
+    },
+    "PERFORMANCE": {
+      "no_sla": {
+        "text": "No SLA defined for response times — local demo environment only",
+        "source": "N/A (no benchmark SLA in project)",
+        "evidence": "API_DOCUMENTATION.md: 'API response times are not guaranteed. No SLA is defined for the local demo environment.'",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["API_DOCUMENTATION.md §12"]
+      }
+    },
+    "FAIRNESS_BIAS": {
+      "training_data_bias": {
+        "text": "Model may reflect and amplify biases present in the training data; historical popularity correlates with marketing, platform visibility",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §Bias & Fairness",
+        "evidence": "Limitations page §Bias & Fairness",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["USER_MANUAL.md §10"]
+      },
+      "audio_features_insufficient": {
+        "text": "Audio features alone cannot capture artistic, cultural, or contextual factors that contribute to success",
+        "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py §Bias & Fairness",
+        "evidence": "Limitations page §Bias & Fairness",
+        "supported": true,
+        "severity": "note",
+        "target_documents": ["USER_MANUAL.md §10"]
+      }
+    }
+  },
+  "total_limitation_entries": 15,
+  "all_supported_by_evidence": true,
+  "unsupported_limitations": 0,
+  "status": "REGISTRY_COMPLETE"
+}

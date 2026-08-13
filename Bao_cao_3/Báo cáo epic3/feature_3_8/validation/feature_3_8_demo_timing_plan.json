@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 demo timing plan",
+  "official_demo_limit_known": false,
+  "time_limit_note": "Official demo duration not specified — planning estimate only",
+
+  "step_timing": [
+    {"step_id": "PRE-01", "step_name": "Pre-Demo Check", "target_seconds": 120, "hard_max_seconds": 180},
+    {"step_id": "HOME-01", "step_name": "Opening", "target_seconds": 60,  "hard_max_seconds": 90},
+    {"step_id": "PREDICT-01", "step_name": "Predict Demo", "target_seconds": 90,  "hard_max_seconds": 120},
+    {"step_id": "EXPLAIN-01", "step_name": "Explain Demo", "target_seconds": 90,  "hard_max_seconds": 120},
+    {"step_id": "WHATIF-01", "step_name": "What-If Demo", "target_seconds": 90,  "hard_max_seconds": 120},
+    {"step_id": "TRENDS-01", "step_name": "Music Trends", "target_seconds": 60,  "hard_max_seconds": 90},
+    {"step_id": "MODELINFO-01", "step_name": "Model Info / Limitations", "target_seconds": 60,  "hard_max_seconds": 90}
+  ],
+
+  "summary": {
+    "total_target_seconds": 570,
+    "total_target_minutes": 9.5,
+    "total_hard_max_minutes": 13.5,
+    "recommended_minutes": "8–10 minutes",
+    "buffer_seconds": 60
+  },
+
+  "skip_plan": {
+    "if_under_8_minutes": "Comfortable — expand talking points or add transitions",
+    "if_8_to_10_minutes": "On target — maintain pace",
+    "if_10_to_12_minutes": "Slightly over — skip TRENDS or MODELINFO",
+    "if_over_12_minutes": "Over — must skip 2+ steps or cut talking points",
+    "priority_order_when_skipping": [
+      "MODELINFO-01 (skip first, least critical)",
+      "TRENDS-01 (skip second if needed)",
+      "EXPLAIN-01 (keep third, core value)",
+      "WHATIF-01 (keep second, core value)",
+      "PREDICT-01 (CANNOT SKIP — anchor)"
+    ]
+  },
+
+  "offline_mode_timing": {
+    "note": "Offline fallback has fewer steps — estimate 5–7 minutes total",
+    "skipped_steps_in_offline": ["EXPLAIN-01", "WHATIF-01"],
+    "available_in_offline": ["PREDICT-01 (precomputed)", "TRENDS-01", "MODELINFO-01"]
+  },
+
+  "status": "TIMING_PLAN_COMPLETE"
+}

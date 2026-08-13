@@ -1,0 +1,62 @@
+{
+  "prerequisite_id": "F31-P3-PRE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:00:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "checks": [
+    {
+      "check": "phase_2_checkpoint_exists",
+      "status": "PASS",
+      "detail": "feature_3_1_phase_2_checkpoint.json exists"
+    },
+    {
+      "check": "phase_2_next_phase_may_begin",
+      "status": "PASS",
+      "detail": "Phase 2 checkpoint reports next_phase=MAY_BEGIN"
+    },
+    {
+      "check": "phase_2_status_pass_with_warnings",
+      "status": "PASS",
+      "detail": "Phase 2 phase_status=PASS_WITH_WARNINGS"
+    },
+    {
+      "check": "phase_2_gate_pass",
+      "status": "PASS",
+      "detail": "Phase 2 gate status=PASS_WITH_WARNINGS, blockers=[]"
+    },
+    {
+      "check": "model_load_validation_available",
+      "status": "PASS",
+      "detail": "feature_3_1_model_load_validation.json available from Phase 2"
+    },
+    {
+      "check": "input_schema_validation_available",
+      "status": "PASS",
+      "detail": "feature_3_1_input_schema_validation.json available"
+    },
+    {
+      "check": "output_schema_validation_available",
+      "status": "PASS",
+      "detail": "feature_3_1_output_schema_validation.json available"
+    },
+    {
+      "check": "selected_features_validation_available",
+      "status": "PASS",
+      "detail": "feature_3_1_selected_features_validation.json available"
+    },
+    {
+      "check": "feature_names_validation_available",
+      "status": "PASS",
+      "detail": "feature_3_1_feature_names_validation.json available"
+    },
+    {
+      "check": "no_refit_validation_available",
+      "status": "PASS",
+      "detail": "feature_3_1_no_refit_validation.json available from Phase 2"
+    }
+  ],
+  "prerequisite_status": "PASS",
+  "warnings": [],
+  "blockers": []
+}

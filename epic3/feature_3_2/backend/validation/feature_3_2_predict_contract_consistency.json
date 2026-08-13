@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-06T01:38:12.022054+00:00",
+  "status": "PASS",
+  "api_prediction_raw": 28.347221,
+  "service_prediction_raw": 28.347221,
+  "api_service_match": true,
+  "difference": 0.0,
+  "response_model_fields": [
+    "model_id",
+    "model_version",
+    "package_version",
+    "prediction_clipped",
+    "prediction_display",
+    "prediction_raw",
+    "request_id",
+    "status",
+    "timestamp",
+    "warnings"
+  ],
+  "expected_fields": [
+    "model_id",
+    "model_version",
+    "package_version",
+    "prediction_clipped",
+    "prediction_display",
+    "prediction_raw",
+    "request_id",
+    "status",
+    "timestamp",
+    "warnings"
+  ],
+  "fields_match": true,
+  "warnings": [],
+  "blockers": []
+}

@@ -1,0 +1,13 @@
+# Keep files covered by delivery integrity manifests byte-stable on every OS.
+Bao_cao_3/**/feature_3_8/*.md text eol=lf
+Bao_cao_3/**/feature_3_8/*.json text eol=lf
+Bao_cao_3/**/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md text eol=lf
+
+README.md text eol=lf
+HOW_TO_RUN_APP.md text eol=lf
+USER_MANUAL.md text eol=lf
+API_DOCUMENTATION.md text eol=lf
+TECHNICAL_APPENDIX.md text eol=lf
+
+demo/offline/evidence/*.json text eol=lf
+epic3/feature_3_1_artifact_validation/validation/feature_3_1_residual_stats_validation.json text eol=lf

@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 What-If E2E — response contract validation",
+  "endpoint": "POST /what-if",
+  "url": "http://127.0.0.1:8000/what-if",
+  "method": "POST",
+  "request_schema": {
+    "base_features": "PredictRequest (18 fields)",
+    "changed_features": "dict[str, float|bool|int|str] (min 1 field)"
+  },
+  "response_schema": {
+    "prediction_before": "float",
+    "prediction_after": "float",
+    "delta": "float",
+    "changed_fields": "list[str]",
+    "status": "str",
+    "warnings": "list[str]",
+    "model_id": "str",
+    "model_version": "str",
+    "timestamp": "str",
+    "request_id": "str|null"
+  },
+  "delta_validation": [
+    "delta = prediction_after - prediction_before",
+    "backend_computed_delta must equal computed_delta",
+    "delta is finite float"
+  ],
+  "baseline_consistency": [
+    "prediction_before must match /predict result for same base_features",
+    "tolerance: 0.001",
+    "mismatch is BLOCKER"
+  ],
+  "changed_fields_validation": [
+    "changed_fields must contain only keys from changed_features",
+    "changed_fields length must match changed_features length"
+  ],
+  "model_version_consistency": "model_version must match /predict for same model",
+  "actual_live_test": "PENDING (requires running backend)",
+  "status": "CONTRACT_VALIDATED"
+}

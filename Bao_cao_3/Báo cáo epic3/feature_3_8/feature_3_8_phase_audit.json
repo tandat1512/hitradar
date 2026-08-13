@@ -1,0 +1,36 @@
+{
+  "feature_id": "3.8",
+  "generated_at": "2026-08-12T00:20:00+07:00",
+  "method": "Re-read Phase 1-4 gates and inspect current files/runtime; prior PASS values were not inherited blindly.",
+  "phases": [
+    {
+      "phase": "1/5",
+      "prior_status": "PASS",
+      "actual_status": "SUPERSEDED_BY_FINAL_CORRECTIONS",
+      "evidence": ["feature_3_8_project_story.md", "feature_3_8_slide_outline.md", "validation/feature_3_8_phase_1_gate.json"],
+      "finding": "The original gate missed stale dataset scope, an unsupported LightGBM comparison and invented demo examples. Story and outline were corrected against locked/current evidence on 2026-08-12. An actual deck is still absent."
+    },
+    {
+      "phase": "2/5",
+      "prior_status": "PASS_WITH_WARNINGS",
+      "actual_status": "PASS_WITH_WARNINGS",
+      "evidence": ["DEMO_SCRIPT_FEATURE_3_8.md", "feature_3_8_demo_scenario.json", "feature_3_8_phase_2_gate.json"],
+      "finding": "Script and canonical scenario exist. The final live smoke now passes Explain, but automatic offline UI and backup media remain unresolved."
+    },
+    {
+      "phase": "3/5",
+      "prior_status": "PASS_WITH_WARNINGS",
+      "actual_status": "PASS_WITH_WARNINGS",
+      "evidence": ["DEFENSE_QA_DATASET.md", "DEFENSE_QA_MODEL.md", "DEFENSE_QA_SHAP.md", "DEFENSE_QA_LIMITATIONS.md", "feature_3_8_phase_3_gate.json"],
+      "finding": "All four Q&A groups and rapid-fire material exist and preserve non-causal/limitation wording."
+    },
+    {
+      "phase": "4/5",
+      "prior_status": "WAITING_FOR_HUMAN_REHEARSAL",
+      "actual_status": "WAITING_FOR_HUMAN_ACTION",
+      "evidence": ["DEFENSE_PRESENTER_ASSIGNMENT.md", "feature_3_8_rehearsal_1.json", "feature_3_8_rehearsal_2.json", "feature_3_8_phase_4_gate.json"],
+      "finding": "Assignments are unconfirmed and neither human rehearsal has occurred. Remaining issue counts cannot honestly be reported as zero."
+    }
+  ],
+  "overall_status": "WAITING_FOR_HUMAN_ACTION"
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Explicit trend chart validation",
+  "chart_id": "explicit_trend",
+  "chart_title": "Percentage of Tracks Marked Explicit by Decade",
+  "chart_type": "bar_chart",
+  "x_field": "Decade",
+  "y_field": "Percentage (%)",
+  "aggregation": "rate (count_explicit / valid_count)",
+  "coverage_reported": true,
+  "zero_baseline": true,
+  "not_visualized_as_count": true,
+  "causal_claims_in_title": 0,
+  "empty_state_handled": true,
+  "status": "PASS"
+}

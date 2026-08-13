@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 startup script registry",
+  "scripts_location": "scripts/ (repository root canonical location)",
+  "supported_platform": "Windows primary (project repository platform); scripts are pure-Python + stdlib and also run on POSIX",
+  "scripts": [
+    {
+      "script": "scripts/run_backend.py",
+      "purpose": "Start FastAPI backend: artifact validation, port conflict detection, exact uvicorn command, /health readiness polling, Ctrl+C cleanup, exit code propagation",
+      "usage": "python scripts/run_backend.py",
+      "status": "CREATED"
+    },
+    {
+      "script": "scripts/run_frontend.py",
+      "purpose": "Start Streamlit frontend: backend URL env, port validation, Streamlit start, backend-unreachable warning, Ctrl+C cleanup",
+      "usage": "python scripts/run_frontend.py",
+      "status": "CREATED"
+    },
+    {
+      "script": "scripts/run_all.py",
+      "purpose": "Orchestrator: validate → start backend → poll real /health (model_loaded) → start frontend → print URLs → monitor → cleanup own children only",
+      "usage": "python scripts/run_all.py",
+      "status": "CREATED"
+    },
+    {
+      "script": "scripts/_common.py",
+      "purpose": "Shared stdlib helpers (port check, health polling, process ownership, graceful teardown)",
+      "usage": "imported by the three run scripts",
+      "status": "CREATED"
+    }
+  ],
+  "duplicates": "existing run.bat remains for backward compatibility; scripts/run_backend.py is the canonical launcher (no 3 duplicate variants)",
+  "no_machine_paths": true,
+  "status": "REGISTRY_COMPLETE"
+}

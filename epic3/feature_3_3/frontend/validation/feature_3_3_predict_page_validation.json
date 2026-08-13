@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "page": "pages/1_Predict.py",
+  "api_integration": "POST /predict",
+  "uses_form": true,
+  "loading_spinner": true,
+  "target_blocked": true,
+  "session_state_saved": true,
+  "no_model_loading": true,
+  "result_component_used": true,
+  "error_component_used": true,
+  "cta_to_explain_page": true,
+  "cta_to_whatif_page": true,
+  "empty_state": true,
+  "previous_result_shown": true,
+  "no_probability_terminology": true,
+  "status": "PASS"
+}

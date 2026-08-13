@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "artist_column": null,
+  "genre_column": null,
+  "status": "NEITHER_AVAILABLE",
+  "note": "Neither artist nor genre fields exist in ml_ready_dataset.csv. The dataset contains only audio features and track metadata (track_id, release_year, etc.). Artist and genre visualization is not possible from this dataset source.",
+  "columns_present": "track_id,target_popularity,duration_min,explicit,release_year,release_month,decade,release_precision,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature",
+  "confirmed_from": "CSV header row inspection"
+}

@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "facts": {
+    "project_name": {
+      "value": "HitRadar Pro",
+      "source": "Feature 3.8 defense source registry"
+    },
+    "target": {
+      "value": "popularity score (0-100)",
+      "source": "Feature 3.8 defense source registry"
+    },
+    "problem_type": {
+      "value": "continuous regression",
+      "source": "Feature 3.8 defense source registry"
+    },
+    "dataset_record_count": {
+      "value": 586672,
+      "source": "5.DATA/processed/ml_ready_dataset.csv + Feature 3.8 registry"
+    },
+    "dataset_year_range": {
+      "value": "1900-2021",
+      "source": "dataset + split manifest + Feature 3.8 registry"
+    },
+    "model_name": {
+      "value": "EXP24-XGB-FINAL-001",
+      "source": "artifacts/epic2/metadata/model_version.json"
+    },
+    "model_version": {
+      "value": "1.0.0",
+      "source": "artifacts/epic2/metadata/model_version.json"
+    },
+    "model_family": {
+      "value": "XGBoost",
+      "source": "model metadata"
+    },
+    "raw_feature_count": {
+      "value": 18,
+      "source": "input schema"
+    },
+    "selected_feature_count": {
+      "value": 31,
+      "source": "selected_features.json"
+    },
+    "transformed_feature_count": {
+      "value": 49,
+      "source": "feature_names.json"
+    },
+    "MAE": {
+      "value": 17.646684646606445,
+      "display": 17.65,
+      "source": "Feature 3.1 metrics validation"
+    },
+    "RMSE": {
+      "value": 21.01337842313573,
+      "display": 21.01,
+      "source": "Feature 3.1 metrics validation"
+    },
+    "R2": {
+      "value": 0.06962639093399048,
+      "display": 0.0696,
+      "source": "Feature 3.1 metrics validation"
+    },
+    "backend_port": {
+      "value": 8000,
+      "source": "startup scripts"
+    },
+    "frontend_port": {
+      "value": 8501,
+      "source": "startup scripts"
+    },
+    "API_prefix": {
+      "value": "",
+      "source": "current OpenAPI"
+    },
+    "health_path": {
+      "value": "/health",
+      "source": "current OpenAPI"
+    },
+    "predict_path": {
+      "value": "/predict",
+      "source": "current OpenAPI"
+    },
+    "explain_path": {
+      "value": "/explain",
+      "source": "current OpenAPI"
+    },
+    "what_if_path": {
+      "value": "/what-if",
+      "source": "current OpenAPI"
+    },
+    "model_info_path": {
+      "value": "/model-info",
+      "source": "current OpenAPI"
+    },
+    "Python_version": {
+      "value": "3.13.14",
+      "source": "Feature 3.8 final technical environment",
+      "note": "Historical benchmark evidence used Python 3.13.7 and remains labeled as such."
+    },
+    "offline_mode_status": {
+      "value": "EVIDENCE_ONLY_NOT_LIVE_INFERENCE",
+      "source": "Feature 3.6 offline contract + Feature 3.8 technical environment"
+    },
+    "warm_API_p50": {
+      "value": null,
+      "status": "PENDING_NOT_MEASURED",
+      "source": "Feature 3.6 API latency final"
+    },
+    "warm_API_p95": {
+      "value": null,
+      "status": "PENDING_NOT_MEASURED",
+      "source": "Feature 3.6 API latency final"
+    }
+  },
+  "rounding_policy": "Rounded display values are accepted when they preserve the canonical metrics.",
+  "status": "COMPLETE_WITH_UNAVAILABLE_FEATURE_3_6_WARM_LATENCY"
+}

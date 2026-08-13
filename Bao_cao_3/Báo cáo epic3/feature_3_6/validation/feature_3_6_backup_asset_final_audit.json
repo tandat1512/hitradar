@@ -1,0 +1,32 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 backup asset final audit",
+  "screenshots": {
+    "manifest": "feature_3_6_backup_screenshot_manifest.json",
+    "expected_count": 7,
+    "files_exist_count": 0,
+    "status": "MISSING",
+    "note": "No screenshot captured — REQUIRES_LIVE_CAPTURE (live env needed). No fabricated files or metadata."
+  },
+  "video": {
+    "manifest": "feature_3_6_backup_video_manifest.json",
+    "status": "MANUAL_RECORDING_REQUIRED",
+    "note": "Shot list + validation checklist complete (feature_3_6_demo_video_shot_list.md). Actual file does not exist; project acceptance allows manual recording — recorded honestly, NOT marked READY_VALIDATED."
+  },
+  "offline_evidence": {
+    "files": [
+      "demo/offline/evidence/example_input.json",
+      "demo/offline/evidence/example_output.json"
+    ],
+    "files_exist_count": 2,
+    "hash_status": "PENDING_LIVE (sha256 computed at capture time)"
+  },
+  "asset_status": {
+    "screenshots": "MISSING (honest)",
+    "video": "MANUAL_RECORDING_REQUIRED (honest)",
+    "offline_evidence": "PRESENT"
+  },
+  "no_asset_claimed_ready_without_file": true,
+  "status": "AUDIT_COMPLETE"
+}

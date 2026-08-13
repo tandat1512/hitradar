@@ -1,0 +1,69 @@
+{
+  "validation_id": "F31-P2-FN-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:39:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "schema_path": "7.ML/7.10.model_packaging/package/schemas/feature_names.json",
+  "sha256": "3044097537901e2218afe542b9fd2e7dd09af55fbd9fea7509a229a68b0a2bc1",
+  "parse_status": "OK",
+  "validation_status": "PASS",
+  "layer_classification": "TRANSFORMED_MODEL_FEATURES",
+  "layer_classification_evidence": [
+    "feature_names.json header comment: 'source: ColumnTransformer.transformers_ + OneHotEncoder.categories_'",
+    "Count = 49 matches the full model matrix width after ColumnTransformer (49 features)",
+    "Contains OneHotEncoder feature names: key_0, key_1, ..., release_precision_day, explicit_False, etc.",
+    "These are the features that go INTO the XGBoost model (post-ColumnTransformer)"
+  ],
+  "layer_classification_status": "RESOLVED",
+  "model_matrix_width": 49,
+  "feature_count_declared": 49,
+  "feature_count_actual": 49,
+  "feature_names": [
+    "duration_min","release_year","danceability","energy","loudness","speechiness",
+    "acousticness","instrumentalness","liveness","valence","tempo","release_month","decade",
+    "release_month_sin","release_month_cos","year_in_decade","duration_log","duration_squared",
+    "energy_danceability","energy_valence","danceability_valence","acousticness_instrumentalness",
+    "energy_liveness","speechiness_explicit","tempo_danceability","loudness_energy",
+    "release_precision_day","release_precision_month","release_precision_year",
+    "key_0","key_1","key_10","key_11","key_2","key_3","key_4","key_5","key_6","key_7","key_8","key_9",
+    "time_signature_1.0","time_signature_3.0","time_signature_4.0","time_signature_5.0",
+    "explicit_False","explicit_True",
+    "mode_0","mode_1"
+  ],
+  "onehot_expansion_breakdown": {
+    "release_precision": 3,
+    "key": 12,
+    "time_signature": 4,
+    "explicit": 2,
+    "mode": 2,
+    "total_onehot": 23,
+    "total_raw_engineered": 26
+  },
+  "numeric_features": [
+    "duration_min","release_year","danceability","energy","loudness","speechiness",
+    "acousticness","instrumentalness","liveness","valence","tempo","release_month","decade",
+    "release_month_sin","release_month_cos","year_in_decade","duration_log","duration_squared",
+    "energy_danceability","energy_valence","danceability_valence","acousticness_instrumentalness",
+    "energy_liveness","speechiness_explicit","tempo_danceability","loudness_energy"
+  ],
+  "categorical_onehot_features": [
+    "release_precision_day","release_precision_month","release_precision_year",
+    "key_0","key_1","key_10","key_11","key_2","key_3","key_4","key_5","key_6","key_7","key_8","key_9",
+    "time_signature_1.0","time_signature_3.0","time_signature_4.0","time_signature_5.0",
+    "explicit_False","explicit_True",
+    "mode_0","mode_1"
+  ],
+  "order_locked": true,
+  "checks": {
+    "json_parse": "PASS",
+    "is_dict_with_names_key": "PASS",
+    "count_49": "PASS",
+    "no_empty_names": "PASS",
+    "no_duplicates": "PASS",
+    "layer_resolved": "PASS",
+    "order_locked": "PASS"
+  },
+  "warnings": [],
+  "blockers": []
+}

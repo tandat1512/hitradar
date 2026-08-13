@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final benchmark environment — compared with Phase 1",
+  "phase_1_environment": "feature_3_6_benchmark_environment.json (design; values CAPTURE_LIVE)",
+  "phase_5_environment": {
+    "os": "Windows 11 Home Single Language 10.0.26200",
+    "architecture": "amd64 (capture live)",
+    "python_version": "CAPTURE_LIVE",
+    "hardware": "CAPTURE_LIVE (cpu, ram)"
+  },
+  "environment_changed": "UNKNOWN — live capture not possible in this session",
+  "comparability_warning": "TRUE — if hardware/software differs from Phase 1 at live re-benchmark, percent-improvement claims are NOT valid without noting the change. Benchmark environment contract recorded at Phase 1 for exact reuse (same input, warm-up, count, method, config).",
+  "status": "ENVIRONMENT_DOCUMENTED"
+}

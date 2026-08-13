@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final Streamlit page latency summary — BLOCKED (no live env)",
+  "methodology": "identical to Phase 1 (feature_3_6_streamlit_page_latency_baseline.json)",
+  "pages": [
+    {"page_id": "HOME", "final_median_ms": "PENDING", "final_p95_ms": "PENDING", "status": "BLOCKED"},
+    {"page_id": "PREDICT", "final_median_ms": "PENDING", "final_p95_ms": "PENDING", "status": "BLOCKED"},
+    {"page_id": "MUSIC_TRENDS", "final_median_ms": "PENDING", "final_p95_ms": "PENDING", "status": "BLOCKED"},
+    {"page_id": "MODEL_INFO", "final_median_ms": "PENDING", "final_p95_ms": "PENDING", "status": "BLOCKED"},
+    {"page_id": "EXPLAIN", "final_median_ms": "PENDING", "final_p95_ms": "PENDING", "status": "BLOCKED"},
+    {"page_id": "WHAT_IF", "final_median_ms": "PENDING", "final_p95_ms": "PENDING", "status": "BLOCKED"}
+  ],
+  "samples_file": "feature_3_6_streamlit_page_latency_final_samples.csv",
+  "status": "BLOCKED"
+}

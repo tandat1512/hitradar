@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 clean environment definition — method and constraints",
+  "clean_environment_method": "ISOLATED_VENV",
+  "method_description": "Fresh Python venv created in a temporary directory with no system-site-packages. Dependencies installed only from declared project requirements files. Source copied from working tree to avoid destroying user work.",
+  "constraints": [
+    "No packages inherited from active project venv",
+    "Install only from declared requirements files",
+    "Start project from repository-defined paths",
+    "No git clean/reset/checkout/restore",
+    "No destroying user working tree",
+    "Source snapshot labeled as WORKING_TREE if uncommitted files used"
+  ],
+  "venv_creation_method": "python -m venv --system-site-packages false <venv_path>",
+  "venv_creation_recorded": false,
+  "venv_creation_note": "Fresh venv creation requires actual Python interpreter — deferred to live environment",
+  "source_snapshot": "WORKING_TREE",
+  "source_snapshot_note": "No fresh clone performed — Phase 5 final smoke will use strict clone method",
+  "status": "CONTRACT_VALIDATED"
+}

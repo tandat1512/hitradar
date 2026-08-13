@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "trends_page": "pages/4_Trends.py",
+  "primary_source": "5.DATA/processed/ml_ready_dataset.csv",
+  "evaluation_source": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+  "aggregation_type": "mean by release_year",
+  "metrics_shown": ["count per year", "audio feature means", "popularity trend", "error metrics"],
+  "no_training": true,
+  "no_dataset_mutation": true,
+  "st_cache_data_used": true,
+  "causal_disclaimer_present": true,
+  "limitation_warning_present": true,
+  "path_relative_to_repo_root": true,
+  "status": "PASS"
+}

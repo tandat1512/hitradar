@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 missing required field — API contract validation",
+  "scenario": "POST /predict with one required field missing",
+  "field_removed": "danceability",
+  "baseline_payload": "example_input.json (18 fields)",
+  "tested_payload": "17 fields (danceability removed)",
+  "expected_http_status": 422,
+  "expected_error_type": "APIValidationError",
+  "expected_behavior": "Pydantic validation fails — field required but missing",
+  "expected_detail_contains_field": true,
+  "request_id_present": true,
+  "traceback_exposed": false,
+  "internal_path_exposed": false,
+  "no_500": true,
+  "actual_live_test": "PENDING (requires running backend)",
+  "test_type": "ACTUAL_HTTP_NEGATIVE_INTEGRATION_TEST",
+  "status": "CONTRACT_VALIDATED"
+}

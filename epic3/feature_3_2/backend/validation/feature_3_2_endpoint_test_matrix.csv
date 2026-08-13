@@ -1,0 +1,10 @@
+test_id,endpoint,method,expected_status,actual_status,request_id_present,pass
+health_healthy,/health,GET,200,200,True,True
+model_info_valid,/model-info,GET,200,200,True,True
+features_valid,/features,GET,200,200,True,True
+predict_valid,/predict,POST,200,200,True,True
+predict_missing_field,/predict,POST,422,422,True,True
+predict_oob,/predict,POST,422,422,True,True
+explain_valid,/explain,POST,200,200,True,True
+whatif_valid,/what-if,POST,200,200,True,True
+whatif_unknown_field,/what-if,POST,422,422,True,True

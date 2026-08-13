@@ -1,0 +1,122 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.4 artifact manifest — complete artifact inventory",
+  "feature": "3.4",
+  "version": "1.0.0",
+  "canonical_sources": [
+    {
+      "artifact": "ml_ready_dataset.csv",
+      "path": "5.DATA/processed/ml_ready_dataset.csv",
+      "type": "source_dependency",
+      "role": "Primary trend data source",
+      "rows": 169681,
+      "columns": 20,
+      "year_range": "1922-2019",
+      "created_by": "EPIC 1 / Feature 1.3 pipeline",
+      "not_modified_by": "Feature 3.4"
+    },
+    {
+      "artifact": "yearly_evaluation.csv",
+      "path": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+      "type": "source_dependency",
+      "role": "Yearly model evaluation data",
+      "years": "2014-2021",
+      "created_by": "EPIC 2 pipeline",
+      "not_modified_by": "Feature 3.4"
+    }
+  ],
+  "source_modules": [
+    {
+      "artifact": "trend_data_loader.py",
+      "path": "epic3/feature_3_4/dashboard/loaders/trend_data_loader.py",
+      "type": "source_code",
+      "role": "Read-only data loader with copy semantics"
+    }
+  ],
+  "analytics_modules": [
+    {"artifact": "audio_feature_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/audio_feature_engine.py"},
+    {"artifact": "aggregation_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/aggregation_engine.py"},
+    {"artifact": "explicit_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/explicit_engine.py"},
+    {"artifact": "duration_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/duration_engine.py"},
+    {"artifact": "summary_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/summary_engine.py"}
+  ],
+  "chart_modules": [
+    {"artifact": "chart_render.py", "path": "epic3/feature_3_4/dashboard/charts/chart_render.py"}
+  ],
+  "caption_modules": [
+    {"artifact": "engines.py", "path": "epic3/feature_3_4/dashboard/captions/engines.py"}
+  ],
+  "cache_modules": [
+    {"artifact": "dashboard_cache.py", "path": "epic3/feature_3_4/dashboard/cache/dashboard_cache.py"}
+  ],
+  "validation_artifacts": [
+    "feature_3_4_phase_1_gate.json",
+    "feature_3_4_source_fingerprint.json",
+    "feature_3_4_trend_data_schema.json",
+    "feature_3_4_year_validation.json",
+    "feature_3_4_year_range.json",
+    "feature_3_4_popularity_validation.json",
+    "feature_3_4_audio_feature_registry.json",
+    "feature_3_4_explicit_field_validation.json",
+    "feature_3_4_duration_field_validation.json",
+    "feature_3_4_artist_genre_field_validation.json",
+    "feature_3_4_trend_data_quality.json",
+    "feature_3_4_missing_data_policy.json",
+    "feature_3_4_decade_policy.json",
+    "feature_3_4_dashboard_data_contract.json",
+    "feature_3_4_source_immutability_phase_1.json",
+    "feature_3_4_aggregation_contract.json",
+    "feature_3_4_popularity_trend_data.json",
+    "feature_3_4_popularity_aggregation_validation.json",
+    "feature_3_4_popularity_decade_validation.json",
+    "feature_3_4_audio_aggregation_validation.json",
+    "feature_3_4_chart_registry.json",
+    "feature_3_4_chart_empty_state_validation.json",
+    "feature_3_4_explicit_normalization_validation.json",
+    "feature_3_4_explicit_trend_data.json",
+    "feature_3_4_explicit_chart_validation.json",
+    "feature_3_4_duration_conversion_validation.json",
+    "feature_3_4_duration_trend_data.json",
+    "feature_3_4_duration_chart_validation.json",
+    "feature_3_4_artist_genre_summary_decision.json",
+    "feature_3_4_dashboard_filter_contract.json",
+    "feature_3_4_caption_evidence_registry.json",
+    "feature_3_4_caption_claim_audit.json",
+    "feature_3_4_chart_caption_consistency.json",
+    "feature_3_4_phase_audit.json",
+    "feature_3_4_cache_architecture.json",
+    "feature_3_4_cache_invalidation_validation.json",
+    "feature_3_4_cache_mutation_validation.json",
+    "feature_3_4_cache_correctness_validation.json",
+    "feature_3_4_architecture_audit.json",
+    "feature_3_4_source_immutability_audit.json",
+    "feature_3_4_write_scope_audit.json",
+    "feature_3_4_final_claim_audit.json",
+    "feature_3_4_final_data_validation.json",
+    "feature_3_4_evidence_matrix.csv",
+    "feature_3_4_artifact_manifest.json"
+  ],
+  "test_artifacts": [
+    "epic3/feature_3_4/dashboard/tests/test_feature_3_4_trend_loader.py"
+  ],
+  "reports": [
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_DATA_FOUNDATION_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_1_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_POPULARITY_AUDIO_TRENDS_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_2_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_SECONDARY_TRENDS_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_3_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_CAPTION_INSIGHT_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_4_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_VALIDATION_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_COMPLETION_REPORT.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/CLOSURE_GATE_REPORT_FEATURE_3_4.md",
+    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/BAO_CAO_NGHIEM_THU_FEATURE_3_4.md"
+  ],
+  "closure_gate": "epic3/feature_3_4/dashboard/validation/feature_3_4_closure_gate.json",
+  "total_validation_files": 46,
+  "total_reports": 12,
+  "total_modules": 7,
+  "status": "COMPLETE"
+}

@@ -1,0 +1,32 @@
+{
+  "checkpoint_id": "F31-P1-CKPT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:14:00+07:00",
+  "feature_id": "3.1",
+  "phase": 1,
+  "gate_status": "FAIL",
+  "blocker_count": 3,
+  "deliverables": {
+    "session_json": "DONE",
+    "canonical_path_validation": "DONE",
+    "handoff_discovery": "DONE",
+    "handoff_contract": "DONE",
+    "required_artifact_contract": "DONE",
+    "artifact_inventory_csv": "DONE",
+    "artifact_inventory_json": "DONE",
+    "artifact_readability": "DONE",
+    "intake_gate": "DONE",
+    "pytest_files": "NOT_STARTED",
+    "pytest_run": "NOT_STARTED",
+    "intake_report_md": "NOT_STARTED",
+    "phase_1_report_md": "NOT_STARTED"
+  },
+  "blockers_summary": [
+    "BLK-GLOBAL-001: handoff_to_epic3.md missing",
+    "BLK-GLOBAL-002: artifact_manifest.json sub-entry for inference_pipeline.py is stale",
+    "BLK-GLOBAL-003: model_metrics.json empty (0 bytes)"
+  ],
+  "phase_2_ready": false,
+  "phase_2_blockers": ["BLK-GLOBAL-001","BLK-GLOBAL-002","BLK-GLOBAL-003"],
+  "next_action": "Resolve 3 blockers before Phase 2 — artifact load test (deserialization)"
+}

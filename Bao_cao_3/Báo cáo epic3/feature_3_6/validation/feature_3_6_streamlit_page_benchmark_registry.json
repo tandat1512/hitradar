@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 Streamlit page benchmark registry — from actual page files",
+  "pages": [
+    {
+      "page_id": "HOME",
+      "page_name": "Home",
+      "page_file": "pages/0_Home.py",
+      "backend_dependency": "none (static landing)",
+      "data_dependency": "none",
+      "heavy_operation": "none",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION",
+      "enabled": true
+    },
+    {
+      "page_id": "PREDICT",
+      "page_name": "Predict Popularity",
+      "page_file": "pages/1_Predict.py",
+      "backend_dependency": "GET /features (form), POST /predict (action)",
+      "data_dependency": "feature metadata via API",
+      "heavy_operation": "form render; prediction only on submit",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION (base render); action latency via API benchmark",
+      "enabled": true
+    },
+    {
+      "page_id": "EXPLAIN",
+      "page_name": "SHAP Explanation",
+      "page_file": "pages/2_Explain.py",
+      "backend_dependency": "GET /model-info, POST /explain",
+      "data_dependency": "none (API-driven)",
+      "heavy_operation": "SHAP computation on backend; frontend only renders",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION (base render)",
+      "enabled": true
+    },
+    {
+      "page_id": "WHAT_IF",
+      "page_name": "What-If Simulator",
+      "page_file": "pages/3_WhatIf.py",
+      "backend_dependency": "POST /what-if",
+      "data_dependency": "session baseline input",
+      "heavy_operation": "2x predict on backend",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION (base render)",
+      "enabled": true
+    },
+    {
+      "page_id": "MUSIC_TRENDS",
+      "page_name": "Music Trends 1921–2020",
+      "page_file": "pages/4_Trends.py",
+      "backend_dependency": "none",
+      "data_dependency": "5.DATA/processed/ml_ready_dataset.csv (169,681 rows) via Feature 3.4 loader",
+      "heavy_operation": "dataset load + aggregation + chart render",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION with stage timing (load/agg/chart)",
+      "enabled": true
+    },
+    {
+      "page_id": "MODEL_INFO",
+      "page_name": "Model Info",
+      "page_file": "pages/5_Model_Info.py",
+      "backend_dependency": "GET /model-info",
+      "data_dependency": "none (API-driven)",
+      "heavy_operation": "none",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION",
+      "enabled": true
+    },
+    {
+      "page_id": "LIMITATIONS",
+      "page_name": "Limitations & Responsible Use",
+      "page_file": "pages/6_Limitations.py",
+      "backend_dependency": "none (static content)",
+      "data_dependency": "none",
+      "heavy_operation": "none",
+      "benchmark_method": "STREAMLIT_SCRIPT_EXECUTION",
+      "enabled": true
+    }
+  ],
+  "measurement_semantics": {
+    "type": "STREAMLIT_SCRIPT_EXECUTION",
+    "note": "Measures Streamlit script run duration via AppTest or script-level timing, NOT browser DOM fully-painted time. No browser instrumentation in this project."
+  },
+  "benchmark_pages": ["HOME", "PREDICT", "MUSIC_TRENDS", "MODEL_INFO"],
+  "optional_pages": ["EXPLAIN", "WHAT_IF", "LIMITATIONS"],
+  "status": "REGISTRY_COMPLETE"
+}

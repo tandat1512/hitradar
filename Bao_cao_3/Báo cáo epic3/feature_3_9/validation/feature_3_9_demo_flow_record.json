@@ -1,0 +1,63 @@
+{
+  "status": "WAITING_FOR_HUMAN_DEMO",
+  "source_event": "feature_3_9_demo_event.json",
+  "flows": [
+    {
+      "flow": "HOME",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    },
+    {
+      "flow": "PREDICT",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    },
+    {
+      "flow": "EXPLAIN",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    },
+    {
+      "flow": "WHAT_IF",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    },
+    {
+      "flow": "MUSIC_TRENDS",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    },
+    {
+      "flow": "MODEL_INFO",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    },
+    {
+      "flow": "LIMITATIONS",
+      "attempted": null,
+      "completed": null,
+      "fallback_used": null,
+      "issue": null,
+      "notes": null
+    }
+  ],
+  "note": "Null means the human demo has not been evidenced; it does not mean pass or fail."
+}

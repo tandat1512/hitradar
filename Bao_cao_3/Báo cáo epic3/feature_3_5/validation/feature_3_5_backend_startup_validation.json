@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 backend startup validation — evidence from source inspection",
+  "command": "python -m uvicorn api:app --host 127.0.0.1 --port 8000 --reload",
+  "cwd": "5.UNG_DUNG/5.1.backend_api/",
+  "startup_behavior": {
+    "lifespan": "eager model load via PipelineLoader at startup",
+    "pipeline_path": "from config.ARTIFACTS_PATH",
+    "transformers_path": "from config.FE_TRANSFORMERS_PATH",
+    "model_load_trigger": "pipeline_loader.pipeline (eager access in lifespan)",
+    "shap_explainer": "created in lifespan (not on every request)"
+  },
+  "expected_on_startup": [
+    "INFO: Loading HitRadarInferencePipeline at startup...",
+    "INFO: Pipeline ready."
+  ],
+  "health_readiness_check": "GET /health must return status=healthy and model_loaded=true",
+  "note": "Backend startup validation requires a live Python environment with dependencies installed. Evidence based on source code inspection. Actual startup test deferred to integration test phase when Python interpreter is available.",
+  "startup_duration_ms": "NOT_MEASURED (requires live environment)",
+  "process_alive": "NOT_VERIFIED (requires live environment)",
+  "model_loaded": "NOT_VERIFIED (requires live environment)",
+  "status": "PENDING_LIVE_VERIFICATION"
+}

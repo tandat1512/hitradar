@@ -1,0 +1,105 @@
+{
+  "feature_id": "3.8",
+  "phase": 3,
+  "tasks": ["3.8.4", "3.8.5", "3.8.6", "3.8.7"],
+  "source_policy": "Machine-readable locked manifests and final evaluation artifacts override narrative summaries. Unreconciled document differences must be disclosed, not guessed away.",
+  "categories": {
+    "DATASET": {
+      "sources": ["6.TAI_LIEU/6.1.bao_cao/DATASET_AUDIT_REPORT.md", "6.TAI_LIEU/6.1.bao_cao/ML_READY_DATASET_VALIDATION_REPORT.md", "7.ML/7.4.splits/split_manifest.json"],
+      "facts": {"ml_ready_rows": 586672, "raw_track_columns": 20, "model_input_features": 18, "target": "target_popularity", "year_range": "1900-2021"},
+      "status": "READY_WITH_LEGACY_DOCUMENT_WARNING"
+    },
+    "PREPROCESSING": {
+      "sources": ["7.ML/7.5.preprocessing/missing_value_strategy.json", "7.ML/7.5.preprocessing/encoding_config.json", "7.ML/7.5.preprocessing/scaling_config.json", "7.ML/7.5.preprocessing/preprocessing_fit_audit.json"],
+      "facts": {"fit_split": "train only", "tempo": "train median", "time_signature": "train most frequent", "release_month": "explicit missing category", "P22_A": "OneHotEncoder + StandardScaler"},
+      "status": "READY"
+    },
+    "FEATURE ENGINEERING": {
+      "sources": ["7.ML/7.6.feature_engineering/docs/FEATURE_SELECTION_REPORT.md", "artifacts/epic2/schemas/selected_features.json", "artifacts/epic2/schemas/feature_names.json"],
+      "facts": {"raw": 18, "engineered": 13, "selected": 31, "model_matrix": 49, "selection": "train-only temporal CV"},
+      "status": "READY"
+    },
+    "MODEL": {
+      "sources": ["7.ML/7.7.model_training/metrics/model_comparison.json", "7.ML/7.8.model_evaluation/configs/champion_lock_manifest.json", "artifacts/epic2/metadata/model_version.json"],
+      "facts": {"model_id": "EXP24-XGB-FINAL-001", "family": "XGBoost", "version": "1.0.0", "problem": "regression"},
+      "status": "READY"
+    },
+    "METRICS": {
+      "sources": ["7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json", "7.ML/7.8.model_evaluation/metrics/validation_test_comparison.json"],
+      "facts": {"test_rows": 85876, "MAE": 17.646684646606445, "RMSE": 21.01337842313573, "R2": 0.06962639093399048, "validation_to_test_rmse_change_percent": 37.773988995052534},
+      "status": "READY"
+    },
+    "MODEL SELECTION": {
+      "sources": ["7.ML/7.7.model_training/metrics/model_comparison.json", "7.ML/7.7.model_training/cv/TEMPORAL_CV_REPORT.md", "7.ML/7.7.model_training/configs/SEARCH_BUDGET_REPORT.md"],
+      "facts": {"families_compared": ["XGBoost", "RandomForest", "Ridge"], "xgb_cv_rmse": 12.862417400358112, "rf_cv_rmse": 12.920065965427137, "ridge_cv_rmse": 13.240091653205779},
+      "status": "READY"
+    },
+    "OVERFITTING": {
+      "sources": ["7.ML/7.7.model_training/registries/experiment_registry.json", "7.ML/7.8.model_evaluation/metrics/validation_test_comparison.json"],
+      "facts": {"xgb_train_rmse": 11.279099531552852, "xgb_validation_rmse": 15.25206504973179, "test_rmse": 21.01337842313573, "conclusion": "Evidence does not justify claiming no overfitting or no temporal shift."},
+      "status": "READY_WITH_WARNING"
+    },
+    "GENERALIZATION": {
+      "sources": ["7.ML/7.8.model_evaluation/temporal/temporal_robustness_summary.json", "7.ML/7.8.model_evaluation/residuals/residual_bias_summary.json"],
+      "facts": {"temporal_status": "MODERATELY_VARIABLE", "underprediction_rate": 0.6781522194792492, "year_rmse_correlation": 0.930338213758189},
+      "status": "READY_WITH_WARNING"
+    },
+    "SHAP": {
+      "sources": ["7.ML/7.9.explainability/shap_values/shap_explainer_manifest.json", "7.ML/7.9.explainability/shap_values/shap_additivity_validation.json", "epic3/feature_3_1_artifact_validation/validation/feature_3_1_shap_asset_validation.json"],
+      "facts": {"explainer": "TreeExplainer", "epic2_artifact_background_shape": [1000, 49], "global_shape": [5000, 49], "additivity_pass_rate": 1.0, "tolerance": 0.001, "live_backend_background_argument": false},
+      "runtime_note": "Epic 2 artifact uses the train-only background; live FastAPI constructs TreeExplainer(model) without passing that artifact.",
+      "status": "READY_FINAL_SMOKE_PASS"
+    },
+    "WHAT_IF": {
+      "sources": ["5.UNG_DUNG/5.1.backend_api/api.py", "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_demo_dry_run.json"],
+      "facts": {"operation": "re-evaluate the same model with changed_features", "causal": false},
+      "status": "READY"
+    },
+    "API": {
+      "sources": ["5.UNG_DUNG/5.1.backend_api/openapi.json", "5.UNG_DUNG/5.1.backend_api/api.py"],
+      "facts": {"framework": "FastAPI", "port": 8000, "endpoint_count": 6, "model_load": "eager startup"},
+      "status": "READY"
+    },
+    "FRONTEND": {
+      "sources": ["epic3/feature_3_3/frontend/core/navigation.py", "TECHNICAL_APPENDIX.md"],
+      "facts": {"framework": "Streamlit", "port": 8501, "direct_model_access": false, "direct_shap_compute": false},
+      "status": "READY"
+    },
+    "DASHBOARD": {
+      "sources": ["epic3/feature_3_3/frontend/pages/4_Trends.py", "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_demo_dry_run.json"],
+      "facts": {"backend_required": false, "current_rows": 586672, "current_year_range": "1900-2021"},
+      "status": "READY_WITH_LEGACY_DOCUMENT_WARNING"
+    },
+    "TESTING": {
+      "sources": ["7.ML/7.8.model_evaluation/pytest_feature_2_5.xml", "Bao_cao_3/Báo cáo epic3/feature_3_8/pytest_feature_3_8_phase_2.xml"],
+      "facts": {"phase_2_demo_tests_passed": 9},
+      "status": "READY"
+    },
+    "PERFORMANCE": {
+      "sources": ["epic3/feature_3_1_artifact_validation/validation/feature_3_1_benchmark_results.json", "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_final_live_demo_smoke.json"],
+      "facts": {"historical_model_load_mean_ms": 928.001, "historical_warm_inference_mean_ms": 15.574, "final_smoke_explain_ms": 400, "historical_explain_dry_run": "TIMEOUT_300_SECONDS"},
+      "status": "READY_WITH_ENVIRONMENT_QUALIFIER"
+    },
+    "LIMITATIONS": {
+      "sources": ["6.TAI_LIEU/6.1.bao_cao/popularity_limitations.md", "epic3/feature_3_3/frontend/pages/6_Limitations.py", "TECHNICAL_APPENDIX.md", "USER_MANUAL.md"],
+      "facts": {"project_scope": "local academic prototype", "production_ready": false, "prediction_guarantee": false, "shap_causal": false, "what_if_causal": false},
+      "status": "READY"
+    }
+  },
+  "known_conflicts": [
+    {
+      "topic": "dataset scope",
+      "legacy_document_value": "169681 rows, 1922-2019",
+      "locked_pipeline_value": "586672 rows, 1900-2021",
+      "feature_3_8_story_slide_value": "586672 rows, 1900-2021",
+      "policy": "Use locked split/training evidence and the corrected Feature 3.8 story/slide; identify 169681 / 1922-2019 only as stale legacy documentation, not an undocumented subset."
+    },
+    {
+      "topic": "package version",
+      "metadata_value": "2.7.0",
+      "runtime_example_value": "1.0.0",
+      "policy": "Answer model version 1.0.0; do not state an exact package version unless the question distinguishes metadata package from runtime response."
+    }
+  ],
+  "status": "PASS_WITH_WARNINGS"
+}

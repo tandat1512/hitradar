@@ -1,0 +1,60 @@
+{
+  "date": "2026-08-13",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 demo source validation — synchronized after final live smoke",
+  "upstream_sources": [
+    {
+      "source": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+      "content": "Canonical 18-field input",
+      "sha256": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0"
+    },
+    {
+      "source": "artifacts/epic2/examples/example_output.json",
+      "content": "Canonical output prediction_raw=46.421062, display=46"
+    },
+    {
+      "source": "feature_3_8_final_live_demo_smoke.json",
+      "content": "Final backend/frontend health and measured Predict/Explain/What-if/Trends evidence"
+    },
+    {
+      "source": "feature_3_6/validation/feature_3_6_offline_demo_mode_contract.json",
+      "content": "Offline evidence-only honesty rules; automatic offline UI remains unvalidated"
+    }
+  ],
+  "canonical_demo_values": {
+    "model_version": "1.0.0",
+    "model_id": "EXP24-XGB-FINAL-001",
+    "prediction_raw": 46.421062,
+    "prediction_display": 46,
+    "explain_status": "PASS",
+    "explain_elapsed_ms": 400,
+    "what_if_feature": "energy",
+    "what_if_before": 46.421062,
+    "what_if_after": 44.045479,
+    "what_if_delta": -2.375583,
+    "trends_rows": 586672,
+    "trends_year_range": "1900-2021"
+  },
+  "demo_mode_tiers": {
+    "PRIMARY": "LIVE — normal FastAPI + Streamlit flow",
+    "FALLBACK": "OFFLINE_PRECOMPUTED — explicitly labeled evidence only; not live inference",
+    "BACKUP": "Static screenshots/video — currently missing"
+  },
+  "live_readiness": {
+    "backend_ready": true,
+    "frontend_health_ready": true,
+    "browser_interaction_validated": false,
+    "status": "TECHNICAL_SMOKE_PASS_BROWSER_HUMAN_CHECK_PENDING"
+  },
+  "offline_precomputed_evidence": {
+    "prediction": 46.421062,
+    "availability": "VALIDATED_EVIDENCE_ONLY",
+    "automatic_ui_validated": false
+  },
+  "backup_assets": {
+    "screenshots": "MISSING",
+    "video": "MISSING_MANUAL_RECORDING_REQUIRED",
+    "backup_pdf": "MISSING"
+  },
+  "status": "SOURCE_VALIDATION_REVALIDATED_PHASE_5_HOTFIX"
+}

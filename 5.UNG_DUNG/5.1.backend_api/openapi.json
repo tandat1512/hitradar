@@ -1,0 +1,1335 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HitRadar Pro API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Health",
+        "description": "Service health check — liveness + readiness.\n\nReturns \"healthy\" when model pipeline is loaded.\nReturns \"degraded\" when model is not loaded (app started but loading pending).\nNever runs full prediction — only checks PipelineLoader singleton state.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/model-info": {
+      "get": {
+        "tags": [
+          "model"
+        ],
+        "summary": "Model Info",
+        "description": "Return model metadata and test-set metrics.\n\nRaises 503 if the model is not loaded.",
+        "operationId": "model_info_model_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelInfoResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/features": {
+      "get": {
+        "tags": [
+          "model"
+        ],
+        "summary": "Features",
+        "description": "Return the 18 canonical input fields and 31 selected feature names.\n\nRaises 503 if the model is not loaded.",
+        "operationId": "features_features_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeaturesResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Predict",
+        "description": "Predict track popularity from 18 audio features.\n\nReturns raw and clipped (0–100) predictions plus model metadata.\nRaises 503 if the model is not loaded.",
+        "operationId": "predict_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/explain": {
+      "post": {
+        "tags": [
+          "explanation"
+        ],
+        "summary": "Explain",
+        "description": "Predict and return SHAP feature attribution.\n\nComputes shap.TreeExplainer values for the 31 selected features.\nReturns top-5 features by absolute SHAP magnitude.\n\nIMPORTANT: SHAP values show feature importance, NOT causal relationships.\nRaises 503 if the model is not loaded.",
+        "operationId": "explain_explain_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplainRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExplainResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/what-if": {
+      "post": {
+        "tags": [
+          "what-if"
+        ],
+        "summary": "What If",
+        "description": "Compare predictions before and after feature changes.\n\nSends base_features + changed_features dict.\nReturns before/after predictions and delta.\n\nRaises 503 if the model is not loaded.\nRaises 422 if any key in changed_features is not a canonical field name.",
+        "operationId": "what_if_what_if_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhatIfRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhatIfResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorDetail": {
+        "properties": {
+          "field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Field"
+          },
+          "issue": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Issue"
+          },
+          "code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Code"
+          }
+        },
+        "type": "object",
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "title": "Error Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          },
+          "details": {
+            "items": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            },
+            "type": "array",
+            "title": "Details"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_code",
+          "message"
+        ],
+        "title": "ErrorResponse",
+        "example": {
+          "details": [],
+          "error_code": "INVALID_FEATURE",
+          "message": "Feature is not a valid canonical input field.",
+          "timestamp": "2026-08-05T10:00:00Z"
+        }
+      },
+      "ExplainRequest": {
+        "properties": {
+          "duration_min": {
+            "type": "number",
+            "maximum": 120.0,
+            "minimum": 0.0,
+            "title": "Duration Min"
+          },
+          "explicit": {
+            "type": "boolean",
+            "title": "Explicit"
+          },
+          "release_year": {
+            "type": "integer",
+            "maximum": 2100.0,
+            "minimum": 1900.0,
+            "title": "Release Year"
+          },
+          "release_month": {
+            "type": "number",
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "Release Month"
+          },
+          "decade": {
+            "type": "integer",
+            "maximum": 2100.0,
+            "minimum": 1900.0,
+            "title": "Decade"
+          },
+          "release_precision": {
+            "type": "string",
+            "pattern": "^(day|month|year)$",
+            "title": "Release Precision"
+          },
+          "danceability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Danceability"
+          },
+          "energy": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Energy"
+          },
+          "key": {
+            "type": "integer",
+            "maximum": 11.0,
+            "minimum": 0.0,
+            "title": "Key"
+          },
+          "loudness": {
+            "type": "number",
+            "maximum": 0.0,
+            "minimum": -60.0,
+            "title": "Loudness"
+          },
+          "mode": {
+            "type": "integer",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Mode"
+          },
+          "speechiness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Speechiness"
+          },
+          "acousticness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Acousticness"
+          },
+          "instrumentalness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Instrumentalness"
+          },
+          "liveness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Liveness"
+          },
+          "valence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Valence"
+          },
+          "tempo": {
+            "type": "number",
+            "maximum": 300.0,
+            "minimum": 0.0,
+            "title": "Tempo"
+          },
+          "time_signature": {
+            "type": "number",
+            "title": "Time Signature"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "duration_min",
+          "explicit",
+          "release_year",
+          "release_month",
+          "decade",
+          "release_precision",
+          "danceability",
+          "energy",
+          "key",
+          "loudness",
+          "mode",
+          "speechiness",
+          "acousticness",
+          "instrumentalness",
+          "liveness",
+          "valence",
+          "tempo",
+          "time_signature"
+        ],
+        "title": "ExplainRequest",
+        "description": "Explain request uses the same 18-field input as PredictRequest.\n\nOptional controls (not yet in spec — reserved for future):\n- top_k: number of top features to return\n- include_all: return all 31 SHAP values"
+      },
+      "ExplainResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "prediction_raw": {
+            "type": "number",
+            "title": "Prediction Raw"
+          },
+          "prediction_clipped": {
+            "type": "number",
+            "title": "Prediction Clipped"
+          },
+          "prediction_display": {
+            "type": "integer",
+            "title": "Prediction Display"
+          },
+          "base_value": {
+            "type": "number",
+            "title": "Base Value",
+            "description": "Expected (average) model output — shap.TreeExplainer.expected_value"
+          },
+          "shap_values": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Shap Values",
+            "description": "SHAP value per selected feature (31 entries)"
+          },
+          "top_features": {
+            "items": {
+              "$ref": "#/components/schemas/TopFeature"
+            },
+            "type": "array",
+            "title": "Top Features",
+            "description": "Top 5 features by absolute SHAP magnitude"
+          },
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "explanation_method": {
+            "type": "string",
+            "title": "Explanation Method",
+            "description": "Explanation method identifier",
+            "default": "SHAP_TreeExplainer"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "prediction_raw",
+          "prediction_clipped",
+          "prediction_display",
+          "base_value",
+          "shap_values",
+          "top_features",
+          "model_id",
+          "model_version"
+        ],
+        "title": "ExplainResponse",
+        "description": "Prediction result plus SHAP feature attribution.\n\nThe shap_values map covers all 31 selected features.\ntop_features lists the top 5 by absolute SHAP magnitude.\n\nIMPORTANT: SHAP values show feature importance, NOT causal relationships."
+      },
+      "FeaturesResponse": {
+        "properties": {
+          "canonical_fields": {
+            "items": {
+              "$ref": "#/components/schemas/FieldDescriptor"
+            },
+            "type": "array",
+            "title": "Canonical Fields"
+          },
+          "selected_features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Selected Features"
+          },
+          "total_input_fields": {
+            "type": "integer",
+            "title": "Total Input Fields"
+          },
+          "total_selected_features": {
+            "type": "integer",
+            "title": "Total Selected Features"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "canonical_fields",
+          "selected_features",
+          "total_input_fields",
+          "total_selected_features"
+        ],
+        "title": "FeaturesResponse"
+      },
+      "FieldDescriptor": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "position": {
+            "type": "integer",
+            "title": "Position"
+          },
+          "data_type": {
+            "type": "string",
+            "title": "Data Type"
+          },
+          "required": {
+            "type": "boolean",
+            "title": "Required"
+          },
+          "minimum": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minimum"
+          },
+          "maximum": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maximum"
+          },
+          "allowed_categories": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Categories"
+          },
+          "default_policy": {
+            "type": "string",
+            "title": "Default Policy",
+            "default": "PIPELINE_IMPUTE"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "position",
+          "data_type",
+          "required"
+        ],
+        "title": "FieldDescriptor"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "'healthy', 'degraded', or 'unavailable'"
+          },
+          "service_name": {
+            "type": "string",
+            "title": "Service Name",
+            "default": "HitRadar Pro API"
+          },
+          "api_version": {
+            "type": "string",
+            "title": "Api Version",
+            "default": "1.0.0"
+          },
+          "model_loaded": {
+            "type": "boolean",
+            "title": "Model Loaded",
+            "description": "True when pipeline is fully loaded"
+          },
+          "model_ready": {
+            "type": "boolean",
+            "title": "Model Ready",
+            "description": "Alias for model_loaded"
+          },
+          "explain_service_available": {
+            "type": "boolean",
+            "title": "Explain Service Available",
+            "default": true
+          },
+          "what_if_available": {
+            "type": "boolean",
+            "title": "What If Available",
+            "default": true
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "model_loaded",
+          "model_ready"
+        ],
+        "title": "HealthResponse"
+      },
+      "Metrics": {
+        "properties": {
+          "MAE": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mae"
+          },
+          "RMSE": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rmse"
+          },
+          "R2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "R2"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Metrics"
+      },
+      "ModelInfoResponse": {
+        "properties": {
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "model_family": {
+            "type": "string",
+            "title": "Model Family"
+          },
+          "package_version": {
+            "type": "string",
+            "title": "Package Version"
+          },
+          "data_version": {
+            "type": "string",
+            "title": "Data Version"
+          },
+          "feature_set": {
+            "type": "string",
+            "title": "Feature Set"
+          },
+          "training_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Training Date"
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Metrics"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "model_id",
+          "model_version",
+          "model_family",
+          "package_version",
+          "data_version",
+          "feature_set"
+        ],
+        "title": "ModelInfoResponse"
+      },
+      "PredictRequest": {
+        "properties": {
+          "duration_min": {
+            "type": "number",
+            "maximum": 120.0,
+            "minimum": 0.0,
+            "title": "Duration Min",
+            "description": "Track duration in minutes"
+          },
+          "explicit": {
+            "type": "boolean",
+            "title": "Explicit",
+            "description": "Whether the track has explicit lyrics"
+          },
+          "release_year": {
+            "type": "integer",
+            "maximum": 2100.0,
+            "minimum": 1900.0,
+            "title": "Release Year",
+            "description": "Release year"
+          },
+          "release_month": {
+            "type": "number",
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "Release Month",
+            "description": "Release month (1–12)"
+          },
+          "decade": {
+            "type": "integer",
+            "maximum": 2100.0,
+            "minimum": 1900.0,
+            "title": "Decade",
+            "description": "Decade bucket"
+          },
+          "release_precision": {
+            "type": "string",
+            "pattern": "^(day|month|year)$",
+            "title": "Release Precision",
+            "description": "Precision of the release date"
+          },
+          "danceability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Danceability",
+            "description": "Danceability score"
+          },
+          "energy": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Energy",
+            "description": "Energy score"
+          },
+          "key": {
+            "type": "integer",
+            "maximum": 11.0,
+            "minimum": 0.0,
+            "title": "Key",
+            "description": "Musical key (0–11)"
+          },
+          "loudness": {
+            "type": "number",
+            "maximum": 0.0,
+            "minimum": -60.0,
+            "title": "Loudness",
+            "description": "Loudness in dB"
+          },
+          "mode": {
+            "type": "integer",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Mode",
+            "description": "Mode (0=minor, 1=major)"
+          },
+          "speechiness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Speechiness",
+            "description": "Speechiness score"
+          },
+          "acousticness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Acousticness",
+            "description": "Acousticness score"
+          },
+          "instrumentalness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Instrumentalness",
+            "description": "Instrumentalness score"
+          },
+          "liveness": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Liveness",
+            "description": "Liveness score"
+          },
+          "valence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Valence",
+            "description": "Valence score"
+          },
+          "tempo": {
+            "type": "number",
+            "maximum": 300.0,
+            "minimum": 0.0,
+            "title": "Tempo",
+            "description": "Tempo in BPM"
+          },
+          "time_signature": {
+            "type": "number",
+            "title": "Time Signature",
+            "description": "Time signature"
+          },
+          "CANONICAL_FIELD_NAMES": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true,
+            "title": "Canonical Field Names",
+            "default": [
+              "acousticness",
+              "danceability",
+              "decade",
+              "duration_min",
+              "energy",
+              "explicit",
+              "instrumentalness",
+              "key",
+              "liveness",
+              "loudness",
+              "mode",
+              "release_month",
+              "release_precision",
+              "release_year",
+              "speechiness",
+              "tempo",
+              "time_signature",
+              "valence"
+            ]
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "duration_min",
+          "explicit",
+          "release_year",
+          "release_month",
+          "decade",
+          "release_precision",
+          "danceability",
+          "energy",
+          "key",
+          "loudness",
+          "mode",
+          "speechiness",
+          "acousticness",
+          "instrumentalness",
+          "liveness",
+          "valence",
+          "tempo",
+          "time_signature"
+        ],
+        "title": "PredictRequest",
+        "description": "Canonical 18-field input for track popularity prediction.\n\nField names and constraints sourced from:\n- input_schema.json (HITRADAR-PREDICTION-INPUT-V1)\n\nTarget field (target_popularity) and identifier (track_id) are excluded.",
+        "example": {
+          "acousticness": 0.3,
+          "danceability": 0.7,
+          "decade": 1990,
+          "duration_min": 3.517,
+          "energy": 0.8,
+          "explicit": false,
+          "instrumentalness": 0.05,
+          "key": 5,
+          "liveness": 0.2,
+          "loudness": -5.0,
+          "mode": 1,
+          "release_month": 1.0,
+          "release_precision": "year",
+          "release_year": 1992,
+          "speechiness": 0.1,
+          "tempo": 120.0,
+          "time_signature": 4.0,
+          "valence": 0.6
+        }
+      },
+      "PredictResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "'SUCCESS' or 'ERROR'"
+          },
+          "prediction_raw": {
+            "type": "number",
+            "title": "Prediction Raw",
+            "description": "Raw model output — may be outside [0, 100]"
+          },
+          "prediction_clipped": {
+            "type": "number",
+            "title": "Prediction Clipped",
+            "description": "Clipped to [0, 100]"
+          },
+          "prediction_display": {
+            "type": "integer",
+            "title": "Prediction Display",
+            "description": "Rounded clipped value for display"
+          },
+          "model_id": {
+            "type": "string",
+            "title": "Model Id",
+            "description": "Champion model ID"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version",
+            "description": "Model version"
+          },
+          "package_version": {
+            "type": "string",
+            "title": "Package Version",
+            "description": "Package version"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id",
+            "description": "API-level request trace ID"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "prediction_raw",
+          "prediction_clipped",
+          "prediction_display",
+          "model_id",
+          "model_version",
+          "package_version"
+        ],
+        "title": "PredictResponse",
+        "description": "Prediction result response.\n\nFields from output_schema.json (HITRADAR-PREDICTION-OUTPUT-V1):\n- status, model_id, model_version, package_version\n- prediction_raw, prediction_clipped, prediction_display, warnings\n\nAPI-level fields:\n- request_id (optional, set by router)\n- timestamp"
+      },
+      "PredictionShort": {
+        "properties": {
+          "prediction_raw": {
+            "type": "number",
+            "title": "Prediction Raw"
+          },
+          "prediction_clipped": {
+            "type": "number",
+            "title": "Prediction Clipped"
+          },
+          "prediction_display": {
+            "type": "integer",
+            "title": "Prediction Display"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "prediction_raw",
+          "prediction_clipped",
+          "prediction_display"
+        ],
+        "title": "PredictionShort",
+        "description": "Abbreviated prediction result used in what-if comparison."
+      },
+      "TopFeature": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Feature name from selected_features.json"
+          },
+          "shap_value": {
+            "type": "number",
+            "title": "Shap Value",
+            "description": "SHAP contribution to the prediction (same unit as prediction)"
+          },
+          "feature_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Feature Value",
+            "description": "Raw input value for this feature"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "shap_value",
+          "feature_value"
+        ],
+        "title": "TopFeature",
+        "description": "A single feature with its SHAP contribution and raw value."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "WhatIfRequest": {
+        "properties": {
+          "base_features": {
+            "$ref": "#/components/schemas/PredictRequest"
+          },
+          "changed_features": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "type": "object",
+            "minProperties": 1,
+            "title": "Changed Features",
+            "description": "Feature overrides to apply on top of base_features"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "base_features",
+          "changed_features"
+        ],
+        "title": "WhatIfRequest",
+        "description": "What-if comparison request.\n\nDesign choice (API-level): send base input + changed_features dict.\nRationale: caller only needs to specify what changes, not the full record.\n\nValidation rules:\n- Every key in changed_features must be in CANONICAL_FIELD_NAMES\n- target_popularity is rejected at PredictRequest level\n- Empty changed_features is rejected (min_length=1)\n- Unknown field names raise 422"
+      },
+      "WhatIfResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "prediction_before": {
+            "$ref": "#/components/schemas/PredictionShort"
+          },
+          "prediction_after": {
+            "$ref": "#/components/schemas/PredictionShort"
+          },
+          "delta": {
+            "type": "number",
+            "title": "Delta",
+            "description": "prediction_after - prediction_before (clipped values)"
+          },
+          "delta_display": {
+            "type": "integer",
+            "title": "Delta Display",
+            "description": "delta rounded to integer for display"
+          },
+          "changes_applied": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Changes Applied",
+            "description": "The exact changes that were applied"
+          },
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "prediction_before",
+          "prediction_after",
+          "delta",
+          "delta_display",
+          "changes_applied",
+          "model_id",
+          "model_version"
+        ],
+        "title": "WhatIfResponse",
+        "description": "Side-by-side prediction comparison.\n\ndelta = prediction_after - prediction_before\nA positive delta means the changes increase the predicted popularity score."
+      }
+    }
+  }
+}

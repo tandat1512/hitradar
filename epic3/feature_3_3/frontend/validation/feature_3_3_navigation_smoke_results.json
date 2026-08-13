@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Navigation smoke test — verify all pages import without exception",
+  "page_count": 7,
+  "pages": [
+    {"file": "pages/0_Home.py", "title": "Home", "has_header": true, "has_st_warning": true, "no_crash": true},
+    {"file": "pages/1_Predict.py", "title": "Predict Popularity", "has_form": true, "has_api_call": true, "no_crash": true},
+    {"file": "pages/2_Explain.py", "title": "SHAP Explanation", "has_empty_state": true, "has_explain_call": true, "no_crash": true},
+    {"file": "pages/3_WhatIf.py", "title": "What-If Simulator", "has_baseline_check": true, "has_modify_form": true, "no_crash": true},
+    {"file": "pages/4_Trends.py", "title": "Music Trends", "has_st_cache_data": true, "has_charts": true, "no_crash": true},
+    {"file": "pages/5_Model_Info.py", "title": "Model Info", "has_api_call": true, "has_metrics": true, "no_crash": true},
+    {"file": "pages/6_Limitations.py", "title": "Limitations & Responsible Use", "has_intended_use": true, "has_no_causal_warning": true, "no_crash": true}
+  ],
+  "all_pages_import_clean": true,
+  "no_duplicate_navigation": true,
+  "no_session_state_corruption": true,
+  "status": "PASS"
+}

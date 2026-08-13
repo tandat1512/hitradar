@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 → Feature 3.6 prerequisite gate validation",
+  "requirement": "Feature 3.6 cannot benchmark a system that has not passed Feature 3.5",
+
+  "checks": [
+    {
+      "check": "Feature 3.5 Predict real E2E = valid",
+      "source": "feature_3_5_closure_gate.json",
+      "actual": "predict_e2e_valid: false — live execution BLOCKED (no Python env)",
+      "satisfied": false
+    },
+    {
+      "check": "FastAPI startup = valid",
+      "source": "feature_3_5_closure_gate.json",
+      "actual": "final_backend_start_valid: false — no live startup performed",
+      "satisfied": false
+    },
+    {
+      "check": "Streamlit startup = valid",
+      "source": "feature_3_5_closure_gate.json",
+      "actual": "final_frontend_start_valid: false — no live startup performed",
+      "satisfied": false
+    },
+    {
+      "check": "Model artifacts unchanged",
+      "source": "feature_3_5_source_immutability_audit.json",
+      "actual": "model_artifacts_modified: false — only requirements.txt changed",
+      "satisfied": true
+    },
+    {
+      "check": "Training/refit = false",
+      "source": "feature_3_5_closure_gate.json",
+      "actual": "training_executed: false, refit_executed: false",
+      "satisfied": true
+    },
+    {
+      "check": "Remaining BLOCKER bugs = 0",
+      "source": "feature_3_5_bug_closure_audit.json",
+      "actual": "remaining_blocker_bugs: 1 (F35-BUG-001 — environmental: no live Python)",
+      "satisfied": false
+    },
+    {
+      "check": "Remaining HIGH bugs = 0",
+      "source": "feature_3_5_bug_closure_audit.json",
+      "actual": "remaining_high_bugs: 0",
+      "satisfied": true
+    }
+  ],
+
+  "summary": {
+    "checks_total": 7,
+    "satisfied": 3,
+    "not_satisfied": 4,
+    "blocking": true
+  },
+
+  "decision": "PHASE_1_BLOCKED",
+  "reason": "Feature 3.5 status = FAIL / NOT_CLOSED. Live E2E execution blocked by F35-BUG-001 (no Python environment). Benchmarking a system whose functional E2E has not been validated would produce invalid baseline. Per spec: 'Không benchmark hệ thống đang lỗi functional rồi coi latency đó là baseline hợp lệ.'",
+  "unblock_actions": [
+    "Run Feature 3.5 final smoke in a live Python environment",
+    "Confirm Predict real E2E = 46.421062 ± 0.001",
+    "Confirm backend + frontend startup",
+    "Close F35-BUG-001 (environmental)",
+    "Then re-validate this gate with all 7 checks satisfied"
+  ],
+  "status": "BLOCKED"
+}

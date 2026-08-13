@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 Streamlit page latency baseline",
+  "methodology": {
+    "measurement_type": "STREAMLIT_SCRIPT_EXECUTION",
+    "samples_per_page": 10,
+    "cold": "first script run after app start (no cache)",
+    "warm": "subsequent reruns (st.cache_data warm)"
+  },
+  "pages": [
+    {"page_id": "HOME", "cold_median_ms": "PENDING", "warm_median_ms": "PENDING", "p95_ms": "PENDING"},
+    {"page_id": "PREDICT", "cold_median_ms": "PENDING", "warm_median_ms": "PENDING", "p95_ms": "PENDING"},
+    {"page_id": "MUSIC_TRENDS", "cold_median_ms": "PENDING", "warm_median_ms": "PENDING", "p95_ms": "PENDING"},
+    {"page_id": "MODEL_INFO", "cold_median_ms": "PENDING", "warm_median_ms": "PENDING", "p95_ms": "PENDING"},
+    {"page_id": "EXPLAIN", "cold_median_ms": "PENDING", "warm_median_ms": "PENDING", "p95_ms": "PENDING"},
+    {"page_id": "WHAT_IF", "cold_median_ms": "PENDING", "warm_median_ms": "PENDING", "p95_ms": "PENDING"}
+  ],
+  "comparison_rule": "Cold Home is only compared with warm Home; never cold Home vs warm Trends.",
+  "status": "BLOCKED"
+}

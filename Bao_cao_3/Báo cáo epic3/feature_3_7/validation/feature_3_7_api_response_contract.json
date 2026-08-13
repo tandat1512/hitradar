@@ -1,0 +1,78 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 API response contract — from OpenAPI + Pydantic",
+  "responses": [
+    {
+      "endpoint": "GET /health",
+      "schema": "HealthResponse",
+      "required_fields": ["status", "model_loaded", "model_ready"],
+      "optional_fields": ["service_name", "api_version", "explain_service_available", "what_if_available", "model_version", "timestamp"],
+      "status_values": ["healthy", "degraded", "unavailable"],
+      "source": "openapi.json HealthResponse"
+    },
+    {
+      "endpoint": "GET /model-info",
+      "schema": "ModelInfoResponse",
+      "required_fields": ["model_id", "model_version", "model_family", "package_version", "data_version", "feature_set"],
+      "optional_fields": ["training_date", "metrics", "timestamp"],
+      "metrics_note": "metrics.MAE, metrics.RMSE, metrics.R2 — nullable if unavailable",
+      "source": "openapi.json ModelInfoResponse"
+    },
+    {
+      "endpoint": "GET /features",
+      "schema": "FeaturesResponse",
+      "required_fields": ["canonical_fields", "selected_features", "total_input_fields", "total_selected_features"],
+      "optional_fields": ["timestamp"],
+      "note": "canonical_fields is list of FieldDescriptor objects; selected_features is list of 31 feature names",
+      "source": "openapi.json FeaturesResponse"
+    },
+    {
+      "endpoint": "POST /predict",
+      "schema": "PredictResponse",
+      "required_fields": ["status", "prediction_raw", "prediction_clipped", "prediction_display", "model_id", "model_version", "package_version"],
+      "optional_fields": ["warnings", "request_id", "timestamp"],
+      "prediction_note": "prediction_raw may be outside [0,100]; prediction_clipped is clipped to [0,100]; prediction_display is rounded int",
+      "status_values": ["SUCCESS", "ERROR"],
+      "source": "openapi.json PredictResponse"
+    },
+    {
+      "endpoint": "POST /explain",
+      "schema": "ExplainResponse",
+      "required_fields": ["status", "prediction_raw", "prediction_clipped", "prediction_display", "base_value", "shap_values", "top_features", "model_id", "model_version"],
+      "optional_fields": ["explanation_method", "request_id", "timestamp"],
+      "shap_note": "shap_values is dict[str,float] — 31 entries (one per selected feature); top_features is list[TopFeature] — top 5 by absolute SHAP magnitude",
+      "top_feature_fields": ["name", "shap_value", "feature_value"],
+      "explanation_method_default": "SHAP_TreeExplainer",
+      "source": "openapi.json ExplainResponse"
+    },
+    {
+      "endpoint": "POST /what-if",
+      "schema": "WhatIfResponse",
+      "required_fields": ["status", "prediction_before", "prediction_after", "delta", "delta_display", "changes_applied", "model_id", "model_version"],
+      "optional_fields": ["request_id", "timestamp"],
+      "prediction_short_fields": ["prediction_raw", "prediction_clipped", "prediction_display"],
+      "delta_note": "delta = prediction_after - prediction_before (clipped values); positive means prediction increased",
+      "source": "openapi.json WhatIfResponse"
+    }
+  ],
+  "error_schemas": [
+    {
+      "schema": "ErrorResponse",
+      "fields": ["error_code", "message", "request_id?", "details[]", "timestamp"],
+      "usage": "503 Service Unavailable (model not loaded)"
+    },
+    {
+      "schema": "HTTPValidationError",
+      "fields": ["detail: ValidationError[]"],
+      "usage": "422 Validation Error"
+    },
+    {
+      "schema": "ValidationError",
+      "fields": ["loc", "msg", "type", "input?", "ctx?"],
+      "usage": "Inline in HTTPValidationError.detail"
+    }
+  ],
+  "total_response_schemas": 9,
+  "status": "EXTRACTED"
+}

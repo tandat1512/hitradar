@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-06T01:38:12.432657+00:00",
+  "status": "PASS",
+  "response_fields": [
+    "changes_applied",
+    "delta",
+    "delta_display",
+    "model_id",
+    "model_version",
+    "prediction_after",
+    "prediction_before",
+    "request_id",
+    "status",
+    "timestamp"
+  ],
+  "expected_fields": [
+    "changes_applied",
+    "delta",
+    "delta_display",
+    "model_id",
+    "model_version",
+    "prediction_after",
+    "prediction_before",
+    "request_id",
+    "status",
+    "timestamp"
+  ],
+  "fields_match": true,
+  "delta_semantics": "prediction_after - prediction_before",
+  "no_internal_paths": true,
+  "warnings": [],
+  "blockers": []
+}

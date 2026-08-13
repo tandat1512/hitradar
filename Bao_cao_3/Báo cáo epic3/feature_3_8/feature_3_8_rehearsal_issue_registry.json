@@ -1,0 +1,73 @@
+{
+  "status": "AWAITING_REHEARSAL_1",
+  "rehearsal_1_actual": false,
+  "issue_schema": [
+    "issue_id",
+    "source",
+    "category",
+    "severity",
+    "description",
+    "evidence",
+    "owner",
+    "proposed_fix",
+    "fix_status",
+    "retest_status"
+  ],
+  "allowed_rehearsal_source": "REHEARSAL_1",
+  "allowed_categories": ["TIMING", "SLIDE", "STORY", "DEMO", "HANDOFF", "Q&A", "TECHNICAL", "BACKUP"],
+  "allowed_severities": ["BLOCKER", "HIGH", "MEDIUM", "LOW"],
+  "issues": [],
+  "pre_rehearsal_known_risks": [
+    {
+      "risk_id": "F38-PRE-001",
+      "source": "PRE_REHEARSAL_READINESS",
+      "category": "HANDOFF",
+      "severity": "BLOCKER",
+      "description": "Presenter, Q&A owner and demo operator roles have not been human-confirmed.",
+      "evidence": "DEFENSE_PRESENTER_ASSIGNMENT.md",
+      "owner": "UNASSIGNED",
+      "proposed_fix": "Obtain human roster and role sign-off before R1.",
+      "fix_status": "PENDING",
+      "retest_status": "NOT_RETESTED"
+    },
+    {
+      "risk_id": "F38-PRE-002",
+      "source": "PRE_REHEARSAL_READINESS",
+      "category": "TECHNICAL",
+      "severity": "HIGH",
+      "description": "Historical /explain dry-run timed out after 300 seconds; final smoke later passed in about 400 ms.",
+      "evidence": "feature_3_8_demo_dry_run.json; feature_3_8_final_live_demo_smoke.json",
+      "owner": "UNASSIGNED",
+      "proposed_fix": "Retain prompt skip rule for R1 and monitor repeatability.",
+      "fix_status": "RESOLVED_BY_FINAL_TECHNICAL_SMOKE",
+      "retest_status": "PASS_FINAL_SMOKE",
+      "active": false
+    },
+    {
+      "risk_id": "F38-PRE-003",
+      "source": "PRE_REHEARSAL_READINESS",
+      "category": "BACKUP",
+      "severity": "HIGH",
+      "description": "Screenshots are missing, video is MANUAL_RECORDING_REQUIRED and automatic offline UI is not validated.",
+      "evidence": "feature_3_8_demo_backup_matrix.csv; Feature 3.6 final audit",
+      "owner": "UNASSIGNED",
+      "proposed_fix": "Capture/validate media or rehearse the explicit evidence-only fallback without claiming unavailable assets.",
+      "fix_status": "PENDING",
+      "retest_status": "NOT_RETESTED"
+    },
+    {
+      "risk_id": "F38-PRE-004",
+      "source": "PRE_REHEARSAL_READINESS",
+      "category": "STORY",
+      "severity": "HIGH",
+      "description": "Feature 3.8 story/slide originally conflicted with locked ML evidence; they were synchronized to 586672 / 1900-2021. Legacy docs still carry a warning.",
+      "evidence": "feature_3_8_project_story.md; feature_3_8_slide_outline.md; validation/feature_3_8_defense_source_registry.json",
+      "owner": "UNASSIGNED",
+      "proposed_fix": "Use the corrected locked-evidence wording and do not use legacy values for the current UI.",
+      "fix_status": "RESOLVED_FOR_FEATURE_3_8_STORY_AND_SLIDES",
+      "retest_status": "PASS_CONTENT_CROSSCHECK",
+      "active": false
+    }
+  ],
+  "note": "No F38-R1-* issue is created until an actual R1 observation exists. Pre-rehearsal risks are not represented as rehearsal findings."
+}

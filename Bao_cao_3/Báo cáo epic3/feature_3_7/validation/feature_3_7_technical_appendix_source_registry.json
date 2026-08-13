@@ -1,0 +1,100 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 technical appendix source registry",
+  "sections": {
+    "SYSTEM_ARCHITECTURE": {
+      "source": [
+        "5.UNG_DUNG/5.1.backend_api/api.py",
+        "epic3/feature_3_3/frontend/app.py",
+        "scripts/run_all.py",
+        "scripts/_common.py"
+      ],
+      "note": "Frontend → HTTP → FastAPI → model; Dashboard reads local CSV"
+    },
+    "MODEL_FACTS": {
+      "source": [
+        "artifacts/epic2/metadata/model_version.json",
+        "artifacts/epic2/examples/example_output.json",
+        "artifacts/epic2/schemas/output_schema.json"
+      ],
+      "model_id": "EXP24-XGB-FINAL-001",
+      "model_version": "1.0.0",
+      "model_family": "XGBoost"
+    },
+    "MODEL_METRICS": {
+      "source": "epic3/feature_3_1_artifact_validation/validation/feature_3_1_model_metrics_validation.json",
+      "test_split": "85876 rows",
+      "MAE": 17.646684646606445,
+      "RMSE": 21.01337842313573,
+      "R2": 0.06962639093399048,
+      "Median_AE": 16.291603088378906,
+      "Mean_Residual": 4.856535101093279,
+      "Residual_Std": 20.444583937530165,
+      "Underprediction_Rate": 0.6781522194792492
+    },
+    "FEATURE_LAYERS": {
+      "source": [
+        "artifacts/epic2/schemas/input_schema.json",
+        "artifacts/epic2/schemas/selected_features.json",
+        "artifacts/epic2/schemas/feature_names.json",
+        "epic3/feature_3_1_artifact_validation/validation/feature_3_1_final_validation_results.json F31-FEATURE-LAYERS check"
+      ],
+      "raw_input_fields": 18,
+      "selected_features": 31,
+      "transformed_model_features": 49
+    },
+    "SHAP_ASSETS": {
+      "source": "epic3/feature_3_1_artifact_validation/validation/feature_3_1_shap_asset_inventory.json",
+      "explainer": "TreeExplainer",
+      "background_samples": 1000,
+      "transformed_width": 49,
+      "required_assets_found": 8,
+      "total_assets": 16,
+      "additivity_pass_rate": "100%"
+    },
+    "ARTIFACT_MANIFEST": {
+      "source": [
+        "artifacts/epic2/metadata/artifact_manifest.json",
+        "artifacts/epic2/schemas/input_schema.json",
+        "artifacts/epic2/schemas/output_schema.json",
+        "artifacts/epic2/schemas/selected_features.json",
+        "artifacts/epic2/schemas/feature_names.json",
+        "artifacts/epic2/examples/example_input.json",
+        "artifacts/epic2/examples/example_output.json",
+        "artifacts/epic2/metadata/model_version.json",
+        "artifacts/epic2/metadata/package_version.json",
+        "artifacts/epic2/metadata/data_version.json"
+      ]
+    },
+    "PERFORMANCE_BENCHMARK": {
+      "source": "epic3/feature_3_1_artifact_validation/validation/feature_3_1_benchmark_results.json",
+      "environment": "Local Python 3.13.7; artifacts/epic2; joblib.load; timer: time.perf_counter_ns",
+      "model_load_mean_ms": 928.001,
+      "warm_single_inference_mean_ms": 15.574,
+      "note": "Local environment only — no SLA"
+    },
+    "API_ENDPOINTS": {
+      "source": "5.UNG_DUNG/5.1.backend_api/openapi.json",
+      "routes": ["GET /health", "GET /model-info", "GET /features", "POST /predict", "POST /explain", "POST /what-if"]
+    },
+    "DASHBOARD": {
+      "source": "epic3/feature_3_3/frontend/pages/4_Trends.py",
+      "data_files": ["5.DATA/processed/ml_ready_dataset.csv", "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv"],
+      "reads_local_csv_directly": true,
+      "backend_required": false
+    },
+    "STARTUP_AUTOMATION": {
+      "source": ["scripts/run_all.py", "scripts/run_backend.py", "scripts/run_frontend.py"],
+      "health_polling": "wait_for_health polls GET /health until model_loaded==true (no fixed sleep)"
+    },
+    "LIMITATIONS": {
+      "source": [
+        "epic3/feature_3_3/frontend/pages/6_Limitations.py",
+        "feature_3_7/validation/feature_3_7_limitation_source_registry.json"
+      ]
+    }
+  },
+  "no_new_training_executed": true,
+  "status": "REGISTRY_COMPLETE"
+}

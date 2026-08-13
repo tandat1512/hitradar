@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 offline demo evidence registry — only precomputed outputs with proven validation",
+  "rule": "Offline mode uses ONLY validated precomputed outputs. No fabricated predictions, SHAP, or what-if deltas.",
+  "evidence": [
+    {
+      "evidence_id": "EV-PREDICT-CANONICAL",
+      "flow": "Predict",
+      "input": "demo/offline/evidence/example_input.json (copy of artifacts/epic2/examples/example_input.json)",
+      "output": "demo/offline/evidence/example_output.json (copy of artifacts/epic2/examples/example_output.json)",
+      "input_sha256": "PENDING_LIVE (hash of copy at capture time)",
+      "output_sha256": "PENDING_LIVE",
+      "e2e_validation_reference": "Feature 3.5 canonical fixture — prediction 46.421062 ± 0.001",
+      "model_version": "1.0.0",
+      "model_id": "EXP24-XGB-FINAL-001",
+      "generated_at": "2026-08-07 (original artifact date)",
+      "status": "VALIDATED"
+    },
+    {
+      "evidence_id": "EV-EXPLAIN-CANONICAL",
+      "flow": "Explain",
+      "input": "same canonical input as EV-PREDICT-CANONICAL",
+      "output": "NONE — no validated SHAP values captured",
+      "e2e_validation_reference": "feature_3_5_explain_api_response_validation.json = CONTRACT_VALIDATED only",
+      "model_version": "1.0.0",
+      "status": "NOT_AVAILABLE",
+      "note": "Offline Explain is BLOCKED: rendering SHAP without validated precomputed values would be fabrication."
+    },
+    {
+      "evidence_id": "EV-WHATIF-CANONICAL",
+      "flow": "What-If",
+      "input": "prepared scenario (base = canonical + changed feature)",
+      "output": "NONE — no validated delta captured",
+      "e2e_validation_reference": "feature_3_5_what_if_response_validation.json = CONTRACT_VALIDATED only",
+      "model_version": "1.0.0",
+      "status": "NOT_AVAILABLE",
+      "note": "Offline What-If is BLOCKED: computing or inventing a delta locally would be fake dynamic inference."
+    },
+    {
+      "evidence_id": "EV-MODELINFO-SNAPSHOT",
+      "flow": "Model Info",
+      "input": "static metadata JSONs",
+      "output": "artifacts/epic2/metadata/model_version.json + data_version.json + package_version.json (+ model_metrics.json)",
+      "e2e_validation_reference": "static files, read-only; used by backend /model-info",
+      "model_version": "1.0.0",
+      "generated_at": "2026-08-07 (artifact date)",
+      "status": "VALIDATED_SNAPSHOT",
+      "note": "Offline Model Info displays the snapshot clearly labeled with model version + snapshot time."
+    },
+    {
+      "evidence_id": "EV-DASHBOARD-LOCAL",
+      "flow": "Music Trends",
+      "input": "5.DATA/processed/ml_ready_dataset.csv (local)",
+      "output": "locally computed aggregates (page-level st.cache_data)",
+      "e2e_validation_reference": "Feature 3.4 validated aggregate values",
+      "model_version": "N/A (no model involved)",
+      "status": "LIVE_LOCAL_COMPUTE",
+      "note": "Trends computes from local source data — works offline normally. Labeled as locally computed, NOT as an API snapshot."
+    }
+  ],
+  "fabrication_guard": {
+    "fake_prediction": "FORBIDDEN",
+    "arbitrary_shap": "FORBIDDEN",
+    "invented_what_if": "FORBIDDEN",
+    "precomputed_rendered_as_live": "FORBIDDEN (must be labeled OFFLINE DEMO MODE)"
+  },
+  "status": "REGISTRY_COMPLETE"
+}

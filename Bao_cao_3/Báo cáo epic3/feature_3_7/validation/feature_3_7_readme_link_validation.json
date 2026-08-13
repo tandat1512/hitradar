@@ -1,0 +1,31 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 README.md link validation",
+  "readme_path": "README.md",
+  "links": [
+    {"link": "HOW_TO_RUN_APP.md", "type": "markdown", "exists": "NOT_YET_CREATED", "phase_planned": "Phase 2"},
+    {"link": "USER_MANUAL.md", "type": "markdown", "exists": "NOT_YET_CREATED", "phase_planned": "Phase 3"},
+    {"link": "API_DOCUMENTATION.md", "type": "markdown", "exists": "NOT_YET_CREATED", "phase_planned": "Phase 3"},
+    {"link": "TECHNICAL_APPENDIX.md", "type": "markdown", "exists": "NOT_YET_CREATED", "phase_planned": "Phase 4"},
+    {"link": "Bao_cao_3/Báo cáo epic3/demo_reliability_checklist.md", "type": "markdown", "exists": "YES", "note": "Report artifact"},
+    {"link": "Bao_cao_3/Báo cáo epic3/DEMO_RUNBOOK_FEATURE_3_6.md", "type": "markdown", "exists": "YES", "note": "Report artifact"},
+    {"link": "scripts/run_all.py", "type": "file_reference", "exists": "YES", "note": "Feature 3.6 script"},
+    {"link": "scripts/run_backend.py", "type": "file_reference", "exists": "YES", "note": "Feature 3.6 script"},
+    {"link": "scripts/run_frontend.py", "type": "file_reference", "exists": "YES", "note": "Feature 3.6 script"},
+    {"link": "5.UNG_DUNG/5.1.backend_api/requirements.txt", "type": "file_reference", "exists": "YES"},
+    {"link": "artifacts/epic2/pipeline/full_inference_pipeline.joblib", "type": "file_reference", "exists": "YES"},
+    {"link": "5.DATA/processed/ml_ready_dataset.csv", "type": "file_reference", "exists": "YES"}
+  ],
+  "broken_links": [
+    {"link": "HOW_TO_RUN_APP.md", "reason": "Not yet created — planned Phase 2"},
+    {"link": "USER_MANUAL.md", "reason": "Not yet created — planned Phase 3"},
+    {"link": "API_DOCUMENTATION.md", "reason": "Not yet created — planned Phase 3"},
+    {"link": "TECHNICAL_APPENDIX.md", "reason": "Not yet created — planned Phase 4"}
+  ],
+  "broken_link_count": 4,
+  "broken_link_note": "These 4 links are intentional placeholders — documents will be created in subsequent phases. Status: INTENTIONAL_PLANNED_BREAK.",
+  "file_reference_links_all_exist": true,
+  "report_links_valid": true,
+  "status": "VALIDATED_WITH_INTENDED_PLACEHOLDERS"
+}

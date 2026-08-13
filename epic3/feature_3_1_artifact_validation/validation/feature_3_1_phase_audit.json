@@ -1,0 +1,88 @@
+{
+  "audit_id": "F31-P5-AUDIT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T08:12:00+07:00",
+  "feature_id": "3.1",
+  "phase": 5,
+  "phases": [
+    {
+      "phase": 1,
+      "checkpoint_claim": "PASS_WITH_LIMITATIONS",
+      "phase_status": null,
+      "gate_status": null,
+      "next_phase": null,
+      "blocker_count": 3,
+      "blockers": [
+        {"id": "BLK-GLOBAL-001", "type": "MISSING_HANDOFF_DOCUMENT"},
+        {"id": "BLK-GLOBAL-002", "type": "STALE_MANIFEST"},
+        {"id": "BLK-GLOBAL-003", "type": "EMPTY_METRIC_FILE"}
+      ],
+      "audit_status": "PARTIAL_WITH_WARNINGS",
+      "evidence_reviewed": ["handoff_checklist", "artifact_manifest", "model_metrics_empty"],
+      "notes": "Phase 1 acknowledged 3 blockers with workarounds; proceeded despite blockers"
+    },
+    {
+      "phase": 2,
+      "checkpoint_claim": "PASS_WITH_WARNINGS",
+      "phase_status": "PASS_WITH_WARNINGS",
+      "gate_status": "PASS_WITH_WARNINGS",
+      "next_phase": "MAY_BEGIN",
+      "blocker_count": 0,
+      "audit_status": "PASS",
+      "evidence_reviewed": [
+        "feature_3_1_model_load_validation.json",
+        "feature_3_1_runtime_dependency_validation.json",
+        "feature_3_1_input_schema_validation.json",
+        "feature_3_1_output_schema_validation.json",
+        "feature_3_1_selected_features_validation.json",
+        "feature_3_1_feature_names_validation.json",
+        "feature_3_1_feature_contract_consistency.json",
+        "feature_3_1_no_refit_validation.json",
+        "113 tests PASSED"
+      ],
+      "notes": "All Phase 2 validations PASS; model loads with 4 runtime patches; no refit"
+    },
+    {
+      "phase": 3,
+      "checkpoint_claim": "PASS_WITH_WARNINGS",
+      "phase_status": "PASS_WITH_WARNINGS",
+      "gate_status": null,
+      "next_phase": "MAY_BEGIN",
+      "blocker_count": 0,
+      "audit_status": "PASS",
+      "evidence_reviewed": [
+        "feature_3_1_model_metrics_validation.json",
+        "feature_3_1_residual_stats_validation.json",
+        "feature_3_1_metric_consistency.json",
+        "feature_3_1_shap_asset_inventory.json",
+        "feature_3_1_shap_asset_validation.json",
+        "feature_3_1_example_input_validation.json",
+        "feature_3_1_example_prediction_result.json",
+        "feature_3_1_prediction_determinism.json"
+      ],
+      "notes": "Prediction = 46.421062 exactly matches example_output.json; deterministic; SHAP 16 assets found"
+    },
+    {
+      "phase": 4,
+      "checkpoint_claim": "PASS",
+      "phase_status": "PASS",
+      "gate_status": null,
+      "next_phase": "MAY_BEGIN",
+      "blocker_count": 0,
+      "audit_status": "PASS",
+      "evidence_reviewed": [
+        "feature_3_1_benchmark_results.json",
+        "feature_3_1_model_load_benchmark.json",
+        "feature_3_1_single_inference_benchmark.json",
+        "feature_3_1_batch_inference_benchmark.json",
+        "feature_3_1_benchmark_raw_samples.csv",
+        "feature_3_1_benchmark_no_mutation_validation.json"
+      ],
+      "notes": "Local inference benchmark completed; load/warm inference measured; no mutation"
+    }
+  ],
+  "warnings": [
+    "Phase 1 has 3 unresolved blockers (workarounds identified and used by Phase 2-4)"
+  ],
+  "blockers": []
+}

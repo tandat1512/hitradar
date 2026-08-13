@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 benchmark process isolation context",
+  "principles": [
+    "Identify harness-owned processes explicitly",
+    "Never kill user processes",
+    "Use test ports when needed",
+    "Record process IDs for all benchmark processes",
+    "Ensure no duplicate FastAPI workers or Streamlit processes from prior sessions"
+  ],
+  "pre_benchmark_checks": {
+    "stale_backend_processes": "CHECK_LIVE (netstat / Get-Process python)",
+    "stale_frontend_processes": "CHECK_LIVE",
+    "duplicate_workers": "CHECK_LIVE",
+    "running_test_suites": "CHECK_LIVE"
+  },
+  "harness_process_contract": {
+    "backend_pid": "CAPTURE_LIVE",
+    "frontend_pid": "CAPTURE_LIVE",
+    "benchmark_script_pid": "CAPTURE_LIVE",
+    "ports_used": ["8000 (backend)", "8501 (frontend)"]
+  },
+  "cleanup_contract": {
+    "stop_backend": "Terminate harness-owned uvicorn process after each benchmark run",
+    "stop_frontend": "Terminate harness-owned streamlit process after each benchmark run",
+    "orphan_check": "Verify no harness PID remains after cleanup"
+  },
+  "status": "CONTEXT_DESIGNED"
+}

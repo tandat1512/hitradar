@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 backend recovery validation",
+  "scenario": "Backend was down → started → retry succeeds",
+  "expected": {
+    "predict_succeeds_after_recovery": true,
+    "prediction_matches_canonical": true,
+    "frontend_allows_retry": true,
+    "no_frontend_restart_required": true,
+    "error_cleared_after_success": true
+  },
+  "frontend_retry_supported": true,
+  "frontend_code_verified": {
+    "source": "epic3/feature_3_3/frontend/pages/1_Predict.py",
+    "retry_mechanism": "streamlit rerun after form submission"
+  },
+  "actual_live_test": "PENDING (requires running processes)",
+  "status": "CONTRACT_VALIDATED"
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Cache invalidation strategy validation",
+  "invalidation_triggers": [
+    {
+      "trigger": "Source file SHA-256 changes",
+      "mechanism": "SHA-256 of ml_ready_dataset.csv included in cache key",
+      "result": "Cache miss → reload",
+      "authoritative": true
+    },
+    {
+      "trigger": "Source file path changes",
+      "mechanism": "Canonical path included in cache key",
+      "result": "Cache miss → reload from new path",
+      "authoritative": true
+    },
+    {
+      "trigger": "Source file mtime changes (fallback when SHA unavailable)",
+      "mechanism": "os.path.getmtime fallback in _get_source_version_key()",
+      "result": "Cache miss → reload",
+      "authoritative": false,
+      "fallback_for": "SHA-256 when shell is unavailable"
+    },
+    {
+      "trigger": "Streamlit app restart",
+      "mechanism": "st.cache_data clears on process restart",
+      "result": "Cache cleared",
+      "authoritative": true
+    }
+  ],
+  "cache_clear_mechanisms": [
+    "st.cache_data.clear() (manual developer action)",
+    "App restart",
+    "Source file SHA-256 change",
+    "Source path change"
+  ],
+  "never_auto_delete_source": true,
+  "not_invalidated_by": [
+    {"event": "Aggregation parameter change", "reason": "Cache key includes parameters"},
+    {"event": "Time elapsed (TTL)", "reason": "TTL not used"},
+    {"event": "User session change", "reason": "st.cache_data is global"}
+  ],
+  "cache_key_contains": ["source_path", "source_sha8_or_mtime"],
+  "status": "PASS"
+}

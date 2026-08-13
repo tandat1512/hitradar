@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Popularity aggregation validation",
+  "yearly_evaluation_data": {
+    "source": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+    "years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+    "verified": true,
+    "note": "actual_mean values confirmed from source inspection"
+  },
+  "raw_aggregation": {
+    "method": "mean(target_popularity) by release_year",
+    "column": "target_popularity",
+    "year_column": "release_year",
+    "year_range": [1922, 2019],
+    "missing_years": [1921, 2020],
+    "no_interpolation": true,
+    "no_imputation": true,
+    "coverage_reported": true
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Maps test fixtures to actual API response schemas from OpenAPI",
+  "fixtures": [
+    {
+      "fixture_name": "predict_success_fixture",
+      "response_type": "PredictResponse",
+      "fields": [
+        "prediction_raw", "prediction_clipped", "prediction_display",
+        "status", "warnings", "model_id", "model_version",
+        "package_version", "request_id"
+      ],
+      "matches_openapi": true,
+      "source": "OpenAPI schema — PredictResponse"
+    },
+    {
+      "fixture_name": "explain_success_fixture",
+      "response_type": "ExplainResponse",
+      "fields": ["prediction", "base_value", "contributions", "request_id"],
+      "contribution_fields": ["feature", "value", "contribution", "type"],
+      "matches_openapi": true,
+      "source": "OpenAPI schema — ExplainResponse"
+    },
+    {
+      "fixture_name": "whatif_success_fixture",
+      "response_type": "WhatIfResponse",
+      "fields": ["prediction_before", "prediction_after", "delta", "changed_fields", "request_id"],
+      "matches_openapi": true,
+      "source": "OpenAPI schema — WhatIfResponse"
+    },
+    {
+      "fixture_name": "health_healthy_fixture",
+      "response_type": "HealthResponse",
+      "fields": ["status", "model_loaded", "api_version"],
+      "matches_openapi": true,
+      "source": "OpenAPI schema — HealthResponse"
+    },
+    {
+      "fixture_name": "validation_error_fixture",
+      "response_type": "Feature 3.0 error contract",
+      "format": "{\"detail\": [{\"loc\": [\"body\",\"field\"], \"msg\": \"...\", \"type\": \"...\"}]}",
+      "matches_contract": true,
+      "source": "Feature 3.0 API Contract"
+    }
+  ],
+  "no_fixture_contains_hardcoded_predictions": true,
+  "no_fixture_contains_computed_shap": true,
+  "status": "PASS"
+}

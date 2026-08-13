@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "actual_page_count": 7,
+  "actual_pages": [
+    "Home",
+    "Predict",
+    "Explain",
+    "What-If",
+    "Music Trends",
+    "Model Info",
+    "Limitations"
+  ],
+  "manual_page_count": 7,
+  "phantom_page_count": 0,
+  "page_name_mismatch_count": 0,
+  "button_mismatch_count": 0,
+  "major_output_mismatch_count": 0,
+  "offline_wording_mismatch_count": 0,
+  "navigation_mismatch_count": 0,
+  "audit_method": "The actual Streamlit Limitations source is scanned for the legacy year range and canonical range.",
+  "source_sha256": "682384098620ae415e95e92da26069b0a0be12da0c09d7b16919dc20d1278c83",
+  "canonical_range_present": true,
+  "dataset_scope_ui_mismatch_count": 0,
+  "total_mismatch_count": 0,
+  "findings": [],
+  "status": "PASS"
+}

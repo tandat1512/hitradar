@@ -1,0 +1,88 @@
+{
+  "status": "PRE_EXISTING_ACTIONS_OPEN_DEMO_FEEDBACK_NOT_AVAILABLE",
+  "feedback_derived_actions": [],
+  "pre_existing_required_actions": [
+    {
+      "action_id": "PRE-001",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Create and visually validate an actual final slide deck, fill the presenter field and prepare a local/backup copy.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-002",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Confirm presenter, demo operator, backup operator and Q&A ownership.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-003",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Conduct and record human Rehearsal #1.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-004",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Conduct and record human Rehearsal #2, then prove remaining BLOCKER/HIGH counts are zero.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-005",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Resolve offline fallback presentation path and validate its explicit disclosure.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-006",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Capture required screenshots and record/validate backup video if required.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-007",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Complete browser/device/charger/local-copy and participant availability checks.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    },
+    {
+      "action_id": "PRE-008",
+      "source_feedback": null,
+      "source_evidence": "Feature 3.8 closure gate",
+      "description": "Create a version-controlled package baseline and establish expected hashes for production business logic.",
+      "severity": "HIGH",
+      "required_before_defense": true,
+      "owner": null,
+      "status": "OPEN"
+    }
+  ],
+  "required_before_defense_open_count": 8,
+  "product_changes_automatically_implemented": false
+}

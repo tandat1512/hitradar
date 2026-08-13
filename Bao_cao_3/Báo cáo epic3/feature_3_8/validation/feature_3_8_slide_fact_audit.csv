@@ -1,0 +1,48 @@
+slide,claim,source,expected,actual,status
+Slide 1,HitRadar Pro project name,README.md,HitRadar Pro,HitRadar Pro,OK
+Slide 1,Academic/student project type,README.md §project type,Academic / student machine learning project,Academic / student ML project,OK
+Slide 2,Problem = predict popularity from audio features,README.md §target,popularity from audio + metadata,popularity from audio features,OK
+Slide 2,Task type = regression,README.md §target,continuous regression 0-100,regression 0-100,OK
+Slide 3,Dataset records = 586672,ml_ready_dataset.csv + split_manifest.json,586672,586672,OK_REVALIDATED
+Slide 3,Year range = 1900-2021,ml_ready_dataset.csv + final live parse,1900-2021,1900-2021,OK_REVALIDATED
+Slide 3,Raw features = 18,input_schema.json,18,18,OK
+Slide 3,Selected features = 31,selected_features.json,31,31,OK
+Slide 3,Transformed = 49,feature_names.json,49,49,OK
+Slide 3,Dataset source = Spotify-derived,README.md,TECHNICAL_APPENDIX.md,Spotify-derived sample,OK
+Slide 3,Dataset scope = NOT global,USER_MANUAL.md Limitations,"Available dataset — not all music",available dataset,OK
+Slide 4,Pipeline stages correct,TECHNICAL_APPENDIX.md §5,Raw→Engineering→Selection→Preprocessing→XGBoost,Raw→Engineered→Selected→Preprocessed→XGBoost,OK
+Slide 4,Transformed width = 49,TECHNICAL_APPENDIX.md §6,49,49,OK
+Slide 4,Algorithm = XGBoost gradient boosting,model_version.json,Gradient Boosting XGBoost,XGBoost Gradient Boosting,OK
+Slide 5,Model ID = EXP24-XGB-FINAL-001,model_version.json,EXP24-XGB-FINAL-001,EXP24-XGB-FINAL-001,OK
+Slide 5,Model version = 1.0.0,model_version.json,1.0.0,1.0.0,OK
+Slide 5,Feature set = FS23-SELECTED,model_version.json,FS23-SELECTED,FS23-SELECTED,OK
+Slide 5,Artifact validation = 113 PASSED,feature_3_1_final_validation_results.json,113,113,OK
+Slide 5,Zero refit calls,feature_3_1_write_scope_audit.json,0,0,OK
+Slide 6,Test set = 85876 rows,feature_3_1_model_metrics_validation.json,85876,85876,OK
+Slide 6,MAE = 17.65,feature_3_1_model_metrics_validation.json,17.646684646606445,17.65,OK
+Slide 6,RMSE = 21.01,feature_3_1_model_metrics_validation.json,21.01337842313573,21.01,OK
+Slide 6,R2 = 0.07,feature_3_1_model_metrics_validation.json,0.06962639093399048,0.07,OK
+Slide 6,Underprediction rate = 67.8%,feature_3_1_model_metrics_validation.json,0.6781522194792492,67.8%,OK
+Slide 6,No Accuracy = R2*100% claim,feature_3_8_slide_outline.md Slide 6,NO such claim,absent,OK
+Slide 7,SHAP explainer = TreeExplainer,feature_3_1_shap_asset_inventory.json,TreeExplainer,TreeExplainer,OK
+Slide 7,Background samples = 1000,feature_3_1_shap_asset_inventory.json,1000,1000,OK
+Slide 7,SHAP NOT causal,TECHNICAL_APPENDIX.md §15 + 6_Limitations.py,NOT_CAUSAL,NOT_CAUSAL,OK
+Slide 8,What-If compares predictions,TECHNICAL_APPENDIX.md §16,Model output comparison,Model output comparison,OK
+Slide 8,Delta NOT causal,TECHNICAL_APPENDIX.md §16,NOT_CAUSAL,NOT_CAUSAL,OK
+Slide 9,Backend = FastAPI port 8000,scripts/run_all.py,8000,8000,OK
+Slide 9,Frontend = Streamlit port 8501,scripts/run_all.py,8501,8501,OK
+Slide 9,Frontend NEVER loads model,README.md §Architecture,NEVER,NEVER,OK
+Slide 9,Dashboard reads local CSV,4_Trends.py,local CSV,local CSV,OK
+Slide 10,Canonical prediction = 46,feature_3_5_canonical_e2e_fixture.json,46,46,OK
+Slide 10,Input fields = 18,input_schema.json,18,18,OK
+Slide 14,E2E canonical prediction = 46,feature_3_5_canonical_e2e_fixture.json,46.421→46,46,OK
+Slide 14,Feature 3.1 tests PASSED = 113,feature_3_1_final_validation_results.json,113,113,OK
+Slide 14,E2E health = healthy,feature_3_5_health_e2e_validation.json,healthy,true,OK
+Slide 15,Model load mean = 928ms,feature_3_1_benchmark_results.json,928.001ms,928ms,OK
+Slide 15,Warm inference mean = 15.6ms,feature_3_1_benchmark_results.json,15.574ms,15.6ms,OK
+Slide 15,Benchmark environment = local Python 3.13.7,feature_3_1_benchmark_results.json,Python 3.13.7,Python 3.13.7,OK
+Slide 15,No SLA defined,README.md + feature_3_6_performance_report.md,NO_SLA,NO_SLA,OK
+Slide 16,R2 = 0.07 = low explanatory power,feature_3_1_model_metrics_validation.json + TECHNICAL_APPENDIX.md §8,0.07 = low,0.07 = low,OK
+Slide 16,Not production-ready = academic,README.md,academic_project,academic project,OK
+Slide 16,Offline = precomputed,offline_demo_mode_contract.json,precomputed,precomputed,OK
+Slide 16,Dataset 1900-2021 historical/platform-specific,ml_ready_dataset.csv,1900-2021,1900-2021,OK_REVALIDATED

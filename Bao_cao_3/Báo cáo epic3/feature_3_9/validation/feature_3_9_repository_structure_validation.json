@@ -1,0 +1,20 @@
+{
+  "feature_id": "3.9",
+  "canonical_decision_source": "feature_3_7/validation/feature_3_7_repository_structure_decision.json",
+  "decision": "DOCUMENT_ACTUAL_SPLIT_STRUCTURE_NO_MOVE",
+  "areas": [
+    {"logical_area":"backend","actual_path":"5.UNG_DUNG/5.1.backend_api","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED_CHANGES"},
+    {"logical_area":"frontend","actual_path":"epic3/feature_3_3/frontend","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_MOSTLY_UNTRACKED"},
+    {"logical_area":"dashboard","actual_path":"epic3/feature_3_4/dashboard","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED"},
+    {"logical_area":"artifacts","actual_path":"artifacts/epic2","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED"},
+    {"logical_area":"startup scripts","actual_path":"scripts","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED"},
+    {"logical_area":"tests","actual_path":"tests plus feature-local test folders","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED_ADDITIONS"},
+    {"logical_area":"docs","actual_path":"repository root Markdown files","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_MOSTLY_UNTRACKED"},
+    {"logical_area":"demo","actual_path":"demo","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED"},
+    {"logical_area":"reports","actual_path":"Bao_cao_3/Báo cáo epic3","exists":true,"tracked_baseline_complete":false,"status":"PRESENT_UNTRACKED"}
+  ],
+  "filesystem_structure_valid": true,
+  "repository_commit_structure_reproducible": false,
+  "unsafe_restructure_performed": false,
+  "status": "PASS_WITH_WARNINGS"
+}

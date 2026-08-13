@@ -1,0 +1,10 @@
+{
+  "tag": null,
+  "target_sha": null,
+  "annotation": null,
+  "exists": false,
+  "authorized_to_create": false,
+  "authorized_to_push": false,
+  "strategy": "FINAL_COMMIT_ONLY",
+  "status": "NOT_PLANNED_NO_TAG_CONVENTION"
+}

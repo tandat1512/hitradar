@@ -1,0 +1,100 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 startup environment variable contract",
+  "note": "Scripts consume canonical names already defined by the application (config.py, core/config.py). No duplicated values.",
+  "variables": [
+    {
+      "variable": "BACKEND_HOST",
+      "component": "run_backend.py / run_all.py",
+      "required": false,
+      "default": "127.0.0.1",
+      "source": "uvicorn --host",
+      "secret": false,
+      "purpose": "Backend bind address"
+    },
+    {
+      "variable": "BACKEND_PORT",
+      "component": "run_backend.py / run_all.py",
+      "required": false,
+      "default": "8000",
+      "source": "uvicorn --port / config.py default (8000)",
+      "secret": false,
+      "purpose": "Backend bind port"
+    },
+    {
+      "variable": "BACKEND_HEALTH_TIMEOUT",
+      "component": "run_backend.py / run_all.py / run_frontend.py",
+      "required": false,
+      "default": "120 (backend), 3 (frontend probe)",
+      "source": "health polling timeout",
+      "secret": false,
+      "purpose": "Seconds to wait for /health readiness (no fixed sleep)"
+    },
+    {
+      "variable": "ARTIFACTS_PATH",
+      "component": "backend (config.py) / run scripts",
+      "required": false,
+      "default": "<repo>/artifacts/epic2",
+      "source": "config.py:12",
+      "secret": false,
+      "purpose": "Canonical artifact root; validated before backend start"
+    },
+    {
+      "variable": "STREAMLIT_SERVER_PORT",
+      "component": "run_frontend.py / run_all.py / Streamlit",
+      "required": false,
+      "default": "8501",
+      "source": "streamlit --server.port",
+      "secret": false,
+      "purpose": "Frontend port"
+    },
+    {
+      "variable": "BACKEND_BASE_URL",
+      "component": "frontend (core/config.py) / run_frontend.py / run_all.py",
+      "required": false,
+      "default": "http://localhost:8000",
+      "source": "core/config.py:37",
+      "secret": false,
+      "purpose": "Frontend → backend base URL; must match BACKEND_PORT when overridden"
+    },
+    {
+      "variable": "BACKEND_CONNECT_TIMEOUT",
+      "component": "frontend client (core/config.py)",
+      "required": false,
+      "default": "5.0",
+      "source": "core/config.py:54",
+      "secret": false,
+      "purpose": "httpx connect timeout"
+    },
+    {
+      "variable": "BACKEND_READ_TIMEOUT",
+      "component": "frontend client (core/config.py)",
+      "required": false,
+      "default": "30.0",
+      "source": "core/config.py:55",
+      "secret": false,
+      "purpose": "httpx read timeout"
+    },
+    {
+      "variable": "BACKEND_REQUEST_TIMEOUT",
+      "component": "frontend client (core/config.py)",
+      "required": false,
+      "default": "35.0",
+      "source": "core/config.py:56",
+      "secret": false,
+      "purpose": "httpx total timeout"
+    },
+    {
+      "variable": "API_PREFIX",
+      "component": "frontend (core/config.py)",
+      "required": false,
+      "default": "",
+      "source": "core/config.py:46",
+      "secret": false,
+      "purpose": "Optional API prefix"
+    }
+  ],
+  "secrets_in_scripts": 0,
+  "status": "CONTRACT_COMPLETE"
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Predict E2E — UI input validation",
+  "frontend_page": "epic3/feature_3_3/frontend/pages/1_Predict.py",
+  "canonical_input_fields": 18,
+  "expected_exposed_fields": [
+    "duration_min", "explicit", "release_year", "release_month",
+    "danceability", "energy", "key", "loudness",
+    "speechiness", "acousticness", "instrumentalness", "liveness",
+    "valence", "tempo", "time_signature"
+  ],
+  "expected_hidden_fields": [
+    "target_popularity (NOT exposed — this is the target)"
+  ],
+  "form_type_verified": "sliders + numeric inputs from /features metadata",
+  "validation_rules_verified": [
+    "duration_min: 0-120 min",
+    "explicit: bool",
+    "release_year: 1900-2100",
+    "release_month: 1-12",
+    "danceability: 0-1",
+    "energy: 0-1",
+    "key: 0-11",
+    "loudness: -60 to 0 dB",
+    "tempo: 0-300 BPM"
+  ],
+  "no_unexpected_fields": true,
+  "no_target_exposure": true,
+  "actual_live_test": "PENDING (requires Streamlit environment)",
+  "status": "CONTRACT_VALIDATED"
+}

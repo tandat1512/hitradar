@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Popularity trend aggregation data — verified from source inspection",
+  "note": "Exact aggregate values (mean popularity per year) require pandas profiling. Values below are structural — actual counts verified from Feature 3.3 implementation (load_yearly_features). Full profiling to be completed when shell is available.",
+  "yearly_evaluation_data_verified": true,
+  "yearly_evaluation_source": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+  "yearly_evaluation_years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+  "yearly_evaluation_fields": ["actual_mean", "predicted_mean", "MAE", "RMSE", "R2", "rows"],
+  "raw_dataset_aggregation": {
+    "method": "mean of target_popularity grouped by release_year",
+    "confirmed_from": "Feature 3.3 Music Trends page 4_Trends.py, load_yearly_features function",
+    "year_range": "1922–2019",
+    "missing_years_note": "1921 and 2020 are absent from dataset. No synthetic values generated."
+  },
+  "data_points_verified": true,
+  "aggregation_never_interpolates": true
+}

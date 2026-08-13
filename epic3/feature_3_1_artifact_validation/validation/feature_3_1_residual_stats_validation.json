@@ -1,0 +1,81 @@
+{
+  "validation_id": "F31-P3-RES-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:02:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "canonical_source": "7.ML/7.8.model_evaluation/residuals/residual_statistics.json",
+  "validation_status": "PASS",
+  "residual_convention": {
+    "defined": true,
+    "explicit": false,
+    "definition": "actual - predicted (actual minus predicted)",
+    "evidence": "Positive mean residual (+4.857) matches underprediction rate (67.8%) — when actual > predicted, residual is positive, so positive mean indicates systematic underprediction",
+    "status": "PASS",
+    "notes": "Convention is inferred from metric consistency (positive mean + 67.8% underprediction). If explicit documentation exists it was not located in the artifact package."
+  },
+  "sample_rows": 85876,
+  "evaluation_split": "test",
+  "residual_statistics": {
+    "count": 85876,
+    "mean": 4.856535101093279,
+    "median": 8.830482482910156,
+    "std": 20.444583937530165,
+    "variance": 417.9810123787164,
+    "min": -53.055381774902344,
+    "max": 69.0922622680664,
+    "skewness": -0.579192260644382,
+    "kurtosis": -0.41070813645329185,
+    "all_finite": true
+  },
+  "quantiles": {
+    "P01": -39.45681571960449,
+    "P05": -34.81175136566162,
+    "P10": -30.230753898620605,
+    "P25": -5.784528017044067,
+    "P50": 8.830482482910156,
+    "P75": 19.29838752746582,
+    "P90": 27.95401954650879,
+    "P95": 32.90368175506592,
+    "P99": 41.7779016494751
+  },
+  "absolute_error_statistics": {
+    "count": 85876,
+    "mean": 17.646684299211866,
+    "median": 16.291603088378906,
+    "std": 11.408686480069818,
+    "min": 3.4332275390625e-05,
+    "max": 69.0922622680664,
+    "P50": 16.291603088378906,
+    "P80": 28.9378604888916,
+    "P90": 34.11560821533203,
+    "P95": 37.10243797302246,
+    "P99": 42.67464065551758,
+    "all_finite": true
+  },
+  "interpretation": {
+    "mean_positive": true,
+    "mean_value": 4.856535101093279,
+    "interpretation": "Model systematically underpredicts popularity on average by ~4.86 points",
+    "underprediction_rate": 0.6781522194792492,
+    "overprediction_rate": 0.32184778052075086,
+    "median_positive": true,
+    "median_value": 8.830482482910156,
+    "interpretation_median": "50% of predictions are off by more than 8.83 points below actual"
+  },
+  "validation_notes": [
+    "All residual and AE statistics are finite values",
+    "Sample rows match champion_test_metrics.json (85876)",
+    "Residual convention: actual - predicted (positive = underprediction)",
+    "Convention is inferred from consistency with Underprediction_Rate; explicit documentation absent in package",
+    "Feature 3.1 does not re-compute residuals from predictions"
+  ],
+  "warnings": [
+    {
+      "type": "RESIDUAL_CONVENTION_NOT_EXPLICITLY_DOCUMENTED",
+      "severity": "WARNING",
+      "detail": "Residual convention (actual - predicted) is inferred from metric consistency, not from an explicit field in the artifact. If future changes to residual_stats.json omit this context, interpretation could be reversed."
+    }
+  ],
+  "blockers": []
+}

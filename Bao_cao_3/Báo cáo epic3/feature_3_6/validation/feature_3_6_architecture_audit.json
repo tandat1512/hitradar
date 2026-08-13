@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 architecture audit",
+  "counts": {
+    "frontend_direct_model_load_count": 0,
+    "frontend_dynamic_shap_compute_count": 0,
+    "model_reload_per_request_count": 0,
+    "offline_fake_dynamic_inference_count": 0,
+    "hardcoded_prediction_count": 0,
+    "machine_specific_startup_path_count": 0
+  },
+  "evidence": [
+    "frontend app.py: 'Frontend NEVER loads model artifacts directly' + no joblib/xgboost imports in frontend",
+    "backend api.py: model loaded once in lifespan (eager), PipelineLoader singleton — 0 reloads per request",
+    "offline contract: Explain/What-if NOT_AVAILABLE, Predict precomputed-only — no fake inference possible",
+    "offline evidence: only canonical validated fixtures; no hardcoded predictions in code",
+    "scripts/: REPO_ROOT from __file__, sys.executable — no machine paths"
+  ],
+  "expected_all_zero": true,
+  "status": "ARCHITECTURE_CLEAN"
+}

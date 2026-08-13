@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Artist/Genre source decision",
+  "decision": "NOT_AVAILABLE",
+  "summary_type": null,
+  "artist_available": false,
+  "genre_available": false,
+  "artist_column": null,
+  "genre_column": null,
+  "reason": "Phase 1 confirmed: neither 'artist' nor 'genre' exists in ml_ready_dataset.csv",
+  "dataset_columns": [
+    "track_id", "target_popularity", "duration_min", "explicit",
+    "release_year", "release_month", "decade", "release_precision",
+    "danceability", "energy", "key", "loudness", "mode",
+    "speechiness", "acousticness", "instrumentalness", "liveness",
+    "valence", "tempo", "time_signature"
+  ],
+  "no_inference_allowed": true,
+  "no_synthetic_generation": true,
+  "tasks_affected": {
+    "3.4.5_explicit_trend": "AVAILABLE — explicit field confirmed",
+    "3.4.6_duration_trend": "AVAILABLE — duration_min confirmed",
+    "3.4.7_artist_genre_summary": "NOT_AVAILABLE — neither field in source"
+  },
+  "status": "PASS",
+  "note": "Dashboard page must display 'Artist/genre data is not available in this dataset' instead of a chart"
+}

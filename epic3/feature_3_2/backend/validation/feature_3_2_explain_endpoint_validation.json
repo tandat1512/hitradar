@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-06T01:38:12.318292+00:00",
+  "status": "PASS",
+  "endpoint": "POST /explain",
+  "http_status": 200,
+  "shap_values_count": 31,
+  "shap_values_expected": 31,
+  "top_features_count": 5,
+  "top_features_expected": 5,
+  "prediction_match_explain_vs_predict": true,
+  "additivity_error": 0.2451,
+  "additivity_pass": true,
+  "all_shap_finite": true,
+  "explanation_method": "SHAP_TreeExplainer",
+  "no_causal_claim": true,
+  "warnings": [],
+  "blockers": []
+}

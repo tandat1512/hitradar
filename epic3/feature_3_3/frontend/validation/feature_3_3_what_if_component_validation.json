@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "component": "whatif_comparison",
+  "component_path": "components/whatif_comparison.py",
+  "functions": ["render_whatif_comparison", "render_whatif_empty_state"],
+  "input_type": "WhatIfResponse",
+  "displays": [
+    "prediction_before",
+    "prediction_after",
+    "delta (from backend)",
+    "direction arrow (▲/▼/➖)",
+    "changed_fields list",
+    "delta description text"
+  ],
+  "delta_source": "backend — WhatIfResponse.delta, not frontend-computed",
+  "no_causal_claim": true,
+  "terminology": "model's prediction changes",
+  "no_network_calls": true,
+  "no_model_loading": true,
+  "status": "PASS"
+}

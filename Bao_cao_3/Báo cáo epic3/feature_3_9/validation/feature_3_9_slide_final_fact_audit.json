@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "actual_slide_deck": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+  "actual_slide_sha256": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+  "text_extraction_performed": true,
+  "quantitative_claims_audited": true,
+  "outline_fact_audit_source": "Bao_cao_3/Báo cáo epic3/feature_3_8/validation/feature_3_8_slide_fact_audit.csv",
+  "outline_fact_mismatch_count": 0,
+  "actual_deck_fact_mismatch_count": 0,
+  "manual_visual_review_required": true,
+  "status": "PASS_TEXT_FACTS_MANUAL_VISUAL_REVIEW_REQUIRED"
+}

@@ -1,0 +1,12 @@
+{
+  "feature_id":"3.8",
+  "generated_at":"2026-08-12T00:20:00+07:00",
+  "dataset":{"must_know_ready":true,"status":"PASS"},
+  "model":{"must_know_ready":true,"status":"PASS"},
+  "shap":{"must_know_ready":true,"noncausal_wording":true,"status":"PASS"},
+  "limitations":{"must_know_ready":true,"status":"PASS"},
+  "rapid_fire":{"ready":true,"question_count":25,"status":"PASS"},
+  "master_question_count":66,
+  "unsupported_claim_count":0,
+  "status":"PASS"
+}

@@ -1,0 +1,36 @@
+{
+  "structural_preparation_complete": true,
+  "presenter_assignment_status": "TEMPLATE_READY_HUMAN_CONFIRMATION_REQUIRED",
+  "demo_operator_assigned": false,
+  "qa_ownership_assigned": false,
+  "handoff_notes_complete": false,
+  "rehearsal_1_status": "HUMAN_REHEARSAL_REQUIRED",
+  "rehearsal_1_issue_registry_complete": false,
+  "rehearsal_2_status": "HUMAN_REHEARSAL_REQUIRED",
+  "rehearsal_1_blocker_high_retested": false,
+  "remaining_rehearsal_blockers": null,
+  "remaining_rehearsal_high": null,
+  "timing_status": "PLANNING_ONLY_ACTUAL_R1_R2_REQUIRED",
+  "demo_rehearsal_status": "HUMAN_REHEARSAL_REQUIRED",
+  "qa_rehearsal_status": "HUMAN_REHEARSAL_REQUIRED",
+  "failure_drill_status": "PENDING",
+  "production_code_modified": false,
+  "training_executed": false,
+  "pytest_collected": 5,
+  "pytest_passed": 5,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "warnings": [
+    "Only a partial contributor list (Minh, Đạt) is evidenced; no authoritative full defense roster was found.",
+    "Phase 2 /explain dry-run timeout was resolved by the final technical smoke; keep the skip rule for rehearsal.",
+    "Backup screenshots/video are unavailable and automatic offline UI behavior is not validated.",
+    "Feature 3.8 story/slide dataset scope was synchronized to locked ML evidence; legacy documentation remains a warning."
+  ],
+  "blockers": [
+    "Human presenter, Q&A ownership and demo operator assignments are not confirmed.",
+    "Actual human Rehearsal #1 has not occurred or been supplied.",
+    "Actual human Rehearsal #2 and R1 BLOCKER/HIGH retest cannot occur before R1."
+  ],
+  "status": "WAITING_FOR_HUMAN_ACTION",
+  "next_phase": "WAITING_FOR_HUMAN_ACTION"
+}

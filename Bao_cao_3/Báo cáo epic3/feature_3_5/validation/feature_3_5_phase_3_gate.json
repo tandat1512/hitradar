@@ -1,0 +1,95 @@
+{
+  "phase": "3/5",
+  "feature": "3.5",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "phase_2_gate_valid": true,
+
+  "negative_test_contract_valid": true,
+  "pydantic_constraints_verified": true,
+  "all_18_fields_with_bounds": true,
+
+  "backend_down_handled": "CONTRACT_VALIDATED",
+  "backend_down_frontend_error": "Cannot connect to backend",
+  "backend_down_no_traceback": true,
+  "backend_down_no_internal_path": true,
+
+  "backend_recovery_valid": "CONTRACT_VALIDATED",
+  "retry_after_recovery": true,
+
+  "timeout_handled": "CONTRACT_VALIDATED",
+  "timeout_httpx_30s": true,
+  "timeout_frontend_error": "Request timed out",
+  "timeout_no_traceback": true,
+
+  "missing_field_rejected": "CONTRACT_VALIDATED",
+  "missing_field_expected_status": 422,
+  "missing_field_no_500": true,
+  "multiple_missing_fields_rejected": "CONTRACT_VALIDATED",
+
+  "out_of_range_low_rejected": "CONTRACT_VALIDATED",
+  "out_of_range_low_expected_status": 422,
+  "out_of_range_high_rejected": "CONTRACT_VALIDATED",
+  "out_of_range_high_expected_status": 422,
+  "out_of_range_no_500": true,
+
+  "silent_clipping_detected": false,
+  "frontend_does_not_silently_clip": true,
+
+  "extra_field_policy": "allow",
+  "extra_field_accepted_without_error": true,
+  "extra_field_not_in_model": true,
+
+  "target_injection_policy": "allow",
+  "target_in_pipeline_matrix": "NOT_AFFECTED (PipelineLoader uses audio features only)",
+  "target_must_not_affect_prediction": true,
+
+  "wrong_type_rejected": "CONTRACT_VALIDATED",
+  "wrong_type_expected_status": 422,
+  "wrong_structure_rejected": "CONTRACT_VALIDATED",
+  "null_nonnullable_rejected": "CONTRACT_VALIDATED",
+  "empty_payload_rejected": "CONTRACT_VALIDATED",
+  "malformed_json_rejected": "CONTRACT_VALIDATED",
+
+  "validation_case_500_count": 0,
+  "traceback_exposure_count": 0,
+  "internal_path_exposure_count": 0,
+
+  "error_response_contract_valid": true,
+  "request_id_in_all_responses": true,
+  "no_traceback_exposed": true,
+  "no_internal_path_exposed": true,
+
+  "frontend_failure_state_valid": true,
+  "loading_cleared_after_error": true,
+  "retry_available": true,
+  "stale_result_hidden": true,
+
+  "error_recovery_valid": "CONTRACT_VALIDATED",
+  "valid_request_after_error_succeeds": true,
+
+  "model_artifacts_modified": false,
+  "training_executed": false,
+  "refit_executed": false,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+
+  "warnings": [
+    "Live execution blocked — no Python environment; all negative scenarios CONTRACT_VALIDATED only",
+    "Extra field accepted (Pydantic extra='allow' — intentional design)",
+    "SHA-256 unavailable — shell blocked"
+  ],
+  "blockers": [
+    "BLOCKER: Live negative tests not executed (backend not running)",
+    "BLOCKER: 14 scenarios validated from contract but not executed live"
+  ],
+
+  "status": "FAIL",
+  "reason": "All 16 negative scenarios validated from actual Pydantic contracts and error handling code. Error contract verified from exceptions.py. Live execution blocked by no Python environment. All scenarios are contract-correct; execution deferred to live environment.",
+
+  "next_phase": "BLOCKED"
+}

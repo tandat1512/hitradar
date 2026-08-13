@@ -1,0 +1,32 @@
+{
+  "scenario_id": "F38-DEMO-CANONICAL-001",
+  "input_hash_valid": true,
+  "predict": {
+    "fixture_raw": 46.421062,
+    "dry_run_raw": 46.421062,
+    "tolerance": 0.001,
+    "difference": 0.0,
+    "consistent": true
+  },
+  "explain": {
+    "contract_requires_same_baseline": true,
+    "final_smoke_prediction": 46.421062,
+    "predict_baseline": 46.421062,
+    "difference": 0.0,
+    "consistent": true,
+    "base_value": 22.879942,
+    "status": "VERIFIED_FINAL_SMOKE"
+  },
+  "what_if": {
+    "predict_baseline": 46.421062,
+    "dry_run_prediction_before": 46.421062,
+    "baseline_difference": 0.0,
+    "baseline_consistent": true,
+    "changed_feature": "energy",
+    "original": 0.793,
+    "modified": 0.95,
+    "delta_formula_valid": true
+  },
+  "overall_status": "PASS",
+  "historical_warning": "Explain timed out in the 2026-08-11 dry-run but passed in the 2026-08-12 final smoke; the script keeps a prompt skip rule as recovery guidance."
+}

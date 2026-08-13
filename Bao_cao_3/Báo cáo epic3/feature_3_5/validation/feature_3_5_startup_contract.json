@@ -1,0 +1,45 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 startup contract — actual commands discovered from source",
+  "backend": {
+    "command": "python -m uvicorn api:app --host 127.0.0.1 --port {PORT}",
+    "working_directory": "5.UNG_DUNG/5.1.backend_api/",
+    "run_script": "5.UNG_DUNG/5.1.backend_api/run.bat",
+    "run_script_content": "python -m uvicorn api:app --host 127.0.0.1 --port %PORT% --reload",
+    "default_port": 8000,
+    "port_env_override": "PORT",
+    "reload_flag": true,
+    "python_module": true,
+    "required_env": [],
+    "optional_env": {
+      "API_PREFIX": "API URL prefix (e.g. /api/v1)",
+      "ARTIFACTS_PATH": "Path to model artifacts",
+      "FE_TRANSFORMERS_PATH": "Path to feature transformers"
+    }
+  },
+  "frontend": {
+    "command": "streamlit run epic3/feature_3_3/frontend/app.py",
+    "working_directory": ".",
+    "default_port": 8501,
+    "port_env_override": "STREAMLIT_SERVER_PORT",
+    "backend_url_env": "BACKEND_BASE_URL",
+    "default_backend_url": "http://localhost:8000",
+    "required_env": [],
+    "optional_env": {
+      "BACKEND_BASE_URL": "FastAPI base URL (default: http://localhost:8000)",
+      "API_PREFIX": "API prefix (default: empty)",
+      "BACKEND_CONNECT_TIMEOUT": "Connection timeout seconds (default: 5.0)",
+      "BACKEND_READ_TIMEOUT": "Read timeout seconds (default: 30.0)",
+      "ENABLE_EXPLAIN_PAGE": "Show/hide Explain page (default: true)",
+      "ENABLE_WHAT_IF_PAGE": "Show/hide What-If page (default: true)"
+    }
+  },
+  "port_safety": {
+    "policy": "Check port availability before startup; do NOT kill unrelated processes",
+    "backend_default": 8000,
+    "frontend_default": 8501,
+    "configurable": true
+  },
+  "status": "PASS"
+}

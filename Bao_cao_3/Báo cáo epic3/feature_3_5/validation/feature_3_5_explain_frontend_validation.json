@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Explain E2E — frontend render validation",
+  "frontend_page": "epic3/feature_3_3/frontend/pages/2_Explain.py",
+  "shap_component": "epic3/feature_3_3/frontend/components/shap_explanation.py",
+  "expected_display": [
+    "prediction score",
+    "SHAP base value",
+    "feature contributions (waterfall or bar chart)",
+    "positive/negative contribution labels",
+    "feature names"
+  ],
+  "no_causal_claim": true,
+  "no_statements_like": [
+    "this feature causes popularity",
+    "increasing X makes the song popular",
+    "this feature led to the popularity"
+  ],
+  "frontend_never_computes_shap": true,
+  "frontend_never_loads_model": true,
+  "actual_live_render_test": "PENDING (requires Streamlit + backend running)",
+  "status": "CONTRACT_VALIDATED"
+}

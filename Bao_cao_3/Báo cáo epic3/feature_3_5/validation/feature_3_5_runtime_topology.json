@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 runtime topology — actual architecture discovered from source",
+  "architecture": {
+    "transport": "HTTP REST",
+    "frontend_type": "Streamlit multi-page app",
+    "backend_type": "FastAPI with lifespan-managed model loading",
+    "diagram": "Streamlit → httpx.HTTPClient → FastAPI → PipelineLoader → model artifacts"
+  },
+  "frontend": {
+    "entrypoint": "epic3/feature_3_3/frontend/app.py",
+    "host": "localhost",
+    "default_port": 8501,
+    "config_env_var": "STREAMLIT_SERVER_PORT",
+    "settings_module": "epic3/feature_3_3/frontend/core/config.py",
+    "api_client_module": "epic3/feature_3_3/frontend/api/client.py",
+    "client_class": "HitRadarAPIClient",
+    "direct_model_access": false,
+    "direct_backend_service_access": false,
+    "pages": ["Home", "Predict", "Explain", "WhatIf", "Trends", "Model Info", "Limitations"]
+  },
+  "backend": {
+    "entrypoint": "5.UNG_DUNG/5.1.backend_api/api.py",
+    "command": "python -m uvicorn api:app --host 127.0.0.1 --port {PORT}",
+    "run_script": "5.UNG_DUNG/5.1.backend_api/run.bat",
+    "default_port": 8000,
+    "host": "127.0.0.1",
+    "api_prefix_env": "API_PREFIX",
+    "default_api_prefix": "",
+    "base_url_env": "BACKEND_BASE_URL",
+    "default_base_url": "http://localhost:8000",
+    "lifespan": "eager model load at startup via PipelineLoader"
+  },
+  "endpoints": {
+    "health":        {"method": "GET",  "path": "/health",       "authenticated": false},
+    "model_info":    {"method": "GET",  "path": "/model-info",   "authenticated": false},
+    "features":      {"method": "GET",  "path": "/features",     "authenticated": false},
+    "predict":       {"method": "POST", "path": "/predict",      "authenticated": false},
+    "explain":       {"method": "POST", "path": "/explain",       "authenticated": false},
+    "what_if":       {"method": "POST", "path": "/what-if",      "authenticated": false}
+  },
+  "verified": {
+    "frontend_direct_model_access": false,
+    "frontend_direct_backend_service_access": false,
+    "transport_is_http": true,
+    "request_id_header": "X-Request-ID",
+    "http_client": "httpx.Client"
+  },
+  "status": "PASS"
+}

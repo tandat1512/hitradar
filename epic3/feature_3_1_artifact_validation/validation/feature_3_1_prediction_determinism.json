@@ -1,0 +1,24 @@
+{
+  "validation_id": "F31-P3-DET-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-08T07:34:05+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "validation_status": "PASS",
+  "run_type": "same_process",
+  "warm_up_iterations": 0,
+  "measured_iterations": 3,
+  "runs": [
+    46.421062,
+    46.421062,
+    46.421062
+  ],
+  "min_value": 46.421062,
+  "max_value": 46.421062,
+  "max_absolute_difference": 0.0,
+  "deterministic": true,
+  "input_source": "example_input.json",
+  "notes": "Same input run 3 times in same process. Values identical — deterministic within same process.",
+  "warnings": [],
+  "blockers": []
+}

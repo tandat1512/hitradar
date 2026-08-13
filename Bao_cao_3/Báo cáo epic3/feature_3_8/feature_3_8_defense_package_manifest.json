@@ -1,0 +1,272 @@
+{
+    "feature_id":  "3.8",
+    "generated_at":  "2026-08-13T00:00:00+07:00",
+    "base_git_commit":  "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+    "git_commit":  null,
+    "package_git_tracking_status":  "UNTRACKED",
+    "package_reproducible_from_git_commit":  false,
+    "self_hash_policy":  "This manifest does not hash itself to avoid recursive content.",
+    "items":  [
+                  {
+                      "logical_name":  "project_story",
+                      "task_id":  "3.8.1",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_project_story.md",
+                      "exists":  true,
+                      "bytes":  7311,
+                      "sha256":  "d9ae3662bae0b5d87595dd039b8594e0bac2415ee5de7cdd5e9249480a7e23d6",
+                      "status":  "READY",
+                      "purpose":  "Final narrative"
+                  },
+                  {
+                      "logical_name":  "slide_outline",
+                      "task_id":  "3.8.2",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md",
+                      "exists":  true,
+                      "bytes":  13667,
+                      "sha256":  "497383757e1c1166d3a30e21d423f5fe19640fde97ab43d927597baddbb9fe10",
+                      "status":  "READY_WITH_SEMANTIC_PLACEHOLDER",
+                      "purpose":  "Verified slide facts; presenter remains unconfirmed"
+                  },
+                  {
+                      "logical_name":  "slide_deck",
+                      "task_id":  "3.8.2",
+                      "path":  null,
+                      "exists":  false,
+                      "bytes":  0,
+                      "sha256":  null,
+                      "status":  "MISSING",
+                      "purpose":  "Actual renderable defense deck"
+                  },
+                  {
+                      "logical_name":  "speaker_notes",
+                      "task_id":  "3.8.2",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md",
+                      "exists":  true,
+                      "bytes":  13667,
+                      "sha256":  "497383757e1c1166d3a30e21d423f5fe19640fde97ab43d927597baddbb9fe10",
+                      "status":  "EMBEDDED_ONLY",
+                      "purpose":  "Speaker notes pending deck integration"
+                  },
+                  {
+                      "logical_name":  "demo_script",
+                      "task_id":  "3.8.3",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md",
+                      "exists":  true,
+                      "bytes":  9693,
+                      "sha256":  "5f317caf8f2ab41e4df380ffb8342bc0f15e552709b9eadd6d1ccf31acac5a97",
+                      "status":  "READY",
+                      "purpose":  "Live demo script"
+                  },
+                  {
+                      "logical_name":  "qa_dataset",
+                      "task_id":  "3.8.4",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_DATASET.md",
+                      "exists":  true,
+                      "bytes":  15060,
+                      "sha256":  "23a69d72d88471cfc46cce7322971273743a851c6f471812296bd58401b84c08",
+                      "status":  "READY",
+                      "purpose":  "Dataset Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "qa_model",
+                      "task_id":  "3.8.5",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_MODEL.md",
+                      "exists":  true,
+                      "bytes":  14839,
+                      "sha256":  "4bbedcebe0938ace4886d9be4d191e0b3818ef677bc25c01e77998f76ed007a2",
+                      "status":  "READY",
+                      "purpose":  "Model Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "qa_shap",
+                      "task_id":  "3.8.6",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_SHAP.md",
+                      "exists":  true,
+                      "bytes":  11729,
+                      "sha256":  "ee6dc1f97eae2bc5ae6e510ce02a9b4240dec1dbd8a3eb62fd822a70709de86c",
+                      "status":  "READY",
+                      "purpose":  "SHAP Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "qa_limitations",
+                      "task_id":  "3.8.7",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_LIMITATIONS.md",
+                      "exists":  true,
+                      "bytes":  13060,
+                      "sha256":  "a30439e758d70685f2340a3eaff39f5a4288d750f4767adbc93d8d7f9f56b6ea",
+                      "status":  "READY",
+                      "purpose":  "Limitations Q\u0026A"
+                  },
+                  {
+                      "logical_name":  "rapid_fire",
+                      "task_id":  "3.8.7",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_RAPID_FIRE.md",
+                      "exists":  true,
+                      "bytes":  2934,
+                      "sha256":  "0ff6cdf6b1886b573a0fb4816197292d5eda522e3d89b487f7e1734d32e40a90",
+                      "status":  "READY",
+                      "purpose":  "Rapid-fire sheet"
+                  },
+                  {
+                      "logical_name":  "presenter_assignment",
+                      "task_id":  "3.8.8",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_PRESENTER_ASSIGNMENT.md",
+                      "exists":  true,
+                      "bytes":  2575,
+                      "sha256":  "ae009a064984d1547195eb3379269050807169739806791725d4c0ef1dddd525",
+                      "status":  "HUMAN_CONFIRMATION_REQUIRED",
+                      "purpose":  "Role assignment"
+                  },
+                  {
+                      "logical_name":  "rehearsal_1",
+                      "task_id":  "3.8.9",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_rehearsal_1.json",
+                      "exists":  true,
+                      "bytes":  1144,
+                      "sha256":  "2e391888170d6ccef8717d8906c673aedce0651ca27c3b667d7982f32a9293eb",
+                      "status":  "HUMAN_REHEARSAL_REQUIRED",
+                      "purpose":  "R1 actual record"
+                  },
+                  {
+                      "logical_name":  "rehearsal_issues",
+                      "task_id":  "3.8.9",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_rehearsal_issue_registry.json",
+                      "exists":  true,
+                      "bytes":  3047,
+                      "sha256":  "becf7b9dca7c825e2926885317b93a474aee2ab9c500161e1ba6813f451b36cc",
+                      "status":  "AWAITING_R1",
+                      "purpose":  "Issue closure registry"
+                  },
+                  {
+                      "logical_name":  "rehearsal_2",
+                      "task_id":  "3.8.10",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_rehearsal_2.json",
+                      "exists":  true,
+                      "bytes":  809,
+                      "sha256":  "e0ed1e773c366cab6cdb3639eb7a107615e6dfc66bd184abaa71ad660070766e",
+                      "status":  "HUMAN_REHEARSAL_REQUIRED",
+                      "purpose":  "R2 actual record"
+                  },
+                  {
+                      "logical_name":  "offline_input",
+                      "task_id":  "3.8.3",
+                      "path":  "demo/offline/evidence/example_input.json",
+                      "exists":  true,
+                      "bytes":  399,
+                      "sha256":  "ff5725da27be4fb23e70d8872df410b3e7020ecc714dada840cd8e79650d76ff",
+                      "status":  "READY_EVIDENCE_ONLY",
+                      "purpose":  "Offline precomputed input"
+                  },
+                  {
+                      "logical_name":  "offline_output",
+                      "task_id":  "3.8.3",
+                      "path":  "demo/offline/evidence/example_output.json",
+                      "exists":  true,
+                      "bytes":  233,
+                      "sha256":  "f4fef049b96c83db48f8252e4287fdb59a15b704c17ac7b7dd0287710588b41a",
+                      "status":  "READY_EVIDENCE_ONLY",
+                      "purpose":  "Offline precomputed output"
+                  },
+                  {
+                      "logical_name":  "backup_screenshots",
+                      "task_id":  "3.8.11",
+                      "path":  null,
+                      "exists":  false,
+                      "bytes":  0,
+                      "sha256":  null,
+                      "status":  "MISSING",
+                      "purpose":  "Local screenshot fallback"
+                  },
+                  {
+                      "logical_name":  "backup_video",
+                      "task_id":  "3.8.11",
+                      "path":  null,
+                      "exists":  false,
+                      "bytes":  0,
+                      "sha256":  null,
+                      "status":  "MISSING",
+                      "purpose":  "Local video fallback"
+                  },
+                  {
+                      "logical_name":  "final_checklist",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/FINAL_DEFENSE_CHECKLIST.md",
+                      "exists":  true,
+                      "bytes":  3523,
+                      "sha256":  "757da1986657d56aa2617821e7e727ada6f73b4e4b79e251c2f33b3d2e79e3e8",
+                      "status":  "COMPLETE_WITH_PENDING_HUMAN_ITEMS",
+                      "purpose":  "Final defense checklist"
+                  },
+                  {
+                      "logical_name":  "final_validation",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_final_validation_results.json",
+                      "exists":  true,
+                      "bytes":  4384,
+                      "sha256":  "553d06605340a2254eeafd9c42597e4211d2fd5b820884ee40af4af239b04e66",
+                      "status":  "COMPLETE_WITH_EXCEPTIONS",
+                      "purpose":  "Machine-readable final validation"
+                  },
+                  {
+                      "logical_name":  "pytest_junit",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/pytest_feature_3_8.xml",
+                      "exists":  true,
+                      "bytes":  4873,
+                      "sha256":  "69889de520ec98673c7ae4b3183a24dac3af8657b2e6df7011dc931fcaf10b6c",
+                      "status":  "34_PASSED",
+                      "purpose":  "Full Feature 3.8 automated tests"
+                  },
+                  {
+                      "logical_name":  "validation_report",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/FEATURE_3_8_VALIDATION_REPORT.md",
+                      "exists":  true,
+                      "bytes":  1992,
+                      "sha256":  "e0a386ad5b927b60ade773ef77291332256f5b7f1c523cb8b2a5e3c4666e04cb",
+                      "status":  "READY",
+                      "purpose":  "Validation report"
+                  },
+                  {
+                      "logical_name":  "completion_report",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/FEATURE_3_8_COMPLETION_REPORT.md",
+                      "exists":  true,
+                      "bytes":  1532,
+                      "sha256":  "f30238ffea5f2c1209c47d274897366c2fe2a9b059b29c42910a224cf4665722",
+                      "status":  "READY",
+                      "purpose":  "Completion report"
+                  },
+                  {
+                      "logical_name":  "closure_report",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/CLOSURE_GATE_REPORT_FEATURE_3_8.md",
+                      "exists":  true,
+                      "bytes":  1679,
+                      "sha256":  "549de3122627e238c695b4f74842144751db505959615cf2616dd6aa423f23f9",
+                      "status":  "READY",
+                      "purpose":  "Closure decision report"
+                  },
+                  {
+                      "logical_name":  "acceptance_report",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/BAO_CAO_NGHIEM_THU_FEATURE_3_8.md",
+                      "exists":  true,
+                      "bytes":  4996,
+                      "sha256":  "9ae7fb560d9dcad2594232b3cf68f653c6edb2015de5a9c486b2fd8dc9e4216a",
+                      "status":  "READY",
+                      "purpose":  "Vietnamese acceptance report"
+                  },
+                  {
+                      "logical_name":  "closure_gate",
+                      "task_id":  "3.8.11",
+                      "path":  "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_closure_gate.json",
+                      "exists":  true,
+                      "bytes":  3492,
+                      "sha256":  "2c10162be99a8ca1f5b195800bae975fe01e825a76ac9f7c024483574cdf5ee8",
+                      "status":  "WAITING_FOR_HUMAN_ACTION",
+                      "purpose":  "Final machine-readable gate"
+                  }
+              ],
+    "overall_status":  "WAITING_FOR_HUMAN_ACTION"
+}

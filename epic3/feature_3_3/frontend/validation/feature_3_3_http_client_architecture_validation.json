@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "HTTP client centralization — all pages must use HitRadarAPIClient",
+  "rule": "No page may call httpx.post/get or requests.post/get directly",
+  "pages_scanned": [
+    "pages/0_Home.py",
+    "pages/1_Predict.py",
+    "pages/2_Explain.py",
+    "pages/3_WhatIf.py",
+    "pages/4_Trends.py",
+    "pages/5_Model_Info.py",
+    "pages/6_Limitations.py"
+  ],
+  "direct_http_calls_found": [],
+  "all_pages_use_api_client": true,
+  "api_client_module": "api/__init__.py / api/client.py",
+  "centralized_timeout_policy": true,
+  "centralized_error_parsing": true,
+  "status": "PASS"
+}

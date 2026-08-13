@@ -1,0 +1,107 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 artifact cache registry — classification of all cached/uncached artifacts",
+  "artifact_classes": ["MODEL_RESOURCE", "STATIC_JSON_METADATA", "SCHEMA", "FEATURE_METADATA", "SHAP_METADATA", "DASHBOARD_DATA", "DASHBOARD_AGGREGATE", "DO_NOT_CACHE"],
+  "artifacts": [
+    {
+      "class": "MODEL_RESOURCE",
+      "path": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+      "size_bytes": "CAPTURE_LIVE",
+      "access_frequency": "1x per process lifecycle (eager, startup)",
+      "mutation_expectation": "never mutated at runtime",
+      "cache_strategy": "PipelineLoader singleton in backend process (NOT Streamlit st.cache_resource — backend owns model lifecycle)",
+      "invalidation_key": "process restart (artifact version change → new artifact at same path → new process loads it)",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "SCHEMA",
+      "path": "artifacts/epic2/schemas/input_schema.json",
+      "size_bytes": "CAPTURE_LIVE",
+      "access_frequency": "1x per lifecycle (cached in PipelineLoader._schemas)",
+      "mutation_expectation": "none",
+      "cache_strategy": "lazy memoized read in PipelineLoader",
+      "invalidation_key": "process restart",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "FEATURE_METADATA",
+      "path": "artifacts/epic2/schemas/selected_features.json",
+      "size_bytes": "CAPTURE_LIVE",
+      "access_frequency": "1x per lifecycle (cached in PipelineLoader._selected_features)",
+      "mutation_expectation": "none",
+      "cache_strategy": "lazy memoized read in PipelineLoader",
+      "invalidation_key": "process restart",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "STATIC_JSON_METADATA",
+      "path": "artifacts/epic2/metadata/model_version.json, data_version.json, package_version.json",
+      "size_bytes": "CAPTURE_LIVE (small, KB)",
+      "access_frequency": "1x per lifecycle (cached in PipelineLoader._metadata)",
+      "mutation_expectation": "none",
+      "cache_strategy": "lazy memoized read in PipelineLoader",
+      "invalidation_key": "process restart",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "STATIC_JSON_METADATA",
+      "path": "artifacts/epic2/model_metrics.json",
+      "size_bytes": "CAPTURE_LIVE (small, KB)",
+      "access_frequency": "per GET /model-info (uncached)",
+      "mutation_expectation": "none",
+      "cache_strategy": "none today — api.py:127-141 opens + parses per request",
+      "invalidation_key": "none (would be process restart if cached)",
+      "decision": "NOT_JUSTIFIED (documented observation; LOW impact; re-evaluate after live baseline)",
+      "note": "OPT-003 — no change made this phase"
+    },
+    {
+      "class": "SHAP_METADATA",
+      "path": "7.ML/7.9.explainability/ (SHAP source artifacts)",
+      "size_bytes": "CAPTURE_LIVE",
+      "access_frequency": "read at import/explainer build time only",
+      "mutation_expectation": "none",
+      "cache_strategy": "TreeExplainer built once per process, cached globally (api.py)",
+      "invalidation_key": "process restart",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "DASHBOARD_DATA",
+      "path": "5.DATA/processed/ml_ready_dataset.csv (169,681 rows) + 7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+      "size_bytes": "CAPTURE_LIVE (dataset likely tens of MB)",
+      "access_frequency": "cold: 1x per Streamlit cache lifecycle; warm: 0 (cached)",
+      "mutation_expectation": "source is immutable during demo",
+      "cache_strategy": "@st.cache_data — page-level (4_Trends.py, path-keyed) and Feature 3.4 dashboard_cache (SHA-256-keyed)",
+      "invalidation_key": "page-level: path or process restart; Feature 3.4: source fingerprint (path + SHA-256)",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "DASHBOARD_AGGREGATE",
+      "path": "computed: mean audio features by year/decade, popularity aggregates",
+      "size_bytes": "small (years × features dicts/DataFrames)",
+      "access_frequency": "cold: once per (params); warm: 0 (cached)",
+      "mutation_expectation": "none",
+      "cache_strategy": "@st.cache_data with parameter-aware key (dashboard_cache.make_agg_cache_key) or page-level st.cache_data",
+      "invalidation_key": "param change or source version change",
+      "decision": "ALREADY_OPTIMIZED"
+    },
+    {
+      "class": "DO_NOT_CACHE",
+      "path": "widget state, session state, API clients, model object in frontend",
+      "size_bytes": "N/A",
+      "access_frequency": "N/A",
+      "mutation_expectation": "N/A",
+      "cache_strategy": "explicitly NOT cached",
+      "invalidation_key": "N/A",
+      "decision": "DO_NOT_CACHE — frontend must never hold model; widget/session state excluded per Feature 3.4 cache principles",
+      "note": "frontend_direct_model_load_count = 0 (verified)"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "already_optimized": 7,
+    "not_justified": 1,
+    "do_not_cache": 1
+  },
+  "status": "REGISTRY_COMPLETE"
+}

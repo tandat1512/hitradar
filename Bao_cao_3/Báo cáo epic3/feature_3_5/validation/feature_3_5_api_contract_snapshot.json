@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 API contract snapshot — from openapi.json",
+  "source": "5.UNG_DUNG/5.1.backend_api/openapi.json",
+  "api_version": "1.0.0",
+  "endpoints": [
+    {
+      "logical_name": "health",
+      "method": "GET",
+      "actual_path": "/health",
+      "operation_id": "health_health_get",
+      "request_schema": null,
+      "response_schema": "HealthResponse",
+      "status_codes": [200],
+      "model_loaded_check": true
+    },
+    {
+      "logical_name": "model_info",
+      "method": "GET",
+      "actual_path": "/model-info",
+      "operation_id": "model_info_model_info_get",
+      "request_schema": null,
+      "response_schema": "ModelInfoResponse",
+      "status_codes": [200, 503],
+      "raises_503_if_model_not_ready": true
+    },
+    {
+      "logical_name": "features",
+      "method": "GET",
+      "actual_path": "/features",
+      "operation_id": "features_features_get",
+      "request_schema": null,
+      "response_schema": "FeaturesResponse",
+      "status_codes": [200, 503],
+      "raises_503_if_model_not_ready": true
+    },
+    {
+      "logical_name": "predict",
+      "method": "POST",
+      "actual_path": "/predict",
+      "operation_id": "predict_predict_post",
+      "request_schema": "PredictRequest",
+      "response_schema": "PredictResponse",
+      "status_codes": [200, 422, 503],
+      "raises_503_if_model_not_ready": true
+    },
+    {
+      "logical_name": "explain",
+      "method": "POST",
+      "actual_path": "/explain",
+      "operation_id": "explain_explain_post",
+      "request_schema": "ExplainRequest",
+      "response_schema": "ExplainResponse",
+      "status_codes": [200, 422, 503],
+      "raises_503_if_model_not_ready": true
+    },
+    {
+      "logical_name": "what_if",
+      "method": "POST",
+      "actual_path": "/what-if",
+      "operation_id": "what_if_what_if_post",
+      "request_schema": "WhatIfRequest",
+      "response_schema": "WhatIfResponse",
+      "status_codes": [200, 422, 503],
+      "raises_503_if_model_not_ready": true
+    }
+  ],
+  "required_endpoints_present": [
+    "GET /health",
+    "GET /model-info",
+    "GET /features",
+    "POST /predict",
+    "POST /explain",
+    "POST /what-if"
+  ],
+  "api_contract_complete": true,
+  "status": "PASS"
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Cache correctness validation",
+  "tests_performed": [
+    {
+      "test": "Same source, same params → same result",
+      "expected": "Cache hit or identical result",
+      "verified_by": "load_trend_dataset_cached() returns df.copy() — deterministic"
+    },
+    {
+      "test": "Different feature parameter → different aggregate",
+      "expected": "Different cache entry (different key)",
+      "verified_by": "make_agg_cache_key() includes feature parameter"
+    },
+    {
+      "test": "Different year range → different aggregate",
+      "expected": "Different cache entry",
+      "verified_by": "make_agg_cache_key() includes year_min, year_max"
+    },
+    {
+      "test": "Source SHA changed → old cache not reused",
+      "expected": "New cache entry created",
+      "verified_by": "Cache key includes SHA-256"
+    }
+  ],
+  "status": "PASS"
+}

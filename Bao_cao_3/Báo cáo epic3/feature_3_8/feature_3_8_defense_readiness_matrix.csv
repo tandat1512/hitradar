@@ -1,0 +1,20 @@
+area,requirement,evidence,actual,status,severity
+SLIDES,Actual final deck exists,Repository-wide ppt/pptx/odp/pdf search,No actual deck found,FAIL,HIGH
+SLIDES,Outline facts verified,feature_3_8_final_slide_fact_crosscheck.json,All seven mismatch categories are zero,PASS,INFO
+SLIDES,No placeholders,feature_3_8_final_slide_audit.json,Literal tokens absent but Presenter is a semantic UNCONFIRMED placeholder,FAIL,HIGH
+STORY,Final evidence-backed narrative,feature_3_8_project_story.md,Dataset/model/demo facts corrected,PASS,INFO
+DEMO,Canonical input and Predict,feature_3_8_final_live_demo_smoke.json,46.421062 equals expected,PASS,INFO
+DEMO,Explain,feature_3_8_final_live_demo_smoke.json,Returned in 400 ms,PASS,INFO
+DEMO,What-if,feature_3_8_final_live_demo_smoke.json,Measured delta -2.375583,PASS,INFO
+DEMO,Music Trends,feature_3_8_final_live_demo_smoke.json,586672 rows covering 1900-2021,PASS,INFO
+Q&A,All MUST_KNOW groups,feature_3_8_final_qa_audit.json,Dataset/model/SHAP/limitations ready,PASS,INFO
+PRESENTERS,Primary presenters and operators,feature_3_8_final_presenter_audit.json,No human-confirmed assignment,WAITING_FOR_HUMAN_ACTION,HIGH
+REHEARSAL,Human rehearsal 1,feature_3_8_final_rehearsal_audit.json,Not performed/supplied,WAITING_FOR_HUMAN_ACTION,HIGH
+REHEARSAL,Human rehearsal 2,feature_3_8_final_rehearsal_audit.json,Not performed/supplied,WAITING_FOR_HUMAN_ACTION,HIGH
+REHEARSAL,Remaining BLOCKER/HIGH proven zero,feature_3_8_final_rehearsal_audit.json,Counts unknown until rehearsals occur,WAITING_FOR_HUMAN_ACTION,HIGH
+BACKUP,Automatic offline fallback,feature_3_8_final_fallback_smoke.json,Contract/evidence exists but UI/banner unvalidated,FAIL,HIGH
+BACKUP,Screenshots and video,feature_3_8_backup_media_audit.json,No screenshot/video media files,FAIL,HIGH
+TECHNICAL_ENVIRONMENT,Backend/frontend/model/browser readiness,feature_3_8_final_technical_environment.json,Live health passed but browser interaction and automatic offline UI are unvalidated,PARTIAL,HIGH
+HUMAN_PHYSICAL_CHECKS,Device/browser/local copies,FINAL_DEFENSE_CHECKLIST.md,Not confirmed,PENDING,HIGH
+PRODUCT_IMMUTABILITY,No Feature 3.8 product mutations,feature_3_8_product_immutability_audit.json,Model/dataset/SHAP hashes match; production logic attribution is not provable in dirty/untracked worktree,PARTIAL,HIGH
+TRACEABILITY,Package reproducible from recorded commit,feature_3_8_closure_gate.json,Feature 3.8 directory is untracked and no commit contains the package,FAIL,HIGH

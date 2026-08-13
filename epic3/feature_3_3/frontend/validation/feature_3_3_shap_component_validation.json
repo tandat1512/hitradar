@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "component": "shap_explanation",
+  "component_path": "components/shap_explanation.py",
+  "functions": ["render_shap_explanation", "render_shap_empty_state"],
+  "input_type": "ExplainResponse",
+  "displays": [
+    "prediction score",
+    "base_value",
+    "contributions table (sorted)",
+    "feature name",
+    "feature value",
+    "contribution value",
+    "direction icon (🔺/🔻/➖)",
+    "SHAP attribution caption"
+  ],
+  "no_causal_claim": true,
+  "attribution_caption": "SHAP explains how the model arrived at this prediction. It describes model behavior, not causal relationships.",
+  "no_shap_computation_in_frontend": true,
+  "no_network_calls": true,
+  "status": "PASS"
+}

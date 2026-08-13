@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 cache invalidation validation — contract defined; live execution BLOCKED",
+  "method": "Use temporary fixture/source-version in tests. Do NOT modify the canonical dataset.",
+  "test_cases": [
+    {
+      "case": "SAME_SOURCE_SAME_PARAMS",
+      "expected": "reuse valid cache entry (loader call count stays 1)",
+      "actual": "BLOCKED (no live env)",
+      "status": "BLOCKED"
+    },
+    {
+      "case": "CHANGED_PARAMS",
+      "expected": "different aggregate cached separately (loader call count = 2)",
+      "actual": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "case": "CHANGED_SOURCE_IDENTITY",
+      "expected": "must NOT reuse stale aggregate from old source",
+      "actual": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "case": "PROCESS_RESTART",
+      "expected": "st.cache_data cache cleared → recompute once",
+      "actual": "BLOCKED",
+      "status": "BLOCKED"
+    }
+  ],
+  "implementation_note": "Feature 3.4 layer invalidates on (path, SHA-256); page layer invalidates on path only. Both clear on process restart. No code change made this phase.",
+  "status": "BLOCKED"
+}

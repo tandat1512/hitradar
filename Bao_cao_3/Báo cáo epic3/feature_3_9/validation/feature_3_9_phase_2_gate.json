@@ -1,0 +1,57 @@
+{
+  "final_report_resolved": true,
+  "final_slide_resolved": true,
+  "model_fact_mismatch_count": 0,
+  "metric_mismatch_count": 0,
+  "api_doc_mismatch_count": 0,
+  "command_doc_mismatch_count": 0,
+  "port_doc_mismatch_count": 0,
+  "ui_doc_mismatch_count": 0,
+  "unsupported_claim_count": 0,
+  "unresolved_placeholder_count": 0,
+  "human_assignment_pending": true,
+  "broken_link_count": 0,
+  "ambiguous_final_file_count": 0,
+  "submission_package_manifest_complete": true,
+  "submission_requirement_status": "SUBMISSION_REQUIREMENTS_PARTIALLY_UNKNOWN",
+  "document_package_readiness": "DOCUMENT_PACKAGE_READY_HUMAN_ASSIGNMENT_PENDING",
+  "production_code_modified_for_documentation": false,
+  "documentation_files_hotfixed": [
+    "README.md",
+    "HOW_TO_RUN_APP.md",
+    "USER_MANUAL.md",
+    "API_DOCUMENTATION.md",
+    "TECHNICAL_APPENDIX.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md"
+  ],
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "dataset_modified": false,
+  "pytest_collected": 26,
+  "pytest_passed": 26,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "warnings": [
+    "Official platform submission requirements were not supplied; manifest is only project-scoped.",
+    "Feature 3.6 warm API p50/p95 remain PENDING and must not be presented as measured values.",
+    "The final deck is content/hash validated; final presenter roster and human visual sign-off remain pending."
+  ],
+  "blockers": [
+    {
+      "id": "F39-P2-B01",
+      "description": "Phase 1 repository readiness is REPOSITORY_NOT_READY; Phase 2 prerequisite blocks final readiness."
+    },
+    {
+      "id": "F39-P2-B03",
+      "description": "Presenter/operator ownership remains human-unconfirmed in the defense package."
+    }
+  ],
+  "warning_count": 3,
+  "blocker_count": 2,
+  "status": "PASS_WITH_HUMAN_AND_UPSTREAM_BLOCKERS",
+  "next_phase": "BLOCKED",
+  "generated_at": "2026-08-13T20:55:03+07:00"
+}

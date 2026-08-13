@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 wrong numeric type — API contract validation",
+  "scenario": "POST /predict with non-numeric string in numeric field",
+  "field": "danceability",
+  "invalid_value": "not-a-number",
+  "expected_http_status": 422,
+  "expected_error_type": "APIValidationError",
+  "expected_error_contains_field": true,
+  "request_id_present": true,
+  "traceback_exposed": false,
+  "no_500": true,
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

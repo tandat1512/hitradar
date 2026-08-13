@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 backup asset safety audit",
+  "checks": {
+    "secrets_in_backup_assets": 0,
+    "authorization_headers_in_assets": 0,
+    "personal_environment_values_in_assets": 0,
+    "absolute_user_home_paths_in_assets": 0,
+    "terminal_credentials_in_assets": 0,
+    "examples_contain_secrets": false,
+    "examples_contain_authorization_data": false
+  },
+  "asset_review": [
+    {
+      "asset": "demo/offline/evidence/example_input.json",
+      "content": "18 canonical song features (numeric/bool/string) — no secrets, no paths",
+      "safe": true
+    },
+    {
+      "asset": "demo/offline/evidence/example_output.json",
+      "content": "prediction response (numeric + model id) — no secrets",
+      "safe": true
+    },
+    {
+      "asset": "demo/backup/screenshots/ (future captures)",
+      "quality_rule": "must contain no terminal overlays, personal paths, secrets, or unrelated notifications; numeric predictions unaltered",
+      "safe": "REQUIRED_AT_CAPTURE_TIME"
+    },
+    {
+      "asset": "demo/backup/video/hitradar_demo.mp4 (future recording)",
+      "quality_rule": "must contain no secrets / personal paths in any frame; predictions match canonical",
+      "safe": "REQUIRED_AT_RECORDING_TIME"
+    }
+  ],
+  "status": "AUDIT_COMPLETE_NO_EXPOSURES"
+}

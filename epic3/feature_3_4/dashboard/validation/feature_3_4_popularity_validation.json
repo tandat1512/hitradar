@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "popularity_column": "target_popularity",
+  "valid": true,
+  "dtype": "int64",
+  "note": "Column is named 'target_popularity', NOT 'popularity'. Dashboard contract must use this name.",
+  "confirmed_source": "Feature 3.3 Music Trends does NOT aggregate this column directly. Yearly evaluation (yearly_evaluation.csv) contains aggregated popularity by year."
+}

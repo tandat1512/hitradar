@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Duration trend chart validation",
+  "chart_id": "duration_trend",
+  "chart_title": "Average Track Duration by Decade",
+  "chart_type": "bar_chart",
+  "x_field": "Decade",
+  "y_field": "Minutes",
+  "aggregation": "mean (default)",
+  "coverage_reported": true,
+  "unit_displayed_in_ylabel": true,
+  "invalid_values_excluded": true,
+  "invalid_values_reported": true,
+  "zero_baseline": false,
+  "note_zero_baseline": "Duration bar charts start at 0 because values are positive and baseline-aware",
+  "causal_claims_in_title": 0,
+  "empty_state_handled": true,
+  "status": "PASS"
+}

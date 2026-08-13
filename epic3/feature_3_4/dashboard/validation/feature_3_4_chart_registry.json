@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Chart registry — all charts defined by Feature 3.4 Phase 2",
+  "charts": [
+    {
+      "chart_id": "popularity_year_trend",
+      "task_id": "3.4.3",
+      "title": "Average Popularity by Release Year",
+      "chart_type": "bar_chart",
+      "x_field": "Year",
+      "y_field": "Average Popularity",
+      "aggregation": "mean",
+      "time_granularity": "year",
+      "source": "ml_ready_dataset.csv via aggregate_popularity_by_year",
+      "supports_empty_state": true,
+      "caption_id": "pop_year_caption"
+    },
+    {
+      "chart_id": "popularity_decade_trend",
+      "task_id": "3.4.3",
+      "title": "Average Popularity by Decade",
+      "chart_type": "bar_chart",
+      "x_field": "Decade",
+      "y_field": "Average Popularity",
+      "aggregation": "mean",
+      "time_granularity": "decade",
+      "source": "ml_ready_dataset.csv via aggregate_popularity_by_decade",
+      "supports_empty_state": true,
+      "note_2020": "2020 labeled '2020 (single year)' — not full 2020s decade",
+      "caption_id": "pop_decade_caption"
+    },
+    {
+      "chart_id": "audio_feature_year_trend",
+      "task_id": "3.4.4",
+      "title": "{Feature} by Release Year",
+      "chart_type": "line_chart",
+      "x_field": "Year",
+      "y_field": "{feature} (dynamic unit)",
+      "aggregation": "mean",
+      "time_granularity": "year",
+      "source": "ml_ready_dataset.csv via aggregate_audio_feature_by_year",
+      "supports_empty_state": true,
+      "feature_selector": true,
+      "allowed_features": "audio_feature_display_registry.json",
+      "caption_id": "audio_year_caption"
+    },
+    {
+      "chart_id": "audio_feature_decade_trend",
+      "task_id": "3.4.4",
+      "title": "{Feature} by Decade",
+      "chart_type": "bar_chart",
+      "x_field": "Decade",
+      "y_field": "{feature} (dynamic unit)",
+      "aggregation": "mean",
+      "time_granularity": "decade",
+      "source": "ml_ready_dataset.csv via aggregate_audio_feature_by_decade",
+      "supports_empty_state": true,
+      "feature_selector": true,
+      "allowed_features": "audio_feature_display_registry.json",
+      "note_2020": "2020 labeled '2020 (single year)'",
+      "caption_id": "audio_decade_caption"
+    },
+    {
+      "chart_id": "track_count_by_year",
+      "task_id": "3.4.3",
+      "title": "Track Count by Release Year",
+      "chart_type": "bar_chart",
+      "x_field": "Year",
+      "y_field": "Track Count",
+      "aggregation": "count",
+      "time_granularity": "year",
+      "source": "ml_ready_dataset.csv aggregation",
+      "supports_empty_state": true,
+      "caption_id": "count_caption"
+    }
+  ],
+  "never_use": {
+    "3d_chart": true,
+    "pie_chart_for_timeseries": true,
+    "dual_y_axes": false,
+    "causal_title_language": true
+  }
+}

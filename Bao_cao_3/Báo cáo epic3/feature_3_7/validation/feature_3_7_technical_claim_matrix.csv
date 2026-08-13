@@ -1,0 +1,33 @@
+section,claim_id,claim,source,source_value,document_value,status
+§3 Repository Architecture,TA-001,Backend entrypoint: 5.UNG_DUNG/5.1.backend_api/api.py,api.py line 1,5.UNG_DUNG/5.1.backend_api/api.py,5.UNG_DUNG/5.1.backend_api/api.py,OK
+§3 Repository Architecture,TA-002,Frontend entrypoint: epic3/feature_3_3/frontend/app.py,app.py line 1,epic3/feature_3_3/frontend/app.py,epic3/feature_3_3/frontend/app.py,OK
+§3 Repository Architecture,TA-003,Scripts: scripts/run_all.py,run_all.py line 1,scripts/run_all.py,scripts/run_all.py,OK
+§4 Data Overview,TA-004,Dataset: Spotify-derived 169,681 songs 18 features,README.md Overview,169681,169681,OK
+§4 Data Overview,TA-005,Dataset timeframe: 1922-2019,4_Trends.py dataset range,1922-2019,1922-2019,OK
+§5 Modeling Problem,TA-006,Target: popularity score (0-100),artifacts/epic2/schemas/output_schema.json,0-100,0-100,OK
+§5 Modeling Problem,TA-007,Task type: regression,artifacts/epic2/metadata/model_version.json model_family,XGBoost,XGBoost regression,OK
+§7 Final Model,TA-008,Model ID: EXP24-XGB-FINAL-001,artifacts/epic2/metadata/model_version.json,EXP24-XGB-FINAL-001,EXP24-XGB-FINAL-001,OK
+§7 Final Model,TA-009,Model family: XGBoost,artifacts/epic2/metadata/model_version.json model_family,XGBoost,XGBoost,OK
+§7 Final Model,TA-010,Version: 1.0.0,artifacts/epic2/metadata/model_version.json,1.0.0,1.0.0,OK
+§8 Model Evaluation,TA-011,Test split: 85876 rows,feature_3_1_model_metrics_validation.json,85876,85876,OK
+§8 Model Evaluation,TA-012,MAE: 17.647,feature_3_1_model_metrics_validation.json,17.646684646606445,17.65,OK
+§8 Model Evaluation,TA-013,RMSE: 21.013,feature_3_1_model_metrics_validation.json,21.01337842313573,21.01,OK
+§8 Model Evaluation,TA-014,R²: 0.0696,feature_3_1_model_metrics_validation.json,0.06962639093399048,0.070,OK
+§8 Model Evaluation,TA-015,Mean residual: +4.857 (underprediction),feature_3_1_model_metrics_validation.json,4.856535101093279,4.86,OK
+§8 Model Evaluation,TA-016,Underprediction rate: 67.8%,feature_3_1_model_metrics_validation.json,0.6781522194792492,67.8%,OK
+§9 Residual Analysis,TA-017,Residual convention: actual - predicted,feature_3_1_final_validation_results.json F31-RESIDUAL-STATS,actual-predicted,actual-predicted,OK
+§10 Artifact Packaging,TA-018,Pipeline artifact: full_inference_pipeline.joblib,artifact_manifest.json,full_inference_pipeline.joblib,full_inference_pipeline.joblib,OK
+§10 Artifact Packaging,TA-019,Pipeline SHA-256: 7ff4b1...,feature_3_1_final_validation_results.json F31-NO-SOURCE-MUTATION,7ff4b1183938...,7ff4b1183938...,OK
+§10 Artifact Packaging,TA-020,Selected features count: 31,selected_features.json feature_count,31,31,OK
+§10 Artifact Packaging,TA-021,Transformed model features: 49,feature_3_1_final_validation_results.json F31-FEATURE-NAMES,49,49,OK
+§10 Artifact Packaging,TA-022,Example prediction: 46 (display),example_output.json,46,46,OK
+§12 Input Contract,TA-023,Input fields: 18 canonical raw features,input_schema.json field_count,18,18,OK
+§12 Input Contract,TA-024,Input schema ID: HITRADAR-PREDICTION-INPUT-V1,input_schema.json, HITRADAR-PREDICTION-INPUT-V1, HITRADAR-PREDICTION-INPUT-V1,OK
+§13 Inference Pipeline,TA-025,Pipeline class: HitRadarInferencePipeline,feature_3_1_final_validation_results.json F31-MODEL-LOAD,HitRadarInferencePipeline,HitRadarInferencePipeline,OK
+§15 Explainability,TA-026,SHAP explainer: TreeExplainer,shap_asset_inventory.json,TreeExplainer,TreeExplainer,OK
+§15 Explainability,TA-027,SHAP background samples: 1000,shap_asset_inventory.json,1000,1000,OK
+§15 Explainability,TA-028,SHAP additivity: 100%,shap_asset_inventory.json,100%,100%,OK
+§24 Performance,TA-029,Model load mean: 928ms,benchmark_results.json,928.001ms,928ms,OK
+§24 Performance,TA-030,Warm inference mean: 15.6ms,benchmark_results.json,15.574ms,15.6ms,OK
+§24 Performance,TA-031,Benchmark environment: local Python 3.13.7,benchmark_results.json,local Python 3.13.7,local Python 3.13.7,OK
+§24 Performance,TA-032,No SLA defined,no SLA document in project,no SLA,no SLA,OK

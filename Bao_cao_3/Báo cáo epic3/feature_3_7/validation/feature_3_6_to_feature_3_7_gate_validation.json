@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 gate validation for Feature 3.7 start",
+  "source": "feature_3_6/validation/feature_3_6_closure_gate.json",
+  "feature_3_6_status": "FAIL",
+  "feature_3_6_decision": "NOT_CLOSED",
+  "feature_3_6_closure_reason": "Single blocker F36-B01 (no live Python env) — all design/evidence artifacts complete; live acceptance run still needed",
+  "feature_3_7_gate": "DOCUMENTATION_MAY_BEGIN_WITH_UPSTREAM_WARNINGS",
+  "upstream_warnings": [
+    "F36-B01: No live Python environment — startup scripts, smoke tests, pytest, benchmarks, screenshots, video not live-verified",
+    "F36-W02: No live baseline — BEFORE/AFTER performance comparison vacuous",
+    "F36-W09: Screenshots 0/7, video MANUAL_RECORDING_REQUIRED",
+    "F36-W11: Offline mode contract complete; frontend UI NOT implemented"
+  ],
+  "rules_for_using_3_6_data": [
+    "May use Feature 3.6 scripts (run_all.py, etc.) as-is in docs — verified structurally, not live",
+    "May NOT cite specific benchmark numbers that are BLOCKED",
+    "May cite architectural facts (model load per process, cache structure) from source audit",
+    "Must note for each F3.6 metric: 'live verification pending'"
+  ],
+  "status": "COMPLETE"
+}

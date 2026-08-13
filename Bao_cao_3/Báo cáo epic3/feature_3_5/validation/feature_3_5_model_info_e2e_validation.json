@@ -1,0 +1,27 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Model Info E2E flow validation",
+  "flow": "Streamlit Model Info page → HitRadarAPIClient.get_model_info() → GET /model-info → FastAPI → ModelService metadata → response",
+  "frontend_page": "epic3/feature_3_3/frontend/pages/5_Model_Info.py",
+  "expected_response_fields": [
+    "model_id",
+    "model_version",
+    "model_family",
+    "package_version",
+    "data_version",
+    "feature_set",
+    "training_date",
+    "metrics (MAE, RMSE, R2)",
+    "timestamp",
+    "request_id"
+  ],
+  "contract_verified": true,
+  "parser_module": "epic3/feature_3_3/frontend/api/models.py",
+  "parser_class": "ModelInfoResponse",
+  "expected_metrics_type": "float or None (not string)",
+  "expected_model_family": "XGBoost",
+  "actual_e2e_test": "PENDING_LIVE_VERIFICATION",
+  "no_hardcoded_metadata": true,
+  "status": "CONTRACT_VALIDATED_PENDING_LIVE"
+}

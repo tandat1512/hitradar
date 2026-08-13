@@ -1,0 +1,91 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 slide metric validation against canonical sources",
+  "validation_scope": "Slide 6 (Model Performance) claims",
+  "validation_method": "Cross-reference slide content vs canonical metrics artifact",
+  "canonical_source": "epic3/feature_3_1_artifact_validation/validation/feature_3_1_model_metrics_validation.json",
+  "slide_source": "feature_3_8_slide_outline.md Slide 6",
+  "validation_results": [
+    {
+      "metric": "MAE",
+      "canonical_raw": 17.646684646606445,
+      "canonical_rounded": 17.65,
+      "slide_value": "17.65 pts",
+      "slide_rounded": 17.65,
+      "match": true,
+      "unit_correct": true,
+      "interpretation_correct": "Typical error approx 18 points on 0-100 scale",
+      "no_fabrication": true
+    },
+    {
+      "metric": "RMSE",
+      "canonical_raw": 21.01337842313573,
+      "canonical_rounded": 21.01,
+      "slide_value": "21.01 pts",
+      "slide_rounded": 21.01,
+      "match": true,
+      "unit_correct": true,
+      "interpretation_correct": "Sensitive to large errors",
+      "no_fabrication": true
+    },
+    {
+      "metric": "R2",
+      "canonical_raw": 0.06962639093399048,
+      "canonical_rounded": 0.070,
+      "slide_value": "0.07",
+      "slide_rounded": 0.07,
+      "match": true,
+      "unit_correct": true,
+      "interpretation_correct": "Model explains ~7% of popularity variance",
+      "no_fabrication": true,
+      "note": "Slide rounds 0.070 to 0.07 — acceptable rounding"
+    },
+    {
+      "metric": "Underprediction_Rate",
+      "canonical_raw": 0.6781522194792492,
+      "canonical_percent": 67.82,
+      "canonical_rounded": 67.8,
+      "slide_value": "67.8%",
+      "match": true,
+      "interpretation_correct": "Model tends to predict lower than actual",
+      "no_fabrication": true
+    },
+    {
+      "metric": "Test_Set_Size",
+      "canonical_value": 85876,
+      "slide_value": "85,876 songs",
+      "match": true,
+      "no_fabrication": true
+    }
+  ],
+  "accuracy_as_r2": {
+    "claim_found": false,
+    "note": "No claim 'Accuracy = R2 × 100%' found in slide content"
+  },
+  "fabricated_metrics": {
+    "count": 0,
+    "details": []
+  },
+  "interpretation_checks": [
+    {
+      "claim": "R2 = 0.07 means low explanatory power",
+      "verdict": "CORRECT",
+      "evidence": "Canonical R2 = 0.0696, explained_variance_ratio low"
+    },
+    {
+      "claim": "MAE = 17.65 means typical error ~18 points on 0-100 scale",
+      "verdict": "CORRECT",
+      "evidence": "MAE is in same unit as target (popularity points 0-100)"
+    },
+    {
+      "claim": "67.8% underprediction rate",
+      "verdict": "CORRECT",
+      "evidence": "canonical Mean_Residual = +4.86 positive, indicating systematic underprediction bias"
+    }
+  ],
+  "validation_status": "PASS",
+  "metric_mismatch_count": 0,
+  "fabricated_metric_count": 0,
+  "no_fabrication_confirmed": true
+}

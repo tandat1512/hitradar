@@ -1,0 +1,17 @@
+{
+  "validation_id": "F31-P4-REPRO-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:29:39+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "validation_status": "PARTIAL",
+  "sessions_count": 1,
+  "session_1": {
+    "load_median_ms": 699.808,
+    "warm_single_median_ms": 14.256,
+    "batch_100_median_ms": 13.376
+  },
+  "note": "Second benchmark session not run in this session. Reproducibility validated within-session via consistent output.",
+  "warnings": [],
+  "blockers": []
+}

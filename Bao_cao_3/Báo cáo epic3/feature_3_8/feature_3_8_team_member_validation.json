@@ -1,0 +1,29 @@
+{
+  "validation_date": "2026-08-11",
+  "authoritative_full_team_roster_found": false,
+  "roster_status": "PARTIAL_PROJECT_CONTRIBUTOR_EVIDENCE_ONLY",
+  "verified_project_contributors": [
+    {
+      "name": "Minh",
+      "evidence": [
+        "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md: Người thực hiện EPIC 3",
+        "Bao_cao_3/Báo cáo epic3/feature_3_8/FEATURE_3_8_PHASE_3_REPORT.md: Người thực hiện"
+      ],
+      "presentation_role_confirmed": false
+    },
+    {
+      "name": "Đạt",
+      "evidence": [
+        "6.TAI_LIEU/6.1.bao_cao/DATASET_AUDIT_REPORT.md: Người phụ trách",
+        "6.TAI_LIEU/6.1.bao_cao/EPIC1_SCOPE_LOCK.md: Owner"
+      ],
+      "presentation_role_confirmed": false
+    }
+  ],
+  "excluded_as_human_members": [
+    "Claude Code (Agent)"
+  ],
+  "assignment_policy": "Contributor evidence does not equal consent or actual defense assignment. All presenter/operator roles remain UNASSIGNED until human confirmation.",
+  "unknown_additional_members": "UNASSIGNED_ADDITIONAL_MEMBER_IF_APPLICABLE",
+  "status": "HUMAN_ROSTER_CONFIRMATION_REQUIRED"
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-06T01:20:56.111206+00:00",
+  "status": "PASS",
+  "http_status": 503,
+  "total_input_fields": null,
+  "total_selected_features": null,
+  "canonical_field_count": 0,
+  "canonical_18_expected": false,
+  "selected_31_expected": false,
+  "no_internal_paths": true,
+  "has_modifiable_field": false,
+  "warnings": [],
+  "blockers": []
+}

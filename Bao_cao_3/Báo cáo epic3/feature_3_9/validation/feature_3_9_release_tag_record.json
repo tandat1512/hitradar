@@ -1,0 +1,8 @@
+{
+  "tag_creation_executed": false,
+  "tag_push_executed": false,
+  "tag": null,
+  "target_sha": null,
+  "remote_verified": false,
+  "status": "NOT_APPLICABLE_FINAL_COMMIT_ONLY"
+}

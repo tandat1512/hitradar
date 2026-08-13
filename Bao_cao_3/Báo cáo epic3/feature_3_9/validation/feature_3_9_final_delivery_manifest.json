@@ -1,0 +1,264 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "items": [
+    {
+      "logical_name": "final_commit",
+      "task_id": "3.9.2/3.9.5",
+      "path_or_reference": null,
+      "exists": false,
+      "bytes": 0,
+      "sha256": null,
+      "status": "MISSING",
+      "purpose": "Verified release commit"
+    },
+    {
+      "logical_name": "release_record",
+      "task_id": "3.9.5",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_release_record.json",
+      "exists": true,
+      "bytes": 558,
+      "sha256": "a363e89a8ee131b7f3dd83c62d2ac99365298f3c72a69c5c2fa037406498eac8",
+      "status": "BLOCKED_NO_FINAL_COMMIT",
+      "purpose": "Release traceability record"
+    },
+    {
+      "logical_name": "artifact_manifest",
+      "task_id": "3.9.3",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_runtime_artifact_inventory.json",
+      "exists": true,
+      "bytes": 16161,
+      "sha256": "5df8463b8420c40c1a8b3e34ca6b63186b54bb518a534227535d237841964e41",
+      "status": "PASS",
+      "purpose": "Runtime artifact inventory"
+    },
+    {
+      "logical_name": "submission_package",
+      "task_id": "3.9.6",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_submission_package_final.json",
+      "exists": true,
+      "bytes": 3041,
+      "sha256": "6c0ca80eeef901de73a13c24a7bd79e2f167906b443c7b12b56444f3698de39b",
+      "status": "NOT_READY",
+      "purpose": "Final submission file definition"
+    },
+    {
+      "logical_name": "final_report",
+      "task_id": "3.9.4",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+      "exists": true,
+      "bytes": 15232,
+      "sha256": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+      "status": "READY",
+      "purpose": "Canonical project report"
+    },
+    {
+      "logical_name": "final_slide",
+      "task_id": "3.9.4/3.9.6",
+      "path_or_reference": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+      "exists": true,
+      "bytes": 41968,
+      "sha256": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+      "status": "READY",
+      "purpose": "Actual defense slide deck"
+    },
+    {
+      "logical_name": "readme",
+      "task_id": "3.9.1/3.9.4",
+      "path_or_reference": "README.md",
+      "exists": true,
+      "bytes": 9283,
+      "sha256": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+      "status": "READY_UNRELEASED",
+      "purpose": "Repository overview"
+    },
+    {
+      "logical_name": "run_guide",
+      "task_id": "3.9.4",
+      "path_or_reference": "HOW_TO_RUN_APP.md",
+      "exists": true,
+      "bytes": 7452,
+      "sha256": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+      "status": "READY_UNRELEASED",
+      "purpose": "Startup guide"
+    },
+    {
+      "logical_name": "user_manual",
+      "task_id": "3.9.4",
+      "path_or_reference": "USER_MANUAL.md",
+      "exists": true,
+      "bytes": 12061,
+      "sha256": "4b213f781e1ea89ef68210b5d2c52eea6437eb8ba199d694c0b0f4a79d0d88e9",
+      "status": "READY_UNRELEASED",
+      "purpose": "User guide"
+    },
+    {
+      "logical_name": "api_docs",
+      "task_id": "3.9.4",
+      "path_or_reference": "API_DOCUMENTATION.md",
+      "exists": true,
+      "bytes": 12513,
+      "sha256": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827",
+      "status": "READY_UNRELEASED",
+      "purpose": "API reference"
+    },
+    {
+      "logical_name": "technical_appendix",
+      "task_id": "3.9.4",
+      "path_or_reference": "TECHNICAL_APPENDIX.md",
+      "exists": true,
+      "bytes": 27226,
+      "sha256": "de5c075ec9e288f1981718e9222ea1441de464ade5075d03e1b668d532802afb",
+      "status": "READY_UNRELEASED",
+      "purpose": "Technical reference"
+    },
+    {
+      "logical_name": "demo_script",
+      "task_id": "3.9.7",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md",
+      "exists": true,
+      "bytes": 9693,
+      "sha256": "5f317caf8f2ab41e4df380ffb8342bc0f15e552709b9eadd6d1ccf31acac5a97",
+      "status": "PREPARED_NOT_DEMOED",
+      "purpose": "Demo flow script"
+    },
+    {
+      "logical_name": "backup_screenshots",
+      "task_id": "3.9.7",
+      "path_or_reference": null,
+      "exists": false,
+      "bytes": 0,
+      "sha256": null,
+      "status": "MISSING",
+      "purpose": "Demo fallback screenshots"
+    },
+    {
+      "logical_name": "backup_video",
+      "task_id": "3.9.7",
+      "path_or_reference": null,
+      "exists": false,
+      "bytes": 0,
+      "sha256": null,
+      "status": "MISSING",
+      "purpose": "Demo fallback video"
+    },
+    {
+      "logical_name": "retrospective",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/EPIC_3_RETROSPECTIVE.md",
+      "exists": true,
+      "bytes": 7428,
+      "sha256": "dbec0d3f4be66ce00dfbe309ffee1c0c269391585cd2713a4d04d0569bf842e2",
+      "status": "COMPLETE",
+      "purpose": "Evidence-based Epic 3 retrospective"
+    },
+    {
+      "logical_name": "demo_event",
+      "task_id": "3.9.7",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_demo_event.json",
+      "exists": true,
+      "bytes": 408,
+      "sha256": "923aed98f68eb1f9b72d89555fd883dce40fb050042c8c06b36b133d3e192600",
+      "status": "WAITING_FOR_HUMAN_DEMO",
+      "purpose": "Human demo record"
+    },
+    {
+      "logical_name": "defense_event",
+      "task_id": "3.9.8",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_defense_event.json",
+      "exists": true,
+      "bytes": 464,
+      "sha256": "c03b684f1aec0d2f8f80e3c90495c8e0f0f8121333edf44d55c280b1034a4198",
+      "status": "WAITING_FOR_HUMAN_DEFENSE",
+      "purpose": "Human defense record"
+    },
+    {
+      "logical_name": "final_tests",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/pytest_feature_3_9.xml",
+      "exists": true,
+      "bytes": 4094,
+      "sha256": "e2ca20f350d989bd383b1c11234c32a586f0c609751655efc94c828ceb3e257e",
+      "status": "PASS",
+      "purpose": "Final Feature 3.9 JUnit evidence"
+    },
+    {
+      "logical_name": "closure_gate",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_closure_gate.json",
+      "exists": true,
+      "bytes": 3340,
+      "sha256": "49a0e74e33898956578366f98c873871c6e124949933a3da7bd961dfc4319ee2",
+      "status": "NOT_CLOSED",
+      "purpose": "Final closure decision; self hash is informational and may change on regeneration"
+    },
+    {
+      "logical_name": "feature_3_9_acceptance_report",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/BAO_CAO_NGHIEM_THU_FEATURE_3_9.md",
+      "exists": true,
+      "bytes": 4255,
+      "sha256": "8f9103b6ed174d43921f90295df3ffd9ec9440e97461171bac3b4c00638d3051",
+      "status": "NOT_CLOSED",
+      "purpose": "Vietnamese Feature 3.9 acceptance report"
+    },
+    {
+      "logical_name": "feature_3_9_validation_report",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/FEATURE_3_9_VALIDATION_REPORT.md",
+      "exists": true,
+      "bytes": 440,
+      "sha256": "da837d5272b129ec059e4e4edecb837eb281242cfb5febb3b88a523a53e1f30d",
+      "status": "COMPLETE",
+      "purpose": "Final validation summary"
+    },
+    {
+      "logical_name": "feature_3_9_completion_report",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/FEATURE_3_9_COMPLETION_REPORT.md",
+      "exists": true,
+      "bytes": 468,
+      "sha256": "d048e62de6296f4924cfd1053166654c21bfc80d7475a3e3f75fcd6ef3da5939",
+      "status": "NOT_COMPLETE",
+      "purpose": "Honest completion status"
+    },
+    {
+      "logical_name": "feature_3_9_closure_report",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/CLOSURE_GATE_REPORT_FEATURE_3_9.md",
+      "exists": true,
+      "bytes": 424,
+      "sha256": "7de67668697682b97d7e3c494b7611a675f1efc802bfc70daaa44db1db1b1dd0",
+      "status": "NOT_CLOSED",
+      "purpose": "Human-readable closure decision"
+    },
+    {
+      "logical_name": "epic_3_feature_outcome_matrix",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/epic_3_feature_outcome_matrix.csv",
+      "exists": true,
+      "bytes": 1423,
+      "sha256": "cbeb49faea7a836b99855d60e1f4cc4f889b6d2d6d5103536bd5097dccc1b54c",
+      "status": "COMPLETE",
+      "purpose": "Historical Feature 3.1-3.9 outcome matrix"
+    },
+    {
+      "logical_name": "feature_3_9_evidence_matrix",
+      "task_id": "3.9.9",
+      "path_or_reference": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_evidence_matrix.csv",
+      "exists": true,
+      "bytes": 2018,
+      "sha256": "2ca727284c1cfd9ad0a9c6c10c123e663aaa44f601e0bc49d5cec450eee27dee",
+      "status": "COMPLETE",
+      "purpose": "Task-to-evidence traceability matrix"
+    }
+  ],
+  "item_count": 25,
+  "complete_item_count": 8,
+  "missing_item_count": 3,
+  "final_commit": null,
+  "release_complete": false,
+  "submission_complete": false,
+  "demo_complete": false,
+  "defense_complete": false,
+  "closure_status": "NOT_CLOSED"
+}

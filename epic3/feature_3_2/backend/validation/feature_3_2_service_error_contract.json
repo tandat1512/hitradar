@@ -1,0 +1,44 @@
+{
+  "date": "2026-08-05T14:46:05.482126+00:00",
+  "errors": [
+    {
+      "class": "BackendError",
+      "code": "INTERNAL_ERROR",
+      "status_code": 500
+    },
+    {
+      "class": "ModelNotLoadedError",
+      "code": "MODEL_NOT_LOADED",
+      "status_code": 503
+    },
+    {
+      "class": "InvalidFeatureError",
+      "code": "INVALID_FEATURE",
+      "status_code": 422
+    },
+    {
+      "class": "ExplanationError",
+      "code": "EXPLANATION_FAILED",
+      "status_code": 500
+    },
+    {
+      "class": "ArtifactNotFoundError",
+      "code": "ARTIFACT_NOT_FOUND",
+      "status_code": 500
+    }
+  ],
+  "http_status_codes_defined": [
+    500,
+    503,
+    422,
+    500,
+    500
+  ],
+  "error_codes_unique": true,
+  "service_layer_separated_from_http": true,
+  "all_errors_have_code": true,
+  "all_errors_have_message": true,
+  "warnings": [],
+  "blockers": [],
+  "status": "PASS"
+}

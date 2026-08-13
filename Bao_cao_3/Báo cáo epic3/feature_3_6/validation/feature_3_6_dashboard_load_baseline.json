@@ -1,0 +1,32 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 dashboard load baseline — from actual Feature 3.4 source inspection",
+  "source": "epic3/feature_3_4/dashboard/cache/dashboard_cache.py + loaders/trend_data_loader.py",
+  "dataset": {
+    "canonical_source": "5.DATA/processed/ml_ready_dataset.csv",
+    "rows": 169681,
+    "columns": 20,
+    "load_function": "load_trend_dataset() → pd.read_csv(low_memory=False) + .copy()"
+  },
+  "caching_evidence": {
+    "load_trend_dataset_cached": "st.cache_data wrapper keyed by source path + SHA-256",
+    "load_yearly_evaluation_cached": "st.cache_data wrapper",
+    "aggregation_cache": "st.cache_data with key = (version, feature, method, granularity, year bounds)",
+    "cache_invalidation": "source path or SHA-256 change invalidates",
+    "ttl": "none (source immutable)"
+  },
+  "dataset_repeated_load_status": {
+    "uncached_path": "load_trend_dataset() reads CSV every call",
+    "cached_path": "dashboard_cache.load_trend_dataset_cached() reads once per Streamlit cache lifecycle",
+    "result": "Dashboard uses the cached path → ALREADY_OPTIMIZED candidate",
+    "note": "Within one Streamlit process/session the 169,681-row CSV is loaded once; reruns reuse st.cache_data. First load on this dataset may take hundreds of ms; warm reruns are cheap."
+  },
+  "aggregation_cost": {
+    "groupby_operations": "aggregate_by_year, aggregate_by_decade, aggregate_popularity_by_year",
+    "cached": true,
+    "expected": "first aggregation per param combination computed, then cached"
+  },
+  "stages_to_measure": ["trend_source_load", "aggregation_preparation", "chart_data_preparation", "page_execution"],
+  "status": "BASELINE_RESOLVED_FROM_SOURCE"
+}

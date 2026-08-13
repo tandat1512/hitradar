@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 null for non-nullable field — API contract validation",
+  "scenario": "POST /predict with null in required non-nullable field",
+  "field": "danceability",
+  "invalid_value": null,
+  "nullable_fields": [],
+  "all_required_fields_non_nullable": true,
+  "expected_http_status": 422,
+  "expected_error_type": "APIValidationError",
+  "traceback_exposed": false,
+  "no_500": true,
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

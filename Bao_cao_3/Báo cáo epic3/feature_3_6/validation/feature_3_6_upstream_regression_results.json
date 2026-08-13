@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 upstream regression results — relevant critical tests from Features 3.2-3.5",
+  "note": "Live execution BLOCKED (no Python env). Relevant test sets identified for live run.",
+  "regression_sets": [
+    {
+      "feature": "3.2",
+      "targets": ["ModelService predict", "/health", "/predict contract"],
+      "result": "BLOCKED"
+    },
+    {
+      "feature": "3.3",
+      "targets": ["API client typed responses", "error categories (422 vs unavailable)", "affected pages"],
+      "result": "BLOCKED"
+    },
+    {
+      "feature": "3.4",
+      "targets": ["dashboard cache/data", "aggregate values unchanged"],
+      "result": "BLOCKED"
+    },
+    {
+      "feature": "3.5",
+      "targets": ["Predict E2E critical smoke (canonical 46.421062)"],
+      "result": "BLOCKED"
+    }
+  ],
+  "relevant_because": "Feature 3.6 changed NO production code (all decisions ALREADY_OPTIMIZED/NOT_JUSTIFIED) — regression risk from this feature is zero by design; live confirmation required at acceptance.",
+  "status": "BLOCKED"
+}

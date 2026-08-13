@@ -1,0 +1,123 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 documentation manifest",
+  "primary_deliverables": [
+    {
+      "logical_name": "README.md",
+      "task_id": "3.7.1",
+      "canonical_path": "README.md",
+      "exists": true,
+      "bytes_estimate": "~7500",
+      "purpose": "Project entry point — overview, quick start, features, architecture, limitations, links to all docs",
+      "sha256": "see git",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "dependency specification",
+      "task_id": "3.7.1",
+      "canonical_path": "5.UNG_DUNG/5.1.backend_api/requirements.txt + epic3/feature_3_3/frontend/requirements.txt",
+      "exists": true,
+      "purpose": "Python dependencies — installable via pip",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "HOW_TO_RUN_APP.md",
+      "task_id": "3.7.2",
+      "canonical_path": "HOW_TO_RUN_APP.md",
+      "exists": true,
+      "bytes_estimate": "~10000",
+      "purpose": "Detailed setup, configuration, startup instructions, troubleshooting",
+      "sha256": "see git",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "USER_MANUAL.md",
+      "task_id": "3.7.3",
+      "canonical_path": "USER_MANUAL.md",
+      "exists": true,
+      "bytes_estimate": "~18000",
+      "purpose": "End-user guide — all 7 pages, features, offline mode, limitations, responsible use",
+      "sha256": "see git",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "API_DOCUMENTATION.md",
+      "task_id": "3.7.4",
+      "canonical_path": "API_DOCUMENTATION.md",
+      "exists": true,
+      "bytes_estimate": "~20000",
+      "purpose": "API reference — 6 endpoints, request/response schemas, error codes, examples",
+      "sha256": "see git",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "TECHNICAL_APPENDIX.md",
+      "task_id": "3.7.5",
+      "canonical_path": "TECHNICAL_APPENDIX.md",
+      "exists": true,
+      "bytes_estimate": "~35000",
+      "purpose": "Technical deep-dive — model facts, metrics, architecture, SHAP, pipeline, benchmarks, limitations",
+      "sha256": "see git",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "BAO_CAO_TONG_HOP_DU_AN.md",
+      "task_id": "3.7.6",
+      "canonical_path": "Bao_cao_3/Báo cáo epic3/BAO_CAO_TONG_HOP_DU_AN.md",
+      "exists": true,
+      "bytes_estimate": "~25000",
+      "purpose": "Project synthesis report in Vietnamese — architecture, methodology, results, limitations",
+      "sha256": "see git",
+      "status": "COMPLETE"
+    }
+  ],
+  "closure_artifacts": [
+    {
+      "logical_name": "FEATURE_3_7_VALIDATION_REPORT.md",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/FEATURE_3_7_VALIDATION_REPORT.md",
+      "exists": true,
+      "purpose": "Phase 5 validation report",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "FEATURE_3_7_COMPLETION_REPORT.md",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/FEATURE_3_7_COMPLETION_REPORT.md",
+      "exists": true,
+      "purpose": "Phase 5 completion report",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "CLOSURE_GATE_REPORT_FEATURE_3_7.md",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/CLOSURE_GATE_REPORT_FEATURE_3_7.md",
+      "exists": true,
+      "purpose": "Acceptance gate report",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "BAO_CAO_NGHIEM_THU_FEATURE_3_7.md",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_NGHIEM_THU_FEATURE_3_7.md",
+      "exists": true,
+      "purpose": "Final acceptance report",
+      "status": "COMPLETE"
+    },
+    {
+      "logical_name": "feature_3_7_closure_gate.json",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/validation/feature_3_7_closure_gate.json",
+      "exists": true,
+      "purpose": "Closure gate JSON",
+      "status": "COMPLETE"
+    }
+  ],
+  "phase_gates": [
+    {"phase": "1/5", "path": "feature_3_7_phase_1_gate.json", "status": "FAIL (intentional)"},
+    {"phase": "2/5", "path": "feature_3_7_phase_2_gate.json", "status": "PASS_WITH_WARNINGS"},
+    {"phase": "3/5", "path": "feature_3_7_phase_3_gate.json", "status": "PASS_WITH_WARNINGS"},
+    {"phase": "4/5", "path": "feature_3_7_phase_4_gate.json", "status": "PASS"},
+    {"phase": "5/5", "path": "feature_3_7_closure_gate.json", "status": "PASS"}
+  ],
+  "total_primary_deliverables": 7,
+  "total_closure_artifacts": 5,
+  "all_deliverables_exist": true,
+  "status": "MANIFEST_COMPLETE"
+}

@@ -1,0 +1,11 @@
+{
+  "feature_id": "3.8",
+  "generated_at": "2026-08-12T00:20:00+07:00",
+  "story_path": "feature_3_8_project_story.md",
+  "slide_outline_path": "feature_3_8_slide_outline.md",
+  "consistent": true,
+  "contradiction_count": 0,
+  "checked_topics": ["problem", "dataset", "features", "candidate models", "champion identity", "test metrics", "SHAP", "What-if", "architecture", "live smoke", "offline limitation", "conclusion"],
+  "status": "PASS",
+  "note": "Both documents now use 586672 rows / 1900-2021, the registry-backed model candidates and measured final-smoke examples."
+}

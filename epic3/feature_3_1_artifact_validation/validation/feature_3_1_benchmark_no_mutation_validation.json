@@ -1,0 +1,13 @@
+{
+  "validation_id": "F31-P4-NOMUT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:29:39+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "training_executed": false,
+  "refit_executed": false,
+  "model_hash_before": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+  "model_hash_after": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+  "hash_unchanged": true,
+  "status": "PASS"
+}

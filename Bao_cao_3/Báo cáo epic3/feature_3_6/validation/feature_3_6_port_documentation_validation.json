@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 port documentation traceability",
+  "sources": [
+    {"source": "scripts/run_backend.py", "backend_port_default": 8000, "env": "BACKEND_PORT"},
+    {"source": "scripts/run_frontend.py", "frontend_port_default": 8501, "env": "STREAMLIT_SERVER_PORT"},
+    {"source": "scripts/run_all.py", "backend_port_default": 8000, "frontend_port_default": 8501},
+    {"source": "epic3/feature_3_2/backend/.env.example", "port": "PORT=8000, HOST=127.0.0.1"},
+    {"source": "DEMO_RUNBOOK_FEATURE_3_6.md", "backend": "127.0.0.1:8000", "frontend": "127.0.0.1:8501"},
+    {"source": "feature_3_6_startup_env_contract.json", "backend": 8000, "frontend": 8501}
+  ],
+  "consistent": true,
+  "configurable": true,
+  "note": "Backend 8000 / frontend 8501 consistent everywhere; both overridable via env (BACKEND_PORT, STREAMLIT_SERVER_PORT) with BACKEND_BASE_URL kept in sync. No invented ports.",
+  "status": "PORT_DOCUMENTATION_VALID"
+}
