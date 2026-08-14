@@ -2,8 +2,8 @@
 import os, json
 from datetime import datetime, timezone
 
-OUT = r"E:\Dự án 1 hitrada\Output epic2\F 2.7"
-F27 = r"E:\Dự án 1 hitrada\hitradar\7.ML\7.10.model_packaging"
+OUT = r"<PROJECT_ROOT>"
+F27 = r"<PROJECT_ROOT>/7.ML/7.10.model_packaging"
 
 def load(rel):
     with open(os.path.join(F27, rel), "r", encoding="utf-8") as f:
@@ -120,7 +120,7 @@ Mô hình vững như bàn thạch trước các loại dữ liệu độc hại
 - **Ý nghĩa:** Package hoàn toàn không phụ thuộc vào dữ liệu Training, Validation, Test hay bất cứ tệp Jupyter Notebook nào. Tách bạch hoàn toàn khối Research và khối Engineering.
 
 **14. Absolute Path Removal:**
-Hệ thống không chứa bất cứ Absolute Path (đường dẫn tuyệt đối kiểu `C:/Users/...` hay `E:/...`) nào trong code Inference. Package sẵn sàng để bốc vác (Lift-and-Shift) lên Cloud (AWS, GCP) mà không gặp lỗi "File Not Found".
+Hệ thống không chứa bất cứ Absolute Path (đường dẫn tuyệt đối kiểu `<USER_HOME>/...`) nào trong code Inference. Package sẵn sàng để bốc vác (Lift-and-Shift) lên Cloud (AWS, GCP) mà không gặp lỗi "File Not Found".
 
 ---
 

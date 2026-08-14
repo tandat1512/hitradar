@@ -1,7 +1,7 @@
 """Test: Inference No-Refit — Phase 3"""
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 VAL_FILE  = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_no_refit_inference_validation.json"
 
 def test_validation_status():

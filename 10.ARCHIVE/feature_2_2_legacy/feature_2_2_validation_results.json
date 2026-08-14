@@ -446,7 +446,7 @@
       "check_id": "LEGACY-NEW-01",
       "description": "New ridge preprocessor in 7.5",
       "expected": "7.5",
-      "actual": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing",
+      "actual": "<PROJECT_ROOT>/7.ML/7.5.preprocessing",
       "status": "PASS",
       "note": ""
     },
@@ -454,7 +454,7 @@
       "check_id": "LEGACY-NEW-02",
       "description": "New histgb preprocessor in 7.5",
       "expected": "7.5",
-      "actual": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing",
+      "actual": "<PROJECT_ROOT>/7.ML/7.5.preprocessing",
       "status": "PASS",
       "note": ""
     },
@@ -462,7 +462,7 @@
       "check_id": "LEGACY-NEW-03",
       "description": "New xgb preprocessor in 7.5",
       "expected": "7.5",
-      "actual": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing",
+      "actual": "<PROJECT_ROOT>/7.ML/7.5.preprocessing",
       "status": "PASS",
       "note": ""
     },

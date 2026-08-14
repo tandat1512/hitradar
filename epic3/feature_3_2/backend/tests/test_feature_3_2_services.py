@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 from unittest.mock import patch
 
 # ── Setup ─────────────────────────────────────────────────────────────────────
-REPO = Path(r"H:\dự án\DUAN1 github")
+REPO = Path(r"<PROJECT_ROOT>")
 BACKEND = REPO / "epic3" / "feature_3_2" / "backend"
 sys.path.insert(0, str(BACKEND))
 os.chdir(str(BACKEND))

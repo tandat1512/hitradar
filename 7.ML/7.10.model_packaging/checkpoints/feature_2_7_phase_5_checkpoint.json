@@ -26,6 +26,6 @@
   "feature_2_7_status": "PASS",
   "feature_2_7_decision": "ELIGIBLE_FOR_CLOSURE",
   "epic_3_gate": "MAY_BEGIN",
-  "final_report_path": "E:\\Dự án 1 hitrada\\hitradar\\..\\Output epic2\\BAO_CAO_NGHIEM_THU_FEATURE_2_7.md",
+  "final_report_path": "<PROJECT_ROOT>/../Output epic2/BAO_CAO_NGHIEM_THU_FEATURE_2_7.md",
   "final_report_sha256": null
 }

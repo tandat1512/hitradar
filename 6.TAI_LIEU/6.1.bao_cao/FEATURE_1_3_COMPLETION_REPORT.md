@@ -89,8 +89,8 @@
 
 | Hạng mục | Trước | Sau |
 |---------|-------|-----|
-| Hard-coded project path trong `import_raw_data.py` | `r"x:\DUAN1\HitRadar_Pro"` | `Path(__file__).resolve().parents[1]` |
-| Hard-coded `LOG_DIR` trong `validate_raw_import.py` | `r"x:\DUAN1\HitRadar_Pro\..."` | `Path(__file__).resolve().parents[1]` |
+| Hard-coded project path trong `import_raw_data.py` | `r"<PROJECT_ROOT>"` | `Path(__file__).resolve().parents[1]` |
+| Hard-coded `LOG_DIR` trong `validate_raw_import.py` | `r"<PROJECT_ROOT>"` | `Path(__file__).resolve().parents[1]` |
 | `--base-dir` argument | Không có | Thêm vào cả 2 scripts |
 | `release_precision` missing | WARN — tiếp tục chạy | **FAIL — dừng ngay** |
 | Row count mismatch trong import log | `WARN` | **`FAIL`** |

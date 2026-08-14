@@ -3,7 +3,7 @@ Verify artifact_manifest.json entries match actual files on disk.
 """
 import json, hashlib, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 INVENTORY_FILE = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "inventories" / "feature_3_1_artifact_inventory.json"
 

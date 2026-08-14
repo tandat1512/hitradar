@@ -1,6 +1,6 @@
 tracking:
   backend: local_json
-  local_root: "E:\\D\u1EF1 \xE1n 1 hitrada\\hitradar\\7.ML\\7.12.optional_pipeline_automation\\\
+  local_root: "<PROJECT_ROOT>//7.ML//7.12.optional_pipeline_automation
     tracking"
   mlflow_enabled: false
   mlflow_required: false

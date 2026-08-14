@@ -1,7 +1,7 @@
 """Test: Phase 3 No Source Mutation"""
 import json, pathlib, hashlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT  = REPO_ROOT / "7.ML/7.10.model_packaging/package"
 VAL_FILE  = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_no_refit_inference_validation.json"
 

@@ -1,7 +1,7 @@
 {
   "contract_id": "F25-INPUT-CONTRACT-FROM-F24",
   "champion_model_id": "EXP24-XGB-FINAL-001",
-  "champion_artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+  "champion_artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/champion_bundle.joblib",
   "runner_up_model_id": "EXP24-RF-FINAL-001",
   "feature_set_id": "FS23-SELECTED",
   "selected_feature_count": 31,

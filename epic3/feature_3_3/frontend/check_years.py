@@ -1,5 +1,5 @@
 import csv, sys
-path = r"H:\dự án\DUAN1 github\5.DATA\processed\ml_ready_dataset.csv"
+path = r"<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.csv"
 try:
     with open(path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)

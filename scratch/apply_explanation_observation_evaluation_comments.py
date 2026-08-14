@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"e:\Dự án 1 hitrada\hitradar\3.NOTEBOOKS"
+base_dir = r"<PROJECT_ROOT>/3.NOTEBOOKS"
 
 # Map plot code cells in each notebook to dedicated (GIẢI THÍCH + NHẬN XÉT + ĐÁNH GIÁ) markdown cells
 eoe_comments = {

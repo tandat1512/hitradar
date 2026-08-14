@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $projectRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
-$destination = (Resolve-Path -LiteralPath "D:\Hitrada review").Path
-if ($destination -ne "D:\Hitrada review") { throw "Unexpected destination: $destination" }
+$destination = (Resolve-Path -LiteralPath "<PROJECT_ROOT>").Path
+if ($destination -ne "<PROJECT_ROOT>") { throw "Unexpected destination: $destination" }
 if ((Get-ChildItem -LiteralPath $destination -Directory).Count -gt 0) {
     throw "Review destination must remain flat."
 }

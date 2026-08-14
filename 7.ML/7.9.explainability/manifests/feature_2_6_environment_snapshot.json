@@ -1,6 +1,6 @@
 {
   "operating_system": "Windows-11-10.0.26200-SP0",
-  "python_executable": "C:\\Users\\Cuong\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "python_executable": "<LOCAL_USER_CACHE>\\Local\\Programs\\Python\\Python313\\python.exe",
   "python_version": "3.13.7",
   "pandas": "3.0.3",
   "numpy": "2.4.4",

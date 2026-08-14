@@ -3,7 +3,7 @@ Verify all schema JSON files are valid and parse correctly.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 
 def test_input_schema_valid_json():

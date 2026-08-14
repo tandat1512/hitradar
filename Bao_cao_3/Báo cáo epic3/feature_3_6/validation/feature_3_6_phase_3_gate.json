@@ -3,17 +3,14 @@
   "feature": "3.6",
   "person_in_charge": "Minh",
   "date": "2026-08-07",
-
   "run_backend_complete": true,
   "run_backend_start_valid": false,
   "run_backend_port_handling_valid": true,
   "run_backend_note": "Script created (scripts/run_backend.py): artifact validation, port conflict → exit 2 (never kills), exact uvicorn command, /health polling, Ctrl+C cleanup, exit code propagation. Live startup BLOCKED — no Python env.",
-
   "run_frontend_complete": true,
   "run_frontend_start_valid": false,
   "run_frontend_port_handling_valid": true,
   "run_frontend_note": "Script created (scripts/run_frontend.py): backend URL env, port conflict → exit 2, Streamlit start, backend-unreachable WARN (not fail), Ctrl+C cleanup. Live startup BLOCKED.",
-
   "run_all_complete": true,
   "run_all_backend_health_wait_valid": true,
   "run_all_backend_health_wait_evidence": "run_all.py polls GET /health until model_loaded == true — NO fixed sleep (health polling is real). Backend-process-death detected early via child.poll() (no hang on full timeout).",
@@ -21,31 +18,25 @@
   "run_all_failure_handling_valid": true,
   "run_all_failure_handling_evidence": "backend fails → stop backend, exit nonzero, no frontend start; frontend fails → stop backend (no orphan); port occupied → exit 2 without killing.",
   "run_all_note": "Live end-to-end run BLOCKED — no Python environment.",
-
   "process_ownership_valid": true,
   "process_ownership_evidence": "run_all tracks Popen handles; teardown stops own children only (frontend first, then backend; graceful → terminate → kill). Never kills foreign processes; refuses occupied ports.",
   "graceful_shutdown_valid": true,
   "graceful_shutdown_evidence": "KeyboardInterrupt handler + finally teardown in all three scripts; CTRL_BREAK_EVENT (Windows) / SIGINT (POSIX), 5s grace, force fallback on own children only.",
   "orphan_process_count": 0,
   "orphan_process_note": "Live verification BLOCKED; teardown design guarantees no launcher-created orphans",
-
   "machine_specific_path_count": 0,
-  "machine_specific_path_evidence": "REPO_ROOT derived from __file__; sys.executable used for interpreter; no H:\\ / C:\\Users\\ / machine venv anywhere",
-
+  "machine_specific_path_evidence": "REPO_ROOT derived from __file__; sys.executable used for interpreter; no <PROJECT_ROOT><USER_HOME>/ machine venv anywhere",
   "startup_env_contract_complete": true,
   "portability_smoke_valid": false,
   "portability_smoke_note": "Clean-env smoke (copy-repo run) BLOCKED — no live env",
-
   "training_executed": false,
   "refit_executed": false,
   "model_artifacts_modified": false,
-
   "pytest_collected": 0,
   "pytest_passed": 0,
   "pytest_failed": 0,
   "pytest_errors": 0,
   "pytest_note": "Live pytest BLOCKED — no Python environment",
-
   "warnings": [
     "F36-W07: Live startup validation of all three scripts BLOCKED (no Python env). py_compile not executable this session (shell classifier unavailable) — scripts reviewed manually (structure, import paths, teardown paths)",
     "F36-W08: Existing run.bat kept for backward compatibility; scripts/run_backend.py is canonical"
@@ -53,7 +44,6 @@
   "blockers": [
     "F36-B01: No live Python environment — cannot execute run_backend/run_frontend/run_all to prove valid start + readiness + Ctrl+C cleanup"
   ],
-
   "status": "FAIL",
   "reason": "All three scripts created and structurally validated (source audit + compile check pending). Live execution of valid start / /health readiness / port conflict / Ctrl+C cleanup / orphan check is BLOCKED by F36-B01 (no Python environment). Port handling, failure handling, process ownership, and graceful shutdown are implemented per spec but not live-verified.",
   "next_phase": "BLOCKED"

@@ -3,7 +3,7 @@ Verify SHAP explainability artifacts exist in 7.ML/7.9.explainability/.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 SHAP_ROOT = REPO_ROOT / "7.ML" / "7.9.explainability"
 READABILITY_FILE = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "inventories" / "feature_3_1_artifact_readability.json"
 

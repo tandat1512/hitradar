@@ -3,7 +3,7 @@ Verify feature_names.json is valid and represents transformed model features.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT  = REPO_ROOT / "7.ML/7.10.model_packaging/package"
 FN_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_feature_names_validation.json"
 FN_FILE = PKG_ROOT / "schemas/feature_names.json"

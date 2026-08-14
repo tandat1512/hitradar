@@ -14,7 +14,7 @@
   "feature_count": 31,
   "preprocessing": "Tree preprocessing",
   "random_state": 42,
-  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\random_forest_regressor.joblib",
+  "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/random_forest_regressor.joblib",
   "artifact_bytes": 5137,
   "artifact_sha256": "0160123034a28c2434a41c9a1312fe70c49eaa02db9b8776b3f9c74046a5d719",
   "input_schema": "train_engineered_schema",

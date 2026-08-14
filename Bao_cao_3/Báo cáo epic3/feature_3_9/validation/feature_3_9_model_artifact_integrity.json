@@ -4,7 +4,7 @@
   "checks": [
     {
       "logical_name": "full_inference_pipeline",
-      "actual_path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\pipeline\\full_inference_pipeline.joblib",
+      "actual_path": "<PROJECT_ROOT>",
       "relative_path": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
       "exists": true,
       "bytes": 3982751,
@@ -20,7 +20,7 @@
     },
     {
       "logical_name": "inference_pipeline_module",
-      "actual_path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\runtime\\inference_pipeline.py",
+      "actual_path": "<PROJECT_ROOT>",
       "relative_path": "artifacts/epic2/runtime/inference_pipeline.py",
       "exists": true,
       "bytes": 6525,
@@ -36,7 +36,7 @@
     },
     {
       "logical_name": "input_schema",
-      "actual_path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\schemas\\input_schema.json",
+      "actual_path": "<PROJECT_ROOT>",
       "relative_path": "artifacts/epic2/schemas/input_schema.json",
       "exists": true,
       "bytes": 9311,
@@ -52,7 +52,7 @@
     },
     {
       "logical_name": "output_schema",
-      "actual_path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\schemas\\output_schema.json",
+      "actual_path": "<PROJECT_ROOT>",
       "relative_path": "artifacts/epic2/schemas/output_schema.json",
       "exists": true,
       "bytes": 1231,
@@ -68,7 +68,7 @@
     },
     {
       "logical_name": "feature_names",
-      "actual_path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\schemas\\feature_names.json",
+      "actual_path": "<PROJECT_ROOT>",
       "relative_path": "artifacts/epic2/schemas/feature_names.json",
       "exists": true,
       "bytes": 1223,
@@ -84,7 +84,7 @@
     },
     {
       "logical_name": "selected_features",
-      "actual_path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\schemas\\selected_features.json",
+      "actual_path": "<PROJECT_ROOT>",
       "relative_path": "artifacts/epic2/schemas/selected_features.json",
       "exists": true,
       "bytes": 799,
@@ -100,7 +100,7 @@
     },
     {
       "logical_name": "shap_background_raw",
-      "actual_path": "H:\\dự án\\DUAN1 github\\7.ML\\7.9.explainability\\background\\shap_background_raw.parquet",
+      "actual_path": "<PROJECT_ROOT>/7.ML/7.9.explainability/background/shap_background_raw.parquet",
       "relative_path": "7.ML/7.9.explainability/background/shap_background_raw.parquet",
       "exists": true,
       "bytes": 68133,
@@ -116,7 +116,7 @@
     },
     {
       "logical_name": "shap_background_transformed",
-      "actual_path": "H:\\dự án\\DUAN1 github\\7.ML\\7.9.explainability\\background\\shap_background_transformed.npy",
+      "actual_path": "<PROJECT_ROOT>/7.ML/7.9.explainability/background/shap_background_transformed.npy",
       "relative_path": "7.ML/7.9.explainability/background/shap_background_transformed.npy",
       "exists": true,
       "bytes": 392128,
@@ -132,7 +132,7 @@
     },
     {
       "logical_name": "shap_values_global",
-      "actual_path": "H:\\dự án\\DUAN1 github\\7.ML\\7.9.explainability\\shap_values\\shap_values_global.npy",
+      "actual_path": "<PROJECT_ROOT>/7.ML/7.9.explainability/shap_values/shap_values_global.npy",
       "relative_path": "7.ML/7.9.explainability/shap_values/shap_values_global.npy",
       "exists": true,
       "bytes": 1960128,
@@ -148,7 +148,7 @@
     },
     {
       "logical_name": "dashboard_dataset",
-      "actual_path": "H:\\dự án\\DUAN1 github\\5.DATA\\processed\\ml_ready_dataset.csv",
+      "actual_path": "<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.csv",
       "relative_path": "5.DATA/processed/ml_ready_dataset.csv",
       "exists": true,
       "bytes": 72546749,

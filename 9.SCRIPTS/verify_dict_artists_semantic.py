@@ -10,8 +10,8 @@ import sys, os, json, re
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-RAW        = r"x:\DUAN1\HitRadar_Pro\1.DỮ_LIỆU\1.1.raw"
-REPORT_OUT = r"x:\DUAN1\HitRadar_Pro\6.TAI_LIEU\6.1.bao_cao\DICT_ARTISTS_SEMANTIC_CHECK.md"
+RAW        = r"<PROJECT_ROOT>/1.DỮ_LIỆU/1.1.raw"
+REPORT_OUT = r"<PROJECT_ROOT>/6.TAI_LIEU/6.1.bao_cao/DICT_ARTISTS_SEMANTIC_CHECK.md"
 
 ARTISTS_CSV  = os.path.join(RAW, "artists.csv")
 DICT_JSON    = os.path.join(RAW, "dict_artists.json")

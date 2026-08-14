@@ -3,7 +3,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 # ── PATHS ────────────────────────────────────────────────────────────
-REPO   = Path(r"E:\Dự án 1 hitrada\hitradar")
+REPO   = Path(r"<PROJECT_ROOT>")
 ML     = REPO / "7.ML"
 F28    = ML / "7.11.documentation_epic_review"
 F27    = ML / "7.10.model_packaging"
@@ -11,7 +11,7 @@ F25    = ML / "7.8.model_evaluation"
 F24    = ML / "7.7.model_training"
 F23    = ML / "7.6.feature_engineering"
 SPLITS = ML / "7.4.splits"
-OUT    = Path(r"E:\Dự án 1 hitrada\Output epic2")
+OUT    = Path(r"<PROJECT_ROOT>")
 
 TS = datetime.now(timezone.utc)
 SID = f"F28-P3-RETRAIN-{TS.strftime('%Y%m%d-%H%M%S')}-p3"

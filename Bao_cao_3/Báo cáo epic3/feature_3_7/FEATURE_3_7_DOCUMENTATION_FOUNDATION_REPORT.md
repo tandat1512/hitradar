@@ -47,7 +47,7 @@ Classification: BACKEND (×2), FRONTEND (×3), MODEL_ARTIFACT (×5), DATA (×2),
 
 ## 5. README
 
-Created at `H:\dự án\DUAN1 github\README.md`. Follows project documentation guidelines: factual only, no fabricated accuracy/production/causal claims, architecture verified from source, limitations honest, broken links marked as INTENTIONAL_PLANNED_BREAK.
+Created at `<PROJECT_ROOT>`. Follows project documentation guidelines: factual only, no fabricated accuracy/production/causal claims, architecture verified from source, limitations honest, broken links marked as INTENTIONAL_PLANNED_BREAK.
 
 ## 6. Validation Artifacts
 

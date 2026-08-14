@@ -3,13 +3,13 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 # ── PATHS ────────────────────────────────────────────────────────────
-REPO   = Path(r"E:\Dự án 1 hitrada\hitradar")
+REPO   = Path(r"<PROJECT_ROOT>")
 ML     = REPO / "7.ML"
 F28    = ML / "7.11.documentation_epic_review"
 F27    = ML / "7.10.model_packaging"
 F25    = ML / "7.8.model_evaluation"
 F24    = ML / "7.7.model_training"
-OUT    = Path(r"E:\Dự án 1 hitrada\Output epic2")
+OUT    = Path(r"<PROJECT_ROOT>")
 
 TS = datetime.now(timezone.utc)
 SID = f"F28-P5-FINAL-{TS.strftime('%Y%m%d-%H%M%S')}-p5"
@@ -269,5 +269,5 @@ print("Blockers: 0")
 print("Feature 2.8 status: PASS")
 print("Feature 2.8 decision: ELIGIBLE_FOR_CLOSURE")
 print("EPIC 2 Final Review Gate: MAY_BEGIN")
-print(r"Markdown reports saved to: E:\Dự án 1 hitrada\Output epic2")
+print(r"Markdown reports saved to: <PROJECT_ROOT>")
 print("="*70)

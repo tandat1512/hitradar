@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"e:\Dự án 1 hitrada\hitradar\3.NOTEBOOKS"
+base_dir = r"<PROJECT_ROOT>/3.NOTEBOOKS"
 
 # Define complete working notebook structures for the 7 empty notebooks
 

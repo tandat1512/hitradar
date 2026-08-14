@@ -4,6 +4,6 @@
   "source_split": "train",
   "sampling_strategy": "deterministic_stratified",
   "replace": false,
-  "source_path": "E:/Dự án 1 hitrada/hitradar\\5.DATA\\processed\\ml_ready_dataset.parquet",
-  "source_ids_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.4.splits\\train_ids.parquet"
+  "source_path": "<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.parquet",
+  "source_ids_path": "<PROJECT_ROOT>/7.ML/7.4.splits/train_ids.parquet"
 }

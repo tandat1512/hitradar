@@ -1,7 +1,7 @@
 {
   "OS": "Windows",
   "architecture": "AMD64",
-  "Python_executable": "E:\\Dự án 1 hitrada\\.venv\\Scripts\\python.exe",
+  "Python_executable": "<PROJECT_ROOT>",
   "Python_version": "3.13.7",
   "pandas": "3.0.3",
   "NumPy": "2.4.6",

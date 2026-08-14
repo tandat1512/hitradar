@@ -21,7 +21,7 @@
     "val_rmse": 15.25206504973179,
     "val_r2": 0.09543037414550781,
     "fit_time": 17.219294786453247,
-    "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib"
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/xgboost_bundle.joblib"
   },
   {
     "model_id": "EXP24-RF-FINAL-001",
@@ -35,7 +35,7 @@
     "val_rmse": 15.322515648358241,
     "val_r2": 0.08705447112851983,
     "fit_time": 447.6938316822052,
-    "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RF-FINAL-001.joblib"
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-RF-FINAL-001.joblib"
   },
   {
     "model_id": "EXP24-RIDGE-FINAL-001",
@@ -49,6 +49,6 @@
     "val_rmse": 16.027951449815642,
     "val_r2": 0.0010568908804564625,
     "fit_time": 4.293425798416138,
-    "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FINAL-001.joblib"
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-RIDGE-FINAL-001.joblib"
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "logical_name": "feature_2_6_closure_gate.json",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\checkpoints\\feature_2_6_closure_gate.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.9.explainability/checkpoints/feature_2_6_closure_gate.json",
     "repository_relative_path": "7.ML/7.9.explainability/checkpoints/feature_2_6_closure_gate.json",
     "exists": true,
     "bytes": 2120,
@@ -10,7 +10,7 @@
   },
   {
     "logical_name": "feature_2_7_input_contract.json",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\manifests\\feature_2_7_input_contract.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.9.explainability/manifests/feature_2_7_input_contract.json",
     "repository_relative_path": "7.ML/7.9.explainability/manifests/feature_2_7_input_contract.json",
     "exists": true,
     "bytes": 2511,
@@ -19,7 +19,7 @@
   },
   {
     "logical_name": "champion_bundle.joblib",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/champion_bundle.joblib",
     "repository_relative_path": "7.ML/7.7.model_training/models/champion_bundle.joblib",
     "exists": true,
     "bytes": 3978649,

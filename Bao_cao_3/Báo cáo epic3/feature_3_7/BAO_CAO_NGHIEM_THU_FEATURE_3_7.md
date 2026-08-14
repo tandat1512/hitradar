@@ -11,7 +11,7 @@
 | EPIC | 3 — Productization, Integration & Defense |
 | Feature | 3.7 — Documentation & User Guide |
 | Người thực hiện | Minh |
-| Repository | H:\dự án\DUAN1 github |
+| Repository | <PROJECT_ROOT>|
 | Branch | main |
 | Commit | 2a6343f |
 | Ngày | 2026-08-09 |

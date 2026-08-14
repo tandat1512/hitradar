@@ -2,7 +2,7 @@
   "feature_id": "3.9",
   "phase": 1,
   "session_id": "F39-P1-FINAL-AUDIT-20260813-193539-51FB3926",
-  "repository_root": "H:/dự án/DUAN1 github",
+  "repository_root": "<PROJECT_ROOT>",
   "branch": "main",
   "commit_sha": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
   "commit_timestamp": "2026-07-26T19:17:20+07:00",
@@ -17,7 +17,7 @@
       "credentials_redacted": false
     }
   ],
-  "working_directory": "H:\\dự án\\DUAN1 github",
+  "working_directory": "<PROJECT_ROOT>",
   "person_in_charge": "Minh",
   "dirty_files": [
     "5.UNG_DUNG/5.1.backend_api/api.py",

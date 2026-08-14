@@ -141,7 +141,7 @@
 | File exists | True | **PASS** |
 | Row count | 586,672 | **PASS** |
 | Matches DB | True | **PASS** |
-| Path | `X:\DUAN1\HitRadar_Pro\5.DATA\processed\ml_ready_dataset.csv` | |
+| Path | `<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.csv` | |
 | Size (MB) | 69.19 | |
 
 ### Parquet
@@ -149,7 +149,7 @@
 | Check | Value | Status |
 |-------|-------|--------|
 | File exists | True | **PASS** |
-| Path | `X:\DUAN1\HitRadar_Pro\5.DATA\processed\ml_ready_dataset.parquet` | |
+| Path | `<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.parquet` | |
 | Note | OK | |
 
 ---

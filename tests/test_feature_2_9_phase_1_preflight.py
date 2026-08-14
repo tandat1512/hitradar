@@ -1,7 +1,7 @@
 import pytest, json
 from pathlib import Path
 
-F29 = Path(r"E:/Dự án 1 hitrada/hitradar/7.ML/7.12.optional_pipeline_automation")
+F29 = Path(r"<PROJECT_ROOT>/7.ML/7.12.optional_pipeline_automation")
 
 def test_session_file_exists():
     assert (F29 / "checkpoints" / "feature_2_9_phase_1_session.json").exists()

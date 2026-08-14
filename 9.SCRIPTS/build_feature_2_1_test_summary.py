@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import subprocess
 
-ROOT = Path("E:/Dự án 1 hitrada/hitradar")
+ROOT = Path("<PROJECT_ROOT>")
 DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
 
 def sha256_file(filepath):

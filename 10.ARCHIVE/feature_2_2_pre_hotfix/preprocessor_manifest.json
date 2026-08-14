@@ -6,9 +6,9 @@
   "source_hash": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
   "preprocessing_config_hash": "7342253362697c76488d3670d94488e9fbad8f1e4123dc6061ac9aba04e20343",
   "artifact_paths": {
-    "ridge": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessor_ridge.pkl",
-    "histgb": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessor_histgb.pkl",
-    "xgb": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\preprocessor_xgb.pkl"
+    "ridge": "<PROJECT_ROOT>/7.ML/7.5.preprocessing/preprocessor_ridge.pkl",
+    "histgb": "<PROJECT_ROOT>/7.ML/7.5.preprocessing/preprocessor_histgb.pkl",
+    "xgb": "<PROJECT_ROOT>/7.ML/7.5.preprocessing/preprocessor_xgb.pkl"
   },
   "ridge_feature_count": 85,
   "histgb_feature_count": 1,

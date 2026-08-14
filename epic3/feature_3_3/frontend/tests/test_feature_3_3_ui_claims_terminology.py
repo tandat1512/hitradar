@@ -118,9 +118,9 @@ def test_no_internal_error_in_messages():
         "httpx",
         "Traceback",
         "FileNotFoundError",
-        "C:\\",
-        "H:\\",
-        "/home/",
+        "<PROJECT_ROOT>",
+        "<PROJECT_ROOT>",
+        "<USER_HOME>
     ]
     for pattern in forbidden:
         assert pattern not in content, f"Internal detail exposed: '{pattern}'"

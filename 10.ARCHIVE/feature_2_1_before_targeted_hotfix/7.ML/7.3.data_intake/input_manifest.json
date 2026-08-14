@@ -5,7 +5,7 @@
     "5.DATA/processed/ml_ready_dataset.csv",
     "analytics.vw_ml_ready_dataset"
   ],
-  "actual_source_used": "E:\\Dự án 1 hitrada\\hitradar\\5.DATA\\processed\\ml_ready_dataset.parquet",
+  "actual_source_used": "<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.parquet",
   "expected_rows": 586672,
   "expected_columns": 20,
   "actual_rows": 586672,

@@ -3,7 +3,7 @@ Verify handoff_to_epic3.md is found (or functional substitute is recorded).
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 CANONICAL_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 HDISCOV_FILE = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "inventories" / "feature_3_1_handoff_discovery.json"
 

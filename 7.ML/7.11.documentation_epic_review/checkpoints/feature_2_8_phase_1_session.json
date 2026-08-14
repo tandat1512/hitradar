@@ -1,10 +1,10 @@
 {
   "session_id": "F28-P1-MODEL-CARD-20260724-121320-p1",
-  "repository_root": "E:/Dự án 1 hitrada/hitradar",
+  "repository_root": "<PROJECT_ROOT>",
   "branch": "main",
   "commit_sha": "564c47218fbe2e71dfafab95e7f4193478f571a8",
   "commit_timestamp": "2026-07-18T23:36:32+07:00",
-  "working_directory": "E:\\Dự án 1 hitrada\\hitradar",
+  "working_directory": "<PROJECT_ROOT>",
   "timezone": "SE Asia Standard Time",
   "session_started_at": "2026-07-24T12:13:20.726176+00:00",
   "dirty_files_before": [
@@ -1351,7 +1351,7 @@
     "scratch/upgrade_deep_notebook_comments.py",
     "scratch/upgrade_reports.py"
   ],
-  "report_directory": "E:\\Dự án 1 hitrada\\Output epic2",
-  "feature_2_8_canonical_directory": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review",
+  "report_directory": "<PROJECT_ROOT>",
+  "feature_2_8_canonical_directory": "<PROJECT_ROOT>/7.ML/7.11.documentation_epic_review",
   "working_tree_clean_before": false
 }

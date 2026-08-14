@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"e:\Dự án 1 hitrada\hitradar\3.NOTEBOOKS"
+base_dir = r"<PROJECT_ROOT>/3.NOTEBOOKS"
 
 def inject_3part_to_notebook(rel_path):
     full_path = os.path.join(base_dir, rel_path)

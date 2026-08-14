@@ -15,7 +15,7 @@ from dashboard.loaders.trend_data_loader import (
     get_source_fingerprint,
 )
 
-REPO = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO = pathlib.Path(r"<PROJECT_ROOT>")
 OUT = REPO / "epic3" / "feature_3_4" / "dashboard" / "validation"
 OUT.mkdir(exist_ok=True)
 

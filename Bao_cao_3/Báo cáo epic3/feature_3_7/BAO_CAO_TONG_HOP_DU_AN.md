@@ -3,7 +3,7 @@
 
 **Dự án:** HitRadar Pro — Song Popularity Prediction
 **Người thực hiện EPIC 3:** Minh
-**Repository:** H:\dự án\DUAN1 github
+**Repository:** <PROJECT_ROOT>
 **Branch:** main
 **Commit:** 2a6343f
 **Ngày:** 2026-08-09

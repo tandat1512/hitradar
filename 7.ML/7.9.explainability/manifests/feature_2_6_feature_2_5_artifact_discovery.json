@@ -1,7 +1,7 @@
 [
   {
     "logical_name": "feature_2_5_closure_gate",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\checkpoints\\feature_2_5_closure_gate.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/checkpoints/feature_2_5_closure_gate.json",
     "relative_path": "7.ML\\7.8.model_evaluation\\checkpoints\\feature_2_5_closure_gate.json",
     "exists": true,
     "bytes": 559,
@@ -14,7 +14,7 @@
   },
   {
     "logical_name": "feature_2_6_input_contract",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\configs\\feature_2_6_input_contract.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/configs/feature_2_6_input_contract.json",
     "relative_path": "7.ML\\7.8.model_evaluation\\configs\\feature_2_6_input_contract.json",
     "exists": true,
     "bytes": 841,
@@ -27,7 +27,7 @@
   },
   {
     "logical_name": "champion_lock_manifest",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\configs\\champion_lock_manifest.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/configs/champion_lock_manifest.json",
     "relative_path": "7.ML\\7.8.model_evaluation\\configs\\champion_lock_manifest.json",
     "exists": true,
     "bytes": 546,
@@ -40,7 +40,7 @@
   },
   {
     "logical_name": "champion_bundle",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.7.model_training\\models\\EXP24-XGB-FINAL-001.joblib",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-XGB-FINAL-001.joblib",
     "relative_path": "7.ML\\7.7.model_training\\models\\EXP24-XGB-FINAL-001.joblib",
     "exists": true,
     "bytes": 3978699,
@@ -53,7 +53,7 @@
   },
   {
     "logical_name": "champion_bundle_alias",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/champion_bundle.joblib",
     "relative_path": "7.ML\\7.7.model_training\\models\\champion_bundle.joblib",
     "exists": true,
     "bytes": 3978649,
@@ -66,7 +66,7 @@
   },
   {
     "logical_name": "champion_model_manifest",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.7.model_training\\manifests\\champion_model_manifest.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/manifests/champion_model_manifest.json",
     "relative_path": "7.ML\\7.7.model_training\\manifests\\champion_model_manifest.json",
     "exists": true,
     "bytes": 393,
@@ -79,7 +79,7 @@
   },
   {
     "logical_name": "selected_feature_set",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.6.feature_engineering\\selected_feature_set.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/selected_feature_set.json",
     "relative_path": "7.ML\\7.6.feature_engineering\\selected_feature_set.json",
     "exists": true,
     "bytes": 1945,
@@ -92,7 +92,7 @@
   },
   {
     "logical_name": "feature_registry",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.6.feature_engineering\\feature_registry.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/feature_registry.json",
     "relative_path": "7.ML\\7.6.feature_engineering\\feature_registry.json",
     "exists": true,
     "bytes": 22658,
@@ -105,7 +105,7 @@
   },
   {
     "logical_name": "feature_engineering_pipeline",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.6.feature_engineering\\feature_engineering_pipeline.joblib",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/feature_engineering_pipeline.joblib",
     "relative_path": "7.ML\\7.6.feature_engineering\\feature_engineering_pipeline.joblib",
     "exists": true,
     "bytes": 954,
@@ -118,7 +118,7 @@
   },
   {
     "logical_name": "fe_pipeline_manifest",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.6.feature_engineering\\feature_engineering_pipeline_manifest.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/feature_engineering_pipeline_manifest.json",
     "relative_path": "7.ML\\7.6.feature_engineering\\feature_engineering_pipeline_manifest.json",
     "exists": true,
     "bytes": 1227,
@@ -131,7 +131,7 @@
   },
   {
     "logical_name": "feature_dimension_contract",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\configs\\feature_pipeline_dimension_contract.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/configs/feature_pipeline_dimension_contract.json",
     "relative_path": "7.ML\\7.8.model_evaluation\\configs\\feature_pipeline_dimension_contract.json",
     "exists": true,
     "bytes": 118,
@@ -144,7 +144,7 @@
   },
   {
     "logical_name": "champion_test_predictions_raw",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\predictions\\champion_test_predictions_raw.parquet",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/predictions/champion_test_predictions_raw.parquet",
     "relative_path": "7.ML\\7.8.model_evaluation\\predictions\\champion_test_predictions_raw.parquet",
     "exists": true,
     "bytes": 4923657,
@@ -157,7 +157,7 @@
   },
   {
     "logical_name": "final_test_predictions",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\predictions\\final_test_predictions.parquet",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/predictions/final_test_predictions.parquet",
     "relative_path": "7.ML\\7.8.model_evaluation\\predictions\\final_test_predictions.parquet",
     "exists": true,
     "bytes": 7570945,
@@ -170,7 +170,7 @@
   },
   {
     "logical_name": "residual_statistics",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\residuals\\residual_statistics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/residuals/residual_statistics.json",
     "relative_path": "7.ML\\7.8.model_evaluation\\residuals\\residual_statistics.json",
     "exists": true,
     "bytes": 969,
@@ -183,7 +183,7 @@
   },
   {
     "logical_name": "largest_absolute_errors",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\residuals\\largest_absolute_errors.csv",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/residuals/largest_absolute_errors.csv",
     "relative_path": "7.ML\\7.8.model_evaluation\\residuals\\largest_absolute_errors.csv",
     "exists": true,
     "bytes": 2038,
@@ -196,7 +196,7 @@
   },
   {
     "logical_name": "largest_underpredictions",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\residuals\\largest_underpredictions.csv",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/residuals/largest_underpredictions.csv",
     "relative_path": "7.ML\\7.8.model_evaluation\\residuals\\largest_underpredictions.csv",
     "exists": true,
     "bytes": 2038,
@@ -209,7 +209,7 @@
   },
   {
     "logical_name": "largest_overpredictions",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\residuals\\largest_overpredictions.csv",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/residuals/largest_overpredictions.csv",
     "relative_path": "7.ML\\7.8.model_evaluation\\residuals\\largest_overpredictions.csv",
     "exists": true,
     "bytes": 2055,
@@ -222,7 +222,7 @@
   },
   {
     "logical_name": "largest_error_cases_with_features",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\residuals\\largest_error_cases_with_features.csv",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/residuals/largest_error_cases_with_features.csv",
     "relative_path": "7.ML\\7.8.model_evaluation\\residuals\\largest_error_cases_with_features.csv",
     "exists": true,
     "bytes": 4136,
@@ -235,7 +235,7 @@
   },
   {
     "logical_name": "yearly_evaluation",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\slices\\yearly_evaluation.csv",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/slices/yearly_evaluation.csv",
     "relative_path": "7.ML\\7.8.model_evaluation\\slices\\yearly_evaluation.csv",
     "exists": true,
     "bytes": 2607,
@@ -248,7 +248,7 @@
   },
   {
     "logical_name": "popularity_bucket_evaluation",
-    "actual_path": "E:/Dự án 1 hitrada/hitradar\\7.ML\\7.8.model_evaluation\\buckets\\popularity_bucket_evaluation.csv",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/buckets/popularity_bucket_evaluation.csv",
     "relative_path": "7.ML\\7.8.model_evaluation\\buckets\\popularity_bucket_evaluation.csv",
     "exists": true,
     "bytes": 1766,

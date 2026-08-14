@@ -1,7 +1,7 @@
 {
   "os": "Windows",
   "arch": "AMD64",
-  "python_executable": "E:\\Dự án 1 hitrada\\.venv\\Scripts\\python.exe",
+  "python_executable": "<PROJECT_ROOT>",
   "python_version": "3.13.7",
   "pandas": {
     "version": "3.0.3",

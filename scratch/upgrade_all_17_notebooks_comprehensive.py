@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"e:\Dự án 1 hitrada\hitradar\3.NOTEBOOKS"
+base_dir = r"<PROJECT_ROOT>/3.NOTEBOOKS"
 
 # Master dictionary for 3.3.lam_sach_python notebooks & 3.4.eda/01_data_understanding.ipynb
 additional_eoe_comments = {

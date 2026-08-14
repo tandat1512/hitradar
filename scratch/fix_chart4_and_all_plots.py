@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"e:\Dự án 1 hitrada\hitradar\3.NOTEBOOKS"
+base_dir = r"<PROJECT_ROOT>/3.NOTEBOOKS"
 
 # Define specific masterclass 3-part comments for all plots in 01_data_understanding.ipynb
 chart_comments_map = {

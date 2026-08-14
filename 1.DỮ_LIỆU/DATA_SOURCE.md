@@ -70,7 +70,7 @@ kaggle datasets download -d yamaerenay/spotify-dataset-19212020-600k-tracks \
 Hoặc từ thư mục gốc dự án:
 
 ```bash
-cd x:\DUAN1\HitRadar_Pro
+cd <PROJECT_ROOT>
 kaggle datasets download -d yamaerenay/spotify-dataset-19212020-600k-tracks -p "1.DỮ_LIỆU/1.1.raw" --unzip
 ```
 

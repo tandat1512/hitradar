@@ -2,7 +2,7 @@
   "date": "2026-08-09",
   "person_in_charge": "Minh",
   "description": "Feature 3.7 repository inventory — actual file listing",
-  "repository_root": "H:/dự án/DUAN1 github",
+  "repository_root": "<PROJECT_ROOT>",
   "commit": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
   "classification": [
     {
@@ -17,7 +17,14 @@
       "type": "BACKEND",
       "purpose": "FastAPI backend — main deployed API",
       "should_document": true,
-      "files": ["api.py", "config.py", "pipeline_loader.py", "runtime_patches.py", "validate_artifacts.py", "requirements.txt"]
+      "files": [
+        "api.py",
+        "config.py",
+        "pipeline_loader.py",
+        "runtime_patches.py",
+        "validate_artifacts.py",
+        "requirements.txt"
+      ]
     },
     {
       "path": "5.UNG_DUNG/5.1.backend_api/models/",
@@ -37,7 +44,13 @@
       "type": "FRONTEND",
       "purpose": "Canonical Streamlit frontend — Feature 3.3+3.6",
       "should_document": true,
-      "files": ["app.py", "core/", "api/", "components/", "pages/"]
+      "files": [
+        "app.py",
+        "core/",
+        "api/",
+        "components/",
+        "pages/"
+      ]
     },
     {
       "path": "epic3/feature_3_3/frontend/pages/",

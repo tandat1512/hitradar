@@ -11,7 +11,7 @@
 | EPIC | EPIC 3 — Productization, Integration & Defense |
 | Feature | 3.1 — Artifact Intake & Validation Gate |
 | Người thực hiện | Minh |
-| Repository | `H:\dự án\DUAN1 github` |
+| Repository | `<PROJECT_ROOT>` |
 | Branch | main |
 | Ngày kiểm tra | 2026-08-03 → 2026-08-04 |
 | Trạng thái | **PASS_WITH_WARNINGS** |

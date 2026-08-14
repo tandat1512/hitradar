@@ -57,8 +57,8 @@
 
 | Check | Result |
 |---|---|
-| Hardcoded `H:\` paths | NOT FOUND ✅ |
-| Hardcoded `C:\` paths | NOT FOUND ✅ |
+| Hardcoded `<PROJECT_ROOT> paths | NOT FOUND ✅ |
+| Hardcoded `<PROJECT_ROOT> paths | NOT FOUND ✅ |
 | Hardcoded `Users\` paths | NOT FOUND ✅ |
 | Absolute repo paths in code | NOT FOUND ✅ |
 | Path resolution | Relative via `Path(__file__)` ✅ |

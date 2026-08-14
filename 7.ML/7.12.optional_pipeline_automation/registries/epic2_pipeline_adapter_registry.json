@@ -2,7 +2,7 @@
   {
     "source_component": "iqr_clipper_module",
     "source_feature": "2.2",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.5.preprocessing\\src\\iqr_clipper.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.5.preprocessing/src/iqr_clipper.py",
     "implementation_type": "PYTHON_CALLABLE",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -14,7 +14,7 @@
   {
     "source_component": "fe_pipeline_module",
     "source_feature": "2.3",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\feature_engineering_pipeline.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/src/feature_engineering_pipeline.py",
     "implementation_type": "PYTHON_CALLABLE",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -26,7 +26,7 @@
   {
     "source_component": "fe_transformers",
     "source_feature": "2.3",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\transformers.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/src/transformers.py",
     "implementation_type": "PYTHON_CALLABLE",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -38,7 +38,7 @@
   {
     "source_component": "fe_validation",
     "source_feature": "2.3",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\validation.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/src/validation.py",
     "implementation_type": "PYTHON_CALLABLE",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -50,7 +50,7 @@
   {
     "source_component": "fe_create_artifacts",
     "source_feature": "2.3",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\src\\create_artifacts.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/src/create_artifacts.py",
     "implementation_type": "PYTHON_CALLABLE",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -62,7 +62,7 @@
   {
     "source_component": "training_phase1",
     "source_feature": "2.4",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase1.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.7.model_training/run_phase1.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -74,7 +74,7 @@
   {
     "source_component": "training_phase2",
     "source_feature": "2.4",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase2.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.7.model_training/run_phase2.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -86,7 +86,7 @@
   {
     "source_component": "training_phase3",
     "source_feature": "2.4",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase3.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.7.model_training/run_phase3.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -98,7 +98,7 @@
   {
     "source_component": "training_phase4",
     "source_feature": "2.4",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase4.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.7.model_training/run_phase4.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -110,7 +110,7 @@
   {
     "source_component": "training_phase5",
     "source_feature": "2.4",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\run_phase5.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.7.model_training/run_phase5.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -122,7 +122,7 @@
   {
     "source_component": "eval_phase1",
     "source_feature": "2.5",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_1.py",
+    "path": "<PROJECT_ROOT>/run_feature_2_5_phase_1.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -134,7 +134,7 @@
   {
     "source_component": "eval_phase2",
     "source_feature": "2.5",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_2.py",
+    "path": "<PROJECT_ROOT>/run_feature_2_5_phase_2.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -146,7 +146,7 @@
   {
     "source_component": "eval_phase3",
     "source_feature": "2.5",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_3.py",
+    "path": "<PROJECT_ROOT>/run_feature_2_5_phase_3.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -158,7 +158,7 @@
   {
     "source_component": "eval_phase4",
     "source_feature": "2.5",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_4.py",
+    "path": "<PROJECT_ROOT>/run_feature_2_5_phase_4.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -170,7 +170,7 @@
   {
     "source_component": "eval_phase5",
     "source_feature": "2.5",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\run_feature_2_5_phase_5.py",
+    "path": "<PROJECT_ROOT>/run_feature_2_5_phase_5.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -182,7 +182,7 @@
   {
     "source_component": "explainability_phase1",
     "source_feature": "2.6",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\scripts\\run_feature_2_6_phase_1.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.9.explainability/scripts/run_feature_2_6_phase_1.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -194,7 +194,7 @@
   {
     "source_component": "explainability_phase2",
     "source_feature": "2.6",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\run_feature_2_6_phase_2.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.9.explainability/run_feature_2_6_phase_2.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -206,7 +206,7 @@
   {
     "source_component": "explainability_phase3",
     "source_feature": "2.6",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\scripts\\run_feature_2_6_phase_3.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.9.explainability/scripts/run_feature_2_6_phase_3.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -218,7 +218,7 @@
   {
     "source_component": "explain_prediction_service",
     "source_feature": "2.6",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\services\\explain_prediction.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.9.explainability/services/explain_prediction.py",
     "implementation_type": "PYTHON_CALLABLE",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -230,7 +230,7 @@
   {
     "source_component": "packaging_phase1",
     "source_feature": "2.7",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_1.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/scripts/run_feature_2_7_phase_1.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -242,7 +242,7 @@
   {
     "source_component": "packaging_phase2",
     "source_feature": "2.7",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_2.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/scripts/run_feature_2_7_phase_2.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -254,7 +254,7 @@
   {
     "source_component": "packaging_phase3",
     "source_feature": "2.7",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_3.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/scripts/run_feature_2_7_phase_3.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -266,7 +266,7 @@
   {
     "source_component": "packaging_phase5",
     "source_feature": "2.7",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\scripts\\run_feature_2_7_phase_5.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/scripts/run_feature_2_7_phase_5.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -278,7 +278,7 @@
   {
     "source_component": "doc_phase1",
     "source_feature": "2.8",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\scripts\\run_feature_2_8_phase_1.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.11.documentation_epic_review/scripts/run_feature_2_8_phase_1.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -290,7 +290,7 @@
   {
     "source_component": "doc_phase3",
     "source_feature": "2.8",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\scripts\\run_feature_2_8_phase_3.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.11.documentation_epic_review/scripts/run_feature_2_8_phase_3.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",
@@ -302,7 +302,7 @@
   {
     "source_component": "doc_phase5",
     "source_feature": "2.8",
-    "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\scripts\\run_feature_2_8_phase_5.py",
+    "path": "<PROJECT_ROOT>/7.ML/7.11.documentation_epic_review/scripts/run_feature_2_8_phase_5.py",
     "implementation_type": "SUBPROCESS",
     "input_contract": "INFERRED",
     "output_contract": "INFERRED",

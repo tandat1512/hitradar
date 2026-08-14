@@ -1,8 +1,8 @@
 # HitRadar - Feature Engineering Hard Requirement Review
 
 Ngày đóng gói: 2026-08-13  
-Source project: `D:\Hitradar\hitradar-main`  
-Review package: `D:\Hitrada review` (flat layout, không có thư mục con)
+Source project: `<PROJECT_ROOT>/hitradar-main`
+Review package: `<PROJECT_ROOT>` (flat layout, không có thư mục con)
 
 ## 1. Nội dung đã sửa
 
@@ -81,7 +81,7 @@ Total model features trước encoding: 31
 
 ## 4. Cấu trúc package
 
-Tất cả file nằm trực tiếp trong `D:\Hitrada review`, không có thư mục con.
+Tất cả file nằm trực tiếp trong `<PROJECT_ROOT>`, không có thư mục con.
 Tên file được thêm số thứ tự và tiền tố chức năng để tránh ghi đè các file trùng tên.
 Các notebook cũ có tiền tố `BACKUP` để so sánh với notebook mới.
 
@@ -91,4 +91,4 @@ Source folder hiện không có `.git`, vì vậy không có `git status` hoặc
 Bản notebook cũ có tiền tố `BACKUP` để so sánh bằng `git diff --no-index`.
 Không có thao tác kết nối GitHub, commit hoặc push.
 
-Thư mục lồng cũ được chuyển ra `D:\Hitrada_review_nested_backup_20260813` làm bản backup khôi phục được, không nằm trong thư mục review.
+Thư mục lồng cũ được chuyển ra `<PROJECT_ROOT>` làm bản backup khôi phục được, không nằm trong thư mục review.

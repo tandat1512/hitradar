@@ -48,6 +48,8 @@ scratch/jupyter_config/
 scratch/jupyter_data/
 scratch/jupyter_runtime/
 scratch/ipython/
+scratch/private_evidence/
+/raw_file_checksums.json
 
 # ============================================================
 # Model artifacts (lớn, sinh ra từ pipeline — không commit)
@@ -60,6 +62,7 @@ scratch/ipython/
 4.MODELS/hitradar_secondary/*.parquet
 5.DATA/processed/features_engineered.parquet
 5.DATA/processed/*.parquet
+5.DATA/processed/ml_ready_dataset.csv
 4.MODELS/4.2.evaluation/*test_predictions*.parquet
 
 # ============================================================

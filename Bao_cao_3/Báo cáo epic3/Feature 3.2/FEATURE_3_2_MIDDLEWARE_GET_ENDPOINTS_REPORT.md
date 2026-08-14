@@ -158,7 +158,7 @@ x-api-key, x-auth-token, x-csrf-token
 - `metrics`: MAE, RMSE, R² from `champion_test_metrics.json`
 - `timestamp`: UTC ISO
 
-**Internal path exposure:** NONE. No `C:\Users`, no `.joblib`, no `/artifacts/` paths.
+**Internal path exposure:** NONE. No `<PROJECT_ROOT>`, no `.joblib`, no `/artifacts/` paths.
 
 ---
 

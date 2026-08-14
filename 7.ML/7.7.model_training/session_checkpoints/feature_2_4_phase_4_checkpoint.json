@@ -3,7 +3,7 @@
   "training_session_id": "F24-P4-XGB-20260720-142945-adf8d1",
   "dependency_status": "AVAILABLE",
   "xgboost_version": "3.3.0",
-  "package_path": "C:\\Users\\Cuong\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\xgboost\\__init__.py",
+  "package_path": "<LOCAL_USER_CACHE>\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\xgboost\\__init__.py",
   "device": "cpu",
   "tree_method": "hist",
   "n_jobs": -1,

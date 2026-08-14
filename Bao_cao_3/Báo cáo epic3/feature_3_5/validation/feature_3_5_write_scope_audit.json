@@ -11,9 +11,9 @@
     }
   ],
   "feature_3_5_new_files": [
-    "H:\\dự án\\DUAN1 github\\Bao_cao_3\\Báo cáo epic3\\feature_3_5\\validation\\*.json",
-    "H:\\dự án\\DUAN1 github\\Bao_cao_3\\Báo cáo epic3\\feature_3_5\\validation\\*.csv",
-    "H:\\dự án\\DUAN1 github\\Bao_cao_3\\Báo cáo epic3\\feature_3_5\\FEATURE_3_5_*.md"
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>"
   ],
   "unexpected_changes": [],
   "git_restore_performed": false,

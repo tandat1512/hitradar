@@ -3,21 +3,21 @@
   "phase": "2",
   "date": "2026-08-05T14:46:00.523046+00:00",
   "person_in_charge": "Minh",
-  "phase_1_gate_path": "H:\\dự án\\DUAN1 github\\epic3\\feature_3_2\\backend\\validation\\feature_3_2_phase_2_gate.json",
+  "phase_1_gate_path": "<PROJECT_ROOT>/epic3/feature_3_2/backend/validation/feature_3_2_phase_2_gate.json",
   "phase_1_gate_exists": true,
   "phase_1_gate_status": "PASS",
   "phase_1_next_phase": "MAY_BEGIN_PHASE_3",
   "may_begin": true,
   "schemas_read": [
-    "H:\\dự án\\DUAN1 github\\7.ML\\7.10.model_packaging\\package\\schemas\\input_schema.json",
-    "H:\\dự án\\DUAN1 github\\7.ML\\7.10.model_packaging\\package\\schemas\\output_schema.json",
-    "H:\\dự án\\DUAN1 github\\7.ML\\7.10.model_packaging\\package\\schemas\\selected_features.json"
+    "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/input_schema.json",
+    "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/output_schema.json",
+    "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/selected_features.json"
   ],
   "schemas_exist": true,
   "example_artifacts": {
-    "input": "H:\\dự án\\DUAN1 github\\7.ML\\7.10.model_packaging\\package\\examples\\example_input.json",
+    "input": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/examples/example_input.json",
     "input_exists": true,
-    "output": "H:\\dự án\\DUAN1 github\\7.ML\\7.10.model_packaging\\package\\examples\\example_output.json",
+    "output": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/examples/example_output.json",
     "output_exists": true
   },
   "expected_prediction_raw": 46.421062,

@@ -29,14 +29,14 @@ File `DEFINITION_OF_DONE_EPIC3.md` đã được tạo với **24 tiêu chí**, 
 
 ## 3. Xác nhận hoàn tất Feature 3.0
 Feature 3.0 (Base Structure & Contracts) đã **hoàn thành 100%** (Task 3.0.1 đến 3.0.8). Đã sinh đủ 8 file artifacts cốt lõi trong thư mục `docs/epic3/`:
-1. [SCOPE_LOCK_EPIC3.md](file:///h:/dự án/DUAN1 github/docs/epic3/SCOPE_LOCK_EPIC3.md)
-2. [INPUT_ARTIFACTS_CHECKLIST.md](file:///h:/dự án/DUAN1 github/docs/epic3/INPUT_ARTIFACTS_CHECKLIST.md)
-3. [DELIVERABLES_LIST.md](file:///h:/dự án/DUAN1 github/docs/epic3/DELIVERABLES_LIST.md)
-4. [API_CONTRACT.md](file:///h:/dự án/DUAN1 github/docs/epic3/API_CONTRACT.md)
-5. [UI_UX_CONTRACT.md](file:///h:/dự án/DUAN1 github/docs/epic3/UI_UX_CONTRACT.md)
-6. [FRONTEND_DATA_CONTRACT.md](file:///h:/dự án/DUAN1 github/docs/epic3/FRONTEND_DATA_CONTRACT.md)
-7. [DEMO_SCENARIO.md](file:///h:/dự án/DUAN1 github/docs/epic3/DEMO_SCENARIO.md)
-8. [DEFINITION_OF_DONE_EPIC3.md](file:///h:/dự án/DUAN1 github/docs/epic3/DEFINITION_OF_DONE_EPIC3.md)
+1. [SCOPE_LOCK_EPIC3.md](file:///<PROJECT_ROOT>/epic3/SCOPE_LOCK_EPIC3.md
+2. [INPUT_ARTIFACTS_CHECKLIST.md](file:///<PROJECT_ROOT>/epic3/INPUT_ARTIFACTS_CHECKLIST.md
+3. [DELIVERABLES_LIST.md](file:///<PROJECT_ROOT>/epic3/DELIVERABLES_LIST.md
+4. [API_CONTRACT.md](file:///<PROJECT_ROOT>/epic3/API_CONTRACT.md
+5. [UI_UX_CONTRACT.md](file:///<PROJECT_ROOT>/epic3/UI_UX_CONTRACT.md
+6. [FRONTEND_DATA_CONTRACT.md](file:///<PROJECT_ROOT>/epic3/FRONTEND_DATA_CONTRACT.md
+7. [DEMO_SCENARIO.md](file:///<PROJECT_ROOT>/epic3/DEMO_SCENARIO.md
+8. [DEFINITION_OF_DONE_EPIC3.md](file:///<PROJECT_ROOT>/epic3/DEFINITION_OF_DONE_EPIC3.md
 
 Cùng với các báo cáo nghiệm thu từ Phiên 1 đến Phiên 4 trong thư mục `docs/epic3/session_reports/`.
 

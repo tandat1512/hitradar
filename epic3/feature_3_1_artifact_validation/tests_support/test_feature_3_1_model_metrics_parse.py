@@ -3,7 +3,7 @@ Validate model_metrics.json (champion_test_metrics.json) structure and values.
 """
 import json, pathlib
 
-REPO = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO = pathlib.Path(r"<PROJECT_ROOT>")
 MET_FILE = REPO / "7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json"
 
 def _load():

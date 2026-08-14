@@ -3,7 +3,7 @@ Verify output_schema.json has correct output format.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 OUTPUT_SCHEMA = PKG_ROOT / "schemas" / "output_schema.json"
 EXAMPLE_INPUT = PKG_ROOT / "examples" / "example_input.json"

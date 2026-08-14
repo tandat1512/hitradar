@@ -3,7 +3,7 @@ import json
 import os
 from pathlib import Path
 
-ROOT = Path("E:/Dự án 1 hitrada/hitradar")
+ROOT = Path("<PROJECT_ROOT>")
 DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
 SPLITS = ROOT / "7.ML" / "7.4.splits"
 OUTPUT_DIR = ROOT.parent / "Output epic2"

@@ -1,7 +1,7 @@
 import pytest, subprocess
 from pathlib import Path
 
-SCRIPT = Path(r"E:/Dự án 1 hitrada/hitradar/7.ML/7.12.optional_pipeline_automation/scripts/run_epic2_pipeline.py")
+SCRIPT = Path(r"<PROJECT_ROOT>/7.ML/7.12.optional_pipeline_automation/scripts/run_epic2_pipeline.py")
 
 def test_train_mode_without_flags_shows_blocked():
     """Training mode without --allow-training should show blocked stages in dry-run.
@@ -14,7 +14,7 @@ def test_train_mode_without_flags_shows_blocked():
     # Restore the validate dry-run plan after this test
     import json
     from datetime import datetime, timezone
-    F29 = Path(r"E:/Dự án 1 hitrada/hitradar/7.ML/7.12.optional_pipeline_automation")
+    F29 = Path(r"<PROJECT_ROOT>/7.ML/7.12.optional_pipeline_automation")
     canonical_path = F29 / "validation" / "epic2_pipeline_dry_run_plan.json"
     with open(F29 / "registries" / "epic2_pipeline_stage_registry.json", encoding="utf-8") as f:
         stages = json.load(f)

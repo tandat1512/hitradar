@@ -7,7 +7,7 @@
   "selected_feature_count": 31,
   "target": "target_popularity",
   "identifier": "track_id",
-  "test_prediction_artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\predictions\\final_test_predictions.parquet",
+  "test_prediction_artifact_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/predictions/final_test_predictions.parquet",
   "test_rows": 85876,
   "test_mae": 17.646684646606445,
   "test_rmse": 21.01337842313573,

@@ -23,10 +23,10 @@
 
 | Field | Value |
 |---|---|
-| Repository | `H:\dự án\DUAN1 github` |
+| Repository | `<PROJECT_ROOT>` |
 | Branch | `main` |
-| Working directory | `H:\dự án\DUAN1 github` |
-| Report directory | `H:\dự án\DUAN1 github\Bao_cao_3\Báo cáo epic3` |
+| Working directory | `<PROJECT_ROOT>` |
+| Report directory | `<PROJECT_ROOT>` |
 | Feature 3.4 root | `epic3/feature_3_4/dashboard/` |
 | Shell status | BLOCKED — profiling script could not be executed |
 

@@ -1,13 +1,13 @@
 {
   "scan_scope": [
-    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\manifests",
-    "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas"
+    "<PROJECT_ROOT>/7.ML/7.10.model_packaging/manifests",
+    "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas"
   ],
   "patterns_searched": [
     "E:\\",
-    "C:\\Users\\",
+    "<PROJECT_ROOT>",
     "/home/",
-    "/tmp/"
+    "<TEMP_DIR>/"
   ],
   "findings_count": 4,
   "findings": [

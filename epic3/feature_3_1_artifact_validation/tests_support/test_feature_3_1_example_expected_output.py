@@ -1,7 +1,7 @@
 """Test: Example Expected Output — Phase 3"""
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 VAL_FILE  = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_example_prediction_result.json"
 
 def test_prediction_matches_expected():

@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
-REPO = Path(r"H:\dự án\DUAN1 github")
+REPO = Path(r"<PROJECT_ROOT>")
 BACKEND = REPO / "epic3" / "feature_3_2" / "backend"
 VAL = BACKEND / "validation"
 OUT_DIR = REPO / "5.UNG_DUNG" / "5.1.backend_api"
@@ -127,7 +127,7 @@ openapi_val["has_503"] = "503" in status_codes
 
 # Check no internal paths in examples
 examples_str = json.dumps(spec)
-bad_paths = [p for p in examples_str.lower().split() if "c:\\users" in p or ".joblib" in p]
+bad_paths = [p for p in examples_str.lower().split() if "<PROJECT_ROOT>" in p or ".joblib" in p]
 openapi_val["internal_paths_in_examples"] = bad_paths
 openapi_val["no_internal_paths"] = len(bad_paths) == 0
 

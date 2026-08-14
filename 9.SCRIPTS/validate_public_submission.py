@@ -32,8 +32,10 @@ def validate_manifest() -> tuple[bool, list[str]]:
     errors: list[str] = []
     if manifest.get("public_path_sanitization") is not True:
         errors.append("manifest public_path_sanitization is not true")
-    if manifest.get("raw_canonical_evidence_preserved") is not True:
-        errors.append("manifest raw_canonical_evidence_preserved is not true")
+    if manifest.get("tracked_evidence_sanitized") is not True:
+        errors.append("manifest tracked_evidence_sanitized is not true")
+    if manifest.get("private_raw_evidence_excluded") is not True:
+        errors.append("manifest private_raw_evidence_excluded is not true")
     expected_paths = set()
     for item in manifest.get("files", []):
         relative = item["path"]
@@ -58,9 +60,11 @@ def main() -> int:
     manifest_ok, manifest_errors = validate_manifest()
     report = json.loads(PUBLIC_REPORT.read_text(encoding="utf-8"))
     integrity = json.loads(INTEGRITY.read_text(encoding="utf-8"))
-    raw_preserved = (
-        report.get("raw_canonical_files_modified") is False
-        and all(item.get("unchanged") is True for item in report.get("raw_canonical_checksums", []))
+    evidence_policy_ok = (
+        report.get("tracked_evidence_sanitized") is True
+        and report.get("private_raw_evidence_excluded") is True
+        and bool(report.get("evidence_checksums"))
+        and all(item.get("unchanged_during_generation") is True for item in report.get("evidence_checksums", []))
     )
     model_sha = digest(MODEL)
     metrics_sha = digest(METRICS)
@@ -72,12 +76,12 @@ def main() -> int:
         and report.get("remaining_sensitive_absolute_paths") == []
         and report.get("files_scanned") == files_scanned
     )
-    passed = not findings and manifest_ok and raw_preserved and model_ok and metrics_ok and report_ok
+    passed = not findings and manifest_ok and evidence_policy_ok and model_ok and metrics_ok and report_ok
 
     print("FINAL_SUBMISSION public-path scan")
     print(f"Files scanned: {files_scanned}")
     print(f"Sensitive absolute path matches: {sum(item['match_count'] for item in findings)}")
-    print(f"Raw canonical evidence preserved: {'PASS' if raw_preserved else 'FAIL'}")
+    print(f"Public/private evidence policy: {'PASS' if evidence_policy_ok else 'FAIL'}")
     print(f"Manifest hash consistency: {'PASS' if manifest_ok else 'FAIL'}")
     print(f"Model checksum unchanged: {'PASS' if model_ok else 'FAIL'}")
     print(f"Final metrics unchanged: {'PASS' if metrics_ok else 'FAIL'}")

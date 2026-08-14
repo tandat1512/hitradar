@@ -1,7 +1,7 @@
 """Test: Benchmark Config — Phase 4"""
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 CFG_FILE  = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_benchmark_config.json"
 
 def test_config_file_exists():

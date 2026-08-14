@@ -1,5 +1,5 @@
 {
-  "feature_2_8_closure_gate_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.11.documentation_epic_review\\checkpoints\\feature_2_8_closure_gate.json",
+  "feature_2_8_closure_gate_path": "<PROJECT_ROOT>/7.ML/7.11.documentation_epic_review/checkpoints/feature_2_8_closure_gate.json",
   "feature_2_8_closure_gate_exists": true,
   "feature_2_8_status": "PASS",
   "feature_2_8_decision": "ELIGIBLE_FOR_CLOSURE",

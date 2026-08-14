@@ -3,34 +3,34 @@
   "artifacts": [
     {
       "role": "pipeline",
-      "path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\pipeline\\full_inference_pipeline.joblib",
+      "path": "<PROJECT_ROOT>",
       "exists": true,
       "sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
       "extension": ".joblib"
     },
     {
       "role": "schemas_dir",
-      "path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\schemas",
+      "path": "<PROJECT_ROOT>",
       "exists": true
     },
     {
       "role": "metadata_dir",
-      "path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\metadata",
+      "path": "<PROJECT_ROOT>",
       "exists": true
     },
     {
       "role": "examples_dir",
-      "path": "H:\\dự án\\DUAN1 github\\artifacts\\epic2\\examples",
+      "path": "<PROJECT_ROOT>",
       "exists": true
     },
     {
       "role": "epic2_fe_transformers",
-      "path": "H:\\dự án\\DUAN1 github\\7.ML\\7.6.feature_engineering\\src\\transformers.py",
+      "path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/src/transformers.py",
       "exists": true
     },
     {
       "role": "champion_metrics",
-      "path": "H:\\dự án\\DUAN1 github\\7.ML\\7.8.model_evaluation\\metrics\\champion_test_metrics.json",
+      "path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json",
       "exists": true
     }
   ],

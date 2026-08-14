@@ -49,12 +49,13 @@ CANONICAL_COMMANDS = (
     r".\.venv_round4\Scripts\python .\9.SCRIPTS\run_round4_tests.py",
     r".\.venv_round4\Scripts\python .\9.SCRIPTS\generate_final_submission.py --final",
 )
-RAW_CANONICAL_BASELINE_SHA256 = {
+PRIVATE_RAW_BASELINE_SHA256 = {
     "5.UNG_DUNG/validation/round4_environment_install.log": "923d30064c4baba01377075dd3cc6e10f3834dbaa8dc664a2026521ca0512df2",
     "5.UNG_DUNG/validation/round4_environment_validation.json": "c925b44f1b199e64541eff939b2690e85c3e10bf90fd3eaa5e003ef835336163",
     "5.UNG_DUNG/validation/round4_notebook_execution_status.json": "2c9a45ec67683d2f387c5c06ce101647ce4d8c2f437f8701cc1480c93c5529f0",
     "5.UNG_DUNG/validation/round4_test_results.json": "161a88396c74a74a47cc85bf7c9916313f5575fba2540662f1da3ecb4f4b7ba9",
 }
+PRIVATE_RAW_ROOT = ROOT / "scratch" / "private_evidence" / "pre_repository_sanitization"
 
 
 def load_json(path: Path) -> dict:
@@ -192,16 +193,10 @@ def collect_git_evidence() -> str:
         ["git", "status", "--short"], ["git", "branch", "--show-current"],
         ["git", "log", "--oneline", "--decorate", "-n", "20"],
         ["git", "branch", "--list"], ["git", "remote", "-v"],
-        [
-            "git", "diff", "--", ".",
-            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
-            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
-        ],
-        [
-            "git", "diff", "--cached", "--", ".",
-            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
-            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
-        ],
+        ["git", "diff", "--stat"],
+        ["git", "diff", "--name-status"],
+        ["git", "diff", "--cached", "--stat"],
+        ["git", "diff", "--cached", "--name-status"],
     ]
     sections = ["# Git Evidence", "", "All output below was collected from the actual working tree."]
     for command in commands:
@@ -265,7 +260,7 @@ These commands require the full repository, canonical `4.MODELS/` and `5.DATA/` 
 
 ## B. Inspect the FINAL_SUBMISSION snapshot
 
-- `notebooks/`: executed notebook snapshots.
+- `notebooks/`: canonical notebook snapshots (Notebook 06 is preserved, not retrained in Round 4).
 - `src/`: shared-source snapshot.
 - `deployment/`: API/schema/UI snapshot and the single current requirements file.
 - `evidence/`: feature, model, environment, temporal coverage, tests, checksums, and execution evidence.
@@ -274,7 +269,7 @@ These commands require the full repository, canonical `4.MODELS/` and `5.DATA/` 
 
 ## Evidence path sanitization
 
-Machine-specific absolute paths and local usernames are sanitized in this public submission snapshot. Canonical raw execution evidence is retained in the working repository for audit. Sanitization changes only filesystem location strings; versions, commands, metrics, hashes, PASS/FAIL results and model outputs are preserved.
+Machine-specific absolute paths and local usernames are sanitized in the tracked repository and this public snapshot. Pre-sanitization raw copies are retained only under ignored `scratch/private_evidence/` for local audit and are not part of the public repository. The public report records both private-original and tracked-sanitized checksums without publishing private paths.
 """
     assert_clean_generated_markdown(readme, CANONICAL_COMMANDS)
     (SUBMISSION / "README_FINAL_SUBMISSION.md").write_text(readme, encoding="utf-8")
@@ -282,10 +277,17 @@ Machine-specific absolute paths and local usernames are sanitized in this public
 
 
 def main(final_mode: bool) -> None:
-    raw_before = snapshot_hashes(tuple(RAW_CANONICAL_BASELINE_SHA256))
-    if raw_before != RAW_CANONICAL_BASELINE_SHA256:
-        changed = [relative for relative, checksum in raw_before.items() if checksum != RAW_CANONICAL_BASELINE_SHA256[relative]]
-        raise AssertionError(f"Canonical raw Round-4 evidence changed before public sanitization: {changed}")
+    private_raw_hashes = {
+        relative: digest(PRIVATE_RAW_ROOT / relative)
+        for relative in PRIVATE_RAW_BASELINE_SHA256
+    }
+    if private_raw_hashes != PRIVATE_RAW_BASELINE_SHA256:
+        changed = [
+            relative for relative, checksum in private_raw_hashes.items()
+            if checksum != PRIVATE_RAW_BASELINE_SHA256[relative]
+        ]
+        raise AssertionError(f"Private raw Round-4 evidence is missing or changed: {changed}")
+    tracked_sanitized_before = snapshot_hashes(tuple(PRIVATE_RAW_BASELINE_SHA256))
     model_path = MODEL_DIR / "popularity_pipeline.joblib"
     metrics_path = MODEL_DIR / "final_test_metrics.json"
     model_sha_before = digest(model_path)
@@ -361,18 +363,30 @@ def main(final_mode: bool) -> None:
 
     external_paths = [
         ROOT / "4.MODELS" / "hitradar_popularity" / "popularity_pipeline.joblib",
+        ROOT / "4.MODELS" / "hitradar_popularity" / "final_test_metrics.json",
         ROOT / "4.MODELS" / "hitradar_secondary" / "kmeans_pipeline.joblib",
         ROOT / "4.MODELS" / "hitradar_secondary" / "content_recommender.joblib",
+        ROOT / "5.DATA" / "processed" / "ml_ready_dataset.csv",
         ROOT / "5.DATA" / "processed" / "ml_ready_dataset.parquet",
         ROOT / "5.DATA" / "processed" / "features_engineered.parquet",
     ]
     external = []
+    tracked_files = set(
+        subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode("utf-8").split("\0")
+    ) if (ROOT / ".git").exists() else set()
     for path in external_paths:
         current_hash = digest(path)
+        relative_path = path.relative_to(ROOT).as_posix()
+        is_tracked = relative_path in tracked_files
         item = {
-            "canonical_path": str(path.relative_to(ROOT)).replace("\\", "/"),
+            "canonical_path": relative_path,
             "size_bytes": path.stat().st_size, "sha256": current_hash,
-            "round4_note": "external canonical artifact; not duplicated in snapshot",
+            "tracked_in_current_tree": is_tracked,
+            "round4_note": (
+                "tracked canonical evidence; not duplicated as a binary artifact in the snapshot"
+                if is_tracked else
+                "local external artifact omitted from the current tracked tree; legacy commits may contain historical copies because Git history was not rewritten"
+            ),
         }
         if path == MODEL_DIR / "popularity_pipeline.joblib":
             item["pre_round4_sha256"] = integrity["production_model"]["pre_round4_sha256"]
@@ -488,7 +502,7 @@ SHAP was not added because the readable checklist labels it as an advanced item,
 
 ## R. Evidence Path Sanitization
 
-Machine-specific absolute paths and local usernames are sanitized only in the public `FINAL_SUBMISSION` snapshot. Canonical raw execution evidence remains unchanged in the working repository. Versions, commands, metrics, hashes, PASS/FAIL results and model outputs are preserved.
+Machine-specific absolute paths and local usernames are sanitized in the tracked repository and the public `FINAL_SUBMISSION` snapshot. Pre-sanitization raw evidence is retained only in ignored local storage under `scratch/private_evidence/`; it is excluded from the public package. Original and sanitized checksums are recorded for audit.
 
 ## S. Remaining Limitations
 
@@ -501,38 +515,43 @@ Machine-specific absolute paths and local usernames are sanitized only in the pu
     assert_clean_generated_markdown(report)
     (SUBMISSION / "FINAL_AUDIT_REPORT.md").write_text(report, encoding="utf-8")
 
-    public_python = Path(environment["python_executable"]) if environment.get("python_executable") else current_python_path()
+    configured_python = str(environment.get("python_executable", ""))
+    public_python = current_python_path() if configured_python.startswith("<") else Path(configured_python)
     replacement_counts, sanitized_files = sanitize_submission_copies(public_python)
     scanned_before_report, findings_before_report = scan_public_tree(SUBMISSION)
     if findings_before_report:
         raise AssertionError(f"Sensitive public paths remain before sanitization report: {findings_before_report}")
 
-    raw_after = snapshot_hashes(tuple(RAW_CANONICAL_BASELINE_SHA256))
+    tracked_sanitized_after = snapshot_hashes(tuple(PRIVATE_RAW_BASELINE_SHA256))
     model_sha_after = digest(model_path)
     metrics_sha_after = digest(metrics_path)
-    raw_checks = [
+    evidence_checks = [
         {
             "canonical_file": relative,
-            "before_sha256": raw_before[relative],
-            "after_sha256": raw_after[relative],
-            "unchanged": raw_before[relative] == raw_after[relative],
+            "private_raw_sha256": private_raw_hashes[relative],
+            "tracked_sanitized_sha256": tracked_sanitized_after[relative],
+            "private_raw_copy_available_locally": True,
+            "tracked_public_copy_sanitized": private_raw_hashes[relative] != tracked_sanitized_after[relative],
+            "unchanged_during_generation": tracked_sanitized_before[relative] == tracked_sanitized_after[relative],
+            "mutable_after_generation": relative.endswith("round4_test_results.json"),
         }
-        for relative in RAW_CANONICAL_BASELINE_SHA256
+        for relative in PRIVATE_RAW_BASELINE_SHA256
     ]
-    raw_preserved = all(item["unchanged"] for item in raw_checks)
+    evidence_stable = all(item["unchanged_during_generation"] for item in evidence_checks)
     model_unchanged = model_sha_before == model_sha_after == integrity["production_model"]["pre_round4_sha256"]
     metrics_unchanged = metrics_sha_before == metrics_sha_after == integrity["final_metrics_artifact"]["pre_round4_sha256"]
-    if not (raw_preserved and model_unchanged and metrics_unchanged):
-        raise AssertionError("Canonical evidence, production model, or final metrics changed during public sanitization")
+    if not (evidence_stable and model_unchanged and metrics_unchanged):
+        raise AssertionError("Tracked evidence, production model, or final metrics changed during package generation")
 
     sanitization_report = {
-        "policy": "Raw canonical evidence retained; FINAL_SUBMISSION copies sanitized.",
+        "policy": "Tracked evidence is sanitized; private raw originals are retained only under ignored local scratch/private_evidence and excluded from the public repository.",
         "files_scanned": scanned_before_report + 2,
         "files_sanitized": len(sanitized_files),
         "sanitized_files": sanitized_files,
         "replacement_counts": replacement_counts,
-        "raw_canonical_files_modified": False,
-        "raw_canonical_checksums": raw_checks,
+        "tracked_evidence_sanitized": True,
+        "private_raw_evidence_excluded": True,
+        "evidence_checksums": evidence_checks,
         "public_submission_scan_passed": True,
         "remaining_sensitive_absolute_paths": [],
         "model_integrity": {
@@ -567,7 +586,8 @@ Machine-specific absolute paths and local usernames are sanitized only in the pu
         "canonical_repository_required": True,
         "external_artifacts_required": True,
         "public_path_sanitization": True,
-        "raw_canonical_evidence_preserved": True,
+        "tracked_evidence_sanitized": True,
+        "private_raw_evidence_excluded": True,
         "file_count_excluding_manifest": len(files_before_manifest),
         "requirements_files": [str(path.relative_to(SUBMISSION)).replace("\\", "/") for path in requirement_files],
         "legacy_prefixed_files": offenders,

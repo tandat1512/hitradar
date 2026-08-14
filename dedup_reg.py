@@ -1,6 +1,6 @@
 import json
 
-with open('E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\experiment_registry.json', 'r') as f:
+with open('<PROJECT_ROOT>//7.ML//7.7.model_training//registries//experiment_registry.json', 'r') as f:
     data = json.load(f)
 
 # Deduplicate based on 'timestamp' and 'experiment_id' + 'fold_id'
@@ -21,7 +21,7 @@ for d in data:
     key = (d.get('experiment_id'), d.get('stage'), d.get('fold_id'), d.get('config_id'))
     final_data[key] = d
 
-with open('E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\registries\\experiment_registry.json', 'w') as f:
+with open('<PROJECT_ROOT>//7.ML//7.7.model_training//registries//experiment_registry.json', 'w') as f:
     json.dump(list(final_data.values()), f, indent=2)
 
 print("Deduped registry to", len(final_data), "records")

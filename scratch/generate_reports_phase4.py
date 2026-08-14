@@ -1,8 +1,8 @@
 import os, json
 
-REPORT_DIR = r"E:\Dự án 1 hitrada\Output epic2"
-LOCAL_DIR = r"E:\Dự án 1 hitrada\hitradar\7.ML\7.9.explainability\local"
-DEP_DIR = r"E:\Dự án 1 hitrada\hitradar\7.ML\7.9.explainability\dependence"
+REPORT_DIR = r"<PROJECT_ROOT>"
+LOCAL_DIR = r"<PROJECT_ROOT>/7.ML/7.9.explainability/local"
+DEP_DIR = r"<PROJECT_ROOT>/7.ML/7.9.explainability/dependence"
 
 def rj(path):
     with open(path, "r", encoding="utf-8") as f: return json.load(f)
@@ -11,7 +11,7 @@ def rj(path):
 exps = rj(os.path.join(LOCAL_DIR, "local_explanations.json"))
 dep_summ = rj(os.path.join(DEP_DIR, "shap_dependence_summary.json"))
 local_man = rj(os.path.join(LOCAL_DIR, "local_explanation_manifest.json"))
-ck = rj(os.path.join(r"E:\Dự án 1 hitrada\hitradar\7.ML\7.9.explainability\checkpoints", "feature_2_6_phase_4_checkpoint.json"))
+ck = rj(os.path.join(r"<PROJECT_ROOT>/7.ML/7.9.explainability/checkpoints", "feature_2_6_phase_4_checkpoint.json"))
 
 # LOCAL_EXPLANATION_REPORT.md
 local_report = f"""# Local SHAP Explanation Report (Phase 4/5)

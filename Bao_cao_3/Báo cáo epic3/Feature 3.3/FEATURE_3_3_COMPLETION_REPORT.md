@@ -139,7 +139,7 @@ Prerequisites met:
 ## Reports Directory
 
 All markdown reports saved to:
-`H:\dự án\DUAN1 github\Bao_cao_3\Báo cáo epic3\`
+`<PROJECT_ROOT>`
 
 | Report | File |
 |---|---|

@@ -2,7 +2,7 @@
   {
     "logical_name": "split_manifest",
     "source_feature": "2.2",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.4.splits\\split_data\\split_manifest.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.4.splits/split_data/split_manifest.json",
     "repository_relative_path": null,
     "exists": false,
     "bytes": 0,
@@ -22,7 +22,7 @@
   {
     "logical_name": "champion_model_manifest",
     "source_feature": "2.4",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\manifests\\champion_model_manifest.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/manifests/champion_model_manifest.json",
     "repository_relative_path": "hitradar\\7.ML\\7.7.model_training\\manifests\\champion_model_manifest.json",
     "exists": true,
     "bytes": 393,
@@ -41,7 +41,7 @@
   {
     "logical_name": "champion_test_metrics",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\champion_test_metrics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\champion_test_metrics.json",
     "exists": true,
     "bytes": 541,
@@ -59,7 +59,7 @@
   {
     "logical_name": "validation_test_comparison",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\validation_test_comparison.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/validation_test_comparison.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\validation_test_comparison.json",
     "exists": true,
     "bytes": 196,
@@ -77,7 +77,7 @@
   {
     "logical_name": "prediction_tolerance",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\prediction_tolerance_metrics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/prediction_tolerance_metrics.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\prediction_tolerance_metrics.json",
     "exists": true,
     "bytes": 168,
@@ -95,7 +95,7 @@
   {
     "logical_name": "severe_error",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\severe_error_metrics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/severe_error_metrics.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\severe_error_metrics.json",
     "exists": true,
     "bytes": 94,
@@ -113,7 +113,7 @@
   {
     "logical_name": "ranking_utility",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\ranking_utility_metrics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/ranking_utility_metrics.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\ranking_utility_metrics.json",
     "exists": true,
     "bytes": 140,
@@ -131,7 +131,7 @@
   {
     "logical_name": "test_interval_coverage",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\test_interval_coverage.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/test_interval_coverage.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\test_interval_coverage.json",
     "exists": true,
     "bytes": 258,
@@ -149,7 +149,7 @@
   {
     "logical_name": "residual_statistics",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\residuals\\residual_statistics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/residuals/residual_statistics.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\residuals\\residual_statistics.json",
     "exists": true,
     "bytes": 969,
@@ -167,7 +167,7 @@
   {
     "logical_name": "temporal_robustness",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\temporal\\temporal_robustness_summary.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/temporal/temporal_robustness_summary.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\temporal\\temporal_robustness_summary.json",
     "exists": true,
     "bytes": 446,
@@ -185,7 +185,7 @@
   {
     "logical_name": "bucket_confusion",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\buckets\\popularity_bucket_confusion_summary.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/buckets/popularity_bucket_confusion_summary.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\buckets\\popularity_bucket_confusion_summary.json",
     "exists": true,
     "bytes": 217,
@@ -203,7 +203,7 @@
   {
     "logical_name": "popular_song_detection",
     "source_feature": "2.5",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.8.model_evaluation\\metrics\\popular_song_detection_metrics.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.8.model_evaluation/metrics/popular_song_detection_metrics.json",
     "repository_relative_path": "hitradar\\7.ML\\7.8.model_evaluation\\metrics\\popular_song_detection_metrics.json",
     "exists": true,
     "bytes": 76,
@@ -221,7 +221,7 @@
   {
     "logical_name": "f26_closure_gate",
     "source_feature": "2.6",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.9.explainability\\checkpoints\\feature_2_6_closure_gate.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.9.explainability/checkpoints/feature_2_6_closure_gate.json",
     "repository_relative_path": "hitradar\\7.ML\\7.9.explainability\\checkpoints\\feature_2_6_closure_gate.json",
     "exists": true,
     "bytes": 2120,
@@ -239,7 +239,7 @@
   {
     "logical_name": "model_version",
     "source_feature": "2.7",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\model_version.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/model_version.json",
     "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\model_version.json",
     "exists": true,
     "bytes": 375,
@@ -257,7 +257,7 @@
   {
     "logical_name": "data_version",
     "source_feature": "2.7",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\data_version.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/data_version.json",
     "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\data_version.json",
     "exists": true,
     "bytes": 313,
@@ -275,7 +275,7 @@
   {
     "logical_name": "package_version",
     "source_feature": "2.7",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\package_version.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/package_version.json",
     "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\package_version.json",
     "exists": true,
     "bytes": 295,
@@ -293,7 +293,7 @@
   {
     "logical_name": "selected_features",
     "source_feature": "2.7",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\selected_features.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/selected_features.json",
     "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\selected_features.json",
     "exists": true,
     "bytes": 799,
@@ -311,7 +311,7 @@
   {
     "logical_name": "feature_names",
     "source_feature": "2.7",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\feature_names.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/feature_names.json",
     "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\feature_names.json",
     "exists": true,
     "bytes": 1223,
@@ -329,7 +329,7 @@
   {
     "logical_name": "artifact_manifest",
     "source_feature": "2.7",
-    "actual_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\artifact_manifest.json",
+    "actual_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/artifact_manifest.json",
     "repository_relative_path": "hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\artifact_manifest.json",
     "exists": true,
     "bytes": 6621,

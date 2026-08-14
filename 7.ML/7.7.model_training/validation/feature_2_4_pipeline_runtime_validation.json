@@ -1,6 +1,6 @@
 {
   "validation_timestamp": "2026-07-20T10:53:25.271116+00:00",
-  "pipeline_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_engineering_pipeline.joblib",
+  "pipeline_path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/feature_engineering_pipeline.joblib",
   "pipeline_sha256": "9fb51b9c8b1aa62342037fe4b1cc10234b35b23019f8df10392700bdf7706030",
   "root_class": "FeatureEngineeringTransformer",
   "has_transform": true,
