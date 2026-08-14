@@ -62,7 +62,7 @@ Indexed rows: **586,672**; self-exclusion: **PASS**. Local ML-ready source conta
 
 ## K. Python 3.12 Environment Validation
 
-- Python **3.12.13** at `<PROJECT_ROOT>\.venv_round4\Scripts\python.exe`.
+- Python **3.12.13** at `<PROJECT_ROOT>/.venv_round4/Scripts/python.exe`.
 - pip **26.2.1**, NumPy **2.5.2**, pandas **3.0.5**, sklearn **1.9.0**, XGBoost **3.4.0**, FastAPI **0.141.1**, Starlette **1.3.1**, httpx2 **2.10.0**.
 - Fresh requirements install: **PASS**; TestClient smoke: **PASS**.
 
@@ -78,9 +78,9 @@ Kernel: **hitradar-round4**; Python **3.12.13**.
 
 ## M. Automated Tests
 
-Tests **39**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
+Tests **62**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
 
-Public-path hotfix full suite: **52** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+Public-path hotfix full suite: **62** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
 
 ## N. Final Submission Semantics
 
@@ -91,8 +91,10 @@ Public-path hotfix full suite: **52** tests, failures **0**, errors **0**, skipp
 | canonical_path | size_bytes | sha256 |
 |---|---|---|
 | 4.MODELS/hitradar_popularity/popularity_pipeline.joblib | 802217 | ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047 |
+| 4.MODELS/hitradar_popularity/final_test_metrics.json | 2707 | f426407214e0e4ac11b9d4cee8f7c6218a7092216a9d20bec62fe8af37833edf |
 | 4.MODELS/hitradar_secondary/kmeans_pipeline.joblib | 168925 | 44f99f12bad43f50a8913821360f40aa8c9caec306923a7adb208023909670bc |
 | 4.MODELS/hitradar_secondary/content_recommender.joblib | 49913861 | 849d9be06f3338295cfa40ba084014f751203aa7b600d2310a03fcbe390a3ec4 |
+| 5.DATA/processed/ml_ready_dataset.csv | 72546749 | 332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e |
 | 5.DATA/processed/ml_ready_dataset.parquet | 26440492 | be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770 |
 | 5.DATA/processed/features_engineered.parquet | 61465009 | 02f656211714ff5be3b4da509f14442fbd5b01b86ae47d53292e9775ca96c3b8 |
 
@@ -108,7 +110,7 @@ SHAP was not added because the readable checklist labels it as an advanced item,
 
 ## R. Evidence Path Sanitization
 
-Machine-specific absolute paths and local usernames are sanitized only in the public `FINAL_SUBMISSION` snapshot. Canonical raw execution evidence remains unchanged in the working repository. Versions, commands, metrics, hashes, PASS/FAIL results and model outputs are preserved.
+Machine-specific absolute paths and local usernames are sanitized in the tracked repository and the public `FINAL_SUBMISSION` snapshot. Pre-sanitization raw evidence is retained only in ignored local storage under `scratch/private_evidence/`; it is excluded from the public package. Original and sanitized checksums are recorded for audit.
 
 ## S. Remaining Limitations
 

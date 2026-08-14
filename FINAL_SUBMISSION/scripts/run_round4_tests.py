@@ -10,6 +10,8 @@ import platform
 import sys
 import unittest
 
+from submission_sanitizer import sanitize_public_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 TEST_PATH = ROOT / "tests" / "test_feature_pipeline.py"
@@ -23,7 +25,12 @@ result = unittest.TextTestRunner(verbosity=2).run(suite)
 payload = {
     "executed_at_utc": datetime.now(timezone.utc).isoformat(),
     "python_version": platform.python_version(),
-    "python_executable": sys.executable,
+    "python_executable": sanitize_public_text(
+        sys.executable,
+        project_root=ROOT,
+        user_home=Path.home(),
+        python_executable=Path(sys.executable),
+    )[0],
     "test_file": str(TEST_PATH.relative_to(ROOT)).replace("\\", "/"),
     "tests_run": result.testsRun,
     "failures": len(result.failures),

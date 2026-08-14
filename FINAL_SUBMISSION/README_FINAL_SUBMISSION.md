@@ -48,7 +48,7 @@ $env:HITRADAR_KERNEL_NAME="hitradar-round4"
 
 ## B. Inspect the FINAL_SUBMISSION snapshot
 
-- `notebooks/`: executed notebook snapshots.
+- `notebooks/`: canonical notebook snapshots (Notebook 06 is preserved, not retrained in Round 4).
 - `src/`: shared-source snapshot.
 - `deployment/`: API/schema/UI snapshot and the single current requirements file.
 - `evidence/`: feature, model, environment, temporal coverage, tests, checksums, and execution evidence.
@@ -57,4 +57,4 @@ $env:HITRADAR_KERNEL_NAME="hitradar-round4"
 
 ## Evidence path sanitization
 
-Machine-specific absolute paths and local usernames are sanitized in this public submission snapshot. Canonical raw execution evidence is retained in the working repository for audit. Sanitization changes only filesystem location strings; versions, commands, metrics, hashes, PASS/FAIL results and model outputs are preserved.
+Machine-specific absolute paths and local usernames are sanitized in the tracked repository and this public snapshot. Pre-sanitization raw copies are retained only under ignored `scratch/private_evidence/` for local audit and are not part of the public repository. The public report records both private-original and tracked-sanitized checksums without publishing private paths.
