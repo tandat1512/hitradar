@@ -1,0 +1,9 @@
+{
+  "name": "hitradar-pro",
+  "version": "3.0.0",
+  "private": true,
+  "description": "HitRadar Pro - Spotify AI Music Intelligence & EDA Lab",
+  "scripts": {
+    "build": "echo 'Static build ready'"
+  }
+}
