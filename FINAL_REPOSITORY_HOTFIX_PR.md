@@ -8,6 +8,7 @@
 - Restores the three project-management workbooks, three coursework Word documents, SQL-folder guidance, and retrospective notes with non-fabricated provenance labels.
 - Regenerates `FINAL_SUBMISSION` as a non-standalone evidence snapshot with manifest integrity, public/private evidence semantics, and current test evidence.
 - Leaves Notebook 02 in a clean, password-safe, explicitly not-re-executed state: the hardcoded password fallback and saved failure traceback are removed.
+- Cleans all canonical PostgreSQL-backed notebooks: credentials are environment-only, failed connection outputs are removed, and retained non-error outputs are explicitly historical.
 - Hardens repository path detection for ANSI/Jupyter traceback strings, JSON-escaped Windows paths, mixed slashes, and lower-case drive letters; regression tests cover the former false negative.
 
 ## Locked artifacts
@@ -21,8 +22,8 @@ Notebook 06 was preserved and was not retrained. The production model and final 
 
 ## Validation
 
-- Full Python 3.12 suite: 68 tests, 0 failures, 0 errors, 0 skips.
-- `FINAL_SUBMISSION` path scan: 51 text-like files scanned, 0 sensitive matches.
+- Full Python 3.12 suite: 70 tests, 0 failures, 0 errors, 0 skips.
+- `FINAL_SUBMISSION` path scan: 53 text-like files scanned, 0 sensitive matches.
 - Current tracked repository path scan: PASS, 0 findings.
 - Submission manifest, model checksum, final-metrics checksum, and public/private evidence policy: PASS.
 - DOCX files were opened, rendered through Microsoft Word COM, and visually inspected. LibreOffice was unavailable in this environment.
@@ -33,6 +34,8 @@ Notebook 06 was preserved and was not retrained. The production model and final 
 Notebook 02 was intentionally left in a clean not-re-executed state because PostgreSQL was unavailable in the review environment. Historical PostgreSQL ingestion and validation evidence is retained. No successful Notebook 02 execution is claimed by this PR.
 
 The notebook now reads credentials only from `POSTGRES_PASSWORD` or `PGPASSWORD`; its hardcoded fallback and saved failure traceback were removed. The repository-wide path scanner was hardened and regression-tested against ANSI/Jupyter traceback paths.
+
+The EDA data-understanding and clean-validation authentication failures were removed as well. The remaining canonical PostgreSQL-backed notebooks use the same environment-only credential policy; retained non-error outputs are historical and are not fresh-execution claims. No new successful PostgreSQL execution is claimed.
 
 ## Package semantics
 

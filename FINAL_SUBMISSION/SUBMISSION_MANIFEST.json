@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-14T10:50:00.611516+00:00",
+  "generated_at_utc": "2026-08-14T11:08:11.172861+00:00",
   "mode": "final",
   "package_type": "submission_evidence_snapshot",
   "standalone_runnable": false,
@@ -102,7 +102,7 @@
     {
       "path": "evidence/public_evidence_sanitization.json",
       "size_bytes": 3399,
-      "sha256": "eca0b0d9162c206cb8ec4c2141b046c679c1a97216af62ed7b9b9c2fa0b52230"
+      "sha256": "af3179e386a1271e52ccbd82e450cad714619cb4baee335e4b55ad35635c5944"
     },
     {
       "path": "evidence/public_path_hotfix_test_results.json",
@@ -147,7 +147,7 @@
     {
       "path": "evidence/round4_test_results.json",
       "size_bytes": 312,
-      "sha256": "cc4dc29556c17902539abb5ebb2b54a0c049bf93d4a92ddaf534a8664351dbd7"
+      "sha256": "d1e489dd7365068e5fbb16ea117b359179fff62cdaea7b9433611ebcb2fd7258"
     },
     {
       "path": "evidence/selection_winner_lock.json",
@@ -176,13 +176,13 @@
     },
     {
       "path": "FINAL_AUDIT_REPORT.md",
-      "size_bytes": 6746,
-      "sha256": "26daf2bd13916ae06c89f23b5c2de992bb6da82026ab99c7bcca051b2611df0d"
+      "size_bytes": 7091,
+      "sha256": "fb47b4b6d37b119f3ca8b0a9c5de4f41903753ef0b5a887267003a8501443cec"
     },
     {
       "path": "GIT_EVIDENCE.md",
-      "size_bytes": 6680,
-      "sha256": "0c65987646e90ca923d1d0c1475bfb2ea35be6795f81f5a0ca1e8f884bc67d3b"
+      "size_bytes": 6517,
+      "sha256": "400699143ad83015945ca9de2b3bdb460f6a1e3554fcf3f41e8622873ffb0978"
     },
     {
       "path": "notebooks/02_postgresql_pipeline.ipynb",
@@ -211,8 +211,8 @@
     },
     {
       "path": "scripts/generate_final_submission.py",
-      "size_bytes": 37611,
-      "sha256": "163354dbfc9463743fa25a79379bdcf4d32b355dc25ca8f434d234bf533b6d59"
+      "size_bytes": 37954,
+      "sha256": "0efb9c9b0f1f2ecb74cd4cce0b4207ef52396735a73795badf0d0b4ba7fb50d1"
     },
     {
       "path": "scripts/generate_temporal_year_coverage.py",
@@ -271,8 +271,8 @@
     },
     {
       "path": "tests/test_feature_pipeline.py",
-      "size_bytes": 39543,
-      "sha256": "22fdea71159939d907d5ed4914e45b6d8660ec5e02f89b6c69bfdb47c35c41c9"
+      "size_bytes": 44037,
+      "sha256": "efa6f65285a7d43371bff80a3586d32ef043ca8398f55f1d61f469db70e0d2e0"
     }
   ]
 }

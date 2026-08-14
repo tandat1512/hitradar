@@ -5,16 +5,18 @@ All output below was collected from the actual working tree.
 ## `git status --short`
 
 ```text
- M 3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb
+ M 3.NOTEBOOKS/3.1.hieu_du_lieu/01_data_understanding.ipynb
+ M 3.NOTEBOOKS/3.3.lam_sach_python/01_feature_1_4_cleaning_exploration.ipynb
  M 3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb
  M 3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb
- M 5.UNG_DUNG/validation/public_evidence_sanitization.json
- M 5.UNG_DUNG/validation/public_path_hotfix_test_results.json
+ M 3.NOTEBOOKS/3.4.eda/01_dataset_overview.ipynb
+ M 3.NOTEBOOKS/3.4.eda/02_popularity_analysis.ipynb
+ M 3.NOTEBOOKS/3.4.eda/03_audio_features_distribution.ipynb
+ M 3.NOTEBOOKS/3.4.eda/04_time_decade_trends.ipynb
+ M 3.NOTEBOOKS/3.4.eda/05_artist_genre_analysis.ipynb
+ M 3.NOTEBOOKS/3.4.eda/06_correlation_outlier_analysis.ipynb
  M 5.UNG_DUNG/validation/round4_test_results.json
- M 5.UNG_DUNG/validation/shap_requirement_status.json
  M 9.SCRIPTS/generate_final_submission.py
- M 9.SCRIPTS/sanitize_tracked_repository.py
- M 9.SCRIPTS/validate_public_repository.py
  M FINAL_REPOSITORY_HOTFIX_PR.md
  D FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
  D FINAL_SUBMISSION/GIT_EVIDENCE.md
@@ -22,16 +24,11 @@ All output below was collected from the actual working tree.
  D FINAL_SUBMISSION/SUBMISSION_MANIFEST.json
  D FINAL_SUBMISSION/evidence/external_artifact_checksums.json
  D FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
- M FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
  M FINAL_SUBMISSION/evidence/round4_test_results.json
- M FINAL_SUBMISSION/evidence/shap_requirement_status.json
  M FINAL_SUBMISSION/scripts/generate_final_submission.py
  M FINAL_SUBMISSION/tests/test_feature_pipeline.py
  M README.md
  M tests/test_feature_pipeline.py
-?? 5.UNG_DUNG/validation/nb02_postgresql_execution_status.json
-?? FINAL_SUBMISSION/evidence/nb02_postgresql_execution_status.json
-?? FINAL_SUBMISSION/notebooks/02_postgresql_pipeline.ipynb
 ```
 
 ## `git branch --show-current`
@@ -43,7 +40,8 @@ final-repository-hotfix
 ## `git log --oneline --decorate -n 20`
 
 ```text
-91fb95a (HEAD -> final-repository-hotfix, origin/final-repository-hotfix) chore: regenerate final submission evidence snapshot
+18fbf2c (HEAD -> final-repository-hotfix, origin/final-repository-hotfix) fix: document NB02 limitation and close final audit gaps
+91fb95a chore: regenerate final submission evidence snapshot
 a232594 docs: restore submission and project deliverables
 2de9657 fix: sanitize repository and externalize runtime artifacts
 7f6ee89 (origin/main, origin/HEAD, main) docs: sync README test count with final validation
@@ -62,7 +60,6 @@ bcde803 Epic 2 - Features 2.4 to 2.8 Completion: Model Training, Evaluation, Pac
 01813b6 fix: Resolve all evidence package blockers by computing true statistics from dataset
 d4115b7 fix: Eliminate ALL KNOWN, NOT_AVAILABLE, NOT_APPLICABLE and NOT_VERIFIED instances
 cc1bdbd fix: Resolve NOT_AVAILABLE string hardcoding in report generator
-a206165 chore: Finalize Feature 2.2 strict closure gate and test governance
 ```
 
 ## `git branch --list`
@@ -83,46 +80,48 @@ origin	https://github.com/tandat1512/hitradar.git (push)
 ## `git diff --stat`
 
 ```text
- .../3.2.postgresql/02_postgresql_pipeline.ipynb    |  52 ++--
- .../02_feature_1_4_clean_validation.ipynb          |  10 +-
- 3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb    |  10 +-
- .../validation/public_evidence_sanitization.json   |  17 +-
- .../public_path_hotfix_test_results.json           |   4 +-
+ .../3.1.hieu_du_lieu/01_data_understanding.ipynb   |  50 ++--
+ .../01_feature_1_4_cleaning_exploration.ipynb      |  28 ++-
+ .../02_feature_1_4_clean_validation.ipynb          |  54 ++--
+ 3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb    |  53 ++--
+ 3.NOTEBOOKS/3.4.eda/01_dataset_overview.ipynb      |  27 +-
+ 3.NOTEBOOKS/3.4.eda/02_popularity_analysis.ipynb   |  27 +-
+ .../3.4.eda/03_audio_features_distribution.ipynb   |  27 +-
+ 3.NOTEBOOKS/3.4.eda/04_time_decade_trends.ipynb    |  27 +-
+ 3.NOTEBOOKS/3.4.eda/05_artist_genre_analysis.ipynb |  27 +-
+ .../3.4.eda/06_correlation_outlier_analysis.ipynb  |  27 +-
  5.UNG_DUNG/validation/round4_test_results.json     |   4 +-
- 5.UNG_DUNG/validation/shap_requirement_status.json |  11 +-
- 9.SCRIPTS/generate_final_submission.py             |  37 ++-
- 9.SCRIPTS/sanitize_tracked_repository.py           |  13 +-
- 9.SCRIPTS/validate_public_repository.py            |  22 +-
- FINAL_REPOSITORY_HOTFIX_PR.md                      |   8 +-
- FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md             | 121 ----------
- FINAL_SUBMISSION/GIT_EVIDENCE.md                   | 128 ----------
- FINAL_SUBMISSION/README_FINAL_SUBMISSION.md        |  60 -----
- FINAL_SUBMISSION/SUBMISSION_MANIFEST.json          | 268 ---------------------
+ 9.SCRIPTS/generate_final_submission.py             |   2 +
+ FINAL_REPOSITORY_HOTFIX_PR.md                      |   5 +-
+ FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md             | 130 ----------
+ FINAL_SUBMISSION/GIT_EVIDENCE.md                   | 152 -----------
+ FINAL_SUBMISSION/README_FINAL_SUBMISSION.md        |  61 -----
+ FINAL_SUBMISSION/SUBMISSION_MANIFEST.json          | 278 ---------------------
  .../evidence/external_artifact_checksums.json      |  53 ----
- .../evidence/public_evidence_sanitization.json     |  72 ------
- .../evidence/public_path_hotfix_test_results.json  |   4 +-
+ .../evidence/public_evidence_sanitization.json     |  79 ------
  FINAL_SUBMISSION/evidence/round4_test_results.json |   4 +-
- .../evidence/shap_requirement_status.json          |  11 +-
- .../scripts/generate_final_submission.py           |  37 ++-
- FINAL_SUBMISSION/tests/test_feature_pipeline.py    |  84 +++++++
- README.md                                          |   6 +-
- tests/test_feature_pipeline.py                     |  84 +++++++
- 24 files changed, 335 insertions(+), 785 deletions(-)
+ .../scripts/generate_final_submission.py           |   2 +
+ FINAL_SUBMISSION/tests/test_feature_pipeline.py    |  92 ++++++-
+ README.md                                          |   4 +-
+ tests/test_feature_pipeline.py                     |  88 +++++++
+ 24 files changed, 455 insertions(+), 846 deletions(-)
 ```
 
 ## `git diff --name-status`
 
 ```text
-M	3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb
+M	3.NOTEBOOKS/3.1.hieu_du_lieu/01_data_understanding.ipynb
+M	3.NOTEBOOKS/3.3.lam_sach_python/01_feature_1_4_cleaning_exploration.ipynb
 M	3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb
 M	3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb
-M	5.UNG_DUNG/validation/public_evidence_sanitization.json
-M	5.UNG_DUNG/validation/public_path_hotfix_test_results.json
+M	3.NOTEBOOKS/3.4.eda/01_dataset_overview.ipynb
+M	3.NOTEBOOKS/3.4.eda/02_popularity_analysis.ipynb
+M	3.NOTEBOOKS/3.4.eda/03_audio_features_distribution.ipynb
+M	3.NOTEBOOKS/3.4.eda/04_time_decade_trends.ipynb
+M	3.NOTEBOOKS/3.4.eda/05_artist_genre_analysis.ipynb
+M	3.NOTEBOOKS/3.4.eda/06_correlation_outlier_analysis.ipynb
 M	5.UNG_DUNG/validation/round4_test_results.json
-M	5.UNG_DUNG/validation/shap_requirement_status.json
 M	9.SCRIPTS/generate_final_submission.py
-M	9.SCRIPTS/sanitize_tracked_repository.py
-M	9.SCRIPTS/validate_public_repository.py
 M	FINAL_REPOSITORY_HOTFIX_PR.md
 D	FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
 D	FINAL_SUBMISSION/GIT_EVIDENCE.md
@@ -130,9 +129,7 @@ D	FINAL_SUBMISSION/README_FINAL_SUBMISSION.md
 D	FINAL_SUBMISSION/SUBMISSION_MANIFEST.json
 D	FINAL_SUBMISSION/evidence/external_artifact_checksums.json
 D	FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
-M	FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
 M	FINAL_SUBMISSION/evidence/round4_test_results.json
-M	FINAL_SUBMISSION/evidence/shap_requirement_status.json
 M	FINAL_SUBMISSION/scripts/generate_final_submission.py
 M	FINAL_SUBMISSION/tests/test_feature_pipeline.py
 M	README.md

@@ -85,7 +85,7 @@ If module import rules in a shell do not accept dotted numeric directories, run 
 .\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_repository.py
 ```
 
-The latest final repository suite records 68 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, repository-wide path sanitization (including ANSI/Jupyter tracebacks), NB02 governance, artifact tracking, canonical notebook paths, and XLSX/DOCX readability.
+The latest final repository suite records 70 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, repository-wide path sanitization (including ANSI/Jupyter tracebacks), canonical PostgreSQL notebook governance, artifact tracking, canonical notebook paths, and XLSX/DOCX readability.
 
 ## Limitations
 
@@ -101,5 +101,7 @@ The latest final repository suite records 68 tests with 0 failures, 0 errors, an
 `FINAL_SUBMISSION/` is a sanitized public snapshot, not a standalone runtime bundle. It contains notebook snapshots, shared source, deployment code, tests, small evidence files, a final audit report, and a checksum manifest. Private raw pre-sanitization evidence is retained only under ignored `scratch/private_evidence/`; large artifacts remain local and checksum-verifiable.
 
 PostgreSQL Notebook 02 was not re-executed during the final repository hotfix because the review environment did not have an available PostgreSQL service / credential configuration. Prior PostgreSQL ingestion and validation evidence is retained. No new successful database execution is claimed.
+
+Other database-backed canonical notebooks were likewise not freshly re-executed. Failed connection outputs were removed where present; retained non-error outputs are historical evidence rather than fresh hotfix execution.
 
 To reproduce Notebook 02, configure the HitRadar PostgreSQL database, set `POSTGRES_PASSWORD` or `PGPASSWORD`, and run `3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb`.

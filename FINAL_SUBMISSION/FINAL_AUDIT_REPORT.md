@@ -84,9 +84,11 @@ The notebook contains no saved failure traceback, no hardcoded password fallback
 
 Status: **DOCUMENTED_LIMITATION / REPRODUCIBLE WHEN POSTGRESQL IS AVAILABLE**.
 
+Database-backed canonical notebook outputs were reviewed for credential and traceback hygiene. Failed connection outputs were removed where present, credentials are environment-only, and retained non-error outputs are treated as historical evidence rather than fresh final-hotfix execution. No new successful PostgreSQL execution is claimed.
+
 ## N. Automated Tests
 
-Tests **68**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
+Tests **70**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
 
 Public-path hotfix full suite: **68** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
 

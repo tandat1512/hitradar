@@ -492,6 +492,8 @@ The notebook contains no saved failure traceback, no hardcoded password fallback
 
 Status: **{nb02['status']} / REPRODUCIBLE WHEN POSTGRESQL IS AVAILABLE**.
 
+Database-backed canonical notebook outputs were reviewed for credential and traceback hygiene. Failed connection outputs were removed where present, credentials are environment-only, and retained non-error outputs are treated as historical evidence rather than fresh final-hotfix execution. No new successful PostgreSQL execution is claimed.
+
 ## N. Automated Tests
 
 Tests **{tests['tests_run']}**, failures **{tests['failures']}**, errors **{tests['errors']}**, skipped **{tests['skipped']}**, status **{tests['status']}**, Python **{tests['python_version']}**.

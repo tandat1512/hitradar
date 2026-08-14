@@ -636,6 +636,94 @@ class FinalReviewGovernanceTest(unittest.TestCase):
         self.assertFalse(any("zero_byte" in item["status"] for item in current_docx))
 
 
+class CanonicalDatabaseNotebookGovernanceTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        validator_path = ROOT / "9.SCRIPTS" / "validate_public_repository.py"
+        spec = importlib.util.spec_from_file_location("canonical_database_path_validator", validator_path)
+        cls.validator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.validator)
+
+        cls.notebooks = {}
+        for path in sorted((ROOT / "3.NOTEBOOKS").rglob("*.ipynb")):
+            notebook = json.loads(path.read_text(encoding="utf-8"))
+            source = "\n".join("".join(cell.get("source", [])) for cell in notebook["cells"])
+            if "psycopg2.connect" in source:
+                cls.notebooks[path.relative_to(ROOT).as_posix()] = (path, notebook, source)
+
+    def test_all_canonical_database_notebooks_have_safe_credentials_and_outputs(self):
+        required = {
+            "3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb",
+            "3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb",
+            "3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb",
+        }
+        self.assertTrue(required.issubset(self.notebooks))
+        self.assertEqual(len(self.notebooks), 11)
+
+        auth_markers = ("password authentication failed", "fe_sendauth", "no password supplied")
+        for relative, (path, notebook, source) in self.notebooks.items():
+            with self.subTest(notebook=relative):
+                self.assertNotIn("123456", source)
+                self.assertNotRegex(source, r"password\s*=\s*['\"][^'\"]+['\"]")
+                self.assertNotRegex(source, r"get\s*\(\s*['\"]PGPASSWORD['\"]\s*,")
+                self.assertIn(
+                    'os.getenv("POSTGRES_PASSWORD") or os.getenv("PGPASSWORD")',
+                    source,
+                )
+                self.assertIn("password=password", source)
+
+                for cell in notebook["cells"]:
+                    for output in cell.get("outputs", []):
+                        output_text = json.dumps(output, ensure_ascii=False).lower()
+                        self.assertFalse(
+                            output.get("output_type") == "error"
+                            and any(marker in output_text for marker in auth_markers)
+                        )
+                        self.assertFalse(any(marker in output_text for marker in auth_markers))
+
+                notebook_scan = self.validator.scan_text(self.validator.scan_path_text(path))
+                self.assertEqual(notebook_scan, {})
+
+    def test_database_notebook_status_and_failed_connection_state_are_truthful(self):
+        for relative, (_, _, source) in self.notebooks.items():
+            with self.subTest(notebook=relative):
+                lowered = source.lower()
+                self.assertIn("not re-executed", lowered)
+                self.assertRegex(
+                    lowered,
+                    r"no (?:new )?successful (?:postgresql|database) execution is claimed",
+                )
+
+        failed_connection_notebooks = {
+            "3.NOTEBOOKS/3.1.hieu_du_lieu/01_data_understanding.ipynb",
+            "3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb",
+            "3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb",
+        }
+        for relative in failed_connection_notebooks:
+            _, notebook, _ = self.notebooks[relative]
+            connection_cells = [
+                cell for cell in notebook["cells"]
+                if cell.get("cell_type") == "code"
+                and "psycopg2.connect" in "".join(cell.get("source", []))
+            ]
+            self.assertTrue(connection_cells)
+            for cell in connection_cells:
+                self.assertIsNone(cell.get("execution_count"))
+                self.assertEqual(cell.get("outputs", []), [])
+
+        # Useful non-error tables/plots remain, with their provenance documented above.
+        for relative in (
+            "3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb",
+            "3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb",
+        ):
+            _, notebook, _ = self.notebooks[relative]
+            retained = [
+                output for cell in notebook["cells"] for output in cell.get("outputs", [])
+                if output.get("output_type") != "error"
+            ]
+            self.assertGreater(len(retained), 0)
+
+
 class FinalRepositoryHygieneTest(unittest.TestCase):
     @staticmethod
     def git_files() -> list[str]:
