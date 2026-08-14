@@ -5,17 +5,17 @@ All output below was collected from the actual working tree.
 ## `git status --short`
 
 ```text
-M  .gitignore
 M  5.UNG_DUNG/validation/public_evidence_sanitization.json
 M  5.UNG_DUNG/validation/public_path_hotfix_test_results.json
-M  9.SCRIPTS/generate_final_submission.py
- D FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
+M  9.SCRIPTS/run_public_path_hotfix_tests.py
+M  9.SCRIPTS/submission_sanitizer.py
+MD FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
 MD FINAL_SUBMISSION/GIT_EVIDENCE.md
  D FINAL_SUBMISSION/README_FINAL_SUBMISSION.md
 MD FINAL_SUBMISSION/SUBMISSION_MANIFEST.json
  D FINAL_SUBMISSION/evidence/external_artifact_checksums.json
 MD FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
-MM FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
+M  FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
  M FINAL_SUBMISSION/evidence/round4_environment_install.log
  M FINAL_SUBMISSION/evidence/round4_environment_validation.json
  M FINAL_SUBMISSION/evidence/round4_notebook_execution_status.json
@@ -24,8 +24,9 @@ MM FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
  M FINAL_SUBMISSION/notebooks/05_feature_engineering.ipynb
  M FINAL_SUBMISSION/notebooks/06_machine_learning.ipynb
  M FINAL_SUBMISSION/notebooks/07_ai_deployment.ipynb
-M  FINAL_SUBMISSION/scripts/generate_final_submission.py
-M  README.md
+M  FINAL_SUBMISSION/scripts/run_public_path_hotfix_tests.py
+M  FINAL_SUBMISSION/tests/test_feature_pipeline.py
+M  tests/test_feature_pipeline.py
 ```
 
 ## `git branch --show-current`
@@ -37,7 +38,8 @@ final-round4-sync
 ## `git log --oneline --decorate -n 20`
 
 ```text
-34eeeb8 (HEAD -> final-round4-sync, origin/main, origin/HEAD, main) feat: sync HitRadar updates and sanitized final submission
+221ea53 (HEAD -> final-round4-sync, origin/final-round4-sync) chore: finalize Round 4 reproducibility package
+34eeeb8 (origin/main, origin/HEAD, main) feat: sync HitRadar updates and sanitized final submission
 2bf5505 docs: add all Epic 1 & Epic 2 report documents (.docx) previously excluded by gitignore
 eb5f343 merge: integrate Epic 3 full delivery (Features 3.1-3.9) into main
 dfff705 (origin/codex/feature-3-8-3-9-hotfix) chore: finalize Epic 3 delivery artifacts
@@ -56,7 +58,6 @@ aabfee9 feat(feature_2_2): finalize root-cause hotfix and review package
 b71946e fix(epic2): complete generation of all 12 reports, fix output paths and test suite assertions
 e98c7f9 Fix 19 point issues in Epic 2 Feature 2.1 HOTFIX
 bcf7457 fix(epic2): Implement remaining 8 feedback points for hotfix completion
-51b433a fix(epic2): Hotfix Feature 2.1 validation and reports, synchronize all artifacts and fix test suite
 ```
 
 ## `git branch --list`
@@ -78,7 +79,7 @@ origin	https://github.com/tandat1512/hitradar.git (push)
 ```text
 diff --git a/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md b/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
 deleted file mode 100644
-index cc2e3e7..0000000
+index 0f5aaf1..0000000
 --- a/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
 +++ /dev/null
 @@ -1,119 +0,0 @@
@@ -164,7 +165,7 @@ index cc2e3e7..0000000
 -
 -Tests **39**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
 -
--Public-path hotfix full suite: **51** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+-Public-path hotfix full suite: **52** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
 -
 -## N. Final Submission Semantics
 -
@@ -310,21 +311,15 @@ index 4e2b074..0000000
 \ No newline at end of file
 diff --git a/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json b/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
 deleted file mode 100644
-index 5f89a80..0000000
+index 1f65f10..0000000
 --- a/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
 +++ /dev/null
-@@ -1,132 +0,0 @@
+@@ -1,126 +0,0 @@
 -{
 -  "policy": "Raw canonical evidence retained; FINAL_SUBMISSION copies sanitized.",
 -  "files_scanned": 51,
--  "files_sanitized": 11,
+-  "files_sanitized": 10,
 -  "sanitized_files": [
--    {
--      "file": "evidence/public_path_hotfix_test_results.json",
--      "replacement_counts": {
--        "other_absolute_paths": 1
--      }
--    },
 -    {
 -      "file": "evidence/round4_environment_install.log",
 -      "replacement_counts": {
@@ -369,7 +364,7 @@ index 5f89a80..0000000
 -        "project_root": 94,
 -        "user_cache": 3,
 -        "downloads": 1,
--        "other_absolute_paths": 25
+-        "other_absolute_paths": 23
 -      }
 -    },
 -    {
@@ -399,7 +394,7 @@ index 5f89a80..0000000
 -    "user_cache": 6,
 -    "downloads": 2,
 -    "temp": 0,
--    "other_absolute_paths": 36
+-    "other_absolute_paths": 33
 -  },
 -  "raw_canonical_files_modified": false,
 -  "raw_canonical_checksums": [
@@ -446,19 +441,6 @@ index 5f89a80..0000000
 -  },
 -  "status": "PASS"
 -}
-diff --git a/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json b/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
-index 92fcf85..9f18dff 100644
---- a/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
-+++ b/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
-@@ -2,7 +2,7 @@
-   "executed_at_utc": "2026-08-14T08:05:07.817023+00:00",
-   "scope": "full suite including public submission path sanitization",
-   "python_version": "3.12.13",
--  "python_executable": "<ABSOLUTE_PATH>",
-+  "python_executable": "<ABSOLUTE_PATH>",
-   "test_file": "tests/test_feature_pipeline.py",
-   "tests_run": 51,
-   "failures": 0,
 diff --git a/FINAL_SUBMISSION/evidence/round4_environment_install.log b/FINAL_SUBMISSION/evidence/round4_environment_install.log
 index 87a3b7f..d6575b9 100644
 --- a/FINAL_SUBMISSION/evidence/round4_environment_install.log
@@ -946,326 +928,263 @@ index a88e355..5aa2771 100644
 ## `git diff --cached -- . :(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md :(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json`
 
 ```text
-diff --git a/.gitignore b/.gitignore
-index 919ddcb..9ee9113 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -32,6 +32,7 @@ build/
- # Virtual environments
- # ============================================================
- .venv/
-+.venv*/
- venv/
- env/
- ENV/
-@@ -58,6 +59,7 @@ scratch/ipython/
- 4.MODELS/hitradar_secondary/*.joblib
- 4.MODELS/hitradar_secondary/*.parquet
- 5.DATA/processed/features_engineered.parquet
-+5.DATA/processed/*.parquet
- 4.MODELS/4.2.evaluation/*test_predictions*.parquet
-
- # ============================================================
-@@ -82,6 +84,11 @@ desktop.ini
- *.suo
- *.user
-
-+# Local validation cache / temporary sync files
-+.cache/
-+.tmp/
-+*.tmp
-+
- # ============================================================
- # Feature 2.1 — Split ID files (large, regeneratable)
- # ============================================================
 diff --git a/5.UNG_DUNG/validation/public_evidence_sanitization.json b/5.UNG_DUNG/validation/public_evidence_sanitization.json
-index 863aeb4..5f89a80 100644
+index 5f89a80..1f65f10 100644
 --- a/5.UNG_DUNG/validation/public_evidence_sanitization.json
 +++ b/5.UNG_DUNG/validation/public_evidence_sanitization.json
-@@ -6,7 +6,7 @@
+@@ -1,14 +1,8 @@
+ {
+   "policy": "Raw canonical evidence retained; FINAL_SUBMISSION copies sanitized.",
+   "files_scanned": 51,
+-  "files_sanitized": 11,
++  "files_sanitized": 10,
+   "sanitized_files": [
+-    {
+-      "file": "evidence/public_path_hotfix_test_results.json",
+-      "replacement_counts": {
+-        "other_absolute_paths": 1
+-      }
+-    },
      {
-       "file": "evidence/public_path_hotfix_test_results.json",
+       "file": "evidence/round4_environment_install.log",
        "replacement_counts": {
--        "project_root": 1
-+        "other_absolute_paths": 1
-       }
-     },
-     {
-@@ -53,7 +53,7 @@
+@@ -53,7 +47,7 @@
          "project_root": 94,
          "user_cache": 3,
          "downloads": 1,
--        "other_absolute_paths": 20
-+        "other_absolute_paths": 25
+-        "other_absolute_paths": 25
++        "other_absolute_paths": 23
        }
      },
      {
-@@ -77,13 +77,13 @@
-     }
-   ],
-   "replacement_counts": {
--    "project_root": 199,
-+    "project_root": 198,
-     "python_executable": 0,
-     "user_home": 0,
+@@ -83,7 +77,7 @@
      "user_cache": 6,
      "downloads": 2,
      "temp": 0,
--    "other_absolute_paths": 30
-+    "other_absolute_paths": 36
+-    "other_absolute_paths": 36
++    "other_absolute_paths": 33
    },
    "raw_canonical_files_modified": false,
    "raw_canonical_checksums": [
 diff --git a/5.UNG_DUNG/validation/public_path_hotfix_test_results.json b/5.UNG_DUNG/validation/public_path_hotfix_test_results.json
-index 4907869..9f18dff 100644
+index 9f18dff..6fd4453 100644
 --- a/5.UNG_DUNG/validation/public_path_hotfix_test_results.json
 +++ b/5.UNG_DUNG/validation/public_path_hotfix_test_results.json
-@@ -1,8 +1,8 @@
+@@ -1,10 +1,10 @@
  {
--  "executed_at_utc": "2026-08-14T06:42:16.800144+00:00",
-+  "executed_at_utc": "2026-08-14T08:05:07.817023+00:00",
+-  "executed_at_utc": "2026-08-14T08:05:07.817023+00:00",
++  "executed_at_utc": "2026-08-14T08:43:52.660506+00:00",
    "scope": "full suite including public submission path sanitization",
    "python_version": "3.12.13",
 -  "python_executable": "<ABSOLUTE_PATH>",
-+  "python_executable": "<ABSOLUTE_PATH>",
++  "python_executable": "<PROJECT_ROOT>\\.venv_round4\\Scripts\\python.exe",
    "test_file": "tests/test_feature_pipeline.py",
-   "tests_run": 51,
+-  "tests_run": 51,
++  "tests_run": 52,
    "failures": 0,
-diff --git a/9.SCRIPTS/generate_final_submission.py b/9.SCRIPTS/generate_final_submission.py
-index 2adee3d..6036037 100644
---- a/9.SCRIPTS/generate_final_submission.py
-+++ b/9.SCRIPTS/generate_final_submission.py
-@@ -191,7 +191,17 @@ def collect_git_evidence() -> str:
-     commands = [
-         ["git", "status", "--short"], ["git", "branch", "--show-current"],
-         ["git", "log", "--oneline", "--decorate", "-n", "20"],
--        ["git", "branch", "--list"], ["git", "remote", "-v"], ["git", "diff", "--", "."],
-+        ["git", "branch", "--list"], ["git", "remote", "-v"],
-+        [
-+            "git", "diff", "--", ".",
-+            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
-+            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
-+        ],
-+        [
-+            "git", "diff", "--cached", "--", ".",
-+            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
-+            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
-+        ],
-     ]
-     sections = ["# Git Evidence", "", "All output below was collected from the actual working tree."]
-     for command in commands:
-@@ -204,7 +214,9 @@ def collect_git_evidence() -> str:
-             errors="replace",
-             check=False,
-         )
--        sections += ["", f"## `{' '.join(command)}`", "", "```text", completed.stdout or completed.stderr or "(no output)", "```"]
-+        raw_output = completed.stdout or completed.stderr or "(no output)"
-+        output = "\n".join(line.rstrip() for line in raw_output.splitlines())
-+        sections += ["", f"## `{' '.join(command)}`", "", "```text", output, "```"]
-     return "\n".join(sections) + "\n"
+   "errors": 0,
+   "skipped": 0,
+diff --git a/9.SCRIPTS/run_public_path_hotfix_tests.py b/9.SCRIPTS/run_public_path_hotfix_tests.py
+index 4c8e24a..7b4d060 100644
+--- a/9.SCRIPTS/run_public_path_hotfix_tests.py
++++ b/9.SCRIPTS/run_public_path_hotfix_tests.py
+@@ -11,6 +11,8 @@ from pathlib import Path
+ import sys
+ import unittest
 
++from submission_sanitizer import sanitize_public_text
++
+
+ ROOT = Path(__file__).resolve().parents[1]
+ TEST_FILE = ROOT / "tests" / "test_feature_pipeline.py"
+@@ -26,11 +28,15 @@ def main() -> int:
+     suite = unittest.defaultTestLoader.loadTestsFromModule(module)
+     stream = io.StringIO()
+     result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
++    public_python_executable, _ = sanitize_public_text(
++        str(Path(sys.executable).resolve()),
++        project_root=ROOT,
++    )
+     payload = {
+         "executed_at_utc": datetime.now(timezone.utc).isoformat(),
+         "scope": "full suite including public submission path sanitization",
+         "python_version": platform.python_version(),
+-        "python_executable": sys.executable,
++        "python_executable": public_python_executable,
+         "test_file": TEST_FILE.relative_to(ROOT).as_posix(),
+         "tests_run": result.testsRun,
+         "failures": len(result.failures),
+diff --git a/9.SCRIPTS/submission_sanitizer.py b/9.SCRIPTS/submission_sanitizer.py
+index e6d10f4..2795bf3 100644
+--- a/9.SCRIPTS/submission_sanitizer.py
++++ b/9.SCRIPTS/submission_sanitizer.py
+@@ -1,7 +1,7 @@
+ """Deterministic public-path sanitization for the HitRadar submission snapshot.
+
+-Canonical evidence remains untouched.  These helpers operate only on copies under
+-``FINAL_SUBMISSION`` and report categories/counts without retaining matched values.
++These helpers sanitize public evidence and submission copies while reporting
++categories/counts without retaining matched values.
+ """
+
+ from __future__ import annotations
+diff --git a/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md b/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
+index cc2e3e7..0f5aaf1 100644
+--- a/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
++++ b/FINAL_SUBMISSION/FINAL_AUDIT_REPORT.md
+@@ -80,7 +80,7 @@ Kernel: **hitradar-round4**; Python **3.12.13**.
+
+ Tests **39**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
+
+-Public-path hotfix full suite: **51** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
++Public-path hotfix full suite: **52** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+
+ ## N. Final Submission Semantics
 
 diff --git a/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json b/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
-index 863aeb4..5f89a80 100644
+index 5f89a80..1f65f10 100644
 --- a/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
 +++ b/FINAL_SUBMISSION/evidence/public_evidence_sanitization.json
-@@ -6,7 +6,7 @@
+@@ -1,14 +1,8 @@
+ {
+   "policy": "Raw canonical evidence retained; FINAL_SUBMISSION copies sanitized.",
+   "files_scanned": 51,
+-  "files_sanitized": 11,
++  "files_sanitized": 10,
+   "sanitized_files": [
+-    {
+-      "file": "evidence/public_path_hotfix_test_results.json",
+-      "replacement_counts": {
+-        "other_absolute_paths": 1
+-      }
+-    },
      {
-       "file": "evidence/public_path_hotfix_test_results.json",
+       "file": "evidence/round4_environment_install.log",
        "replacement_counts": {
--        "project_root": 1
-+        "other_absolute_paths": 1
-       }
-     },
-     {
-@@ -53,7 +53,7 @@
+@@ -53,7 +47,7 @@
          "project_root": 94,
          "user_cache": 3,
          "downloads": 1,
--        "other_absolute_paths": 20
-+        "other_absolute_paths": 25
+-        "other_absolute_paths": 25
++        "other_absolute_paths": 23
        }
      },
      {
-@@ -77,13 +77,13 @@
-     }
-   ],
-   "replacement_counts": {
--    "project_root": 199,
-+    "project_root": 198,
-     "python_executable": 0,
-     "user_home": 0,
+@@ -83,7 +77,7 @@
      "user_cache": 6,
      "downloads": 2,
      "temp": 0,
--    "other_absolute_paths": 30
-+    "other_absolute_paths": 36
+-    "other_absolute_paths": 36
++    "other_absolute_paths": 33
    },
    "raw_canonical_files_modified": false,
    "raw_canonical_checksums": [
 diff --git a/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json b/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
-index c225a45..92fcf85 100644
+index 92fcf85..6fd4453 100644
 --- a/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
 +++ b/FINAL_SUBMISSION/evidence/public_path_hotfix_test_results.json
-@@ -1,8 +1,8 @@
+@@ -1,10 +1,10 @@
  {
--  "executed_at_utc": "2026-08-14T06:42:16.800144+00:00",
-+  "executed_at_utc": "2026-08-14T08:05:07.817023+00:00",
+-  "executed_at_utc": "2026-08-14T08:05:07.817023+00:00",
++  "executed_at_utc": "2026-08-14T08:43:52.660506+00:00",
    "scope": "full suite including public submission path sanitization",
    "python_version": "3.12.13",
--  "python_executable": "<PROJECT_ROOT>\\.venv_round4\\Scripts\\python.exe",
-+  "python_executable": "<ABSOLUTE_PATH>",
+-  "python_executable": "<ABSOLUTE_PATH>",
++  "python_executable": "<PROJECT_ROOT>\\.venv_round4\\Scripts\\python.exe",
    "test_file": "tests/test_feature_pipeline.py",
-   "tests_run": 51,
+-  "tests_run": 51,
++  "tests_run": 52,
    "failures": 0,
-diff --git a/FINAL_SUBMISSION/scripts/generate_final_submission.py b/FINAL_SUBMISSION/scripts/generate_final_submission.py
-index 2adee3d..6036037 100644
---- a/FINAL_SUBMISSION/scripts/generate_final_submission.py
-+++ b/FINAL_SUBMISSION/scripts/generate_final_submission.py
-@@ -191,7 +191,17 @@ def collect_git_evidence() -> str:
-     commands = [
-         ["git", "status", "--short"], ["git", "branch", "--show-current"],
-         ["git", "log", "--oneline", "--decorate", "-n", "20"],
--        ["git", "branch", "--list"], ["git", "remote", "-v"], ["git", "diff", "--", "."],
-+        ["git", "branch", "--list"], ["git", "remote", "-v"],
-+        [
-+            "git", "diff", "--", ".",
-+            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
-+            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
-+        ],
-+        [
-+            "git", "diff", "--cached", "--", ".",
-+            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
-+            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
-+        ],
-     ]
-     sections = ["# Git Evidence", "", "All output below was collected from the actual working tree."]
-     for command in commands:
-@@ -204,7 +214,9 @@ def collect_git_evidence() -> str:
-             errors="replace",
-             check=False,
-         )
--        sections += ["", f"## `{' '.join(command)}`", "", "```text", completed.stdout or completed.stderr or "(no output)", "```"]
-+        raw_output = completed.stdout or completed.stderr or "(no output)"
-+        output = "\n".join(line.rstrip() for line in raw_output.splitlines())
-+        sections += ["", f"## `{' '.join(command)}`", "", "```text", output, "```"]
-     return "\n".join(sections) + "\n"
+   "errors": 0,
+   "skipped": 0,
+diff --git a/FINAL_SUBMISSION/scripts/run_public_path_hotfix_tests.py b/FINAL_SUBMISSION/scripts/run_public_path_hotfix_tests.py
+index 4c8e24a..7b4d060 100644
+--- a/FINAL_SUBMISSION/scripts/run_public_path_hotfix_tests.py
++++ b/FINAL_SUBMISSION/scripts/run_public_path_hotfix_tests.py
+@@ -11,6 +11,8 @@ from pathlib import Path
+ import sys
+ import unittest
+
++from submission_sanitizer import sanitize_public_text
++
+
+ ROOT = Path(__file__).resolve().parents[1]
+ TEST_FILE = ROOT / "tests" / "test_feature_pipeline.py"
+@@ -26,11 +28,15 @@ def main() -> int:
+     suite = unittest.defaultTestLoader.loadTestsFromModule(module)
+     stream = io.StringIO()
+     result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
++    public_python_executable, _ = sanitize_public_text(
++        str(Path(sys.executable).resolve()),
++        project_root=ROOT,
++    )
+     payload = {
+         "executed_at_utc": datetime.now(timezone.utc).isoformat(),
+         "scope": "full suite including public submission path sanitization",
+         "python_version": platform.python_version(),
+-        "python_executable": sys.executable,
++        "python_executable": public_python_executable,
+         "test_file": TEST_FILE.relative_to(ROOT).as_posix(),
+         "tests_run": result.testsRun,
+         "failures": len(result.failures),
+diff --git a/FINAL_SUBMISSION/tests/test_feature_pipeline.py b/FINAL_SUBMISSION/tests/test_feature_pipeline.py
+index 55ad897..99399ef 100644
+--- a/FINAL_SUBMISSION/tests/test_feature_pipeline.py
++++ b/FINAL_SUBMISSION/tests/test_feature_pipeline.py
+@@ -6,6 +6,7 @@ import importlib.util
+ from hashlib import sha256
+ import json
+ from pathlib import Path
++import re
+ import sys
+ import unittest
+
+@@ -249,6 +250,17 @@ class TemporalCoverageTest(unittest.TestCase):
 
 
-diff --git a/README.md b/README.md
-index 8fc0f01..3224025 100644
---- a/README.md
-+++ b/README.md
-@@ -1,14 +1,99 @@
- # HitRadar / HitRadar Pro
+ class EnvironmentEvidenceTest(unittest.TestCase):
++    def test_public_hotfix_test_evidence_uses_portable_python_path(self):
++        evidence = json.loads(
++            (ROOT / "5.UNG_DUNG" / "validation" / "public_path_hotfix_test_results.json").read_text(
++                encoding="utf-8"
++            )
++        )
++        executable = evidence["python_executable"]
++        self.assertTrue(executable.startswith("<PROJECT_ROOT>"))
++        self.assertIn(".venv_round4", executable)
++        self.assertIsNone(re.match(r"^[A-Za-z]:[\\/]", executable))
++
+     def test_round4_environment_validation_passed(self):
+         evidence = json.loads((ROOT / "5.UNG_DUNG" / "validation" / "round4_environment_validation.json").read_text(encoding="utf-8"))
+         self.assertEqual(evidence["status"], "PASS")
+diff --git a/tests/test_feature_pipeline.py b/tests/test_feature_pipeline.py
+index 55ad897..99399ef 100644
+--- a/tests/test_feature_pipeline.py
++++ b/tests/test_feature_pipeline.py
+@@ -6,6 +6,7 @@ import importlib.util
+ from hashlib import sha256
+ import json
+ from pathlib import Path
++import re
+ import sys
+ import unittest
 
--The current canonical handoff is under `FINAL_SUBMISSION/`. Run notebooks in
--order: Notebook 05 → Notebook 06 → Notebook 07.
--
--Temporal governance remains `release_year <= 2017` for selection train, 2018
--for validation, `<2019` for final refit, and `>=2019` for the final temporal
--holdout. The corrected Round-2 pipeline did not use the 2019+ horizon for
--winner selection, but that same horizon had been inspected during an earlier
--development iteration.
--
--Deployment allows post-2020 predictions with an explicit temporal-
--extrapolation warning. See `FINAL_SUBMISSION/README_FINAL_SUBMISSION.md` for
--setup commands, evidence, limitations, and the submission manifest.
-+HitRadar is a Spotify track analytics project whose main task is popularity regression. Secondary tasks provide KMeans audio clustering and content-based track recommendations. The repository also includes FastAPI and Streamlit interfaces for the validated model artifacts.
+@@ -249,6 +250,17 @@ class TemporalCoverageTest(unittest.TestCase):
+
+
+ class EnvironmentEvidenceTest(unittest.TestCase):
++    def test_public_hotfix_test_evidence_uses_portable_python_path(self):
++        evidence = json.loads(
++            (ROOT / "5.UNG_DUNG" / "validation" / "public_path_hotfix_test_results.json").read_text(
++                encoding="utf-8"
++            )
++        )
++        executable = evidence["python_executable"]
++        self.assertTrue(executable.startswith("<PROJECT_ROOT>"))
++        self.assertIn(".venv_round4", executable)
++        self.assertIsNone(re.match(r"^[A-Za-z]:[\\/]", executable))
 +
-+## Dataset overview
-+
-+The canonical processed table contains 586,672 tracks with observed `release_year` values from 1900 through 2021. This processed coverage is distinct from the source dataset's advertised 1921–2020 range. Large source and processed datasets are intentionally not committed; checksums and relative artifact locations are recorded in `FINAL_SUBMISSION/evidence/external_artifact_checksums.json`.
-+
-+## Project architecture
-+
-+- `src/`: shared feature engineering, modeling, evaluation, prediction policy, clustering, and recommendation logic.
-+- `3.NOTEBOOKS/`: notebook workflow and executed Round-4 snapshots.
-+- `4.MODELS/`: small model metadata and evaluation evidence; binary models stay local.
-+- `5.UNG_DUNG/`: FastAPI backend, Streamlit frontend, requirements, and validation evidence.
-+- `7.ML/`: feature contracts and project ML evidence.
-+- `9.SCRIPTS/`: reproducibility, validation, and submission-generation scripts.
-+- `tests/`: automated integration and governance tests.
-+- `FINAL_SUBMISSION/`: sanitized public evidence snapshot and manifest.
-+- `7.QUAN_LY_DU_AN/`: existing project-management evidence.
-+
-+## Notebook flow
-+
-+The public workflow is NB01 → NB07. The final ML handoff is:
-+
-+1. `3.NOTEBOOKS/3.5.feature_engineering/05_feature_engineering.ipynb`
-+2. `3.NOTEBOOKS/3.6.modeling/06_machine_learning.ipynb`
-+3. `3.NOTEBOOKS/3.7.demo/07_ai_deployment.ipynb`
-+
-+Notebook 05 creates and validates executable engineered columns. Notebook 06 performs temporal model selection and final evaluation. Notebook 07 validates deployment behavior. Historical or superseded materials are kept under `10.ARCHIVE/` rather than treated as canonical notebooks.
-+
-+## Temporal model-selection protocol
-+
-+- Selection train: `release_year <= 2017`
-+- Validation: `release_year == 2018`
-+- Final refit: `release_year < 2019`
-+- Final temporal holdout: `release_year >= 2019`
-+
-+The 2019+ horizon was not used for corrected Round-2 winner selection, but it had been inspected during an earlier development iteration. The repository therefore does not describe it as historically untouched or never observed.
-+
-+## Locked final model and metrics
-+
-+The locked winner is **Engineered With-Time / XGBoost**. Committed evidence reports clipped final-holdout metrics:
-+
-+- MAE: `16.201599`
-+- RMSE: `20.594952`
-+- R²: `0.259026`
-+
-+These results are modest and should not be interpreted as causal or uniformly accurate across popularity levels.
-+
-+## Feature engineering
-+
-+Round 4 evaluates 16 candidate engineered features and selects 14. The shared `FeatureBuilder` implements interactions, cyclical key encoding, duration/tempo categories, time-derived signals, and leakage-safe train-fitted period statistics. Training, API, Streamlit, and direct prediction use the same feature contract.
-+
-+## Deployment
-+
-+The backend is under `5.UNG_DUNG/5.1.backend_api/`; the Streamlit UI is under `5.UNG_DUNG/5.2.frontend/`. Predictions after the product-support cutoff of 2020 remain available but are explicitly labeled temporal extrapolations.
-+
-+## Reproducibility and setup
-+
-+Validated evidence uses Python 3.12. From the repository root:
-+
-+```powershell
-+py -3.12 -m venv .venv_round4
-+.\.venv_round4\Scripts\python -m pip install --upgrade pip
-+.\.venv_round4\Scripts\python -m pip install -r .\5.UNG_DUNG\5.3.config\requirements.txt
-+```
-+
-+The binary model and processed parquet artifacts are not stored in normal Git history. Place locally supplied artifacts at the canonical paths listed in `FINAL_SUBMISSION/evidence/external_artifact_checksums.json` and verify their SHA-256 values before validation.
-+
-+## Running the interfaces
-+
-+```powershell
-+.\.venv_round4\Scripts\python -m uvicorn 5.UNG_DUNG.5.1.backend_api.api:app
-+.\.venv_round4\Scripts\python -m streamlit run .\5.UNG_DUNG\5.2.frontend\streamlit_app.py
-+```
-+
-+If module import rules in a shell do not accept dotted numeric directories, run the API with the repository's documented launcher or import the app by file path as demonstrated in the test suite.
-+
-+## Validation and tests
-+
-+```powershell
-+.\.venv_round4\Scripts\python .\9.SCRIPTS\run_public_path_hotfix_tests.py
-+.\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_submission.py
-+```
-+
-+The latest public-path suite records 51 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, and public-path sanitization.
-+
-+## Limitations
-+
-+- Overall R² remains modest and high-popularity tracks are underpredicted more strongly.
-+- Time variables are influential, which increases temporal distribution-shift risk.
-+- Post-2020 predictions are outside the stated product-support period.
-+- KMeans separation is modest (best silhouette approximately 0.242).
-+- Recommendation evidence does not include a human relevance study or complete title/artist metadata.
-+- Final evidence is predictive and descriptive, not causal.
-+
-+## Final submission and evidence
-+
-+`FINAL_SUBMISSION/` is a sanitized public snapshot, not a standalone runtime bundle. It contains executed notebook snapshots, shared source, deployment code, tests, small evidence files, a final audit report, and a checksum manifest. Canonical raw execution evidence and large artifacts remain local for audit and reproducibility.
+     def test_round4_environment_validation_passed(self):
+         evidence = json.loads((ROOT / "5.UNG_DUNG" / "validation" / "round4_environment_validation.json").read_text(encoding="utf-8"))
+         self.assertEqual(evidence["status"], "PASS")
 ```

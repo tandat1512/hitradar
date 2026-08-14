@@ -1,10 +1,10 @@
 {
-  "executed_at_utc": "2026-08-14T08:05:07.817023+00:00",
+  "executed_at_utc": "2026-08-14T08:43:52.660506+00:00",
   "scope": "full suite including public submission path sanitization",
   "python_version": "3.12.13",
-  "python_executable": "<ABSOLUTE_PATH>",
+  "python_executable": "<PROJECT_ROOT>\\.venv_round4\\Scripts\\python.exe",
   "test_file": "tests/test_feature_pipeline.py",
-  "tests_run": 51,
+  "tests_run": 52,
   "failures": 0,
   "errors": 0,
   "skipped": 0,

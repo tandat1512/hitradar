@@ -6,6 +6,7 @@ import importlib.util
 from hashlib import sha256
 import json
 from pathlib import Path
+import re
 import sys
 import unittest
 
@@ -249,6 +250,17 @@ class TemporalCoverageTest(unittest.TestCase):
 
 
 class EnvironmentEvidenceTest(unittest.TestCase):
+    def test_public_hotfix_test_evidence_uses_portable_python_path(self):
+        evidence = json.loads(
+            (ROOT / "5.UNG_DUNG" / "validation" / "public_path_hotfix_test_results.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        executable = evidence["python_executable"]
+        self.assertTrue(executable.startswith("<PROJECT_ROOT>"))
+        self.assertIn(".venv_round4", executable)
+        self.assertIsNone(re.match(r"^[A-Za-z]:[\\/]", executable))
+
     def test_round4_environment_validation_passed(self):
         evidence = json.loads((ROOT / "5.UNG_DUNG" / "validation" / "round4_environment_validation.json").read_text(encoding="utf-8"))
         self.assertEqual(evidence["status"], "PASS")

@@ -80,7 +80,7 @@ Kernel: **hitradar-round4**; Python **3.12.13**.
 
 Tests **39**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
 
-Public-path hotfix full suite: **51** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+Public-path hotfix full suite: **52** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
 
 ## N. Final Submission Semantics
 
