@@ -12,7 +12,7 @@
 | Feature | 3.2 — FastAPI Backend |
 | Người thực hiện | Minh |
 | Ngày | 2026-08-06 |
-| Repository | h:\\dự án\\DUAN1 github |
+| Repository | <PROJECT_ROOT>|
 | Tổng phases | 6 |
 | **Tổng tests** | **133 PASS / 0 FAIL / 0 ERROR** |
 

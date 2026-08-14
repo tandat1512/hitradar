@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
-REPO = Path(r"H:\dự án\DUAN1 github")
+REPO = Path(r"<PROJECT_ROOT>")
 BACKEND = REPO / "epic3" / "feature_3_2" / "backend"
 VAL = BACKEND / "validation"
 sys.path.insert(0, str(BACKEND))

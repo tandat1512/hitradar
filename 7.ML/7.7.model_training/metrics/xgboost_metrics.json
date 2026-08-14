@@ -46,6 +46,6 @@
   "test_used": false,
   "timestamp": "2026-07-20T14:38:05.505981+00:00",
   "selected_as_family_best": true,
-  "artifact_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib",
+  "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/xgboost_bundle.joblib",
   "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe"
 }

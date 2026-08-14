@@ -1,8 +1,8 @@
 import os
 import json
 
-EVAL_DIR = r"E:\Dự án 1 hitrada\hitradar\7.ML\7.8.model_evaluation"
-OUT_DIR = r"E:\Dự án 1 hitrada\Output epic2\F 2.5"
+EVAL_DIR = r"<PROJECT_ROOT>/7.ML/7.8.model_evaluation"
+OUT_DIR = r"<PROJECT_ROOT>"
 
 os.makedirs(OUT_DIR, exist_ok=True)
 

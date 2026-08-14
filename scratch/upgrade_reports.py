@@ -29,7 +29,7 @@ files = [
     r"Output epic2\SHAP_COMPUTATION_REPORT.md"
 ]
 
-base = r"E:\Dự án 1 hitrada"
+base = r"<PROJECT_ROOT>"
 
 # Premium translations for common headers
 premium_headers = {

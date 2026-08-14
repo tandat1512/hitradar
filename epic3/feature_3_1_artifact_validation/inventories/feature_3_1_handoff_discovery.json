@@ -10,21 +10,21 @@
     "handoff_to_epic3_md_found": false,
     "handoff_to_epic2_md_found": true,
     "handoff_to_epic3_md_locations_searched": [
-      "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/package/handoff_to_epic3.md",
-      "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/handoff_to_epic3.md",
-      "H:/dự án/DUAN1 github/6.TAI_LIEU/6.1.bao_cao/handoff_to_epic3.md",
-      "H:/dự án/DUAN1 github/handoff_to_epic3.md",
-      "H:/dự án/DUAN1 github/docs/handoff_to_epic3.md"
+      "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/handoff_to_epic3.md",
+      "<PROJECT_ROOT>/7.ML/7.10.model_packaging/handoff_to_epic3.md",
+      "<PROJECT_ROOT>/6.TAI_LIEU/6.1.bao_cao/handoff_to_epic3.md",
+      "<PROJECT_ROOT>",
+      "<PROJECT_ROOT>"
     ],
     "found_candidates": [
       {
-        "path": "H:/dự án/DUAN1 github/6.TAI_LIEU/6.1.bao_cao/handoff_to_epic2.md",
+        "path": "<PROJECT_ROOT>/6.TAI_LIEU/6.1.bao_cao/handoff_to_epic2.md",
         "note": "This is EPIC 2 handoff document — wrong scope for EPIC 3"
       }
     ],
     "functional_handoff_substitute_found": true,
     "functional_handoff": {
-      "path": "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/package/MODEL_PACKAGE_README.md",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/MODEL_PACKAGE_README.md",
       "sha256": "78d7f31df314b3a66ab3b74db7fa07af97116d3960697c050f7e5dbd76174755",
       "size_bytes": 1689,
       "role": "De-facto handoff document — contains model architecture, API contract summary, and runtime requirements"

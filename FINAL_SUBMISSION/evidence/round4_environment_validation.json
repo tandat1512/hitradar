@@ -1,7 +1,7 @@
 {
   "generated_at_utc": "2026-08-14T05:57:25.822682+00:00",
   "python_version": "3.12.13",
-  "python_executable": "<PROJECT_ROOT>\\.venv_round4\\Scripts\\python.exe",
+  "python_executable": "<PROJECT_ROOT>/.venv_round4/Scripts/python.exe",
   "requirements_file": "5.UNG_DUNG/5.3.config/requirements.txt",
   "requirements_install_status": "PASS",
   "http_client_package": "httpx2",

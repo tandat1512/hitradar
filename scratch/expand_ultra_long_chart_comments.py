@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"e:\Dự án 1 hitrada\hitradar\3.NOTEBOOKS"
+base_dir = r"<PROJECT_ROOT>/3.NOTEBOOKS"
 
 # Masterclass 4-part long commentaries (15-25 lines per chart)
 ultra_long_comments = {

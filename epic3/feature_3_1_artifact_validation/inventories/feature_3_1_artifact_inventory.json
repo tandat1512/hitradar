@@ -2,8 +2,8 @@
   "inventory_id": "F31-P1-INV-001",
   "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
   "generated_at": "2026-08-03T21:08:00+07:00",
-  "package_root": "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/package",
-  "package_root_normalized": "H:/dự án/DUAN1 github/7.ML/7.10.model_packaging/package",
+  "package_root": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package",
+  "package_root_normalized": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package",
   "total_artifacts": 20,
   "summary": {
     "FOUND_EXACT": 16,

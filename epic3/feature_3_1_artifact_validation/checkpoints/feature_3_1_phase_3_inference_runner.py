@@ -10,7 +10,7 @@ if sys.stdout.encoding != 'utf-8':
 if sys.stderr.encoding != 'utf-8':
     sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT  = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 ARTIFACT  = PKG_ROOT / "pipeline" / "full_inference_pipeline.joblib"
 OUT_DIR   = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "validation"

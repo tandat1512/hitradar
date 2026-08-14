@@ -1,6 +1,6 @@
 """
 Generate all Phase 2 validation artifacts for Feature 2.9.
-Run from: E:\Dự án 1 hitrada\hitradar
+Run from: <PROJECT_ROOT>
 Usage: python generate_artifacts.py
 """
 import sys, os, json, hashlib

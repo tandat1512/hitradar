@@ -297,7 +297,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/BAO_CAO_NGHIEM_THU_FEATURE_2_2.md",
     "size": 72358,
     "sha256": "8d809c23eeb48e434e6cc9764a6c70702d56cd2951957db57b02ccf53cc0542a",
@@ -306,7 +306,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\CANDIDATE_SCHEMA_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/CANDIDATE_SCHEMA_REPORT.md",
     "size": 1690,
     "sha256": "f51cc8535ee61328f2f5ba92993872e079ca501317a5d9303aa60dc82891bdc9",
@@ -315,7 +315,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\CLOSURE_GATE_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/CLOSURE_GATE_REPORT.md",
     "size": 2629,
     "sha256": "e689831cb2eeb56da19143c7f66c4357811456b447685c9cf8b66a40fc7a08fe",
@@ -324,7 +324,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\COLUMN_CLASSIFICATION_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/COLUMN_CLASSIFICATION_REPORT.md",
     "size": 2950,
     "sha256": "02c937e1e10cf5fa530cd2dc0443d96128318f9b6733dea52969515896cbfb87",
@@ -333,7 +333,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\encoder_categories.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/encoder_categories.json",
     "size": 93,
     "sha256": "4c7cfb11ed2c808a8c12aee6c60ad172bf384f19ca1bcbaa4133e6989c473320",
@@ -342,7 +342,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\encoding_config.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/encoding_config.json",
     "size": 58,
     "sha256": "850fd27a76d4112167196d36132591874dd391dbe258aa547959d825233ba05b",
@@ -351,7 +351,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\ENCODING_STRATEGY_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/ENCODING_STRATEGY_REPORT.md",
     "size": 3641,
     "sha256": "c0738c970a80f08f14e79cb333bc60aeb6fd2dbd1fef7f7a7b1e33a3df4c2cda",
@@ -360,7 +360,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\feature_2_2_closure_gate.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_closure_gate.json",
     "size": 159,
     "sha256": "47cd651ade0463364652d06dd521b6c2a42ba4e8e0b8170da8a906e25ea1ea7c",
@@ -369,7 +369,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\FEATURE_2_2_COMPLETION_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/FEATURE_2_2_COMPLETION_REPORT.md",
     "size": 3128,
     "sha256": "d3c0fdc99679e68fd2067979ef2261883f61e33239b8b2a4da1036664d150709",
@@ -378,7 +378,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\feature_2_2_report_manifest.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_report_manifest.json",
     "size": 56,
     "sha256": "bb679747191b26737fc88d65ceade7dc466b286f85a1b81b55e423a41bd76fc1",
@@ -387,7 +387,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\feature_2_2_test_summary.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/feature_2_2_test_summary.json",
     "size": 79,
     "sha256": "72e8c52daf79b35d5bb4f7a3505d1688c020dd39439fa8afdc1f44b4f8184840",
@@ -396,7 +396,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\imputer_statistics.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/imputer_statistics.json",
     "size": 709,
     "sha256": "9af36562fe96e61d0032bb885d9ee538678337d3e6f5396e506ef517289726aa",
@@ -405,7 +405,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\LEAKAGE_SAFETY_AUDIT_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/LEAKAGE_SAFETY_AUDIT_REPORT.md",
     "size": 1745,
     "sha256": "b6edd1808f05839744ddeada6f540ad4545b1e4c888a05463837ceb7625e78de",
@@ -414,7 +414,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\missing_profile_by_split.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/missing_profile_by_split.json",
     "size": 419,
     "sha256": "b06c20b5011cbebc062ef1a0d5ca8e1f28ed152ed5200b391506c43f56395635",
@@ -423,7 +423,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\missing_value_strategy.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/missing_value_strategy.json",
     "size": 479,
     "sha256": "7533e54834133972066802d6d1cad0af582c0f7a157f54019dfb145af0e31396",
@@ -432,7 +432,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\MISSING_VALUE_STRATEGY_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/MISSING_VALUE_STRATEGY_REPORT.md",
     "size": 1470,
     "sha256": "f3c34ee2a44657b18d2d71724fccfaf52dbfac9083a1c517719e6031519a5955",
@@ -441,7 +441,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\outlier_config.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_config.json",
     "size": 71,
     "sha256": "9d3616aa5cdd89af2745a56c9ae8afbb755772116e35ed0fd838317b211a2e77",
@@ -450,7 +450,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\OUTLIER_PREPROCESSING_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/OUTLIER_PREPROCESSING_REPORT.md",
     "size": 1577,
     "sha256": "4042a5dbfdcbc40d8026fff20044a688f74c7357c467c6c561752d6c90f450d4",
@@ -459,7 +459,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\outlier_profile_by_split.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_profile_by_split.json",
     "size": 2,
     "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -468,7 +468,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\outlier_thresholds.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/outlier_thresholds.json",
     "size": 1141,
     "sha256": "2c0c0d83854e6c4b1cc608cc91d340e2e11167bb9cfc867c31f797792973a500",
@@ -477,7 +477,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\preprocessing_fit_audit.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_fit_audit.json",
     "size": 1727,
     "sha256": "b69fd8112853134e56553222afa3c00789f5fc3367cefbe663ca971292c96d31",
@@ -486,7 +486,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\preprocessing_input_contract.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/preprocessing_input_contract.json",
     "size": 951,
     "sha256": "259db352a6563d898981d378e8c46195f5b49ea7885a9de1a0b0e77cce312f28",
@@ -495,7 +495,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\PREPROCESSING_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/PREPROCESSING_REPORT.md",
     "size": 765,
     "sha256": "0f1db350a626604e41255a81530eaa07d66cbce6c3e45d2d82a867d6449c7d6c",
@@ -504,7 +504,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\PREPROCESSING_VALIDATION_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/PREPROCESSING_VALIDATION_REPORT.md",
     "size": 8526,
     "sha256": "118e77e689d6b48fc8318bca264aea7260c14185984f78df901d1580ebbc9eb1",
@@ -513,7 +513,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\pytest_feature_2_2.xml",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/pytest_feature_2_2.xml",
     "size": 1469,
     "sha256": "9c100bb8d8942c4ec92a1204d390266c3435ee88245236aac4c708c1ac517893",
@@ -522,7 +522,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\scaler_statistics.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/scaler_statistics.json",
     "size": 2,
     "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
@@ -531,7 +531,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\scaling_config.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/scaling_config.json",
     "size": 54,
     "sha256": "bc50c9ac72a198f7ee32e0f4ae32b9c332e756a2a13bd58886cb3677b47d019d",
@@ -540,7 +540,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\SCALING_STRATEGY_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/SCALING_STRATEGY_REPORT.md",
     "size": 3464,
     "sha256": "e8ee8a9028c26845f7d7bbb17154e07cb0ad694f2fe768f0a45733ce1930507c",
@@ -549,7 +549,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\semantic_roles.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/semantic_roles.json",
     "size": 659,
     "sha256": "0f8f4f55d631d1ad4bb4df6f2856cf2dd2379a42e5ee2739ed44f3848226d6be",
@@ -558,7 +558,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\TEST_COVERAGE_REPORT.md",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/TEST_COVERAGE_REPORT.md",
     "size": 1457,
     "sha256": "fe9437f9f71ec9098091802a9cd7c0c7fb00c3aee9db5f8bf031ceccfec8cb2b",
@@ -567,7 +567,7 @@
     "reason": "Root cause hotfix archiving"
   },
   {
-    "original_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\Output epic2\\F 2.2\\unknown_category_profile.json",
+    "original_path": "<PROJECT_ROOT>",
     "archived_path": "10.ARCHIVE/feature_2_2_before_final_root_cause_hotfix/unknown_category_profile.json",
     "size": 1962,
     "sha256": "df0424f371a150453d74d50224a5651c50d1573006780d5bd3a15d69d063cb64",

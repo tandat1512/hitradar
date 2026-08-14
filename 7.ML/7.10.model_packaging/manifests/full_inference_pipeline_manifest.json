@@ -27,7 +27,7 @@
   "selected_feature_count": 31,
   "model_matrix_width": 49,
   "source_champion_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
-  "packaged_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\pipeline\\full_inference_pipeline.joblib",
+  "packaged_path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/pipeline/full_inference_pipeline.joblib",
   "packaged_hash": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
   "serialization_method": "joblib",
   "absolute_path_dependencies_detected": false,

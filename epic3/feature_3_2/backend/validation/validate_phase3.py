@@ -7,7 +7,7 @@ import json, logging, os
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO = Path(r"H:\dự án\DUAN1 github")
+REPO = Path(r"<PROJECT_ROOT>")
 BACKEND = REPO / "epic3" / "feature_3_2" / "backend"
 VAL = BACKEND / "validation"
 VAL.mkdir(parents=True, exist_ok=True)
@@ -183,7 +183,7 @@ mi_val = {
     "package_version": mdata.get("package_version"),
     "data_version": mdata.get("data_version"),
     "consistent_with_phase2": mdata.get("model_id") == "EXP24-XGB-FINAL-001",
-    "no_internal_paths": "c:\\users" not in json.dumps(mdata).lower(),
+    "no_internal_paths": "<PROJECT_ROOT>" not in json.dumps(mdata).lower(),
     "warnings": [],
     "blockers": [],
 }
@@ -201,7 +201,7 @@ fe_val = {
     "canonical_18_expected": fdata.get("total_input_fields") == 18,
     "selected_31_expected": fdata.get("total_selected_features") == 31,
     "no_internal_paths": all(x not in json.dumps(fdata).lower()
-                              for x in ["c:\\users", ".joblib", "/artifacts/"]),
+                              for x in ["<PROJECT_ROOT>", ".joblib", "/artifacts/"]),
     "has_modifiable_field": "release_year" in {f["name"] for f in fdata.get("canonical_fields", [])},
     "warnings": [],
     "blockers": [],

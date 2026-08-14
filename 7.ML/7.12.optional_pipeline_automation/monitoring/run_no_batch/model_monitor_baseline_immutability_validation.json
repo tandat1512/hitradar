@@ -3,7 +3,7 @@
   "validation_type": "BASELINE_IMMUTABILITY_CHECK",
   "baseline_id": "BASELINE-001",
   "baseline_version": "1.0.0",
-  "baseline_file_path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.12.optional_pipeline_automation\\monitoring\\model_monitor_baseline.json",
+  "baseline_file_path": "<PROJECT_ROOT>/7.ML/7.12.optional_pipeline_automation/monitoring/model_monitor_baseline.json",
   "pre_monitoring_hash": "141cc7f8008c00989e439328ec8f11bd5a2c6e27cc534224a3bf61b9224fff1a",
   "post_monitoring_hash": "141cc7f8008c00989e439328ec8f11bd5a2c6e27cc534224a3bf61b9224fff1a",
   "hashes_match": true,

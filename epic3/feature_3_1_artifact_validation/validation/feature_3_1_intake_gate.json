@@ -131,7 +131,7 @@
       "severity": "MEDIUM",
       "description": "4.MODELS/4.2.evaluation/model_metrics.json is empty (0 bytes)",
       "impact": "Cannot verify model performance characteristics (R2, RMSE, MAE) during intake",
-      "location": "H:/dự án/DUAN1 github/4.MODELS/4.2.evaluation/model_metrics.json",
+      "location": "<PROJECT_ROOT>/4.MODELS/4.2.evaluation/model_metrics.json",
       "required_action": "EPIC 2 team must provide populated model_metrics.json or EPIC 3 team must regenerate"
     }
   ],

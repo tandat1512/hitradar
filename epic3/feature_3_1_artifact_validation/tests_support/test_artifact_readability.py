@@ -3,7 +3,7 @@ Verify all declared artifacts are readable and parse as expected types.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 
 def test_artifact_manifest_readable():

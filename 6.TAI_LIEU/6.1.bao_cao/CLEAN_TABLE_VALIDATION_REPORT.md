@@ -8,7 +8,7 @@
 | Database | `hitradar` @ `localhost:5432` |
 | User | `postgres` |
 | Date/Time | 2026-07-06 05:23 UTC |
-| Base directory | `X:\DUAN1\HitRadar_Pro` |
+| Base directory | `<PROJECT_ROOT>` |
 | **Overall** | **PASS** |
 
 ---

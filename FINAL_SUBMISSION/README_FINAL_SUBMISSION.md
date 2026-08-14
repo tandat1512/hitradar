@@ -26,6 +26,7 @@ The 2019+ horizon was not used for corrected Round-2 winner selection, but had b
 - KMeans separation is modest; recommendation has no human relevance study or fabricated artist/title metadata.
 - Git evidence is **verifiable**.
 - SHAP status: **not_added_optional_advanced_item**; it was not added because the inspected checklist labels it as an advanced, not mandatory, item.
+- PostgreSQL Notebook 02: **DOCUMENTED_LIMITATION**. It was not re-executed because PostgreSQL service/credentials were unavailable in the review environment. No current successful database execution is claimed; prior ingestion and validation evidence is retained.
 
 ## A. Run from the canonical repository root
 
@@ -48,7 +49,7 @@ $env:HITRADAR_KERNEL_NAME="hitradar-round4"
 
 ## B. Inspect the FINAL_SUBMISSION snapshot
 
-- `notebooks/`: executed notebook snapshots.
+- `notebooks/`: canonical Notebook 02/05/06/07 snapshots. Notebook 02 is a clean not-re-executed snapshot; Notebook 06 is preserved and not retrained in Round 4.
 - `src/`: shared-source snapshot.
 - `deployment/`: API/schema/UI snapshot and the single current requirements file.
 - `evidence/`: feature, model, environment, temporal coverage, tests, checksums, and execution evidence.
@@ -57,4 +58,4 @@ $env:HITRADAR_KERNEL_NAME="hitradar-round4"
 
 ## Evidence path sanitization
 
-Machine-specific absolute paths and local usernames are sanitized in this public submission snapshot. Canonical raw execution evidence is retained in the working repository for audit. Sanitization changes only filesystem location strings; versions, commands, metrics, hashes, PASS/FAIL results and model outputs are preserved.
+Machine-specific absolute paths and local usernames are sanitized in the tracked repository and this public snapshot. Pre-sanitization raw copies are retained only under ignored `scratch/private_evidence/` for local audit and are not part of the public repository. The public report records both private-original and tracked-sanitized checksums without publishing private paths.

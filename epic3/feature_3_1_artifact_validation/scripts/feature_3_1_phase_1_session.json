@@ -1,12 +1,12 @@
 {
   "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
-  "repository_root": "H:/dự án/DUAN1 github",
+  "repository_root": "<PROJECT_ROOT>",
   "branch": "main",
   "commit_sha": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
   "commit_timestamp": "2026-07-26T19:17:20+07:00",
   "started_at": "2026-08-03T20:45:12+07:00",
-  "report_directory": "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3",
-  "canonical_feature_dir": "H:/dự án/DUAN1 github/epic3/feature_3_1_artifact_validation",
+  "report_directory": "<PROJECT_ROOT>",
+  "canonical_feature_dir": "<PROJECT_ROOT>/epic3/feature_3_1_artifact_validation",
   "dirty_files_before": [
     "5.UNG_DUNG/5.1.backend_api/api.py",
     "5.UNG_DUNG/5.1.backend_api/models/prediction.py"

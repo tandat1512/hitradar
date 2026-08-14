@@ -3,7 +3,7 @@ Verify input_schema.json has correct field types, ranges, and defaults.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 INPUT_SCHEMA = PKG_ROOT / "schemas" / "input_schema.json"
 

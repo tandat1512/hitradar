@@ -11,7 +11,7 @@
 | EPIC | EPIC 3 — Backend & Deployment |
 | Feature | 3.2 — FastAPI Backend |
 | Người thực hiện | Minh |
-| Repository | h:\\dự án\\DUAN1 github |
+| Repository | <PROJECT_ROOT>|
 | Branch | main |
 | Commit | `2a6343f` (Phase 4 commit) |
 | Ngày nghiệm thu | 2026-08-06 |

@@ -26,7 +26,7 @@ The public workflow is NB01 → NB07. The final ML handoff is:
 2. `3.NOTEBOOKS/3.6.modeling/06_machine_learning.ipynb`
 3. `3.NOTEBOOKS/3.7.demo/07_ai_deployment.ipynb`
 
-Notebook 05 creates and validates executable engineered columns. Notebook 06 performs temporal model selection and final evaluation. Notebook 07 validates deployment behavior. Historical or superseded materials are kept under `10.ARCHIVE/` rather than treated as canonical notebooks.
+Notebook 05 creates and validates executable engineered columns. Notebook 06 was preserved from the previous validated execution and was not retrained in the final repository hotfix. Notebook 07 validates deployment behavior. Historical or superseded materials are kept under `10.ARCHIVE/` rather than treated as canonical notebooks.
 
 ## Temporal model-selection protocol
 
@@ -65,7 +65,7 @@ py -3.12 -m venv .venv_round4
 .\.venv_round4\Scripts\python -m pip install -r .\5.UNG_DUNG\5.3.config\requirements.txt
 ```
 
-The binary model and processed parquet artifacts are not stored in normal Git history. Place locally supplied artifacts at the canonical paths listed in `FINAL_SUBMISSION/evidence/external_artifact_checksums.json` and verify their SHA-256 values before validation.
+Large runtime/data artifacts are excluded from the current tracked submission tree and supplied locally using checksum-verified external artifact paths. Place them at the relative paths listed in `FINAL_SUBMISSION/evidence/external_artifact_checksums.json`. Legacy commits may contain historical artifacts; this hotfix does not rewrite Git history.
 
 ## Running the interfaces
 
@@ -79,11 +79,13 @@ If module import rules in a shell do not accept dotted numeric directories, run 
 ## Validation and tests
 
 ```powershell
+.\.venv_round4\Scripts\python .\9.SCRIPTS\run_round4_tests.py
 .\.venv_round4\Scripts\python .\9.SCRIPTS\run_public_path_hotfix_tests.py
 .\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_submission.py
+.\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_repository.py
 ```
 
-The latest public-path suite records 52 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, and public-path sanitization.
+The latest final repository suite records 70 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, repository-wide path sanitization (including ANSI/Jupyter tracebacks), canonical PostgreSQL notebook governance, artifact tracking, canonical notebook paths, and XLSX/DOCX readability.
 
 ## Limitations
 
@@ -96,4 +98,10 @@ The latest public-path suite records 52 tests with 0 failures, 0 errors, and 0 s
 
 ## Final submission and evidence
 
-`FINAL_SUBMISSION/` is a sanitized public snapshot, not a standalone runtime bundle. It contains executed notebook snapshots, shared source, deployment code, tests, small evidence files, a final audit report, and a checksum manifest. Canonical raw execution evidence and large artifacts remain local for audit and reproducibility.
+`FINAL_SUBMISSION/` is a sanitized public snapshot, not a standalone runtime bundle. It contains notebook snapshots, shared source, deployment code, tests, small evidence files, a final audit report, and a checksum manifest. Private raw pre-sanitization evidence is retained only under ignored `scratch/private_evidence/`; large artifacts remain local and checksum-verifiable.
+
+PostgreSQL Notebook 02 was not re-executed during the final repository hotfix because the review environment did not have an available PostgreSQL service / credential configuration. Prior PostgreSQL ingestion and validation evidence is retained. No new successful database execution is claimed.
+
+Other database-backed canonical notebooks were likewise not freshly re-executed. Failed connection outputs were removed where present; retained non-error outputs are historical evidence rather than fresh hotfix execution.
+
+To reproduce Notebook 02, configure the HitRadar PostgreSQL database, set `POSTGRES_PASSWORD` or `PGPASSWORD`, and run `3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb`.

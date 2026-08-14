@@ -1,6 +1,6 @@
 """Generate pytest files for Feature 2.7 Phase 3."""
 import os
-F27 = os.path.abspath(r"E:\Dự án 1 hitrada\hitradar\7.ML\7.10.model_packaging")
+F27 = os.path.abspath(r"<PROJECT_ROOT>/7.ML/7.10.model_packaging")
 TD = os.path.join(F27, "tests")
 
 tests = {

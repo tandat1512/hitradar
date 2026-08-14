@@ -19,7 +19,7 @@ GLOBAL_DIR= os.path.join(EXP_DIR, "global")
 CKP_DIR   = os.path.join(EXP_DIR, "checkpoints")
 MANIFEST_DIR = os.path.join(EXP_DIR, "manifests")
 SAMPLE_DIR= os.path.join(EXP_DIR, "explanation_sample")
-REPORT_DIR= r"E:\Dự án 1 hitrada\Output epic2"
+REPORT_DIR= r"<PROJECT_ROOT>"
 
 for d in [GLOBAL_DIR, CKP_DIR]: os.makedirs(d, exist_ok=True)
 

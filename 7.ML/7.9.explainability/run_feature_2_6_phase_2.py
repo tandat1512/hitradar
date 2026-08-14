@@ -1,6 +1,6 @@
 """
 Feature 2.6 Phase 2: SHAP Explainer Creation and Computation
-Run from: E:\Dự án 1 hitrada
+Run from: <PROJECT_ROOT>
 """
 
 import json
@@ -12,7 +12,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Fixed repo root (not a git repo)
-REPO_ROOT = r"E:\Dự án 1 hitrada"
+REPO_ROOT = r"<PROJECT_ROOT>"
 
 # Add FE source so unpickling works
 sys.path.insert(0, os.path.join(REPO_ROOT, "hitradar", "7.ML", "7.6.feature_engineering", "src"))
@@ -31,7 +31,7 @@ import joblib
 
 # Paths
 EXPLAINABILITY_DIR = os.path.join(REPO_ROOT, "hitradar", "7.ML", "7.9.explainability")
-OUTPUT_EPIC2_DIR = r"E:\Dự án 1 hitrada\Output epic2"
+OUTPUT_EPIC2_DIR = r"<PROJECT_ROOT>"
 
 # Create output directories
 os.makedirs(os.path.join(EXPLAINABILITY_DIR, "explanation_sample"), exist_ok=True)

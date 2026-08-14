@@ -11,7 +11,7 @@
 | EPIC | EPIC 3 — Backend & Deployment |
 | Dự án | HitRadar Pro |
 | Người thực hiện | Minh |
-| Repository | h:\\dự án\\DUAN1 github |
+| Repository | <PROJECT_ROOT>|
 | Ngày hoàn thành | 2026-08-06 |
 | Phase cuối | 6/6 |
 | **Tổng tests** | **133 PASS / 0 FAIL / 0 ERROR** |

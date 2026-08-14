@@ -3,7 +3,7 @@
   "mode": "validate",
   "dry_run": false,
   "resume_requested": false,
-  "repository_root": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar",
+  "repository_root": "<PROJECT_ROOT>",
   "git_commit": "abc1234",
   "working_tree_dirty": false,
   "config_path": "configs/pipeline.yaml",

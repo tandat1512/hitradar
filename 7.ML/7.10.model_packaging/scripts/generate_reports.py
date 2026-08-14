@@ -2,8 +2,8 @@ import os, json
 from datetime import datetime, timezone
 
 def generate_reports():
-    F27_ROOT = os.path.abspath(r"E:\Dự án 1 hitrada\hitradar\7.ML\7.10.model_packaging")
-    OUTPUT_DIR = r"E:\Dự án 1 hitrada\Output epic2"
+    F27_ROOT = os.path.abspath(r"<PROJECT_ROOT>/7.ML/7.10.model_packaging")
+    OUTPUT_DIR = r"<PROJECT_ROOT>"
     
     def load_json(p):
         with open(os.path.join(F27_ROOT, p), 'r', encoding='utf-8') as f:

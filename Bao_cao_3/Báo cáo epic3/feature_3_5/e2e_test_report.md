@@ -5,7 +5,7 @@
 **EPIC:** 3 — Productization, Integration & Defense
 **Feature:** 3.5 — Integration & End-to-End Testing
 **Người thực hiện:** Minh
-**Repository:** H:\dự án\DUAN1 github
+**Repository:** <PROJECT_ROOT>
 **Branch:** main
 **Source snapshot:** WORKING_TREE (2026-08-07)
 **Ngày chạy:** 2026-08-07

@@ -3,7 +3,7 @@ Verify no source artifact files were modified during Phase 2.
 """
 import json, pathlib, hashlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT  = REPO_ROOT / "7.ML/7.10.model_packaging/package"
 NOREFIT_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_no_refit_validation.json"
 LOAD_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_model_load_validation.json"

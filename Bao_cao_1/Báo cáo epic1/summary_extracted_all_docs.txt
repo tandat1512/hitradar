@@ -913,7 +913,7 @@ Không one-hot toàn bộ 4,672 genres nếu chưa đánh giá memory/sparsity/l
 10. Cách reproduce pipeline và các file quan trọng
 EPIC 1 đã để lại hướng dẫn pipeline. Người mới chỉ cần chạy theo thứ tự nếu muốn tái tạo database và export dataset. Password không được hardcode, dùng biến môi trường PGPASSWORD.
 10.1 Lệnh chính để tạo ML-ready handoff
-$env:PGPASSWORD = "your_password"$project = "X:\DUAN1\HitRadar_Pro"$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"$db      = "hitradar"$u       = "postgres"$handoff = "$project\2.DATABASE_SQL\2.6.ml_handoff"# 1. Tạo view ML-ready& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$handoff\01_create_ml_ready_dataset.sql"# 2. Export CSV + Parquetpython "$project\9.SCRIPTS\export_ml_ready_dataset.py" `    --base-dir $project --database $db --user $u# 3. Validate read-onlypython "$project\9.SCRIPTS\validate_ml_ready_dataset.py" `    --base-dir $project --database $db --user $u
+$env:PGPASSWORD = "your_password"$project = "<PROJECT_ROOT>"$psql    = "<PROJECT_ROOT>"$db      = "hitradar"$u       = "postgres"$handoff = "$project\2.DATABASE_SQL\2.6.ml_handoff"# 1. Tạo view ML-ready& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$handoff\01_create_ml_ready_dataset.sql"# 2. Export CSV + Parquetpython "$project\9.SCRIPTS\export_ml_ready_dataset.py" `    --base-dir $project --database $db --user $u# 3. Validate read-onlypython "$project\9.SCRIPTS\validate_ml_ready_dataset.py" `    --base-dir $project --database $db --user $u
 10.2 File quan trọng
 File
 Vai trò
@@ -2641,7 +2641,7 @@ Kết luận cuối
 Feature 1.2 được chốt PASS trong phạm vi Database Architecture. Đây là PASS sạch cho schema và DDL, không phải PASS cho import dữ liệu. Nhóm được phép chuyển sang Feature 1.3 với điều kiện giữ đúng ranh giới: Feature 1.3 chịu trách nhiệm import thật, kiểm row count, duplicate IDs và viết hướng dẫn pipeline.
 Điểm giá trị nhất của Feature 1.2 là đã chuyển dự án từ trạng thái “có dataset và audit” sang trạng thái “có bản thiết kế database có thể chạy thật”. Từ đây các feature sau có nền tảng rõ ràng: 1.3 import, 1.4 clean, 1.5 quality gates, 1.6 analytics views, 1.7 EDA và 1.8 handoff cho EPIC 2.
 Phụ lục A - Log terminal psql do người dùng cung cấp
-PS X:\DUAN1\HitRadar_Pro> & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\01_create_schemas.sql"CREATE SCHEMACREATE SCHEMACREATE SCHEMAPS X:\DUAN1\HitRadar_Pro> & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\02_create_raw_tables.sql"CREATE TABLECREATE TABLECREATE TABLEPS X:\DUAN1\HitRadar_Pro> & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\03_create_clean_tables.sql"CREATE TABLECREATE TABLECREATE TABLECREATE TABLECREATE TABLECREATE TABLEPS X:\DUAN1\HitRadar_Pro> & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\04_create_analytics_views.sql"CREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWPS X:\DUAN1\HitRadar_Pro> & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\05_create_constraints_indexes.sql"CREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEX
+PS <PROJECT_ROOT>> & "<PROJECT_ROOT>" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\01_create_schemas.sql"CREATE SCHEMACREATE SCHEMACREATE SCHEMAPS <PROJECT_ROOT>> & "<PROJECT_ROOT>" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\02_create_raw_tables.sql"CREATE TABLECREATE TABLECREATE TABLEPS <PROJECT_ROOT>> & "<PROJECT_ROOT>" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\03_create_clean_tables.sql"CREATE TABLECREATE TABLECREATE TABLECREATE TABLECREATE TABLECREATE TABLEPS <PROJECT_ROOT>> & "<PROJECT_ROOT>" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\04_create_analytics_views.sql"CREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWCREATE VIEWPS <PROJECT_ROOT>> & "<PROJECT_ROOT>" -w -h localhost -U hitradar_app -d hitradar_ddl_test -v ON_ERROR_STOP=1 -f "2.DATABASE_SQL\2.1.tao_bang\05_create_constraints_indexes.sql"CREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEXCREATE INDEX
 Phụ lục B - Bảng giải thích các object chính
 Object
 Loại
@@ -2955,7 +2955,7 @@ Hạng mục
 Trước
 Sau
 Hard-coded project path trong import_raw_data.py
-r"x:\DUAN1\HitRadar_Pro"
+r"<PROJECT_ROOT>"
 Path(__file__).resolve().parents[1] + --base-dir
 Hard-coded LOG_DIR trong validate_raw_import.py
 Đường dẫn tuyệt đối trong script
@@ -2992,7 +2992,7 @@ Không đổi: raw_tracks 586,672; raw_artists 1,162,095; raw_artist_json 573,85
 10. Cách chạy lại pipeline
 Phần này được viết gọn để người khác nhìn vào có thể hiểu thứ tự chạy. Bản hướng dẫn đầy đủ nằm trong HOW_TO_RUN_DATA_PIPELINE.md.
 10.1 Khai báo biến môi trường
-$project = "X:\DUAN1\HitRadar_Pro"$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"$db      = "hitradar"$u       = "postgres"$ddl     = "$project\2.DATABASE_SQL\2.1.tao_bang"$env:PGPASSWORD = "your_password"$env:PYTHONUTF8 = "1"
+$project = "<PROJECT_ROOT>"$psql    = "<PROJECT_ROOT>"$db      = "hitradar"$u       = "postgres"$ddl     = "$project\2.DATABASE_SQL\2.1.tao_bang"$env:PGPASSWORD = "your_password"$env:PYTHONUTF8 = "1"
 10.2 Chạy DDL theo đúng thứ tự 01 -> 05
 $ddlFiles = @(    "01_create_schemas.sql",    "02_create_raw_tables.sql",    "03_create_clean_tables.sql",    "04_create_analytics_views.sql",    "05_create_constraints_indexes.sql")foreach ($f in $ddlFiles) {    & $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$ddl\$f"    if ($LASTEXITCODE -ne 0) { Write-Error "DDL failed: $f"; break }}
 10.3 Import và validate
@@ -3352,7 +3352,7 @@ Feature 1.5 monitoring.
 Kết luận warning: Không có warning nào làm hỏng cấu trúc dữ liệu. Các warning được ghi nhận minh bạch để Feature 1.5 chuyển thành data quality gates có ngưỡng đo rõ ràng.
 10. Cách chạy lại Feature 1.4
 Người khác có thể chạy lại Feature 1.4 nếu đã có PostgreSQL, database hitradar, raw tables từ Feature 1.3 và DDL từ Feature 1.2. Không hardcode password vào script; đặt PGPASSWORD ở môi trường.
-$env:PGPASSWORD = "your_password"$project = "X:\DUAN1\HitRadar_Pro"python "$project\9.SCRIPTS\clean_raw_to_clean.py" `    --base-dir $project --database hitradar --user postgres --reset-cleanpython "$project\9.SCRIPTS\validate_clean_tables.py" `    --base-dir $project --database hitradar --user postgres
+$env:PGPASSWORD = "your_password"$project = "<PROJECT_ROOT>"python "$project\9.SCRIPTS\clean_raw_to_clean.py" `    --base-dir $project --database hitradar --user postgres --reset-cleanpython "$project\9.SCRIPTS\validate_clean_tables.py" `    --base-dir $project --database hitradar --user postgres
 Lệnh
 Kết quả mong đợi
 clean_raw_to_clean.py --reset-clean
@@ -3876,7 +3876,7 @@ clean.artists.followers NULL
 Retained by rule; cần xử lý nếu dùng cho ML
 9. Cách chạy lại Feature 1.5
 Feature 1.5 chạy read-only, nghĩa là không sửa database. Trước khi chạy, cần đảm bảo Feature 1.4 đã populate clean layer.
-$env:PGPASSWORD = "your_password"$project = "X:\DUAN1\HitRadar_Pro"python "$project\9.SCRIPTS\run_data_quality_gates.py" `    --base-dir $project --database hitradar --user postgres
+$env:PGPASSWORD = "your_password"$project = "<PROJECT_ROOT>"python "$project\9.SCRIPTS\run_data_quality_gates.py" `    --base-dir $project --database hitradar --user postgres
 Kết quả baseline mong đợi: Overall = PASS_WITH_WARNINGS. Nếu kết quả là FAIL thì không được chuyển sang Feature 1.6.
 10. Quyết định đóng Feature 1.5
 Decision: PASS_WITH_WARNINGS
@@ -5638,7 +5638,7 @@ Sửa raw data để làm đẹp kết quả
 Mất reproducibility và audit trail
 11. Cách chạy lại pipeline từ đầu đến bàn giao ML-ready
 Các lệnh dưới đây là bản rút gọn để người mới kiểm tra pipeline. Trước khi chạy, cần đảm bảo PostgreSQL 18.x, Python 3.10+, pandas, psycopg2-binary và biến môi trường PGPASSWORD.
-$project = "X:\DUAN1\HitRadar_Pro"$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"$db      = "hitradar"$u       = "postgres"$env:PGPASSWORD = "your_password"$env:PYTHONUTF8 = "1"# 1. Chạy DDL Feature 1.2$ddl = "$project\2.DATABASE_SQL\2.1.tao_bang"$ddlFiles = @(  "01_create_schemas.sql",  "02_create_raw_tables.sql",  "03_create_clean_tables.sql",  "04_create_analytics_views.sql",  "05_create_constraints_indexes.sql")foreach ($f in $ddlFiles) {  & $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$ddl\$f"}# 2. Import raw Feature 1.3python "$project\9.SCRIPTS\import_raw_data.py" --base-dir $project --database $db --user $u --resetpython "$project\9.SCRIPTS\validate_raw_import.py" --base-dir $project --database $db --user $u# 3. Clean Feature 1.4python "$project\9.SCRIPTS\clean_raw_to_clean.py" --base-dir $project --database $db --user $u --reset-cleanpython "$project\9.SCRIPTS\validate_clean_tables.py" --base-dir $project --database $db --user $u# 4. Data quality Feature 1.5python "$project\9.SCRIPTS\run_data_quality_gates.py" --base-dir $project --database $db --user $u# 5. Views + indexes Feature 1.6& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$project\2.DATABASE_SQL\2.4.views\01_create_analytics_views.sql"& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$project\2.DATABASE_SQL\2.5.indexes\01_create_indexes.sql"python "$project\9.SCRIPTS\validate_analytics_views.py" --base-dir $project --database $db --user $u# 6. ML-ready handoff Feature 1.8& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$project\2.DATABASE_SQL\2.6.ml_handoff\01_create_ml_ready_dataset.sql"python "$project\9.SCRIPTS\export_ml_ready_dataset.py" --base-dir $project --database $db --user $upython "$project\9.SCRIPTS\validate_ml_ready_dataset.py" --base-dir $project --database $db --user $u
+$project = "<PROJECT_ROOT>"$psql    = "<PROJECT_ROOT>"$db      = "hitradar"$u       = "postgres"$env:PGPASSWORD = "your_password"$env:PYTHONUTF8 = "1"# 1. Chạy DDL Feature 1.2$ddl = "$project\2.DATABASE_SQL\2.1.tao_bang"$ddlFiles = @(  "01_create_schemas.sql",  "02_create_raw_tables.sql",  "03_create_clean_tables.sql",  "04_create_analytics_views.sql",  "05_create_constraints_indexes.sql")foreach ($f in $ddlFiles) {  & $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$ddl\$f"}# 2. Import raw Feature 1.3python "$project\9.SCRIPTS\import_raw_data.py" --base-dir $project --database $db --user $u --resetpython "$project\9.SCRIPTS\validate_raw_import.py" --base-dir $project --database $db --user $u# 3. Clean Feature 1.4python "$project\9.SCRIPTS\clean_raw_to_clean.py" --base-dir $project --database $db --user $u --reset-cleanpython "$project\9.SCRIPTS\validate_clean_tables.py" --base-dir $project --database $db --user $u# 4. Data quality Feature 1.5python "$project\9.SCRIPTS\run_data_quality_gates.py" --base-dir $project --database $db --user $u# 5. Views + indexes Feature 1.6& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$project\2.DATABASE_SQL\2.4.views\01_create_analytics_views.sql"& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$project\2.DATABASE_SQL\2.5.indexes\01_create_indexes.sql"python "$project\9.SCRIPTS\validate_analytics_views.py" --base-dir $project --database $db --user $u# 6. ML-ready handoff Feature 1.8& $psql -v ON_ERROR_STOP=1 -U $u -d $db -f "$project\2.DATABASE_SQL\2.6.ml_handoff\01_create_ml_ready_dataset.sql"python "$project\9.SCRIPTS\export_ml_ready_dataset.py" --base-dir $project --database $db --user $upython "$project\9.SCRIPTS\validate_ml_ready_dataset.py" --base-dir $project --database $db --user $u
 12. Danh mục tài liệu quan trọng đã được gom vào báo cáo này
 Báo cáo này đã trích xuất và tổng hợp nội dung quan trọng từ các tài liệu bên dưới. Người làm EPIC 2 chỉ cần đọc báo cáo này trước, sau đó mở tài liệu gốc khi cần kiểm chứng chi tiết kỹ thuật.
 Nhóm tài liệu

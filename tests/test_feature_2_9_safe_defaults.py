@@ -1,7 +1,7 @@
 import pytest
 from pathlib import Path
 
-F29 = Path(r"E:/Dự án 1 hitrada/hitradar/7.ML/7.12.optional_pipeline_automation")
+F29 = Path(r"<PROJECT_ROOT>/7.ML/7.12.optional_pipeline_automation")
 
 def load_config():
     try:
@@ -39,5 +39,5 @@ def test_no_absolute_path_in_defaults():
     cfg = load_config()
     paths = cfg.get("paths", {})
     for key, val in paths.items():
-        assert val is None or not str(val).startswith(("E:\\", "C:\\", "/home")), \
+        assert val is None or not str(val).startswith(("<PROJECT_ROOT>", "<PROJECT_ROOT>", "/home")), \
             f"Absolute path found in config default: {key}={val}"

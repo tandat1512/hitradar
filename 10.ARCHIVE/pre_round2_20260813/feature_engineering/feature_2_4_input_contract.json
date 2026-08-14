@@ -58,7 +58,7 @@
     "loudness_energy"
   ],
   "feature_order_sha256": "bae5ff98dacff946341f6516a2dbd349e156cfc318675d0f138daa02dd4baa13",
-  "pipeline_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_engineering_pipeline.joblib",
+  "pipeline_path": "<PROJECT_ROOT>/7.ML/7.6.feature_engineering/feature_engineering_pipeline.joblib",
   "pipeline_sha256": "6482960a7817caa3927f0920cac699989b04019b3e6562c7daa87828789e5128",
   "train_rows": 415524,
   "validation_rows": 85272,

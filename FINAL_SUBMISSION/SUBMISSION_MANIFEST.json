@@ -1,13 +1,14 @@
 {
-  "generated_at_utc": "2026-08-14T08:45:34.169468+00:00",
+  "generated_at_utc": "2026-08-14T13:18:34.942347+00:00",
   "mode": "final",
   "package_type": "submission_evidence_snapshot",
   "standalone_runnable": false,
   "canonical_repository_required": true,
   "external_artifacts_required": true,
   "public_path_sanitization": true,
-  "raw_canonical_evidence_preserved": true,
-  "file_count_excluding_manifest": 50,
+  "tracked_evidence_sanitized": true,
+  "private_raw_evidence_excluded": true,
+  "file_count_excluding_manifest": 52,
   "requirements_files": [
     "deployment/requirements.txt"
   ],
@@ -50,8 +51,8 @@
     },
     {
       "path": "evidence/external_artifact_checksums.json",
-      "size_bytes": 1517,
-      "sha256": "70f3aa7048ddbedf5842abc01c954e7be9b97c305112a444e3f4b69ba84cc355"
+      "size_bytes": 2894,
+      "sha256": "3a4a114a0da0ad4be4e14765aebd84ae12986c915eb0d46ab9289efa21cf9bbf"
     },
     {
       "path": "evidence/feature_contract.json",
@@ -94,14 +95,19 @@
       "sha256": "e111412d7cf3974fab6dcb8de0e8fe8d1bededdf3ab866386d4e53bc1e43e3c1"
     },
     {
+      "path": "evidence/nb02_postgresql_execution_status.json",
+      "size_bytes": 449,
+      "sha256": "f8f8d0240bf1c994ee80e5716a836b80aeec8ff9a4977a04b735d55c9e7e4ffc"
+    },
+    {
       "path": "evidence/public_evidence_sanitization.json",
-      "size_bytes": 3980,
-      "sha256": "3c63ebe4abaa726443f5fefa1422033abfc5e4ad2e58820465475859d26e3b5c"
+      "size_bytes": 3399,
+      "sha256": "af3179e386a1271e52ccbd82e450cad714619cb4baee335e4b55ad35635c5944"
     },
     {
       "path": "evidence/public_path_hotfix_test_results.json",
       "size_bytes": 386,
-      "sha256": "48941f83f1d72e843ec9e45174f4f9e52a3772c4b05412bebb386775dfad470d"
+      "sha256": "c901396e348a46db062273fafd077d50ceb4f6fc6be255c56a769bc69b260305"
     },
     {
       "path": "evidence/recommendation_examples.csv",
@@ -120,13 +126,13 @@
     },
     {
       "path": "evidence/round4_environment_install.log",
-      "size_bytes": 27163,
-      "sha256": "1d465034824d396fcc9e315150e4c7987cfbc5c6b16727450986d6d65e90831b"
+      "size_bytes": 27032,
+      "sha256": "7f0a67e076e328ea663f3d36d765bda29f9f96c6bada949d327142ae219c27cd"
     },
     {
       "path": "evidence/round4_environment_validation.json",
-      "size_bytes": 787,
-      "sha256": "aa3dbf3019de329c2f5e9b89281c5b49a216aa967b0abca26483651efba37cb3"
+      "size_bytes": 784,
+      "sha256": "e2b03e6ffe6ff5613932a0e4757d3796a8907eb3ca38e8a3bbacd9e10af1b993"
     },
     {
       "path": "evidence/round4_model_integrity.json",
@@ -135,13 +141,13 @@
     },
     {
       "path": "evidence/round4_notebook_execution_status.json",
-      "size_bytes": 989,
-      "sha256": "f20602a923a65abfdd4b9962319de812f9b5851c4b50be54d19b1634c5a2ba9f"
+      "size_bytes": 986,
+      "sha256": "3416f491f341a30f8d75b9ee3dce7a060ceb477352988ee03bd66ad42d6bc3d7"
     },
     {
       "path": "evidence/round4_test_results.json",
-      "size_bytes": 314,
-      "sha256": "98ece3f02b00c61e3915232a226623ffedd4184c3599242b41230eea6f635244"
+      "size_bytes": 312,
+      "sha256": "d1e489dd7365068e5fbb16ea117b359179fff62cdaea7b9433611ebcb2fd7258"
     },
     {
       "path": "evidence/selection_winner_lock.json",
@@ -150,8 +156,8 @@
     },
     {
       "path": "evidence/shap_requirement_status.json",
-      "size_bytes": 1199,
-      "sha256": "adbad50e8f72327e635423c2389b09c09d8793d8bd92cdc800ff24153447e5c9"
+      "size_bytes": 1675,
+      "sha256": "6f5ef3082e30db8ccada006847ecfeb106e801d86a76dcf6030874839c3f98bd"
     },
     {
       "path": "evidence/temporal_year_coverage.json",
@@ -170,38 +176,43 @@
     },
     {
       "path": "FINAL_AUDIT_REPORT.md",
-      "size_bytes": 5705,
-      "sha256": "fb63d880615fff73d05b3caa62abcfd0e08bc3aac54da3e7e8903ab9efc3210a"
+      "size_bytes": 7091,
+      "sha256": "1cafdd1b495b29ad3a3705cbf12b42c96aea61cc511421c74b72411cafde1ee6"
     },
     {
       "path": "GIT_EVIDENCE.md",
-      "size_bytes": 69058,
-      "sha256": "258b8d9ceb214550edd066b8b177a6238909cc05f00529ccb418d575b48e9b3f"
+      "size_bytes": 4060,
+      "sha256": "1ece1f9f5f908abcb705dc8494f6fb32b779154042ef04ee778aba467f45a3d1"
+    },
+    {
+      "path": "notebooks/02_postgresql_pipeline.ipynb",
+      "size_bytes": 12804,
+      "sha256": "7f23d01c9db53ec8fe67992394046514210add9b0b321e3835244e8d06b204a7"
     },
     {
       "path": "notebooks/05_feature_engineering.ipynb",
-      "size_bytes": 171584,
-      "sha256": "006381f986811de5bca77fe8109218623b2cd7a04ffe827534ebdf2ecd1c9e8f"
+      "size_bytes": 172116,
+      "sha256": "4a117d87ee7f1515c833410a38f2a6717c10bee89cb29017387c4cb1e23a40a8"
     },
     {
       "path": "notebooks/06_machine_learning.ipynb",
-      "size_bytes": 358018,
-      "sha256": "31defbaef6f8831d972b2e33634e2a5ad888aac0c365d4911e4c07c01b70681f"
+      "size_bytes": 358032,
+      "sha256": "3435f9800887e5ac24e41d74b846989f326a0199602965e8c872832d9210ab63"
     },
     {
       "path": "notebooks/07_ai_deployment.ipynb",
-      "size_bytes": 29197,
-      "sha256": "445e3fa97c4e5b1dfe186ed9bea1ca66bda071e011dd51687b3b61ba7bfa8e2b"
+      "size_bytes": 29208,
+      "sha256": "2398deebd332b9fc224d1175f5d8c27238d97c5fd337706e29c1d3d059286ea3"
     },
     {
       "path": "README_FINAL_SUBMISSION.md",
-      "size_bytes": 4071,
-      "sha256": "25b85dadcb778cef2277c8bb0c353a7caf8d4890f90924db2a7e6d039f5ebac1"
+      "size_bytes": 4506,
+      "sha256": "67aaecec725e57e82bdab866fec68c268dd11c2380726d6bfbff5704a0580816"
     },
     {
       "path": "scripts/generate_final_submission.py",
-      "size_bytes": 33980,
-      "sha256": "86a476851a8fad4e4d0cb931ee23ee04402ec05133c4bb04e568bf84357b9282"
+      "size_bytes": 37954,
+      "sha256": "0efb9c9b0f1f2ecb74cd4cce0b4207ef52396735a73795badf0d0b4ba7fb50d1"
     },
     {
       "path": "scripts/generate_temporal_year_coverage.py",
@@ -215,13 +226,13 @@
     },
     {
       "path": "scripts/run_public_path_hotfix_tests.py",
-      "size_bytes": 1964,
-      "sha256": "c8c6ede89b3bc1f9ad47992f90a3df12d293bd9fec24460b565f08a634fbb0be"
+      "size_bytes": 2018,
+      "sha256": "46f6d1672f146cd2b1396192814ca0ce3ed918111118ba8d66afab07ca35021b"
     },
     {
       "path": "scripts/run_round4_tests.py",
-      "size_bytes": 1383,
-      "sha256": "081087b903f42ffb4fb5d66f5e23250bf7e9c0ac1facf5666f13aed0a7c19970"
+      "size_bytes": 1584,
+      "sha256": "0cc0bee6e825cc49264f7880e170a248b21073a147575eee6fb5741b24d32f51"
     },
     {
       "path": "scripts/validate_round4_environment.py",
@@ -260,8 +271,8 @@
     },
     {
       "path": "tests/test_feature_pipeline.py",
-      "size_bytes": 28566,
-      "sha256": "bc534c75e87d9bceb5b923c3c7adeabb97356fe46afa431d348c838e31209032"
+      "size_bytes": 44037,
+      "sha256": "efa6f65285a7d43371bff80a3586d32ef043ca8398f55f1d61f469db70e0d2e0"
     }
   ]
 }

@@ -2,8 +2,8 @@
 import os, json
 from datetime import datetime, timezone
 
-OUT = r"E:\Dự án 1 hitrada\Output epic2"
-F27 = r"E:\Dự án 1 hitrada\hitradar\7.ML\7.10.model_packaging"
+OUT = r"<PROJECT_ROOT>"
+F27 = r"<PROJECT_ROOT>/7.ML/7.10.model_packaging"
 
 def load(rel):
     with open(os.path.join(F27, rel), "r", encoding="utf-8") as f:

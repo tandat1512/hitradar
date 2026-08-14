@@ -1,6 +1,6 @@
 import subprocess, os, json, datetime
 
-os.chdir(r"H:\dự án\DUAN1 github")
+os.chdir(r"<PROJECT_ROOT>")
 
 result = {}
 

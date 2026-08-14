@@ -3,7 +3,7 @@ Verify feature_mapping.json maps all 49 transformed features correctly.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT = REPO_ROOT / "7.ML" / "7.10.model_packaging" / "package"
 FEATURE_MAPPING = PKG_ROOT / "schemas" / "feature_mapping.json"
 SELECTED_FEATURES = PKG_ROOT / "schemas" / "selected_features.json"

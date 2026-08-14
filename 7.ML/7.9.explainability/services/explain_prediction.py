@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 
 # Add FE source so unpickling works
-REPO_ROOT = r"E:\Dự án 1 hitrada"
+REPO_ROOT = r"<PROJECT_ROOT>"
 sys.path.insert(0, os.path.join(REPO_ROOT, "hitradar", "7.ML", "7.6.feature_engineering", "src"))
 
 def to_string(x):

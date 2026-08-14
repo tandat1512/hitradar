@@ -4,7 +4,7 @@ import os
 import glob
 from pathlib import Path
 
-ROOT = Path("E:/Dự án 1 hitrada/hitradar")
+ROOT = Path("<PROJECT_ROOT>")
 DATA_INTAKE = ROOT / "7.ML" / "7.3.data_intake"
 OUTPUT_DIR = ROOT.parent / "Output epic2"
 OUTPUT = OUTPUT_DIR / "F 2.1" if (OUTPUT_DIR / "F 2.1").exists() else OUTPUT_DIR

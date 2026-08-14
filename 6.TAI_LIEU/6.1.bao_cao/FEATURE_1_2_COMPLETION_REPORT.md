@@ -50,13 +50,13 @@
 | `2.DATABASE_SQL/2.1.tao_bang/03_create_clean_tables.sql` | DDL clean layer + FK + constraints |
 | `2.DATABASE_SQL/2.1.tao_bang/04_create_analytics_views.sql` | 9 analytics views |
 | `2.DATABASE_SQL/2.1.tao_bang/05_create_constraints_indexes.sql` | Indexes + unique constraints |
-| `X:/DUAN1/.codex_pg_feature12/ddl_run.out` | Log chạy 5 DDL trên PostgreSQL test sạch |
-| `X:/DUAN1/.codex_pg_feature12/catalog_counts.tsv` | Bằng chứng số lượng schemas/tables/views/indexes |
-| `X:/DUAN1/.codex_pg_feature12/release_precision_constraint.tsv` | Bằng chứng CHECK constraint cho `release_precision` |
-| `X:/DUAN1/.codex_pg_feature12/semantic_schema_columns.tsv` | Bằng chứng object schema cho `raw_artist_json`, `artist_relations`, `artist_genres` |
-| `X:/DUAN1/.codex_pg_feature12_real/catalog_counts_hitradar_pro.tsv` | Bằng chứng object count trên DB hiện tại `hitradar_pro` |
-| `X:/DUAN1/.codex_pg_feature12_real/release_precision_constraint_hitradar_pro.tsv` | Bằng chứng `release_precision` trên DB hiện tại |
-| `X:/DUAN1/.codex_pg_feature12_real/semantic_schema_columns_hitradar_pro.tsv` | Bằng chứng object schema trên DB hiện tại |
+| `<PROJECT_ROOT>` | Log chạy 5 DDL trên PostgreSQL test sạch |
+| `<PROJECT_ROOT>` | Bằng chứng số lượng schemas/tables/views/indexes |
+| `<PROJECT_ROOT>` | Bằng chứng CHECK constraint cho `release_precision` |
+| `<PROJECT_ROOT>` | Bằng chứng object schema cho `raw_artist_json`, `artist_relations`, `artist_genres` |
+| `<PROJECT_ROOT>` | Bằng chứng object count trên DB hiện tại `hitradar_pro` |
+| `<PROJECT_ROOT>` | Bằng chứng `release_precision` trên DB hiện tại |
+| `<PROJECT_ROOT>` | Bằng chứng object schema trên DB hiện tại |
 
 ---
 

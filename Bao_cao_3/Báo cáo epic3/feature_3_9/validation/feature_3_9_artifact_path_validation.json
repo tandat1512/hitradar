@@ -2,15 +2,80 @@
   "feature_id": "3.9",
   "validated_at": "2026-08-13T19:45:00+07:00",
   "paths": [
-    {"runtime_reference":"5.UNG_DUNG/5.1.backend_api/config.py: ARTIFACTS_DIR","resolved_path":"artifacts/epic2","repo_relative_or_configurable":true,"exists":true,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"ARTIFACTS_PATH environment override","resolved_path":"configurable","repo_relative_or_configurable":true,"exists":null,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"PipelineLoader full pipeline","resolved_path":"artifacts/epic2/pipeline/full_inference_pipeline.joblib","repo_relative_or_configurable":true,"exists":true,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"PipelineLoader schemas","resolved_path":"artifacts/epic2/schemas","repo_relative_or_configurable":true,"exists":true,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"Music Trends frontend page","resolved_path":"5.DATA/processed/ml_ready_dataset.csv","repo_relative_or_configurable":true,"exists":true,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"Feature 3.4 dashboard loader","resolved_path":"5.DATA/processed/ml_ready_dataset.csv","repo_relative_or_configurable":true,"exists":true,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"scripts/_common.py repository root","resolved_path":"derived from __file__","repo_relative_or_configurable":true,"exists":true,"machine_specific":false,"status":"PASS"},
-    {"runtime_reference":"epic3/feature_3_3/frontend/check_years.py","resolved_path":"H:/dự án/DUAN1 github/5.DATA/processed/ml_ready_dataset.csv","repo_relative_or_configurable":false,"exists":true,"machine_specific":true,"runtime_required":false,"status":"NON_RUNTIME_DIAGNOSTIC_WARNING"},
-    {"runtime_reference":"epic3/feature_3_3/frontend/run_check.ps1","resolved_path":"H:/dự án/DUAN1 github/run_check_years.py","repo_relative_or_configurable":false,"exists":true,"machine_specific":true,"runtime_required":false,"status":"NON_RUNTIME_DIAGNOSTIC_WARNING"}
+    {
+      "runtime_reference": "5.UNG_DUNG/5.1.backend_api/config.py: ARTIFACTS_DIR",
+      "resolved_path": "artifacts/epic2",
+      "repo_relative_or_configurable": true,
+      "exists": true,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "ARTIFACTS_PATH environment override",
+      "resolved_path": "configurable",
+      "repo_relative_or_configurable": true,
+      "exists": null,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "PipelineLoader full pipeline",
+      "resolved_path": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+      "repo_relative_or_configurable": true,
+      "exists": true,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "PipelineLoader schemas",
+      "resolved_path": "artifacts/epic2/schemas",
+      "repo_relative_or_configurable": true,
+      "exists": true,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "Music Trends frontend page",
+      "resolved_path": "5.DATA/processed/ml_ready_dataset.csv",
+      "repo_relative_or_configurable": true,
+      "exists": true,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "Feature 3.4 dashboard loader",
+      "resolved_path": "5.DATA/processed/ml_ready_dataset.csv",
+      "repo_relative_or_configurable": true,
+      "exists": true,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "scripts/_common.py repository root",
+      "resolved_path": "derived from __file__",
+      "repo_relative_or_configurable": true,
+      "exists": true,
+      "machine_specific": false,
+      "status": "PASS"
+    },
+    {
+      "runtime_reference": "epic3/feature_3_3/frontend/check_years.py",
+      "resolved_path": "<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.csv",
+      "repo_relative_or_configurable": false,
+      "exists": true,
+      "machine_specific": true,
+      "runtime_required": false,
+      "status": "NON_RUNTIME_DIAGNOSTIC_WARNING"
+    },
+    {
+      "runtime_reference": "epic3/feature_3_3/frontend/run_check.ps1",
+      "resolved_path": "<PROJECT_ROOT>",
+      "repo_relative_or_configurable": false,
+      "exists": true,
+      "machine_specific": true,
+      "runtime_required": false,
+      "status": "NON_RUNTIME_DIAGNOSTIC_WARNING"
+    }
   ],
   "machine_specific_runtime_path_count": 0,
   "machine_specific_nonruntime_path_count": 2,

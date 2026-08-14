@@ -3,7 +3,7 @@ Verify artifact hash is unchanged after Phase 2 operations.
 """
 import json, pathlib, hashlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 ARTIFACT  = REPO_ROOT / "7.ML/7.10.model_packaging/package/pipeline/full_inference_pipeline.joblib"
 LOAD_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_model_load_validation.json"
 

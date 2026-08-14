@@ -4,7 +4,7 @@ and blockers are correctly recorded.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 GATE_FILE = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "validation" / "feature_3_1_intake_gate.json"
 CHECKPOINT_FILE = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "checkpoints" / "feature_3_1_phase_1_checkpoint.json"
 INVENTORY_FILE = REPO_ROOT / "epic3" / "feature_3_1_artifact_validation" / "inventories" / "feature_3_1_artifact_inventory.json"

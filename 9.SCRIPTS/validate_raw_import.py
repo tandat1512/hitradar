@@ -13,7 +13,7 @@ Password: set PGPASSWORD env variable trước khi chạy.
 
 Ví dụ:
   $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/validate_raw_import.py --database hitradar --user postgres
-  $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/validate_raw_import.py --base-dir "X:\\DUAN1\\HitRadar_Pro" --database hitradar --user postgres
+  $env:PGPASSWORD="your_pw"; python 9.SCRIPTS/validate_raw_import.py --base-dir "<PROJECT_ROOT>" --database hitradar --user postgres
 """
 import sys, os, json, argparse
 from pathlib import Path

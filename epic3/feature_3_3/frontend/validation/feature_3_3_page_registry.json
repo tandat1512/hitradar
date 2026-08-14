@@ -7,8 +7,7 @@
     {"page_id": "explain",     "display_name": "🔍 Explain",       "route": "/explain",               "enabled": true, "phase": "3"},
     {"page_id": "whatif",      "display_name": "🔄 What-If",        "route": "/whatif",                "enabled": true, "phase": "3"},
     {"page_id": "trends",      "display_name": "📊 Music Trends",   "route": "/trends",                "enabled": true, "phase": "5",
-     "note": "Reads read-only CSV artifacts (ml_ready_dataset.csv, yearly_evaluation.csv). "
-             "Requires same filesystem as deployed app."},
+     "note": "Reads read-only CSV artifacts (ml_ready_dataset.csv, yearly_evaluation.csv). Requires same filesystem as deployed app."},
     {"page_id": "model_info",  "display_name": "ℹ️ Model Info",     "route": "/model_info",            "enabled": true, "phase": "2"},
     {"page_id": "limitations", "display_name": "⚠️ Limitations",    "route": "/limitations",           "enabled": true, "phase": "1"}
   ],

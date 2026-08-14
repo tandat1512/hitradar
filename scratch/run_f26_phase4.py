@@ -24,7 +24,7 @@ CKP_DIR   = os.path.join(EXP_DIR, "checkpoints")
 LOCAL_DIR = os.path.join(EXP_DIR, "local")
 DEP_DIR   = os.path.join(EXP_DIR, "dependence")
 SAMPLE_DIR= os.path.join(EXP_DIR, "explanation_sample")
-REPORT_DIR= r"E:\Dự án 1 hitrada\Output epic2"
+REPORT_DIR= r"<PROJECT_ROOT>"
 
 for d in [LOCAL_DIR, DEP_DIR, CKP_DIR]: os.makedirs(d, exist_ok=True)
 

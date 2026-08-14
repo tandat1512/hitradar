@@ -35,20 +35,44 @@
     }
   ],
   "analytics_modules": [
-    {"artifact": "audio_feature_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/audio_feature_engine.py"},
-    {"artifact": "aggregation_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/aggregation_engine.py"},
-    {"artifact": "explicit_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/explicit_engine.py"},
-    {"artifact": "duration_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/duration_engine.py"},
-    {"artifact": "summary_engine.py", "path": "epic3/feature_3_4/dashboard/analytics/summary_engine.py"}
+    {
+      "artifact": "audio_feature_engine.py",
+      "path": "epic3/feature_3_4/dashboard/analytics/audio_feature_engine.py"
+    },
+    {
+      "artifact": "aggregation_engine.py",
+      "path": "epic3/feature_3_4/dashboard/analytics/aggregation_engine.py"
+    },
+    {
+      "artifact": "explicit_engine.py",
+      "path": "epic3/feature_3_4/dashboard/analytics/explicit_engine.py"
+    },
+    {
+      "artifact": "duration_engine.py",
+      "path": "epic3/feature_3_4/dashboard/analytics/duration_engine.py"
+    },
+    {
+      "artifact": "summary_engine.py",
+      "path": "epic3/feature_3_4/dashboard/analytics/summary_engine.py"
+    }
   ],
   "chart_modules": [
-    {"artifact": "chart_render.py", "path": "epic3/feature_3_4/dashboard/charts/chart_render.py"}
+    {
+      "artifact": "chart_render.py",
+      "path": "epic3/feature_3_4/dashboard/charts/chart_render.py"
+    }
   ],
   "caption_modules": [
-    {"artifact": "engines.py", "path": "epic3/feature_3_4/dashboard/captions/engines.py"}
+    {
+      "artifact": "engines.py",
+      "path": "epic3/feature_3_4/dashboard/captions/engines.py"
+    }
   ],
   "cache_modules": [
-    {"artifact": "dashboard_cache.py", "path": "epic3/feature_3_4/dashboard/cache/dashboard_cache.py"}
+    {
+      "artifact": "dashboard_cache.py",
+      "path": "epic3/feature_3_4/dashboard/cache/dashboard_cache.py"
+    }
   ],
   "validation_artifacts": [
     "feature_3_4_phase_1_gate.json",
@@ -101,18 +125,18 @@
     "epic3/feature_3_4/dashboard/tests/test_feature_3_4_trend_loader.py"
   ],
   "reports": [
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_DATA_FOUNDATION_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_1_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_POPULARITY_AUDIO_TRENDS_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_2_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_SECONDARY_TRENDS_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_3_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_CAPTION_INSIGHT_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_PHASE_4_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_VALIDATION_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/FEATURE_3_4_COMPLETION_REPORT.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/CLOSURE_GATE_REPORT_FEATURE_3_4.md",
-    "H:/dự án/DUAN1 github/Bao_cao_3/Báo cáo epic3/BAO_CAO_NGHIEM_THU_FEATURE_3_4.md"
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>",
+    "<PROJECT_ROOT>"
   ],
   "closure_gate": "epic3/feature_3_4/dashboard/validation/feature_3_4_closure_gate.json",
   "total_validation_files": 46,

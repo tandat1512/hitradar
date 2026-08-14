@@ -4,22 +4,25 @@
   "reason": "The readable checklist labels SHAP as an advanced item (SHAP (nâng cao)), not an explicit mandatory requirement. Existing grouped/transformed feature importance and error diagnostics are retained; no model retraining was triggered.",
   "sources_inspected": [
     {
-      "path": "C:/Users/Minh hieu/Downloads/Task Checklist for Each Notebook.docx",
+      "path": "<USER_DOWNLOADS>/Task Checklist for Each Notebook.docx",
       "status": "readable_inspected",
       "evidence": "Notebook 05, section V lists Feature Importance followed by SHAP (nâng cao). Notebook 06 repeatedly requires Feature Importance but does not explicitly require SHAP."
     },
     {
       "path": "6.TAI_LIEU/6.1.bao_cao/bao_cao_tong_hop.docx",
-      "status": "unverifiable_zero_byte_file"
+      "status": "valid_current_deliverable",
+      "evidence": "Non-zero readable DOCX container. It does not independently establish SHAP as a mandatory requirement."
     },
     {
       "path": "6.TAI_LIEU/6.1.bao_cao/phu_luc_ky_thuat.docx",
-      "status": "unverifiable_zero_byte_file"
+      "status": "valid_current_deliverable",
+      "evidence": "Non-zero readable DOCX container. It records SHAP as optional/advanced and does not change the existing decision."
     },
     {
       "path": "6.TAI_LIEU/6.1.bao_cao/huong_dan_su_dung.docx",
-      "status": "unverifiable_zero_byte_file"
+      "status": "valid_current_deliverable",
+      "evidence": "Non-zero readable DOCX container. It does not independently establish SHAP as a mandatory requirement."
     }
   ],
-  "interpretation_note": "A text match for Shape is not a SHAP requirement; the exact checklist phrase SHAP (nâng cao) was reviewed in context."
+  "interpretation_note": "A text match for Shape is not a SHAP requirement; the exact checklist phrase SHAP (nâng cao) was reviewed in context. Current DOCX deliverables are readable, but their restoration does not create a new mandatory SHAP requirement."
 }

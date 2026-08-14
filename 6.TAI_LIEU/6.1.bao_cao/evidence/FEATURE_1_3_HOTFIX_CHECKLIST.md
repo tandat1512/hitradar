@@ -62,7 +62,7 @@
 Nếu muốn lưu terminal output làm audit trail, chạy:
 
 ```powershell
-$project = "X:\DUAN1\HitRadar_Pro"
+$project = "<PROJECT_ROOT>"
 $ev      = "$project\6.TAI_LIEU\6.1.bao_cao\evidence"
 
 python "$project\9.SCRIPTS\import_raw_data.py" --base-dir $project --database hitradar --user postgres --reset |

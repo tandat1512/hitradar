@@ -19,7 +19,7 @@
     },
     "test_used": false,
     "timestamp": "2026-07-20T11:46:26.227402+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-DUMMY-MEAN-001.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-DUMMY-MEAN-001.joblib",
     "artifact_sha256": "d6c2150e8e791f7916b725aadd9d7c794466831af9d4922cf4632e82f9538653",
     "selected_as_champion": false,
     "selected_as_runner_up": false
@@ -44,7 +44,7 @@
     },
     "test_used": false,
     "timestamp": "2026-07-20T11:46:34.359757+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-LINEAR-FS31-001.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-LINEAR-FS31-001.joblib",
     "artifact_sha256": "854fdba2f108854724009a76dcd44b2e5179d53b962b1917102ae6573ce414fc",
     "selected_as_champion": false,
     "selected_as_runner_up": false
@@ -69,7 +69,7 @@
     },
     "test_used": false,
     "timestamp": "2026-07-20T11:46:39.533774+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FS18-CONTROL.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-RIDGE-FS18-CONTROL.joblib",
     "artifact_sha256": "a76cdab8f0b6483b9c3e0b6500e753cf5bfb01578cd2efca807a0ff70fe0f1f7",
     "selected_as_champion": false,
     "selected_as_runner_up": false
@@ -94,7 +94,7 @@
     },
     "test_used": false,
     "timestamp": "2026-07-20T11:46:45.747406+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FS31-CONTROL.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-RIDGE-FS31-CONTROL.joblib",
     "artifact_sha256": "7aed82bbaef77a61d9d112cb7ddac1d5c66294b3911ea2c20eda258ea25ea304",
     "selected_as_champion": false,
     "selected_as_runner_up": false
@@ -357,7 +357,7 @@
     },
     "test_used": false,
     "timestamp": "2026-07-20T11:48:23.088423+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RIDGE-FINAL-001.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-RIDGE-FINAL-001.joblib",
     "artifact_sha256": "2ad4889312750f5fe530c0eaa72ced1a279fa97536f5a16081e1cea0365b22f9",
     "selected_as_champion": false,
     "selected_as_runner_up": false
@@ -733,7 +733,7 @@
     "estimators_count": 400,
     "test_used": false,
     "timestamp": "2026-07-20T13:43:24.223497+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-RF-FINAL-001.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-RF-FINAL-001.joblib",
     "artifact_sha256": "11d3ad33cef0d24b4d1b0c1c164d5c51dff690394892efbd8edf92a1bef31be0",
     "selected_as_champion": false,
     "selected_as_runner_up": true
@@ -1182,9 +1182,9 @@
     "n_estimators_configured": 454,
     "test_used": false,
     "timestamp": "2026-07-20T14:06:06.368702+00:00",
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-XGB-FINAL-001.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-XGB-FINAL-001.joblib",
     "artifact_sha256": "9a7ae3a37a2e84156bd177743e26824a198efcdfa0505a041b50ab392b4ac8e7",
-    "native_model_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\EXP24-XGB-FINAL-001_native.json",
+    "native_model_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/EXP24-XGB-FINAL-001_native.json",
     "external_validation_evaluation_count": 1,
     "selected_as_champion": false,
     "selected_as_runner_up": false
@@ -1237,7 +1237,7 @@
     "test_used": false,
     "timestamp": "2026-07-20T14:38:05.505981+00:00",
     "selected_as_family_best": true,
-    "artifact_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.7.model_training\\models\\xgboost_bundle.joblib",
+    "artifact_path": "<PROJECT_ROOT>/7.ML/7.7.model_training/models/xgboost_bundle.joblib",
     "artifact_sha256": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
     "selected_as_champion": true,
     "selected_as_runner_up": false

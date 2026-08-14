@@ -11,7 +11,7 @@
 | **EPIC** | EPIC 3 |
 | **Feature** | 3.3 — Streamlit Frontend |
 | **Người thực hiện** | Minh |
-| **Repository** | `H:\dự án\DUAN1 github` |
+| **Repository** | `<PROJECT_ROOT>` |
 | **Branch** | `main` |
 | **Commit** | HEAD (uncommitted — working tree) |
 | **Ngày** | 2026-08-06 |

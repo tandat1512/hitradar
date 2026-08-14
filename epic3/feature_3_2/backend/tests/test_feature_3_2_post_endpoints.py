@@ -12,7 +12,7 @@ from unittest.mock import patch, MagicMock
 import pytest
 from fastapi.testclient import TestClient
 
-REPO = Path(r"H:\dự án\DUAN1 github")
+REPO = Path(r"<PROJECT_ROOT>")
 BACKEND = REPO / "epic3" / "feature_3_2" / "backend"
 sys.path.insert(0, str(BACKEND))
 
@@ -77,7 +77,7 @@ class TestPredictSuccess:
 
     def test_no_internal_paths(self, client):
         body = json.dumps(client.post("/predict", json=VALID_PAYLOAD).json())
-        assert "c:\\users" not in body.lower()
+        assert "<PROJECT_ROOT>" not in body.lower()
         assert ".joblib" not in body.lower()
 
     def test_model_id_correct(self, client):

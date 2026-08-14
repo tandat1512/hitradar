@@ -3,7 +3,7 @@ Verify no fit/fit_transform/partial_fit calls were made during Phase 2.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 NOREFIT_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_no_refit_validation.json"
 LOAD_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_model_load_validation.json"
 

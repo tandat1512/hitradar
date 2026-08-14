@@ -14,7 +14,7 @@ The current Git commit is not a delivery baseline. Preflight found 3 modified tr
 
 ## Repository preflight
 
-- Root: `H:/dự án/DUAN1 github`
+- Root: `<PROJECT_ROOT>`
 - Branch: `main`
 - Commit: `2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6`
 - Commit timestamp: `2026-07-26T19:17:20+07:00`

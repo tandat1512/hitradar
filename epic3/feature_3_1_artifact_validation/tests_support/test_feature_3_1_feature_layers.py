@@ -3,7 +3,7 @@ Verify raw/selected/transformed layers are correctly identified and distinct.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 FN_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_feature_names_validation.json"
 SF_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_selected_features_validation.json"
 FCC_FILE   = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_feature_contract_consistency.json"

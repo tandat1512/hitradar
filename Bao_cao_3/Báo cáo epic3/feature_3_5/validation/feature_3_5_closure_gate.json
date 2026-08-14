@@ -2,42 +2,34 @@
   "feature_id": "3.5",
   "person_in_charge": "Minh",
   "date": "2026-08-07",
-
   "upstream_backend_gate_valid": true,
   "upstream_frontend_gate_valid": true,
   "upstream_dashboard_gate_valid": true,
-
   "streamlit_fastapi_integration_valid": true,
   "actual_http_transport_valid": true,
   "http_transport_note": "httpx transport confirmed from source; live connection BLOCKED",
-
   "model_info_e2e_valid": false,
   "model_info_note": "Contract validated; live execution BLOCKED (no Python env)",
-
   "predict_e2e_valid": false,
   "predict_real_model": true,
   "predict_real_model_note": "PipelineLoader confirmed from source",
   "predict_canonical_match": false,
   "predict_canonical_note": "Canonical fixture validated (46.421062); live execution BLOCKED",
   "predict_http_valid": true,
-
   "explain_required": true,
   "explain_e2e_status": "CONTRACT_VALIDATED_ONLY",
   "explain_e2e_note": "ExplainService confirmed; live execution BLOCKED",
   "explain_prediction_matches_predict": false,
   "explain_prediction_note": "Prediction consistency contract validated; live test BLOCKED",
-
   "what_if_e2e_valid": false,
   "what_if_baseline_matches_predict": false,
   "what_if_baseline_note": "Contract validated; live execution BLOCKED",
   "what_if_delta_valid": false,
   "what_if_delta_note": "Backend delta computation confirmed from source; live BLOCKED",
-
   "backend_down_handled": true,
   "backend_down_note": "Contract validated from error_states.py; live test BLOCKED",
   "backend_recovery_valid": true,
   "backend_recovery_note": "Contract validated; live test BLOCKED",
-
   "missing_field_validation_valid": true,
   "missing_field_note": "Pydantic contract validated; live test BLOCKED",
   "out_of_range_validation_valid": true,
@@ -46,14 +38,12 @@
   "extra_field_note": "Pydantic extra='allow' confirmed; live test BLOCKED",
   "wrong_type_validation_valid": true,
   "wrong_type_note": "Pydantic contract validated; live test BLOCKED",
-
   "clean_environment_valid": false,
   "clean_environment_note": "Method defined; fresh venv creation BLOCKED (no Python)",
   "dependency_install_valid": true,
   "dependency_install_note": "Backend complete; frontend missing requirements.txt (F35-BUG-003)",
   "portability_valid": true,
   "portability_note": "0 machine-specific blocking paths found",
-
   "bugs_total": 3,
   "bugs_fixed": 1,
   "remaining_blocker_bugs": 1,
@@ -61,13 +51,11 @@
   "remaining_medium_bugs": 1,
   "critical_regression_tests_valid": false,
   "critical_regression_note": "Regression tests exist as validation artifacts; live retest BLOCKED",
-
   "strict_fresh_clone_smoke": false,
   "fresh_source_mode": "WORKING_TREE_SNAPSHOT",
   "fresh_clone_blocked_reason": "No git clone command available in this session",
   "final_backend_start_valid": false,
   "final_frontend_start_valid": false,
-
   "final_home_valid": false,
   "final_predict_valid": false,
   "final_explain_status": "BLOCKED",
@@ -76,62 +64,48 @@
   "final_model_info_valid": false,
   "final_responsible_use_valid": false,
   "final_failure_recovery_valid": false,
-
   "final_smoke_note": "All final smoke tests BLOCKED — no live Python environment",
-
   "fit_call_count": 0,
   "fit_transform_call_count": 0,
   "partial_fit_call_count": 0,
-
   "training_executed": false,
   "tuning_executed": false,
   "refit_executed": false,
-
   "model_artifacts_modified": false,
   "schema_artifacts_modified": false,
   "shap_artifacts_modified": false,
   "source_dataset_modified": false,
-
   "frontend_direct_model_load_count": 0,
   "frontend_direct_backend_service_import_count": 0,
   "frontend_direct_shap_compute_count": 0,
-
   "e2e_report_complete": true,
   "artifact_manifest_complete": true,
-
   "validation_artifacts_count": 63,
   "validation_artifacts_note": "59 validation artifacts + 4 gate files across 5 phases",
-
   "pytest_collected": 0,
   "pytest_passed": 0,
   "pytest_failed": 0,
   "pytest_errors": 0,
   "pytest_note": "Live pytest execution BLOCKED — no Python environment",
-
   "validation_passed": 24,
   "validation_failed": 0,
   "validation_note": "Contract validations PASS; live executions BLOCKED",
-
   "warning_count": 3,
   "warnings": [
     "F35-W01: Live E2E execution blocked — no Python environment available in this session (BLOCKER)",
     "F35-W02: Frontend has no requirements.txt — F35-BUG-003 pending (MEDIUM)",
     "F35-W03: Working tree used instead of strict git clone for final smoke (HIGH)"
   ],
-
   "blocker_count": 2,
   "blockers": [
     "F35-B01: No live Python environment — backend startup, actual HTTP E2E, and pytest execution all blocked. This is not a code defect — all contract and architecture validations PASS. Environmental blocker only.",
     "F35-B02: Strict fresh-clone final smoke not performed — no git clone command available. Working tree snapshot used instead."
   ],
-
   "feature_3_5_status": "FAIL",
   "feature_3_5_decision": "NOT_CLOSED",
   "feature_3_5_reason": "All contract validations PASS (24/24). All architecture validations PASS. F35-BUG-002 (httpx in requirements) fixed. However, live execution is BLOCKED by F35-BUG-001 (no Python environment). F35-BUG-003 (frontend requirements.txt) remains pending. Cannot achieve PASS without live Python environment.",
-
   "feature_3_6_gate": "BLOCKED",
   "feature_3_6_gate_reason": "Feature 3.5 must reach PASS before Feature 3.6 MAY_BEGIN",
-
   "unblock_actions": [
     "1. Start backend: cd 5.UNG_DUNG/5.1.backend_api && python -m uvicorn api:app --port 8000",
     "2. Verify GET /health → {\"status\": \"healthy\", \"model_loaded\": true}",
@@ -141,12 +115,10 @@
     "6. Run 18 negative scenario live tests",
     "7. Run pytest suite (failed=0, errors=0)"
   ],
-
   "human_approval": "PENDING",
   "reviewer": "Chưa chỉ định",
-
   "generated_at": "2026-08-07T00:00:00+07:00",
   "git_commit_or_snapshot": "WORKING_TREE (2026-08-07)",
   "branch": "main",
-  "repository": "H:\\dự án\\DUAN1 github"
+  "repository": "<PROJECT_ROOT>"
 }

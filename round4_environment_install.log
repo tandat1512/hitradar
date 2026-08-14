@@ -1,15 +1,15 @@
-$ "<LOCAL_USER_CACHE>\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" --version
+$ "<LOCAL_USER_CACHE>\<LOCAL_USER_CACHE>\codex-primary-runtime\dependencies\python\python.exe" --version
 Python 3.12.13
 
 [exit_code=0]
 
-$ "<LOCAL_USER_CACHE>\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m pip index versions httpx2
+$ "<LOCAL_USER_CACHE>\<LOCAL_USER_CACHE>\codex-primary-runtime\dependencies\python\python.exe" -m pip index versions httpx2
 httpx2 (2.10.0)
 Available versions: 2.10.0, 2.9.1, 2.9.0, 2.8.0, 2.7.0, 2.6.0, 2.5.0, 2.4.0, 2.3.0, 2.2.0, 2.1.0, 2.0.0
 
 [exit_code=0]
 
-$ "<LOCAL_USER_CACHE>\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m venv <PROJECT_ROOT>\.venv_round4
+$ "<LOCAL_USER_CACHE>\<LOCAL_USER_CACHE>\codex-primary-runtime\dependencies\python\python.exe" -m venv <PROJECT_ROOT>\.venv_round4
 
 [exit_code=0]
 

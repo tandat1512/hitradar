@@ -136,7 +136,7 @@ Scripts consume canonical names (no duplication):
 
 ## 9. Portability
 
-- 0 machine-specific paths (`H:\`, `C:\Users\`, machine venv).
+- 0 machine-specific paths (`<PROJECT_ROOT> `<USER_HOME>
 - Interpreter via `sys.executable` (no hardcoded venv activation).
 - Dependency install is a setup concern, not a script runtime responsibility.
 - Documented invocation: `python scripts/run_all.py` or `.venv\Scripts\python scripts/run_all.py`.

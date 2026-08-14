@@ -7,7 +7,7 @@
 - EPIC: 3
 - Feature: 3.8
 - Người thực hiện: Minh
-- Repository: `H:\dự án\DUAN1 github`
+- Repository: `<PROJECT_ROOT>`
 - Base commit tham chiếu: `2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6`
 - Trạng thái Git của gói Feature 3.8: **UNTRACKED — chưa có commit chứa gói nghiệm thu**
 - Ngày: 2026-08-13

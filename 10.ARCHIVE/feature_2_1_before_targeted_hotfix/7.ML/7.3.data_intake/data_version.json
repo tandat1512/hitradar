@@ -1,7 +1,7 @@
 {
   "data_version": "ml-ready-2026-07-17-v1",
   "canonical_source": "analytics.vw_ml_ready_dataset",
-  "actual_source_used": "E:\\Dự án 1 hitrada\\hitradar\\5.DATA\\processed\\ml_ready_dataset.parquet",
+  "actual_source_used": "<PROJECT_ROOT>/5.DATA/processed/ml_ready_dataset.parquet",
   "source_type": "parquet",
   "file_size_bytes": 26440492,
   "file_modified": "2026-07-15T09:38:31.131522+00:00",

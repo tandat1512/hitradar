@@ -26,11 +26,11 @@ pip install psycopg2-binary pandas
 
 ## Bước 1 — Khai báo biến dự án
 
-Thay `X:\DUAN1\HitRadar_Pro` bằng đường dẫn thực tế trên máy bạn.
+Thay `<PROJECT_ROOT>` bằng đường dẫn thực tế trên máy bạn.
 
 ```powershell
-$project = "X:\DUAN1\HitRadar_Pro"
-$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
+$project = "<PROJECT_ROOT>"
+$psql    = "<PROJECT_ROOT>"
 $db      = "hitradar"
 $u       = "postgres"
 $ddl     = "$project\2.DATABASE_SQL\2.1.tao_bang"
@@ -131,8 +131,8 @@ python "$project\9.SCRIPTS\validate_raw_import.py" `
 
 ```powershell
 # 0. Biến
-$project = "X:\DUAN1\HitRadar_Pro"
-$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
+$project = "<PROJECT_ROOT>"
+$psql    = "<PROJECT_ROOT>"
 $db      = "hitradar"; $u = "postgres"
 $ddl     = "$project\2.DATABASE_SQL\2.1.tao_bang"
 $env:PGPASSWORD = "your_password"; $env:PYTHONUTF8 = "1"
@@ -179,7 +179,7 @@ jupyter notebook "$project\3.NOTEBOOKS\3.3.lam_sach_python\01_feature_1_4_cleani
 
 ```powershell
 $env:PGPASSWORD = "your_password"
-$project = "X:\DUAN1\HitRadar_Pro"
+$project = "<PROJECT_ROOT>"
 
 python "$project\9.SCRIPTS\clean_raw_to_clean.py" `
     --base-dir $project --database hitradar --user postgres --reset-clean
@@ -222,8 +222,8 @@ jupyter notebook "$project\3.NOTEBOOKS\3.3.lam_sach_python\02_feature_1_4_clean_
 ### Reset clean tables nếu cần chạy lại
 
 ```powershell
-$psql    = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
-$project = "X:\DUAN1\HitRadar_Pro"
+$psql    = "<PROJECT_ROOT>"
+$project = "<PROJECT_ROOT>"
 & $psql -v ON_ERROR_STOP=1 -U postgres -d hitradar `
     -f "$project\2.DATABASE_SQL\2.3.lam_sach\01_reset_clean_tables.sql"
 ```
@@ -236,7 +236,7 @@ Lệnh xác minh lại pipeline sau khi hotfix:
 
 ```powershell
 $env:PGPASSWORD = "your_password"
-$project = "X:\DUAN1\HitRadar_Pro"
+$project = "<PROJECT_ROOT>"
 
 python "$project\9.SCRIPTS\import_raw_data.py" `
     --base-dir $project --database hitradar --user postgres --reset

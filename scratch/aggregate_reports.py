@@ -30,7 +30,7 @@ files = [
 ]
 
 res = {}
-base = r"E:\Dự án 1 hitrada"
+base = r"<PROJECT_ROOT>"
 for f in files:
     p = os.path.join(base, f)
     if os.path.exists(p):
@@ -39,7 +39,7 @@ for f in files:
     else:
         res[f] = "MISSING"
 
-with open(r"E:\Dự án 1 hitrada\hitradar\scratch\all_reports.json", "w", encoding="utf-8") as f:
+with open(r"<PROJECT_ROOT>/scratch/all_reports.json", "w", encoding="utf-8") as f:
     json.dump(res, f, ensure_ascii=False, indent=2)
 
 lengths = {k: len(v) for k, v in res.items()}

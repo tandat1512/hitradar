@@ -1,7 +1,7 @@
 import pytest, json
 from pathlib import Path
 
-F29 = Path(r"E:/Dự án 1 hitrada/hitradar/7.ML/7.12.optional_pipeline_automation")
+F29 = Path(r"<PROJECT_ROOT>/7.ML/7.12.optional_pipeline_automation")
 
 def test_stage_order_validation_pass():
     with open(F29 / "validation" / "epic2_pipeline_stage_order_validation.json", encoding="utf-8") as f:

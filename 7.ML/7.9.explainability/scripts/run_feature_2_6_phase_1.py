@@ -38,7 +38,7 @@ CONFIGS   = os.path.join(EXP_DIR, "configs")
 BG_DIR    = os.path.join(EXP_DIR, "background")
 CKP_DIR   = os.path.join(EXP_DIR, "checkpoints")
 TEST_DIR  = os.path.join(EXP_DIR, "tests")
-REPORT_DIR = r"E:\Dự án 1 hitrada\Output epic2"
+REPORT_DIR = r"<PROJECT_ROOT>"
 
 for d in [MANIFESTS, CONFIGS, BG_DIR, CKP_DIR, TEST_DIR, REPORT_DIR,
           os.path.join(EXP_DIR, "samples"), os.path.join(EXP_DIR, "shap_values"),

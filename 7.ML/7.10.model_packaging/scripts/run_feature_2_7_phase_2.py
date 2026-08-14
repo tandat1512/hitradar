@@ -528,7 +528,7 @@ def step_14_portability():
         os.path.join(F27_ROOT,"manifests"),
         os.path.join(F27_ROOT,"package","schemas"),
     ]
-    abs_patterns = ["E:\\", "C:\\Users\\", "/home/", "/tmp/"]
+    abs_patterns = ["<PROJECT_ROOT>", "<PROJECT_ROOT>", "<USER_HOME> "<TEMP_DIR>/"]
     findings = []
     for sd in scan_dirs:
         if not os.path.isdir(sd): continue

@@ -6,7 +6,7 @@
   "machine_specific_path_count": 0,
   "evidence": [
     "scripts resolve REPO_ROOT from __file__.parent.parent (relative, no hardcoded drive letter)",
-    "no 'H:\\', 'C:\\Users\\', or machine venv paths anywhere in scripts/",
+    "no 'H:\\', '<PROJECT_ROOT>', or machine venv paths anywhere in scripts/",
     "Python environment: scripts use sys.executable of the invoking interpreter — no self-activation of a hardcoded venv",
     "dependency installation is NOT a script runtime concern (setup concern per spec section 5)"
   ],

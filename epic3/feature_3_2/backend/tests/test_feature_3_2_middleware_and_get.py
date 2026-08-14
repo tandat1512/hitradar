@@ -12,7 +12,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 from fastapi.testclient import TestClient
 
-REPO = Path(r"H:\dự án\DUAN1 github")
+REPO = Path(r"<PROJECT_ROOT>")
 BACKEND = REPO / "epic3" / "feature_3_2" / "backend"
 sys.path.insert(0, str(BACKEND))
 import os
@@ -276,8 +276,8 @@ class TestModelInfo:
 
     def test_model_info_no_paths_exposed(self, client):
         body = json.dumps(client.get("/model-info").json()).lower()
-        assert "c:\\users" not in body
-        assert "h:\\dự" not in body
+        assert "<PROJECT_ROOT>" not in body
+        assert "<PROJECT_ROOT>" not in body
 
 
 class TestModelInfoConsistency:
@@ -304,7 +304,7 @@ class TestFeatures:
 
     def test_features_no_internal_paths(self, client):
         body = json.dumps(client.get("/features").json()).lower()
-        assert "c:\\users" not in body
+        assert "<PROJECT_ROOT>" not in body
         assert "/artifacts/" not in body
         assert ".joblib" not in body
 

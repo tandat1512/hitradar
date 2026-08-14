@@ -3,7 +3,7 @@ Verify selected_features.json is valid.
 """
 import json, pathlib
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 PKG_ROOT  = REPO_ROOT / "7.ML/7.10.model_packaging/package"
 SF_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_selected_features_validation.json"
 SF_FILE = PKG_ROOT / "schemas/selected_features.json"

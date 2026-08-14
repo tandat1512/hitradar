@@ -2,7 +2,7 @@
   "artifact_checks": [
     {
       "artifact": "model_version",
-      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\model_version.json",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/model_version.json",
       "status": "EXISTS",
       "severity": "OK"
     },
@@ -22,7 +22,7 @@
     },
     {
       "artifact": "data_version",
-      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\data_version.json",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/data_version.json",
       "status": "EXISTS",
       "severity": "OK"
     },
@@ -40,7 +40,7 @@
     },
     {
       "artifact": "package_version",
-      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\metadata\\package_version.json",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/metadata/package_version.json",
       "status": "EXISTS",
       "severity": "OK"
     },
@@ -64,19 +64,19 @@
     },
     {
       "artifact": "input_schema",
-      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\input_schema.json",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/input_schema.json",
       "status": "EXISTS",
       "severity": "OK"
     },
     {
       "artifact": "output_schema",
-      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\schemas\\output_schema.json",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/schemas/output_schema.json",
       "status": "EXISTS",
       "severity": "OK"
     },
     {
       "artifact": "full_inference_pipeline",
-      "path": "E:\\Dự án 1 hitrada\\hitradar\\7.ML\\7.10.model_packaging\\package\\pipeline\\full_inference_pipeline.joblib",
+      "path": "<PROJECT_ROOT>/7.ML/7.10.model_packaging/package/pipeline/full_inference_pipeline.joblib",
       "status": "EXISTS",
       "severity": "OK"
     },

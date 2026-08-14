@@ -7,8 +7,10 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 import unittest
+import zipfile
 
 import joblib
 import numpy as np
@@ -504,11 +506,19 @@ class FinalSubmissionTest(unittest.TestCase):
         self.assertIn("<LOCAL_USER_CACHE>", public_log)
         self.assertEqual(self.path_findings, [])
 
-    def test_raw_environment_evidence_is_preserved(self):
-        self.assertFalse(self.sanitization["raw_canonical_files_modified"])
-        self.assertTrue(all(item["unchanged"] for item in self.sanitization["raw_canonical_checksums"]))
-        for item in self.sanitization["raw_canonical_checksums"]:
-            self.assertEqual(file_sha256(ROOT / item["canonical_file"]), item["after_sha256"])
+    def test_public_and_private_evidence_are_truthfully_distinguished(self):
+        self.assertTrue(self.sanitization["tracked_evidence_sanitized"])
+        self.assertTrue(self.sanitization["private_raw_evidence_excluded"])
+        self.assertTrue(self.sanitization["evidence_checksums"])
+        for item in self.sanitization["evidence_checksums"]:
+            self.assertTrue(item["private_raw_copy_available_locally"])
+            self.assertTrue(item["tracked_public_copy_sanitized"])
+            self.assertTrue(item["unchanged_during_generation"])
+            if not item["mutable_after_generation"]:
+                self.assertEqual(
+                    file_sha256(ROOT / item["canonical_file"]),
+                    item["tracked_sanitized_sha256"],
+                )
 
     def test_public_sanitization_report_passes(self):
         self.assertEqual(self.sanitization["status"], "PASS")
@@ -518,7 +528,8 @@ class FinalSubmissionTest(unittest.TestCase):
 
     def test_manifest_generated_after_sanitization(self):
         self.assertTrue(self.manifest["public_path_sanitization"])
-        self.assertTrue(self.manifest["raw_canonical_evidence_preserved"])
+        self.assertTrue(self.manifest["tracked_evidence_sanitized"])
+        self.assertTrue(self.manifest["private_raw_evidence_excluded"])
         for item in self.manifest["files"]:
             self.assertEqual(file_sha256(self.submission / item["path"]), item["sha256"])
 
@@ -539,6 +550,289 @@ class FinalSubmissionTest(unittest.TestCase):
             file_sha256(ROOT / "4.MODELS" / "hitradar_popularity" / "final_test_metrics.json"),
             model["final_metrics_sha256_after"],
         )
+
+
+class FinalReviewGovernanceTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.nb02_path = ROOT / "3.NOTEBOOKS" / "3.2.postgresql" / "02_postgresql_pipeline.ipynb"
+        cls.nb02 = json.loads(cls.nb02_path.read_text(encoding="utf-8"))
+        cls.notebook_text = "\n".join(
+            "".join(cell.get("source", [])) for cell in cls.nb02["cells"]
+        )
+        validator_path = ROOT / "9.SCRIPTS" / "validate_public_repository.py"
+        spec = importlib.util.spec_from_file_location("final_review_path_validator", validator_path)
+        cls.validator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.validator)
+
+    def test_path_scanner_detects_ansi_and_json_escaped_windows_paths(self):
+        ansi_traceback = (
+            "\x1b[36mFile \x1b[39m\x1b[32m"
+            r"<ABSOLUTE_PATH> án 1 hitrada\.venv\Lib\site-packages\psycopg2\__init__.py"
+            "\x1b[39m"
+        )
+        escaped_json_path = r'<ABSOLUTE_PATH>'
+        self.assertIn("windows_absolute", self.validator.scan_text(ansi_traceback))
+        self.assertIn("windows_absolute", self.validator.scan_text(escaped_json_path))
+        self.assertEqual(self.validator.scan_text("<PROJECT_ROOT>/file.json"), {})
+
+    def test_nb02_is_clean_and_explicitly_unexecuted(self):
+        self.assertTrue(self.nb02_path.is_file())
+        code_cells = [cell for cell in self.nb02["cells"] if cell["cell_type"] == "code"]
+        self.assertTrue(code_cells)
+        self.assertTrue(all(cell.get("execution_count") is None for cell in code_cells))
+        self.assertEqual(sum(len(cell.get("outputs", [])) for cell in code_cells), 0)
+        self.assertFalse(any(
+            output.get("output_type") == "error"
+            for cell in code_cells for output in cell.get("outputs", [])
+        ))
+
+    def test_nb02_credentials_are_environment_only(self):
+        forbidden = (
+            r"POSTGRES_PASSWORD['\"]?\s*,\s*['\"]123456",
+            r"password\s*=\s*['\"]123456['\"]",
+        )
+        for pattern in forbidden:
+            self.assertNotRegex(self.notebook_text, pattern)
+        self.assertIn(
+            'os.getenv("POSTGRES_PASSWORD") or os.getenv("PGPASSWORD")',
+            self.notebook_text,
+        )
+        self.assertIn("password=password", self.notebook_text)
+
+    def test_nb02_status_wording_and_path_hygiene(self):
+        lowered = self.notebook_text.lower()
+        self.assertIn("not re-executed", lowered)
+        self.assertIn("no successful postgresql execution is claimed", lowered)
+        notebook_scan = self.validator.scan_text(self.validator.scan_path_text(self.nb02_path))
+        self.assertEqual(notebook_scan, {})
+
+    def test_nb02_status_evidence_is_truthful(self):
+        evidence = json.loads(
+            (ROOT / "5.UNG_DUNG" / "validation" / "nb02_postgresql_execution_status.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(evidence["final_hotfix_execution"], "not_reexecuted")
+        self.assertFalse(evidence["successful_execution_claimed"])
+        self.assertEqual(evidence["saved_error_outputs"], 0)
+        self.assertFalse(evidence["hardcoded_password_fallback"])
+        self.assertTrue(evidence["prior_postgresql_evidence_retained"])
+        self.assertEqual(evidence["status"], "DOCUMENTED_LIMITATION")
+
+    def test_shap_evidence_has_no_stale_zero_byte_docx_status(self):
+        evidence = json.loads(
+            (ROOT / "5.UNG_DUNG" / "validation" / "shap_requirement_status.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(evidence["decision"], "not_added_optional_advanced_item")
+        self.assertFalse(evidence["shap_added"])
+        docx_sources = [item for item in evidence["sources_inspected"] if item["path"].endswith(".docx")]
+        self.assertEqual(len(docx_sources), 4)
+        current_docx = [item for item in docx_sources if item["path"].startswith("6.TAI_LIEU/")]
+        self.assertEqual(len(current_docx), 3)
+        self.assertTrue(all(item["status"] == "valid_current_deliverable" for item in current_docx))
+        self.assertFalse(any("zero_byte" in item["status"] for item in current_docx))
+
+
+class CanonicalDatabaseNotebookGovernanceTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        validator_path = ROOT / "9.SCRIPTS" / "validate_public_repository.py"
+        spec = importlib.util.spec_from_file_location("canonical_database_path_validator", validator_path)
+        cls.validator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.validator)
+
+        cls.notebooks = {}
+        for path in sorted((ROOT / "3.NOTEBOOKS").rglob("*.ipynb")):
+            notebook = json.loads(path.read_text(encoding="utf-8"))
+            source = "\n".join("".join(cell.get("source", [])) for cell in notebook["cells"])
+            if "psycopg2.connect" in source:
+                cls.notebooks[path.relative_to(ROOT).as_posix()] = (path, notebook, source)
+
+    def test_all_canonical_database_notebooks_have_safe_credentials_and_outputs(self):
+        required = {
+            "3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb",
+            "3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb",
+            "3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb",
+        }
+        self.assertTrue(required.issubset(self.notebooks))
+        self.assertEqual(len(self.notebooks), 11)
+
+        auth_markers = ("password authentication failed", "fe_sendauth", "no password supplied")
+        for relative, (path, notebook, source) in self.notebooks.items():
+            with self.subTest(notebook=relative):
+                self.assertNotIn("123456", source)
+                self.assertNotRegex(source, r"password\s*=\s*['\"][^'\"]+['\"]")
+                self.assertNotRegex(source, r"get\s*\(\s*['\"]PGPASSWORD['\"]\s*,")
+                self.assertIn(
+                    'os.getenv("POSTGRES_PASSWORD") or os.getenv("PGPASSWORD")',
+                    source,
+                )
+                self.assertIn("password=password", source)
+
+                for cell in notebook["cells"]:
+                    for output in cell.get("outputs", []):
+                        output_text = json.dumps(output, ensure_ascii=False).lower()
+                        self.assertFalse(
+                            output.get("output_type") == "error"
+                            and any(marker in output_text for marker in auth_markers)
+                        )
+                        self.assertFalse(any(marker in output_text for marker in auth_markers))
+
+                notebook_scan = self.validator.scan_text(self.validator.scan_path_text(path))
+                self.assertEqual(notebook_scan, {})
+
+    def test_database_notebook_status_and_failed_connection_state_are_truthful(self):
+        for relative, (_, _, source) in self.notebooks.items():
+            with self.subTest(notebook=relative):
+                lowered = source.lower()
+                self.assertIn("not re-executed", lowered)
+                self.assertRegex(
+                    lowered,
+                    r"no (?:new )?successful (?:postgresql|database) execution is claimed",
+                )
+
+        failed_connection_notebooks = {
+            "3.NOTEBOOKS/3.1.hieu_du_lieu/01_data_understanding.ipynb",
+            "3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb",
+            "3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb",
+        }
+        for relative in failed_connection_notebooks:
+            _, notebook, _ = self.notebooks[relative]
+            connection_cells = [
+                cell for cell in notebook["cells"]
+                if cell.get("cell_type") == "code"
+                and "psycopg2.connect" in "".join(cell.get("source", []))
+            ]
+            self.assertTrue(connection_cells)
+            for cell in connection_cells:
+                self.assertIsNone(cell.get("execution_count"))
+                self.assertEqual(cell.get("outputs", []), [])
+
+        # Useful non-error tables/plots remain, with their provenance documented above.
+        for relative in (
+            "3.NOTEBOOKS/3.3.lam_sach_python/02_feature_1_4_clean_validation.ipynb",
+            "3.NOTEBOOKS/3.4.eda/01_data_understanding.ipynb",
+        ):
+            _, notebook, _ = self.notebooks[relative]
+            retained = [
+                output for cell in notebook["cells"] for output in cell.get("outputs", [])
+                if output.get("output_type") != "error"
+            ]
+            self.assertGreater(len(retained), 0)
+
+
+class FinalRepositoryHygieneTest(unittest.TestCase):
+    @staticmethod
+    def git_files() -> list[str]:
+        output = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT)
+        return [item for item in output.decode("utf-8").split("\0") if item]
+
+    def test_selected_engineered_feature_count_is_exactly_fourteen(self):
+        self.assertEqual(len(CANDIDATE_ENGINEERED_FEATURES), 16)
+        self.assertEqual(len(SELECTED_ENGINEERED_FEATURES), 14)
+
+    def test_forbidden_runtime_artifacts_are_not_tracked(self):
+        tracked = self.git_files()
+        forbidden_exact = {
+            "5.DATA/processed/ml_ready_dataset.csv",
+            "5.DATA/processed/ml_ready_dataset.parquet",
+            "5.DATA/processed/features_engineered.parquet",
+            "5.UNG_DUNG/5.3.config/.env",
+        }
+        offenders = [
+            item for item in tracked
+            if item in forbidden_exact
+            or (item.startswith("4.MODELS/") and item.lower().endswith(".joblib"))
+        ]
+        self.assertEqual(offenders, [])
+
+    def test_external_artifact_checksums_use_relative_paths_and_match_local_files(self):
+        registry = json.loads(
+            (ROOT / "FINAL_SUBMISSION" / "evidence" / "external_artifact_checksums.json").read_text(encoding="utf-8")
+        )
+        self.assertGreaterEqual(len(registry), 6)
+        for item in registry:
+            relative = Path(item["canonical_path"])
+            self.assertFalse(relative.is_absolute())
+            local = ROOT / relative
+            if local.is_file():
+                self.assertEqual(file_sha256(local), item["sha256"])
+
+    def test_repository_wide_sensitive_path_scan_passes(self):
+        validator_path = ROOT / "9.SCRIPTS" / "validate_public_repository.py"
+        spec = importlib.util.spec_from_file_location("public_repository_validator", validator_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        report = module.validate(ROOT)
+        self.assertEqual(report["status"], "PASS")
+        self.assertEqual(report["files_with_findings"], 0)
+
+    def test_project_management_files_are_nonzero_and_readable(self):
+        project_dir = ROOT / "7.QUAN_LY_DU_AN"
+        for name in ("Daily_Standup_Log.xlsx", "Sprint_Backlog.xlsx", "Task_Tracker.xlsx"):
+            path = project_dir / name
+            self.assertGreater(path.stat().st_size, 0)
+            with zipfile.ZipFile(path) as archive:
+                self.assertIn("xl/workbook.xml", archive.namelist())
+                self.assertGreater(len(archive.read("xl/workbook.xml")), 0)
+        retrospective = (project_dir / "Retrospective_Notes.md").read_text(encoding="utf-8")
+        self.assertIn("Retrospective reconstruction", retrospective)
+
+    def test_docx_deliverables_are_nonzero_valid_containers(self):
+        report_dir = ROOT / "6.TAI_LIEU" / "6.1.bao_cao"
+        for name in ("bao_cao_tong_hop.docx", "huong_dan_su_dung.docx", "phu_luc_ky_thuat.docx"):
+            path = report_dir / name
+            self.assertGreater(path.stat().st_size, 0)
+            with zipfile.ZipFile(path) as archive:
+                self.assertIn("word/document.xml", archive.namelist())
+                self.assertGreater(len(archive.read("word/document.xml")), 0)
+
+    def test_only_canonical_root_notebooks_are_presented(self):
+        self.assertFalse((ROOT / "05_feature_engineering.ipynb").exists())
+        self.assertFalse((ROOT / "06_machine_learning.ipynb").exists())
+        self.assertFalse((ROOT / "07_ai_deployment.ipynb").exists())
+        for relative in (
+            "3.NOTEBOOKS/3.5.feature_engineering/05_feature_engineering.ipynb",
+            "3.NOTEBOOKS/3.6.modeling/06_machine_learning.ipynb",
+            "3.NOTEBOOKS/3.7.demo/07_ai_deployment.ipynb",
+        ):
+            self.assertTrue((ROOT / relative).is_file())
+
+    def test_no_unjustified_zero_byte_tracked_placeholders(self):
+        offenders = []
+        for relative in self.git_files():
+            path = ROOT / relative
+            if path.is_file() and path.stat().st_size == 0 and path.name != "__init__.py":
+                offenders.append(relative)
+        self.assertEqual(offenders, [])
+
+    def test_nb06_is_classified_as_preserved_and_not_retrained(self):
+        evidence = json.loads(
+            (ROOT / "5.UNG_DUNG" / "validation" / "round4_notebook_execution_status.json").read_text(encoding="utf-8")
+        )
+        nb06 = next(item for item in evidence["notebooks"] if item["notebook"] == "06_machine_learning.ipynb")
+        self.assertEqual(nb06["round4_execution"], "preserved_round2_execution_not_retrained")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("Notebook 06 was preserved from the previous validated execution and was not retrained", readme)
+
+    def test_readme_test_count_matches_current_suite(self):
+        text = (ROOT / "README.md").read_text(encoding="utf-8")
+        match = re.search(r"latest final repository suite records (\d+) tests", text, flags=re.IGNORECASE)
+        self.assertIsNotNone(match)
+        test_cases = [
+            value for value in globals().values()
+            if isinstance(value, type)
+            and issubclass(value, unittest.TestCase)
+            and value.__module__ == __name__
+        ]
+        expected = sum(
+            unittest.defaultTestLoader.loadTestsFromTestCase(test_case).countTestCases()
+            for test_case in test_cases
+        )
+        self.assertEqual(int(match.group(1)), expected)
 
 
 if __name__ == "__main__":

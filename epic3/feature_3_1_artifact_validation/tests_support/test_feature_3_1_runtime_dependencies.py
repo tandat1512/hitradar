@@ -3,7 +3,7 @@ Verify all required packages are installed and compatible.
 """
 import json, pathlib, importlib, sys
 
-REPO_ROOT = pathlib.Path(r"H:\dự án\DUAN1 github")
+REPO_ROOT = pathlib.Path(r"<PROJECT_ROOT>")
 DEP_VAL_FILE = REPO_ROOT / "epic3/feature_3_1_artifact_validation/validation/feature_3_1_runtime_dependency_validation.json"
 
 REQUIRED_FOR_LOAD = ["sklearn", "xgboost", "joblib", "pandas", "numpy"]
