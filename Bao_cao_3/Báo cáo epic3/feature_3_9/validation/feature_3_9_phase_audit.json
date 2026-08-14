@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "phases": [
+    {
+      "phase": 1,
+      "gate": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_phase_1_gate.json",
+      "status": "FAIL",
+      "next_phase": "BLOCKED",
+      "warnings": 8,
+      "blockers": 3,
+      "actual_evidence_result": "REPOSITORY_NOT_READY"
+    },
+    {
+      "phase": 2,
+      "gate": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_phase_2_gate.json",
+      "status": "PASS_WITH_HUMAN_AND_UPSTREAM_BLOCKERS",
+      "next_phase": "BLOCKED",
+      "warnings": 3,
+      "blockers": 2,
+      "actual_evidence_result": "DOCUMENT_PACKAGE_READY_HUMAN_ASSIGNMENT_PENDING"
+    },
+    {
+      "phase": 3,
+      "gate": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_phase_3_gate.json",
+      "status": "FAIL",
+      "next_phase": "BLOCKED",
+      "warnings": 4,
+      "blockers": 5,
+      "actual_evidence_result": "BLOCKED_PREREQUISITE_AND_VALIDATION"
+    },
+    {
+      "phase": 4,
+      "gate": "Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_phase_4_gate.json",
+      "status": "FAIL",
+      "next_phase": "BLOCKED",
+      "warnings": 3,
+      "blockers": 3,
+      "actual_evidence_result": "WAITING_FOR_HUMAN_DEMO / WAITING_FOR_HUMAN_DEFENSE"
+    }
+  ],
+  "all_gates_read": true,
+  "all_phases_passed": false,
+  "status": "FAIL_BLOCKERS_PROPAGATE_TO_CLOSURE"
+}

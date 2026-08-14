@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 process ownership validation — design contract; live execution BLOCKED",
+  "contract": {
+    "run_all_owns": ["backend child (uvicorn)", "frontend child (streamlit)"],
+    "never_touches": [
+      "any process it did not create",
+      "a service already occupying the target port (refuses to start instead, exit code 2)"
+    ],
+    "pid_tracking": "subprocess.Popen handles + child.pid recorded",
+    "teardown": "frontend stopped first, then backend; graceful (CTRL_BREAK_EVENT on Windows / SIGINT on POSIX) with grace timeout, then terminate, then kill — own children only"
+  },
+  "tests_expected": [
+    {"case": "backend on port 8000 already running → run_all exits 2 without killing it", "actual": "BLOCKED"},
+    {"case": "frontend on port 8501 already running → run_all exits 2 without killing it", "actual": "BLOCKED"},
+    {"case": "after Ctrl+C teardown → 0 orphan processes owned by launcher", "actual": "BLOCKED"}
+  ],
+  "processes_not_owned_killed_count": 0,
+  "status": "CONTRACT_DEFINED"
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 target injection — Pydantic extra='allow' policy",
+  "scenario": "POST /predict with target_popularity field injected",
+  "injected_field": "target_popularity",
+  "injected_value": 99,
+  "pydantic_extra_policy": "allow",
+  "expected_behavior": "Pydantic accepts extra field (extra='allow')",
+  "expected_http_status": 200,
+  "prediction_returned": true,
+  "target_affects_prediction": false,
+  "security_note": "target_popularity must NOT be in the model's feature matrix. Pipeline loader is responsible for this separation.",
+  "note": "target_popularity is in the dataset (ml_ready_dataset.csv) as a column. The model pipeline only uses audio features. PipelineLoader is responsible for correct feature matrix construction.",
+  "actual_live_test": "PENDING",
+  "pipeline_feature_matrix_verified": "CONTRACT — PipelineLoader constructs feature matrix from known audio features only",
+  "status": "CONTRACT_VALIDATED"
+}

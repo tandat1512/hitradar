@@ -1,0 +1,61 @@
+{
+  "date": "2026-08-13",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 Phase 1 Gate — Defense Narrative & Slide Preparation",
+  "feature": "3.8",
+  "phase": "1/5",
+  "upstream": {
+    "feature_3_7_status": "PASS_WITH_WARNINGS",
+    "eligibility": "ELIGIBLE_WITH_WARNINGS"
+  },
+  "defense_source_registry_complete": true,
+  "project_story_complete": true,
+  "story_fact_mismatch_count": 0,
+
+  "slide_outline_complete": true,
+  "slide_content_complete": false,
+  "slide_deck_status": "OUTLINE_FACTS_REVALIDATED_DECK_MISSING",
+  "presentation_file_status": "MISSING",
+
+  "dataset_fact_mismatch_count": 0,
+  "model_fact_mismatch_count": 0,
+  "metric_mismatch_count": 0,
+  "architecture_mismatch_count": 0,
+
+  "unsupported_claim_count": 0,
+  "unresolved_placeholder_count": 1,
+  "unresolved_placeholder_note": "The outline intentionally marks Presenter as UNCONFIRMED until human assignment is supplied.",
+
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "source_dataset_modified": false,
+
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_note": "Historical Phase 1 source review was superseded by the Phase 5 live smoke and hotfix revalidation.",
+
+  "warnings": [
+    "This gate supersedes the original 2026-08-09 PASS snapshot, which used stale dataset scope and did not inspect an actual deck."
+  ],
+  "blockers": [
+    "Actual slide deck is missing.",
+    "Presenter field is not human-confirmed."
+  ],
+
+  "phase_1_artifacts_created": [
+    "feature_3_8_defense_source_registry.json",
+    "feature_3_8_core_message.json",
+    "feature_3_8_project_story.md",
+    "feature_3_8_story_fact_matrix.csv",
+    "feature_3_8_slide_outline.md",
+    "feature_3_8_slide_metric_validation.json",
+    "feature_3_8_slide_architecture_validation.json",
+    "feature_3_8_slide_claim_audit.json",
+    "feature_3_8_slide_fact_audit.csv"
+  ],
+
+  "status": "SUPERSEDED_WAITING_FOR_HUMAN_ACTION",
+  "next_phase": "PHASE_5_GATE_CONTROLS"
+}

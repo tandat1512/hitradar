@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "component": "prediction_result",
+  "component_path": "components/prediction_result.py",
+  "functions": ["render_prediction_result", "render_prediction_warnings"],
+  "input_type": "PredictResponse",
+  "displays": [
+    "prediction_display (primary score)",
+    "prediction_raw / prediction_clipped (if different)",
+    "status badge",
+    "model_id",
+    "model_version",
+    "request_id",
+    "warnings list"
+  ],
+  "no_probability_claim": true,
+  "terminology": "Predicted Popularity",
+  "no_model_recomputation": true,
+  "no_network_calls": true,
+  "no_model_loading": true,
+  "status": "PASS"
+}

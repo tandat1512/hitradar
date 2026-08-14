@@ -1,0 +1,52 @@
+{
+  "validation_id": "F31-P2-INP-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:36:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "schema_path": "7.ML/7.10.model_packaging/package/schemas/input_schema.json",
+  "sha256": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+  "parse_status": "OK",
+  "schema_type": "custom_contract",
+  "schema_id": "HITRADAR-PREDICTION-INPUT-V1",
+  "schema_version": "1.0.0",
+  "top_level_keys": ["schema_id","schema_version","field_count","additional_properties_policy","fields"],
+  "field_count_declared": 18,
+  "field_count_actual": 18,
+  "validation_status": "PASS",
+  "fields": [
+    {"position":1,"name":"duration_min","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":120.0,"default_policy":"PIPELINE_IMPUTE","default_value":3.5173,"validation_status":"PASS"},
+    {"position":2,"name":"explicit","data_type":"boolean","required":true,"nullable":true,"allowed_categories":["False","True"],"default_policy":"PIPELINE_IMPUTE","default_value":"False","validation_status":"PASS"},
+    {"position":3,"name":"release_year","data_type":"integer","required":true,"nullable":true,"minimum":1900,"maximum":2100,"default_policy":"PIPELINE_IMPUTE","default_value":1983.0,"validation_status":"PASS"},
+    {"position":4,"name":"release_month","data_type":"integer","required":true,"nullable":true,"minimum":1,"maximum":12,"default_policy":"PIPELINE_IMPUTE","default_value":4.0,"validation_status":"PASS"},
+    {"position":5,"name":"decade","data_type":"integer","required":true,"nullable":true,"minimum":1900,"maximum":2100,"default_policy":"PIPELINE_IMPUTE","default_value":1980.0,"validation_status":"PASS"},
+    {"position":6,"name":"release_precision","data_type":"string","required":true,"nullable":true,"allowed_categories":["day","month","year"],"default_policy":"PIPELINE_IMPUTE","default_value":"day","validation_status":"PASS"},
+    {"position":7,"name":"danceability","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":0.558,"validation_status":"PASS"},
+    {"position":8,"name":"energy","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":0.484,"validation_status":"PASS"},
+    {"position":9,"name":"key","data_type":"integer","required":true,"nullable":true,"minimum":0,"maximum":11,"allowed_categories":["0","1","2","3","4","5","6","7","8","9","10","11"],"default_policy":"PIPELINE_IMPUTE","default_value":"0","validation_status":"PASS"},
+    {"position":10,"name":"loudness","data_type":"number","required":true,"nullable":true,"minimum":-60.0,"maximum":0.0,"default_policy":"PIPELINE_IMPUTE","default_value":-10.655,"validation_status":"PASS"},
+    {"position":11,"name":"mode","data_type":"integer","required":true,"nullable":true,"allowed_categories":["0","1"],"default_policy":"PIPELINE_IMPUTE","default_value":"1","validation_status":"PASS"},
+    {"position":12,"name":"speechiness","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":0.0429,"validation_status":"PASS"},
+    {"position":13,"name":"acousticness","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":0.552,"validation_status":"PASS"},
+    {"position":14,"name":"instrumentalness","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":6.22e-05,"validation_status":"PASS"},
+    {"position":15,"name":"liveness","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":0.143,"validation_status":"PASS"},
+    {"position":16,"name":"valence","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":1.0,"default_policy":"PIPELINE_IMPUTE","default_value":0.582,"validation_status":"PASS"},
+    {"position":17,"name":"tempo","data_type":"number","required":true,"nullable":true,"minimum":0.0,"maximum":300.0,"default_policy":"PIPELINE_IMPUTE","default_value":114.995,"validation_status":"PASS"},
+    {"position":18,"name":"time_signature","data_type":"integer","required":true,"nullable":true,"allowed_categories":["1.0","3.0","4.0","5.0"],"default_policy":"PIPELINE_IMPUTE","default_value":"4.0","validation_status":"PASS"}
+  ],
+  "canonical_order": ["duration_min","explicit","release_year","release_month","decade","release_precision","danceability","energy","key","loudness","mode","speechiness","acousticness","instrumentalness","liveness","valence","tempo","time_signature"],
+  "checks": {
+    "json_parse": "PASS",
+    "field_count": "PASS",
+    "all_required": "PASS",
+    "all_nullable": "PASS",
+    "all_default_policies": "PASS",
+    "no_duplicate_fields": "PASS",
+    "target_excluded": "PASS",
+    "identifier_excluded": "PASS"
+  },
+  "warnings": [
+    {"type":"MISSING_FIELD_DESCRIPTIONS","detail":"6 fields missing 'description' key in schema","severity":"LOW"}
+  ],
+  "blockers": []
+}

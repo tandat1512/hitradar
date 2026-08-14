@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 API latency BEFORE/AFTER comparison — BLOCKED: no baseline (Phase 1) and no optimized numbers (no code change)",
+  "methodology": "Exact same benchmark as Phase 1: same machine, same Python env, same input, same warm-up, same request count, same process config. Percent improvement = (before - after)/before * 100, before=0 handled as 'undefined'.",
+  "metrics": {
+    "startup": {"before_ms": "PENDING", "after_ms": "PENDING", "absolute_change_ms": "PENDING", "percent_change": "PENDING", "direction": "PENDING"},
+    "first_prediction": {"before_ms": "PENDING", "after_ms": "PENDING", "absolute_change_ms": "PENDING", "percent_change": "PENDING", "direction": "PENDING"},
+    "warm_p50": {"before_ms": "PENDING", "after_ms": "PENDING", "absolute_change_ms": "PENDING", "percent_change": "PENDING", "direction": "PENDING"},
+    "warm_p95": {"before_ms": "PENDING", "after_ms": "PENDING", "absolute_change_ms": "PENDING", "percent_change": "PENDING", "direction": "PENDING"},
+    "warm_mean": {"before_ms": "PENDING", "after_ms": "PENDING", "absolute_change_ms": "PENDING", "percent_change": "PENDING", "direction": "PENDING"}
+  },
+  "comparison_note": "No production optimization was implemented in Phase 2 (decisions: 4× ALREADY_OPTIMIZED, 1× NOT_JUSTIFIED). BEFORE/AFTER comparison is vacuous until a live baseline exists and an optimization is actually implemented.",
+  "status": "BLOCKED"
+}

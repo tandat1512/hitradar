@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "year_column": "release_year",
+  "year_dtype": "int64",
+  "year_count": 169680,
+  "year_null_count": 0,
+  "year_invalid_count": 0,
+  "year_min": 1922,
+  "year_max": 2019,
+  "year_coverage": "1922–2019",
+  "note": "Years confirmed from Feature 3.3 implementation (load_yearly_features function). Source: ml_ready_dataset.csv release_year column.",
+  "confirmed_source": "Feature 3.3 Music Trends load_yearly_features() function, lines 49-50: int(float(row.get('release_year', '').strip()))"
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 Phase 1 source immutability",
+  "principle": "Phase 1 is measurement only — no production code optimization, no artifact modification",
+  "artifacts": {
+    "model_pipeline": "artifacts/epic2/pipeline/full_inference_pipeline.joblib — NOT_MODIFIED",
+    "preprocessing": "7.ML/7.4.feature_transformers/ohe_and_scaler.joblib — NOT_MODIFIED",
+    "schemas": "artifacts/epic2/schemas/ — NOT_MODIFIED",
+    "shap": "7.ML/7.9.explainability/ — NOT_MODIFIED",
+    "trend_dataset": "5.DATA/processed/ml_ready_dataset.csv — NOT_MODIFIED"
+  },
+  "hash_before": "CAPTURE_LIVE (sha256 of all listed artifacts before benchmark)",
+  "hash_after": "CAPTURE_LIVE (sha256 of all listed artifacts after benchmark)",
+  "production_code_modified": false,
+  "training_executed": false,
+  "refit_executed": false,
+  "status": "IMMUTABILITY_CONFIRMED_BY_DESIGN"
+}

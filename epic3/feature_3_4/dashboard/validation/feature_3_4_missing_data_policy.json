@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "policy": {
+    "aggregation": "exclude_missing",
+    "description": "All dashboard aggregations (mean, count, std) use pandas default skipna=True semantics. Missing values are excluded from statistics. The dashboard does NOT call fillna(), impute(), drop rows, or substitute missing values to make charts appear cleaner.",
+    "coverage_reporting": true,
+    "no_fillna": true,
+    "no_imputation": true,
+    "no_silent_drop": true,
+    "rationale": "Filling or dropping missing values in a student research dataset would misrepresent data quality and bias aggregations."
+  },
+  "per_field_policy": {
+    "release_year": "exclude missing years from aggregation (null_count: 0 per confirmed source)",
+    "target_popularity": "exclude null from mean/std aggregation",
+    "audio_features": "exclude null from mean aggregation; report null_count in captions",
+    "explicit": "exclude null from boolean aggregation",
+    "duration_min": "exclude null from mean aggregation"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "feature_id":"3.8",
+  "checked_at":"2026-08-12T00:18:00+07:00",
+  "hotfix_revalidated_at":"2026-08-13T00:00:00+07:00",
+  "python":"3.13.14",
+  "dependencies":{"fastapi":"0.141.1","uvicorn":"0.49.0","streamlit":"1.58.0","xgboost":"3.3.0","shap":"0.52.0","scikit_learn":"1.8.0"},
+  "model_artifact":{"exists":true,"sha256":"7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99","manifest_match":true},
+  "dataset":{"exists":true,"sha256":"332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e","known_csv_manifest_match":true},
+  "ports":{"8000":{"available_before":true,"released_after":true},"8501":{"available_before":true,"released_after":true}},
+  "backend":{"started":true,"health_pass":true},
+  "frontend":{"started":true,"health_pass":true,"utf8_startup_workaround_required_in_redirected_console":true},
+  "browser":{"human_interactive_check":"PENDING"},
+  "offline_package":{"evidence_exists":true,"automatic_ui_validated":false},
+  "ready":false,
+  "status":"PARTIAL",
+  "warnings":["Runtime scikit-learn 1.8.0 differs from serialization version 1.9.0 and emitted warnings.","Frontend startup logging requires UTF-8 on the Vietnamese workspace path.","No browser interaction test or automatic offline UI validation was performed."]
+}

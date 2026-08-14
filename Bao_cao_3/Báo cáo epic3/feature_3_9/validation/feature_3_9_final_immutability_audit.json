@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "checks": [
+    {
+      "logical_name": "model",
+      "path": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+      "expected_sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "actual_sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "logical_name": "dataset",
+      "path": "5.DATA/processed/ml_ready_dataset.csv",
+      "expected_sha256": "332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e",
+      "actual_sha256": "332339726a70d8a7b180db4458fe318864ebd447ee94abdf6b4668e48827325e",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "logical_name": "shap_background_raw",
+      "path": "7.ML/7.9.explainability/background/shap_background_raw.parquet",
+      "expected_sha256": "24f7057efa99879997ae6a659dfa3c973cb5f7e3f541435d627b8c08e2312e23",
+      "actual_sha256": "24f7057efa99879997ae6a659dfa3c973cb5f7e3f541435d627b8c08e2312e23",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "logical_name": "shap_background_transformed",
+      "path": "7.ML/7.9.explainability/background/shap_background_transformed.npy",
+      "expected_sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+      "actual_sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "logical_name": "shap_values_global",
+      "path": "7.ML/7.9.explainability/shap_values/shap_values_global.npy",
+      "expected_sha256": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+      "actual_sha256": "4733f6a38779bd3d374566f0542c7d76f9a49a125fa911626ddc7c03c2b06d5c",
+      "match": true,
+      "status": "PASS"
+    }
+  ],
+  "model_artifacts_modified": false,
+  "source_dataset_modified": false,
+  "shap_artifacts_modified": false,
+  "unexpected_business_logic_modified_during_final_delivery": false,
+  "production_business_logic_baseline_proven": false,
+  "warning": "Canonical model/data/SHAP hashes match, but pre-existing dirty/untracked API/schema/loader files prevent proof against a clean release baseline.",
+  "status": "PARTIAL_CANONICAL_ASSETS_IMMUTABLE_BUSINESS_LOGIC_BASELINE_UNPROVEN"
+}

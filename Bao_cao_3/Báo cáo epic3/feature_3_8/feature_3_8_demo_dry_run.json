@@ -1,0 +1,35 @@
+{
+  "status": "TECHNICAL_DRY_RUN",
+  "result": "PASS_WITH_WARNINGS",
+  "executed_at": "2026-08-11T22:08:58+07:00",
+  "environment": {
+    "python": "3.13.14",
+    "backend_url": "http://127.0.0.1:8000",
+    "frontend_url": "http://127.0.0.1:8501",
+    "mode": "LIVE_TECHNICAL_CHECK"
+  },
+  "checks": {
+    "backend_health": {"status": "PASS", "http_status": 200, "api_status": "healthy", "model_loaded": true},
+    "frontend_health": {"status": "PASS", "http_status": 200, "body": "ok"},
+    "predict": {"status": "PASS", "prediction_raw": 46.421062, "prediction_display": 46, "model_id": "EXP24-XGB-FINAL-001", "model_version": "1.0.0"},
+    "explain": {"status": "BLOCKED_TIMEOUT", "timeout_seconds": 300, "response_recorded": false},
+    "what_if": {"status": "PASS", "feature": "energy", "original": 0.793, "modified": 0.95, "prediction_before": 46.421062, "prediction_after": 44.045479, "delta": -2.375583},
+    "trends": {"status": "PASS_DATA_SOURCE", "valid_rows": 586672, "min_year": 1900, "max_year": 2021, "year_count": 101},
+    "model_info": {"status": "PASS", "model_id": "EXP24-XGB-FINAL-001", "model_version": "1.0.0", "model_family": "XGBoost", "metrics": null}
+  },
+  "consistency": {
+    "predict_matches_canonical": true,
+    "what_if_baseline_matches_predict": true,
+    "explain_matches_predict": null
+  },
+  "immutability": {
+    "model_artifact": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+    "sha256_before": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "sha256_after": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "unchanged": true,
+    "training_executed": false,
+    "refit_executed": false
+  },
+  "note": "This is a historical technical dry-run, not Rehearsal #1. Its Explain timeout was superseded by the successful final smoke; retain it only as recovery context.",
+  "superseded_by": "feature_3_8_final_live_demo_smoke.json"
+}

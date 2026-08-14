@@ -1,0 +1,31 @@
+{
+  "dataset_qa_complete": true,
+  "model_qa_complete": true,
+  "shap_qa_complete": true,
+  "limitations_qa_complete": true,
+  "must_know_questions_defined": true,
+  "rapid_fire_sheet_complete": true,
+  "qa_question_count": 66,
+  "rapid_fire_question_count": 25,
+  "qa_fact_mismatch_count": 0,
+  "accuracy_mislabel_count": 0,
+  "guarantee_claim_count": 0,
+  "causal_shap_claim_count": 0,
+  "causal_what_if_claim_count": 0,
+  "unsupported_claim_count": 0,
+  "training_executed": false,
+  "model_artifacts_modified": false,
+  "pytest_collected": 8,
+  "pytest_passed": 8,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "warnings": [
+    "README, User Manual and Technical Appendix may still state 169681 rows / 1922-2019. Corrected Feature 3.8 story/slide and Q&A use locked ML evidence 586672 / 1900-2021 and label older values as legacy.",
+    "Package metadata states package version 2.7.0 while runtime example states package version 1.0.0. Q&A answers model version 1.0.0 and qualifies package-version questions.",
+    "Feature 3.6 did not validate automatic offline UI implementation; Q&A describes explicit evidence-only fallback.",
+    "The historical /explain dry-run timed out after 300 seconds; final smoke passed in about 400 ms and Q&A retains an honest skip policy."
+  ],
+  "blockers": [],
+  "status": "PASS_WITH_WARNINGS",
+  "next_phase": "MAY_BEGIN"
+}

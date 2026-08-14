@@ -1,0 +1,50 @@
+{
+  "scenario_id": "F38-DEMO-CANONICAL-001",
+  "input_source": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+  "input_hash": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+  "model_version": "1.0.0",
+  "expected_predict": {
+    "status": "SUCCESS",
+    "prediction_raw": 46.421062,
+    "tolerance": 0.001,
+    "prediction_display": 46,
+    "speaker_value": "approximately 46",
+    "offline_policy": "PRECOMPUTED_ONLY"
+  },
+  "expected_explain_status": "LIVE_SUCCESS_CONFIRMED_IN_FINAL_SMOKE; OFFLINE_NOT_AVAILABLE",
+  "what_if_feature": "energy",
+  "what_if_original": 0.793,
+  "what_if_modified": 0.95,
+  "expected_what_if_status": "SUCCESS_IN_FINAL_SMOKE; MEASURED_DELTA_IS_SCENARIO_SPECIFIC; OFFLINE_NOT_AVAILABLE",
+  "input": {
+    "duration_min": 5.1767,
+    "explicit": true,
+    "release_year": 1992,
+    "release_month": 11.0,
+    "decade": 1990,
+    "release_precision": "day",
+    "danceability": 0.785,
+    "energy": 0.793,
+    "key": 1,
+    "loudness": -7.915,
+    "mode": 1,
+    "speechiness": 0.163,
+    "acousticness": 0.22,
+    "instrumentalness": 0.718,
+    "liveness": 0.124,
+    "valence": 0.655,
+    "tempo": 88.902,
+    "time_signature": 4.0
+  },
+  "final_live_smoke_observation": {
+    "predict_raw": 46.421062,
+    "explain_status": "PASS",
+    "explain_elapsed_ms": 400,
+    "explain_base_value": 22.879942,
+    "what_if_before": 46.421062,
+    "what_if_after": 44.045479,
+    "what_if_delta": -2.375583,
+    "note": "Observation from the 2026-08-12 final technical smoke; presenter must read the live UI and must not claim a general direction or causal effect."
+  },
+  "historical_dry_run_note": "The 2026-08-11 Explain timeout was superseded by the successful 2026-08-12 final smoke. Keep the skip rule only as recovery guidance."
+}

@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "submission_requirement_status": "SUBMISSION_REQUIREMENTS_PARTIALLY_UNKNOWN",
+  "official_platform_requirements_supplied": false,
+  "entries": [
+    {
+      "role": "final_report",
+      "path": "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+      "exists": true,
+      "bytes": 15232,
+      "sha256": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+      "last_modified": "2026-08-13T19:52:05+07:00",
+      "status": "READY",
+      "classification": "PROJECT_RECOMMENDED",
+      "canonical_source": "Bao_cao_3/Báo cáo epic3/feature_3_7/validation/feature_3_7_closure_gate.json"
+    },
+    {
+      "role": "final_slide_deck",
+      "path": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+      "exists": true,
+      "bytes": 41968,
+      "sha256": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+      "last_modified": "2026-08-13T20:45:10+07:00",
+      "status": "READY",
+      "classification": "PROJECT_RECOMMENDED",
+      "canonical_source": "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_defense_package_manifest.json"
+    },
+    {
+      "role": "repository_overview",
+      "path": "README.md",
+      "exists": true,
+      "bytes": 9283,
+      "sha256": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+      "last_modified": "2026-08-13T19:53:22+07:00",
+      "status": "READY",
+      "classification": "OPTIONAL",
+      "canonical_source": "root canonical documentation set"
+    },
+    {
+      "role": "run_guide",
+      "path": "HOW_TO_RUN_APP.md",
+      "exists": true,
+      "bytes": 7452,
+      "sha256": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+      "last_modified": "2026-08-13T19:53:22+07:00",
+      "status": "READY",
+      "classification": "OPTIONAL",
+      "canonical_source": "startup scripts + root canonical documentation set"
+    },
+    {
+      "role": "user_manual",
+      "path": "USER_MANUAL.md",
+      "exists": true,
+      "bytes": 12061,
+      "sha256": "4b213f781e1ea89ef68210b5d2c52eea6437eb8ba199d694c0b0f4a79d0d88e9",
+      "last_modified": "2026-08-13T19:51:36+07:00",
+      "status": "READY",
+      "classification": "OPTIONAL",
+      "canonical_source": "Streamlit page registry + root canonical documentation set"
+    },
+    {
+      "role": "api_reference",
+      "path": "API_DOCUMENTATION.md",
+      "exists": true,
+      "bytes": 12513,
+      "sha256": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827",
+      "last_modified": "2026-08-13T19:51:36+07:00",
+      "status": "READY",
+      "classification": "OPTIONAL",
+      "canonical_source": "5.UNG_DUNG/5.1.backend_api/openapi.json"
+    },
+    {
+      "role": "technical_appendix",
+      "path": "TECHNICAL_APPENDIX.md",
+      "exists": true,
+      "bytes": 27226,
+      "sha256": "de5c075ec9e288f1981718e9222ea1441de464ade5075d03e1b668d532802afb",
+      "last_modified": "2026-08-13T19:52:05+07:00",
+      "status": "READY",
+      "classification": "OPTIONAL",
+      "canonical_source": "Bao_cao_3/Báo cáo epic3/feature_3_8/validation/feature_3_8_defense_source_registry.json"
+    },
+    {
+      "role": "source_repository_url",
+      "path": null,
+      "exists": false,
+      "bytes": 0,
+      "sha256": null,
+      "last_modified": null,
+      "status": "OFFICIAL_REQUIREMENT_UNKNOWN",
+      "classification": "OPTIONAL",
+      "canonical_source": "official submission requirement not supplied"
+    },
+    {
+      "role": "demo_video",
+      "path": null,
+      "exists": false,
+      "bytes": 0,
+      "sha256": null,
+      "last_modified": null,
+      "status": "NOT_REQUIRED_BY_KNOWN_EVIDENCE",
+      "classification": "NOT_FOR_SUBMISSION",
+      "canonical_source": "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_defense_package_manifest.json"
+    }
+  ],
+  "submission_package_manifest_complete": true,
+  "incomplete_reasons": [
+    "Official platform-specific submission requirements were not supplied."
+  ],
+  "status": "COMPLETE_PROJECT_SCOPE_REQUIREMENTS_PENDING"
+}

@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 final API audit — API_DOCUMENTATION.md vs openapi.json",
+  "endpoints": [
+    {
+      "path": "/health",
+      "method": "GET",
+      "openapi_status_codes": [200],
+      "doc_status_codes": [200],
+      "status": "OK"
+    },
+    {
+      "path": "/model-info",
+      "method": "GET",
+      "openapi_status_codes": [200, 503],
+      "doc_status_codes": [200, 503],
+      "status": "OK"
+    },
+    {
+      "path": "/features",
+      "method": "GET",
+      "openapi_status_codes": [200, 503],
+      "doc_status_codes": [200, 503],
+      "status": "OK"
+    },
+    {
+      "path": "/predict",
+      "method": "POST",
+      "openapi_status_codes": [200, 422, 503],
+      "doc_status_codes": [200, 422, 503],
+      "status": "OK"
+    },
+    {
+      "path": "/explain",
+      "method": "POST",
+      "openapi_status_codes": [200, 422, 503],
+      "doc_status_codes": [200, 422, 503],
+      "status": "OK"
+    },
+    {
+      "path": "/what-if",
+      "method": "POST",
+      "openapi_status_codes": [200, 422, 503],
+      "doc_status_codes": [200, 422, 503],
+      "status": "OK"
+    }
+  ],
+  "missing_documented_endpoint": 0,
+  "phantom_endpoint": 0,
+  "method_mismatch": 0,
+  "path_mismatch": 0,
+  "request_mismatch": 0,
+  "response_mismatch": 0,
+  "status_code_mismatch": 0,
+  "status": "ALL_MATCH"
+}

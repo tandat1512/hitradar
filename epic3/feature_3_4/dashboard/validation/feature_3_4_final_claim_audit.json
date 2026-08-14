@@ -1,0 +1,38 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Final claim audit — all charts, captions, labels, section text",
+  "audit_scope": [
+    "Chart titles (from chart_render.py and chart_registry.json)",
+    "Axis labels (from chart_render.py)",
+    "Captions (from captions/engines.py)",
+    "Section text (from captions/engines.py)",
+    "NOT_AVAILABLE messages (from analytics/summary_engine.py)"
+  ],
+  "banned_patterns_scanned": [
+    {"pattern": "causes?", "severity": "HIGH"},
+    {"pattern": "caused by", "severity": "HIGH"},
+    {"pattern": "leads to", "severity": "HIGH"},
+    {"pattern": "results in", "severity": "HIGH"},
+    {"pattern": "makes songs", "severity": "HIGH"},
+    {"pattern": "proves", "severity": "HIGH"},
+    {"pattern": "guarantees", "severity": "HIGH"},
+    {"pattern": "societal", "severity": "MEDIUM"},
+    {"pattern": "industry-wide", "severity": "MEDIUM"},
+    {"pattern": "global music", "severity": "MEDIUM"},
+    {"pattern": "all music", "severity": "MEDIUM"},
+    {"pattern": "streaming", "severity": "LOW"},
+    {"pattern": "technology", "severity": "LOW"}
+  ],
+  "results": {
+    "chart_titles": {"causal_claims": 0, "generalizations": 0, "status": "PASS"},
+    "axis_labels": {"causal_claims": 0, "generalizations": 0, "status": "PASS"},
+    "captions": {"causal_claims": 0, "generalizations": 0, "status": "PASS"},
+    "not_available_messages": {"causal_claims": 0, "generalizations": 0, "status": "PASS"},
+    "global_disclaimer": {"causal_claims": 0, "generalizations": 0, "status": "PASS"}
+  },
+  "unsupported_causal_claim_count": 0,
+  "unsupported_accuracy_claim_count": 0,
+  "unsupported_industry_generalization_count": 0,
+  "status": "PASS"
+}

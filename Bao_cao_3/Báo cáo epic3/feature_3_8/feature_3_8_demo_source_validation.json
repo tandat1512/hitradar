@@ -1,0 +1,70 @@
+{
+  "feature_id": "3.8",
+  "phase": 2,
+  "task_id": "3.8.2",
+  "validated_at": "2026-08-13T00:00:00+07:00",
+  "sources": [
+    {
+      "source": "feature_3_8_final_live_demo_smoke.json",
+      "finding": "The 2026-08-12 final technical smoke supplied current live evidence for health, Predict, Explain, What-if and Trends.",
+      "use_in_demo": "Use measured values only for the canonical scenario and still read the current UI during the defense."
+    },
+    {
+      "source": "feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md",
+      "finding": "Documented launchers are scripts/run_backend.py, scripts/run_frontend.py and scripts/run_all.py; ports are 8000 and 8501.",
+      "use_in_demo": "Precheck commands and health conditions."
+    },
+    {
+      "source": "feature_3_6/validation/feature_3_6_offline_demo_mode_contract.json",
+      "finding": "Offline is explicit, Predict is locked to canonical precomputed evidence, Explain and What-if are NOT_AVAILABLE; Feature 3.6 closure says UI implementation was deferred.",
+      "use_in_demo": "Manual OFFLINE_PRECOMPUTED fallback with mandatory disclosure; never represent it as live or as a confirmed automatic UI mode."
+    },
+    {
+      "source": "feature_3_6 backup screenshot/video manifests and final asset audit",
+      "finding": "Captured screenshots: 0; video: MANUAL_RECORDING_REQUIRED.",
+      "use_in_demo": "Mark backup media unavailable until files are actually captured and validated."
+    },
+    {
+      "source": "feature_3_7/USER_MANUAL.md",
+      "finding": "Seven-page flow and responsible-use wording are documented. Its automatic-offline wording conflicts with the higher-priority explicit offline contract.",
+      "use_in_demo": "Use page flow; follow the explicit opt-in contract for fallback."
+    },
+    {
+      "source": "feature_3_8_project_story.md and validation/feature_3_8_defense_source_registry.json",
+      "finding": "Defense story and source registry are synchronized to the current locked ML-ready scope: 586672 rows and 1900-2021.",
+      "use_in_demo": "Describe the current ML-ready source and preserve the platform-specific/historical limitation."
+    },
+    {
+      "source": "epic3/feature_3_3/frontend/pages/4_Trends.py plus 5.DATA/processed/ml_ready_dataset.csv",
+      "finding": "The current Trends page reads ml_ready_dataset.csv. Technical parsing observed 586672 valid rows, 101 years, 1900-2021.",
+      "use_in_demo": "Read the current Dataset coverage caption; limit the insight to descriptive scope and Songs per Year."
+    }
+  ],
+  "canonical_fixture": {
+    "input_path": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+    "input_sha256": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+    "artifact_copy_semantically_equal": true,
+    "artifact_copy_path": "artifacts/epic2/examples/example_input.json",
+    "output_path": "7.ML/7.10.model_packaging/package/examples/example_output.json",
+    "output_sha256": "4a0e968c07c1335aaac2094e46c0cae5ccba0471dcb5d2c0046786df7dad10d6",
+    "offline_copy_semantically_equal": true,
+    "offline_copy_byte_hash_differs_due_to_serialization": true
+  },
+  "current_technical_evidence": {
+    "backend_health": "PASS",
+    "frontend_health": "PASS",
+    "predict": "PASS_CANONICAL_MATCH",
+    "explain": "PASS_FINAL_SMOKE_400_MS",
+    "what_if": "PASS",
+    "music_trends_data": "PASS",
+    "model_info": "PASS",
+    "model_artifact_hash_unchanged": true,
+    "historical_explain_timeout": "2026-08-11 dry-run only; superseded by final smoke"
+  },
+  "warnings": [
+    "Explain timed out in the 2026-08-11 dry-run but passed in the 2026-08-12 final smoke; retain the skip rule only as recovery guidance.",
+    "Feature 3.6 offline UI implementation is not validated; fallback is evidence-based and explicitly disclosed.",
+    "No backup screenshot or video file is currently available."
+  ],
+  "status": "PASS_WITH_WARNINGS"
+}

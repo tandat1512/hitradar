@@ -1,0 +1,14 @@
+{
+  "feature_id": "3.8",
+  "generated_at": "2026-08-12T00:20:00+07:00",
+  "canonical_input": "PASS",
+  "predict": "PASS",
+  "explain": "PASS",
+  "what_if": "PASS",
+  "trends": "PASS_DATA_SOURCE_AND_AGGREGATION",
+  "model_info_limitations": "PASS_WITH_WARNING_METRICS_NULL",
+  "fallback": "FAIL_AUTOMATIC_UI_AND_MEDIA_NOT_VALIDATED",
+  "technical_smoke_is_rehearsal": false,
+  "status": "PASS_WITH_WARNINGS",
+  "warnings": ["Model Info returns metrics=null.", "Automatic offline UI/banner is absent from inspected frontend source.", "Backup screenshots and video are missing."]
+}

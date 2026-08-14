@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "error_contract": "{\"detail\": \"...\"} or {\"detail\": [...]}",
+  "error_types": {
+    "APIConnectionError":       "DNS failure, connection refused",
+    "APITimeoutError":          "Connect or read timeout",
+    "APIValidationError":       "HTTP 422",
+    "APIServiceUnavailableError": "HTTP 503",
+    "APIResponseError":         "HTTP 400/404/500",
+    "APIContractError":         "Malformed response JSON or schema mismatch"
+  },
+  "request_id_parsed": true,
+  "no_traceback_exposed": true,
+  "parse_backend_error_implemented": true,
+  "status": "PASS"
+}

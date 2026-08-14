@@ -1,0 +1,204 @@
+{
+  "info": {
+    "name": "HitRadar Pro API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "GET /health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Request-ID",
+                "value": "{{request_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', function(){pm.response.to.have.status(200);});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Model",
+      "item": [
+        {
+          "name": "GET /model-info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Request-ID",
+                "value": "{{request_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/model-info",
+              "path": [
+                "model-info"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /features",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Request-ID",
+                "value": "{{request_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/features",
+              "path": [
+                "features"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prediction",
+      "item": [
+        {
+          "name": "POST /predict (valid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Request-ID",
+                "value": "{{request_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/predict",
+              "path": [
+                "predict"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"duration_min\": 3.517,\n  \"explicit\": false,\n  \"release_year\": 1992,\n  \"release_month\": 1.0,\n  \"decade\": 1990,\n  \"release_precision\": \"year\",\n  \"danceability\": 0.7,\n  \"energy\": 0.8,\n  \"key\": 5,\n  \"loudness\": -5.0,\n  \"mode\": 1,\n  \"speechiness\": 0.1,\n  \"acousticness\": 0.3,\n  \"instrumentalness\": 0.05,\n  \"liveness\": 0.2,\n  \"valence\": 0.6,\n  \"tempo\": 120.0,\n  \"time_signature\": 4.0\n}"
+            }
+          }
+        },
+        {
+          "name": "POST /predict (invalid — missing field)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/predict",
+              "path": [
+                "predict"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"danceability\": 0.5}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Explainability",
+      "item": [
+        {
+          "name": "POST /explain (valid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Request-ID",
+                "value": "{{request_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/explain",
+              "path": [
+                "explain"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"duration_min\": 3.517,\n  \"explicit\": false,\n  \"release_year\": 1992,\n  \"release_month\": 1.0,\n  \"decade\": 1990,\n  \"release_precision\": \"year\",\n  \"danceability\": 0.7,\n  \"energy\": 0.8,\n  \"key\": 5,\n  \"loudness\": -5.0,\n  \"mode\": 1,\n  \"speechiness\": 0.1,\n  \"acousticness\": 0.3,\n  \"instrumentalness\": 0.05,\n  \"liveness\": 0.2,\n  \"valence\": 0.6,\n  \"tempo\": 120.0,\n  \"time_signature\": 4.0\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "What-if",
+      "item": [
+        {
+          "name": "POST /what-if (valid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Request-ID",
+                "value": "{{request_id}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/what-if",
+              "path": [
+                "what-if"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"base_features\": {\n    \"duration_min\": 3.517,\n    \"explicit\": false,\n    \"release_year\": 1992,\n    \"release_month\": 1.0,\n    \"decade\": 1990,\n    \"release_precision\": \"year\",\n    \"danceability\": 0.7,\n    \"energy\": 0.8,\n    \"key\": 5,\n    \"loudness\": -5.0,\n    \"mode\": 1,\n    \"speechiness\": 0.1,\n    \"acousticness\": 0.3,\n    \"instrumentalness\": 0.05,\n    \"liveness\": 0.2,\n    \"valence\": 0.6,\n    \"tempo\": 120.0,\n    \"time_signature\": 4.0\n  },\n  \"changed_features\": {\n    \"release_year\": 2020\n  }\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

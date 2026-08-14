@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Direct model access audit across all frontend source",
+  "scan_root": "epic3/feature_3_3/frontend",
+  "forbidden_imports": [
+    {"pattern": "joblib", "severity": "CRITICAL"},
+    {"pattern": "pickle.load", "severity": "CRITICAL"},
+    {"pattern": "xgboost", "severity": "CRITICAL"},
+    {"pattern": "sklearn.model_selection", "severity": "CRITICAL"},
+    {"pattern": "shap.TreeExplainer", "severity": "CRITICAL"},
+    {"pattern": "shap.KernelExplainer", "severity": "CRITICAL"},
+    {"pattern": "from app.services import", "severity": "CRITICAL"},
+    {"pattern": "from app.models import", "severity": "CRITICAL"}
+  ],
+  "scan_results": {
+    "pages/0_Home.py": {"forbidden_found": [], "status": "PASS"},
+    "pages/1_Predict.py": {"forbidden_found": [], "status": "PASS"},
+    "pages/2_Explain.py": {"forbidden_found": [], "status": "PASS"},
+    "pages/3_WhatIf.py": {"forbidden_found": [], "status": "PASS"},
+    "pages/4_Trends.py": {"forbidden_found": [], "status": "PASS"},
+    "pages/5_Model_Info.py": {"forbidden_found": [], "status": "PASS"},
+    "pages/6_Limitations.py": {"forbidden_found": [], "status": "PASS"},
+    "components/prediction_result.py": {"forbidden_found": [], "status": "PASS"},
+    "components/shap_explanation.py": {"forbidden_found": [], "status": "PASS"},
+    "components/whatif_comparison.py": {"forbidden_found": [], "status": "PASS"},
+    "components/error_states.py": {"forbidden_found": [], "status": "PASS"},
+    "components/predict_form.py": {"forbidden_found": [], "status": "PASS"}
+  },
+  "direct_model_load_count": 0,
+  "direct_backend_service_import_count": 0,
+  "direct_shap_computation_count": 0,
+  "artifact_binary_access_count": 0,
+  "status": "PASS"
+}

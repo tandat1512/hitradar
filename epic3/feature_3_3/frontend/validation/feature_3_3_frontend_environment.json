@@ -1,0 +1,11 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "python_version": "3.13.14",
+  "streamlit_available": true,
+  "httpx_available": true,
+  "pandas_available": true,
+  "backend_base_url_source": "BACKEND_BASE_URL env var or default http://localhost:8000",
+  "config_loaded_from": "core/config.py",
+  "status": "PASS"
+}

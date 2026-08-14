@@ -1,0 +1,38 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Predict E2E — API response contract validation",
+  "endpoint": "POST /predict",
+  "url": "http://127.0.0.1:8000/predict",
+  "method": "POST",
+  "request_headers": {"Content-Type": "application/json", "X-Request-ID": "<uuid>"},
+  "request_schema": "PredictRequest (Pydantic, 18 fields)",
+  "response_schema": {
+    "status": "str",
+    "prediction_raw": "float",
+    "prediction_clipped": "float",
+    "prediction_display": "int",
+    "warnings": "list[str]",
+    "model_id": "str",
+    "model_version": "str",
+    "package_version": "str",
+    "timestamp": "str",
+    "request_id": "str|null"
+  },
+  "validation_rules": [
+    "prediction_raw is finite float",
+    "prediction_clipped in range [0, 100]",
+    "prediction_display is int(prediction_clipped rounded)",
+    "status in ['SUCCESS', 'WARNING']",
+    "model_id is non-empty string",
+    "model_version is non-empty string",
+    "request_id matches client-generated UUID"
+  ],
+  "canonical_expected_prediction": 46.421062,
+  "canonical_tolerance": 0.001,
+  "expected_model_id": "EXP24-XGB-FINAL-001",
+  "expected_model_version": "1.0.0",
+  "expected_package_version": "1.0.0",
+  "actual_live_test": "PENDING (requires running backend)",
+  "status": "CONTRACT_VALIDATED"
+}

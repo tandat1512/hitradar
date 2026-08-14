@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-06T01:38:12.432081+00:00",
+  "status": "PASS",
+  "endpoint": "POST /what-if",
+  "http_status": 200,
+  "has_delta": true,
+  "has_changes_applied": true,
+  "delta_finite": true,
+  "validation_matrix": {
+    "unknown_field": {
+      "status": 422,
+      "is_422": true
+    },
+    "target_rejected": {
+      "status": 422,
+      "is_422": true
+    },
+    "out_of_range": {
+      "status": 422,
+      "is_422": true
+    },
+    "empty_changes": {
+      "status": 422,
+      "is_422": true
+    },
+    "categorical_valid": {
+      "status": 200,
+      "is_200": true
+    }
+  },
+  "all_validation_422": true,
+  "warnings": [],
+  "blockers": []
+}

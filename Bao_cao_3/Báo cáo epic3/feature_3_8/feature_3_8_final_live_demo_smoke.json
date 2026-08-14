@@ -1,0 +1,18 @@
+{
+  "feature_id": "3.8",
+  "executed_at": "2026-08-12T00:13:45+07:00",
+  "mode": "TECHNICAL_SMOKE_NOT_REHEARSAL",
+  "training_executed": false,
+  "backend": {"command":"python -m uvicorn api:app --host 127.0.0.1 --port 8000","health":{"status":"healthy","model_loaded":true},"status":"PASS"},
+  "frontend": {"canonical_script":"python -X utf8 scripts/run_frontend.py","health_url":"http://127.0.0.1:8501/_stcore/health","http_status":200,"status":"PASS_WITH_UTF8_WORKAROUND"},
+  "predict": {"status":"PASS","elapsed_ms":86,"prediction_raw":46.421062,"expected":46.421062,"absolute_error":0.0,"model_id":"EXP24-XGB-FINAL-001","model_version":"1.0.0"},
+  "explain": {"status":"PASS","elapsed_ms":400,"prediction_raw":46.421062,"base_value":22.879942,"top_features":[{"name":"release_year","shap_value":7.736362},{"name":"energy_danceability","shap_value":5.928582},{"name":"acousticness","shap_value":1.81846},{"name":"duration_min","shap_value":1.395095},{"name":"danceability","shap_value":1.259571}]},
+  "what_if": {"status":"PASS","elapsed_ms":38,"change":{"energy":{"before":0.793,"after":0.95}},"prediction_before":46.421062,"prediction_after":44.045479,"delta":-2.375583},
+  "music_trends": {"status":"PASS_DATA_PARSE","source":"5.DATA/processed/ml_ready_dataset.csv","rows":586672,"valid_year_rows":586672,"min_year":1900,"max_year":2021,"unique_years":101},
+  "model_info": {"status":"PASS_WITH_WARNING","model_id":"EXP24-XGB-FINAL-001","model_version":"1.0.0","package_version":"1.0.0","metrics":null},
+  "model_sha256_before":"7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+  "model_sha256_after":"7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+  "model_modified":false,
+  "status":"PASS_WITH_WARNINGS",
+  "warnings":["The first redirected run_frontend invocation failed while printing a Vietnamese path under CP1252; python -X utf8 succeeded.","scikit-learn 1.8.0 emitted compatibility warnings for estimators serialized with 1.9.0.","Model Info metrics field is null."]
+}

@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "audit_method": "Scoped documents are scanned for prohibited guarantee, causality, global-scope, production-readiness and offline-live-inference wording.",
+  "source_sha256": {
+    "README.md": "2b6e4f5328ba98741571f39d8771c63fdbf8b22b98f11d5a9ee19e931e662eef",
+    "HOW_TO_RUN_APP.md": "05151fc4c6bec23afae7ef6c266e7cb40fac402da1431e648424dbd9caec9336",
+    "USER_MANUAL.md": "4b213f781e1ea89ef68210b5d2c52eea6437eb8ba199d694c0b0f4a79d0d88e9",
+    "API_DOCUMENTATION.md": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827",
+    "TECHNICAL_APPENDIX.md": "de5c075ec9e288f1981718e9222ea1441de464ade5075d03e1b668d532802afb",
+    "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md": "87f2c8d24dc668be33d2487ea0240ad0f11ce322a8a3af4f9f0fc67cc116bf32",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md": "33e5ef0658344a5a9f18a36c6302d58220af8186b6b2a1f1f2d1a7beede03def",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/demo_reliability_checklist.md": "914bb05c1905ccb7808e1cec5eb73d5dd38312d46dd041d44312659068d614dc",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md": "5f317caf8f2ab41e4df380ffb8342bc0f15e552709b9eadd6d1ccf31acac5a97",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/FINAL_DEFENSE_CHECKLIST.md": "757da1986657d56aa2617821e7e727ada6f73b4e4b79e251c2f33b3d2e79e3e8",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_DATASET.md": "23a69d72d88471cfc46cce7322971273743a851c6f471812296bd58401b84c08",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_LIMITATIONS.md": "a30439e758d70685f2340a3eaff39f5a4288d750f4767adbc93d8d7f9f56b6ea",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_MASTER.md": "0f4e544877c55c0b7bba190090ee82548e99bf97c5e3994e875f5eb72fccd95a",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_MODEL.md": "4bbedcebe0938ace4886d9be4d191e0b3818ef677bc25c01e77998f76ed007a2",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_RAPID_FIRE.md": "0ff6cdf6b1886b573a0fb4816197292d5eda522e3d89b487f7e1734d32e40a90",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_SHAP.md": "ee6dc1f97eae2bc5ae6e510ce02a9b4240dec1dbd8a3eb62fd822a70709de86c",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md": "497383757e1c1166d3a30e21d423f5fe19640fde97ab43d927597baddbb9fe10"
+  },
+  "unsupported_accuracy_claim_count": 0,
+  "guaranteed_hit_claim_count": 0,
+  "causal_shap_claim_count": 0,
+  "causal_what_if_claim_count": 0,
+  "global_dataset_overclaim_count": 0,
+  "production_ready_overclaim_count": 0,
+  "offline_live_misrepresentation_count": 0,
+  "unsupported_claim_count": 0,
+  "status": "PASS"
+}

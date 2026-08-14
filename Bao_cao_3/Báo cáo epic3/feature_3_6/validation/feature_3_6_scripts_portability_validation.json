@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 scripts portability validation",
+  "no_absolute_dev_paths": true,
+  "machine_specific_path_count": 0,
+  "evidence": [
+    "scripts resolve REPO_ROOT from __file__.parent.parent (relative, no hardcoded drive letter)",
+    "no 'H:\\', 'C:\\Users\\', or machine venv paths anywhere in scripts/",
+    "Python environment: scripts use sys.executable of the invoking interpreter — no self-activation of a hardcoded venv",
+    "dependency installation is NOT a script runtime concern (setup concern per spec section 5)"
+  ],
+  "documented_invocation": "python scripts/run_all.py  (or .venv\\Scripts\\python scripts/run_all.py)",
+  "clean_env_smoke": "Feature 3.5 isolation principles: copy-repo run is BLOCKED (no live env)",
+  "status": "PORTABLE_BY_DESIGN"
+}

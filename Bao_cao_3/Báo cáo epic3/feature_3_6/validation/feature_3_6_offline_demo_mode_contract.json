@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 offline demo mode — full design contract (implementation requires live verification)",
+  "tiers": {
+    "TIER_1": "LIVE DEMO — normal API flow",
+    "TIER_2": "OFFLINE DEMO MODE — precomputed validated evidence, explicitly labeled",
+    "TIER_3": "STATIC BACKUP MEDIA — screenshots/video (demo/backup/)"
+  },
+  "honesty_rule": "A viewer must ALWAYS be able to distinguish LIVE from OFFLINE. Rendering precomputed results as live is a BLOCKER.",
+
+  "mode_state": {
+    "key": "demo_mode",
+    "values": ["LIVE", "OFFLINE"],
+    "default": "LIVE",
+    "storage": "Streamlit session state (core/session.py SESSION_KEYS addition: 'demo_mode': str)"
+  },
+
+  "activation": {
+    "explicit": true,
+    "env_override": "OFFLINE_DEMO_MODE=true (explicit launch choice)",
+    "ui_offer": "When API unavailable, UI offers: 'Live API is unavailable. Switch to Offline Demo Mode?'",
+    "trigger_error_types": ["APIConnectionError", "APIServiceUnavailableError", "repeated APITimeoutError"],
+    "never_trigger": "APIValidationError (422) — user input errors must NOT trigger offline mode",
+    "auto_hide": false
+  },
+
+  "banner": {
+    "required_on": ["Predict", "Explain", "What-If", "Model Info", "Home"],
+    "text": "OFFLINE DEMO MODE — Precomputed validated result. No live model inference is being performed.",
+    "style": "prominent (st.warning / colored banner), persistent across pages in OFFLINE mode"
+  },
+
+  "per_page_rules": {
+    "PREDICT": {
+      "input": "locked to canonical prepared scenario (EV-PREDICT-CANONICAL)",
+      "arbitrary_input": "REJECTED — show: 'Offline mode supports only prepared demo scenarios.'",
+      "result": "precomputed prediction 46 (raw 46.421062) labeled as precomputed"
+    },
+    "EXPLAIN": {
+      "availability": "NOT_AVAILABLE (no validated precomputed SHAP)",
+      "behavior": "show explanatory message that offline Explain requires a live backend; NO dynamic SHAP, NO fabricated values"
+    },
+    "WHAT_IF": {
+      "availability": "NOT_AVAILABLE (no validated precomputed delta)",
+      "behavior": "show message; NO local heuristics, NO fake dynamic inference"
+    },
+    "MODEL_INFO": {
+      "availability": "VALIDATED_SNAPSHOT",
+      "behavior": "render metadata from static snapshot; label: 'Snapshot — model version 1.0.0, captured <time>'"
+    },
+    "MUSIC_TRENDS": {
+      "availability": "LIVE_LOCAL_COMPUTE",
+      "behavior": "runs normally from local dataset; labeled as locally computed (not an API snapshot)"
+    },
+    "HOME": {
+      "availability": "static",
+      "behavior": "normal + banner"
+    }
+  },
+
+  "recovery": {
+    "path": "periodic /health probe (or manual Retry button) → 'Switch back to Live' → demo_mode = LIVE",
+    "not_stuck": "user can always return to LIVE when API is back; OFFLINE is never silently forced"
+  },
+
+  "frontend_guards": {
+    "frontend_direct_model_load_count": 0,
+    "frontend_direct_shap_compute_count": 0,
+    "offline_computes_no_inference": true
+  },
+
+  "implementation_scope_note": "Design contract is complete. Frontend implementation (session key, banner component, offline evidence loader, per-page input locks) is specified and deferred to the live environment where Streamlit behavior can be verified. Marking offline_mode_implemented=false until then."
+}

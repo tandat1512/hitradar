@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "source": {
+    "dataset": "5.DATA/processed/ml_ready_dataset.csv",
+    "evaluation": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv"
+  },
+  "canonical_fields": {
+    "temporal_field": "release_year",
+    "popularity_field": "target_popularity",
+    "duration_field": "duration_min",
+    "duration_unit": "minutes",
+    "explicit_field": "explicit",
+    "artist_field": null,
+    "genre_field": null,
+    "track_id_field": "track_id",
+    "decade_field": "decade"
+  },
+  "audio_features": [
+    "danceability", "energy", "key", "loudness", "mode",
+    "speechiness", "acousticness", "instrumentalness",
+    "liveness", "valence", "tempo", "time_signature"
+  ],
+  "yearly_evaluation_fields": [
+    "actual_mean", "predicted_mean", "MAE", "RMSE", "R2",
+    "actual_median", "predicted_median"
+  ],
+  "expected_range": {"start_year": 1921, "end_year": 2020},
+  "actual_range": {"start_year": 1922, "end_year": 2019},
+  "range_status": "PARTIAL_RANGE_AVAILABLE",
+  "dashboard_field_mapping": {
+    "popularity": "target_popularity (in raw CSV; use yearly_evaluation for aggregated popularity trend)",
+    "duration": "duration_min (in MINUTES, not milliseconds)",
+    "decade": "use pre-computed 'decade' column or derive: (release_year // 10) * 10"
+  },
+  "not_available": {
+    "artist": "No artist field in dataset",
+    "genre": "No genre field in dataset"
+  }
+}

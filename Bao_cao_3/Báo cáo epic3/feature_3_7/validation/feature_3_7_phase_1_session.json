@@ -1,0 +1,17 @@
+{
+  "session_id": "F37-P1-DOC-FOUNDATION-20260809",
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "repository_root": "H:/dự án/DUAN1 github",
+  "branch": "main",
+  "commit": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+  "commit_timestamp": "2026-08-09T19:24:00",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "working_directory": "H:/dự án/DUAN1 github",
+  "python_version_at_session": "CAPTURE_LIVE (unknown this session)",
+  "git_status_summary": "dirty working tree — untracked files from F3.5/F3.6 work",
+  "dirty_files_before": "multiple (pre-existing from F3.5/F3.6, not cleaned)",
+  "untracked_files_before": "artifacts/ (pkl/joblib), demo/, Bao_cao_3/, epic3/validation/, scripts/*.json",
+  "feature_3_7_scope": "DOCUMENTATION ONLY — no model training, no code change",
+  "status": "SESSION_RECORDED"
+}

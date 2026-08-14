@@ -1,0 +1,17 @@
+step,command,purpose,source,executed,exit_status,evidence,notes
+1.1,python -m venv .venv,Create virtual environment,Python docs,NOT_TESTED,NOT_TESTED,standard Python stdlib,platform-agnostic
+1.2,.venv\Scripts\activate (Windows),Activate venv,Python venv docs,NOT_TESTED,NOT_TESTED,Windows activate script,standard
+1.3,source .venv/bin/activate (macOS/Linux),Activate venv,Python venv docs,NOT_TESTED,NOT_TESTED,POSIX activate script,alternative
+2.1,pip install -r 5.UNG_DUNG/5.1.backend_api/requirements.txt,Install backend deps,actual requirements.txt,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,canonical backend spec
+2.2,pip install -r epic3/feature_3_3/frontend/requirements.txt,Install frontend deps,actual requirements.txt,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,canonical frontend spec (Phase 1 hotfix)
+3.1,pip install -r 5.UNG_DUNG/5.1.backend_api/requirements.txt -r epic3/feature_3_3/frontend/requirements.txt,Install all deps,combined command,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,both specs
+4.1,python scripts/run_all.py,Start full stack,scripts/run_all.py line 76-78,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,canonical full-stack command
+4.2,python scripts/run_backend.py,Start backend only,scripts/run_backend.py line 60-63,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,individual terminal option
+4.3,python scripts/run_frontend.py,Start frontend only,scripts/run_frontend.py line 60-64,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,individual terminal option
+5.1,curl http://127.0.0.1:8000/health,Verify backend health,scripts/_common.py wait_for_health,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,health check
+5.2,curl http://localhost:8501/_stcore/health,Verify frontend health,scripts/run_frontend.py wait_for_health,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,frontend readiness
+6.1,set BACKEND_PORT=8002 && python scripts/run_backend.py,Override backend port,scripts/run_backend.py parse_port,NOT_TESTED,NOT_TESTED,env override documented in scripts,port conflict workaround
+6.2,set STREAMLIT_SERVER_PORT=8502 && python scripts/run_frontend.py,Override frontend port,scripts/run_frontend.py parse_port,NOT_TESTED,NOT_TESTED,env override documented,port conflict workaround
+6.3,set BACKEND_HEALTH_TIMEOUT=300 && python scripts/run_backend.py,Increase health timeout,scripts/run_backend.py line 46,NOT_TESTED,NOT_TESTED,env override documented,timeout workaround
+6.4,set OFFLINE_DEMO_MODE=true && python scripts/run_frontend.py,Activate offline mode,feature_3_6_offline_demo_mode_contract.json,NOT_TESTED,NOT_TESTED,offline mode flag documented,offline fallback
+7.1,Ctrl+C (in run_all.py window),Graceful shutdown,scripts/run_all.py line 135-137,NOT_TESTED,NOT_TESTED,BLOCKED — no live Python env,graceful teardown

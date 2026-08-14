@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "patterns": [
+    "*_final_final*",
+    "*_vN*",
+    "*_copy*",
+    "*_old*",
+    "*(N)*"
+  ],
+  "canonical": [
+    "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md"
+  ],
+  "archive": [],
+  "ambiguous": [],
+  "ambiguous_final_file_count": 0,
+  "note": "The two zero-byte PPTX candidates are invalid placeholders, not competing approved final versions.",
+  "status": "PASS"
+}

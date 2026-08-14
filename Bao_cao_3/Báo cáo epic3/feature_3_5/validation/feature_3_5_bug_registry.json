@@ -1,0 +1,64 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 bug registry — bugs found in Phase 1-4",
+  "bugs": [
+    {
+      "bug_id": "F35-BUG-001",
+      "source_phase": "Phase 1, 2, 3",
+      "scenario": "No live Python environment available in this session — backend startup, actual HTTP requests, and live E2E execution blocked",
+      "severity": "BLOCKER",
+      "expected": "Backend starts, GET /health returns 200, all E2E flows execute",
+      "actual": "Backend not started — no Python interpreter confirmed in this session",
+      "root_cause": "No live Python runtime available in current session environment",
+      "affected_files": [],
+      "fix_action": "Run backend in a live Python environment",
+      "fix_status": "NOT_FIXABLE_IN_THIS_SESSION",
+      "regression_test": "Backend starts and health check passes",
+      "retest_status": "PENDING",
+      "notes": "This is not a code bug. All contract and architecture validations pass. The BLOCKER is environmental."
+    },
+    {
+      "bug_id": "F35-BUG-002",
+      "source_phase": "Phase 4",
+      "scenario": "httpx not declared in 5.UNG_DUNG/5.1.backend_api/requirements.txt",
+      "severity": "LOW",
+      "expected": "Backend requirements.txt declares httpx if httpx is needed for testing",
+      "actual": "httpx is declared in epic3/feature_3_2/backend/requirements.txt but not in 5.UNG_DUNG/5.1.backend_api/requirements.txt",
+      "root_cause": "httpx is a testing dependency; backend runtime does not use httpx. Two parallel backend directories exist (5.UNG_DUNG and epic3). httpx is declared in epic3/feature_3_2/.",
+      "affected_files": ["5.UNG_DUNG/5.1.backend_api/requirements.txt"],
+      "fix_action": "Add httpx>=0.27.0 to 5.UNG_DUNG/5.1.backend_api/requirements.txt for testing completeness",
+      "fix_status": "FIX_APPLIED",
+      "fix_description": "httpx>=0.27.0 added to backend requirements for testing compatibility",
+      "regression_test": "httpx available after pip install -r requirements.txt",
+      "retest_status": "PENDING"
+    },
+    {
+      "bug_id": "F35-BUG-003",
+      "source_phase": "Phase 4",
+      "scenario": "No requirements.txt in epic3/feature_3_3/frontend/ directory",
+      "severity": "MEDIUM",
+      "expected": "Frontend directory has a requirements.txt declaring streamlit and httpx",
+      "actual": "No requirements.txt exists in epic3/feature_3_3/frontend/",
+      "root_cause": "Frontend dependencies (streamlit, httpx) not declared in frontend directory",
+      "affected_files": ["epic3/feature_3_3/frontend/"],
+      "fix_action": "Create requirements.txt in epic3/feature_3_3/frontend/ with streamlit>=1.30.0, httpx>=0.27.0",
+      "fix_status": "PENDING",
+      "regression_test": "pip install -r requirements.txt in frontend directory succeeds",
+      "retest_status": "PENDING"
+    }
+  ],
+  "summary": {
+    "total_bugs": 3,
+    "blocker": 1,
+    "high": 0,
+    "medium": 1,
+    "low": 1,
+    "fixed": 1,
+    "pending": 2,
+    "remaining_blocker": 1,
+    "remaining_high": 0
+  },
+  "notes": "F35-BUG-001 is environmental (no live Python) — not fixable by code change. F35-BUG-002 is LOW and fixable. F35-BUG-003 is MEDIUM (no frontend requirements.txt).",
+  "status": "COMPLETED"
+}

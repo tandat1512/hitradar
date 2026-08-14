@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-13",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.8 core defense message",
+  "core_message": {
+    "en": "HitRadar Pro is an end-to-end machine learning system that estimates a song's popularity score (0–100) from audio and metadata features, explains individual predictions using SHAP values, and enables what-if analysis — all packaged as a FastAPI + Streamlit web application.",
+    "vi": "HitRadar Pro là một hệ thống machine learning end-to-end ước lượng điểm popularity (0–100) của bài hát từ các đặc trưng âm thanh và metadata, giải thích dự đoán bằng SHAP values, và cho phép phân tích what-if — được đóng gói thành ứng dụng web FastAPI + Streamlit."
+  },
+  "what_is_this_project": {
+    "answer": "A web application that predicts how popular a song might be based on its audio features. Built as a student/academic ML project to demonstrate the full ML pipeline: from data to deployed model.",
+    "do_not_say": ["commercial hit prediction", "guaranteed popularity", "industry-ready production system"]
+  },
+  "why_does_it_matter": {
+    "answer": "Predicting music popularity from audio features is hard — audio characteristics explain only a small portion of what makes a song popular. This project demonstrates that even with good ML practice (XGBoost, SHAP explainability, full E2E testing), model performance has real limits. It also demonstrates engineering maturity: a real FastAPI backend, a Streamlit frontend, and automated deployment scripts.",
+    "evidence_note": "R² = 0.07 — model explains ~7% of popularity variance"
+  },
+  "what_cant_it_do": {
+    "answer": "Predicting commercial success, accounting for artist fame, predicting future releases, replacing human music industry expertise, guaranteeing a song will be popular",
+    "why": "The model only sees audio features. It cannot see marketing spend, artist brand, playlist placement, or social media virality — which are major drivers of popularity."
+  },
+  "key_constraints": {
+    "dataset": "586672-row ML-ready Spotify-derived sample covering 1900-2021 — historical, platform-specific and not comprehensive",
+    "model_r2": "0.07 — low explanatory power, typical for this task",
+    "shap": "Model behavior only — NOT causation",
+    "what_if": "Prediction comparison only — NOT real-world effect",
+    "offline_mode": "Precomputed demonstration — NOT live inference"
+  },
+  "status": "CORE_MESSAGE_REVALIDATED_PHASE_5_HOTFIX"
+}

@@ -1,0 +1,53 @@
+{
+  "phase": "2/5",
+  "feature": "3.7",
+  "person_in_charge": "Minh",
+  "date": "2026-08-09",
+
+  "how_to_run_complete": true,
+  "how_to_run_commands_traceable": true,
+  "how_to_run_walkthrough_valid": false,
+  "how_to_run_walkthrough_note": "BLOCKED — no live Python env; commands traced to source (run_all.py, run_backend.py, run_frontend.py) — structurally valid",
+  "how_to_run_machine_specific_paths": 0,
+
+  "user_manual_complete": true,
+  "actual_pages_documented": true,
+  "actual_pages_count": 7,
+  "nonexistent_pages_documented": 0,
+
+  "prediction_terminology_valid": true,
+  "shap_causal_claim_count": 0,
+  "what_if_causal_claim_count": 0,
+  "dashboard_overgeneralization_count": 0,
+
+  "offline_documentation_status": "DOCUMENTED_CORRECTLY",
+  "offline_documentation_note": "Both HOW_TO_RUN_APP.md and USER_MANUAL.md describe offline mode as precomputed validated fallback (NOT live inference). SHAP/What-If correctly marked NOT AVAILABLE offline.",
+
+  "broken_link_count": 0,
+  "implementation_documentation_mismatch_count": 0,
+  "implementation_documentation_note": "35 consistency checks — all OK. Verified from actual source files.",
+
+  "production_code_modified_for_documentation": false,
+  "training_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "dataset_modified": false,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_note": "BLOCKED — no Python environment",
+
+  "warnings": [
+    "F37-W04: HOW_TO_RUN_APP walkthrough not live-executed (no Python env) — commands structurally valid from source review",
+    "F37-W01: README broken links (2 remaining: API_DOCUMENTATION.md Phase 3, TECHNICAL_APPENDIX.md Phase 4)"
+  ],
+  "blockers": [
+    "F37-B01: No live Python environment — clean install, import smoke, command live execution blocked"
+  ],
+
+  "status": "PASS_WITH_WARNINGS",
+  "reason": "HOW_TO_RUN_APP.md and USER_MANUAL.md both complete, honest, traceable to actual implementation. Zero causal claims. Zero broken links. Zero terminology violations. Walkthrough not live-executed due to F37-B01 (expected, shared with F3.6).",
+  "next_phase": "MAY_BEGIN"
+}

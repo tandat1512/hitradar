@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Predict E2E — frontend render validation",
+  "frontend_page": "epic3/feature_3_3/frontend/pages/1_Predict.py",
+  "result_component": "epic3/feature_3_3/frontend/components/prediction_result.py",
+  "expected_display": [
+    "prediction_display (integer popularity score)",
+    "model_id",
+    "model_version"
+  ],
+  "no_probability_mislabel": true,
+  "no_accuracy_mislabel": true,
+  "warnings_displayed_when_present": true,
+  "frontend_parser": "PredictResponse class in api/models.py",
+  "parser_validates": [
+    "prediction_raw is finite",
+    "prediction_clipped in [0, 100]",
+    "prediction_display is int"
+  ],
+  "actual_live_render_test": "PENDING (requires Streamlit + backend running)",
+  "browser_automation_used": false,
+  "status": "CONTRACT_VALIDATED"
+}

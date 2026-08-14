@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "page": "pages/2_Explain.py",
+  "api": "POST /explain",
+  "no_shap_import": true,
+  "no_shap_artifact_read": true,
+  "no_model_import": true,
+  "no_causal_claim": true,
+  "has_model_behavior_caption": true,
+  "has_causal_disclaimer": true,
+  "uses_session_input": true,
+  "saves_to_session": true,
+  "empty_state": true,
+  "version_warning": true,
+  "status": "PASS"
+}

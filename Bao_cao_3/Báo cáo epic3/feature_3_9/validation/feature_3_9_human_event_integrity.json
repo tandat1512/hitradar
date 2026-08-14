@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-08-13T20:55:05+07:00",
+  "demo_completion_has_human_evidence": false,
+  "defense_completion_has_human_evidence": false,
+  "demo_completion_claimed": false,
+  "defense_completion_claimed": false,
+  "score_claim_has_source": true,
+  "score_claim_present": false,
+  "feedback_claims_have_source": true,
+  "feedback_claim_count": 0,
+  "dates_not_fabricated": true,
+  "participants_not_fabricated": true,
+  "outcome_not_fabricated": true,
+  "fabricated_event_claim_count": 0,
+  "status": "PASS_NO_HUMAN_EVENT_CLAIMS_MADE"
+}

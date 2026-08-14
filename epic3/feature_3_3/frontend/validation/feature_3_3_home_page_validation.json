@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "home_page": "pages/0_Home.py",
+  "renders_without_backend": true,
+  "has_research_prototype_disclaimer": true,
+  "has_limitation_warning": true,
+  "has_navigation_guide": true,
+  "no_commercial_claim": true,
+  "no_model_dependencies_on_load": true,
+  "backend_status_displayed": true,
+  "retry_connection_button": true,
+  "status": "PASS"
+}

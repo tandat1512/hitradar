@@ -1,0 +1,9 @@
+{
+  "model_version": "1.0.0",
+  "version_assignment_reason": "First packaged release of champion EXP24-XGB-FINAL-001",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_family": "XGBoost",
+  "source_feature": "Feature 2.4 (Model Training)",
+  "champion_artifact_hash": "ea054a9b07d6feba198bdb220942e56006f18483f906a4c1363d63e66e5aaafe",
+  "feature_set": "FS23-SELECTED"
+}

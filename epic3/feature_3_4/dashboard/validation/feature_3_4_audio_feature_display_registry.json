@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Audio feature display registry — allow-list for UI feature selection",
+  "features": {
+    "danceability":     {"display_name": "Danceability",     "unit": null,         "decimal_places": 3},
+    "energy":           {"display_name": "Energy",           "unit": null,         "decimal_places": 3},
+    "key":              {"display_name": "Musical Key",       "unit": "pitch class","decimal_places": 0},
+    "loudness":         {"display_name": "Loudness",         "unit": "dB",          "decimal_places": 2},
+    "mode":             {"display_name": "Mode",             "unit": "binary",      "decimal_places": 0},
+    "speechiness":      {"display_name": "Speechiness",      "unit": null,         "decimal_places": 4},
+    "acousticness":     {"display_name": "Acousticness",     "unit": null,         "decimal_places": 3},
+    "instrumentalness": {"display_name": "Instrumentalness","unit": null,         "decimal_places": 4},
+    "liveness":         {"display_name": "Liveness",         "unit": null,         "decimal_places": 3},
+    "valence":          {"display_name": "Valence",           "unit": null,         "decimal_places": 3},
+    "tempo":            {"display_name": "Tempo",             "unit": "BPM",         "decimal_places": 2},
+    "time_signature":   {"display_name": "Time Signature",   "unit": "beats/bar",  "decimal_places": 0}
+  },
+  "allow_list_enforced": true,
+  "unsafe_features_blocked": ["artist", "genre", "target_popularity", "track_id"]
+}

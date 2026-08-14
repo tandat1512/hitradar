@@ -1,0 +1,175 @@
+{
+  "validation_id": "F31-P3-MET-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:01:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "canonical_source": "7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json",
+  "validation_status": "PASS",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "evaluation_split": "test",
+  "test_rows": 85876,
+  "metrics": [
+    {
+      "name": "MAE",
+      "value": 17.646684646606445,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "official_metrics.MAE",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "RMSE",
+      "value": 21.01337842313573,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "official_metrics.RMSE",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "R2",
+      "value": 0.06962639093399048,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "official_metrics.R2",
+      "unit": "coefficient_of_determination",
+      "status": "VALID",
+      "notes": "Low R2 noted — this is a challenging prediction task with target range 0-100 and high variance. Model quality assessment is out of scope for Feature 3.1 artifact validation."
+    },
+    {
+      "name": "Median_AE",
+      "value": 16.291603088378906,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.Median_AE",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "P80_AE",
+      "value": 28.9378604888916,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.P80_AE",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "P90_AE",
+      "value": 34.11560821533203,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.P90_AE",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "P95_AE",
+      "value": 37.10243797302246,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.P95_AE",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "Mean_Residual",
+      "value": 4.856535101093279,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.Mean_Residual",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": "Positive mean residual indicates systematic underprediction on test set"
+    },
+    {
+      "name": "Residual_Std",
+      "value": 20.444583937530165,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.Residual_Std",
+      "unit": "popularity_points",
+      "status": "VALID",
+      "notes": null
+    },
+    {
+      "name": "Underprediction_Rate",
+      "value": 0.6781522194792492,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.Underprediction_Rate",
+      "unit": "proportion",
+      "status": "VALID",
+      "notes": "67.8% of predictions are under the actual value"
+    },
+    {
+      "name": "Overprediction_Rate",
+      "value": 0.32184778052075086,
+      "type": "float64",
+      "finite": true,
+      "evaluation_stage": "test",
+      "source_field": "additional_metrics.Overprediction_Rate",
+      "unit": "proportion",
+      "status": "VALID",
+      "notes": "32.2% of predictions exceed the actual value"
+    }
+  ],
+  "consistency_checks": [
+    {
+      "check": "underprediction_plus_overprediction",
+      "expected_sum": 1.0,
+      "actual_sum": 1.0,
+      "tolerance": 0.0001,
+      "status": "PASS",
+      "notes": "Underprediction_Rate + Overprediction_Rate = 1.0 exactly"
+    },
+    {
+      "check": "residual_mean_from_residual_stats",
+      "canonical": 4.856535101093279,
+      "cross_check": "residual_statistics.json reports mean=4.856535101093279",
+      "status": "PASS",
+      "notes": "Mean residual consistent with residual_statistics.json"
+    },
+    {
+      "check": "mae_vs_median_ae",
+      "mae": 17.646684646606445,
+      "median_ae": 16.291603088378906,
+      "status": "PASS",
+      "notes": "MAE > Median AE indicates right-skewed error distribution (consistent with residual skewness)"
+    }
+  ],
+  "validation_notes": [
+    "All metrics are finite float values",
+    "All metrics sourced from test split (85876 rows), NOT validation split",
+    "Feature 3.1 does not re-compute metrics from predictions",
+    "R2 is low (0.07) — this is noted but does not constitute a validation failure",
+    "model_id matches canonical model EXP24-XGB-FINAL-001"
+  ],
+  "warnings": [
+    {
+      "type": "LOW_R2",
+      "severity": "INFO",
+      "detail": "R2 = 0.0696. This is a difficult prediction task (Spotify popularity 0-100). Model quality assessment is out of Feature 3.1 scope."
+    }
+  ],
+  "blockers": []
+}

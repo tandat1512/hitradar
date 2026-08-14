@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "resolution_method": [
+    "Feature 3.8 defense package manifest",
+    "Feature 3.8 final slide audit",
+    "repository-wide slide extension inventory"
+  ],
+  "feature_3_8_designated_slide_deck": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+  "feature_3_8_manifest_status": "RESOLVED_BY_FEATURE_3_9_HOTFIX",
+  "candidates": [
+    {
+      "role": "slide_candidate",
+      "path": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+      "exists": true,
+      "bytes": 41968,
+      "sha256": "cf875c0ab5a6ff500ee118273b147912d2cc7e0b19823b2e3ab5bf10b129b1d6",
+      "last_modified": "2026-08-13T20:45:10+07:00",
+      "status": "READY"
+    }
+  ],
+  "final_slide_resolved": true,
+  "canonical_path": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+  "ambiguity": false,
+  "blocker": null,
+  "reason": "A non-empty canonical defense deck is designated.",
+  "status": "PASS"
+}

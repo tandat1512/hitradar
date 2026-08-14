@@ -1,0 +1,39 @@
+story_section,claim,canonical_source,canonical_value,story_value,status
+Dataset,records = 586672,ml_ready_dataset.csv + split_manifest.json,586672,586672,OK_REVALIDATED
+Dataset,year_range = 1900-2021,ml_ready_dataset.csv + final live parse,1900-2021,1900-2021,OK_REVALIDATED
+Dataset,raw_features = 18,input_schema.json field count,18,18,OK
+Dataset,engineered_features = 13,selected_features.json count vs raw,13,13,OK
+Dataset,selected_features = 31,selected_features.json,31,31,OK
+Dataset,transformed = 49,feature_names.json,49,49,OK
+Dataset,Spotify-derived,TECHNICAL_APPENDIX.md §4,Spotify-derived,Spotify-derived,OK
+Model,model_id = EXP24-XGB-FINAL-001,model_version.json,EXP24-XGB-FINAL-001,EXP24-XGB-FINAL-001,OK
+Model,model_version = 1.0.0,model_version.json,1.0.0,1.0.0,OK
+Model,family = XGBoost,model_version.json,XGBoost,XGBoost,OK
+Model,algorithm = gradient boosting regression,TECHNICAL_APPENDIX.md §5,XGBoost regression,XGBoost gradient boosting regression,OK
+Metrics,test_split = 85876 rows,feature_3_1_model_metrics_validation.json,85876,85876,OK
+Metrics,MAE = 17.65,feature_3_1_model_metrics_validation.json,17.646684646606445,17.65,OK
+Metrics,RMSE = 21.01,feature_3_1_model_metrics_validation.json,21.01337842313573,21.01,OK
+Metrics,R2 = 0.07,feature_3_1_model_metrics_validation.json,0.06962639093399048,0.07,OK
+Metrics,underprediction_rate = 67.8%,feature_3_1_model_metrics_validation.json,0.6781522194792492,67.8%,OK
+Metrics,mean_residual = +4.86,feature_3_1_model_metrics_validation.json,4.856535101093279,+4.86,OK
+SHAP,explainer = TreeExplainer,feature_3_1_shap_asset_inventory.json,TreeExplainer,TreeExplainer,OK
+SHAP,background_samples = 1000,feature_3_1_shap_asset_inventory.json,1000,1000,OK
+SHAP,transformed_width = 49,feature_3_1_shap_asset_inventory.json,49,49,OK
+SHAP,additivity = 100%,feature_3_1_shap_asset_inventory.json,100%,100%,OK
+Architecture,backend = FastAPI port 8000,api.py + README.md,8000,8000,OK
+Architecture,frontend = Streamlit port 8501,scripts/run_all.py + README.md,8501,8501,OK
+Architecture,frontend_loads_model = NO,README.md + TECHNICAL_APPENDIX.md §2,NEVER,NEVER,OK
+Architecture,dashboard_reads_local_csv = YES,4_Trends.py,local CSV,local CSV,OK
+Architecture,offline_fallback = precomputed,offline_demo_mode_contract.json,precomputed,precomputed,OK
+E2E,canonical_prediction = 46,feature_3_5_canonical_e2e_fixture.json,46.421062→46,46,OK
+E2E,health_check = healthy,feature_3_5_health_e2e_validation.json,healthy,true,OK
+E2E,test_count = 113 PASSED,feature_3_1_final_validation_results.json,113,113,OK
+Performance,model_load_mean = 928ms,feature_3_1_benchmark_results.json,928.001ms,928ms,OK
+Performance,warm_inference_mean = 15.6ms,feature_3_1_benchmark_results.json,15.574ms,15.6ms,OK
+Performance,benchmark_environment = local Python 3.13.7,feature_3_1_benchmark_results.json,local Python 3.13.7,local Python 3.13.7,OK
+Limitations,R2_low = 0.07,feature_3_1_model_metrics_validation.json,0.07,0.07,OK
+Limitations,offline = precomputed not live,offline_demo_mode_contract.json,precomputed,precomputed,OK
+Limitations,shap_causal = NO,6_Limitations.py,NOT_CAUSAL,NOT_CAUSAL,OK
+Limitations,whatif_causal = NO,6_Limitations.py,NOT_CAUSAL,NOT_CAUSAL,OK
+Limitations,dataset_not_global,4_Trends.py,DATASET_SCOPE,available dataset,OK
+Limitations,not_production_ready,README.md,academic_project,academic/student project,OK

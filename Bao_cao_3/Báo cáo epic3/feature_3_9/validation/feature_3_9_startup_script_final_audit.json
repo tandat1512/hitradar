@@ -1,0 +1,44 @@
+{
+  "feature_id": "3.9",
+  "scripts": [
+    {
+      "logical_name": "run_backend",
+      "path": "scripts/run_backend.py",
+      "exists": true,
+      "tracked": false,
+      "absolute_dev_path_count": 0,
+      "default_port": 8000,
+      "configurable": true,
+      "status": "PRESENT_UNTRACKED"
+    },
+    {
+      "logical_name": "run_frontend",
+      "path": "scripts/run_frontend.py",
+      "exists": true,
+      "tracked": false,
+      "absolute_dev_path_count": 0,
+      "default_port": 8501,
+      "configurable": true,
+      "status": "PRESENT_UNTRACKED"
+    },
+    {
+      "logical_name": "run_all",
+      "path": "scripts/run_all.py",
+      "exists": true,
+      "tracked": false,
+      "absolute_dev_path_count": 0,
+      "waits_for_backend_health": true,
+      "waits_for_frontend_health": true,
+      "status": "PRESENT_ENV_PROPAGATION_VALID"
+    }
+  ],
+  "documented_commands_match": true,
+  "ports_consistent_at_defaults": true,
+  "ports_consistent_with_overrides": true,
+  "environment_propagation_valid": true,
+  "defect": null,
+  "source_changed_after_feature_3_6": true,
+  "latest_relevant_smoke": "tests/test_feature_3_9_run_all_environment.py validates explicit environment forwarding; live current-event smoke remains separate.",
+  "startup_scripts_valid": true,
+  "status": "PASS_WITH_REPOSITORY_TRACEABILITY_WARNING"
+}

@@ -1,0 +1,32 @@
+{
+  "gate_id": "F31-P3-GATE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-08T07:34:10+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "model_metrics_valid": true,
+  "residual_stats_valid": true,
+  "metric_consistency_valid": true,
+  "shap_required": true,
+  "shap_assets_valid": true,
+  "shap_status": "VALID",
+  "shap_recomputed": false,
+  "example_input_valid": true,
+  "prediction_executed": true,
+  "prediction_output_schema_valid": true,
+  "prediction_matches_expected": true,
+  "prediction_deterministic": true,
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+  "source_artifacts_modified": false,
+  "warning_count": 2,
+  "warnings": [
+    "SKLEARN_VERSION_MISMATCH: Pipeline pickled with sklearn 1.9.0, running on 1.8.0",
+    "RESIDUAL_CONVENTION_NOT_EXPLICITLY_DOCUMENTED"
+  ],
+  "blocker_count": 0,
+  "blockers": [],
+  "status": "PASS",
+  "next_phase": "MAY_BEGIN"
+}

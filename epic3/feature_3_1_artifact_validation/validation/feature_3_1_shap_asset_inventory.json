@@ -1,0 +1,184 @@
+{
+  "inventory_id": "F31-P3-SHAP-INV-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:10:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "shap_required_for_epic3": true,
+  "rationale": "EPIC 3 DELIVERABLES_LIST requires POST /explain endpoint and SHAP Explanation page in Streamlit frontend. SHAP assets are required for EPIC 3 productization.",
+  "assets": [
+    {
+      "role": "SHAP_background_raw",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/background/shap_background_raw.parquet",
+      "extension": ".parquet",
+      "bytes": 68133,
+      "sha256": "24f7057efa99879997ae6a659dfa3c973cb5f7e3f541435d627b8c08e2312e23",
+      "parse_method": "pandas.read_parquet",
+      "status": "FOUND",
+      "rows": 1000,
+      "columns": 18,
+      "notes": "Raw background for SHAP, matches raw input dimension"
+    },
+    {
+      "role": "SHAP_background_transformed",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/background/shap_background_transformed.npy",
+      "extension": ".npy",
+      "bytes": 392128,
+      "sha256": "c35fed5d56ec4b1f2733fad41f8181b27adac8090914b990b2d377eef37ef8ed",
+      "parse_method": "numpy.load",
+      "status": "FOUND",
+      "rows": 1000,
+      "columns": 49,
+      "notes": "Transformed background, matches model matrix width 49"
+    },
+    {
+      "role": "SHAP_explainer_manifest",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_explainer_manifest.json",
+      "extension": ".json",
+      "bytes": 212,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "Documents explainer class: TreeExplainer, background 1000 rows, 49 cols"
+    },
+    {
+      "role": "SHAP_values_global",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_values_global.npy",
+      "extension": ".npy",
+      "bytes": 1960128,
+      "parse_method": "numpy.load",
+      "status": "FOUND",
+      "notes": "SHAP values for 5000 explanation samples, 49 features"
+    },
+    {
+      "role": "SHAP_base_values",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_base_values.npy",
+      "extension": ".npy",
+      "bytes": 136,
+      "parse_method": "numpy.load",
+      "status": "FOUND",
+      "notes": "Base values array"
+    },
+    {
+      "role": "SHAP_feature_mapping",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_feature_mapping.json",
+      "extension": ".json",
+      "bytes": 12944,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "Maps 18 raw features to 49 transformed features"
+    },
+    {
+      "role": "SHAP_feature_names",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_feature_names.json",
+      "extension": ".json",
+      "bytes": 939,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "49 feature names matching model matrix columns"
+    },
+    {
+      "role": "SHAP_global_importance_transformed",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/global/shap_global_importance_transformed.csv",
+      "extension": ".csv",
+      "bytes": 8316,
+      "parse_method": "pandas.read_csv",
+      "status": "FOUND",
+      "notes": "Global feature importance in transformed space"
+    },
+    {
+      "role": "SHAP_global_importance_selected",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/global/shap_global_importance_selected.csv",
+      "extension": ".csv",
+      "bytes": 4693,
+      "parse_method": "pandas.read_csv",
+      "status": "FOUND",
+      "notes": "Global feature importance in selected feature space"
+    },
+    {
+      "role": "SHAP_global_importance_raw_family",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/global/shap_global_importance_raw_family.csv",
+      "extension": ".csv",
+      "bytes": 2536,
+      "parse_method": "pandas.read_csv",
+      "status": "FOUND",
+      "notes": "Global feature importance in raw feature family space"
+    },
+    {
+      "role": "SHAP_top_10_features",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/global/shap_top_10_features.json",
+      "extension": ".json",
+      "bytes": 5137,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "Top 10 features by SHAP importance (transformed, selected, raw family)"
+    },
+    {
+      "role": "SHAP_additivity_validation",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_additivity_validation.json",
+      "extension": ".json",
+      "bytes": 390,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "Validates SHAP additivity: base + sum(shap) ≈ prediction. Pass rate 100%."
+    },
+    {
+      "role": "SHAP_value_validation",
+      "required": true,
+      "package_relative_path": "7.ML/7.9.explainability/shap_values/shap_value_validation.json",
+      "extension": ".json",
+      "bytes": 383,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "Validates SHAP values: 5000 rows, 49 columns, no NaN/Inf, finite values"
+    },
+    {
+      "role": "SHAP_explanation_sample_raw",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/explanation_sample/shap_explanation_sample_raw.parquet",
+      "extension": ".parquet",
+      "bytes": 209435,
+      "parse_method": "pandas.read_parquet",
+      "status": "FOUND",
+      "notes": "5000 explanation sample rows in raw feature space"
+    },
+    {
+      "role": "SHAP_explanation_sample_transformed",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/explanation_sample/shap_explanation_sample_transformed.npy",
+      "extension": ".npy",
+      "bytes": 1960128,
+      "parse_method": "numpy.load",
+      "status": "FOUND",
+      "notes": "5000 explanation sample rows in transformed feature space"
+    },
+    {
+      "role": "SHAP_dependence_manifest",
+      "required": false,
+      "package_relative_path": "7.ML/7.9.explainability/dependence/shap_dependence_manifest.json",
+      "extension": ".json",
+      "bytes": null,
+      "parse_method": "json.load",
+      "status": "FOUND",
+      "notes": "SHAP dependence figures and metadata"
+    }
+  ],
+  "summary": {
+    "total_assets": 16,
+    "required_assets": 8,
+    "found_assets": 16,
+    "missing_assets": 0,
+    "optional_available": 8
+  }
+}

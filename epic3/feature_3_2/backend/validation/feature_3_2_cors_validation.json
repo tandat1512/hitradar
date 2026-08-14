@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-06T01:20:53.364776+00:00",
+  "status": "PASS",
+  "allowed_origins": [
+    "http://localhost:8501",
+    "http://127.0.0.1:8501",
+    "http://localhost:3000"
+  ],
+  "allow_credentials": true,
+  "allowed_methods": [
+    "GET",
+    "POST"
+  ],
+  "has_wildcard": false,
+  "wildcard_plus_credentials_violation": false,
+  "cors_valid": true,
+  "warnings": [],
+  "blockers": []
+}

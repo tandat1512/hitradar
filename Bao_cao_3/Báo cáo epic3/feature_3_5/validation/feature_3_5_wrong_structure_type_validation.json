@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 wrong structure type — API contract validation",
+  "scenario": "POST /predict with array value in scalar field",
+  "field": "danceability",
+  "invalid_value": [0.8],
+  "expected_http_status": 422,
+  "expected_error_type": "APIValidationError",
+  "traceback_exposed": false,
+  "no_500": true,
+  "actual_live_test": "PENDING",
+  "status": "CONTRACT_VALIDATED"
+}

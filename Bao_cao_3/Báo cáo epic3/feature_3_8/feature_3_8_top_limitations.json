@@ -1,0 +1,28 @@
+{
+  "top_limitations": [
+    {
+      "rank": 1,
+      "limitation": "Popularity is a historical Spotify platform proxy and the dataset is temporally and contextually limited.",
+      "impact": "The target is not musical quality or guaranteed commercial success; marketing, artist fame, playlists and newer market behavior are not represented by the 18 baseline inputs.",
+      "mitigation_current": "Temporal split, time-slice evaluation, explicit estimate wording and responsible-use disclosure.",
+      "future_improvement": "Acquire newer time-stamped data, define a prediction-time target, and add leakage-safe contextual features available at release time.",
+      "source": "6.TAI_LIEU/6.1.bao_cao/popularity_limitations.md; 7.ML/7.4.splits/split_manifest.json"
+    },
+    {
+      "rank": 2,
+      "limitation": "Predictive generalization is weak and degrades on the later held-out test period.",
+      "impact": "Test MAE is 17.65, RMSE 21.01 and R2 0.0696; validation-to-test RMSE rises 37.77%, so individual errors can be large and later data is harder.",
+      "mitigation_current": "Report test and slice metrics, retain underprediction warning, avoid guarantees, and keep the system as a research prototype.",
+      "future_improvement": "Study drift, recalibrate/retrain on newer data under a new version, add richer features, and compare against updated baselines without opening the locked test set for tuning.",
+      "source": "7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json; validation_test_comparison.json"
+    },
+    {
+      "rank": 3,
+      "limitation": "SHAP and What-if explain model behavior, not real-world causal effects.",
+      "impact": "A contribution or changed prediction cannot justify advice that altering an audio feature will make a song popular.",
+      "mitigation_current": "Noncausal UI wording, claim audit, backend-only SHAP and offline NOT_AVAILABLE policy for Explain/What-if.",
+      "future_improvement": "Add uncertainty/context displays and, for causal questions, design a separate causal study with explicit assumptions and intervention data.",
+      "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py; 5.UNG_DUNG/5.1.backend_api/api.py"
+    }
+  ]
+}

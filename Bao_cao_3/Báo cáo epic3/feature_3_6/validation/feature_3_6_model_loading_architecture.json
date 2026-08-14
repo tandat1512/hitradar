@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 model loading architecture audit — actual call path from source",
+  "architecture_type": "FASTAPI_LIFESPAN_LOAD + LAZY_SINGLETON",
+  "call_path": {
+    "step_1": "uvicorn starts FastAPI app (api.py)",
+    "step_2": "lifespan startup: constructs PipelineLoader(artifacts_path, epic2_fe_path) (api.py:47)",
+    "step_3": "lifespan accesses pipeline_loader.pipeline (api.py:51) → triggers eager load",
+    "step_4": "PipelineLoader.pipeline property: if _pipeline is None → _load_pipeline() (pipeline_loader.py:31-35)",
+    "step_5": "_load_pipeline: apply_runtime_patches(transformers_path, artifacts_path) + joblib.load(artifacts/epic2/pipeline/full_inference_pipeline.joblib) + patch_pipeline_to_str (pipeline_loader.py:37-50)",
+    "step_6": "result cached in self._pipeline; subsequent accesses return cached object"
+  },
+  "load_triggers": "exactly once per backend process startup (eager)",
+  "module_import_load": false,
+  "startup_hook_load": "via lifespan (FastAPI modern lifecycle)",
+  "load_every_request": false,
+  "service_constructor_per_request": false,
+  "dependency_provider_cache": false,
+  "per_request_deserialization": false,
+  "loads_per_process": 1,
+  "thread_process_semantics": {
+    "claim": "Model loaded once PER PROCESS (lifespan runs once per uvicorn process)",
+    "note": "With multiple uvicorn workers, each worker process loads its own copy. This is standard and correct; do not claim global once across workers.",
+    "current_config": "single-process default (uvicorn api:app without --workers)"
+  },
+  "acceptable_lifecycle": "Application lifecycle → model loaded once → shared read-only inference resource → many requests",
+  "current_matches_acceptable": true,
+  "shap_explainer_semantics": {
+    "type": "lazy singleton global",
+    "build": "first /explain request builds shap.TreeExplainer once; cached in module-level global (api.py:87-96)",
+    "note": "read-only after construction; no per-request rebuild"
+  },
+  "decision": "ALREADY_OPTIMIZED",
+  "status": "ARCHITECTURE_AUDITED"
+}

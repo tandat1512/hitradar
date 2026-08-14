@@ -1,0 +1,12 @@
+{
+  "official_duration_known": false,
+  "official_duration_seconds": null,
+  "planning_source": "feature_3_8_demo_timing_plan.json",
+  "planned_demo_seconds": 350,
+  "planned_full_presentation_seconds": null,
+  "rehearsal_1_total_seconds": null,
+  "rehearsal_2_total_seconds": null,
+  "sections": [],
+  "comparison_status": "HUMAN_REHEARSALS_REQUIRED",
+  "note": "Only the Phase 2 demo planning estimate is known. No R1/R2 actual timing or official threshold was invented."
+}

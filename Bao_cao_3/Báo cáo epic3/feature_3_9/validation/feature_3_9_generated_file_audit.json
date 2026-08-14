@@ -1,0 +1,21 @@
+{
+  "feature_id": "3.9",
+  "scanned_at": "2026-08-13T19:45:00+07:00",
+  "generated_or_temp_file_count": 149,
+  "generated_or_temp_bytes": 1100382,
+  "tracked_generated_file_count": 0,
+  "ignored_generated_file_count": 146,
+  "blocking_generated_file_count": 0,
+  "classification_counts": {
+    "PYTHON_CACHE": 141,
+    "PYTEST_CACHE": 5,
+    "TEMP_BACKUP": 3
+  },
+  "unignored_cleanup_candidates": [
+    {"path":"tmp_pipeline_result.txt","bytes":370,"classification":"TEMPORARY","recommended_action":"Exclude or remove manually before submission."},
+    {"path":"tmp_pipeline_test.txt","bytes":55,"classification":"TEMPORARY","recommended_action":"Exclude or remove manually before submission."},
+    {"path":"5.UNG_DUNG/5.1.backend_api/tmp_tasks_3_1_4_to_7.json","bytes":709,"classification":"TEMPORARY","recommended_action":"Confirm it is scratch task output, then exclude or remove manually."}
+  ],
+  "deletion_executed": false,
+  "status": "PASS_WITH_NONBLOCKING_CLEANUP_WARNINGS"
+}

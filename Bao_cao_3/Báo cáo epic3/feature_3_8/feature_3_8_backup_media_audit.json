@@ -1,0 +1,9 @@
+{
+  "feature_id":"3.8",
+  "generated_at":"2026-08-12T00:20:00+07:00",
+  "screenshots":{"manifest_or_readme_exists":true,"media_file_count":0,"status":"MISSING"},
+  "video":{"media_file_count":0,"status":"MISSING","manual_recording_required":true},
+  "offline_evidence":{"input_exists":true,"output_exists":true,"status":"READY_EVIDENCE_ONLY"},
+  "backup_pdf":{"exists":false,"status":"MISSING"},
+  "status":"FAIL"
+}

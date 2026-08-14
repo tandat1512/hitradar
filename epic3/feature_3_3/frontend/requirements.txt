@@ -1,0 +1,9 @@
+# HitRadar Pro Frontend — Python dependencies
+# Location: epic3/feature_3_3/frontend/requirements.txt
+# Install: pip install -r epic3/feature_3_3/frontend/requirements.txt
+
+# UI framework
+streamlit>=1.30.0
+
+# HTTP client (HitRadarAPIClient)
+httpx>=0.27.0

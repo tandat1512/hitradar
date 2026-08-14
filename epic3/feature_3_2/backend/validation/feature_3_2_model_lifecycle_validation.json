@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-05T14:46:03.450946+00:00",
+  "strategy": "eager_in_lifespan",
+  "load_count_in_session": 1,
+  "pipeline_singleton": true,
+  "pipeline_is_same_object": true,
+  "is_loaded_true_after_load": true,
+  "module_import_no_load": true,
+  "lifecycle": {
+    "startup": "lifespan eager load",
+    "request": "PipelineLoader.get_instance()",
+    "shutdown": "PipelineLoader.clear_instance()"
+  },
+  "warnings": [],
+  "blockers": [],
+  "status": "PASS"
+}

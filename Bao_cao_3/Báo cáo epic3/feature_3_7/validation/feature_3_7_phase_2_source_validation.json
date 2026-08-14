@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 Phase 2 source validation — document sources",
+  "sources_used": [
+    {
+      "document": "HOW_TO_RUN_APP.md",
+      "actual_sources": [
+        "scripts/run_all.py — actual command flow, env vars, port defaults",
+        "scripts/run_backend.py — exact uvicorn command, health semantics",
+        "scripts/run_frontend.py — exact streamlit command, backend probe behavior",
+        "scripts/_common.py — health polling semantics, port handling, artifact validation",
+        "5.UNG_DUNG/5.1.backend_api/requirements.txt — canonical backend deps",
+        "epic3/feature_3_3/frontend/requirements.txt — canonical frontend deps (Phase 1 hotfix)",
+        "artifacts/epic2/schemas/input_schema.json — required artifacts list",
+        "feature_3_6_offline_demo_mode_contract.json — offline mode behavior"
+      ]
+    },
+    {
+      "document": "USER_MANUAL.md",
+      "actual_sources": [
+        "epic3/feature_3_3/frontend/pages/ — all 7 actual page files read",
+        "epic3/feature_3_3/frontend/core/navigation.py — PAGES registry (7 pages confirmed)",
+        "epic3/feature_3_3/frontend/core/config.py — backend_base_url, timeouts",
+        "epic3/feature_3_3/frontend/app.py — page_title, layout",
+        "epic3/feature_3_3/frontend/pages/1_Predict.py — prediction form fields",
+        "epic3/feature_3_3/frontend/pages/3_WhatIf.py — what-if baseline flow",
+        "epic3/feature_3_3/frontend/pages/4_Trends.py — dataset paths, charts",
+        "epic3/feature_3_3/frontend/pages/6_Limitations.py — complete limitations text",
+        "artifacts/epic2/schemas/input_schema.json — 18 fields with exact ranges"
+      ]
+    }
+  ],
+  "page_registry_verified": {
+    "Home": "🏠 — requires_backend: false",
+    "🎯 Predict": "requires_backend: true — backend_capability: predict",
+    "🔍 Explain": "requires_backend: true — backend_capability: explain",
+    "🔄 What-If": "requires_backend: true — backend_capability: whatif",
+    "📊 Music Trends": "requires_backend: false",
+    "ℹ️ Model Info": "requires_backend: true — backend_capability: model_info",
+    "⚠️ Limitations": "requires_backend: false"
+  },
+  "actual_input_fields": 18,
+  "input_field_source": "artifacts/epic2/schemas/input_schema.json",
+  "status": "VALIDATED"
+}

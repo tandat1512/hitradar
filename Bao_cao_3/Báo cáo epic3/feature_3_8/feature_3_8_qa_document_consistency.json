@@ -1,0 +1,38 @@
+{
+  "documents_checked": ["README.md", "TECHNICAL_APPENDIX.md", "USER_MANUAL.md", "5.UNG_DUNG/5.1.backend_api/openapi.json", "epic3/feature_3_3/frontend/pages/6_Limitations.py", "DEFENSE_QA_DATASET.md", "DEFENSE_QA_MODEL.md", "DEFENSE_QA_SHAP.md", "DEFENSE_QA_LIMITATIONS.md"],
+  "consistent": {
+    "problem_type_regression": true,
+    "model_id_and_version": true,
+    "metrics_definition": true,
+    "shap_noncausal": true,
+    "what_if_noncausal": true,
+    "frontend_backend_separation": true,
+    "production_scope": true,
+    "offline_explain_what_if_unavailable": true
+  },
+  "known_document_conflicts": [
+    {
+      "topic": "dataset rows and temporal coverage",
+      "README_USER_MANUAL_TECHNICAL_APPENDIX": "169681; 1922-2019",
+      "locked_split_training_dashboard_source": "586672; 1900-2021",
+      "qa_resolution": "Q&A uses locked ML evidence and explicitly discloses the unresolved narrative discrepancy.",
+      "status": "WARNING_NOT_SILENTLY_RECONCILED"
+    },
+    {
+      "topic": "offline UI availability",
+      "USER_MANUAL": "describes automatic offline behavior",
+      "FEATURE_3_6_CLOSURE": "offline UI implementation deferred",
+      "qa_resolution": "Q&A describes explicit evidence-only fallback and does not claim implemented automatic switching.",
+      "status": "WARNING_NOT_SILENTLY_RECONCILED"
+    },
+    {
+      "topic": "package version",
+      "package_metadata": "2.7.0",
+      "runtime_example": "1.0.0",
+      "qa_resolution": "Q&A states model version 1.0.0 and qualifies exact package version as unresolved.",
+      "status": "WARNING_NOT_SILENTLY_RECONCILED"
+    }
+  ],
+  "qa_internal_fact_mismatch_count": 0,
+  "status": "PASS_WITH_WARNINGS"
+}

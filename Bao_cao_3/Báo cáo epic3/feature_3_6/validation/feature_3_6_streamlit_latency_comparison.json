@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 Streamlit latency BEFORE/AFTER comparison — BLOCKED: no live baseline and no code change",
+  "methodology": "Same page tests as Phase 1 (cold/warm, 10 samples per page, STREAMLIT_SCRIPT_EXECUTION).",
+  "pages": [
+    {"page_id": "HOME", "before_median_ms": "PENDING", "after_median_ms": "PENDING", "change": "PENDING", "cache_status": "st.cache_data not involved (static page)"},
+    {"page_id": "PREDICT", "before_median_ms": "PENDING", "after_median_ms": "PENDING", "change": "PENDING", "cache_status": "form render cached by Streamlit rerun semantics"},
+    {"page_id": "MUSIC_TRENDS", "before_median_ms": "PENDING", "after_median_ms": "PENDING", "change": "PENDING", "cache_status": "@st.cache_data path-keyed (4_Trends.py) — cold heavy (170k-row Python loop), warm cheap"},
+    {"page_id": "MODEL_INFO", "before_median_ms": "PENDING", "after_median_ms": "PENDING", "change": "PENDING", "cache_status": "API-driven (GET /model-info); server-side metadata cached except model_metrics.json (NOT_JUSTIFIED)"},
+    {"page_id": "EXPLAIN", "before_median_ms": "PENDING", "after_median_ms": "PENDING", "change": "PENDING", "cache_status": "base render API-driven; SHAP action latency measured separately"},
+    {"page_id": "WHAT_IF", "before_median_ms": "PENDING", "after_median_ms": "PENDING", "change": "PENDING", "cache_status": "base render; action = 2× /predict on backend"}
+  ],
+  "note": "Music Trends cold load is expected to be the slowest page (pure-Python aggregation of 169,681 rows on first run; cached afterwards). Optimization of the aggregation algorithm is NOT a Phase 2 caching task and NOT a WBS task — no change made.",
+  "status": "BLOCKED"
+}

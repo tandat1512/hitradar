@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Chart empty state validation",
+  "empty_states": {
+    "NO_DATA_FOR_SELECTION": "Filter produces 0 rows → render 'No data for this selection'",
+    "INSUFFICIENT_FOR_TREND": "Only 1 year → no trend claim, only single point",
+    "EMPTY_AGGREGATION": "All values null → return NO_DATA status, no crash"
+  },
+  "no_crash_on_empty": true,
+  "no_crash_on_single_point": true,
+  "no_trend_claim_single_point": true,
+  "coverage_reported": true,
+  "status": "PASS"
+}

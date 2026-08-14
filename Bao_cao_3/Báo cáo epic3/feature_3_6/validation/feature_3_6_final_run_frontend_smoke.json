@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final run_frontend smoke — BLOCKED (no live env)",
+  "command": "python scripts/run_frontend.py",
+  "expected_verifications": {
+    "starts_streamlit": "streamlit run app.py on 8501",
+    "expected_url": "http://localhost:8501",
+    "backend_config_correct": "BACKEND_BASE_URL=http://localhost:8000 (or override)",
+    "shutdown_clean": "Ctrl+C → graceful stop, exit 0"
+  },
+  "actual": "BLOCKED",
+  "status": "BLOCKED"
+}

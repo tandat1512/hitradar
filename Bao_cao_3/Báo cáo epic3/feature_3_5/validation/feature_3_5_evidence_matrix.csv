@@ -1,0 +1,37 @@
+task_id,requirement,expected,actual,evidence_path,status,warning_id,blocker_id,notes
+3.5.1,Streamlit FastAPI integration,httpx transport real HTTP,httpx confirmed from source; connection BLOCKED,validation/feature_3_5_runtime_topology.json,BLOCKED,F35-W01,F35-B01,Live execution requires Python env
+3.5.1,Runtime topology,Architecture verified,Streamlit→httpx→FastAPI→PipelineLoader verified,validation/feature_3_5_runtime_topology.json,PASS,,,No direct model access
+3.5.1,API contract,6 endpoints present,All 6 endpoints confirmed in openapi.json,validation/feature_3_5_api_contract_snapshot.json,PASS,,,
+3.5.1,Startup commands,Discover backend/frontend commands,Confirmed from run.bat and app.py,validation/feature_3_5_startup_contract.json,PASS,,,
+3.5.1,Backend upstream gate,Feature 3.2 valid,feature_3_2_closure_gate.json PASS_WITH_WARNINGS,validation/feature_3_5_upstream_gate_validation.json,PASS,,,
+3.5.1,Frontend upstream gate,Feature 3.3 valid,feature_3_3_closure_gate.json PASS,validation/feature_3_5_upstream_gate_validation.json,PASS,,,
+3.5.1,Dashboard upstream gate,Feature 3.4 valid,feature_3_4_closure_gate.json PASS_WITH_WARNINGS,validation/feature_3_5_upstream_gate_validation.json,PASS,,,
+3.5.2,Predict E2E contract,Predict E2E architecture valid,Streamlit→HitRadarAPIClient→POST /predict→ModelService→pipeline verified,validation/feature_3_5_phase_2_gate.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.2,Predict canonical match,46.421062 ±0.001,BLOCKED — no backend running,validation/feature_3_5_canonical_e2e_fixture.json,BLOCKED,F35-W01,F35-B01,Canonical fixture verified
+3.5.3,Explain E2E contract,Explain E2E architecture valid,ExplainService confirmed; frontend never computes SHAP verified,validation/feature_3_5_phase_2_gate.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.3,Explain prediction consistency,explain.prediction = predict.prediction,BLOCKED — backend not running,validation/feature_3_5_explain_predict_consistency.json,BLOCKED,F35-W01,F35-B01,Contract validated
+3.5.3,Explain causal claims,0 causal claims,0 found in source,validation/feature_3_5_phase_2_gate.json,PASS,,,Source verified
+3.5.4,What-if E2E contract,What-if E2E architecture valid,WhatIfService confirmed; delta computed by backend verified,validation/feature_3_5_phase_2_gate.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.4,What-if baseline consistency,predict_before = /predict,BLOCKED — backend not running,validation/feature_3_5_what_if_response_validation.json,BLOCKED,F35-W01,F35-B01,Contract validated
+3.5.4,What-if causal claims,0 causal claims,0 found in source,validation/feature_3_5_phase_2_gate.json,PASS,,,Source verified
+3.5.5,Model Info E2E,GET /model-info with real metadata,Contract validated; live BLOCKED,validation/feature_3_5_model_info_e2e_validation.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.6,Backend unavailable,APIConnectionError friendly error,Contract validated from error_states.py,validation/feature_3_5_backend_down_e2e.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.6,Backend recovery,Recovery after restart,Contract validated,validation/feature_3_5_backend_recovery_validation.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.7,Missing required field,422 APIValidationError,Contract validated from Pydantic,validation/feature_3_5_missing_field_api_validation.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.8,Out-of-range numeric,422 APIValidationError,Contract validated from Pydantic,validation/feature_3_5_out_of_range_low_validation.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.9,Extra field policy,200 with Pydantic extra=allow,Contract validated,validation/feature_3_5_extra_field_validation.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.9,Wrong type numeric,422 APIValidationError,Contract validated from Pydantic,validation/feature_3_5_wrong_numeric_type_validation.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.10,Clean environment,Fresh venv + install succeeds,BLOCKED — no Python env,validation/feature_3_5_clean_environment_definition.json,BLOCKED,F35-W01,F35-B01,No Python available
+3.5.10,Dependency install,All deps from declared files,Backend complete; frontend missing reqs.txt,validation/feature_3_5_dependency_declaration_audit.json,PARTIAL,F35-W02,,F35-BUG-003 pending
+3.5.10,Portability,No machine-specific paths,0 hardcoded paths found,validation/feature_3_5_portability_audit.json,PASS,,,Path resolution relative
+3.5.11,Bug registry,3 bugs registered,F35-BUG-001 BLOCKER F35-BUG-002 FIXED F35-BUG-003 PENDING,validation/feature_3_5_bug_registry.json,PASS,,,All bugs documented
+3.5.11,Regression tests,All critical fixes have regression,Exist as validation artifacts; retest BLOCKED,validation/feature_3_5_bug_regression_matrix.csv,BLOCKED,F35-W01,F35-B01,No Python env
+3.5.12,e2e_test_report,e2e_test_report.md complete,Created with all sections,validation/feature_3_5_final_validation_results.json,PASS,,,This report
+3.5.13,Strict fresh-clone smoke,Git clone + install + demo,WORKING_TREE_SNAPSHOT — strict clone BLOCKED,validation/feature_3_5_final_source_mode.json,BLOCKED,F35-W03,F35-B02,No git clone available
+3.5.13,Final backend startup,Backend starts + /health PASS,BLOCKED — no Python env,validation/feature_3_5_backend_startup_validation.json,BLOCKED,F35-W01,F35-B01,No Python available
+3.5.13,Final frontend startup,Streamlit starts,BLOCKED — no Python env,validation/feature_3_5_frontend_startup_validation.json,BLOCKED,F35-W01,F35-B01,No Python available
+3.5.13,Final demo flow,All pages render correctly,BLOCKED — no live frontend,validation/feature_3_5_phase_1_gate.json,BLOCKED,F35-W01,F35-B01,No live execution
+3.5.all,Source immutability,Model/data unchanged,All unchanged — only requirements.txt modified,validation/feature_3_5_source_immutability_audit.json,PASS,,,No artifact mutation
+3.5.all,Architecture compliance,0 direct loads/computes in frontend,0/0/0 confirmed from source scan,validation/feature_3_5_frontend_architecture_audit.json,PASS,,,Source verified
+3.5.all,Write-scope audit,Only F3.5 evidence + hotfix,Only requirements.txt (httpx) + evidence files,validation/feature_3_5_write_scope_audit.json,PASS,,,No unexpected changes
+3.5.all,No training/refit,fit=0 fit_transform=0 partial_fit=0,PipelineLoader only loads at startup,validation/feature_3_5_phase_2_no_refit_validation.json,PASS,,,Design confirmed

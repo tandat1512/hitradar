@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-05T14:46:05.160324+00:00",
+  "modifiable_fields": [
+    "acousticness",
+    "danceability",
+    "decade",
+    "duration_min",
+    "energy",
+    "explicit",
+    "instrumentalness",
+    "key",
+    "liveness",
+    "loudness",
+    "mode",
+    "release_month",
+    "release_precision",
+    "release_year",
+    "speechiness",
+    "tempo",
+    "time_signature",
+    "valence"
+  ],
+  "modifiable_count": 18,
+  "locked_fields": [
+    "target_popularity",
+    "track_id"
+  ],
+  "locked_count": 2,
+  "validation_policy": "canonical_field_name_check",
+  "target_rejected": true,
+  "track_id_rejected": true,
+  "field_policy_complete": true,
+  "warnings": [],
+  "blockers": [],
+  "status": "PASS"
+}

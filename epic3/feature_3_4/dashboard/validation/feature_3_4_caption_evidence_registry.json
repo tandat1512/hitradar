@@ -1,0 +1,109 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Caption evidence registry — all chart captions traced to aggregate data",
+  "captions": [
+    {
+      "caption_id": "pop_year_caption",
+      "chart_id": "popularity_year_trend",
+      "chart_title": "Average Popularity by Release Year",
+      "source_artifact": "analytics/aggregation_engine.py → aggregate_popularity_by_year()",
+      "evidence_fields": ["popularity_value", "year", "overall_coverage", "missing_years"],
+      "evidence_traceability": "Values extracted from data_points[]. popularity_value derived from mean(target_popularity) by release_year",
+      "metric_verified": "mean(target_popularity) by release_year — confirmed from Phase 2 contract",
+      "text_format": "Mean popularity ranged from {min} ({min_yr}) to {max} ({max_yr}). Change described: increased/decreased/broadly similar.",
+      "qualifier": "in the available data",
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "pop_decade_caption",
+      "chart_id": "popularity_decade_trend",
+      "chart_title": "Average Popularity by Decade",
+      "source_artifact": "analytics/aggregation_engine.py → aggregate_popularity_by_decade()",
+      "evidence_fields": ["popularity_value", "decade", "decade_label", "overall_coverage"],
+      "evidence_traceability": "Values from mean(target_popularity) by decade column",
+      "2020_edge_case_handled": true,
+      "note_2020": "Caption includes: \"Note: '2020' represents only the year 2020, not a full decade.\"",
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "audio_year_caption",
+      "chart_id": "audio_feature_year_trend",
+      "chart_title": "{Feature} by Release Year",
+      "source_artifact": "analytics/aggregation_engine.py → aggregate_audio_feature_by_year()",
+      "evidence_fields": ["feature_value", "year", "overall_coverage"],
+      "evidence_traceability": "Values from mean(feature) by release_year; feature name from allow-list",
+      "dynamic_feature": true,
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "audio_decade_caption",
+      "chart_id": "audio_feature_decade_trend",
+      "chart_title": "{Feature} by Decade",
+      "source_artifact": "analytics/aggregation_engine.py → aggregate_audio_feature_by_decade()",
+      "evidence_fields": ["feature_value", "decade", "decade_label"],
+      "evidence_traceability": "Values from mean(feature) by decade",
+      "2020_edge_case_handled": true,
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "explicit_trend_caption",
+      "chart_id": "explicit_trend",
+      "chart_title": "Percentage of Tracks Marked Explicit by Decade",
+      "source_artifact": "analytics/explicit_engine.py → aggregate_explicit_by_decade()",
+      "evidence_fields": ["explicit_percentage", "explicit_count", "valid_count", "decade"],
+      "evidence_traceability": "Rate = explicit_count / valid_count. Never raw count as primary metric.",
+      "metric_verified": "rate (comparable across uneven decade sizes) — confirmed from Phase 3",
+      "phrase_used": "share of tracks marked explicit",
+      "banned_phrases_avoided": ["societal", "society became", "people became"],
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "duration_trend_caption",
+      "chart_id": "duration_trend",
+      "chart_title": "Average Track Duration by Decade",
+      "source_artifact": "analytics/duration_engine.py → aggregate_duration_by_decade()",
+      "evidence_fields": ["duration_mean_min", "duration_median_min", "decade", "valid_count"],
+      "evidence_traceability": "Values from mean(duration_min) by decade. Invalid excluded: null, <=0, <0.1min, >30min",
+      "metric_verified": "mean duration in minutes — confirmed from Phase 1 (duration_min)",
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "count_caption",
+      "chart_id": "track_count_by_year",
+      "chart_title": "Track Count by Release Year",
+      "source_artifact": "analytics/aggregation_engine.py → aggregate_by_year()",
+      "evidence_fields": ["_count", "year"],
+      "evidence_traceability": "Count of rows per release_year from raw dataset",
+      "phrase_used": "describe records in the project dataset",
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    },
+    {
+      "caption_id": "artist_genre_caption",
+      "chart_id": "artist_genre_summary",
+      "chart_title": "Artist/Genre Summary",
+      "source_artifact": "NOT_AVAILABLE — no artist or genre column in source",
+      "evidence_fields": [],
+      "note": "Displays NOT_AVAILABLE message. No chart rendered.",
+      "contains_causal_claim": false,
+      "contains_unsupported_generalization": false,
+      "status": "PASS"
+    }
+  ],
+  "global_disclaimer_caption": "All visualizations describe records available in the project dataset. They do not represent the global music industry or broader population trends.",
+  "status": "PASS"
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 command traceability — documented commands vs execution",
+  "rule": "Do not document a command that was never executed. Phase 5 live execution BLOCKED (no Python env) — all commands documented for the live environment and marked NOT_EXECUTED.",
+  "commands": [
+    {"command": "python scripts/run_backend.py", "documented": true, "executed": false, "exit": "PENDING_LIVE", "evidence": "runbook §5 + scripts/run_backend.py", "status": "NOT_EXECUTED_LIVE"},
+    {"command": "python scripts/run_frontend.py", "documented": true, "executed": false, "exit": "PENDING_LIVE", "evidence": "runbook §6", "status": "NOT_EXECUTED_LIVE"},
+    {"command": "python scripts/run_all.py", "documented": true, "executed": false, "exit": "PENDING_LIVE", "evidence": "runbook §7", "status": "NOT_EXECUTED_LIVE"},
+    {"command": "python -m py_compile scripts/*.py", "documented": true, "executed": false, "exit": "PENDING_LIVE", "evidence": "compile check blocked this session (shell unavailable); scripts reviewed manually", "status": "NOT_EXECUTED_LIVE"},
+    {"command": "python -m pytest tests/test_feature_3_6_*.py", "documented": true, "executed": false, "exit": "PENDING_LIVE", "evidence": "full suite spec", "status": "NOT_EXECUTED_LIVE"}
+  ],
+  "note": "No command is documented as tested when it was not. The runbook clearly labels live verification as required. Every documented command has an exact invocation + expected console state.",
+  "status": "TRACEABILITY_VALID"
+}

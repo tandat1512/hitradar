@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.4 write-scope audit — files modified by this feature",
+  "feature_3_4_files": [
+    {"path": "epic3/feature_3_4/dashboard/__init__.py", "type": "module_init"},
+    {"path": "epic3/feature_3_4/dashboard/loaders/__init__.py", "type": "module_init"},
+    {"path": "epic3/feature_3_4/dashboard/loaders/trend_data_loader.py", "type": "loader"},
+    {"path": "epic3/feature_3_4/dashboard/analytics/__init__.py", "type": "module_init"},
+    {"path": "epic3/feature_3_4/dashboard/analytics/audio_feature_engine.py", "type": "analytics"},
+    {"path": "epic3/feature_3_4/dashboard/analytics/aggregation_engine.py", "type": "analytics"},
+    {"path": "epic3/feature_3_4/dashboard/analytics/explicit_engine.py", "type": "analytics"},
+    {"path": "epic3/feature_3_4/dashboard/analytics/duration_engine.py", "type": "analytics"},
+    {"path": "epic3/feature_3_4/dashboard/analytics/summary_engine.py", "type": "analytics"},
+    {"path": "epic3/feature_3_4/dashboard/charts/__init__.py", "type": "module_init"},
+    {"path": "epic3/feature_3_4/dashboard/charts/chart_render.py", "type": "charts"},
+    {"path": "epic3/feature_3_4/dashboard/captions/__init__.py", "type": "module_init"},
+    {"path": "epic3/feature_3_4/dashboard/captions/engines.py", "type": "captions"},
+    {"path": "epic3/feature_3_4/dashboard/cache/__init__.py", "type": "module_init"},
+    {"path": "epic3/feature_3_4/dashboard/cache/dashboard_cache.py", "type": "cache"},
+    {"path": "epic3/feature_3_4/dashboard/validation/", "type": "validation_artifacts"},
+    {"path": "epic3/feature_3_4/dashboard/tests/__init__.py", "type": "test_init"},
+    {"path": "epic3/feature_3_4/dashboard/tests/test_feature_3_4_trend_loader.py", "type": "tests"}
+  ],
+  "NOT_MODIFIED": [
+    {"path": "5.DATA/processed/ml_ready_dataset.csv", "reason": "Source canonical dataset"},
+    {"path": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv", "reason": "Evaluation dataset"},
+    {"path": "epic3/feature_3_3/", "reason": "Feature 3.3 — NOT modified to preserve closure integrity"},
+    {"path": "epic3/feature_3_2/", "reason": "Backend — NOT modified"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/", "reason": "Backend API — NOT modified"},
+    {"path": "7.ML/7.3.model_training/", "reason": "EPIC 2 training code — NOT modified"},
+    {"path": "artifacts/", "reason": "EPIC 2 model artifacts — NOT modified"}
+  ],
+  "violations": [],
+  "violation_count": 0,
+  "status": "PASS"
+}

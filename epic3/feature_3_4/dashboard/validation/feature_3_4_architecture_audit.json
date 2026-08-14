@@ -1,0 +1,44 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.4 architecture audit — forbidden patterns",
+  "audit_scope": [
+    "dashboard/loaders/trend_data_loader.py",
+    "dashboard/analytics/*.py",
+    "dashboard/charts/*.py",
+    "dashboard/captions/engines.py",
+    "dashboard/cache/dashboard_cache.py",
+    "dashboard/tests/*.py"
+  ],
+  "forbidden_patterns": {
+    "direct_model_load": {
+      "patterns": ["joblib.load", "pickle.load", "sklearn.model_selection", "ModelService", "xgb.XGBClassifier"],
+      "count": 0,
+      "found_files": []
+    },
+    "shap_computation": {
+      "patterns": ["shap.TreeExplainer", "shap.Explainer", "shap_values"],
+      "count": 0,
+      "found_files": []
+    },
+    "training": {
+      "patterns": [".fit(", ".train(", "training", "refit"],
+      "count": 0,
+      "found_files": []
+    },
+    "source_write": {
+      "patterns": [".to_csv", ".to_parquet", ".to_json", "to_sql"],
+      "count": 0,
+      "found_files": []
+    }
+  },
+  "counts": {
+    "direct_model_load_count": 0,
+    "direct_shap_computation_count": 0,
+    "model_service_import_count": 0,
+    "backend_business_logic_modification_count": 0,
+    "source_dataset_write_count": 0
+  },
+  "verified_by": "Code inspection of all Feature 3.4 Python modules",
+  "status": "PASS"
+}

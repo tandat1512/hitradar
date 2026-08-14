@@ -1,0 +1,138 @@
+{
+  "contract_id": "F31-P1-RAC-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:10:00+07:00",
+  "feature_id": "3.1",
+  "phase": 1,
+  "epic3_api_requirement": "Backend FastAPI serving EXP24-XGB-FINAL-001 model",
+  "canonical_source": "7.ML/7.10.model_packaging/package/",
+  "required_artifacts": {
+    "critical_runtime": [
+      {
+        "logical_name": "full_inference_pipeline",
+        "path": "pipeline/full_inference_pipeline.joblib",
+        "bytes": 3982751,
+        "sha256": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Primary artifact — backend MUST load this file at startup"
+      },
+      {
+        "logical_name": "inference_pipeline_module",
+        "path": "runtime/inference_pipeline.py",
+        "bytes_actual": 6525,
+        "sha256_actual": "6a54f86cfb87059a2a4276ce970f74797649255ad3c28f23286a0f44a51570c7",
+        "status": "HASH_MISMATCH",
+        "manifest_declared_sha": "34ef2ebe49bf82923806e926115c2c86eb186735dd637f8cbe3b624a18dd8ffa",
+        "epic3_use": "Reference implementation of HitRadarInferencePipeline class",
+        "blocker": true,
+        "severity": "HIGH"
+      }
+    ],
+    "critical_schema": [
+      {
+        "logical_name": "input_schema",
+        "path": "schemas/input_schema.json",
+        "sha256": "91d1d8070df43716a39879c3c06b06ae5ea4d266bd9d6872f5dc7472fb38d503",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Validate API input — 18 canonical fields with types/ranges"
+      },
+      {
+        "logical_name": "output_schema",
+        "path": "schemas/output_schema.json",
+        "sha256": "3d77b33b1d23c806358a872d1481262e68b42b474f5218273e50ab5a69fb17e8",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Format API output — status, prediction_raw/clipped/display"
+      },
+      {
+        "logical_name": "feature_names",
+        "path": "schemas/feature_names.json",
+        "sha256": "3044097537901e2218afe542b9fd2e7dd09af55fbd9fea7509a229a68b0a2bc1",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Map 49 transformed feature names for SHAP explainability"
+      },
+      {
+        "logical_name": "selected_features",
+        "path": "schemas/selected_features.json",
+        "sha256": "8d86f9c62e8fb321c04580eb2cfe22e80a7a439e3d557de7c5a04f73a817e5e7",
+        "status": "FOUND_EXACT",
+        "epic3_use": "List 31 selected features for feature importance display"
+      },
+      {
+        "logical_name": "feature_mapping",
+        "path": "schemas/feature_mapping.json",
+        "sha256": "cca788e6303027333f5d167316c45f4188705d00a2c24aed07e8892946518646",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Map raw 18 fields → 49 transformed features for SHAP"
+      }
+    ],
+    "critical_metadata": [
+      {
+        "logical_name": "model_version",
+        "path": "metadata/model_version.json",
+        "sha256": "5d639f3371e2064d7f0287c4b97993f47e1d25a2695686025cd752a3b1c07c7c",
+        "status": "FOUND_EXACT",
+        "model_id": "EXP24-XGB-FINAL-001",
+        "model_version": "1.0.0",
+        "epic3_use": "Include in API response for traceability"
+      },
+      {
+        "logical_name": "package_version",
+        "path": "metadata/package_version.json",
+        "sha256": "f2239b341e6084fce0b514074fa938e02121ea1e54313c3e9ef9472fe9ae4fe7",
+        "status": "FOUND_EXACT",
+        "package_version": "2.7.0",
+        "epic3_use": "Include in API response"
+      },
+      {
+        "logical_name": "data_version",
+        "path": "metadata/data_version.json",
+        "sha256": "a0951b81bfd37e30b3357512dfe0389967cbc543f93a5b29e2ee933d1112dff8",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Reference for data lineage"
+      }
+    ],
+    "required_examples": [
+      {
+        "logical_name": "example_input",
+        "path": "examples/example_input.json",
+        "sha256": "19847ab49e692374203e0fadbdca17e7ca9ae680c1016d2a26dfde6730d33bc0",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Test /predict endpoint with this example"
+      },
+      {
+        "logical_name": "example_output",
+        "path": "examples/example_output.json",
+        "sha256": "4a0e968c07c1335aaac2094e46c0cae5ccba0471dcb5d2c0046786df7dad10d6",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Validate /predict endpoint produces correct output format"
+      }
+    ],
+    "required_requirements": [
+      {
+        "logical_name": "requirements_runtime",
+        "path": "requirements-runtime.txt",
+        "sha256": "2e039d818b34472df2cf8b056edf2d1d98d1164581a3f3127839eb2ac87c2340",
+        "status": "FOUND_EXACT",
+        "epic3_use": "Backend dependencies — must be installed"
+      },
+      {
+        "logical_name": "requirements_explainability",
+        "path": "requirements-explainability.txt",
+        "sha256": "555ae51570d597bef487036b59f9334cec21a1386391d7c6574bc8a65a5ba166",
+        "status": "FOUND_EXACT",
+        "epic3_use": "SHAP explainability dependencies"
+      }
+    ]
+  },
+  "artifacts_required_but_missing": [],
+  "blockers": [
+    {
+      "blocker_id": "BLK-002",
+      "type": "STALE_MANIFEST",
+      "severity": "HIGH",
+      "description": "artifact_manifest.json sub-entry for inference_pipeline.py is stale",
+      "impact": "Cannot trust manifest for integrity verification",
+      "affected_artifacts": ["inference_pipeline_module"]
+    }
+  ]
+}

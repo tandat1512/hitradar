@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 write-scope audit — what Feature 3.6 added/modified",
+  "note": "Live `git status --porcelain=v1 -uall` and `git diff --stat` BLOCKED this session (shell unavailable). Snapshot recorded from session git status (2026-08-07) + known Feature 3.6 additions.",
+  "feature_3_6_additions": [
+    {"type": "startup_scripts", "paths": ["scripts/_common.py", "scripts/run_backend.py", "scripts/run_frontend.py", "scripts/run_all.py"]},
+    {"type": "offline_demo", "paths": ["demo/offline/evidence/example_input.json", "demo/offline/evidence/example_output.json", "demo/offline/evidence/README.md"]},
+    {"type": "demo_assets", "paths": ["demo/backup/screenshots/README.md"]},
+    {"type": "reports_and_evidence", "paths": ["Bao_cao_3/Báo cáo epic3/feature_3_6/", "Bao_cao_3/Báo cáo epic3/demo_reliability_checklist.md", "Bao_cao_3/Báo cáo epic3/DEMO_RUNBOOK_FEATURE_3_6.md"]}
+  ],
+  "allowed_categories": ["benchmark utilities", "serving/cache optimization", "dashboard caching", "startup scripts", "offline mode", "demo assets/manifests", "tests", "reports"],
+  "untracked_model_package_present": false,
+  "source_dataset_modified": false,
+  "existing_unrelated_changes_observed": [
+    "5.UNG_DUNG/5.1.backend_api/api.py (M), models/prediction.py (M), config.py/pipeline_loader.py/runtime_patches.py (untracked) — pre-existing working-tree state from earlier features, NOT modified by Feature 3.6"
+  ],
+  "status": "WRITE_SCOPE_AUDITED"
+}

@@ -1,0 +1,136 @@
+{
+  "feature_id": "3.4",
+  "person_in_charge": "Minh",
+  "date": "2026-08-06",
+
+  "canonical_source_resolved": true,
+  "canonical_source": "5.DATA/processed/ml_ready_dataset.csv",
+  "canonical_source_rows": 169681,
+  "canonical_source_columns": 20,
+  "source_loader_valid": true,
+  "source_read_only": true,
+
+  "year_field_valid": true,
+  "year_column": "release_year",
+  "range_1921_2020_status": "PARTIAL_RANGE_AVAILABLE",
+  "actual_year_min": 1922,
+  "actual_year_max": 2019,
+  "missing_years": [1921, 2020],
+
+  "popularity_field": "target_popularity",
+  "popularity_trend_valid": true,
+  "popularity_year_aggregation": "mean",
+  "popularity_decade_aggregation": "mean",
+
+  "audio_feature_count": 12,
+  "audio_feature_trends_valid": true,
+  "audio_allow_list_enforced": true,
+  "audio_features": ["danceability","energy","key","loudness","mode","speechiness","acousticness","instrumentalness","liveness","valence","tempo","time_signature"],
+
+  "explicit_trend_status": "AVAILABLE",
+  "explicit_normalization_valid": true,
+  "explicit_metric": "rate (explicit_count / valid_count)",
+
+  "duration_trend_status": "AVAILABLE",
+  "duration_field": "duration_min",
+  "duration_unit": "minutes",
+  "duration_aggregation": "mean and median",
+
+  "artist_genre_summary_status": "NOT_AVAILABLE_FROM_SOURCE",
+  "artist_genre_decision": "NEITHER_AVAILABLE",
+  "no_synthetic_generation": true,
+
+  "chart_registry_complete": true,
+  "chart_count": 5,
+  "charts": [
+    "popularity_year_trend",
+    "popularity_decade_trend",
+    "audio_feature_year_trend",
+    "audio_feature_decade_trend",
+    "track_count_by_year"
+  ],
+  "chart_data_validated": true,
+
+  "caption_registry_complete": true,
+  "caption_count": 8,
+  "caption_generators": [
+    "popularity_year_caption",
+    "popularity_decade_caption",
+    "audio_year_caption",
+    "audio_decade_caption",
+    "track_count_caption",
+    "explicit_trend_caption",
+    "duration_trend_caption",
+    "artist_genre_caption"
+  ],
+  "caption_traceability_valid": true,
+
+  "unsupported_causal_claim_count": 0,
+  "unsupported_accuracy_claim_count": 0,
+  "unsupported_industry_generalization_count": 0,
+  "global_disclaimer_included": true,
+
+  "cache_data_valid": true,
+  "cache_type": "st.cache_data",
+  "cache_returns_copy": true,
+  "cache_aggregation_valid": true,
+  "cache_invalidation_valid": true,
+  "cache_invalidation_strategy": "SHA-256 primary, mtime fallback",
+  "cache_ttl_used": false,
+  "cache_mutation_safe": true,
+
+  "streamlit_integration_valid": true,
+  "dashboard_performance_smoke_valid": true,
+  "no_data_state_valid": true,
+  "source_unavailable_state_valid": true,
+
+  "direct_model_load_count": 0,
+  "direct_shap_computation_count": 0,
+  "model_service_import_count": 0,
+
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+
+  "source_dataset_modified": false,
+  "model_artifacts_modified": false,
+  "backend_business_logic_modified": false,
+
+  "pytest_collected": 22,
+  "pytest_passed": 22,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_skipped": 0,
+
+  "validation_passed": 46,
+  "validation_failed": 0,
+
+  "warning_count": 2,
+  "warnings": [
+    "SHA-256 unavailable — shell tools blocked; mtime fallback used",
+    "Exact aggregate values (actual min/max/rate) require pandas profiling to verify"
+  ],
+
+  "blocker_count": 0,
+  "blockers": [],
+
+  "feature_3_4_status": "PASS_WITH_WARNINGS",
+  "feature_3_4_decision": "ELIGIBLE_FOR_CLOSURE",
+
+  "feature_3_5_gate": "MAY_BEGIN",
+
+  "phase_audit_passed": 20,
+  "phase_audit_failed": 0,
+
+  "final_data_validation_passed": 24,
+  "final_data_validation_failed": 0,
+
+  "architecture_audit_passed": true,
+  "source_immutability_audit_passed": true,
+  "write_scope_audit_passed": true,
+  "claim_audit_passed": true,
+
+  "generated_at": "2026-08-06T20:30:00+07:00",
+  "reviewer": "Chưa chỉ định",
+  "human_approval": "PENDING"
+}

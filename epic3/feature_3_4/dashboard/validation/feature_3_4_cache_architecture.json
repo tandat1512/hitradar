@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Dashboard cache architecture",
+  "cache_type": "st.cache_data",
+  "cached_items": [
+    {
+      "item": "Trend dataset loading",
+      "function": "load_trend_dataset_cached()",
+      "key_strategy": "source_path + SHA-256 (or mtime fallback)",
+      "returns_copy": true,
+      "mutable_caller_safe": true
+    },
+    {
+      "item": "Yearly evaluation loading",
+      "function": "load_yearly_evaluation_cached()",
+      "key_strategy": "source_path + version",
+      "returns_copy": true,
+      "mutable_caller_safe": true
+    }
+  ],
+  "not_cached": [
+    {"item": "Model artifacts", "reason": "Feature 3.4 does not load models"},
+    {"item": "SHAP values", "reason": "Feature 3.4 does not compute SHAP"},
+    {"item": "API client connections", "reason": "Feature 3.4 does not use API"},
+    {"item": "Streamlit widget state", "reason": "Widgets are session-specific"},
+    {"item": "Aggregation results", "reason": "Aggregations are fast; caching handled at data-loader level"}
+  ],
+  "ttl": {
+    "used": false,
+    "rationale": "Source is immutable; cache key includes source version/hash — TTL is unnecessary and less correct than version-based invalidation"
+  },
+  "returns_copy": true,
+  "mutation_safety": true,
+  "invalidation_strategy": "source path + SHA-256 (authoritative) or mtime (fallback)",
+  "status": "PASS"
+}

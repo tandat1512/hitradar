@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 Phase 1-4 audit — checkpoint claims vs actual evidence",
+  "phases": [
+    {
+      "phase": "1/5",
+      "gate": "feature_3_6_phase_1_gate.json",
+      "status": "FAIL — BLOCKED",
+      "checkpoints": [
+        {"requirement": "Feature 3.5 gate valid", "checkpoint_claim": "false", "actual_evidence": "feature_3_5_to_feature_3_6_gate_validation.json (BLOCKED)", "status": "CONSISTENT", "severity": "BLOCKER"},
+        {"requirement": "API baseline valid", "checkpoint_claim": "false (BLOCKED)", "actual_evidence": "feature_3_6_api_latency_baseline.json (PENDING)", "status": "CONSISTENT", "severity": "BLOCKER"},
+        {"requirement": "Model load baseline", "checkpoint_claim": "resolved from source", "actual_evidence": "feature_3_6_model_load_baseline.json (1 load/lifecycle)", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "Dashboard load baseline", "checkpoint_claim": "resolved from source", "actual_evidence": "feature_3_6_dashboard_load_baseline.json (st.cache_data)", "status": "CONSISTENT", "severity": "INFO"}
+      ]
+    },
+    {
+      "phase": "2/5",
+      "gate": "feature_3_6_phase_2_gate.json",
+      "status": "FAIL — BLOCKED",
+      "checkpoints": [
+        {"requirement": "Optimization decisions", "checkpoint_claim": "5 decisions, 0 implemented", "actual_evidence": "feature_3_6_optimization_decisions.json", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "Model loading ALREADY_OPTIMIZED", "checkpoint_claim": "true", "actual_evidence": "feature_3_6_model_loading_architecture.json + no code change", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "Artifact cache registry", "checkpoint_claim": "complete", "actual_evidence": "feature_3_6_artifact_cache_registry.json (9 artifacts)", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "No-refit", "checkpoint_claim": "0 fit calls", "actual_evidence": "feature_3_6_phase_2_no_refit_validation.json", "status": "CONSISTENT", "severity": "INFO"}
+      ]
+    },
+    {
+      "phase": "3/5",
+      "gate": "feature_3_6_phase_3_gate.json",
+      "status": "FAIL — BLOCKED",
+      "checkpoints": [
+        {"requirement": "run_backend created", "checkpoint_claim": "true", "actual_evidence": "scripts/run_backend.py exists", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "run_frontend created", "checkpoint_claim": "true", "actual_evidence": "scripts/run_frontend.py exists", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "run_all created + health wait", "checkpoint_claim": "true (no fixed sleep)", "actual_evidence": "scripts/run_all.py source (poll /health model_loaded)", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "run_backend live start valid", "checkpoint_claim": "false (BLOCKED)", "actual_evidence": "no live execution", "status": "CONSISTENT", "severity": "BLOCKER"}
+      ]
+    },
+    {
+      "phase": "4/5",
+      "gate": "feature_3_6_phase_4_gate.json",
+      "status": "FAIL — BLOCKED",
+      "checkpoints": [
+        {"requirement": "Screenshot inventory", "checkpoint_claim": "7 defined", "actual_evidence": "feature_3_6_backup_screenshot_manifest.json", "status": "CONSISTENT", "severity": "INFO"},
+        {"requirement": "Screenshot provenance valid", "checkpoint_claim": "false (0 captured)", "actual_evidence": "manifest REQUIRES_LIVE_CAPTURE", "status": "CONSISTENT", "severity": "WARNING"},
+        {"requirement": "Video status", "checkpoint_claim": "MANUAL_RECORDING_REQUIRED", "actual_evidence": "feature_3_6_backup_video_manifest.json", "status": "CONSISTENT", "severity": "WARNING"},
+        {"requirement": "Offline mode honest", "checkpoint_claim": "no fake inference", "actual_evidence": "feature_3_6_offline_demo_evidence_registry.json (Explain/What-if NOT_AVAILABLE)", "status": "CONSISTENT", "severity": "INFO"}
+      ]
+    }
+  ],
+  "checkpoint_evidence_mismatch_count": 0,
+  "note": "Every checkpoint claim is backed by an actual evidence artifact. No CHECKPOINT_EVIDENCE_MISMATCH found. All BLOCKED statuses share the single root cause F36-B01 (no live Python environment).",
+  "status": "AUDIT_COMPLETE"
+}

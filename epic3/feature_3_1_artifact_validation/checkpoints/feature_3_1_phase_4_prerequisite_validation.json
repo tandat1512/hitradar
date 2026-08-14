@@ -1,0 +1,20 @@
+{
+  "prerequisite_id": "F31-P4-PRE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:27:00+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "checks": [
+    {"check": "phase_3_checkpoint_exists", "status": "PASS", "detail": "feature_3_1_phase_3_checkpoint.json exists"},
+    {"check": "phase_3_next_phase_may_begin", "status": "PASS", "detail": "Phase 3 checkpoint reports next_phase=MAY_BEGIN"},
+    {"check": "phase_3_gate_pass_with_warnings", "status": "PASS", "detail": "Phase 3 gate status=PASS_WITH_WARNINGS"},
+    {"check": "phase_3_prediction_executed", "status": "PASS", "detail": "Prediction executed successfully, result=PASS"},
+    {"check": "phase_3_prediction_deterministic", "status": "PASS", "detail": "Prediction is deterministic, max_diff=0"},
+    {"check": "phase_3_shap_assets_valid", "status": "PASS", "detail": "SHAP assets validated, status=VALID"},
+    {"check": "phase_3_no_refit", "status": "PASS", "detail": "fit/fit_transform/partial_fit all = 0"},
+    {"check": "phase_3_example_prediction_result_valid", "status": "PASS", "detail": "feature_3_1_example_prediction_result.json status=PASS"}
+  ],
+  "prerequisite_status": "PASS",
+  "warnings": [],
+  "blockers": []
+}

@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-08-13T20:05:00+07:00",
+  "method": "Python compile() in memory; no bytecode written",
+  "files": [
+    "5.UNG_DUNG/5.1.backend_api/api.py",
+    "5.UNG_DUNG/5.1.backend_api/models/prediction.py",
+    "scripts/_common.py",
+    "scripts/run_all.py",
+    "scripts/run_backend.py",
+    "scripts/run_frontend.py",
+    "Bao_cao_3/Báo cáo epic3/feature_3_9/build_phase_2_evidence.py",
+    "Bao_cao_3/Báo cáo epic3/feature_3_9/build_phase_3_evidence.py"
+  ],
+  "compiled": 8,
+  "errors": 0,
+  "status": "PASS"
+}

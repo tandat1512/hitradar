@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 README command validation",
+  "commands": [
+    {
+      "command": "python --version",
+      "source": "README Quick Start §1",
+      "tested": "NOT_TESTED",
+      "result": "PENDING_LIVE",
+      "notes": "Verify Python ≥3.10 in actual environment"
+    },
+    {
+      "command": "pip install -r 5.UNG_DUNG/5.1.backend_api/requirements.txt",
+      "source": "README Quick Start §1",
+      "tested": "NOT_TESTED",
+      "result": "PENDING_LIVE",
+      "notes": "Verify pip install succeeds in actual environment"
+    },
+    {
+      "command": "pip install streamlit httpx",
+      "source": "README Quick Start §1",
+      "tested": "NOT_TESTED",
+      "result": "PENDING_LIVE",
+      "notes": "Frontend dependencies not in a canonical requirements.txt yet — tracked as F37-B01"
+    },
+    {
+      "command": "python scripts/run_all.py",
+      "source": "README Quick Start §2 Option A",
+      "tested": "NOT_TESTED",
+      "result": "PENDING_LIVE",
+      "notes": "Feature 3.6 script — structurally verified; live execution BLOCKED"
+    },
+    {
+      "command": "python scripts/run_backend.py",
+      "source": "README Quick Start §2 Option B",
+      "tested": "NOT_TESTED",
+      "result": "PENDING_LIVE"
+    },
+    {
+      "command": "python scripts/run_frontend.py",
+      "source": "README Quick Start §2 Option B",
+      "tested": "NOT_TESTED",
+      "result": "PENDING_LIVE"
+    }
+  ],
+  "commands_with_source_verification": 6,
+  "commands_tested_live": 0,
+  "pending_live_count": 6,
+  "blocker": "F37-B01: No live Python environment — commands not executed",
+  "status": "VALIDATED_WITH_PENDING_LIVE"
+}

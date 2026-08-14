@@ -1,0 +1,51 @@
+{
+  "schema_id": "HITRADAR-PREDICTION-OUTPUT-V1",
+  "schema_version": "1.0.0",
+  "fields": [
+    {
+      "name": "status",
+      "type": "string",
+      "description": "SUCCESS or ERROR"
+    },
+    {
+      "name": "model_id",
+      "type": "string",
+      "description": "Champion model ID"
+    },
+    {
+      "name": "model_version",
+      "type": "string",
+      "description": "Model version"
+    },
+    {
+      "name": "package_version",
+      "type": "string",
+      "description": "Package version"
+    },
+    {
+      "name": "prediction_raw",
+      "type": "number",
+      "description": "Raw model output, may be outside [0,100]"
+    },
+    {
+      "name": "prediction_clipped",
+      "type": "number",
+      "description": "Clipped to [0,100]"
+    },
+    {
+      "name": "prediction_display",
+      "type": "integer",
+      "description": "Rounded clipped prediction for display"
+    },
+    {
+      "name": "warnings",
+      "type": "array",
+      "description": "List of warning strings"
+    }
+  ],
+  "notes": {
+    "prediction_raw": "May be outside 0-100 range",
+    "prediction_clipped": "Always in [0, 100]",
+    "prediction_display": "round(prediction_clipped)"
+  }
+}

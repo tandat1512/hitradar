@@ -1,0 +1,33 @@
+{
+  "cors_valid": true,
+  "cors_wildcard_credentials_violation": false,
+  "request_id_middleware_valid": true,
+  "structured_logging_valid": true,
+  "log_redaction_valid": true,
+  "centralized_error_handling_valid": true,
+  "error_response_contract_valid": true,
+  "traceback_exposed_to_client": false,
+  "health_endpoint_valid": true,
+  "model_info_endpoint_valid": true,
+  "model_info_consistent": true,
+  "features_endpoint_valid": true,
+  "features_raw_contract_valid": true,
+  "dependency_injection_valid": true,
+  "training_executed": false,
+  "refit_executed": false,
+  "source_artifacts_modified": false,
+  "pytest_collected": 33,
+  "pytest_passed": 33,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "warnings": [
+    "sklearn version mismatch: pipeline pickled with 1.9.0, runtime 1.8.0",
+    "httpx/starlette testclient deprecation warning — recommend httpx2 for FastAPI"
+  ],
+  "blockers": [],
+  "status": "PASS",
+  "next_phase": "MAY_BEGIN",
+  "phase": "3/6",
+  "person_in_charge": "Minh",
+  "date": "2026-08-06"
+}

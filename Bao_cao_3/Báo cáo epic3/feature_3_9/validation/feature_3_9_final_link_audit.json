@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-08-13T20:55:03+07:00",
+  "scope": [
+    "README.md",
+    "HOW_TO_RUN_APP.md",
+    "USER_MANUAL.md",
+    "API_DOCUMENTATION.md",
+    "TECHNICAL_APPENDIX.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_7/BAO_CAO_TONG_HOP_DU_AN.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/DEMO_RUNBOOK_FEATURE_3_6.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_6/demo_reliability_checklist.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/FINAL_DEFENSE_CHECKLIST.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_DATASET.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_LIMITATIONS.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_MASTER.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_MODEL.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_RAPID_FIRE.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_QA_SHAP.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md"
+  ],
+  "internal_links": 37,
+  "valid_links": 37,
+  "broken_links": 0,
+  "missing_assets": 0,
+  "broken": [],
+  "status": "PASS"
+}

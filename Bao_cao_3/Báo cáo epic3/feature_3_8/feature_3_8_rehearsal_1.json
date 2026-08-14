@@ -1,0 +1,28 @@
+{
+  "rehearsal_id": "F38-R1",
+  "purpose": "DIAGNOSE",
+  "status": "HUMAN_REHEARSAL_REQUIRED",
+  "actual_session_recorded": false,
+  "date_time": null,
+  "participants": [],
+  "source_deck_version": null,
+  "demo_source": null,
+  "start_time": null,
+  "end_time": null,
+  "total_duration_seconds": null,
+  "section_durations": [],
+  "demo_duration_seconds": null,
+  "demo_attempted": false,
+  "handoffs_attempted": false,
+  "qa_simulation_duration_seconds": null,
+  "qa_simulation": [
+    {"category": "DATASET", "question_id": "D03", "respondent": null, "answer_quality": "PENDING"},
+    {"category": "MODEL", "question_id": "M08", "respondent": null, "answer_quality": "PENDING"},
+    {"category": "SHAP", "question_id": "S12", "respondent": null, "answer_quality": "PENDING"},
+    {"category": "LIMITATIONS", "question_id": "L01", "respondent": null, "answer_quality": "PENDING"}
+  ],
+  "failure_drill": {"attempted": false, "status": "PENDING", "evidence": null},
+  "issues_recorded": false,
+  "closure_criteria_met": false,
+  "note": "No human rehearsal evidence was supplied or observed. Phase 2 technical dry-run is not Rehearsal #1."
+}

@@ -1,0 +1,35 @@
+document,statement,implementation_source,expected,documented,status
+HOW_TO_RUN_APP.md,Backend port=8000,scripts/run_backend.py parse_port default,8000,8000,OK
+HOW_TO_RUN_APP.md,Frontend port=8501,scripts/run_frontend.py parse_port default,8501,8501,OK
+HOW_TO_RUN_APP.md,Backend command: uvicorn api:app,scripts/run_backend.py line 61,python -m uvicorn api:app,python -m uvicorn api:app,OK
+HOW_TO_RUN_APP.md,Frontend command: streamlit run app.py,scripts/run_frontend.py line 61,python -m streamlit run app.py,python -m streamlit run app.py,OK
+HOW_TO_RUN_APP.md,Backend health endpoint,scripts/_common.py wait_for_health require_model=true,GET /health model_loaded==true,GET /health model_loaded==true,OK
+HOW_TO_RUN_APP.md,Frontend health endpoint,scripts/run_frontend.py wait_for_health require_model=false,GET /_stcore/health,GET /_stcore/health,OK
+HOW_TO_RUN_APP.md,run_all.py polls health (no fixed sleep),scripts/run_all.py line 81-88,no fixed sleep,no fixed sleep,OK
+HOW_TO_RUN_APP.md,Port conflict exits code 2,scripts/_common.py assert_port_free exit 2,exit 2,exit 2,OK
+HOW_TO_RUN_APP.md,Ctrl+C graceful teardown,scripts/run_all.py finally terminate_child,graceful → terminate → kill,graceful → terminate → kill,OK
+HOW_TO_RUN_APP.md,ARTIFACTS_PATH default,scripts/_common.py resolve_artifact_root,<repo>/artifacts/epic2,<repo>/artifacts/epic2,OK
+HOW_TO_RUN_APP.md,Backend default URL,scripts/run_backend.py HOST default,127.0.0.1,127.0.0.1,OK
+HOW_TO_RUN_APP.md,Backend base URL default,scripts/run_frontend.py base_url default,http://localhost:8000,http://localhost:8000,OK
+HOW_TO_RUN_APP.md,Offline demo mode available,feature_3_6_offline_demo_mode_contract.json,OFFLINE_DEMO_MODE=true,OFFLINE_DEMO_MODE=true,OK
+USER_MANUAL.md,7 pages documented,epic3/feature_3_3/frontend/core/navigation.py PAGES dict,7 pages,7 pages,OK
+USER_MANUAL.md,Page names match registry,epic3/feature_3_3/frontend/core/navigation.py,Home/Predict/Explain/What-If/Trends/Model Info/Limitations,Home/Predict/Explain/What-If/Trends/Model Info/Limitations,OK
+USER_MANUAL.md,18 input fields,artifacts/epic2/schemas/input_schema.json field_count,18,18,OK
+USER_MANUAL.md,Predict requires backend,1_Predict.py client.get_features(),true,true,OK
+USER_MANUAL.md,Explain requires prior prediction,2_Explain.py _get_baseline_input(),true,true,OK
+USER_MANUAL.md,What-If requires prior prediction,3_WhatIf.py _get_baseline(),true,true,OK
+USER_MANUAL.md,Music Trends requires no backend,4_Trends.py @st.cache_data load_yearly_features,no backend required,no backend required,OK
+USER_MANUAL.md,Model output is regression (0-100),6_Limitations.py "popularity score (0-100)",regression,regression,OK
+USER_MANUAL.md,Model is XGBoost,artifacts/epic2/metadata/model_version.json model_family,XGBoost,XGBoost,OK
+USER_MANUAL.md,Dataset 1922-2019,4_Trends.py dataset temporal range,1922-2019,1922-2019,OK
+USER_MANUAL.md,Offline: SHAP NOT AVAILABLE,feature_3_6_offline_demo_mode_contract.json,NOT_AVAILABLE,NOT_AVAILABLE,OK
+USER_MANUAL.md,Offline: What-If NOT AVAILABLE,feature_3_6_offline_demo_mode_contract.json,NOT_AVAILABLE,NOT_AVAILABLE,OK
+USER_MANUAL.md,Offline: Predict shows precomputed,feature_3_6_offline_demo_mode_contract.json,precomputed only,precomputed only,OK
+USER_MANUAL.md,SHAP causal claim disallowed,6_Limitations.py,no causal interpretation,no causal interpretation,OK
+USER_MANUAL.md,What-If causal claim disallowed,6_Limitations.py,no causal interpretation,no causal interpretation,OK
+README.md,HOW_TO_RUN_APP.md link,README.md links section,valid relative path,valid relative path,OK
+README.md,USER_MANUAL.md link,README.md links section,valid relative path,valid relative path,OK
+README.md,Backend requirements path,README.md requirements install,5.UNG_DUNG/5.1.backend_api/requirements.txt,5.UNG_DUNG/5.1.backend_api/requirements.txt,OK
+README.md,Frontend requirements path,README.md requirements install,epic3/feature_3_3/frontend/requirements.txt,epic3/feature_3_3/frontend/requirements.txt,OK
+README.md,Python 3.13.7,9.SCRIPTS/feature_2_2_preprocessing.py line 43,3.13.7,3.13.7,OK
+README.md,run_all.py command,scripts/run_all.py,python scripts/run_all.py,python scripts/run_all.py,OK

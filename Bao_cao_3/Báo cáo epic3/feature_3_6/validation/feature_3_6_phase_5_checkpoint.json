@@ -1,0 +1,80 @@
+{
+  "phase": "5/5",
+  "feature": "3.6",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "phase_1_4_audit": {
+    "audit_done": true,
+    "checkpoint_evidence_mismatch_count": 0,
+    "evidence": "feature_3_6_phase_audit.json"
+  },
+  "baseline": {
+    "api_baseline_valid": false,
+    "streamlit_baseline_valid": false,
+    "note": "BLOCKED (Phase 1 — no live env)"
+  },
+  "optimization": {
+    "decisions": 5,
+    "implemented": 0,
+    "status": "ALREADY_OPTIMIZED / NOT_JUSTIFIED"
+  },
+  "final_benchmarks": {
+    "api_valid": false,
+    "streamlit_valid": false,
+    "note": "BLOCKED — files created with PENDING placeholders"
+  },
+  "cache": {
+    "model_loading": "ALREADY_OPTIMIZED (1 load/process)",
+    "artifact_cache": "valid (source evidence)",
+    "dashboard_cache": "valid (source evidence)",
+    "invalidation": "contract valid; live BLOCKED",
+    "mutation": "safe by design; live BLOCKED"
+  },
+  "startup_scripts": {
+    "run_backend": "CREATED",
+    "run_frontend": "CREATED",
+    "run_all": "CREATED (real /health wait)",
+    "live_smoke": "BLOCKED"
+  },
+  "backup_assets": {
+    "screenshots": "MISSING (honest)",
+    "video": "MANUAL_RECORDING_REQUIRED"
+  },
+  "offline_mode": {
+    "contract": "complete",
+    "implemented": false,
+    "fake_inference_count": 0
+  },
+  "checklist_runbook": {
+    "demo_reliability_checklist.md": "complete",
+    "DEMO_RUNBOOK_FEATURE_3_6.md": "complete (18 sections)"
+  },
+  "tests": {
+    "pytest": "BLOCKED",
+    "collected": 0,
+    "failed": 0,
+    "errors": 0
+  },
+  "immutability": {
+    "model": "unchanged by design",
+    "schemas": "unchanged by design",
+    "shap": "unchanged by design",
+    "dataset": "unchanged by design"
+  },
+  "warnings": ["F36-W02", "F36-W09", "F36-W10"],
+  "blockers": ["F36-B01"],
+
+  "status": "FAIL",
+  "decision": "NOT_CLOSED",
+  "feature_3_7_gate": "BLOCKED",
+
+  "report_hashes": {
+    "FEATURE_3_6_VALIDATION_REPORT.md": "PENDING_LIVE",
+    "FEATURE_3_6_COMPLETION_REPORT.md": "PENDING_LIVE",
+    "CLOSURE_GATE_REPORT_FEATURE_3_6.md": "PENDING_LIVE",
+    "BAO_CAO_NGHIEM_THU_FEATURE_3_6.md": "PENDING_LIVE",
+    "demo_reliability_checklist.md": "PENDING_LIVE",
+    "DEMO_RUNBOOK_FEATURE_3_6.md": "PENDING_LIVE"
+  }
+}

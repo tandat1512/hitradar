@@ -1,0 +1,26 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 process harness validation",
+  "harness_capabilities": [
+    "start backend subprocess with stdout/stderr capture",
+    "wait for health readiness with configurable timeout",
+    "detect startup failure with error output",
+    "terminate gracefully with SIGTERM",
+    "force terminate with SIGKILL if graceful timeout exceeded",
+    "never kill processes not created by the harness",
+    "record process metadata: pid, command, cwd, started_at, stopped_at, exit_code"
+  ],
+  "port_check": {
+    "policy": "Check port availability before startup; do NOT kill unrelated processes",
+    "backend_default": 8000,
+    "frontend_default": 8501,
+    "configurable": true
+  },
+  "not_supported": [
+    "Browser automation",
+    "Screenshot capture",
+    "GUI interaction"
+  ],
+  "status": "PASS"
+}

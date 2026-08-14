@@ -1,0 +1,115 @@
+{
+  "validation_id": "F31-P3-SHAP-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:11:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "validation_status": "PASS",
+  "shap_recomputed": false,
+  "epic3_requires_shap": true,
+  "rationale": "EPIC 3 deliverables require /explain endpoint and SHAP explanation frontend page. SHAP is required, not optional.",
+  "asset_validations": [
+    {
+      "role": "SHAP_background_transformed",
+      "path": "7.ML/7.9.explainability/background/shap_background_transformed.npy",
+      "shape_valid": true,
+      "shape": [1000, 49],
+      "matches_model_matrix_width": true,
+      "dtype_valid": true,
+      "has_nan": false,
+      "has_inf": false,
+      "all_finite": true,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_background_raw",
+      "path": "7.ML/7.9.explainability/background/shap_background_raw.parquet",
+      "rows": 1000,
+      "columns": 18,
+      "matches_raw_input_width": true,
+      "has_nan": false,
+      "has_inf": false,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_values_global",
+      "path": "7.ML/7.9.explainability/shap_values/shap_values_global.npy",
+      "shape_valid": true,
+      "shape": [5000, 49],
+      "rows_match_manifest": true,
+      "cols_match_model_matrix": true,
+      "has_nan": false,
+      "has_inf": false,
+      "all_finite": true,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_base_values",
+      "path": "7.ML/7.9.explainability/shap_values/shap_base_values.npy",
+      "shape": [5000],
+      "rows_match_values": true,
+      "has_nan": false,
+      "has_inf": false,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_feature_mapping",
+      "path": "7.ML/7.9.explainability/shap_values/shap_feature_mapping.json",
+      "parseable": true,
+      "mapping_count": 49,
+      "all_translated_features_mapped": true,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_feature_names",
+      "path": "7.ML/7.9.explainability/shap_values/shap_feature_names.json",
+      "parseable": true,
+      "feature_count": 49,
+      "matches_model_feature_names": true,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_additivity",
+      "path": "7.ML/7.9.explainability/shap_values/shap_additivity_validation.json",
+      "parseable": true,
+      "output_space": "raw",
+      "additivity_pass_rate": 1.0,
+      "max_error": 6.749456107257856e-05,
+      "tolerance": 0.001,
+      "status": "PASS"
+    },
+    {
+      "role": "SHAP_value_validation",
+      "path": "7.ML/7.9.explainability/shap_values/shap_value_validation.json",
+      "parseable": true,
+      "rows": 5000,
+      "columns": 49,
+      "has_nan": false,
+      "has_inf": false,
+      "columns_match_model_matrix": true,
+      "status": "PASS"
+    }
+  ],
+  "model_version_consistency": {
+    "champion_id_from_manifest": "EXP24-XGB-FINAL-001",
+    "champion_id_from_shap_manifest": "EXP24-XGB-FINAL-001",
+    "status": "PASS"
+  },
+  "feature_dimension_consistency": {
+    "background_transformed_cols": 49,
+    "shap_values_cols": 49,
+    "model_matrix_width": 49,
+    "feature_names_count": 49,
+    "all_match": true,
+    "status": "PASS"
+  },
+  "background_source": {
+    "source": "train split (not test)",
+    "train_only_verification": true,
+    "validation_overlap_count": 0,
+    "test_overlap_count": 0,
+    "status": "PASS"
+  },
+  "warnings": [],
+  "blockers": []
+}

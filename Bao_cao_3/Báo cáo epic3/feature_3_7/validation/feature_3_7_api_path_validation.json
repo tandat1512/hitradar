@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 API path validation",
+  "paths_expected": [
+    {"path": "/health", "method": "GET", "documented": true},
+    {"path": "/model-info", "method": "GET", "documented": true},
+    {"path": "/features", "method": "GET", "documented": true},
+    {"path": "/predict", "method": "POST", "documented": true},
+    {"path": "/explain", "method": "POST", "documented": true},
+    {"path": "/what-if", "method": "POST", "documented": true}
+  ],
+  "api_prefix": "NONE (no /api/v1 prefix)",
+  "path_mismatch_count": 0,
+  "invalid_paths_found": [],
+  "note": "No /api/v1/ or other prefix — routes are at root level",
+  "status": "VALIDATED"
+}

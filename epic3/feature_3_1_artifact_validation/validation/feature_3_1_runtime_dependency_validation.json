@@ -1,0 +1,115 @@
+{
+  "validation_id": "F31-P2-DEP-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:35:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "environment": {
+    "os": "Windows 11",
+    "os_version": "10.0.26200",
+    "architecture": "AMD64",
+    "python_executable": "C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+    "python_version": "3.13.14",
+    "python_full_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "dependencies": [
+    {
+      "package": "sklearn",
+      "module_name": "sklearn",
+      "installed_version": "1.8.0",
+      "pipeline_was_pickled_with": "1.9.0",
+      "import_status": "OK",
+      "required_for_model_load": true,
+      "compatibility_note": "InconsistentVersionWarning raised during load. Pipeline was pickled with sklearn 1.9.0, running on 1.8.0. Model loaded successfully but this is a version mismatch. Future sklearn upgrades may break compatibility.",
+      "status": "WARNING"
+    },
+    {
+      "package": "xgboost",
+      "module_name": "xgboost",
+      "installed_version": "3.3.0",
+      "import_status": "OK",
+      "required_for_model_load": true,
+      "compatibility_note": "XGBoost version 3.3.0 installed. Compatible.",
+      "status": "OK"
+    },
+    {
+      "package": "joblib",
+      "module_name": "joblib",
+      "installed_version": "1.5.3",
+      "import_status": "OK",
+      "required_for_model_load": true,
+      "compatibility_note": "joblib 1.5.3 used to load pipeline.",
+      "status": "OK"
+    },
+    {
+      "package": "pandas",
+      "module_name": "pandas",
+      "installed_version": "3.0.3",
+      "import_status": "OK",
+      "required_for_model_load": true,
+      "compatibility_note": "pandas 3.0.3 installed. Compatible.",
+      "status": "OK"
+    },
+    {
+      "package": "numpy",
+      "module_name": "numpy",
+      "installed_version": "2.4.6",
+      "import_status": "OK",
+      "required_for_model_load": true,
+      "compatibility_note": "numpy 2.4.6 installed. Compatible.",
+      "status": "OK"
+    },
+    {
+      "package": "cloudpickle",
+      "module_name": "cloudpickle",
+      "installed_version": "3.1.2",
+      "import_status": "OK",
+      "required_for_model_load": false,
+      "compatibility_note": "cloudpickle 3.1.2 installed. Available for cloudpickle-based serialization but joblib was used for loading.",
+      "status": "OK"
+    },
+    {
+      "package": "shap",
+      "module_name": "shap",
+      "installed_version": "0.52.0",
+      "import_status": "OK",
+      "required_for_model_load": false,
+      "required_for_shap_explainability": true,
+      "compatibility_note": "shap 0.52.0 installed. Required for EPIC 3 explainability feature (SHAP explanations).",
+      "status": "OK"
+    }
+  ],
+  "runtime_patches_applied": [
+    {
+      "patch": "transformers module conflict",
+      "description": "Inject EPIC 2 custom transformers.py into sys.modules['transformers'] to resolve conflict with HuggingFace transformers library",
+      "source": "7.ML/7.6.feature_engineering/src/transformers.py",
+      "status": "APPLIED"
+    },
+    {
+      "patch": "__main__.to_string stub",
+      "description": "Replace broken to_string from training __main__ with safe per-column converter (preserves 2D array shape)",
+      "status": "APPLIED"
+    },
+    {
+      "patch": "sys.path runtime resolution",
+      "description": "Add package/runtime/ and package/ to sys.path for module resolution",
+      "status": "APPLIED"
+    },
+    {
+      "patch": "to_str FunctionTransformer post-load",
+      "description": "Patch to_str.func inside ColumnTransformer cat sub-pipeline with safe converter after joblib.load",
+      "status": "APPLIED"
+    }
+  ],
+  "overall_status": "WARNING",
+  "warnings": [
+    {
+      "type": "SKLEARN_VERSION_MISMATCH",
+      "severity": "WARNING",
+      "detail": "Pipeline pickled with sklearn 1.9.0, running on 1.8.0. InconsistentVersionWarning raised. Model loaded successfully. Upgrade path should install sklearn 1.9.0 or retrain model with current version."
+    }
+  ],
+  "blockers": [],
+  "can_proceed": true
+}

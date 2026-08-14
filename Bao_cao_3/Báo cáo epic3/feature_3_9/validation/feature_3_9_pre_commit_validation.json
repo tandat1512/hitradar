@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-08-13T20:55:04+07:00",
+  "feature_3_9_tests": {
+    "collected": 26,
+    "passed": 26,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "status": "PASS"
+  },
+  "feature_3_7_doc_tests": {
+    "status": "NOT_AVAILABLE",
+    "reason": "No Feature 3.7 pytest files exist in the repository."
+  },
+  "feature_3_5_critical_smoke": {
+    "status": "NOT_AVAILABLE",
+    "reason": "No Feature 3.5 executable smoke test files exist; runtime source changes therefore lack the required scoped regression proof."
+  },
+  "feature_3_6_startup_smoke": {
+    "status": "BLOCKED",
+    "reason": "Phase 1 identified defective child environment propagation in scripts/_common.py; no current executable startup smoke test exists."
+  },
+  "python_compile_check": {
+    "status": "PASS",
+    "evidence": "feature_3_9_pre_commit_compile.json"
+  },
+  "failed": 0,
+  "errors": 0,
+  "passed": 26,
+  "override_authorized": false,
+  "pre_commit_validation_passed": false,
+  "status": "FAIL"
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 health E2E validation — contract and expected behavior",
+  "endpoint": "GET /health",
+  "url": "http://127.0.0.1:8000/health",
+  "expected_response": {
+    "status": "healthy",
+    "model_loaded": true,
+    "api_version": "1.0.0",
+    "request_id": "string (UUID)"
+  },
+  "expected_when_model_not_ready": {
+    "status": "degraded",
+    "model_loaded": false
+  },
+  "contract_verified": true,
+  "actual_connection_test": "PENDING_LIVE_VERIFICATION (requires running backend)",
+  "transport": "actual HTTP via httpx (not TestClient)",
+  "status": "CONTRACT_VALIDATED_PENDING_LIVE"
+}

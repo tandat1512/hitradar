@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Explicit field normalization validation",
+  "field": "explicit",
+  "dtype": "bool",
+  "valid_values": [true, false],
+  "canonical_mapping": "Python bool (True/False)",
+  "aggregation_method": "explicit_rate = explicit_count / valid_count",
+  "valid_count_definition": "rows where explicit is True OR False (not null)",
+  "invalid_rows_policy": {
+    "null_count": "excluded from denominator",
+    "invalid_count": "counted and reported per decade",
+    "never_silently_convert": true
+  },
+  "metric": "explicit_percentage = explicit_rate * 100",
+  "y_axis_label": "Percentage (%)",
+  "chart_title": "Percentage of Tracks Marked Explicit by Decade",
+  "no_causal_claim_in_title": true,
+  "note": "Rate is comparable across decades even if decade sizes differ",
+  "status": "PASS"
+}

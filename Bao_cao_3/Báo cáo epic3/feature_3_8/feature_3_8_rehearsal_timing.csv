@@ -1,0 +1,10 @@
+section,planned_seconds,actual_r1_seconds,variance,status
+Introduction,,,,PENDING_HUMAN_R1
+Dataset,,,,PENDING_HUMAN_R1
+Model,,,,PENDING_HUMAN_R1
+SHAP_WhatIf,,,,PENDING_HUMAN_R1
+Architecture_Productization,,,,PENDING_HUMAN_R1
+Live_Demo,350,,,PLANNED_FROM_PHASE_2_R1_PENDING
+Limitations_Conclusion,,,,PENDING_HUMAN_R1
+Q&A_Simulation,,,,PENDING_HUMAN_R1
+TOTAL,,,,OFFICIAL_DURATION_UNKNOWN_R1_PENDING

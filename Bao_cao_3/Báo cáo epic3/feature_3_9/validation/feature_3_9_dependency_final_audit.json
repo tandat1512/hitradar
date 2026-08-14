@@ -1,0 +1,17 @@
+{
+  "feature_id": "3.9",
+  "canonical_decision_source": "feature_3_7/validation/feature_3_7_dependency_spec_decision.json",
+  "specifications": [
+    {"path":"5.UNG_DUNG/5.1.backend_api/requirements.txt","exists":true,"tracked":false,"sha256":"0aa7a2947e01692253864e42da471e467fead03569986c4a145585988492c457","local_file_reference_count":0,"critical_packages":["fastapi","uvicorn","pydantic","joblib","scikit-learn","xgboost","numpy","pandas","shap"],"status":"CONTENT_VALID_UNTRACKED"},
+    {"path":"epic3/feature_3_3/frontend/requirements.txt","exists":true,"tracked":false,"sha256":"b54b352e9fbd3294182631802a7d966bfcdc37482e046ed468316fffec291ecd","local_file_reference_count":0,"critical_packages":["streamlit","httpx"],"status":"CONTENT_VALID_UNTRACKED_REVALIDATION_REQUIRED"}
+  ],
+  "clean_install_previously_validated": false,
+  "feature_3_7_clean_install_evidence": "BLOCKED_NO_PYTHON_ENVIRONMENT",
+  "latest_change_after_feature_3_7_validation": true,
+  "critical_package_coverage_complete": true,
+  "no_local_file_dev_paths": true,
+  "dependency_spec_present": true,
+  "dependency_spec_valid": false,
+  "blockers": ["Dependency specifications are untracked and the frontend specification changed after the source-only Feature 3.7 review; a clean-install revalidation is required."],
+  "status": "FAIL_REVALIDATION_REQUIRED"
+}

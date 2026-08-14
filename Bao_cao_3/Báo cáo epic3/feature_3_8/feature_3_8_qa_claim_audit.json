@@ -1,0 +1,11 @@
+{
+  "accuracy_mislabel": 0,
+  "guarantee_claim": 0,
+  "causal_shap_claim": 0,
+  "causal_what_if_claim": 0,
+  "unsupported_dataset_claim": 0,
+  "unsupported_model_claim": 0,
+  "production_ready_overclaim": 0,
+  "unsupported_policy_present": true,
+  "status": "PASS"
+}

@@ -1,0 +1,443 @@
+[
+  {
+    "model_feature_index": 0,
+    "model_feature_name": "duration_min",
+    "selected_feature": "duration_min",
+    "input_source_field": "duration_min",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 1,
+    "model_feature_name": "release_year",
+    "selected_feature": "release_year",
+    "input_source_field": "release_year",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 2,
+    "model_feature_name": "danceability",
+    "selected_feature": "danceability",
+    "input_source_field": "danceability",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 3,
+    "model_feature_name": "energy",
+    "selected_feature": "energy",
+    "input_source_field": "energy",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 4,
+    "model_feature_name": "loudness",
+    "selected_feature": "loudness",
+    "input_source_field": "loudness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 5,
+    "model_feature_name": "speechiness",
+    "selected_feature": "speechiness",
+    "input_source_field": "speechiness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 6,
+    "model_feature_name": "acousticness",
+    "selected_feature": "acousticness",
+    "input_source_field": "acousticness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 7,
+    "model_feature_name": "instrumentalness",
+    "selected_feature": "instrumentalness",
+    "input_source_field": "instrumentalness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 8,
+    "model_feature_name": "liveness",
+    "selected_feature": "liveness",
+    "input_source_field": "liveness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 9,
+    "model_feature_name": "valence",
+    "selected_feature": "valence",
+    "input_source_field": "valence",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 10,
+    "model_feature_name": "tempo",
+    "selected_feature": "tempo",
+    "input_source_field": "tempo",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 11,
+    "model_feature_name": "release_month",
+    "selected_feature": "release_month",
+    "input_source_field": "release_month",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 12,
+    "model_feature_name": "decade",
+    "selected_feature": "decade",
+    "input_source_field": "decade",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 13,
+    "model_feature_name": "release_month_sin",
+    "selected_feature": "release_month_sin",
+    "input_source_field": "release_month",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 14,
+    "model_feature_name": "release_month_cos",
+    "selected_feature": "release_month_cos",
+    "input_source_field": "release_month",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 15,
+    "model_feature_name": "year_in_decade",
+    "selected_feature": "year_in_decade",
+    "input_source_field": "decade",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 16,
+    "model_feature_name": "duration_log",
+    "selected_feature": "duration_log",
+    "input_source_field": "multi-source",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 17,
+    "model_feature_name": "duration_squared",
+    "selected_feature": "duration_squared",
+    "input_source_field": "multi-source",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 18,
+    "model_feature_name": "energy_danceability",
+    "selected_feature": "energy_danceability",
+    "input_source_field": "danceability",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 19,
+    "model_feature_name": "energy_valence",
+    "selected_feature": "energy_valence",
+    "input_source_field": "energy",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 20,
+    "model_feature_name": "danceability_valence",
+    "selected_feature": "danceability_valence",
+    "input_source_field": "danceability",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 21,
+    "model_feature_name": "acousticness_instrumentalness",
+    "selected_feature": "acousticness_instrumentalness",
+    "input_source_field": "acousticness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 22,
+    "model_feature_name": "energy_liveness",
+    "selected_feature": "energy_liveness",
+    "input_source_field": "energy",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 23,
+    "model_feature_name": "speechiness_explicit",
+    "selected_feature": "speechiness_explicit",
+    "input_source_field": "speechiness",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 24,
+    "model_feature_name": "tempo_danceability",
+    "selected_feature": "tempo_danceability",
+    "input_source_field": "danceability",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 25,
+    "model_feature_name": "loudness_energy",
+    "selected_feature": "loudness_energy",
+    "input_source_field": "energy",
+    "transformer": "SimpleImputer(median)",
+    "category": "numeric",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 26,
+    "model_feature_name": "release_precision_day",
+    "selected_feature": "release_precision",
+    "input_source_field": "release_precision",
+    "transformer": "OneHotEncoder",
+    "category": "cat=day",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 27,
+    "model_feature_name": "release_precision_month",
+    "selected_feature": "release_precision",
+    "input_source_field": "release_precision",
+    "transformer": "OneHotEncoder",
+    "category": "cat=month",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 28,
+    "model_feature_name": "release_precision_year",
+    "selected_feature": "release_precision",
+    "input_source_field": "release_precision",
+    "transformer": "OneHotEncoder",
+    "category": "cat=year",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 29,
+    "model_feature_name": "key_0",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=0",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 30,
+    "model_feature_name": "key_1",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=1",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 31,
+    "model_feature_name": "key_10",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=10",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 32,
+    "model_feature_name": "key_11",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=11",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 33,
+    "model_feature_name": "key_2",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=2",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 34,
+    "model_feature_name": "key_3",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=3",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 35,
+    "model_feature_name": "key_4",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=4",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 36,
+    "model_feature_name": "key_5",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=5",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 37,
+    "model_feature_name": "key_6",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=6",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 38,
+    "model_feature_name": "key_7",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=7",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 39,
+    "model_feature_name": "key_8",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=8",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 40,
+    "model_feature_name": "key_9",
+    "selected_feature": "key",
+    "input_source_field": "key",
+    "transformer": "OneHotEncoder",
+    "category": "cat=9",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 41,
+    "model_feature_name": "time_signature_1.0",
+    "selected_feature": "time_signature",
+    "input_source_field": "time_signature",
+    "transformer": "OneHotEncoder",
+    "category": "cat=1.0",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 42,
+    "model_feature_name": "time_signature_3.0",
+    "selected_feature": "time_signature",
+    "input_source_field": "time_signature",
+    "transformer": "OneHotEncoder",
+    "category": "cat=3.0",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 43,
+    "model_feature_name": "time_signature_4.0",
+    "selected_feature": "time_signature",
+    "input_source_field": "time_signature",
+    "transformer": "OneHotEncoder",
+    "category": "cat=4.0",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 44,
+    "model_feature_name": "time_signature_5.0",
+    "selected_feature": "time_signature",
+    "input_source_field": "time_signature",
+    "transformer": "OneHotEncoder",
+    "category": "cat=5.0",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 45,
+    "model_feature_name": "explicit_False",
+    "selected_feature": "explicit",
+    "input_source_field": "explicit",
+    "transformer": "OneHotEncoder",
+    "category": "cat=False",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 46,
+    "model_feature_name": "explicit_True",
+    "selected_feature": "explicit",
+    "input_source_field": "explicit",
+    "transformer": "OneHotEncoder",
+    "category": "cat=True",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 47,
+    "model_feature_name": "mode_0",
+    "selected_feature": "mode",
+    "input_source_field": "mode",
+    "transformer": "OneHotEncoder",
+    "category": "cat=0",
+    "mapping_status": "CONFIRMED"
+  },
+  {
+    "model_feature_index": 48,
+    "model_feature_name": "mode_1",
+    "selected_feature": "mode",
+    "input_source_field": "mode",
+    "transformer": "OneHotEncoder",
+    "category": "cat=1",
+    "mapping_status": "CONFIRMED"
+  }
+]

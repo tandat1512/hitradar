@@ -1,0 +1,10 @@
+task_id,requirement,expected,actual,evidence,status,human_action,warning,blocker,notes
+3.9.1,Repository audit,Clean reproducible final repository,Audit complete; repository not ready,feature_3_9_phase_1_gate.json,FAIL,Review/approve final file baseline,Large untracked set,Repository not reproducible,No auto-stage
+3.9.2,GitHub/final commit,Verified final commit on remote,No final commit/push,feature_3_9_phase_3_gate.json,BLOCKED,Authorization and reconciliation required,Remote differs,No final SHA,PREPARE_ONLY
+3.9.3,Artifact audit,Required artifacts present and hash-valid,22 present; 0 missing; 0 mismatch,feature_3_9_model_artifact_integrity.json,PASS_WITH_WARNING,None for hashes,Artifacts mostly untracked,No release baseline,Canonical hashes valid
+3.9.4,Reports/slides,Final report and final slide,Report and slide resolved,feature_3_9_phase_2_gate.json,PASS_WITH_HUMAN_SIGNOFF_PENDING,Human presenter/visual sign-off,None,None,Facts are derived from current files
+3.9.5,Release tag/final commit,Resolved release identity,FINAL_COMMIT_ONLY chosen; no commit,feature_3_9_release_record.json,BLOCKED,Human Git authorization,No tag convention,No release SHA,No tag invented
+3.9.6,Submission,Ready package and confirmed submission,NOT_READY; no receipt,feature_3_9_final_submission_state.json,BLOCKED,Official requirements + human submission,Requirements partially unknown,Slide/release missing,No submission claimed
+3.9.7,Demo,Lecturer demo with evidence,WAITING_FOR_HUMAN_DEMO,feature_3_9_final_demo_state.json,WAITING,Human demo/evidence,Working-tree identity unresolved,Release/slides/precheck blockers,Smoke is not demo
+3.9.8,Defense,Defense completed with outcome,WAITING_FOR_HUMAN_DEFENSE,feature_3_9_final_defense_state.json,WAITING,Human defense/evidence,Outcome unknown,Pre-defense actions open,No grade inferred
+3.9.9,Retrospective,Evidence-based retrospective,Complete,EPIC_3_RETROSPECTIVE.md,PASS,Human review pending,Epic remains incomplete,None for document creation,Does not close Epic

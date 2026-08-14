@@ -1,0 +1,54 @@
+{
+  "validation_id": "F31-P3-EOUT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:26:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "validation_status": "PASS",
+  "actual_output": {
+    "prediction_raw": 46.421062,
+    "prediction_clipped": 46.421062,
+    "prediction_display": 46
+  },
+  "required_fields_check": {
+    "status": "PASS",
+    "required_fields": ["status", "prediction_raw", "prediction_clipped", "prediction_display", "model_id", "model_version", "package_version", "warnings", "request_id"],
+    "all_present": true
+  },
+  "data_types_check": {
+    "status": "PASS",
+    "prediction_raw": "number",
+    "prediction_clipped": "number",
+    "prediction_display": "integer"
+  },
+  "finite_prediction_check": {
+    "status": "PASS",
+    "is_finite": true,
+    "prediction_raw": 46.421062
+  },
+  "range_check": {
+    "status": "PASS",
+    "raw_in_reasonable_range": true,
+    "prediction_raw": 46.421062,
+    "note": "Raw output not constrained to 0-100; clipping applied per contract"
+  },
+  "raw_clipped_display_consistency": {
+    "status": "PASS",
+    "clipped_equals_raw": true,
+    "display_equals_round": true,
+    "note": "Since prediction in [0,100], clipped=raw, display=round(raw)"
+  },
+  "model_version_check": {
+    "status": "PASS",
+    "model_version": "1.0.0",
+    "expected": "1.0.0",
+    "match": true
+  },
+  "warnings_field": {
+    "status": "PASS",
+    "type": "array",
+    "is_empty": true
+  },
+  "warnings": [],
+  "blockers": []
+}

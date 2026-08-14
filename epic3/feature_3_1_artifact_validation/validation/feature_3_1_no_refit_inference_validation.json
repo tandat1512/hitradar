@@ -1,0 +1,23 @@
+{
+  "validation_id": "F31-P3-NOREFIT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-08T07:34:10+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "validation_status": "PASS",
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+  "instrumentation_method": "method_interception",
+  "source_artifacts_modified": false,
+  "model_hash_unchanged": true,
+  "checks": {
+    "fit_count_zero": "PASS",
+    "fit_transform_count_zero": "PASS",
+    "partial_fit_count_zero": "PASS",
+    "hash_unchanged": "PASS",
+    "no_serialization": "PASS"
+  },
+  "warnings": [],
+  "blockers": []
+}

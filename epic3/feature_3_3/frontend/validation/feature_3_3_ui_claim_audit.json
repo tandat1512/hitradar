@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Audit of unsupported claims across all frontend pages and components",
+  "scan_targets": [
+    "pages/0_Home.py",
+    "pages/1_Predict.py",
+    "pages/2_Explain.py",
+    "pages/3_WhatIf.py",
+    "pages/4_Trends.py",
+    "pages/5_Model_Info.py",
+    "pages/6_Limitations.py",
+    "components/prediction_result.py",
+    "components/shap_explanation.py",
+    "components/whatif_comparison.py",
+    "components/error_states.py",
+    "components/predict_form.py"
+  ],
+  "prohibited_claims_checked": [
+    {
+      "claim": "AI predicts hits accurately",
+      "pattern": "accurately|predict.*hit",
+      "found": false
+    },
+    {
+      "claim": "Guaranteed hit",
+      "pattern": "guarantee|guaranteed",
+      "found": false
+    },
+    {
+      "claim": "90% accuracy",
+      "pattern": "\\d+%\\s*accuracy|accuracy\\s*\\d+%",
+      "found": false
+    },
+    {
+      "claim": "SHAP proves why songs become popular",
+      "pattern": "proves|prove|causes|cause.*popular",
+      "found": false,
+      "note": "Lines with 'causes' only appear in disclaimer/corrective context"
+    },
+    {
+      "claim": "Increase danceability to increase real popularity",
+      "pattern": "increase.*to increase.*real|causally|will.*popular",
+      "found": false
+    },
+    {
+      "claim": "Production-grade",
+      "pattern": "production-grade|production ready",
+      "found": false
+    },
+    {
+      "claim": "Industry-ready",
+      "pattern": "industry-ready|industry ready",
+      "found": false
+    },
+    {
+      "claim": "Bias-free",
+      "pattern": "bias-free|bias free|unbiased",
+      "found": false
+    }
+  ],
+  "unsupported_accuracy_claims_found": 0,
+  "unsupported_causal_claims_found": 0,
+  "notes": [
+    "All causal language found appears in disclaimer/attribution context, not as positive claims",
+    "SHAP attribution text: 'SHAP explains how the model arrived at this prediction. It describes model behavior, not causal relationships.' — correct",
+    "What-If attribution text: 'This shows how the model's prediction changes, not an actual effect.' — correct",
+    "Limitations page includes explicit causal disclaimer — correct"
+  ],
+  "status": "PASS"
+}

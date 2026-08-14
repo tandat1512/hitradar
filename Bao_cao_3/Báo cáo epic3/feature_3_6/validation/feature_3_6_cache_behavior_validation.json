@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 cache behavior validation — instrumented loader call count contract; live execution BLOCKED",
+  "evidence_method": "Instrumented underlying loader call count (NO hardcoded cache_hit=true)",
+  "expected_observations": [
+    {"step": "first call to cached loader", "loader_call_count": 1},
+    {"step": "second identical call (same source + params)", "loader_call_count": 1, "conclusion": "cache hit — underlying loader not re-invoked"},
+    {"step": "different key (changed params or source)", "loader_call_count": 2, "conclusion": "cache miss — new entry"}
+  ],
+  "targets": [
+    "backend: PipelineLoader._load_pipeline (model) — expect 1 call per process",
+    "backend: PipelineLoader._load_schemas / _load_metadata — expect 1 call per process",
+    "frontend page: load_yearly_features(path) — expect 1 call per cache lifecycle",
+    "frontend F3.4: load_trend_dataset_cached — expect 1 call per cache lifecycle"
+  ],
+  "actual": "BLOCKED (no live environment)",
+  "status": "BLOCKED"
+}

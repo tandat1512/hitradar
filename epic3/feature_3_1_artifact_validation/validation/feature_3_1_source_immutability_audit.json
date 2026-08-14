@@ -1,0 +1,77 @@
+{
+  "audit_id": "F31-P5-IMMUT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T08:14:00+07:00",
+  "feature_id": "3.1",
+  "phase": 5,
+  "audit_type": "source_immutability",
+  "policy": "No EPIC 2 source artifact shall be modified during Feature 3.1 execution",
+  "artifacts": [
+    {
+      "path": "7.ML/7.10.model_packaging/package/pipeline/full_inference_pipeline.joblib",
+      "sha256_before": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "sha256_after": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+      "unchanged": true,
+      "notes": "Model artifact verified unchanged before/after Phase 2-3"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/schemas/input_schema.json",
+      "unchanged": true,
+      "notes": "Input schema not modified during Feature 3.1"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/schemas/output_schema.json",
+      "unchanged": true,
+      "notes": "Output schema not modified during Feature 3.1"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/schemas/selected_features.json",
+      "unchanged": true,
+      "notes": "Selected features schema not modified"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/schemas/feature_names.json",
+      "unchanged": true,
+      "notes": "Feature names schema not modified"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/schemas/feature_mapping.json",
+      "unchanged": true,
+      "notes": "Feature mapping not modified"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+      "unchanged": true,
+      "notes": "Example input not modified during Feature 3.1"
+    },
+    {
+      "path": "7.ML/7.10.model_packaging/package/examples/example_output.json",
+      "unchanged": true,
+      "notes": "Example output not modified during Feature 3.1"
+    },
+    {
+      "path": "7.ML/7.8.model_evaluation/metrics/champion_test_metrics.json",
+      "unchanged": true,
+      "notes": "Model metrics not modified"
+    },
+    {
+      "path": "7.ML/7.8.model_evaluation/residuals/residual_statistics.json",
+      "unchanged": true,
+      "notes": "Residual statistics not modified"
+    },
+    {
+      "path": "7.ML/7.9.explainability/shap_values/shap_values_global.npy",
+      "unchanged": true,
+      "notes": "SHAP values not regenerated"
+    },
+    {
+      "path": "7.ML/7.9.explainability/shap_values/canonical_shap_values_manifest.json",
+      "unchanged": true,
+      "notes": "SHAP manifest not modified"
+    }
+  ],
+  "modified_artifacts": [],
+  "audit_status": "PASS",
+  "warnings": [],
+  "blockers": []
+}

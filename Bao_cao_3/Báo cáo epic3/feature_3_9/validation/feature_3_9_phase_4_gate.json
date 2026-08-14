@@ -1,0 +1,42 @@
+{
+  "demo_release_identity_resolved": false,
+  "demo_status": "WAITING_FOR_HUMAN_DEMO",
+  "demo_human_evidence_present": false,
+  "demo_feedback_status": "NOT_APPLICABLE_EVENT_NOT_OCCURRED",
+  "required_pre_defense_actions_open": 8,
+  "defense_status": "WAITING_FOR_HUMAN_DEFENSE",
+  "defense_human_evidence_present": false,
+  "defense_outcome": "OUTCOME_UNKNOWN",
+  "required_post_defense_actions_open": 0,
+  "fabricated_event_claim_count": 0,
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "git_write_executed": false,
+  "submission_executed": false,
+  "warnings": [
+    "No schedule, participants, lecturer/panel, feedback, score, receipt or event evidence was supplied.",
+    "Prior Feature 3.8 smoke evidence is technical preparation only and is not a human demo or defense.",
+    "Any current demo would be a dirty WORKING_TREE_DEMO, not a verified release commit."
+  ],
+  "blockers": [
+    {
+      "id": "F39-P4-B01",
+      "description": "No verified final release commit exists; demo release identity is unresolved."
+    },
+    {
+      "id": "F39-P4-B03",
+      "description": "Feature 3.8 retains open human readiness/traceability actions including roles, rehearsals, fallback, backups and physical checks."
+    },
+    {
+      "id": "F39-P4-B04",
+      "description": "Phase 3 remains FAIL/BLOCKED and submission status is NOT_READY."
+    }
+  ],
+  "warning_count": 3,
+  "blocker_count": 3,
+  "status": "FAIL",
+  "next_phase": "BLOCKED",
+  "generated_at": "2026-08-13T20:55:05+07:00"
+}

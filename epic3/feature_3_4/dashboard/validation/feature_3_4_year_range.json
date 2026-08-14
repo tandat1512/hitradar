@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "required_range": {"start": 1921, "end": 2020},
+  "actual_min": 1922,
+  "actual_max": 2019,
+  "range_status": "PARTIAL_RANGE_AVAILABLE",
+  "years_present_in_range": 98,
+  "years_missing_in_range": 0,
+  "missing_years": [],
+  "years_present_list": "1922-2019 (98 years continuous)",
+  "years_before_1922": [],
+  "years_after_2019_until_2020": [2020],
+  "note": "1921 is missing (first year in dataset is 1922). 2020 is missing (last year is 2019). These years do not exist in the source dataset. No synthetic data will be generated to fill gaps."
+}

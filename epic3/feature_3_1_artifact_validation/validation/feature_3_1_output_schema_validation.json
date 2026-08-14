@@ -1,0 +1,47 @@
+{
+  "validation_id": "F31-P2-OUT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:37:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "schema_path": "7.ML/7.10.model_packaging/package/schemas/output_schema.json",
+  "sha256": "3d77b33b1d23c806358a872d1481262e68b42b474f5218273e50ab5a69fb17e8",
+  "parse_status": "OK",
+  "schema_type": "custom_contract",
+  "schema_id": "HITRADAR-PREDICTION-OUTPUT-V1",
+  "schema_version": "1.0.0",
+  "field_count": 8,
+  "validation_status": "PASS",
+  "fields": [
+    {"name":"status","type":"string","required":true,"nullable":false,"description":"SUCCESS or ERROR","validation_status":"PASS"},
+    {"name":"model_id","type":"string","required":true,"nullable":false,"description":"Champion model ID","validation_status":"PASS"},
+    {"name":"model_version","type":"string","required":true,"nullable":false,"description":"Model version","validation_status":"PASS"},
+    {"name":"package_version","type":"string","required":true,"nullable":false,"description":"Package version","validation_status":"PASS"},
+    {"name":"prediction_raw","type":"number","required":true,"nullable":false,"description":"Raw model output, may be outside [0,100]","validation_status":"PASS"},
+    {"name":"prediction_clipped","type":"number","required":true,"nullable":false,"description":"Clipped to [0,100]","validation_status":"PASS"},
+    {"name":"prediction_display","type":"integer","required":true,"nullable":false,"description":"Rounded clipped prediction for display","validation_status":"PASS"},
+    {"name":"warnings","type":"array","required":true,"nullable":false,"description":"List of warning strings","validation_status":"PASS"}
+  ],
+  "checks": {
+    "json_parse": "PASS",
+    "status_field_present": "PASS",
+    "prediction_fields_present": "PASS",
+    "prediction_raw_number": "PASS",
+    "prediction_clipped_number": "PASS",
+    "prediction_display_integer": "PASS",
+    "model_version_present": "PASS",
+    "package_version_present": "PASS"
+  },
+  "notes": {
+    "prediction_raw": "May be outside 0-100 range",
+    "prediction_clipped": "Always in [0, 100]",
+    "prediction_display": "round(prediction_clipped)"
+  },
+  "data_quality_issue": {
+    "detail": "example_output.json declares package_version='1.0.0' but metadata/package_version.json declares package_version='2.7.0'",
+    "severity": "LOW",
+    "note": "This is a data inconsistency between example artifact and metadata, not a schema validation error"
+  },
+  "warnings": [],
+  "blockers": []
+}

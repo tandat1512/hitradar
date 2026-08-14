@@ -1,0 +1,117 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Chart/caption aggregation consistency validation",
+  "consistency_checks": [
+    {
+      "check": "popularity_year_trend",
+      "chart_aggregation": "mean(target_popularity) by release_year",
+      "caption_aggregation": "mean popularity",
+      "consistent": true
+    },
+    {
+      "check": "popularity_decade_trend",
+      "chart_aggregation": "mean(target_popularity) by decade",
+      "caption_aggregation": "mean popularity",
+      "consistent": true
+    },
+    {
+      "check": "audio_feature_year_trend",
+      "chart_aggregation": "mean(feature) by release_year",
+      "caption_aggregation": "mean feature value",
+      "consistent": true,
+      "note": "Feature from allow-list — no arbitrary columns"
+    },
+    {
+      "check": "audio_feature_decade_trend",
+      "chart_aggregation": "mean(feature) by decade",
+      "caption_aggregation": "mean feature value",
+      "consistent": true
+    },
+    {
+      "check": "explicit_trend",
+      "chart_aggregation": "rate = explicit_count / valid_count",
+      "caption_aggregation": "percentage (rate * 100)",
+      "consistent": true,
+      "note": "Never uses raw count as primary metric"
+    },
+    {
+      "check": "duration_trend",
+      "chart_aggregation": "mean(duration_min) by decade",
+      "caption_aggregation": "mean duration in minutes",
+      "consistent": true,
+      "note": "Unit: minutes (confirmed from Phase 1)"
+    },
+    {
+      "check": "track_count_by_year",
+      "chart_aggregation": "count(rows) by release_year",
+      "caption_aggregation": "track count",
+      "consistent": true
+    }
+  ],
+  "unit_checks": [
+    {
+      "field": "popularity",
+      "caption_unit": "0–100 (mean popularity score)",
+      "consistent": true
+    },
+    {
+      "field": "danceability",
+      "caption_unit": "0–1 (unitless)",
+      "consistent": true
+    },
+    {
+      "field": "energy",
+      "caption_unit": "0–1 (unitless)",
+      "consistent": true
+    },
+    {
+      "field": "tempo",
+      "caption_unit": "BPM",
+      "consistent": true
+    },
+    {
+      "field": "loudness",
+      "caption_unit": "dB",
+      "consistent": true
+    },
+    {
+      "field": "duration",
+      "caption_unit": "minutes",
+      "consistent": true,
+      "note": "NOT milliseconds"
+    }
+  ],
+  "2020_edge_case_checks": [
+    {
+      "chart": "popularity_decade_trend",
+      "2020_handling": "Labeled '2020 (single year)' in caption",
+      "note_in_caption": true,
+      "consistent": true
+    },
+    {
+      "chart": "audio_feature_decade_trend",
+      "2020_handling": "Labeled '2020 (single year)' in caption",
+      "note_in_caption": true,
+      "consistent": true
+    },
+    {
+      "chart": "explicit_trend",
+      "2020_handling": "Note: '2020' represents only the year 2020, not a full decade",
+      "note_in_caption": true,
+      "consistent": true
+    },
+    {
+      "chart": "duration_trend",
+      "2020_handling": "Note: '2020' represents only the year 2020, not a full decade",
+      "note_in_caption": true,
+      "consistent": true
+    }
+  ],
+  "max_min_accuracy": {
+    "note": "max/min values extracted directly from data_points[]. No hardcoded values in caption generator.",
+    "caption_generator_traceable": true,
+    "verified_from_aggregate": true
+  },
+  "status": "PASS"
+}

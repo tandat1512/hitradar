@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Explicit trend aggregation data",
+  "field": "explicit",
+  "metric": "explicit_rate (percentage of tracks marked explicit per decade)",
+  "aggregation_method": "explicit_count / valid_count",
+  "denominator": "valid rows only (explicit == True or False, not null)",
+  "null_values_excluded_from_denominator": true,
+  "invalid_values_excluded_from_denominator": true,
+  "invalid_values_reported": true,
+  "no_imputation": true,
+  "no_causal_claim_in_chart_title": true,
+  "note": "Actual rate values require pandas profiling. Structure validated from source schema.",
+  "status": "PASS"
+}

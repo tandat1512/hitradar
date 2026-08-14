@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 optimization decision log — evidence-driven, no code change without justification",
+  "rule": "No code modification just to produce a diff. If implementation already optimal → ALREADY_OPTIMIZED with evidence. Decisions must reference baseline evidence.",
+  "decisions": [
+    {
+      "optimization_id": "OPT-001",
+      "candidate": "Model loading",
+      "baseline_evidence": "feature_3_6_model_load_baseline.json — eager load in lifespan (api.py:47-51), PipelineLoader._pipeline singleton, 1 load per backend lifecycle, 0 reloads during requests",
+      "root_cause": "None — no reload detected. Model is loaded once at application startup and shared read-only.",
+      "proposed_change": "None",
+      "expected_effect": "N/A",
+      "risk": "None",
+      "decision": "ALREADY_OPTIMIZED",
+      "decision_reason": "Feature 3.2 already loads model once per process in lifespan and caches in a singleton. Per spec section 5: do not swap to a custom complex singleton. Do not create frontend model cache. No change."
+    },
+    {
+      "optimization_id": "OPT-002",
+      "candidate": "Static metadata caching (schemas, selected_features, model/data/package version JSON)",
+      "baseline_evidence": "feature_3_6_artifact_read_baseline.json — input_schema, selected_features, metadata JSONs each read 1x per lifecycle, cached in PipelineLoader (_schemas, _selected_features, _metadata)",
+      "root_cause": "None — already memoized in PipelineLoader on first access",
+      "proposed_change": "None",
+      "expected_effect": "N/A",
+      "risk": "None",
+      "decision": "ALREADY_OPTIMIZED",
+      "decision_reason": "All three metadata groups load once per process and are cached. No repeated disk read. No change."
+    },
+    {
+      "optimization_id": "OPT-003",
+      "candidate": "model_metrics.json read in GET /model-info",
+      "baseline_evidence": "feature_3_6_artifact_read_baseline.json — api.py:127-141 reads model_metrics.json from disk on every /model-info request; not cached",
+      "root_cause": "/model-info handler opens the metrics JSON per request instead of reusing PipelineLoader's metadata cache",
+      "proposed_change": "Load model_metrics.json once (lazy, into PipelineLoader._metadata) and reuse",
+      "expected_effect": "Removes one small disk read per /model-info",
+      "risk": "Low — but requires a live benchmark to demonstrate the read is significant; file is a few KB, read is microseconds",
+      "decision": "NOT_JUSTIFIED",
+      "decision_reason": "Per spec section 12, metadata caching is justified only if 'baseline cho thấy đáng kể'. No live baseline exists (Phase 1 BLOCKED). File size is tiny; measured impact cannot be established. Adding a code change without MEASURE evidence would violate the methodology. Re-evaluate after live baseline. Recorded as documented observation."
+    },
+    {
+      "optimization_id": "OPT-004",
+      "candidate": "Dashboard data caching (Music Trends)",
+      "baseline_evidence": "feature_3_6_dashboard_load_baseline.json — pages/4_Trends.py load_yearly_features(path) is @st.cache_data (path-keyed); Feature 3.4 dashboard_cache.load_trend_dataset_cached is st.cache_data (SHA-256-keyed)",
+      "root_cause": "None for caching — both layers use st.cache_data; the 169,681-row CSV is not re-read on warm reruns",
+      "proposed_change": "None",
+      "expected_effect": "N/A",
+      "risk": "None",
+      "decision": "ALREADY_OPTIMIZED",
+      "decision_reason": "Dashboard data is already cached with st.cache_data. The page in use keys by path; Feature 3.4 layer keys by SHA-256. Caching is correct for an immutable demo dataset. No change."
+    },
+    {
+      "optimization_id": "OPT-005",
+      "candidate": "Dashboard aggregation caching",
+      "baseline_evidence": "feature_3_6_dashboard_load_baseline.json — dashboard_cache.make_agg_cache_key encodes (version, feature, method, granularity, year bounds); aggregation results cached; page-level aggregation computed once then st.cache_data-cached",
+      "root_cause": "None for caching — aggregation runs once per session then cached",
+      "proposed_change": "None",
+      "expected_effect": "N/A",
+      "risk": "None",
+      "decision": "ALREADY_OPTIMIZED",
+      "decision_reason": "Aggregations are cached with parameter-aware keys. No repeated recomputation on warm reruns. No change."
+    }
+  ],
+  "summary": {
+    "total_candidates": 5,
+    "implement": 0,
+    "already_optimized": 4,
+    "not_justified": 1,
+    "rejected_risk": 0,
+    "not_applicable": 0
+  },
+  "production_code_changed": false,
+  "note_OPT_003": "model_metrics.json per-request read remains a documented observation (LOW). Re-evaluate after a live baseline exists.",
+  "observation_aggregation": "pages/4_Trends.py load_yearly_features aggregates 169,681 rows with a pure-Python loop (csv module, per-row dict math) — not pandas vectorized. Cold page load likely expensive (cached after first run). This is an aggregation-IMPLEMENTATION note, out of Phase 2 caching scope, and not a listed WBS task; do not change without live measurement and Feature 3.4 aggregate-value regression check.",
+  "status": "DECISIONS_RECORDED"
+}

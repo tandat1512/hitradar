@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "defense_status": "WAITING_FOR_HUMAN_DEFENSE",
+  "human_evidence_present": false,
+  "outcome": "OUTCOME_UNKNOWN",
+  "score": null,
+  "rehearsal_used_as_completion": false,
+  "status": "WAITING_FOR_HUMAN_DEFENSE"
+}

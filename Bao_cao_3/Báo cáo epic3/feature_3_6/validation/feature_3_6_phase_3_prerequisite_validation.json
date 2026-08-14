@@ -1,0 +1,27 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 Phase 3 prerequisite — canonical startup commands derived from actual source",
+  "canonical_commands": [
+    {
+      "component": "backend",
+      "command": "cd 5.UNG_DUNG/5.1.backend_api && python -m uvicorn api:app --host 127.0.0.1 --port 8000",
+      "source": "existing run.bat (run.bat:9) + api.py entrypoint",
+      "note": "run.bat used --reload (dev). run_all uses no --reload (stable demo).",
+      "entrypoint": "api:app",
+      "health": "GET /health → {status: healthy, model_loaded: true}"
+    },
+    {
+      "component": "frontend",
+      "command": "cd epic3/feature_3_3/frontend && python -m streamlit run app.py --server.port 8501",
+      "source": "app.py entrypoint + core/config.py get_settings()",
+      "entrypoint": "app.py",
+      "health": "GET /_stcore/health → 200 'ok'",
+      "backend_url_env": "BACKEND_BASE_URL (default http://localhost:8000)"
+    }
+  ],
+  "feature_3_5_startup_evidence": "Feature 3.5 final startup was BLOCKED (no live Python env) — canonical commands confirmed from source; live startup validation PENDING",
+  "phase_1_2_read": true,
+  "decision": "Commands confirmed from source. Live execution BLOCKED.",
+  "status": "COMMANDS_CONFIRMED_FROM_SOURCE"
+}

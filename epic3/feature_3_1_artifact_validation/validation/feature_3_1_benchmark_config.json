@@ -1,0 +1,28 @@
+{
+  "config_id": "F31-P4-BM-CFG-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:27:00+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "benchmark_scope": "LOCAL_INFERENCE",
+  "timer": "time.perf_counter_ns",
+  "garbage_collection_policy": "disabled_during_measurements",
+  "thread_policy": "default (no affinity set)",
+  "warm_up_iterations": 10,
+  "measured_single_iterations": 200,
+  "fresh_process_load_runs": 5,
+  "batch_sizes": [1, 10, 100],
+  "input_source": "example_input.json (canonical single record, repeated)",
+  "timeout_per_run_ms": 30000,
+  "batch_runs_per_size": 20,
+  "single_runs_per_batch_size": 20,
+  "output_digest": "hashlib.sha256(str(value).encode()).hexdigest()[:16]",
+  "memory_measurement": "NOT_MEASURED_OPTIONAL",
+  "random_seed_synthetic": "N/A (using canonical example_input only)",
+  "notes": [
+    "Cold load measured in separate subprocess calls for accurate process-start overhead",
+    "Single/batch warm inference measured in-process after warm-up",
+    "GC disabled during timing to avoid measurement jitter",
+    "Batch is sequential loop over single-record calls (native batch not supported by wrapper)"
+  ]
+}

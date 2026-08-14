@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-13T20:55:05+07:00",
+  "precheck_only_not_defense_completion": true,
+  "source_checklist": {
+    "path": "Bao_cao_3/Báo cáo epic3/feature_3_8/FINAL_DEFENSE_CHECKLIST.md",
+    "sha256": "757da1986657d56aa2617821e7e727ada6f73b4e4b79e251c2f33b3d2e79e3e8"
+  },
+  "checks": [
+    {
+      "check": "final_release_identity",
+      "status": "FAIL",
+      "human_confirmed": false
+    },
+    {
+      "check": "actual_final_slide_deck",
+      "status": "PASS",
+      "human_confirmed": false
+    },
+    {
+      "check": "presenter_demo_backup_qa_roles",
+      "status": "PENDING",
+      "human_confirmed": false
+    },
+    {
+      "check": "rehearsal_1",
+      "status": "PENDING",
+      "human_confirmed": false
+    },
+    {
+      "check": "rehearsal_2",
+      "status": "PENDING",
+      "human_confirmed": false
+    },
+    {
+      "check": "backup_assets_and_offline_disclosure",
+      "status": "FAIL",
+      "human_confirmed": false
+    },
+    {
+      "check": "device_browser_charger_local_copy",
+      "status": "PENDING",
+      "human_confirmed": false
+    },
+    {
+      "check": "participant_availability",
+      "status": "PENDING",
+      "human_confirmed": false
+    }
+  ],
+  "human_confirmed_item_count": 0,
+  "status": "NOT_READY_HUMAN_CONFIRMATION_REQUIRED"
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final run_backend smoke — BLOCKED (no live env)",
+  "command": "python scripts/run_backend.py",
+  "expected_verifications": {
+    "starts_fastapi": "uvicorn api:app on 127.0.0.1:8000",
+    "health_ready": "GET /health → 200",
+    "model_ready": "model_loaded=true",
+    "url_documented": "http://127.0.0.1:8000",
+    "shutdown_clean": "Ctrl+C → graceful stop, exit 0, no orphan"
+  },
+  "actual": "BLOCKED",
+  "status": "BLOCKED"
+}

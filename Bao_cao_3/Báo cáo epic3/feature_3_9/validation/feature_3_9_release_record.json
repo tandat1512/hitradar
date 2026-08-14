@@ -1,0 +1,15 @@
+{
+  "release_mode": "FINAL_COMMIT_ONLY",
+  "branch": "main",
+  "final_commit_sha": null,
+  "remote_verified": false,
+  "tag": null,
+  "tag_remote_verified": false,
+  "model_version": "1.0.0",
+  "artifact_version": "2.7.0",
+  "documentation_manifest_hash": "95f81cf16a928cffeba495e9ceb64b6a85dd0ddaa7a6a55ff2846ff36ac00f96",
+  "submission_manifest_hash": "a8237bf7f9096e94ce424bcd255f4e626929eaca7f683d37cd7f77a390ee729a",
+  "created_at": "2026-08-13T20:55:04+07:00",
+  "release_record_complete": false,
+  "status": "BLOCKED_NO_FINAL_COMMIT"
+}

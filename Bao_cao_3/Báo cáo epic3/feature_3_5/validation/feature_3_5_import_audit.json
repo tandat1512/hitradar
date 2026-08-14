@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 clean import validation — from source inspection",
+  "backend_imports": {
+    "application_module": "5.UNG_DUNG/5.1.backend_api/api.py",
+    "runtime_dependencies": ["fastapi", "uvicorn", "pydantic", "joblib", "sklearn", "xgboost", "numpy", "pandas", "shap"],
+    "declared_in": "5.UNG_DUNG/5.1.backend_api/requirements.txt",
+    "all_declared": true
+  },
+  "frontend_imports": {
+    "application_module": "epic3/feature_3_3/frontend/app.py",
+    "runtime_dependencies": ["streamlit", "httpx"],
+    "declared_in": "NONE (no requirements.txt in frontend directory)",
+    "all_declared": false,
+    "bug_id": "F35-BUG-003"
+  },
+  "import_smoke_tests": "PENDING (requires Python environment)",
+  "imports_blocked_by": "No Python environment available in this session",
+  "status": "CONTRACT_VALIDATED"
+}

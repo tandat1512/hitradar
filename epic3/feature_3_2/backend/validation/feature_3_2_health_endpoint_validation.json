@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-06T01:20:56.098208+00:00",
+  "status": "PASS",
+  "http_status": 200,
+  "response_body_keys": [
+    "api_version",
+    "explain_service_available",
+    "model_loaded",
+    "model_ready",
+    "model_version",
+    "service_name",
+    "status",
+    "timestamp",
+    "what_if_available"
+  ],
+  "has_status": true,
+  "has_service_name": true,
+  "has_api_version": true,
+  "has_model_loaded": true,
+  "has_model_ready": true,
+  "has_timestamp": true,
+  "has_model_version": true,
+  "status_values": [
+    "healthy",
+    "degraded",
+    "unavailable"
+  ],
+  "warnings": [],
+  "blockers": []
+}

@@ -1,0 +1,4 @@
+bug_id,severity,scenario,expected,actual,root_cause,fix_action,fix_status,regression_test,retest_status
+F35-BUG-001,BLOCKER,No live Python env — E2E blocked,Backend starts and health check passes,Backend not started,No Python runtime available,Run in live Python env,NOT_FIXABLE,Backend health check → 200,BLOCKED
+F35-BUG-002,LOW,httpx missing from 5.UNG_DUNG backend requirements.txt,httpx declared for testing,httpx only in epic3/feature_3_2/backend/requirements.txt,httpx is testing dep; backend runtime doesn't use httpx,Add httpx>=0.27.0 to 5.UNG_DUNG/5.1.backend_api/requirements.txt,FIX_APPLIED,pip install httpx succeeds,FIX_APPLIED
+F35-BUG-003,MEDIUM,No requirements.txt in epic3/feature_3_3/frontend/,Frontend declares streamlit+httpx,No requirements.txt exists,Missing dependency declaration,Create requirements.txt with streamlit>=1.30.0 httpx>=0.27.0,PENDING,pip install succeeds in fresh venv,PENDING

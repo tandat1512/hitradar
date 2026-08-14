@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "rows": 169681,
+  "columns": 20,
+  "duplicate_rows": null,
+  "empty_rows": null,
+  "note": "Data quality profile unavailable — shell blocked profiling script execution. Quality profile to be completed when shell access is restored. For Phase 1 Gate purposes, schema, year range, and column inventory are confirmed from source inspection.",
+  "quality_profile_pending": "duplicate_rows, null_count per column, non_finite counts — confirmed missing when shell is available"
+}

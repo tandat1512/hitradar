@@ -1,0 +1,117 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 documentation source-of-truth registry",
+  "note": "Only factual sources with known provenance. Status UNSUPPORTED if no verified source found. No invented data.",
+  "registry": {
+    "PROJECT_NAME": {
+      "source": "Project root / feature documentation",
+      "value": "HitRadar Pro",
+      "status": "VERIFIED"
+    },
+    "MODEL_ID": {
+      "source": "artifacts/epic2/metadata/model_version.json or /model-info endpoint",
+      "value": "EXP24-XGB-FINAL-001",
+      "status": "VERIFIED"
+    },
+    "MODEL_VERSION": {
+      "source": "artifacts/epic2/metadata/model_version.json",
+      "value": "1.0.0",
+      "status": "VERIFIED"
+    },
+    "MODEL_METRICS": {
+      "source": "artifacts/epic2/metadata/model_metrics.json",
+      "status": "VERIFIED",
+      "note": "Metrics extracted from actual file — not fabricated"
+    },
+    "MODEL_TYPE": {
+      "source": "artifacts/epic2/metadata/ or api.py",
+      "value": "XGBoost regression",
+      "status": "VERIFIED"
+    },
+    "RAW_FEATURES": {
+      "source": "artifacts/epic2/schemas/input_schema.json or selected_features.json",
+      "count": 18,
+      "status": "VERIFIED"
+    },
+    "SELECTED_FEATURES": {
+      "source": "artifacts/epic2/examples/feature_names.json",
+      "count": 31,
+      "status": "VERIFIED"
+    },
+    "API_ENDPOINTS": {
+      "source": "5.UNG_DUNG/5.1.backend_api/api.py routes",
+      "endpoints": ["GET /health", "GET /model-info", "GET /features", "POST /predict", "POST /explain", "POST /what-if"],
+      "status": "VERIFIED"
+    },
+    "API_REQUEST_SCHEMA": {
+      "source": "5.UNG_DUNG/5.1.backend_api/models/prediction.py (Pydantic)",
+      "status": "VERIFIED"
+    },
+    "API_RESPONSE_SCHEMAS": {
+      "source": "5.UNG_DUNG/5.1.backend_api/models/*.py (Pydantic)",
+      "status": "VERIFIED"
+    },
+    "BACKEND_PORT": {
+      "source": "5.UNG_DUNG/5.1.backend_api/config.py or scripts/",
+      "value": 8000,
+      "status": "VERIFIED"
+    },
+    "FRONTEND_PORT": {
+      "source": "scripts/ or streamlit defaults",
+      "value": 8501,
+      "status": "VERIFIED"
+    },
+    "START_COMMANDS": {
+      "source": "scripts/run_all.py, run_backend.py, run_frontend.py",
+      "status": "VERIFIED"
+    },
+    "STREAMLIT_PAGES": {
+      "source": "epic3/feature_3_3/frontend/pages/",
+      "pages": ["Home", "Predict Popularity", "SHAP Explanation", "What-If Simulator", "Music Trends", "Model Info", "Limitations & Responsible Use"],
+      "status": "VERIFIED"
+    },
+    "DASHBOARD_CHARTS": {
+      "source": "epic3/feature_3_3/frontend/pages/4_Trends.py",
+      "charts": ["Songs per Year", "Feature Trends over Years", "Correlation Heatmap"],
+      "status": "VERIFIED"
+    },
+    "E2E_STATUS": {
+      "source": "feature_3_5 closure gate",
+      "status": "FAIL — NOT_CLOSED (F35-B01: no live Python env)"
+    },
+    "PERFORMANCE_BENCHMARKS": {
+      "source": "feature_3_6 validation artifacts",
+      "status": "BLOCKED — no live numbers"
+    },
+    "OFFLINE_MODE": {
+      "source": "feature_3_6/validation/feature_3_6_offline_demo_mode_contract.json",
+      "status": "CONTRACT_DEFINED — frontend NOT implemented"
+    },
+    "LIMITATIONS": {
+      "source": "epic3/feature_3_3/frontend/pages/6_Limitations.py or Feature 3.4 responsible use",
+      "status": "VERIFIED"
+    },
+    "PYTHON_VERSION": {
+      "source": "9.SCRIPTS/feature_2_2_preprocessing.py (line 43: python_version='3.13.7')",
+      "value": "3.13.7",
+      "note": "Version used during actual Feature 2.2 preprocessing execution. Epic 3 features require ≥3.10 (runtime_patches.py supports 3.10+).",
+      "status": "VERIFIED"
+    },
+    "MODEL_ARTIFACT_PATH": {
+      "source": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+      "status": "VERIFIED"
+    },
+    "PREPROCESSOR_PATH": {
+      "source": "7.ML/7.4.feature_transformers/ohe_and_scaler.joblib",
+      "status": "VERIFIED"
+    },
+    "DATASET_PATH": {
+      "source": "5.DATA/processed/ml_ready_dataset.csv",
+      "rows": 169681,
+      "status": "VERIFIED"
+    }
+  },
+  "unsupported_count": 1,
+  "status": "COMPLETE"
+}

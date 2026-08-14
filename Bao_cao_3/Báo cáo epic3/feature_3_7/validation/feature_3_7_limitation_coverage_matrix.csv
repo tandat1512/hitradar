@@ -1,0 +1,20 @@
+limitation,category,README.md,USER_MANUAL.md,API_DOCUMENTATION.md,HOW_TO_RUN_APP.md,TECHNICAL_APPENDIX.md,notes
+Model is XGBoost regression (not classification),MODEL,§Overview table,§5 §10,§7 §12,Y,planned Phase 4,VERIFIED
+Output is regression score (0-100) not probability,PREDICTION,§Overview §Key Features,§5 §10,§7 §12,-,VERIFIED
+Prediction not a guarantee of commercial success,PREDICTION,§Overview,§5 §10,§12,-,VERIFIED
+SHAP explains model behavior not causation,SHAP,§Key Features,§6 §10,§8 §12,-,VERIFIED
+What-If shows model output changes not real causation,WHAT_IF,§Key Features,§7 §10,§9 §12,-,VERIFIED
+Dataset 1922-2019 — not comprehensive global music,DATA,§Model/Data Overview,-,§12,§8,-,VERIFIED
+Popularity is Spotify engagement metric not quality measure,DATA,-,§10 §12,-,-,-,VERIFIED
+Student research prototype not production tool,SCOPE,§Overview,§1 §10 §12,-,§12,VERIFIED
+Metrics (MAE/RMSE/R²) describe training fit not reliability,MODEL,-,§9 §10,§6 §12,-,VERIFIED
+Correlational ≠ causal warning,ALL,-,§10 §12,-,-,VERIFIED
+Audio features insufficient alone (no cultural/artistic),FAIRNESS,-,§10 §12,-,-,-,VERIFIED
+Model may reflect training data biases,FAIRNESS,-,§10 §12,-,-,-,VERIFIED
+Offline Demo = precomputed scenarios not live inference,OFFLINE,-,§2 §12,§12,Y,VERIFIED
+Offline SHAP/What-If NOT AVAILABLE offline,OFFLINE,-,§2 §12,-,-,-,VERIFIED
+Dashboard shows available dataset not all music,DASHBOARD,-,§8,-,-,-,VERIFIED
+Temporal coverage: model trained on 1922-2019,MODEL,-,§8 §10,-,-,-,VERIFIED
+No SLA for API response times,PERFORMANCE,-,-,§12,-,-,VERIFIED
+Backend unavailable = 503 error,ERROR,-,§11,-,-,-,VERIFIED
+Model not loaded = 503,ERROR,-,-,§4-§9,-,-,VERIFIED

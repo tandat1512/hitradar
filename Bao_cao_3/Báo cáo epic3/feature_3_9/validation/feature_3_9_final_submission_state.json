@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "upstream_status": "NOT_READY",
+  "submission_status": "NOT_READY",
+  "submission_package_ready": false,
+  "submission_confirmed": false,
+  "upgraded": false,
+  "note": "Submission remains NOT_READY until both the technical package and verified final release are complete; human submission is never inferred."
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-08-05T14:46:03.495364+00:00",
+  "is_healthy": true,
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "model_family": "XGBoost",
+  "package_version": "1.0.0",
+  "data_version": "1.0.0",
+  "feature_set": "FS23-SELECTED",
+  "total_input_fields": 18,
+  "total_selected_features": 31,
+  "canonical_field_count": 18,
+  "input_field_count_from_schema": 18,
+  "selected_feature_count_from_schema": 31,
+  "service_healthy": true,
+  "warnings": [],
+  "blockers": [],
+  "status": "PASS"
+}

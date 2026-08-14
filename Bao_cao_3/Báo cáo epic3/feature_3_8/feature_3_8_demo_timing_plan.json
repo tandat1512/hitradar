@@ -1,0 +1,21 @@
+{
+  "plan_type": "PLANNING_ESTIMATE",
+  "official_demo_duration_known": false,
+  "official_duration_seconds": null,
+  "official_threshold_validation": "NOT_APPLICABLE_UNTIL_DURATION_IS_PROVIDED",
+  "steps": [
+    {"step_id": "PRECHECK", "target_duration_seconds": 90, "counted_in_presented_demo": false},
+    {"step_id": "HOME", "target_duration_seconds": 30, "counted_in_presented_demo": true},
+    {"step_id": "PREDICT", "target_duration_seconds": 75, "counted_in_presented_demo": true},
+    {"step_id": "EXPLAIN", "target_duration_seconds": 60, "counted_in_presented_demo": true},
+    {"step_id": "WHAT_IF", "target_duration_seconds": 60, "counted_in_presented_demo": true},
+    {"step_id": "TRENDS", "target_duration_seconds": 60, "counted_in_presented_demo": true},
+    {"step_id": "MODEL_INFO_LIMITATIONS", "target_duration_seconds": 45, "counted_in_presented_demo": true},
+    {"step_id": "END", "target_duration_seconds": 20, "counted_in_presented_demo": true}
+  ],
+  "precheck_seconds": 90,
+  "presented_demo_seconds": 350,
+  "total_planning_seconds": 440,
+  "short_flow_presented_seconds": 215,
+  "short_flow_rule": "Keep Predict; shorten Home/Trends/Model Info; run Explain only if immediately responsive; skip unsupported offline Explain/What-if."
+}

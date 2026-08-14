@@ -1,0 +1,144 @@
+{
+  "gate_id": "F31-P1-GATE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:12:00+07:00",
+  "feature_id": "3.1",
+  "phase": 1,
+  "gate_status": "FAIL",
+  "overall_readiness": "BLOCKED",
+  "gate_summary": {
+    "total_criteria": 12,
+    "pass": 8,
+    "fail": 3,
+    "warn": 1,
+    "blocker_count": 3
+  },
+  "gate_criteria": [
+    {
+      "criterion_id": "GC-01",
+      "name": "Handoff Document Exists",
+      "description": "handoff_to_epic3.md must be present",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "detail": "handoff_to_epic3.md not found. Only MODEL_PACKAGE_README.md serves as functional substitute."
+    },
+    {
+      "criterion_id": "GC-02",
+      "name": "Handoff Document is Valid",
+      "description": "Handoff document must parse as valid Markdown",
+      "status": "PASS",
+      "detail": "MODEL_PACKAGE_README.md is readable as functional substitute"
+    },
+    {
+      "criterion_id": "GC-03",
+      "name": "Model Artifact Exists",
+      "description": "full_inference_pipeline.joblib must exist at declared path",
+      "status": "PASS",
+      "detail": "Found at pipeline/full_inference_pipeline.joblib, SHA-256: 7ff4b118...1a7d99, 3.98 MB"
+    },
+    {
+      "criterion_id": "GC-04",
+      "name": "Model Artifact Integrity",
+      "description": "full_inference_pipeline.joblib SHA-256 must match manifest",
+      "status": "PASS",
+      "detail": "Hash matches exactly: 7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99"
+    },
+    {
+      "criterion_id": "GC-05",
+      "name": "Artifact Manifest Self-Consistency",
+      "description": "artifact_manifest.json must have consistent sub-entry hashes",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "detail": "Sub-entry for inference_pipeline.py is stale: manifest says 34ef2eb... but actual is 6a54f86... (180 bytes larger). artifact_manifest.json itself was not updated when file was changed."
+    },
+    {
+      "criterion_id": "GC-06",
+      "name": "Input Schema Valid and Complete",
+      "description": "schemas/input_schema.json must have exactly 18 fields",
+      "status": "PASS",
+      "detail": "input_schema.json has exactly 18 fields with all required metadata (types, ranges, defaults)"
+    },
+    {
+      "criterion_id": "GC-07",
+      "name": "Output Schema Valid",
+      "description": "schemas/output_schema.json must define prediction_raw/clipped/display",
+      "status": "PASS",
+      "detail": "output_schema.json defines all required fields"
+    },
+    {
+      "criterion_id": "GC-08",
+      "name": "Feature Mapping Complete",
+      "description": "schemas/feature_mapping.json must map all 49 transformed features",
+      "status": "PASS",
+      "detail": "feature_mapping.json has 49 entries (indices 0-48), all mapping_status: CONFIRMED"
+    },
+    {
+      "criterion_id": "GC-09",
+      "name": "Model Version Metadata",
+      "description": "metadata/model_version.json must declare EXP24-XGB-FINAL-001",
+      "status": "PASS",
+      "detail": "model_id: EXP24-XGB-FINAL-001, model_version: 1.0.0"
+    },
+    {
+      "criterion_id": "GC-10",
+      "name": "Example Input/Output Valid",
+      "description": "examples/ must contain valid example_input.json and example_output.json",
+      "status": "PASS",
+      "detail": "example_input.json has 18 fields, example_output.json has prediction_raw: 46.42"
+    },
+    {
+      "criterion_id": "GC-11",
+      "name": "SHAP Artifacts Available",
+      "description": "7.ML/7.9.explainability/ must contain SHAP artifacts for explainability feature",
+      "status": "PASS",
+      "detail": "134 SHAP artifacts found including global/local explanations, waterfall images, and configuration"
+    },
+    {
+      "criterion_id": "GC-12",
+      "name": "Requirements Files Available",
+      "description": "requirements-*.txt files must be present for dependency installation",
+      "status": "WARN",
+      "severity": "LOW",
+      "detail": "requirements-lock.txt has size mismatch (117 vs 115 bytes) but hash matches — likely trailing newline removed"
+    }
+  ],
+  "blockers": [
+    {
+      "blocker_id": "BLK-GLOBAL-001",
+      "type": "MISSING_HANDOFF_DOCUMENT",
+      "severity": "HIGH",
+      "criterion": "GC-01",
+      "description": "handoff_to_epic3.md not found — formal EPIC 2 → EPIC 3 handoff document missing",
+      "impact": "Cannot confirm EPIC 2 team formally handed off artifacts to EPIC 3 team",
+      "workaround": "MODEL_PACKAGE_README.md acts as functional substitute",
+      "required_action": "EPIC 2 team must provide handoff_to_epic3.md OR EPIC 3 team must formally accept MODEL_PACKAGE_README.md as handoff"
+    },
+    {
+      "blocker_id": "BLK-GLOBAL-002",
+      "type": "STALE_MANIFEST",
+      "severity": "HIGH",
+      "criterion": "GC-05",
+      "description": "artifact_manifest.json sub-entry for runtime/inference_pipeline.py is stale",
+      "impact": "Manifest cannot be trusted for integrity verification — one artifact has been modified post-packaging",
+      "affected_file": "7.ML/7.10.model_packaging/package/runtime/inference_pipeline.py",
+      "manifest_declared": "34ef2ebe49bf82923806e926115c2c86eb186735dd637f8cbe3b624a18dd8ffa",
+      "actual_hash": "6a54f86cfb87059a2a4276ce970f74797649255ad3c28f23286a0f44a51570c7",
+      "required_action": "Update artifact_manifest.json with correct hash, or investigate why file was modified post-packaging"
+    },
+    {
+      "blocker_id": "BLK-GLOBAL-003",
+      "type": "EMPTY_METRIC_FILE",
+      "severity": "MEDIUM",
+      "description": "4.MODELS/4.2.evaluation/model_metrics.json is empty (0 bytes)",
+      "impact": "Cannot verify model performance characteristics (R2, RMSE, MAE) during intake",
+      "location": "H:/dự án/DUAN1 github/4.MODELS/4.2.evaluation/model_metrics.json",
+      "required_action": "EPIC 2 team must provide populated model_metrics.json or EPIC 3 team must regenerate"
+    }
+  ],
+  "recommendation": "HOLD — Gate is FAIL. Three blockers must be resolved before Phase 2 (artifact load test) can proceed. Workaround exists for GC-01 (MODEL_PACKAGE_README.md substitute), but GC-02 (stale manifest) and GC-03 (empty metrics) require EPIC 2 team action.",
+  "phase_2_prerequisites": [
+    "Resolve BLK-GLOBAL-001: Obtain or formally accept handoff substitute",
+    "Resolve BLK-GLOBAL-002: Update artifact_manifest.json with correct inference_pipeline.py hash",
+    "Resolve BLK-GLOBAL-003: Populate or regenerate model_metrics.json"
+  ]
+}

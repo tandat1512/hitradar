@@ -1,0 +1,62 @@
+{
+  "phase": "1/5",
+  "feature": "3.6",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "feature_3_5_gate_valid": false,
+  "feature_3_5_reason": "Feature 3.5 status FAIL/NOT_CLOSED — live E2E blocked by F35-BUG-001 (no Python env). Prerequisite per spec: Phase 1 = BLOCKED.",
+
+  "benchmark_environment_recorded": true,
+  "benchmark_environment_note": "Design captured; hardware/version values require live capture",
+
+  "api_benchmark_real_http": false,
+  "api_sample_count": 0,
+  "api_failure_count": 0,
+  "api_prediction_mismatch_count": 0,
+  "api_note": "Actual HTTP benchmark BLOCKED — no live backend",
+
+  "backend_startup_baseline_valid": false,
+  "first_prediction_baseline_valid": false,
+  "warm_prediction_baseline_valid": false,
+
+  "model_load_baseline_resolved": true,
+  "model_load_evidence": "api.py lifespan eager load + PipelineLoader singleton: 1 load per lifecycle, 0 reloads during requests. ALREADY_OPTIMIZED candidate.",
+  "artifact_read_baseline_resolved": true,
+  "artifact_read_evidence": "4 of 5 artifact groups cached once-per-lifecycle. model_metrics.json read per /model-info (minor, LOW priority candidate).",
+
+  "streamlit_startup_baseline_valid": false,
+  "page_benchmark_complete": false,
+  "dashboard_load_baseline_valid": true,
+  "dashboard_load_evidence": "st.cache_data keyed by source SHA-256 — dataset loaded once per Streamlit cache lifecycle. ALREADY_OPTIMIZED candidate.",
+
+  "bottlenecks_identified": true,
+  "bottleneck_note": "Source-audit bottlenecks: SHAP_COMPUTATION (per-request, expected), ARTIFACT_READING (model_metrics.json, LOW), NETWORK_LOCAL_OVERHEAD (inherent). Live magnitudes PENDING.",
+
+  "training_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "source_dataset_modified": false,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_note": "Live pytest BLOCKED — no Python environment",
+
+  "warnings": [
+    "F36-W01: Feature 3.5 not closed — live E2E baseline invalid",
+    "F36-W02: All latency statistics PENDING — require live Python environment",
+    "F36-W03: Hardware/software versions not captured live",
+    "F36-W04: model_metrics.json read per /model-info (LOW candidate)"
+  ],
+  "blockers": [
+    "F36-B01: F35-BUG-001 — no live Python environment; Feature 3.5 E2E invalid, so Phase 1 benchmark cannot produce a valid baseline",
+    "F36-B02: No live backend/frontend processes to measure"
+  ],
+
+  "status": "FAIL",
+  "reason": "Prerequisite gate failed: Feature 3.5 is NOT_CLOSED (live execution blocked). Per spec, benchmarking a system without validated functional E2E would produce an invalid baseline. Benchmark methodology, harness design, source-audit baselines (model load, artifact read, dashboard cache), page registry, and bottleneck classification are complete. Live measurement blocked.",
+
+  "next_phase": "BLOCKED"
+}

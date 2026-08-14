@@ -1,0 +1,12 @@
+{
+  "feature_id":"3.8",
+  "generated_at":"2026-08-12T00:20:00+07:00",
+  "rehearsal_1":{"actual_human_completed":false,"status":"HUMAN_REHEARSAL_REQUIRED"},
+  "rehearsal_2":{"actual_human_completed":false,"status":"HUMAN_REHEARSAL_REQUIRED"},
+  "issue_registry":{"schema_exists":true,"actual_r1_issues_recorded":false,"status":"AWAITING_R1"},
+  "remaining_blockers":null,
+  "remaining_high":null,
+  "zero_remaining_proven":false,
+  "status":"WAITING_FOR_HUMAN_ACTION",
+  "note":"Null is intentional; no human rehearsal evidence exists from which to calculate remaining severities."
+}

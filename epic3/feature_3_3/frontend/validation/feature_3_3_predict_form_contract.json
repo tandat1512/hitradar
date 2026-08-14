@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "form_source": "GET /features canonical_fields",
+  "fields": [
+    "release_year", "release_month", "decade", "release_precision",
+    "duration_min", "explicit",
+    "danceability", "energy", "speechiness", "acousticness",
+    "instrumentalness", "liveness", "valence", "tempo",
+    "loudness", "key", "mode", "time_signature"
+  ],
+  "field_count": 18,
+  "no_target": true,
+  "no_model_version_override": true,
+  "no_selected_features_in_payload": true,
+  "uses_st_form": true,
+  "no_api_call_on_widget_change": true,
+  "defaults_from_feature_metadata": true,
+  "no_stale_schema_fallback": true,
+  "status": "PASS"
+}

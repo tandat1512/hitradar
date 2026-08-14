@@ -1,0 +1,25 @@
+{
+  "validated_at": "2026-08-13T20:55:04+07:00",
+  "remote_name": "origin",
+  "remote_url_sanitized": "https://github.com/tandat1512/hitradar.git",
+  "expected_repository": "HitRadar / hitradar",
+  "remote_configured": true,
+  "branch": "main",
+  "branch_tracking": {
+    "remote": "origin",
+    "merge": "refs/heads/main",
+    "configured": true
+  },
+  "repository_matches_project": true,
+  "remote_reachable": true,
+  "local_head": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+  "local_tracking_sha": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+  "remote_branch_sha": "e093c71a153800e43caafdea672196b6e9299e8b",
+  "local_matches_remote_branch": false,
+  "tracking_ref_is_current": false,
+  "remote_valid": true,
+  "warnings": [
+    "Remote main differs from local HEAD and the local origin/main tracking ref is stale; reconcile before any push."
+  ],
+  "status": "VALID_WITH_SYNC_BLOCKER"
+}

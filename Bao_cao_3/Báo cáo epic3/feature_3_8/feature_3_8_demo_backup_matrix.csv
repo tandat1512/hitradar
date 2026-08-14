@@ -1,0 +1,8 @@
+demo_step,live_status,offline_status,screenshot,video_coverage,fallback_order
+Home,FRONTEND_HEALTH_PASS,LOCAL_PAGE_ONLY,MISSING:demo/backup/screenshots/01_home.png,MISSING_MANUAL_RECORDING_REQUIRED,Open local Home; otherwise use script framing
+Predict,LIVE_PASS_CURRENT_DRY_RUN,PRECOMPUTED_VALIDATED_CANONICAL_ONLY,MISSING:demo/backup/screenshots/02_predict.png,MISSING_MANUAL_RECORDING_REQUIRED,Health once > retry once > disclose offline > show validated input/output evidence
+Explain,LIVE_PASS_FINAL_SMOKE_SKIP_ON_SLOW_RESPONSE,NOT_AVAILABLE,MISSING:demo/backup/screenshots/03_explain.png,MISSING_MANUAL_RECORDING_REQUIRED,Skip promptly if slow > state unavailable > never fabricate SHAP
+What-if,LIVE_PASS_CURRENT_DRY_RUN,NOT_AVAILABLE,MISSING:demo/backup/screenshots/04_whatif.png,MISSING_MANUAL_RECORDING_REQUIRED,Retry once if quick > skip > never fabricate delta
+Music Trends,LOCAL_DATA_PASS_CURRENT_DRY_RUN,LOCAL_FILE_IF_AVAILABLE,MISSING:demo/backup/screenshots/05_trends.png,MISSING_MANUAL_RECORDING_REQUIRED,Show coverage caption > if data fails disclose and skip
+Model Info,LIVE_PASS_CURRENT_DRY_RUN,VALIDATED_STATIC_SNAPSHOT_ONLY,MISSING:demo/backup/screenshots/06_model_info.png,MISSING_MANUAL_RECORDING_REQUIRED,Live response > labeled static snapshot > continue to Limitations
+Limitations,LOCAL_PAGE_SOURCE_VALID,LOCAL_PAGE_OR_SCRIPT,MISSING:demo/backup/screenshots/07_responsible_use.png,MISSING_MANUAL_RECORDING_REQUIRED,Local page > presenter script closing line

@@ -1,0 +1,10 @@
+{
+  "status": "SUCCESS",
+  "prediction_raw": 46.421062,
+  "prediction_clipped": 46.421062,
+  "prediction_display": 46,
+  "warnings": [],
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "package_version": "1.0.0"
+}

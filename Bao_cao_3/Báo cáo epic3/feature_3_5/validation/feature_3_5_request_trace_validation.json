@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 request trace / X-Request-ID correlation",
+  "header": "X-Request-ID",
+  "client_generation": "uuid.uuid4() in HitRadarAPIClient._new_request_id()",
+  "client_header_set": "headers={'X-Request-ID': request_id} on all requests",
+  "backend_receives": "request.headers.get('x-request-id')",
+  "response_includes": "request_id field in every response object",
+  "frontend_parser": "ModelInfoResponse.request_id, HealthResponse.request_id, etc.",
+  "actual_trace_test": "PENDING_LIVE_VERIFICATION",
+  "log_correlation_status": "NOT_REQUIRED_BY_CONTRACT (header is present but log correlation is optional)",
+  "status": "CONTRACT_VALIDATED"
+}

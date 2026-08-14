@@ -1,0 +1,35 @@
+{
+  "validated_at": "2026-08-13T20:55:05+07:00",
+  "release_record": {
+    "path": "feature_3_9_release_record.json",
+    "complete": false,
+    "status": "BLOCKED_NO_FINAL_COMMIT",
+    "final_commit_sha": null
+  },
+  "submission": {
+    "path": "feature_3_9_submission_status.json",
+    "status": "NOT_READY",
+    "technical_package_ready": false
+  },
+  "phase_3": {
+    "status": "FAIL",
+    "next_phase": "BLOCKED",
+    "blocker_count": 5
+  },
+  "feature_3_8_defense_gate": {
+    "status": "WAITING_FOR_HUMAN_ACTION",
+    "decision": "NOT_CLOSED",
+    "blocker_count": 8
+  },
+  "defense_materials": {
+    "demo_script_present": true,
+    "final_checklist_present": true,
+    "qa_master_present": true,
+    "required_qa_present": true,
+    "actual_slide_deck_present": true
+  },
+  "can_prepare_event_records": true,
+  "can_mark_demo_completed": false,
+  "can_mark_defense_completed": false,
+  "status": "BLOCKED_FOR_HUMAN_EVENT_EXECUTION_PREPARATION_ALLOWED"
+}

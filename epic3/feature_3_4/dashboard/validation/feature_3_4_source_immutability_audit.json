@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.4 source immutability audit",
+  "canonical_sources": [
+    {
+      "path": "5.DATA/processed/ml_ready_dataset.csv",
+      "role": "Primary trend data",
+      "modified_by_feature_3_4": false,
+      "evidence": "All Feature 3.4 operations use load_trend_dataset() which returns df.copy(); no write operations to this path in any module"
+    },
+    {
+      "path": "7.ML/7.8.model_evaluation/temporal/yearly_evaluation.csv",
+      "role": "Yearly model evaluation",
+      "modified_by_feature_3_4": false,
+      "evidence": "All Feature 3.4 operations use load_yearly_evaluation() which returns df.copy(); no write operations"
+    }
+  ],
+  "epic_2_artifacts": {
+    "role": "Model artifacts (EPIC 2)",
+    "read_by_feature_3_4": false,
+    "written_by_feature_3_4": false,
+    "evidence": "Feature 3.4 does not import any EPIC 2 model modules"
+  },
+  "epic_3_feature_3_2_backend": {
+    "role": "Backend business logic (Feature 3.2)",
+    "read_by_feature_3_4": false,
+    "written_by_feature_3_4": false,
+    "evidence": "Feature 3.4 does not import FastAPI backend modules"
+  },
+  "source_dataset_modified": false,
+  "model_artifacts_modified": false,
+  "backend_business_logic_modified": false,
+  "sha256_verification": {
+    "primary_dataset": "UNAVAILABLE — shell blocked",
+    "evaluation_dataset": "UNAVAILABLE — shell blocked",
+    "fallback_verification": "Read-only access confirmed via Read tool; no write operations in session"
+  },
+  "status": "PASS"
+}

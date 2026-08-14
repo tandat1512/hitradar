@@ -1,0 +1,25 @@
+document,statement,implementation_source,expected,documented,status
+API_DOCUMENTATION.md,GET /health path,openapi.json /health,GET /health,GET /health,OK
+API_DOCUMENTATION.md,GET /model-info path,openapi.json /model-info,GET /model-info,GET /model-info,OK
+API_DOCUMENTATION.md,GET /features path,openapi.json /features,GET /features,GET /features,OK
+API_DOCUMENTATION.md,POST /predict path,openapi.json /predict,POST /predict,POST /predict,OK
+API_DOCUMENTATION.md,POST /explain path,openapi.json /explain,POST /explain,POST /explain,OK
+API_DOCUMENTATION.md,POST /what-if path,openapi.json /what-if,POST /what-if,POST /what-if,OK
+API_DOCUMENTATION.md,No API prefix,openapi.json paths at root,no prefix,no prefix,OK
+API_DOCUMENTATION.md,/predict 18 required fields,prediction.py PredictRequest,18 required,18 required,OK
+API_DOCUMENTATION.md,PredictRequest: additionalProperties=allow,prediction.py model_config extra=allow,allow,allow,OK
+API_DOCUMENTATION.md,PredictResponse: prediction_raw/clip/display,prediction.py PredictResponse,3 fields present,3 fields present,OK
+API_DOCUMENTATION.md,PredictResponse: no shap_values,prediction.py PredictResponse,absent,absent,OK
+API_DOCUMENTATION.md,/explain 422+503 status codes,openapi.json /explain responses,[200,422,503],[200,422,503],OK
+API_DOCUMENTATION.md,WhatIfRequest: base+changed required,openapi.json WhatIfRequest,base_features+changed_features required,base_features+changed_features required,OK
+API_DOCUMENTATION.md,WhatIfResponse: delta field present,openapi.json WhatIfResponse,delta required,delta required,OK
+API_DOCUMENTATION.md,ErrorResponse: error_code+message required,openapi.json ErrorResponse,error_code+message required,error_code+message required,OK
+API_DOCUMENTATION.md,HTTPValidationError: 422 status,openapi.json 422 response,422,422,OK
+API_DOCUMENTATION.md,503 on model not loaded,openapi.json (503 on /predict/explain/what-if),503,503,OK
+API_DOCUMENTATION.md,/health model_loaded semantics,openapi.json HealthResponse,healthy/degraded/unavailable,healthy/degraded/unavailable,OK
+API_DOCUMENTATION.md,ExplainResponse: shap_values dict[str,float],prediction.py ExplainResponse,dict[str,float] — 31 entries,dict[str,float],OK
+API_DOCUMENTATION.md,ExplainResponse: top_features top 5,openapi.json top_features description,"top 5 by absolute SHAP magnitude","top 5 by absolute SHAP magnitude",OK
+API_DOCUMENTATION.md,PredictResponse: status SUCCESS/ERROR,openapi.json PredictResponse status description,"'SUCCESS' or 'ERROR'","'SUCCESS' or 'ERROR'",OK
+API_DOCUMENTATION.md,ModelInfoResponse: MAE/RMSE/R2 nullable,prediction.py Metrics,nullable,nullable,OK
+API_DOCUMENTATION.md,FeaturesResponse: total_input_fields=18,openapi.json FeaturesResponse + input_schema.json,18,18,OK
+API_DOCUMENTATION.md,FeaturesResponse: total_selected_features=31,openapi.json FeaturesResponse,31,31,OK

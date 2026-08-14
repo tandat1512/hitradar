@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 final correctness guard — live run BLOCKED",
+  "endpoints": [
+    {"endpoint": "GET /health", "expected": "200, model_loaded=true", "actual": "BLOCKED"},
+    {"endpoint": "GET /model-info", "expected": "200, model_version=1.0.0", "actual": "BLOCKED"},
+    {"endpoint": "GET /features", "expected": "200, 18 fields, 31 selected", "actual": "BLOCKED"},
+    {"endpoint": "POST /predict (canonical)", "expected": "46.421062 ±0.001 (match Feature 3.5)", "actual": "BLOCKED"},
+    {"endpoint": "POST /explain (canonical)", "expected": "prediction matches /predict", "actual": "BLOCKED"},
+    {"endpoint": "POST /what-if (prepared)", "expected": "delta valid, baseline matches /predict", "actual": "BLOCKED"}
+  ],
+  "dashboard_aggregates": {"expected": "match Feature 3.4 validated values", "mismatch_count": 0, "actual": "BLOCKED"},
+  "mismatches_expected": 0,
+  "no_production_code_changed": true,
+  "status": "BLOCKED"
+}

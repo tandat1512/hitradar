@@ -1,0 +1,65 @@
+{
+  "final_commit_candidate_valid": false,
+  "remote_valid": true,
+  "commit_status": "BLOCKED_PREREQUISITE_AND_VALIDATION",
+  "final_commit_sha": null,
+  "push_status": "BLOCKED_NO_FINAL_COMMIT",
+  "remote_commit_verified": false,
+  "release_strategy_resolved": true,
+  "release_strategy": "FINAL_COMMIT_ONLY",
+  "tag_status": "NOT_APPLICABLE_FINAL_COMMIT_ONLY",
+  "release_record_complete": false,
+  "submission_package_ready": false,
+  "submission_status": "NOT_READY",
+  "submission_confirmed": false,
+  "release_submission_consistent": false,
+  "git_write_authorized": false,
+  "git_add_executed": false,
+  "git_commit_executed": false,
+  "git_push_executed": false,
+  "git_tag_executed": false,
+  "submission_human_action_required": true,
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "pytest_collected": 5,
+  "pytest_passed": 5,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pre_commit_pytest_failed": 0,
+  "pre_commit_pytest_errors": 0,
+  "warnings": [
+    "Official submission platform requirements remain partially unknown.",
+    "No repository tag convention exists; FINAL_COMMIT_ONLY was selected without inventing a tag.",
+    "Feature 3.5 and Feature 3.7 scoped pytest suites are not present under their expected names.",
+    "The commit candidate is large and predominantly untracked; every included path requires human provenance review."
+  ],
+  "blockers": [
+    {
+      "id": "F39-P3-B01",
+      "description": "Phase 1 repository readiness is REPOSITORY_NOT_READY."
+    },
+    {
+      "id": "F39-P3-B03",
+      "description": "Presenter/operator assignment remains human-unconfirmed."
+    },
+    {
+      "id": "F39-P3-B04",
+      "description": "Pre-commit validation has not passed, including unresolved upstream live acceptance."
+    },
+    {
+      "id": "F39-P3-B05",
+      "description": "Remote branch differs from local HEAD and histories must be reconciled before push."
+    },
+    {
+      "id": "F39-P3-B06",
+      "description": "Git write actions were not explicitly authorized."
+    }
+  ],
+  "warning_count": 4,
+  "blocker_count": 5,
+  "status": "FAIL",
+  "next_phase": "BLOCKED",
+  "generated_at": "2026-08-13T20:55:04+07:00"
+}

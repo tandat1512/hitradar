@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "required_limitations": {
+    "prediction_not_guarantee": "PRESERVED",
+    "shap_not_causality": "PRESERVED",
+    "what_if_not_causality": "PRESERVED",
+    "dashboard_not_global_industry": "PRESERVED",
+    "offline_not_live_inference": "PRESERVED"
+  },
+  "documentation_limitation_mismatch_count": 0,
+  "ui_limitation_mismatch_count": 0,
+  "finding": null,
+  "status": "PASS"
+}

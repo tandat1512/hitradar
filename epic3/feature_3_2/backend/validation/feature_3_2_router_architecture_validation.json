@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-06T01:38:12.700136+00:00",
+  "status": "PASS",
+  "predict_router": {
+    "no_fit": true,
+    "no_joblib": true,
+    "no_shap": true
+  },
+  "explain_router": {
+    "no_fit": true,
+    "no_joblib": true,
+    "no_direct_shap": true
+  },
+  "whatif_router": {
+    "no_fit": true,
+    "no_joblib": true,
+    "no_direct_prediction": true
+  },
+  "all_thin": true,
+  "warnings": [],
+  "blockers": []
+}

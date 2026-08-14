@@ -1,0 +1,70 @@
+{
+  "phase": "2/5",
+  "feature": "3.6",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "optimization_decisions_complete": true,
+  "optimization_decisions_summary": "5 candidates: 4 ALREADY_OPTIMIZED, 1 NOT_JUSTIFIED (model_metrics.json), 0 implemented",
+
+  "model_loading_status": "ALREADY_OPTIMIZED",
+  "model_loads_per_process": 1,
+  "model_reload_per_request_detected": false,
+  "model_loading_evidence": "eager lifespan load + PipelineLoader singleton (api.py:47-51, pipeline_loader.py:31-35); no per-request deserialization",
+
+  "artifact_cache_registry_complete": true,
+  "artifact_cache_valid": true,
+  "artifact_registry_summary": "9 artifacts classified; 7 ALREADY_OPTIMIZED, 1 NOT_JUSTIFIED (model_metrics.json), 1 DO_NOT_CACHE",
+
+  "dashboard_data_cache_status": "ALREADY_OPTIMIZED",
+  "dashboard_aggregation_cache_status": "ALREADY_OPTIMIZED",
+  "dashboard_evidence": "@st.cache_data page-level (4_Trends.py, path-keyed) + Feature 3.4 dashboard_cache (SHA-256-keyed) + parameter-aware aggregation keys",
+
+  "cache_key_valid": true,
+  "cache_key_evidence": "contract documented: same source+params reuse; changed params/source → new key; page layer path-keyed (acceptable for immutable dataset), F3.4 layer SHA-256-keyed",
+  "cache_invalidation_valid": true,
+  "cache_invalidation_evidence": "contract defined (4 test cases); live execution BLOCKED",
+  "cache_mutation_safe": true,
+  "cache_mutation_evidence": "defensive copies at boundaries (api.py /features builds fresh objects; dashboard returns .copy()); no in-place mutation of cached structures",
+
+  "prediction_regression_count": 0,
+  "dashboard_regression_count": 0,
+  "regression_note": "No production code changed → no regression possible from Phase 2",
+
+  "api_rebenchmark_complete": false,
+  "streamlit_rebenchmark_complete": false,
+  "rebenchmark_note": "BLOCKED — no Phase 1 baseline, no live environment",
+
+  "api_performance_classification": null,
+  "streamlit_performance_classification": null,
+  "classification_note": "N/A — no optimization implemented to classify",
+
+  "frontend_direct_model_load_count": 0,
+
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+
+  "model_artifacts_modified": false,
+  "source_dataset_modified": false,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_note": "Live pytest BLOCKED — no Python environment",
+
+  "warnings": [
+    "F36-W02: No live baseline — BEFORE/AFTER comparison vacuous",
+    "F36-W05: model_metrics.json read per /model-info (NOT_JUSTIFIED — re-evaluate after live baseline)",
+    "F36-W06: 4_Trends.py aggregates 169,681 rows via pure-Python loop — cold page load likely slow (cached after first run); out of Phase 2 caching scope, not a WBS task"
+  ],
+  "blockers": [
+    "F36-B01: F35-BUG-001 — no live Python environment; Phase 1 baseline invalid; Phase 2 MEASURE→RE-MEASURE impossible",
+    "F36-B02: No live backend/frontend processes to run cache tests"
+  ],
+
+  "status": "FAIL",
+  "reason": "Phase 1 prerequisite = FAIL/BLOCKED (no live Python environment). Per spec, Phase 2 is BLOCKED. Decision log completed from source audit with ZERO production code changes: model loading, artifact metadata, dashboard data, and dashboard aggregation are all ALREADY_OPTIMIZED with evidence; model_metrics.json is NOT_JUSTIFIED without a live baseline. No optimization was implemented, so no prediction/aggregate regression and no BEFORE/AFTER comparison is possible. Honest outcome per WBS: do not change code just to produce a diff.",
+  "next_phase": "BLOCKED"
+}

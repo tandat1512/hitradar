@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "UI consistency validation across all pages",
+  "page_titles": {
+    "pages/0_Home.py": "HitRadar Pro — AI Music Popularity Prediction",
+    "pages/1_Predict.py": "Predict Song Popularity",
+    "pages/2_Explain.py": "SHAP Explanation",
+    "pages/3_WhatIf.py": "What-If Simulator",
+    "pages/4_Trends.py": "Music Trends 1922–2021",
+    "pages/5_Model_Info.py": "Model Information",
+    "pages/6_Limitations.py": "Limitations & Responsible Use"
+  },
+  "button_copy_consistency": [
+    {"button": "Predict Popularity", "in": "pages/1_Predict.py"},
+    {"button": "Compare Predictions", "in": "pages/3_WhatIf.py"},
+    {"button": "Retry connection", "in": "pages/0_Home.py"},
+    {"button": "Predict Popularity", "in": "components/predict_form.py"}
+  ],
+  "terminology_consistent": true,
+  "no_probability_terminology": true,
+  "no_causal_claims": true,
+  "error_copy_user_friendly": true,
+  "internal_errors_exposed": false,
+  "st_headers_used": true,
+  "st_divider_used": true,
+  "no_excessive_emoji": true,
+  "no_unsafe_html": true,
+  "status": "PASS"
+}

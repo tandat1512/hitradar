@@ -1,0 +1,26 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 backend-down E2E — frontend behavior when backend is unavailable",
+  "scenario": "Backend process STOPPED, frontend attempts Predict",
+  "expected_frontend_behavior": {
+    "error_type": "APIClientError (no HTTP status — connection refused)",
+    "user_message": "Cannot connect to backend",
+    "traceback_exposed": false,
+    "stale_prediction_displayed": false,
+    "app_remains_responsive": true,
+    "retry_possible": true
+  },
+  "frontend_code_verified": {
+    "source": "epic3/feature_3_3/frontend/components/error_states.py",
+    "render_function": "_render_connection_error",
+    "message": "The frontend could not reach the backend server. Verify that the backend is running and BACKEND_BASE_URL is configured correctly.",
+    "hint": "Check that the FastAPI backend is running on the configured host and port.",
+    "no_traceback": true,
+    "no_internal_path": true,
+    "request_id_shown": true
+  },
+  "actual_live_test": "PENDING (requires running processes)",
+  "test_type": "ACTUAL_E2E",
+  "status": "CONTRACT_VALIDATED"
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Popularity decade aggregation validation",
+  "decade_policy": "decade = (release_year // 10) * 10; pre-computed column 'decade' exists in dataset",
+  "2020_edge_case": {
+    "policy": "2020 is treated as SINGLE-YEAR, NOT a full 2020s decade",
+    "label": "2020 (single year)",
+    "reason": "Dataset contains only 1 year of data (2019 is max); 2020 is not in data; even if it were, 1 year ≠ 10-year decade"
+  },
+  "decades_present": [1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010],
+  "decades_not_present": [2020],
+  "no_synthetic_decade_fill": true,
+  "status": "PASS"
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-06T01:43:43.632249+00:00",
+  "status": "PASS",
+  "checks": {
+    "no_external_network_calls": true,
+    "no_hardcoded_cwd": true,
+    "uses_temp_dirs_for_writes": true,
+    "config_resets_between_tests": true,
+    "dependency_overrides_cleared": true,
+    "app_state_resets": true,
+    "model_artifact_read_only": true,
+    "no_model_file_written": true,
+    "no_epic2_artifacts_mutated": true
+  },
+  "all_pass": true,
+  "warnings": [],
+  "blockers": []
+}

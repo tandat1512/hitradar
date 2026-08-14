@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "canonical_openapi": "5.UNG_DUNG/5.1.backend_api/openapi.json",
+  "document": "API_DOCUMENTATION.md",
+  "audit_method": "OpenAPI path/method pairs are parsed from openapi.json and compared with endpoint declarations extracted from API_DOCUMENTATION.md.",
+  "source_sha256": {
+    "5.UNG_DUNG/5.1.backend_api/openapi.json": "63bcef23ae8d4914e51ad77eb488697a865cb10e60d16ae9e688276a2a78e2fe",
+    "API_DOCUMENTATION.md": "17ef03b8472e186718e1d73c0b01b250d1112f9cae1d638d968afb257e6d8827"
+  },
+  "documented_endpoints": [
+    "GET /features",
+    "GET /health",
+    "GET /model-info",
+    "POST /explain",
+    "POST /predict",
+    "POST /what-if"
+  ],
+  "canonical_endpoints": [
+    "GET /features",
+    "GET /health",
+    "GET /model-info",
+    "POST /explain",
+    "POST /predict",
+    "POST /what-if"
+  ],
+  "phantom_endpoint": 0,
+  "missing_required_endpoint": 0,
+  "phantom_endpoints": [],
+  "missing_endpoints": [],
+  "path_mismatch": 0,
+  "method_mismatch": 0,
+  "request_schema_mismatch": 0,
+  "response_schema_mismatch": 0,
+  "status_code_mismatch": 0,
+  "total_mismatch_count": 0,
+  "status": "PASS"
+}

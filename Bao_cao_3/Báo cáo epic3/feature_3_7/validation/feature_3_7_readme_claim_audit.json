@@ -1,0 +1,86 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 README claim audit",
+  "rules": [
+    "No unsupported model accuracy claims",
+    "No unsupported production-ready claims",
+    "No causal language for predictions",
+    "No fabricated endpoint/port/version counts",
+    "No classification accuracy if model is regression"
+  ],
+  "checked_claims": [
+    {
+      "claim": "popularity score (0-100)",
+      "source": "source_of_truth_registry / model output",
+      "supported": true,
+      "note": "Based on Feature 3.5 canonical output (prediction_clipped, prediction_display)"
+    },
+    {
+      "claim": "18 input features",
+      "source": "artifacts/epic2/examples/example_input.json",
+      "supported": true,
+      "note": "18 fields confirmed"
+    },
+    {
+      "claim": "31 selected features",
+      "source": "source_of_truth_registry",
+      "supported": true,
+      "note": "FS23-SELECTED feature set"
+    },
+    {
+      "claim": "169,681 songs",
+      "source": "feature_3_5 validation / feature_3_4 artifact",
+      "supported": true,
+      "note": "From ml_ready_dataset.csv row count"
+    },
+    {
+      "claim": "1921-2020 dataset",
+      "source": "source_of_truth_registry",
+      "supported": true,
+      "note": "Historical Spotify data"
+    },
+    {
+      "claim": "XGBoost regression",
+      "source": "artifacts/epic2/metadata/model_version.json",
+      "supported": true,
+      "note": "model_family: XGBoost"
+    },
+    {
+      "claim": "EXP24-XGB-FINAL-001 model_id",
+      "source": "artifacts/epic2/metadata/model_version.json",
+      "supported": true
+    },
+    {
+      "claim": "version 1.0.0",
+      "source": "artifacts/epic2/metadata/model_version.json",
+      "supported": true
+    },
+    {
+      "claim": "Python 3.13.7 (per Feature 2.2 preprocessing; requires ≥3.10)",
+      "source": "9.SCRIPTS/feature_2_2_preprocessing.py line 43",
+      "supported": true,
+      "note": "Source found: python_version='3.13.7'. Verified in Phase 1 hotfix."
+    },
+    {
+      "claim": "No direct model access from the frontend",
+      "source": "Feature 3.2/3.3/3.6 architecture audit",
+      "supported": true,
+      "note": "Architecture audit confirms 0 direct model loads"
+    },
+    {
+      "claim": "Predictions describe model behavior, not causal relationships",
+      "source": "Feature 3.3/3.6 limitations documentation",
+      "supported": true,
+      "note": "Consistent across all limitation pages"
+    }
+  ],
+  "unsupported_claims_found": 0,
+  "unsupported_claims": [],
+  "unsupported_claims_note": "F37-W03 (Python unverifiable) RESOLVED in Phase 1 hotfix — source found: 9.SCRIPTS/feature_2_2_preprocessing.py line 43 (python_version='3.13.7')",
+  "accuracy_claims": 0,
+  "production_ready_claims": 0,
+  "causal_language_misuse": 0,
+  "classification_accuracy_claimed_as_regression": 0,
+  "status": "AUDIT_COMPLETE"
+}

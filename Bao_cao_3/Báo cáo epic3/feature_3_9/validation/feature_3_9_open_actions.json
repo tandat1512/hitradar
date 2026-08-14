@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-08-13T20:55:06+07:00",
+  "actions": [
+    {
+      "action_id": "CLOSE-001",
+      "source": "Feature 3.5 closure gate",
+      "type": "TECHNICAL_VALIDATION",
+      "description": "Complete live HTTP E2E, clean-environment and fresh-clone smoke; close remaining Feature 3.5 blocker bugs.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-002",
+      "source": "Feature 3.6 closure gate",
+      "type": "PERFORMANCE_RELIABILITY",
+      "description": "Run live benchmark/startup/offline smokes and capture required backup assets.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-003",
+      "source": "Feature 3.9 Phase 1",
+      "type": "REPOSITORY",
+      "description": "Create a reviewed version-controlled baseline for canonical source, artifacts, docs, tests and reports.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-004",
+      "source": "Feature 3.9 Phase 1",
+      "type": "DEPENDENCY",
+      "description": "Validate dependency specs in a clean installation and baseline them.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-007",
+      "source": "Feature 3.8/3.9",
+      "type": "HUMAN_ASSIGNMENT",
+      "description": "Confirm presenter, primary/backup demo operator and Q&A ownership; complete rehearsals.",
+      "required": true,
+      "owner": null,
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-009",
+      "source": "Feature 3.9 Phase 3",
+      "type": "REMOTE",
+      "description": "Fetch/reconcile local main with current remote main through an approved workflow.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-010",
+      "source": "Feature 3.9 Phase 3",
+      "type": "RELEASE",
+      "description": "Approve exact commit paths, pass pre-commit validation, then commit/push and verify the final SHA.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-011",
+      "source": "Feature 3.9 Phase 2/3",
+      "type": "SUBMISSION_REQUIREMENTS",
+      "description": "Obtain official submission requirements and finalize the exact package.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-012",
+      "source": "Feature 3.9 Phase 3",
+      "type": "SUBMISSION",
+      "description": "Submit through the official platform and retain a confirmation receipt.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-013",
+      "source": "Feature 3.9 Phase 4",
+      "type": "DEMO",
+      "description": "Complete the lecturer demo and provide human event evidence/feedback.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-014",
+      "source": "Feature 3.9 Phase 4",
+      "type": "DEFENSE",
+      "description": "Complete project defense, capture actual Q&A/outcome and close mandatory revisions.",
+      "required": true,
+      "owner": "Minh",
+      "status": "OPEN",
+      "blocks_project_closure": true
+    },
+    {
+      "action_id": "CLOSE-015",
+      "source": "Closure gates",
+      "type": "HUMAN_APPROVAL",
+      "description": "Assign reviewer and record human approval after all required evidence is complete.",
+      "required": true,
+      "owner": null,
+      "status": "OPEN",
+      "blocks_project_closure": true
+    }
+  ],
+  "required_open_action_count": 12,
+  "required_open_closure_blocker_count": 12,
+  "status": "OPEN_BLOCKING_CLOSURE"
+}

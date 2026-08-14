@@ -1,0 +1,10 @@
+feature,title,closure_gate_found,status,decision,warnings,blockers,human_action_pending,key_evidence
+3.1,Artifact Intake & Validation,True,PASS_WITH_WARNINGS,CLOSED_WITH_WARNINGS,6,0,True,epic3/feature_3_1_artifact_validation/validation/feature_3_1_closure_gate.json
+3.2,FastAPI Backend,True,PASS_WITH_WARNINGS,ELIGIBLE_FOR_CLOSURE,3,0,False,epic3/feature_3_2/backend/validation/feature_3_2_closure_gate.json
+3.3,Streamlit Frontend,True,PASS,ELIGIBLE_FOR_CLOSURE,0,0,False,epic3/feature_3_3/frontend/validation/feature_3_3_closure_gate.json
+3.4,Dashboard & Visualization,True,PASS_WITH_WARNINGS,ELIGIBLE_FOR_CLOSURE,2,0,True,epic3/feature_3_4/dashboard/validation/feature_3_4_closure_gate.json
+3.5,Integration & E2E,True,FAIL,NOT_CLOSED,3,2,True,Bao_cao_3/Báo cáo epic3/feature_3_5/validation/feature_3_5_closure_gate.json
+3.6,"Performance, Reliability & Demo Backup",True,FAIL,NOT_CLOSED,3,1,True,Bao_cao_3/Báo cáo epic3/feature_3_6/validation/feature_3_6_closure_gate.json
+3.7,Documentation & User Guide,True,PASS_WITH_WARNINGS,ELIGIBLE_FOR_CLOSURE,3,1,True,Bao_cao_3/Báo cáo epic3/feature_3_7/validation/feature_3_7_closure_gate.json
+3.8,Defense Preparation,True,WAITING_FOR_HUMAN_ACTION,NOT_CLOSED,6,8,True,Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_closure_gate.json
+3.9,Final Delivery,True,FAIL,NOT_CLOSED,7,9,True,Bao_cao_3/Báo cáo epic3/feature_3_9/validation/feature_3_9_closure_gate.json

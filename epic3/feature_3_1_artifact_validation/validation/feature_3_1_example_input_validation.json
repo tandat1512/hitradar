@@ -1,0 +1,50 @@
+{
+  "validation_id": "F31-P3-EIN-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T22:12:00+07:00",
+  "feature_id": "3.1",
+  "phase": 3,
+  "canonical_source": "7.ML/7.10.model_packaging/package/examples/example_input.json",
+  "validation_status": "PASS",
+  "format": "single_record_object",
+  "field_count": 18,
+  "field_validation": [
+    {"name": "duration_min", "present": true, "type": "number", "nullable": false, "value": 5.1767, "status": "PASS"},
+    {"name": "explicit", "present": true, "type": "boolean", "nullable": false, "value": true, "status": "PASS"},
+    {"name": "release_year", "present": true, "type": "integer", "nullable": false, "value": 1992, "status": "PASS"},
+    {"name": "release_month", "present": true, "type": "number", "nullable": false, "value": 11.0, "status": "PASS"},
+    {"name": "decade", "present": true, "type": "string", "nullable": false, "value": "1990", "status": "PASS"},
+    {"name": "release_precision", "present": true, "type": "string", "nullable": false, "value": "day", "status": "PASS"},
+    {"name": "danceability", "present": true, "type": "number", "nullable": false, "value": 0.785, "status": "PASS"},
+    {"name": "energy", "present": true, "type": "number", "nullable": false, "value": 0.793, "status": "PASS"},
+    {"name": "key", "present": true, "type": "integer", "nullable": false, "value": 1, "status": "PASS"},
+    {"name": "loudness", "present": true, "type": "number", "nullable": false, "value": -7.915, "status": "PASS"},
+    {"name": "mode", "present": true, "type": "integer", "nullable": false, "value": 1, "status": "PASS"},
+    {"name": "speechiness", "present": true, "type": "number", "nullable": false, "value": 0.163, "status": "PASS"},
+    {"name": "acousticness", "present": true, "type": "number", "nullable": false, "value": 0.22, "status": "PASS"},
+    {"name": "instrumentalness", "present": true, "type": "number", "nullable": false, "value": 0.718, "status": "PASS"},
+    {"name": "liveness", "present": true, "type": "number", "nullable": false, "value": 0.124, "status": "PASS"},
+    {"name": "valence", "present": true, "type": "number", "nullable": false, "value": 0.655, "status": "PASS"},
+    {"name": "tempo", "present": true, "type": "number", "nullable": false, "value": 88.902, "status": "PASS"},
+    {"name": "time_signature", "present": true, "type": "number", "nullable": false, "value": 4.0, "status": "PASS"}
+  ],
+  "target_exclusion_check": {
+    "target_popularity_present": false,
+    "track_id_present": false,
+    "status": "PASS"
+  },
+  "range_checks": [
+    {"field": "danceability", "value": 0.785, "min": 0.0, "max": 1.0, "status": "PASS"},
+    {"field": "tempo", "value": 88.902, "min": 0.0, "max": 300.0, "status": "PASS"},
+    {"field": "loudness", "value": -7.915, "min": -60.0, "max": 0.0, "status": "PASS"},
+    {"field": "release_month", "value": 11.0, "min": 1.0, "max": 12.0, "status": "PASS"},
+    {"field": "key", "value": 1, "min": 0, "max": 11, "status": "PASS"}
+  ],
+  "category_checks": [
+    {"field": "release_precision", "value": "day", "allowed": ["day", "month", "year"], "status": "PASS"}
+  ],
+  "no_unknown_fields": true,
+  "canonical_ordering": true,
+  "warnings": [],
+  "blockers": []
+}

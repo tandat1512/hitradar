@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Duration unit conversion and aggregation validation",
+  "source_column": "duration_min",
+  "source_unit": "minutes",
+  "unit_policy": "duration_min is already in MINUTES per Phase 1. No further conversion needed.",
+  "to_seconds_derivation": "duration_sec = duration_min * 60 (only in derived data, not source)",
+  "aggregation_unit": "minutes",
+  "chart_title": "Average Track Duration by Decade",
+  "aggregation_methods": ["mean", "median"],
+  "default_aggregation": "mean",
+  "invalid_duration_policy": {
+    "range_min_minutes": 0.1,
+    "range_max_minutes": 30.0,
+    "null_count": "excluded from aggregation, counted separately",
+    "zero_or_negative": "excluded from aggregation, counted separately",
+    "extreme_outliers": "excluded from aggregation (>30 min), counted separately",
+    "no_winsorization": true,
+    "no_deletion_from_source": true
+  },
+  "note": "Source values confirmed from CSV samples: 5.1767, 4.7782, 2.8411 minutes — realistic song lengths",
+  "status": "PASS"
+}

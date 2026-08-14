@@ -1,0 +1,93 @@
+{
+  "benchmark_id": "F31-P4-BATCH-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T07:29:39+07:00",
+  "feature_id": "3.1",
+  "phase": 4,
+  "run_type": "batch_inference",
+  "runs_per_size": 20,
+  "batches": {
+    "1": {
+      "size": 1,
+      "runs": 20,
+      "total_stats": {
+        "count": 20,
+        "min_ms": 12.311,
+        "max_ms": 14.084,
+        "mean_ms": 12.843,
+        "median_ms": 12.77,
+        "std_ms": 0.451,
+        "p90_ms": 13.555,
+        "p95_ms": 14.084,
+        "p99_ms": 14.084
+      },
+      "per_record_stats": {
+        "count": 20,
+        "min_ms": 12.311,
+        "max_ms": 14.084,
+        "mean_ms": 12.843,
+        "median_ms": 12.77,
+        "std_ms": 0.451,
+        "p90_ms": 13.555,
+        "p95_ms": 14.084,
+        "p99_ms": 14.084
+      },
+      "records_per_sec_median": 12770250.0
+    },
+    "10": {
+      "size": 10,
+      "runs": 20,
+      "total_stats": {
+        "count": 20,
+        "min_ms": 127.728,
+        "max_ms": 159.479,
+        "mean_ms": 134.038,
+        "median_ms": 132.754,
+        "std_ms": 7.207,
+        "p90_ms": 140.526,
+        "p95_ms": 159.479,
+        "p99_ms": 159.479
+      },
+      "per_record_stats": {
+        "count": 20,
+        "min_ms": 12.773,
+        "max_ms": 15.948,
+        "mean_ms": 13.404,
+        "median_ms": 13.275,
+        "std_ms": 0.721,
+        "p90_ms": 14.053,
+        "p95_ms": 15.948,
+        "p99_ms": 15.948
+      },
+      "records_per_sec_median": 13275385.0
+    },
+    "100": {
+      "size": 100,
+      "runs": 20,
+      "total_stats": {
+        "count": 20,
+        "min_ms": 1291.463,
+        "max_ms": 4645.324,
+        "mean_ms": 1864.844,
+        "median_ms": 1337.582,
+        "std_ms": 1059.781,
+        "p90_ms": 4349.377,
+        "p95_ms": 4645.324,
+        "p99_ms": 4645.324
+      },
+      "per_record_stats": {
+        "count": 20,
+        "min_ms": 12.915,
+        "max_ms": 46.453,
+        "mean_ms": 18.648,
+        "median_ms": 13.376,
+        "std_ms": 10.598,
+        "p90_ms": 43.494,
+        "p95_ms": 46.453,
+        "p99_ms": 46.453
+      },
+      "records_per_sec_median": 13375815.0
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,19 @@
+test_id,scenario,endpoint,expected_status,expected_error_type,request_id_present,traceback_exposed,internal_path_exposed,frontend_error_shown,frontend_recoverable,live_executed,status
+E2E-001,Backend unavailable (connection refused),POST /predict,CLIENT_ERROR,APIConnectionError,YES,true,false,YES,true,NO,PENDING
+E2E-002,Backend timeout (>30s),POST /predict,CLIENT_ERROR,APITimeoutError,YES,true,false,YES,true,NO,PENDING
+E2E-003,Missing 1 required field (danceability),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-004,Missing 2 required fields (danceability+energy),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-005,Out-of-range LOW (danceability=-0.001,<0.0),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-006,Out-of-range HIGH (danceability=1.001,>1.0),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-007,Extra unknown field included,POST /predict,200,PredictResponse,YES,true,false,YES,true,NO,PENDING
+E2E-008,Target injection (target_popularity=99),POST /predict,200,PredictResponse,YES,true,false,YES,true,NO,PENDING
+E2E-009,Wrong type string in numeric field,POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-010,Wrong structure array in scalar field,POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-011,Null in non-nullable required field,POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-012,Empty payload {},POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-013,Malformed JSON body,POST /predict,4xx,HTTPException,YES,true,false,YES,true,NO,PENDING
+E2E-014,Invalid categorical (release_precision=invalid),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-015,Out-of-range LOW (key=-1,<0),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-016,Out-of-range HIGH (key=12,>11),POST /predict,422,APIValidationError,YES,true,false,YES,true,NO,PENDING
+E2E-017,Backend recovers after down,POST /predict,200,PredictResponse,YES,true,false,YES,true,NO,PENDING
+E2E-018,Valid request after validation error,POST /predict,200,PredictResponse,YES,true,false,YES,true,NO,PENDING

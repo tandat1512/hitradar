@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 baseline correctness guard",
+  "rule": "Every /predict benchmark request must match canonical baseline 46.421062 ± 0.001. A mismatch is a correctness failure (BLOCKER), not a performance sample.",
+  "canonical": {
+    "expected_prediction": 46.421062,
+    "tolerance": 0.001,
+    "model_version": "1.0.0"
+  },
+  "guards": {
+    "samples": "PENDING (live blocked)",
+    "prediction_mismatch_count": "PENDING",
+    "response_error_count": "PENDING",
+    "model_version_mismatch_count": "PENDING",
+    "expected": "all 0"
+  },
+  "escalation": "prediction_mismatch_count > 0 OR response_error_count > 0 → BLOCKER",
+  "status": "BLOCKED"
+}

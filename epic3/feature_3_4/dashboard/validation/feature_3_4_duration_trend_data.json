@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Duration trend aggregation data",
+  "field": "duration_min",
+  "unit": "minutes",
+  "aggregation_methods": ["mean", "median"],
+  "default_method": "mean",
+  "invalid_duration_handling": {
+    "null": "excluded from aggregation, counted",
+    "zero_or_negative": "excluded from aggregation, counted",
+    "below_0.1_min": "excluded",
+    "above_30_min": "excluded",
+    "no_winsorization": true
+  },
+  "to_seconds_derivation": "duration_sec = duration_min * 60 (derived only)",
+  "chart_title_mean": "Average Track Duration by Decade",
+  "chart_title_median": "Median Track Duration by Decade",
+  "y_axis_unit": "Minutes",
+  "no_imputation": true,
+  "no_causal_claim_in_chart_title": true,
+  "note": "Source confirmed to contain minutes (5.1767, 4.7782, 2.8411 — realistic song lengths)",
+  "status": "PASS"
+}

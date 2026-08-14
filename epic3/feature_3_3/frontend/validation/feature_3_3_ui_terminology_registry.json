@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Canonical terminology registry for Feature 3.3 frontend",
+  "canonical_terms": [
+    {
+      "term": "Predicted Popularity",
+      "aliases": ["prediction", "popularity score", "predicted score"],
+      "used_in": ["Home", "Predict page", "prediction_result component"],
+      "not_used": ["probability", "hit probability", "chance of hit", "success likelihood"]
+    },
+    {
+      "term": "Model Explanation / SHAP Explanation",
+      "aliases": ["explanation", "SHAP contribution", "feature attribution"],
+      "used_in": ["Explain page", "shap_explanation component"],
+      "not_used": ["feature causes", "feature accuracy", "causal reason"]
+    },
+    {
+      "term": "SHAP contribution",
+      "aliases": ["contribution", "attribution", "feature importance"],
+      "used_in": ["SHAP page", "shap_explanation component"],
+      "not_used": ["causal contribution"]
+    },
+    {
+      "term": "What-If Simulation",
+      "aliases": ["what-if comparison", "scenario comparison"],
+      "used_in": ["What-If page", "whatif_comparison component"],
+      "not_used": ["actual effect", "real-world change", "causal simulation"]
+    },
+    {
+      "term": "Original Prediction",
+      "aliases": ["baseline prediction", "before"],
+      "used_in": ["What-If page"],
+      "not_used": ["original value", "real value"]
+    },
+    {
+      "term": "Modified Prediction",
+      "aliases": ["after", "scenario prediction"],
+      "used_in": ["What-If page"],
+      "not_used": ["actual result"]
+    },
+    {
+      "term": "Model Version",
+      "aliases": ["version"],
+      "used_in": ["Home", "Model Info", "Predict page"],
+      "not_used": []
+    },
+    {
+      "term": "Backend Unavailable",
+      "aliases": ["backend offline", "service unavailable"],
+      "used_in": ["error_states component"],
+      "not_used": ["HTTPConnectionPool error", "connection refused"]
+    },
+    {
+      "term": "Request ID",
+      "aliases": ["request identifier"],
+      "used_in": ["all pages"],
+      "not_used": []
+    },
+    {
+      "term": "Popularity Score",
+      "aliases": ["score", "0-100 scale"],
+      "used_in": ["prediction result", "Model Info"],
+      "not_used": ["accuracy percentage", "probability percent"]
+    }
+  ],
+  "prohibited_terms": [
+    {"term": "hit probability", "reason": "Output is a popularity regression score, not a probability"},
+    {"term": "chance of success", "reason": "No evidence that score represents success probability"},
+    {"term": "causes popularity", "reason": "SHAP describes correlational model behavior, not causation"},
+    {"term": "actual effect", "reason": "What-If shows model prediction delta, not real-world effect"},
+    {"term": "production-grade", "reason": "Student research prototype only"},
+    {"term": "industry-ready", "reason": "Student research prototype only"},
+    {"term": "AI magic", "reason": "Unsubstantiated marketing language"},
+    {"term": "guarantee", "reason": "Model outputs are predictions, not guarantees"},
+    {"term": "bias-free", "reason": "Model trained on potentially biased data; claim unsubstantiated"}
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "endpoints": {
+    "health":   {"method": "GET",  "path": "/health"},
+    "model_info": {"method": "GET", "path": "/model-info"},
+    "features":   {"method": "GET",  "path": "/features"},
+    "predict":   {"method": "POST", "path": "/predict"},
+    "explain":   {"method": "POST", "path": "/explain"},
+    "what_if":   {"method": "POST", "path": "/what-if"}
+  },
+  "no_api_prefix": true,
+  "paths_from_openapi": true,
+  "no_guessed_paths": true,
+  "status": "PASS"
+}

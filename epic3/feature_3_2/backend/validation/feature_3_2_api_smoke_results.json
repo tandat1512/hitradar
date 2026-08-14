@@ -1,0 +1,102 @@
+{
+  "date": "2026-08-06T01:43:43.631069+00:00",
+  "status": "PASS",
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "all_passed": true,
+  "results": [
+    {
+      "test": "health_healthy",
+      "method": "GET",
+      "url": "/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 7.54,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "model_info_valid",
+      "method": "GET",
+      "url": "/model-info",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 16.28,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "features_valid",
+      "method": "GET",
+      "url": "/features",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 26.47,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "predict_valid",
+      "method": "POST",
+      "url": "/predict",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 38.9,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "predict_missing_field",
+      "method": "POST",
+      "url": "/predict",
+      "expected_status": 422,
+      "actual_status": 422,
+      "latency_ms": 3.8,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "predict_oob",
+      "method": "POST",
+      "url": "/predict",
+      "expected_status": 422,
+      "actual_status": 422,
+      "latency_ms": 3.17,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "explain_valid",
+      "method": "POST",
+      "url": "/explain",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 260.15,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "whatif_valid",
+      "method": "POST",
+      "url": "/what-if",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 40.22,
+      "pass": true,
+      "request_id": true
+    },
+    {
+      "test": "whatif_unknown_field",
+      "method": "POST",
+      "url": "/what-if",
+      "expected_status": 422,
+      "actual_status": 422,
+      "latency_ms": 4.13,
+      "pass": true,
+      "request_id": true
+    }
+  ],
+  "warnings": [],
+  "blockers": []
+}

@@ -1,0 +1,133 @@
+{
+  "readability_id": "F31-P1-READ-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:11:00+07:00",
+  "feature_id": "3.1",
+  "phase": 1,
+  "checks_performed": [
+    {
+      "check": "JSON_schemas_parseable",
+      "artifacts": [
+        "schemas/input_schema.json",
+        "schemas/output_schema.json",
+        "schemas/selected_features.json",
+        "schemas/feature_names.json",
+        "schemas/feature_mapping.json",
+        "metadata/model_version.json",
+        "metadata/data_version.json",
+        "metadata/package_version.json"
+      ],
+      "status": "PASS",
+      "result": "All 8 JSON schema/metadata files parse successfully"
+    },
+    {
+      "check": "joblib_files_loadable",
+      "artifacts": [
+        "pipeline/full_inference_pipeline.joblib",
+        "models/best_model.joblib",
+        "preprocessing/feature_engineering_pipeline.joblib",
+        "preprocessing/model_preprocessing_pipeline.joblib"
+      ],
+      "status": "SKIPPED",
+      "reason": "Deserialization not permitted per Phase 1 read-only rules. Artifact load validation deferred to Phase 2."
+    },
+    {
+      "check": "example_json_valid",
+      "artifacts": [
+        "examples/example_input.json",
+        "examples/example_output.json"
+      ],
+      "status": "PASS",
+      "result": "Both example JSON files parse successfully"
+    },
+    {
+      "check": "Python_module_syntax",
+      "artifact": "runtime/inference_pipeline.py",
+      "status": "PASS",
+      "result": "File parses as valid Python syntax"
+    },
+    {
+      "check": "requirements_files_readable",
+      "artifacts": [
+        "requirements-runtime.txt",
+        "requirements-explainability.txt",
+        "requirements-lock.txt"
+      ],
+      "status": "PASS",
+      "result": "All 3 requirements files are readable text"
+    }
+  ],
+  "readable_artifacts_summary": {
+    "total_checked": 21,
+    "readable": 21,
+    "parseable": 19,
+    "not_parseable": 0,
+    "skipped_load": 4,
+    "overall_status": "PASS"
+  },
+  "shap_artifacts_discovered": {
+    "location": "7.ML/7.9.explainability/",
+    "artifact_count_approx": 134,
+    "key_artifacts": [
+      {
+        "logical_name": "champion_explainability_lock",
+        "path": "7.ML/7.9.explainability/manifests/champion_explainability_lock.json",
+        "sha256": "ed64be581ba1b2fb3308d8df5eeb4fe70d5189ec11010291aa2587fb22c80522",
+        "status": "FOUND",
+        "epic3_use": "Locked SHAP explainability configuration for champion model"
+      },
+      {
+        "logical_name": "global_explanation_summary",
+        "path": "7.ML/7.9.explainability/global/global_explanation_summary.json",
+        "sha256": "c4ee5ebcf5c997dcd8e03faab2a683b91a6f63c0e908c6e01ae18814e125ebac",
+        "status": "FOUND",
+        "epic3_use": "SHAP global explanation for Model Info page"
+      },
+      {
+        "logical_name": "shap_top_10_features",
+        "path": "7.ML/7.9.explainability/global/shap_top_10_features.json",
+        "sha256": "7d262bf0059d21e6949b0c50bc09a96359005af682a15fb9e0f9f070b990223e",
+        "status": "FOUND",
+        "epic3_use": "Top 10 features for SHAP Explanation page"
+      },
+      {
+        "logical_name": "global_feature_direction_summary",
+        "path": "7.ML/7.9.explainability/global/global_feature_direction_summary.json",
+        "sha256": "27ae9f61a3a07354573311a43cd209eb302f013df667d3f4fa105e6b22d1e6bd",
+        "status": "FOUND",
+        "epic3_use": "Feature direction associations for What-If page"
+      },
+      {
+        "logical_name": "local_explanation_manifest",
+        "path": "7.ML/7.9.explainability/local/local_explanation_manifest.json",
+        "sha256": "d4570a2c5997aec1ebc3b7596133aed757825dd613ca0e3a25932ad5686c3e3c",
+        "status": "FOUND",
+        "epic3_use": "Local explanation index for per-prediction SHAP"
+      },
+      {
+        "logical_name": "shap_config",
+        "path": "7.ML/7.9.explainability/configs/feature_2_6_shap_config.json",
+        "sha256": "7058827d304bbb30f4ce77823f2b5cdfb181a700a7dce4469c1352e13adbbbad",
+        "status": "FOUND",
+        "epic3_use": "SHAP configuration parameters"
+      },
+      {
+        "logical_name": "local_waterfall_images",
+        "path_pattern": "7.ML/7.9.explainability/local/local_case_*.png",
+        "status": "FOUND",
+        "approx_count": 25,
+        "epic3_use": "Pre-rendered SHAP waterfall charts for demo"
+      },
+      {
+        "logical_name": "shap_summary_images",
+        "path_pattern": "7.ML/7.9.explainability/global/shap_summary_*.png",
+        "status": "FOUND",
+        "approx_count": 5,
+        "epic3_use": "SHAP summary charts for Model Info page"
+      }
+    ],
+    "total_shap_artifacts": 134,
+    "shap_explainability_status": "FOUND_AND_READABLE"
+  },
+  "overall_readability_status": "PASS"
+}

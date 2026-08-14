@@ -1,0 +1,47 @@
+{
+  "validation_id": "F31-P2-SF-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:38:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "schema_path": "7.ML/7.10.model_packaging/package/schemas/selected_features.json",
+  "sha256": "8d86f9c62e8fb321c04580eb2cfe22e80a7a439e3d557de7c5a04f73a817e5e7",
+  "parse_status": "OK",
+  "feature_set_id": "FS23-SELECTED",
+  "feature_count_declared": 31,
+  "feature_count_actual": 31,
+  "feature_order_locked": true,
+  "validation_status": "PASS",
+  "features": [
+    "duration_min","release_year","danceability","energy","loudness","speechiness",
+    "acousticness","instrumentalness","liveness","valence","tempo","release_month",
+    "decade","release_precision","key","time_signature","explicit","mode",
+    "release_month_sin","release_month_cos","year_in_decade","duration_log",
+    "duration_squared","energy_danceability","energy_valence","danceability_valence",
+    "acousticness_instrumentalness","energy_liveness","speechiness_explicit",
+    "tempo_danceability","loudness_energy"
+  ],
+  "layer_classification": "SELECTED_ENGINEERED_FEATURES",
+  "layer_note": "These are the features AFTER FeatureEngineeringTransformer (18 raw -> 31). Includes 13 raw + 18 engineered features.",
+  "raw_count": 13,
+  "engineered_count": 18,
+  "engineered_features": [
+    "release_month_sin","release_month_cos","year_in_decade","duration_log",
+    "duration_squared","energy_danceability","energy_valence","danceability_valence",
+    "acousticness_instrumentalness","energy_liveness","speechiness_explicit",
+    "tempo_danceability","loudness_energy"
+  ],
+  "checks": {
+    "json_parse": "PASS",
+    "is_list": "PASS",
+    "count_31": "PASS",
+    "no_empty_names": "PASS",
+    "no_duplicates": "PASS",
+    "no_target_in_list": "PASS",
+    "no_track_id_in_list": "PASS",
+    "feature_order_locked": "PASS",
+    "no_whitespace_only": "PASS"
+  },
+  "warnings": [],
+  "blockers": []
+}

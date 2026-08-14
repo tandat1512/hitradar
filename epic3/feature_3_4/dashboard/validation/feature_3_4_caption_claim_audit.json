@@ -1,0 +1,83 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Unsupported causal and generalization claim audit — Phase 4 caption scan",
+  "audit_scope": [
+    "chart titles",
+    "axis labels",
+    "captions",
+    "section text",
+    "tooltips"
+  ],
+  "banned_phrase_patterns": [
+    {"pattern": "causes?", "severity": "HIGH", "reason": "Causal language — not supported by correlation data"},
+    {"pattern": "caused by", "severity": "HIGH", "reason": "Causal attribution"},
+    {"pattern": "leads to", "severity": "HIGH", "reason": "Causal implication"},
+    {"pattern": "results in", "severity": "HIGH", "reason": "Causal conclusion"},
+    {"pattern": "makes songs", "severity": "HIGH", "reason": "Causal mechanism claim"},
+    {"pattern": "proves", "severity": "HIGH", "reason": "Unsupported strong causal claim"},
+    {"pattern": "guarantees", "severity": "HIGH", "reason": "Absolute causal claim"},
+    {"pattern": "societal", "severity": "MEDIUM", "reason": "Generalization beyond dataset scope"},
+    {"pattern": "industry-wide", "severity": "MEDIUM", "reason": "Unsupported generalization"},
+    {"pattern": "global music", "severity": "MEDIUM", "reason": "Dataset does not cover global music"},
+    {"pattern": "all music", "severity": "MEDIUM", "reason": "Overgeneralization from sample data"},
+    {"pattern": "streaming", "severity": "LOW", "reason": "No streaming data in source — cannot reference"},
+    {"pattern": "technology (made|caused|led to)", "severity": "HIGH", "reason": "Causal attribution to external factor"}
+  ],
+  "audit_results": {
+    "popularity_year_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "status": "PASS"
+    },
+    "popularity_decade_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "status": "PASS"
+    },
+    "audio_year_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "status": "PASS"
+    },
+    "audio_decade_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "status": "PASS"
+    },
+    "explicit_trend_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "note": "\"These values describe the records in this dataset — they do not indicate broader societal trends.\" — explicit disclaimer included",
+      "status": "PASS"
+    },
+    "duration_trend_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "status": "PASS"
+    },
+    "artist_genre_not_available_caption": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "status": "PASS"
+    },
+    "global_disclaimer": {
+      "phrases_found": [],
+      "causal_claims": 0,
+      "unsupported_generalizations": 0,
+      "note": "Explicitly states: 'do not represent the global music industry or broader population trends'",
+      "status": "PASS"
+    }
+  },
+  "total_causal_claims": 0,
+  "total_unsupported_generalizations": 0,
+  "status": "PASS",
+  "note": "Caption generators use deterministic data-driven phrases only. All 'increased/decreased/broadly similar' phrases are qualified with 'in the available data'. No causal mechanism attribution."
+}

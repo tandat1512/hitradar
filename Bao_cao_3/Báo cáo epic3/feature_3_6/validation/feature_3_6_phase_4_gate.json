@@ -1,0 +1,62 @@
+{
+  "phase": "4/5",
+  "feature": "3.6",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "backup_screenshot_inventory_complete": true,
+  "backup_screenshot_inventory_note": "7 screenshot entries defined (Home..Responsible Use) in feature_3_6_backup_screenshot_manifest.json; canonical dir demo/backup/screenshots/ created",
+  "screenshot_provenance_valid": false,
+  "screenshot_provenance_note": "No screenshot captured — live environment required. No fabricated capture time/hash/request_id recorded (honest PENDING/REQUIRES_LIVE_CAPTURE).",
+
+  "backup_video_status": "MANUAL_RECORDING_REQUIRED",
+  "video_manifest_or_plan_complete": true,
+  "video_manifest_or_plan_note": "feature_3_6_demo_video_shot_list.md (7 scenes) + feature_3_6_backup_video_manifest.json (status MANUAL_RECORDING_REQUIRED, no fake duration/hash).",
+
+  "offline_evidence_registry_complete": true,
+  "offline_evidence_registry_note": "5 entries: Predict VALIDATED (canonical 46.421062), Explain NOT_AVAILABLE, What-if NOT_AVAILABLE, Model Info VALIDATED_SNAPSHOT, Trends LIVE_LOCAL_COMPUTE. Evidence copied to demo/offline/evidence/ (originals untouched).",
+
+  "offline_mode_implemented": false,
+  "offline_mode_implemented_note": "Full design contract specified (activation, banner, per-page rules, recovery). Frontend implementation deferred to live environment for verification — untested UI code would risk the demo.",
+  "offline_mode_explicitly_labeled": true,
+  "offline_mode_explicitly_labeled_note": "Contract requires prominent persistent banner on all relevant pages; BLOCKER if viewer cannot distinguish LIVE vs OFFLINE.",
+
+  "offline_arbitrary_inference_possible": false,
+  "offline_predict_precomputed_only": true,
+  "offline_predict_precomputed_only_note": "Predict locked to canonical scenario; arbitrary input rejected with explicit message",
+  "offline_explain_precomputed_only": true,
+  "offline_explain_precomputed_only_note": "Offline Explain NOT_AVAILABLE (no validated SHAP) — no dynamic SHAP, no fabrication",
+  "offline_what_if_precomputed_only": true,
+  "offline_what_if_precomputed_only_note": "Offline What-If NOT_AVAILABLE (no validated delta) — no local heuristics",
+
+  "live_recovery_valid": true,
+  "live_recovery_valid_note": "Contract: /health probe or Retry → 'Switch back to Live' → demo_mode=LIVE; never stuck offline",
+
+  "frontend_direct_model_load_count": 0,
+  "frontend_direct_shap_compute_count": 0,
+
+  "backup_secret_exposure_count": 0,
+
+  "training_executed": false,
+  "refit_executed": false,
+  "model_artifacts_modified": false,
+  "source_dataset_modified": false,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_note": "Live pytest BLOCKED — no Python environment",
+
+  "warnings": [
+    "F36-W09: Screenshots and video not captured — REQUIRE live environment (manifest records REQUIRES_LIVE_CAPTURE / MANUAL_RECORDING_REQUIRED honestly, no fabricated assets)",
+    "F36-W10: Offline demo mode designed but not implemented in frontend — implementation + UI verification deferred to live environment"
+  ],
+  "blockers": [
+    "F36-B01: No live Python environment — cannot capture screenshots/video, cannot run offline-mode UI tests"
+  ],
+
+  "status": "FAIL",
+  "reason": "All design/contract/evidence artifacts complete and honest (no fabricated screenshots/video/SHAP/deltas). Actual capture and offline-mode implementation + tests are BLOCKED by F36-B01. Evidence registry correctly marks Explain/What-if offline as NOT_AVAILABLE rather than inventing values.",
+  "next_phase": "BLOCKED"
+}

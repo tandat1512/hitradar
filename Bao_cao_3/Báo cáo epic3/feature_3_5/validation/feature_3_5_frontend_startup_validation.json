@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 frontend startup validation",
+  "command": "streamlit run epic3/feature_3_3/frontend/app.py",
+  "default_port": 8501,
+  "expected_on_startup": [
+    "You can now view your Streamlit app in a browser.",
+    "Local URL: http://localhost:8501"
+  ],
+  "note": "Frontend startup validation requires Streamlit installed. Actual startup test deferred to integration test phase.",
+  "process_alive": "NOT_VERIFIED (requires live environment)",
+  "port": "NOT_VERIFIED (requires live environment)",
+  "status": "PENDING_LIVE_VERIFICATION"
+}

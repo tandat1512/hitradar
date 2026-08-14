@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-13T20:55:03+07:00",
+  "tokens": [
+    "TODO",
+    "TBD",
+    "FIXME",
+    "PLACEHOLDER",
+    "INSERT HERE",
+    "XXX",
+    "COMING SOON",
+    "MANUAL UPDATE REQUIRED",
+    "UNCONFIRMED",
+    "UNASSIGNED"
+  ],
+  "audit_method": "Technical placeholder tokens are scanned in the canonical report and actual deck; human roster confirmation is tracked separately and never fabricated.",
+  "unresolved_placeholder_count": 0,
+  "blocking_findings": [],
+  "human_assignment_pending": true,
+  "human_assignment_evidence": [
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/feature_3_8_slide_outline.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEFENSE_PRESENTER_ASSIGNMENT.md",
+    "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md"
+  ],
+  "quoted_or_status_mentions_excluded": "Audit/report text that describes the known unresolved issue is not counted again.",
+  "final_report_placeholder_count": 0,
+  "slide_outline_placeholder_count": 0,
+  "actual_slide_placeholder_count": 0,
+  "status": "PASS_WITH_HUMAN_ASSIGNMENT_PENDING"
+}

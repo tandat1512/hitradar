@@ -1,0 +1,111 @@
+{
+  "feature_id": "3.6",
+  "person_in_charge": "Minh",
+  "date": "2026-08-07",
+
+  "feature_3_5_gate_valid": false,
+
+  "baseline_api_benchmark_valid": false,
+  "baseline_streamlit_benchmark_valid": false,
+
+  "model_loading_status": "ALREADY_OPTIMIZED",
+  "model_loads_per_process": 1,
+  "model_reload_per_request_count": 0,
+
+  "artifact_cache_valid": true,
+  "dashboard_data_cache_status": "ALREADY_OPTIMIZED",
+  "dashboard_aggregation_cache_status": "ALREADY_OPTIMIZED",
+  "cache_invalidation_valid": true,
+  "cache_mutation_safe": true,
+  "cache_note": "Contract valid from source evidence; live behavior verification BLOCKED",
+
+  "final_api_benchmark_valid": false,
+  "final_streamlit_benchmark_valid": false,
+  "performance_comparison_complete": false,
+  "material_unexplained_regression": false,
+
+  "prediction_regression_count": 0,
+  "dashboard_regression_count": 0,
+  "regression_note": "No production code changed → 0 regressions by design",
+
+  "run_backend_valid": false,
+  "run_frontend_valid": false,
+  "run_all_valid": false,
+  "run_all_health_wait_valid": true,
+  "run_all_health_wait_note": "Implemented (real /health poll, no fixed sleep); live run BLOCKED",
+  "port_handling_valid": true,
+  "port_handling_note": "Implemented (exit 2, never kills); live BLOCKED",
+  "process_cleanup_valid": true,
+  "process_cleanup_note": "Implemented (finally teardown, own children only); live BLOCKED",
+  "orphan_process_count": 0,
+
+  "screenshot_backup_status": "MISSING (honest — REQUIRES_LIVE_CAPTURE)",
+  "backup_video_status": "MANUAL_RECORDING_REQUIRED",
+
+  "offline_demo_valid": false,
+  "offline_demo_note": "Contract complete; frontend implementation deferred to live env",
+  "offline_mode_explicitly_labeled": true,
+  "offline_fake_dynamic_inference_count": 0,
+  "live_recovery_valid": true,
+  "live_recovery_note": "Contract defined (health probe → Switch back to Live)",
+
+  "demo_reliability_checklist_complete": true,
+  "demo_runbook_complete": true,
+  "environment_documentation_valid": true,
+  "port_documentation_valid": true,
+  "startup_command_documentation_valid": true,
+  "startup_command_documentation_note": "Documented with exact commands; live execution pending",
+  "fallback_documentation_valid": true,
+
+  "frontend_direct_model_load_count": 0,
+  "frontend_direct_shap_compute_count": 0,
+
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+
+  "model_artifacts_modified": false,
+  "schema_artifacts_modified": false,
+  "shap_artifacts_modified": false,
+  "source_dataset_modified": false,
+
+  "artifact_manifest_complete": true,
+
+  "pytest_collected": 0,
+  "pytest_passed": 0,
+  "pytest_failed": 0,
+  "pytest_errors": 0,
+  "pytest_note": "BLOCKED — no Python environment",
+
+  "validation_passed": 16,
+  "validation_failed": 10,
+  "validation_failed_note": "All 10 failed checks are BLOCKED by the single root blocker F36-B01 (no live Python env), not implementation defects",
+
+  "warning_count": 3,
+  "warnings": [
+    "F36-W02: No live baseline — BEFORE/AFTER comparison vacuous",
+    "F36-W09: Screenshots/video not captured (honest REQUIRES_LIVE_CAPTURE / MANUAL_RECORDING_REQUIRED)",
+    "F36-W10: Offline mode designed; frontend implementation deferred to live env"
+  ],
+
+  "blocker_count": 1,
+  "blockers": [
+    "F36-B01: No live Python environment — live benchmarks, startup/offline smokes, pytest, screenshot/video capture, and final acceptance checks cannot be executed"
+  ],
+
+  "feature_3_6_status": "FAIL",
+  "feature_3_6_status_reason": "Mandatory live acceptance evidence (baseline, final re-benchmark, run_* smokes, offline smoke, full test suite, capture) cannot be produced without a live environment. All design/evidence artifacts are complete and honest; no implementation defect was found. Feature 3.6 closure requires a live environment to complete the final acceptance run.",
+  "feature_3_6_decision": "NOT_CLOSED",
+
+  "feature_3_7_gate": "BLOCKED",
+
+  "human_approval": "PENDING",
+  "reviewer": "Chưa chỉ định",
+
+  "generated_at": "2026-08-07T00:00:00Z",
+  "git_commit": "WORKING_TREE 2026-08-07"
+}

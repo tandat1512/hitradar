@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 artifact read baseline — from actual source inspection",
+  "reads": [
+    {
+      "artifact": "artifacts/epic2/pipeline/full_inference_pipeline.joblib",
+      "read_point": "startup only (lifespan)",
+      "frequency": "1 per backend lifecycle",
+      "cached": true,
+      "read_during_requests": false,
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "artifact": "artifacts/epic2/schemas/input_schema.json",
+      "read_point": "first GET /features or get_input_schema()",
+      "frequency": "1 per lifecycle (cached in PipelineLoader._schemas)",
+      "cached": true,
+      "read_during_requests": false,
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "artifact": "artifacts/epic2/schemas/selected_features.json",
+      "read_point": "first access (cached)",
+      "frequency": "1 per lifecycle",
+      "cached": true,
+      "read_during_requests": false,
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "artifact": "artifacts/epic2/metadata/{model_version,data_version,package_version}.json",
+      "read_point": "first get_model_info()",
+      "frequency": "1 per lifecycle (cached in _metadata)",
+      "cached": true,
+      "read_during_requests": false,
+      "classification": "ALREADY_OPTIMIZED"
+    },
+    {
+      "artifact": "artifacts/epic2/model_metrics.json",
+      "read_point": "every GET /model-info",
+      "frequency": "per request — NOT cached",
+      "cached": false,
+      "read_during_requests": true,
+      "classification": "MINOR_ARTIFACT_READING",
+      "note": "Small JSON file read on each /model-info call. Negligible bytes but repeated. Candidate for caching in Phase 2 (low priority)."
+    }
+  ],
+  "summary": "5 artifact groups inspected. 4 already cached once-per-lifecycle (ALREADY_OPTIMIZED). 1 minor repeated read (model_metrics.json in /model-info).",
+  "status": "BASELINE_RESOLVED_FROM_SOURCE"
+}

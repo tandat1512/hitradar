@@ -1,0 +1,42 @@
+{
+  "gate_id": "F31-P2-GATE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:43:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "gate_status": "PASS_WITH_WARNINGS",
+  "overall_readiness": "MAY_BEGIN",
+  "model_load_valid": true,
+  "runtime_dependencies_valid": true,
+  "input_schema_valid": true,
+  "output_schema_valid": true,
+  "selected_features_valid": true,
+  "feature_names_valid": true,
+  "feature_layers_resolved": true,
+  "raw_input_count": 18,
+  "selected_feature_count": 31,
+  "transformed_feature_count": 49,
+  "model_feature_count_metadata": null,
+  "feature_contract_consistent": true,
+  "predict_interface_available": true,
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "partial_fit_call_count": 0,
+  "source_artifacts_modified": false,
+  "warning_count": 1,
+  "warnings": [
+    {
+      "type": "SKLEARN_VERSION_MISMATCH",
+      "severity": "WARNING",
+      "detail": "Pipeline pickled with sklearn 1.9.0, running on sklearn 1.8.0. Model loads and runs correctly but this should be addressed before production."
+    }
+  ],
+  "blocker_count": 0,
+  "blockers": [],
+  "status": "PASS_WITH_WARNINGS",
+  "next_phase": "MAY_BEGIN",
+  "phase_3_prerequisites": [
+    "Optional: install sklearn 1.9.0 to match pipeline's training version",
+    "Prediction test with example_input.json (Phase 3)"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-05T14:46:03.493789+00:00",
+  "example_input_path": "H:\\dự án\\DUAN1 github\\7.ML\\7.10.model_packaging\\package\\examples\\example_input.json",
+  "expected_prediction_raw": 46.421062,
+  "actual_prediction_raw": 46.421062,
+  "absolute_difference": 0.0,
+  "within_tolerance": true,
+  "prediction_clipped": 46.421062,
+  "prediction_display": 46,
+  "status": "PASS",
+  "model_id": "EXP24-XGB-FINAL-001",
+  "model_version": "1.0.0",
+  "warnings": [],
+  "predictions_finite": true,
+  "warnings_list": [],
+  "blockers": []
+}

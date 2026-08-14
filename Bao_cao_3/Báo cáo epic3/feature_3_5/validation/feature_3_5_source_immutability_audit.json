@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 source immutability audit",
+  "principle": "Feature 3.5 does not modify model artifacts, source datasets, or EPIC 2 outputs",
+  "model_artifacts": {
+    "artifacts/epic2/pipeline/full_inference_pipeline.joblib": {"modified": false, "hash_changed": false},
+    "7.ML/7.4.feature_transformers/ohe_and_scaler.joblib": {"modified": false, "hash_changed": false}
+  },
+  "shap_artifacts": {
+    "7.ML/7.9.explainability/": {"modified": false}
+  },
+  "source_datasets": {
+    "5.DATA/processed/ml_ready_dataset.csv": {"modified": false}
+  },
+  "schemas": {
+    "artifacts/epic2/schemas/": {"modified": false}
+  },
+  "feature_3_5_code_changes": {
+    "5.UNG_DUNG/5.1.backend_api/requirements.txt": "httpx>=0.27.0 ADDED",
+    "note": "Only requirements.txt changed — no runtime code, no model, no data"
+  },
+  "training_executed": false,
+  "tuning_executed": false,
+  "refit_executed": false,
+  "any_artifact_hash_changed": false,
+  "status": "PASS"
+}

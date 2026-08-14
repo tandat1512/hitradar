@@ -1,0 +1,31 @@
+{
+  "feature_id": "3.8",
+  "generated_at": "2026-08-13T00:00:00+07:00",
+  "checks": [
+    {"check_id":"F38-STORY","evidence":"feature_3_8_project_story.md","actual":"Corrected against current locked/runtime evidence","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-SLIDES","evidence":"feature_3_8_final_slide_audit.json","actual":"Outline facts synchronized; one semantic presenter placeholder remains; actual deck missing","status":"FAIL","severity":"HIGH"},
+    {"check_id":"F38-SLIDE-FACTS","evidence":"feature_3_8_final_slide_fact_crosscheck.json","actual":"All numeric mismatch categories zero after correction","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-SLIDE-CLAIMS","evidence":"feature_3_8_final_claim_audit.json","actual":"No unsafe positive claims in expanded package scope","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-DEMO-SCRIPT","evidence":"DEMO_SCRIPT_FEATURE_3_8.md","actual":"Complete with honest recovery wording","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-DEMO-SCENARIO","evidence":"feature_3_8_demo_scenario.json","actual":"Canonical fixture/hash and measured Predict/Explain/What-if evidence synchronized","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-LIVE-DEMO","evidence":"feature_3_8_final_live_demo_smoke.json","actual":"Health/Predict/Explain/What-if/Trends pass; environment warnings remain","status":"PASS_WITH_WARNINGS","severity":"WARNING"},
+    {"check_id":"F38-OFFLINE-FALLBACK","evidence":"feature_3_8_final_fallback_smoke.json","actual":"Evidence files exist; automatic UI/banner and media unavailable","status":"FAIL","severity":"HIGH"},
+    {"check_id":"F38-QA-DATASET","evidence":"DEFENSE_QA_DATASET.md","actual":"MUST_KNOW ready; legacy documentation conflict disclosed","status":"PASS_WITH_CONTEXT","severity":"INFO"},
+    {"check_id":"F38-QA-MODEL","evidence":"DEFENSE_QA_MODEL.md","actual":"MUST_KNOW ready","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-QA-SHAP","evidence":"DEFENSE_QA_SHAP.md","actual":"Artifact background and live backend explainer are distinguished; wording is non-causal","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-QA-LIMITATIONS","evidence":"DEFENSE_QA_LIMITATIONS.md","actual":"MUST_KNOW ready","status":"PASS","severity":"INFO"},
+    {"check_id":"F38-PRESENTER-ASSIGNMENT","evidence":"feature_3_8_final_presenter_audit.json","actual":"No human-confirmed ownership; Presenter remains UNCONFIRMED","status":"PENDING","severity":"HIGH"},
+    {"check_id":"F38-REHEARSAL-1","evidence":"feature_3_8_rehearsal_1.json","actual":"Human rehearsal not performed/supplied","status":"PENDING","severity":"HIGH"},
+    {"check_id":"F38-REHEARSAL-2","evidence":"feature_3_8_rehearsal_2.json","actual":"Human rehearsal not performed/supplied","status":"PENDING","severity":"HIGH"},
+    {"check_id":"F38-REHEARSAL-ISSUES","evidence":"feature_3_8_final_rehearsal_audit.json","actual":"Remaining BLOCKER/HIGH unknown until rehearsals","status":"NOT_EVALUATED","severity":"HIGH"},
+    {"check_id":"F38-BACKUP-ASSETS","evidence":"feature_3_8_backup_media_audit.json","actual":"Screenshot/video/backup PDF missing","status":"FAIL","severity":"HIGH"},
+    {"check_id":"F38-TECHNICAL-ENVIRONMENT","evidence":"feature_3_8_final_technical_environment.json","actual":"Service smoke passed, but browser/offline UI/physical environment validation is incomplete","status":"PARTIAL","severity":"HIGH"},
+    {"check_id":"F38-HUMAN-CHECKS","evidence":"FINAL_DEFENSE_CHECKLIST.md","actual":"Physical/device/availability checks pending","status":"PENDING","severity":"HIGH"},
+    {"check_id":"F38-PRODUCT-IMMUTABILITY","evidence":"feature_3_8_product_immutability_audit.json","actual":"Model/dataset/SHAP hashes match; API/schema/loader attribution is not proven in dirty untracked state","status":"PARTIAL","severity":"HIGH"},
+    {"check_id":"F38-TRACEABILITY","evidence":"feature_3_8_closure_gate.json","actual":"Feature 3.8 package is untracked and is not contained in the base commit","status":"FAIL","severity":"HIGH"},
+    {"check_id":"F38-TESTS","evidence":"pytest_feature_3_8.xml","actual":"34 passed, 0 failed, 0 errors, 0 skipped","status":"PASS","severity":"INFO"}
+  ],
+  "pytest": {"collected": 34, "passed": 34, "failed": 0, "errors": 0, "skipped": 0, "duration_seconds": 0.458},
+  "overall_status": "WAITING_FOR_HUMAN_ACTION",
+  "defense_ready": false
+}

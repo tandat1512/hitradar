@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-06T01:38:12.433064+00:00",
+  "status": "PASS",
+  "errors_tested": 5,
+  "all_return_correct_status": true,
+  "all_have_error_object": true,
+  "all_have_request_id": true,
+  "all_no_traceback": true,
+  "tests": [
+    {
+      "url": "/predict",
+      "desc": "empty body",
+      "expected": 422,
+      "actual": 422,
+      "correct": true
+    },
+    {
+      "url": "/predict",
+      "desc": "out of range",
+      "expected": 422,
+      "actual": 422,
+      "correct": true
+    },
+    {
+      "url": "/explain",
+      "desc": "empty body",
+      "expected": 422,
+      "actual": 422,
+      "correct": true
+    },
+    {
+      "url": "/what-if",
+      "desc": "unknown field",
+      "expected": 422,
+      "actual": 422,
+      "correct": true
+    },
+    {
+      "url": "/what-if",
+      "desc": "empty changes",
+      "expected": 422,
+      "actual": 422,
+      "correct": true
+    }
+  ]
+}

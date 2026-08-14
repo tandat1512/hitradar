@@ -1,0 +1,58 @@
+{
+  "audit_id": "F31-P5-WRITE-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-04T08:15:00+07:00",
+  "feature_id": "3.1",
+  "phase": 5,
+  "git_status_summary": {
+    "total_changed_files": 17,
+    "staged_files": 2,
+    "unstaged_files": 0,
+    "untracked_files": 15
+  },
+  "modified_files": [
+    {
+      "path": "5.UNG_DUNG/5.1.backend_api/api.py",
+      "status": "M (staged)",
+      "belongs_to_feature": "Feature 3.2 (FastAPI backend)",
+      "acceptable": true,
+      "notes": "Backend API file modified during FastAPI development; not Feature 3.1"
+    },
+    {
+      "path": "5.UNG_DUNG/5.1.backend_api/models/prediction.py",
+      "status": "M (staged)",
+      "belongs_to_feature": "Feature 3.2 (FastAPI backend)",
+      "acceptable": true,
+      "notes": "Backend prediction model file; not Feature 3.1"
+    }
+  ],
+  "untracked_files": [
+    {"path": "5.UNG_DUNG/5.1.backend_api/artifact_validation_report.json", "acceptable": true, "notes": "Feature 3.2 artifact"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/artifact_validation_report.md", "acceptable": true, "notes": "Feature 3.2 report"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/config.py", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/pipeline_loader.py", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/requirements.txt", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/run.bat", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/runtime_patches.py", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/tmp_tasks_3_1_4_to_7.json", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "5.UNG_DUNG/5.1.backend_api/validate_artifacts.py", "acceptable": true, "notes": "Feature 3.2"},
+    {"path": "artifacts/epic2/", "acceptable": true, "notes": "Copied EPIC2 artifacts snapshot"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_model_load_validation.json", "acceptable": true, "notes": "Feature 3.1 checkpoint"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_no_refit_script.py", "acceptable": true, "notes": "Feature 3.1 script"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_phase_1_checkpoint.json", "acceptable": true, "notes": "Feature 3.1 checkpoint"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_phase_2_checkpoint.json", "acceptable": true, "notes": "Feature 3.1 checkpoint"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_phase_2_load.py", "acceptable": true, "notes": "Feature 3.1 load script"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_phase_2_prerequisite_validation.json", "acceptable": true, "notes": "Feature 3.1 prerequisite"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_phase_3_checkpoint.json", "acceptable": true, "notes": "Feature 3.1 checkpoint"},
+    {"path": "epic3/feature_3_1_artifact_validation/checkpoints/feature_3_1_phase_3_inference_runner.py", "acceptable": true, "notes": "Feature 3.1 inference runner"}
+  ],
+  "violations": [],
+  "no_epic2_modified": true,
+  "no_new_model_artifacts": true,
+  "no_duplicate_markdown": true,
+  "audit_status": "PASS",
+  "warnings": [
+    "artifacts/epic2/ directory contains a copied snapshot of EPIC2 artifacts — not a modification of original EPIC2 artifacts"
+  ],
+  "blockers": []
+}

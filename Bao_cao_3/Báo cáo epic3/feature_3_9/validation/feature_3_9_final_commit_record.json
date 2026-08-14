@@ -1,0 +1,9 @@
+{
+  "mode": "PREPARE_ONLY",
+  "commit_executed": false,
+  "new_commit_sha": null,
+  "commit_message": null,
+  "files_committed": [],
+  "timestamp": null,
+  "status": "BLOCKED_PREREQUISITE_AND_VALIDATION"
+}

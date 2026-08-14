@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-08-13T20:55:05+07:00",
+  "demo_identity_type": "WORKING_TREE_DEMO_UNRELEASED_NOT_FROZEN",
+  "demo_release_identity_resolved": false,
+  "release_commit_sha": null,
+  "working_tree_base_sha": "2a6343f4bfbc182cefb8a6b734c6b52b3312c3e6",
+  "branch": "main",
+  "tag": null,
+  "model_version": "1.0.0",
+  "artifact_version": "2.7.0",
+  "slide_version": "6.TAI_LIEU/6.2.slide/slide_bao_ve.pptx",
+  "slide_status": "PASS",
+  "demo_script": {
+    "path": "Bao_cao_3/Báo cáo epic3/feature_3_8/DEMO_SCRIPT_FEATURE_3_8.md",
+    "sha256": "5f317caf8f2ab41e4df380ffb8342bc0f15e552709b9eadd6d1ccf31acac5a97"
+  },
+  "defense_checklist_sha256": "757da1986657d56aa2617821e7e727ada6f73b4e4b79e251c2f33b3d2e79e3e8",
+  "qa_master_sha256": "0f4e544877c55c0b7bba190090ee82548e99bf97c5e3994e875f5eb72fccd95a",
+  "working_tree_status_entry_count": 952,
+  "tracked_diff_sha256": "c034e33313536eb6be95fe2a68086b79a11d58a568865c2490ba3fcbe9fea4cf",
+  "status_manifest_sha256": "90c3455e86b8ec83df96ebebc3f33e34bf8d4f094a18a66eefb366beac417471",
+  "untracked_contents_fully_fingerprinted": false,
+  "warning": "No final release commit exists. Any current execution would be a dirty working-tree demo and must not be represented as a released SHA.",
+  "status": "UNRESOLVED_RELEASE_IDENTITY"
+}

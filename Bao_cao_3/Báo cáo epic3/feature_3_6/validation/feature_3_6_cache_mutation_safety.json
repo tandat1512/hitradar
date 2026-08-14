@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 cache mutation safety — contract defined; live execution BLOCKED",
+  "test_case": {
+    "scenario": "Caller A receives cached data, performs local filtering/mutation. Caller B must still receive correct source-derived data.",
+    "expected": "mutation by A does not corrupt cached entry visible to B",
+    "actual": "BLOCKED (no live env)"
+  },
+  "current_design_evidence": {
+    "backend_metadata": "PipelineLoader caches JSON-derived dicts (_schemas, _selected_features, _metadata). Endpoints read values without mutating them. /features builds fresh FieldDescriptor objects from cached schema (defensive copy at boundary).",
+    "dashboard_f3_4": "dashboard_cache returns semantic copies; docstring: 'Caller mutation cannot corrupt the cache.' st.cache_data also returns copies on pickled results.",
+    "dashboard_page": "load_yearly_features returns fresh dicts; page reads only. No in-place mutation of cached structure.",
+    "model_object": "shared read-only inference resource; predict_popularity does not mutate the pipeline"
+  },
+  "mutation_boundaries_identified": {
+    "defensive_copy_required_at": "field-descriptor construction (already done in api.py /features)",
+    "defensive_copy_required_at_2": "dashboard cached DataFrame consumers that filter in place — Feature 3.4 returns .copy() (trend_data_loader load_trend_dataset returns df.copy())",
+    "not_required": "immutable JSON metadata dicts (read-only usage)"
+  },
+  "status": "DESIGN_SAFE_AS_SOURCED"
+}

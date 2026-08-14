@@ -1,0 +1,20 @@
+{
+  "audit_scope": [
+    "DEMO_SCRIPT_FEATURE_3_8.md presenter lines",
+    "feature_3_8_demo_step_registry.json presenter_line fields"
+  ],
+  "guarantee_claim": 0,
+  "causal_shap_claim": 0,
+  "causal_what_if_claim": 0,
+  "offline_live_misrepresentation": 0,
+  "unsupported_metric_claim": 0,
+  "controls": {
+    "predict_called_estimate": true,
+    "shap_called_model_behavior_noncausal": true,
+    "what_if_called_prediction_comparison_noncausal": true,
+    "offline_disclosure_exact": true,
+    "model_info_metrics_omitted_when_runtime_null": true,
+    "trends_current_source_distinguished_from_project_story": true
+  },
+  "status": "PASS"
+}

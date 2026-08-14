@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.6 backup demo video manifest",
+  "status": "MANUAL_RECORDING_REQUIRED",
+  "reason": "No live environment / recording tool in this session. Creating a fake .mp4 is forbidden. Recording is a manual step for the live environment.",
+  "intended_path": "demo/backup/video/hitradar_demo.mp4",
+  "recording_plan": "feature_3_6_demo_video_shot_list.md (7 scenes, ~3.5 min)",
+  "when_recorded": {
+    "path": "demo/backup/video/hitradar_demo.mp4",
+    "bytes": null,
+    "sha256": null,
+    "duration_seconds": null,
+    "captured_at": null,
+    "source_commit": null,
+    "model_version": "1.0.0 (expected)",
+    "covered_flows": ["home", "predict", "explain", "what_if", "music_trends", "model_info", "responsible_use"],
+    "validation_status": "PENDING_LIVE_RECORDING"
+  }
+}

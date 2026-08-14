@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "policy": {
+    "derivation": "decade = (release_year // 10) * 10",
+    "display_format": "XXXXs (e.g., 1990s, 2000s)",
+    "decade_2020": "2020 is a SINGLE-YEAR edge case. It is NOT a full decade (2020s). When 2020 data is present, display label as '2020' or '2020 (single year)' — NOT '2020s'. Caption must note that 2020 represents only the year 2020, not a 10-year aggregate.",
+    "aggregation": "mean by decade using pandas groupby; skipna=True",
+    "expected_decades_present": ["1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s"],
+    "pre_computed_decade_in_source": "yes — dataset contains 'decade' column computed as (release_year // 10) * 10"
+  },
+  "note": "The dataset has a pre-computed 'decade' column. Dashboard may use this directly for decade-level aggregation instead of re-deriving."
+}

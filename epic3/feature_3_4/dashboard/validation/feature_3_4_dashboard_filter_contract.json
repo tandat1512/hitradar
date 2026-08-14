@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-06",
+  "person_in_charge": "Minh",
+  "description": "Dashboard filter consistency contract",
+  "global_filter": {
+    "type": "year_range",
+    "field": "release_year",
+    "min_bound": 1922,
+    "max_bound": 2019,
+    "default_min": 1922,
+    "default_max": 2019
+  },
+  "chart_filter_mapping": {
+    "popularity_year_trend": "uses selected year range",
+    "audio_feature_year_trend": "uses selected year range",
+    "track_count_by_year": "uses selected year range",
+    "popularity_decade_trend": "uses FULL dataset decade (decade column pre-computed)",
+    "audio_feature_decade_trend": "uses FULL dataset decade",
+    "explicit_trend": "uses FULL dataset decade",
+    "duration_trend": "uses FULL dataset decade"
+  },
+  "consistency_policy": "Charts that aggregate by decade use the FULL dataset decade regardless of year range filter. Year range filter applies only to year-level charts. This is explicitly displayed in chart captions.",
+  "caption_required": true,
+  "status": "PASS"
+}

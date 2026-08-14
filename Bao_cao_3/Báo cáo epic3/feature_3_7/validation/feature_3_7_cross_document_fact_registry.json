@@ -1,0 +1,250 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 cross-document fact registry — all facts traced to canonical sources",
+  "facts": [
+    {
+      "fact": "project_name",
+      "canonical_source": "README.md line 1",
+      "canonical_value": "HitRadar Pro",
+      "README": "HitRadar Pro",
+      "HOW_TO_RUN": "HitRadar Pro",
+      "USER_MANUAL": "HitRadar Pro",
+      "API_DOC": "HitRadar Pro API",
+      "TECHNICAL_APPENDIX": "HitRadar Pro",
+      "consistent": true
+    },
+    {
+      "fact": "model_name",
+      "canonical_source": "artifacts/epic2/metadata/model_version.json model_id",
+      "canonical_value": "EXP24-XGB-FINAL-001",
+      "README": "EXP24-XGB-FINAL-001",
+      "HOW_TO_RUN": "EXP24-XGB-FINAL-001",
+      "USER_MANUAL": "EXP24-XGB-FINAL-001",
+      "API_DOC": "EXP24-XGB-FINAL-001",
+      "TECHNICAL_APPENDIX": "EXP24-XGB-FINAL-001",
+      "consistent": true
+    },
+    {
+      "fact": "model_version",
+      "canonical_source": "artifacts/epic2/metadata/model_version.json model_version",
+      "canonical_value": "1.0.0",
+      "README": "1.0.0",
+      "HOW_TO_RUN": "1.0.0",
+      "USER_MANUAL": "1.0.0",
+      "API_DOC": "1.0.0",
+      "TECHNICAL_APPENDIX": "1.0.0",
+      "consistent": true
+    },
+    {
+      "fact": "model_family",
+      "canonical_source": "artifacts/epic2/metadata/model_version.json model_family",
+      "canonical_value": "XGBoost",
+      "README": "XGBoost regression",
+      "HOW_TO_RUN": "XGBoost",
+      "USER_MANUAL": "XGBoost",
+      "API_DOC": "XGBoost",
+      "TECHNICAL_APPENDIX": "XGBoost",
+      "consistent": true
+    },
+    {
+      "fact": "target",
+      "canonical_source": "artifacts/epic2/schemas/output_schema.json",
+      "canonical_value": "popularity score (0-100), continuous regression",
+      "README": "popularity score (0-100)",
+      "HOW_TO_RUN": "popularity score (0-100)",
+      "USER_MANUAL": "popularity score (0-100)",
+      "API_DOC": "popularity score (0-100)",
+      "TECHNICAL_APPENDIX": "popularity (0-100)",
+      "consistent": true
+    },
+    {
+      "fact": "raw_input_feature_count",
+      "canonical_source": "artifacts/epic2/schemas/input_schema.json + feature_3_1_final_validation_results.json F31-FEATURE-LAYERS",
+      "canonical_value": "18",
+      "README": "18 input features",
+      "HOW_TO_RUN": "18 input features",
+      "USER_MANUAL": "18 input features",
+      "API_DOC": "18 required fields",
+      "TECHNICAL_APPENDIX": "18 canonical input fields (raw)",
+      "consistent": true
+    },
+    {
+      "fact": "selected_feature_count",
+      "canonical_source": "artifacts/epic2/schemas/selected_features.json feature_count",
+      "canonical_value": "31",
+      "README": "31 selected features",
+      "HOW_TO_RUN": "N/A",
+      "USER_MANUAL": "31 selected features",
+      "API_DOC": "31 SHAP values",
+      "TECHNICAL_APPENDIX": "31 selected features (18 raw + 13 engineered)",
+      "consistent": true
+    },
+    {
+      "fact": "transformed_feature_count",
+      "canonical_source": "feature_3_1_final_validation_results.json F31-FEATURE-NAMES",
+      "canonical_value": "49",
+      "HOW_TO_RUN": "N/A",
+      "API_DOC": "N/A",
+      "TECHNICAL_APPENDIX": "49 transformed model matrix columns",
+      "consistent": true
+    },
+    {
+      "fact": "MAE",
+      "canonical_source": "feature_3_1_model_metrics_validation.json official_metrics.MAE",
+      "canonical_value": "17.646684646606445",
+      "TECHNICAL_APPENDIX": "17.65",
+      "API_DOC": "17.65",
+      "USER_MANUAL": "17.65 (implied via §9)",
+      "README": "N/A",
+      "HOW_TO_RUN": "N/A",
+      "consistent": true,
+      "note": "API doc placeholder FIXED in Phase 5 (was 6.42)"
+    },
+    {
+      "fact": "RMSE",
+      "canonical_source": "feature_3_1_model_metrics_validation.json official_metrics.RMSE",
+      "canonical_value": "21.01337842313573",
+      "TECHNICAL_APPENDIX": "21.01",
+      "API_DOC": "21.01",
+      "USER_MANUAL": "21.01 (implied)",
+      "consistent": true,
+      "note": "API doc placeholder FIXED in Phase 5 (was 8.71)"
+    },
+    {
+      "fact": "R2",
+      "canonical_source": "feature_3_1_model_metrics_validation.json official_metrics.R2",
+      "canonical_value": "0.06962639093399048",
+      "TECHNICAL_APPENDIX": "0.070",
+      "API_DOC": "0.070",
+      "consistent": true,
+      "note": "API doc placeholder FIXED in Phase 5 (was 0.34)"
+    },
+    {
+      "fact": "backend_port",
+      "canonical_source": "scripts/run_all.py + api.py",
+      "canonical_value": "8000",
+      "README": "8000",
+      "HOW_TO_RUN": "8000",
+      "API_DOC": "localhost:8000",
+      "TECHNICAL_APPENDIX": "8000",
+      "consistent": true
+    },
+    {
+      "fact": "frontend_port",
+      "canonical_source": "scripts/run_all.py",
+      "canonical_value": "8501",
+      "README": "8501",
+      "HOW_TO_RUN": "8501",
+      "API_DOC": "N/A",
+      "TECHNICAL_APPENDIX": "8501",
+      "consistent": true
+    },
+    {
+      "fact": "api_prefix",
+      "canonical_source": "openapi.json paths",
+      "canonical_value": "NONE (root-level routes)",
+      "API_DOC": "NONE — routes at root level",
+      "TECHNICAL_APPENDIX": "NONE",
+      "consistent": true
+    },
+    {
+      "fact": "predict_path",
+      "canonical_source": "openapi.json /predict",
+      "canonical_value": "POST /predict",
+      "README": "POST /predict",
+      "API_DOC": "POST /predict",
+      "consistent": true
+    },
+    {
+      "fact": "explain_path",
+      "canonical_source": "openapi.json /explain",
+      "canonical_value": "POST /explain",
+      "README": "POST /explain",
+      "API_DOC": "POST /explain",
+      "consistent": true
+    },
+    {
+      "fact": "whatif_path",
+      "canonical_source": "openapi.json /what-if",
+      "canonical_value": "POST /what-if",
+      "README": "POST /what-if",
+      "API_DOC": "POST /what-if",
+      "consistent": true
+    },
+    {
+      "fact": "health_path",
+      "canonical_source": "openapi.json /health",
+      "canonical_value": "GET /health",
+      "API_DOC": "GET /health",
+      "consistent": true
+    },
+    {
+      "fact": "modelinfo_path",
+      "canonical_source": "openapi.json /model-info",
+      "canonical_value": "GET /model-info",
+      "API_DOC": "GET /model-info",
+      "consistent": true
+    },
+    {
+      "fact": "offline_status",
+      "canonical_source": "offline demo mode contract + feature_3_6_offline_demo_mode_contract.json",
+      "canonical_value": "precomputed_scenarios — NOT live inference",
+      "README": "precomputed validated fallback",
+      "HOW_TO_RUN": "precomputed fallback",
+      "USER_MANUAL": "precomputed — not live",
+      "API_DOC": "N/A",
+      "TECHNICAL_APPENDIX": "precomputed validated demonstration",
+      "consistent": true
+    },
+    {
+      "fact": "dataset_year_range",
+      "canonical_source": "epic3/feature_3_3/frontend/pages/4_Trends.py + ml_ready_dataset.csv",
+      "canonical_value": "1922-2019",
+      "README": "1922-2019 (FIXED Phase 5, was 1921-2020)",
+      "HOW_TO_RUN": "N/A",
+      "USER_MANUAL": "1922-2019",
+      "API_DOC": "N/A",
+      "TECHNICAL_APPENDIX": "1922-2019",
+      "consistent": true,
+      "note": "README was wrong — FIXED in Phase 5"
+    },
+    {
+      "fact": "dataset_rows",
+      "canonical_source": "README.md canonical + ml_ready_dataset.csv row count",
+      "canonical_value": "169,681",
+      "README": "169,681 songs",
+      "HOW_TO_RUN": "N/A",
+      "USER_MANUAL": "169,681 songs",
+      "TECHNICAL_APPENDIX": "169,681 songs",
+      "consistent": true
+    },
+    {
+      "fact": "Python_version",
+      "canonical_source": "Feature 2.2 preprocessing execution (python_version=3.13.7)",
+      "canonical_value": "3.13.7 (minimum ≥3.10)",
+      "README": "3.13.7 (requires ≥3.10)",
+      "HOW_TO_RUN": "3.13.7 (minimum ≥3.10)",
+      "consistent": true
+    },
+    {
+      "fact": "model_load_benchmark_mean_ms",
+      "canonical_source": "feature_3_1_benchmark_results.json model_load.mean_ms",
+      "canonical_value": "928.001ms",
+      "TECHNICAL_APPENDIX": "928 ms",
+      "consistent": true
+    },
+    {
+      "fact": "warm_inference_benchmark_mean_ms",
+      "canonical_source": "feature_3_1_benchmark_results.json warm_single_prediction.mean_ms",
+      "canonical_value": "15.574ms",
+      "TECHNICAL_APPENDIX": "15.6 ms",
+      "consistent": true
+    }
+  ],
+  "total_facts": 24,
+  "consistent_count": 24,
+  "inconsistent_count": 0,
+  "inconsistencies_corrected_in_phase5": 2,
+  "status": "ALL_CONSISTENT"
+}

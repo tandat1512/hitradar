@@ -1,0 +1,30 @@
+{
+  "validation_timestamp": "2026-07-30T15:30:33Z",
+  "schema_validation": {
+    "status": "OK",
+    "files": {
+      "feature_mapping.json": "OK",
+      "feature_names.json": "OK",
+      "input_schema.json": "OK",
+      "output_schema.json": "OK",
+      "selected_features.json": "OK"
+    }
+  },
+  "feature_names_validation": {
+    "fe_col_count": 31,
+    "fe_col_match": false,
+    "prep_feature_count": 49,
+    "prep_count_match": true,
+    "status": "FAIL"
+  },
+  "shap_assets_validation": {
+    "missing_dir": "FAIL - directory not found"
+  },
+  "latency_benchmark": {
+    "avg_ms": 17.21,
+    "p50_ms": 16.81,
+    "p95_ms": 19.0,
+    "p99_ms": 20.3,
+    "status": "OK"
+  }
+}

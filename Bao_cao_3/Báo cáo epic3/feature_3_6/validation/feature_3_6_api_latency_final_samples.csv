@@ -1,0 +1,6 @@
+# Feature 3.6 — API latency final samples (BLOCKED)
+# No live Python environment in this session. Same methodology as Phase 1
+# (canonical input, warm-up, N measurements, same server config) required at
+# live re-benchmark: python scripts/run_all.py + bench script (Phase 1 harness).
+phase,request_id,timestamp_ms,status
+PENDING,PENDING,PENDING,BLOCKED

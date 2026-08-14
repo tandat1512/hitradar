@@ -1,0 +1,12 @@
+{
+  "computed_after_rehearsal_2": false,
+  "slides_ready": "NOT_VALIDATED_BY_R2",
+  "story_ready": "NOT_VALIDATED_BY_R2",
+  "demo_ready": "NOT_VALIDATED_BY_R2",
+  "qa_ready": "STRUCTURALLY_PREPARED_NOT_HUMAN_VALIDATED",
+  "handoffs_ready": "UNASSIGNED",
+  "backup_ready": "NO_MEDIA_AND_OFFLINE_UI_UNVALIDATED",
+  "timing_ready": "NO_ACTUAL_TIMING",
+  "defense_ready": "NOT_EVALUATED_PHASE_5_ONLY",
+  "status": "HUMAN_REHEARSALS_REQUIRED"
+}

@@ -1,0 +1,41 @@
+{
+  "validation_id": "F31-P2-NOREFIT-001",
+  "session_id": "F31-P1-INTAKE-20260803-204512-MINH",
+  "generated_at": "2026-08-03T21:41:00+07:00",
+  "feature_id": "3.1",
+  "phase": 2,
+  "validation_status": "PASS",
+  "instrumentation_method": "method_interception",
+  "instrumentation_details": [
+    "fit() methods intercepted across sklearn.base, sklearn.pipeline, sklearn.preprocessing, sklearn.compose, xgboost, sklearn.ensemble",
+    "fit_transform() methods intercepted across same modules",
+    "partial_fit() methods intercepted across same modules",
+    "All intercepted methods raise RuntimeError if called"
+  ],
+  "call_counts": {
+    "fit_call_count": 0,
+    "fit_transform_call_count": 0,
+    "partial_fit_call_count": 0
+  },
+  "artifact_hash": {
+    "before": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "after": "7ff4b1183938e57bd4dd8e2be63d7fe5a7fa8eb336e3ee94ba62aca41d1a7d99",
+    "unchanged": true
+  },
+  "no_refit_evidence": [
+    "All fit/fit_transform/partial_fit call counts = 0",
+    "Artifact SHA-256 unchanged before and after load",
+    "No serialization of model object performed",
+    "No save to disk of any artifact"
+  ],
+  "source_artifacts_modified": false,
+  "checks": {
+    "fit_count_zero": "PASS",
+    "fit_transform_count_zero": "PASS",
+    "partial_fit_count_zero": "PASS",
+    "hash_unchanged": "PASS",
+    "no_serialization": "PASS"
+  },
+  "warnings": [],
+  "blockers": []
+}

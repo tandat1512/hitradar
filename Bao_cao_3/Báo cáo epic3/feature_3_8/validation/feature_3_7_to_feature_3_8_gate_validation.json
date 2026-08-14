@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 to Feature 3.8 upstream gate validation",
+  "source_gate": "feature_3_7/validation/feature_3_7_closure_gate.json",
+  "validation_results": {
+    "feature_3_7_status": "PASS_WITH_WARNINGS",
+    "feature_3_7_decision": "ELIGIBLE_FOR_CLOSURE",
+    "epic_3_documentation_gate": "DOCUMENTATION_COMPLETE",
+    "feature_3_7_blockers_all_environment": true,
+    "feature_3_7_documentation_complete": true,
+    "feature_3_7_cross_doc_consistent": true,
+    "feature_3_7_no_artifacts_modified": true,
+    "eligibility": "ELIGIBLE_WITH_WARNINGS"
+  },
+  "warnings_from_3_7": [
+    "F37-W01: README broken links — all resolved",
+    "F37-W04: HOW_TO_RUN_APP walkthrough not live-executed",
+    "F37-W05: API example values from E2E fixture",
+    "F37-B01: No Python environment — clean install blocked"
+  ],
+  "notes_for_3_8": [
+    "Do not use Feature 3.7 unverified metrics as final slide facts",
+    "Metrics MAE=17.65, RMSE=21.01, R2=0.07 are from Feature 3.1 canonical artifact — confirmed",
+    "No retraining or artifact modification needed for Feature 3.8"
+  ],
+  "status": "UPSTREAM_GATE_VALIDATED"
+}

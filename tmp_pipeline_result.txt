@@ -1,0 +1,5 @@
+STATUS: FAIL
+{
+  "error": "ValueError",
+  "detail": "Expected 2D array, got scalar array instead:\narray=  release_precision  key  time_signature  explicit  mode\n0               day    1             4.0      True     1.\nReshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample."
+}

@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 Explain E2E — API response contract validation",
+  "endpoint": "POST /explain",
+  "url": "http://127.0.0.1:8000/explain",
+  "method": "POST",
+  "request_schema": "PredictRequest (same 18 fields as /predict)",
+  "response_schema": {
+    "status": "str",
+    "prediction_raw": "float",
+    "prediction_clipped": "float",
+    "prediction_display": "int",
+    "base_value": "float",
+    "shap_values": "dict[str, float]",
+    "top_features": "[{name: str, shap_value: float, feature_value: float|str}]",
+    "model_id": "str",
+    "model_version": "str",
+    "timestamp": "str"
+  },
+  "validation_rules": [
+    "prediction_raw is finite float",
+    "base_value is finite float",
+    "shap_values is dict with str keys and float values",
+    "top_features is non-empty list sorted by absolute shap_value descending",
+    "top_features[].name is non-empty string",
+    "top_features[].shap_value is finite float",
+    "model_id matches model_id from /predict",
+    "model_version matches model_version from /predict"
+  ],
+  "additivity_check": "sum(shap_values.values()) + base_value ≈ prediction_raw (within floating tolerance)",
+  "additivity_tolerance": 0.01,
+  "explain_capability": "confirmed from Feature 3.2 closure gate",
+  "actual_live_test": "PENDING (requires running backend)",
+  "status": "CONTRACT_VALIDATED"
+}

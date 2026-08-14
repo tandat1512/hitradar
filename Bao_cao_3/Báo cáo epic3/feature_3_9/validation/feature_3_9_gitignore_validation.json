@@ -1,0 +1,18 @@
+{
+  "feature_id": "3.9",
+  "gitignore_exists": true,
+  "checks": [
+    {"area":"virtual environments","covered":true,"patterns":[".venv/","venv/","env/","ENV/"]},
+    {"area":"Python bytecode","covered":true,"patterns":["__pycache__/","*.py[cod]","*.pyo","*.pyd"]},
+    {"area":"environment secrets","covered":true,"patterns":[".env","*.env","5.UNG_DUNG/5.3.config/.env"]},
+    {"area":"OS files","covered":true,"patterns":[".DS_Store","Thumbs.db","desktop.ini"]},
+    {"area":"IDE files","covered":true,"patterns":[".vscode/",".idea/"]},
+    {"area":"pytest cache","covered":false,"missing_patterns":[".pytest_cache/"]},
+    {"area":"coverage outputs","covered":false,"missing_patterns":[".coverage","htmlcov/"]},
+    {"area":"generic temporary outputs","covered":false,"missing_patterns":["*.tmp","*.bak"]},
+    {"area":"runtime logs","covered":false,"missing_patterns":["*.log"],"note":"Do not add a broad rule until intentional sample logs are identified."}
+  ],
+  "dangerous_broad_wildcard_added": false,
+  "gitignore_modified": false,
+  "status": "PASS_WITH_WARNINGS"
+}

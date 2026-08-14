@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-09",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.7 API request contract — from OpenAPI + Pydantic",
+  "requests": [
+    {
+      "endpoint": "POST /predict",
+      "schema": "PredictRequest",
+      "required_fields": 18,
+      "fields": [
+        {"name": "duration_min", "type": "float", "range": "[0.0, 120.0]"},
+        {"name": "explicit", "type": "boolean", "range": null},
+        {"name": "release_year", "type": "int", "range": "[1900, 2100]"},
+        {"name": "release_month", "type": "float", "range": "[1.0, 12.0]"},
+        {"name": "decade", "type": "int", "range": "[1900, 2100]"},
+        {"name": "release_precision", "type": "string", "pattern": "^(day|month|year)$"},
+        {"name": "danceability", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "energy", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "key", "type": "int", "range": "[0, 11]"},
+        {"name": "loudness", "type": "float", "range": "[-60.0, 0.0]"},
+        {"name": "mode", "type": "int", "range": "[0, 1]"},
+        {"name": "speechiness", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "acousticness", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "instrumentalness", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "liveness", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "valence", "type": "float", "range": "[0.0, 1.0]"},
+        {"name": "tempo", "type": "float", "range": "[0.0, 300.0]"},
+        {"name": "time_signature", "type": "float", "range": null}
+      ],
+      "additional_properties": "allow (extra fields ignored with warning)",
+      "source": "openapi.json PredictRequest + prediction.py PredictRequest Pydantic"
+    },
+    {
+      "endpoint": "POST /explain",
+      "schema": "ExplainRequest",
+      "note": "Same 18 required fields as PredictRequest; additionalProperties=true",
+      "source": "openapi.json ExplainRequest"
+    },
+    {
+      "endpoint": "POST /what-if",
+      "schema": "WhatIfRequest",
+      "required_fields": ["base_features", "changed_features"],
+      "fields": [
+        {"name": "base_features", "type": "PredictRequest (nested)", "note": "Full 18-field input"},
+        {"name": "changed_features", "type": "dict[str, float|bool|int|str]", "note": "At least 1 key must be present; keys must be canonical field names"}
+      ],
+      "additional_properties": false,
+      "validation_rules": [
+        "Every key in changed_features must be a canonical field name",
+        "Empty changed_features raises 422",
+        "Unknown field names raise 422"
+      ],
+      "source": "openapi.json WhatIfRequest + prediction.py WhatIfRequest"
+    }
+  ],
+  "GET_requests": [
+    {
+      "endpoint": "GET /health",
+      "note": "No request body or query params required"
+    },
+    {
+      "endpoint": "GET /model-info",
+      "note": "No request body or query params required"
+    },
+    {
+      "endpoint": "GET /features",
+      "note": "No request body or query params required"
+    }
+  ],
+  "total_request_schemas": 3,
+  "status": "EXTRACTED"
+}

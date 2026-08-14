@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-07",
+  "person_in_charge": "Minh",
+  "description": "Feature 3.5 malformed JSON — API contract validation",
+  "scenario": "POST /predict with incomplete/malformed JSON body",
+  "malformed_body": "{duration_min: 3.5}",
+  "expected_http_status": "4xx (FastAPI JSON decode error)",
+  "expected_error_type": "HTTPException or FastAPI JSON decode failure",
+  "frontend_generates_malformed": false,
+  "note": "Streamlit httpx client always sends valid JSON — malformed test is for API-level integration only",
+  "actual_live_test": "PENDING",
+  "test_type": "API_NEGATIVE_INTEGRATION_TEST",
+  "status": "CONTRACT_VALIDATED"
+}
