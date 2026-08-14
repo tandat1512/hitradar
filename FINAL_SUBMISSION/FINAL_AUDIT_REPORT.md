@@ -90,7 +90,7 @@ Database-backed canonical notebook outputs were reviewed for credential and trac
 
 Tests **70**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
 
-Public-path hotfix full suite: **68** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+Public-path hotfix full suite: **70** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
 
 ## O. Final Submission Semantics
 

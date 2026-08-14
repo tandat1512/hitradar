@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-14T11:08:11.172861+00:00",
+  "generated_at_utc": "2026-08-14T13:18:34.942347+00:00",
   "mode": "final",
   "package_type": "submission_evidence_snapshot",
   "standalone_runnable": false,
@@ -107,7 +107,7 @@
     {
       "path": "evidence/public_path_hotfix_test_results.json",
       "size_bytes": 386,
-      "sha256": "e88fb1742a553c95dfb42a1532df58f1b56b08957ef902f2b8849bf41410a3d7"
+      "sha256": "c901396e348a46db062273fafd077d50ceb4f6fc6be255c56a769bc69b260305"
     },
     {
       "path": "evidence/recommendation_examples.csv",
@@ -177,12 +177,12 @@
     {
       "path": "FINAL_AUDIT_REPORT.md",
       "size_bytes": 7091,
-      "sha256": "fb47b4b6d37b119f3ca8b0a9c5de4f41903753ef0b5a887267003a8501443cec"
+      "sha256": "1cafdd1b495b29ad3a3705cbf12b42c96aea61cc511421c74b72411cafde1ee6"
     },
     {
       "path": "GIT_EVIDENCE.md",
-      "size_bytes": 6517,
-      "sha256": "400699143ad83015945ca9de2b3bdb460f6a1e3554fcf3f41e8622873ffb0978"
+      "size_bytes": 4060,
+      "sha256": "1ece1f9f5f908abcb705dc8494f6fb32b779154042ef04ee778aba467f45a3d1"
     },
     {
       "path": "notebooks/02_postgresql_pipeline.ipynb",
