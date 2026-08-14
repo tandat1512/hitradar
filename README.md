@@ -83,7 +83,7 @@ If module import rules in a shell do not accept dotted numeric directories, run 
 .\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_submission.py
 ```
 
-The latest public-path suite records 51 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, and public-path sanitization.
+The latest public-path suite records 52 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, and public-path sanitization.
 
 ## Limitations
 
