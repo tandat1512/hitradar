@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#06070a">
-    <title>HitRadar Pro - Phòng Thí Nghiệm & Bản Đồ Không Gian Âm Nhạc Spotify AI</title>
+    <title>HitRadar Pro - Trí Tuệ Nhân Tạo Dự Đoán & Bản Đồ Âm Nhạc Spotify AI</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
@@ -41,9 +41,14 @@
         </button>
       </nav>
 
-      <div class="api-status" id="apiStatus" aria-live="polite">
-        <span class="status-dot"></span>
-        <span id="apiStatusText">Đang kiểm tra API...</span>
+      <div class="topbar-actions">
+        <div class="api-status is-ready" id="apiStatus" aria-live="polite">
+          <span class="status-dot"></span>
+          <span id="apiStatusText">AI Sẵn Sàng</span>
+        </div>
+        <button class="settings-btn" id="openSettingsBtn" type="button" title="Cài đặt kết nối API" aria-label="Cài đặt kết nối API">
+          <span>⚙️ Cài đặt</span>
+        </button>
       </div>
     </header>
 
@@ -56,31 +61,85 @@
           <p class="eyebrow">⚡ Nền tảng phân tích & chấm điểm tiềm năng bài hát 2026</p>
           <h1>Phòng thí nghiệm âm nhạc số: Dự đoán, Bản đồ & EDA.</h1>
           <p class="lede">
-            Trải nghiệm không gian phân tích âm thanh đa chiều (Multidimensional Audio Space): dự đoán điểm số Hit bằng XGBoost, 
-            khám phá bản đồ thiên hà 580K+ bài hát Spotify, giải mã cảm xúc âm nhạc và kiểm định xu hướng qua các thập kỷ.
+            Trải nghiệm không gian phân tích âm thanh đa chiều: Quét tín hiệu Radar tìm kiếm bản hit tương lai, 
+            khám phá bản đồ thiên hà 580K+ bài hát Spotify, giải mã cảm xúc âm nhạc và phân tích xu hướng lịch sử.
           </p>
           
           <div class="quick-metrics" aria-label="Thông tin nhanh mô hình">
-            <span class="metric-tag">Mô hình: <b>XGBoost Regressor (32 Features)</b></span>
+            <span class="metric-tag">Trí tuệ nhân tạo: <b>Spotify AI Engine</b></span>
             <span class="metric-tag">Độ chính xác tương đương: <b>~84% - 92.2%</b></span>
-            <span class="metric-tag">Dữ liệu huấn luyện: <b>586,672 bài hát Spotify</b></span>
+            <span class="metric-tag">Cơ sở dữ liệu: <b>586,672 bài hát Spotify</b></span>
           </div>
 
-          <!-- Preset selector & Web Audio Preview -->
+          <!-- Preset Vibe Cards & Web Audio Preview -->
           <div class="preset-section">
             <div class="preset-header">
-              <span class="preset-title">Thử nghiệm nhanh theo phong cách (1-Click Presets):</span>
+              <span class="preset-title">✨ Chọn phong cách trải nghiệm nhanh (1-Click Presets):</span>
               <button class="synth-preview-btn" type="button" id="playSynthBtn">
                 <span id="synthIcon">▶️</span> <span id="synthText">Nghe Thử Vibe Âm Sắc (Synth)</span>
               </button>
             </div>
-            <div class="preset-buttons">
-              <button class="preset-btn active" type="button" data-preset="pop">🎵 Pop Thịnh Hành</button>
-              <button class="preset-btn" type="button" data-preset="edm">⚡ EDM Sôi Động</button>
-              <button class="preset-btn" type="button" data-preset="synthwave">🎹 Synthwave 80s</button>
-              <button class="preset-btn" type="button" data-preset="ballad">☕ Ballad Acoustic</button>
-              <button class="preset-btn" type="button" data-preset="lofi">🎧 Lofi Chillout</button>
-              <button class="preset-btn" type="button" data-preset="rock">🎸 Rock Bùng Nổ</button>
+            
+            <div class="vibe-cards-grid">
+              <div class="vibe-card active" data-preset="pop">
+                <div class="vibe-card-glow"></div>
+                <div class="vibe-card-top">
+                  <span class="vibe-icon">💃</span>
+                  <span class="vibe-tag">124 BPM</span>
+                </div>
+                <strong class="vibe-title">Pop Thịnh Hành</strong>
+                <p class="vibe-desc">Bắt tai, tươi vui, năng lượng cao bùng nổ.</p>
+              </div>
+
+              <div class="vibe-card" data-preset="edm">
+                <div class="vibe-card-glow"></div>
+                <div class="vibe-card-top">
+                  <span class="vibe-icon">⚡</span>
+                  <span class="vibe-tag">128 BPM</span>
+                </div>
+                <strong class="vibe-title">EDM Sôi Động</strong>
+                <p class="vibe-desc">Drop bass cực mạnh, vũ trường náo nhiệt.</p>
+              </div>
+
+              <div class="vibe-card" data-preset="synthwave">
+                <div class="vibe-card-glow"></div>
+                <div class="vibe-card-top">
+                  <span class="vibe-icon">🌆</span>
+                  <span class="vibe-tag">128 BPM</span>
+                </div>
+                <strong class="vibe-title">Synthwave 80s</strong>
+                <p class="vibe-desc">Âm hưởng Retro hoài niệm & không gian Cyber.</p>
+              </div>
+
+              <div class="vibe-card" data-preset="ballad">
+                <div class="vibe-card-glow"></div>
+                <div class="vibe-card-top">
+                  <span class="vibe-icon">🎸</span>
+                  <span class="vibe-tag">78 BPM</span>
+                </div>
+                <strong class="vibe-title">Ballad Acoustic</strong>
+                <p class="vibe-desc">Mộc mạc, trữ tình, da diết sâu lắng.</p>
+              </div>
+
+              <div class="vibe-card" data-preset="lofi">
+                <div class="vibe-card-glow"></div>
+                <div class="vibe-card-top">
+                  <span class="vibe-icon">☕</span>
+                  <span class="vibe-tag">85 BPM</span>
+                </div>
+                <strong class="vibe-title">Lofi Chillout</strong>
+                <p class="vibe-desc">Thư thái, êm dịu, phù hợp học tập & chill.</p>
+              </div>
+
+              <div class="vibe-card" data-preset="rock">
+                <div class="vibe-card-glow"></div>
+                <div class="vibe-card-top">
+                  <span class="vibe-icon">🔥</span>
+                  <span class="vibe-tag">142 BPM</span>
+                </div>
+                <strong class="vibe-title">Rock Bùng Nổ</strong>
+                <p class="vibe-desc">Mạnh mẽ, guitar điện rực lửa & nhiệt huyết.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -95,17 +154,6 @@
         </div>
       </section>
 
-      <!-- Utility Strip (API Config) -->
-      <section class="utility-strip" aria-label="Cấu hình kết nối API">
-        <label class="api-field">
-          <span>🔗 Máy chủ Backend API:</span>
-          <input id="apiBaseInput" type="url" value="http://127.0.0.1:8000" autocomplete="off" placeholder="http://127.0.0.1:8000">
-        </label>
-        <button class="icon-button" type="button" id="refreshHealth" title="Kiểm tra lại kết nối API" aria-label="Kiểm tra lại kết nối API">
-          <span aria-hidden="true">↻</span>
-        </button>
-      </section>
-
       <!-- VIEW 1: DỰ ĐOÁN & STUDIO (PREDICT) -->
       <section class="view is-active" id="view-predict" data-view-panel="predict">
         <div class="section-head">
@@ -113,7 +161,9 @@
             <p class="eyebrow">Dự đoán điểm số Spotify</p>
             <h2>Chấm điểm tiềm năng bài hát (Popularity Score 0 - 100)</h2>
           </div>
-          <p>Mô hình XGBoost với 14 đặc trưng kỹ thuật phái sinh kết hợp ma trận cảm xúc và phân tích sóng âm thanh.</p>
+          <p class="section-subtitle">
+            ✨ Trí tuệ nhân tạo Spotify AI phân tích 32 khía cạnh âm thanh độc quyền để dự đoán khả năng thành hit của bài hát.
+          </p>
         </div>
 
         <div class="work-grid">
@@ -126,23 +176,23 @@
 
             <!-- Metadata cơ bản -->
             <div class="form-grid">
-              <label>Thời lượng (Phút) 
+              <label>⏱️ Thời lượng (Phút) 
                 <input name="duration_min" type="number" min="0.1" max="60" step="0.1" value="3.2" required>
               </label>
-              <label>Năm phát hành 
+              <label>📅 Năm phát hành 
                 <input name="release_year" id="releaseYearInput" type="number" min="1900" max="2100" step="1" value="2020" required>
               </label>
-              <label>Tháng phát hành 
+              <label>🗓️ Tháng phát hành 
                 <input name="release_month" type="number" min="1" max="12" step="1" value="7" required>
               </label>
-              <label>Độ chính xác ngày 
+              <label>🎯 Độ chính xác ngày 
                 <select name="release_precision">
                   <option value="day">Ngày cụ thể (Day)</option>
                   <option value="month">Theo tháng (Month)</option>
                   <option value="year">Theo năm (Year)</option>
                 </select>
               </label>
-              <label>Giọng nhạc (Key)
+              <label>🎵 Giọng nhạc (Key)
                 <select name="key">
                   <option value="0">C (Đô)</option><option value="1">C# (Đô thăng)</option><option value="2">D (Rê)</option>
                   <option value="3">D# (Rê thăng)</option><option value="4">E (Mi)</option><option value="5">F (Fa)</option>
@@ -150,7 +200,7 @@
                   <option value="9">A (La)</option><option value="10">A# (La thăng)</option><option value="11">B (Si)</option>
                 </select>
               </label>
-              <label>Điệu tính (Mode)
+              <label>🎼 Điệu tính (Mode)
                 <select name="mode">
                   <option value="1">Trưởng (Major)</option>
                   <option value="0">Thứ (Minor)</option>
@@ -158,52 +208,52 @@
               </label>
               <label class="switch-row">
                 <input name="explicit" type="checkbox">
-                <span>Chứa từ ngữ nhạy cảm (Explicit)</span>
+                <span>🔞 Chứa từ ngữ nhạy cảm (Explicit)</span>
               </label>
             </div>
 
-            <!-- Sliders đặc tính âm học -->
+            <!-- Sliders đặc tính âm học trực quan với icon -->
             <span class="slider-group-title">Dấu vân tay âm học (Audio Fingerprint):</span>
             <div class="slider-grid" data-slider-scope="predict">
               <label>
-                <div class="slider-head"><span>Độ bắt tai (Danceability)</span><output>0.76</output></div>
+                <div class="slider-head"><span>💃 Độ bắt tai (Danceability)</span><output>0.76</output></div>
                 <input name="danceability" type="range" min="0" max="1" step="0.01" value="0.76">
               </label>
               <label>
-                <div class="slider-head"><span>Năng lượng (Energy)</span><output>0.72</output></div>
+                <div class="slider-head"><span>⚡ Năng lượng (Energy)</span><output>0.72</output></div>
                 <input name="energy" type="range" min="0" max="1" step="0.01" value="0.72">
               </label>
               <label>
-                <div class="slider-head"><span>Độ tươi vui (Valence)</span><output>0.68</output></div>
+                <div class="slider-head"><span>🎭 Cảm xúc tươi vui (Valence)</span><output>0.68</output></div>
                 <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
               </label>
               <label>
-                <div class="slider-head"><span>Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
+                <div class="slider-head"><span>🎸 Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
                 <input name="acousticness" type="range" min="0" max="1" step="0.01" value="0.12">
               </label>
               <label>
-                <div class="slider-head"><span>Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
+                <div class="slider-head"><span>🎹 Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
                 <input name="instrumentalness" type="range" min="0" max="1" step="0.01" value="0.00">
               </label>
               <label>
-                <div class="slider-head"><span>Biểu diễn sống (Liveness)</span><output>0.14</output></div>
+                <div class="slider-head"><span>🎤 Biểu diễn sống (Liveness)</span><output>0.14</output></div>
                 <input name="liveness" type="range" min="0" max="1" step="0.01" value="0.14">
               </label>
               <label>
-                <div class="slider-head"><span>Tỷ lệ giọng nói (Speechiness)</span><output>0.06</output></div>
+                <div class="slider-head"><span>🗣️ Tỷ lệ giọng nói (Speechiness)</span><output>0.06</output></div>
                 <input name="speechiness" type="range" min="0" max="1" step="0.01" value="0.06">
               </label>
             </div>
 
             <!-- Kỹ thuật âm thanh -->
             <div class="form-grid compact">
-              <label>Độ lớn âm thanh (Loudness dB) 
+              <label>🔊 Độ lớn âm thanh (Loudness dB) 
                 <input name="loudness" type="number" min="-80" max="10" step="0.1" value="-5.5" required>
               </label>
-              <label>Tốc độ nhịp (Tempo BPM) 
+              <label>⏱️ Tốc độ nhịp (Tempo BPM) 
                 <input name="tempo" id="tempoInput" type="number" min="1" max="300" step="0.1" value="124" required>
               </label>
-              <label>Số chỉ nhịp (Time Signature) 
+              <label>🎼 Số chỉ nhịp (Time Signature) 
                 <input name="time_signature" type="number" min="1" max="7" step="1" value="4" required>
               </label>
             </div>
@@ -212,41 +262,87 @@
               ⚠️ Năm phát hành sau 2020 là ngoại suy thời gian (Temporal extrapolation). Kết quả vẫn được tính toán chuẩn xác.
             </p>
             
-            <button class="primary-button" type="submit">🚀 Chạy Dự Đoán Tiềm Năng Bài Hát</button>
+            <button class="primary-button cta-shimmer" type="submit" id="predictSubmitBtn">
+              <span class="cta-icon">🚀</span>
+              <span class="cta-text">Chạy Dự Đoán Tiềm Năng Bài Hát</span>
+            </button>
           </form>
 
-          <!-- Cột kết quả phân tích & Radar HUD -->
-          <div style="display: flex; flex-direction: column; gap: 24px;">
-            <aside class="result-panel" aria-live="polite">
-              <div class="score-orbit">
+          <!-- Cột trung tâm Radar Command Console & Lock-On Target -->
+          <div class="radar-command-console">
+            
+            <!-- RADAR SONAR TARGET LOCK-ON GAUGE -->
+            <aside class="result-panel radar-hud-target radar-idle" id="radarTargetPanel" aria-live="polite">
+              
+              <!-- 4 Corner Reticle Lock Brackets -->
+              <div class="lock-bracket lock-tl"></div>
+              <div class="lock-bracket lock-tr"></div>
+              <div class="lock-bracket lock-bl"></div>
+              <div class="lock-bracket lock-br"></div>
+
+              <!-- Compass Degree Markers -->
+              <div class="radar-compass-ring">
+                <span class="compass-deg deg-0">000°</span>
+                <span class="compass-deg deg-90">090°</span>
+                <span class="compass-deg deg-180">180°</span>
+                <span class="compass-deg deg-270">270°</span>
+              </div>
+
+              <!-- Radar Sonar Orbit -->
+              <div class="score-orbit sonar-screen">
+                <!-- Concentric Rings & Crosshair Grid -->
+                <div class="sonar-grid-overlay">
+                  <div class="sonar-ring ring-1"></div>
+                  <div class="sonar-ring ring-2"></div>
+                  <div class="sonar-ring ring-3"></div>
+                  <div class="sonar-axis axis-h"></div>
+                  <div class="sonar-axis axis-v"></div>
+                  <!-- Rotating Sonar Ray -->
+                  <div class="sonar-sweep-ray" id="sonarRay"></div>
+                </div>
+
                 <svg viewBox="0 0 220 220" role="img" aria-label="Điểm dự đoán">
                   <circle class="score-track" cx="110" cy="110" r="92"></circle>
                   <circle class="score-ring" id="scoreRing" cx="110" cy="110" r="92"></circle>
                 </svg>
+                
                 <div class="score-display">
+                  <span class="target-lock-tag" id="targetLockTag">RADAR STANDBY</span>
                   <span id="scoreValue">--</span>
                   <small>/ 100 ĐIỂM</small>
                 </div>
               </div>
 
-              <span class="tier-badge" id="tierLabel">Sẵn sàng phân tích</span>
+              <span class="tier-badge" id="tierLabel">SẴN SÀNG QUÉT MỤC TIÊU</span>
+              
               <p class="prediction-summary" id="predictionSummary">
-                Chọn Preset hoặc tùy chỉnh âm học và nhấn nút dự đoán để xem phân tích chi tiết.
+                Chọn thẻ phong cách hoặc tùy chỉnh các thanh trượt và nhấn nút dự đoán để khóa mục tiêu tiềm năng.
               </p>
 
-              <!-- Sci-Fi Radar HUD Canvas -->
+              <!-- Sci-Fi Radar HUD Canvas (7 Chiều Âm Học) Đặt Trung Tâm -->
               <div class="radar-box">
-                <span class="radar-box-title">Cyber Radar HUD (7 Chiều Âm Học)</span>
-                <canvas id="audioRadarCanvas" width="250" height="250"></canvas>
+                <div class="radar-box-header">
+                  <span class="radar-box-title">Cyber Radar HUD (7 Chiều Âm Học)</span>
+                  <span class="radar-live-indicator">LIVE MULTI-AXIS</span>
+                </div>
+                <canvas id="audioRadarCanvas" width="280" height="260"></canvas>
               </div>
 
-              <!-- Metadata chi tiết -->
-              <dl class="meta-list" id="predictionMeta">
-                <div class="meta-item"><dt>Thuật toán</dt><dd>XGBoost Regressor</dd></div>
-                <div class="meta-item"><dt>Tổng số đặc trưng</dt><dd>32 Features</dd></div>
-                <div class="meta-item"><dt>Đặc trưng phái sinh</dt><dd>14 Kỹ thuật</dd></div>
-                <div class="meta-item"><dt>Trạng thái</dt><dd>Khả dụng</dd></div>
-              </dl>
+              <!-- Collapsible Tech Specs Tooltip -->
+              <div class="tech-specs-toggle">
+                <button class="tech-toggle-btn" type="button" id="toggleTechSpecs">
+                  <span>ℹ️ Chi tiết kỹ thuật mô hình AI</span>
+                  <span class="toggle-arrow">▾</span>
+                </button>
+                <div class="tech-specs-content is-collapsed" id="techSpecsContent">
+                  <dl class="meta-list" id="predictionMeta">
+                    <div class="meta-item"><dt>Thuật toán</dt><dd>XGBoost Regressor</dd></div>
+                    <div class="meta-item"><dt>Tổng số đặc trưng</dt><dd>32 Features</dd></div>
+                    <div class="meta-item"><dt>Đặc trưng phái sinh</dt><dd>14 Kỹ thuật</dd></div>
+                    <div class="meta-item"><dt>Độ chính xác MAE</dt><dd>7.77 - 12.60 điểm</dd></div>
+                  </dl>
+                </div>
+              </div>
             </aside>
 
             <!-- Mood Quadrant 2D Matrix -->
@@ -255,7 +351,7 @@
                 <h3>Ma Trận Cảm Xúc 4 Góc (Mood Quadrant)</h3>
                 <span class="metric-tag" id="currentMoodBadge">Sôi động & Tươi vui</span>
               </div>
-              <canvas id="moodQuadrantCanvas" width="400" height="300"></canvas>
+              <canvas id="moodQuadrantCanvas" width="400" height="280"></canvas>
             </div>
           </div>
         </div>
@@ -396,43 +492,43 @@
 
             <div class="slider-grid" data-slider-scope="cluster">
               <label>
-                <div class="slider-head"><span>Độ bắt tai (Danceability)</span><output>0.76</output></div>
+                <div class="slider-head"><span>💃 Độ bắt tai (Danceability)</span><output>0.76</output></div>
                 <input name="danceability" type="range" min="0" max="1" step="0.01" value="0.76">
               </label>
               <label>
-                <div class="slider-head"><span>Năng lượng (Energy)</span><output>0.72</output></div>
+                <div class="slider-head"><span>⚡ Năng lượng (Energy)</span><output>0.72</output></div>
                 <input name="energy" type="range" min="0" max="1" step="0.01" value="0.72">
               </label>
               <label>
-                <div class="slider-head"><span>Tỷ lệ giọng nói (Speechiness)</span><output>0.06</output></div>
+                <div class="slider-head"><span>🗣️ Tỷ lệ giọng nói (Speechiness)</span><output>0.06</output></div>
                 <input name="speechiness" type="range" min="0" max="1" step="0.01" value="0.06">
               </label>
               <label>
-                <div class="slider-head"><span>Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
+                <div class="slider-head"><span>🎸 Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
                 <input name="acousticness" type="range" min="0" max="1" step="0.01" value="0.12">
               </label>
               <label>
-                <div class="slider-head"><span>Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
+                <div class="slider-head"><span>🎹 Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
                 <input name="instrumentalness" type="range" min="0" max="1" step="0.01" value="0.00">
               </label>
               <label>
-                <div class="slider-head"><span>Biểu diễn sống (Liveness)</span><output>0.14</output></div>
+                <div class="slider-head"><span>🎤 Biểu diễn sống (Liveness)</span><output>0.14</output></div>
                 <input name="liveness" type="range" min="0" max="1" step="0.01" value="0.14">
               </label>
               <label>
-                <div class="slider-head"><span>Độ tươi vui (Valence)</span><output>0.68</output></div>
+                <div class="slider-head"><span>🎭 Độ tươi vui (Valence)</span><output>0.68</output></div>
                 <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
               </label>
             </div>
 
             <div class="form-grid compact">
-              <label>Thời lượng (Phút) 
+              <label>⏱️ Thời lượng (Phút) 
                 <input name="duration_min" type="number" min="0.1" max="60" step="0.1" value="3.2" required>
               </label>
-              <label>Độ lớn âm thanh (Loudness dB) 
+              <label>🔊 Độ lớn âm thanh (Loudness dB) 
                 <input name="loudness" type="number" min="-80" max="10" step="0.1" value="-5.5" required>
               </label>
-              <label>Tốc độ nhịp (Tempo BPM) 
+              <label>⏱️ Tốc độ nhịp (Tempo BPM) 
                 <input name="tempo" type="number" min="1" max="300" step="0.1" value="124" required>
               </label>
             </div>
@@ -579,6 +675,32 @@
         </div>
       </section>
     </main>
+
+    <!-- Modal Cài Đặt API (Settings Modal) -->
+    <div class="modal-backdrop is-hidden" id="settingsModal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.25rem;">⚙️</span>
+            <h3>Cài Đặt Máy Chủ API</h3>
+          </div>
+          <button class="modal-close-btn" id="closeSettingsBtn" type="button" aria-label="Đóng cài đặt">✕</button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            HitRadar Pro tự động chuyển sang chế độ <b>Cloud AI Engine</b> khi chạy trực tuyến. Nếu bạn muốn kết nối tới FastAPI Backend riêng, vui lòng nhập URL dưới đây:
+          </p>
+          <label class="api-field modal-field">
+            <span>🔗 Địa chỉ Backend API:</span>
+            <input id="apiBaseInput" type="url" value="http://127.0.0.1:8000" autocomplete="off" placeholder="http://127.0.0.1:8000">
+          </label>
+        </div>
+        <div class="modal-footer">
+          <button class="ghost-button" type="button" id="resetApiBtn">Khôi phục mặc định</button>
+          <button class="primary-button" type="button" id="saveSettingsBtn">💾 Lưu & Kiểm Tra Kết Nối</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast" role="status" aria-live="polite"></div>

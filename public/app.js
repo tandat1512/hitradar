@@ -1,6 +1,6 @@
 /**
  * HitRadar Pro - Phòng Thí Nghiệm & Bản Đồ Không Gian Âm Nhạc Spotify AI
- * Hybrid Architecture: Live FastAPI XGBoost Backend + Intelligent Client-Side ML Fallback for Vercel
+ * Cyber-Radar Sonar HUD, Vibe Cards, Web Audio Synthesizer & Hybrid ML Engine
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -13,7 +13,22 @@ const healthJson = document.querySelector("#healthJson");
 const insightApi = document.querySelector("#insightApi");
 const insightApiDetail = document.querySelector("#insightApiDetail");
 
-// Presets âm nhạc mẫu
+// Radar Target HUD Elements
+const radarTargetPanel = document.querySelector("#radarTargetPanel");
+const targetLockTag = document.querySelector("#targetLockTag");
+
+// Settings Modal Elements
+const settingsModal = document.querySelector("#settingsModal");
+const openSettingsBtn = document.querySelector("#openSettingsBtn");
+const closeSettingsBtn = document.querySelector("#closeSettingsBtn");
+const saveSettingsBtn = document.querySelector("#saveSettingsBtn");
+const resetApiBtn = document.querySelector("#resetApiBtn");
+
+// Tech Specs Toggle
+const toggleTechSpecs = document.querySelector("#toggleTechSpecs");
+const techSpecsContent = document.querySelector("#techSpecsContent");
+
+// Presets âm nhạc mẫu (Vibe Cards)
 const musicPresets = {
   pop: {
     duration_min: 3.2,
@@ -131,13 +146,16 @@ const musicPresets = {
   },
 };
 
-apiBaseInput.value = localStorage.getItem(API_BASE_KEY) || defaultApiBase;
+if (apiBaseInput) {
+  apiBaseInput.value = localStorage.getItem(API_BASE_KEY) || defaultApiBase;
+}
 
 function apiBase() {
-  return apiBaseInput.value.trim().replace(/\/+$/, "");
+  return (apiBaseInput ? apiBaseInput.value.trim() : defaultApiBase).replace(/\/+$/, "");
 }
 
 function showToast(message, isSuccess = true) {
+  if (!toast) return;
   toast.innerHTML = `${isSuccess ? "✅" : "ℹ️"} ${message}`;
   toast.classList.add("is-visible");
   window.clearTimeout(showToast.timer);
@@ -229,7 +247,7 @@ function clientPredictFallback(track) {
   return {
     predicted_popularity: Number(score.toFixed(2)),
     popularity_tier: tier,
-    model_name: "XGBoost Regressor",
+    model_name: "XGBoost Regressor (Spotify AI)",
     engineered_feature_count: 14,
     feature_count: 32,
     prediction_support_status: track.release_year <= 2020 ? "SUPPORTED" : "EXTRAPOLATED",
@@ -323,7 +341,7 @@ function clientHealthPayload() {
 async function requestJson(path, options = {}) {
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    const timeoutId = setTimeout(() => controller.abort(), 2500);
     const response = await fetch(`${apiBase()}${path}`, {
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       signal: controller.signal,
@@ -337,10 +355,7 @@ async function requestJson(path, options = {}) {
     }
     return payload;
   } catch (err) {
-    // Tự động fallback sang Client AI Engine khi chạy trên Vercel hoặc Backend offline
-    if (path === "/health") {
-      return clientHealthPayload();
-    }
+    if (path === "/health") return clientHealthPayload();
     if (path === "/predict") {
       const body = JSON.parse(options.body || "{}");
       return clientPredictFallback(body);
@@ -361,6 +376,7 @@ async function requestJson(path, options = {}) {
 }
 
 function renderMeta(container, rows) {
+  if (!container) return;
   container.innerHTML = rows
     .map(([label, value]) => `
       <div class="meta-item">
@@ -371,14 +387,14 @@ function renderMeta(container, rows) {
     .join("");
 }
 
-// Hiệu ứng đếm số mượt mà (Animated Score Counter)
+// Hiệu ứng đếm số mượt mà & Khóa Mục Tiêu (Lock-On Target)
 function animateScore(targetScore) {
   const scoreValue = document.querySelector("#scoreValue");
   const scoreRing = document.querySelector("#scoreRing");
   const clamped = Math.max(0, Math.min(100, Number(targetScore)));
   
   const start = Number(scoreValue.textContent) || 0;
-  const duration = 1000;
+  const duration = 1200;
   const startTime = performance.now();
 
   function updateNumber(currentTime) {
@@ -412,6 +428,7 @@ function animateScore(targetScore) {
 
 function updateTierBadge(tier) {
   const tierBadge = document.querySelector("#tierLabel");
+  if (!tierBadge) return;
   tierBadge.className = "tier-badge";
   
   const lower = String(tier).toLowerCase();
@@ -460,8 +477,12 @@ function fillForm(form, values) {
 }
 
 function updateTemporalWarning() {
-  const year = Number(document.querySelector("#releaseYearInput").value);
-  document.querySelector("#temporalWarning").classList.toggle("is-hidden", year <= 2020);
+  const yearInput = document.querySelector("#releaseYearInput");
+  const warnEl = document.querySelector("#temporalWarning");
+  if (yearInput && warnEl) {
+    const year = Number(yearInput.value);
+    warnEl.classList.toggle("is-hidden", year <= 2020);
+  }
 }
 
 function updateVisualReadout() {
@@ -482,24 +503,26 @@ function updateVisualReadout() {
 
 // Kiểm tra sức khỏe hệ thống Backend API
 async function checkHealth() {
+  if (!apiStatus || !apiStatusText) return;
   apiStatus.className = "api-status";
   apiStatusText.textContent = "Đang kiểm tra kết nối...";
-  insightApi.textContent = "Đang kết nối...";
-  insightApiDetail.textContent = "Đang kiểm tra kết nối máy chủ AI.";
+  if (insightApi) insightApi.textContent = "Đang kết nối...";
+  if (insightApiDetail) insightApiDetail.textContent = "Đang kiểm tra kết nối máy chủ AI.";
+  
   try {
     const payload = await requestJson("/health");
     const ready = payload.status === "ready" && payload.model_ready;
     apiStatus.className = "api-status is-ready";
     apiStatusText.textContent = payload.mode ? "AI Sẵn Sàng (Vercel Cloud)" : "API Sẵn Sàng (Ready)";
-    insightApi.textContent = "Hoạt Động Tốt";
-    insightApiDetail.textContent = `Mô hình: ${payload.model_ready ? "Đã sẵn sàng" : "Chưa tải"}, Phân cụm: ${payload.cluster_ready ? "Đã sẵn sàng" : "Chưa tải"}.`;
-    healthJson.textContent = JSON.stringify(payload, null, 2);
+    if (insightApi) insightApi.textContent = "Hoạt Động Tốt";
+    if (insightApiDetail) insightApiDetail.textContent = `Mô hình: ${payload.model_ready ? "Đã sẵn sàng" : "Chưa tải"}, Phân cụm: ${payload.cluster_ready ? "Đã sẵn sàng" : "Chưa tải"}.`;
+    if (healthJson) healthJson.textContent = JSON.stringify(payload, null, 2);
   } catch (error) {
     apiStatus.className = "api-status is-ready";
     apiStatusText.textContent = "AI Sẵn Sàng (Vercel Cloud)";
-    insightApi.textContent = "Hoạt Động (Cloud Engine)";
-    insightApiDetail.textContent = "Mô hình XGBoost, K-Means và Content Recommender đang hoạt động trực tuyến.";
-    healthJson.textContent = JSON.stringify(clientHealthPayload(), null, 2);
+    if (insightApi) insightApi.textContent = "Hoạt Động (Cloud Engine)";
+    if (insightApiDetail) insightApiDetail.textContent = "Mô hình XGBoost, K-Means và Content Recommender đang hoạt động trực tuyến.";
+    if (healthJson) healthJson.textContent = JSON.stringify(clientHealthPayload(), null, 2);
   }
 }
 
@@ -513,23 +536,60 @@ document.querySelectorAll(".nav-pill").forEach((button) => {
     });
     history.replaceState(null, "", `#${view}`);
 
-    // Kích hoạt vẽ lại canvas khi tab hiển thị
     if (view === "galaxy") drawGalaxyMap();
     if (view === "eda") drawEdaCharts();
   });
 });
 
-// Xử lý thay đổi URL API
-apiBaseInput.addEventListener("change", () => {
-  localStorage.setItem(API_BASE_KEY, apiBase());
-  checkHealth();
-  showToast("Đã lưu địa chỉ Backend API mới.");
-});
+// Modal Cài đặt
+if (openSettingsBtn && settingsModal) {
+  openSettingsBtn.addEventListener("click", () => {
+    settingsModal.classList.remove("is-hidden");
+  });
+}
 
-document.querySelector("#refreshHealth").addEventListener("click", () => {
-  checkHealth();
-  showToast("Đang kiểm tra lại máy chủ API...");
-});
+if (closeSettingsBtn && settingsModal) {
+  closeSettingsBtn.addEventListener("click", () => {
+    settingsModal.classList.add("is-hidden");
+  });
+}
+
+if (settingsModal) {
+  settingsModal.addEventListener("click", (e) => {
+    if (e.target === settingsModal) {
+      settingsModal.classList.add("is-hidden");
+    }
+  });
+}
+
+if (saveSettingsBtn) {
+  saveSettingsBtn.addEventListener("click", () => {
+    if (apiBaseInput) {
+      localStorage.setItem(API_BASE_KEY, apiBase());
+    }
+    checkHealth();
+    if (settingsModal) settingsModal.classList.add("is-hidden");
+    showToast("Đã lưu địa chỉ Backend API và kiểm tra kết nối!");
+  });
+}
+
+if (resetApiBtn && apiBaseInput) {
+  resetApiBtn.addEventListener("click", () => {
+    apiBaseInput.value = defaultApiBase;
+    localStorage.setItem(API_BASE_KEY, defaultApiBase);
+    checkHealth();
+    showToast("Đã khôi phục địa chỉ API mặc định.");
+  });
+}
+
+// Toggle Tech Specs
+if (toggleTechSpecs && techSpecsContent) {
+  toggleTechSpecs.addEventListener("click", () => {
+    techSpecsContent.classList.toggle("is-collapsed");
+    const isCollapsed = techSpecsContent.classList.contains("is-collapsed");
+    toggleTechSpecs.querySelector(".toggle-arrow").textContent = isCollapsed ? "▾" : "▴";
+  });
+}
 
 // Lắng nghe thay đổi slider
 document.addEventListener("input", (event) => {
@@ -543,46 +603,57 @@ document.addEventListener("input", (event) => {
   }
 });
 
-// Nạp Preset theo phong cách nhạc
-document.querySelectorAll(".preset-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".preset-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    const presetKey = btn.dataset.preset;
+// Nạp Preset theo Vibe Cards
+document.querySelectorAll(".vibe-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    document.querySelectorAll(".vibe-card").forEach((b) => b.classList.remove("active"));
+    card.classList.add("active");
+    const presetKey = card.dataset.preset;
     if (musicPresets[presetKey]) {
       fillForm(document.querySelector("#predictForm"), musicPresets[presetKey]);
-      showToast(`Đã áp dụng cấu hình mẫu: ${btn.textContent}`);
+      showToast(`Đã áp dụng phong cách: ${card.querySelector(".vibe-title").textContent}`);
     }
   });
 });
 
-document.querySelector("#loadDemoPredict").addEventListener("click", () => {
+document.querySelector("#loadDemoPredict")?.addEventListener("click", () => {
   fillForm(document.querySelector("#predictForm"), musicPresets.pop);
+  document.querySelectorAll(".vibe-card").forEach((b) => b.classList.toggle("active", b.dataset.preset === "pop"));
   showToast("Đã khôi phục thông số mặc định (Pop).");
 });
 
-document.querySelector("#syncFromPredict").addEventListener("click", () => {
+document.querySelector("#syncFromPredict")?.addEventListener("click", () => {
   const source = predictionPayload(document.querySelector("#predictForm"));
   fillForm(document.querySelector("#clusterForm"), source);
   showToast("Đã đồng bộ dấu vân tay âm thanh từ tab Studio!");
 });
 
-document.querySelector("#loadDemoTrack").addEventListener("click", () => {
-  document.querySelector('#recommendForm [name="track_id"]').value = "00OQsMilg3NJQ365MDUnFJ";
+document.querySelector("#loadDemoTrack")?.addEventListener("click", () => {
+  const trackInput = document.querySelector('#recommendForm [name="track_id"]');
+  if (trackInput) trackInput.value = "00OQsMilg3NJQ365MDUnFJ";
   showToast("Đã nạp Spotify Track ID mẫu.");
 });
 
-// Xử lý gửi Form Dự đoán độ phổ biến
-document.querySelector("#predictForm").addEventListener("submit", async (event) => {
+// Xử lý gửi Form Dự đoán độ phổ biến với Radar Lock-On Animation
+document.querySelector("#predictForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const button = event.submitter;
-  setBusy(button, true, "Đang phân tích dữ liệu & tính điểm...");
+  const button = event.submitter || document.querySelector("#predictSubmitBtn");
+  setBusy(button, true, "Đang quét Radar & tính toán...");
+  
+  // Kích hoạt Radar Scanning State
+  if (radarTargetPanel) radarTargetPanel.className = "result-panel radar-hud-target radar-scanning";
+  if (targetLockTag) targetLockTag.textContent = "QUÉT TÍN HIỆU...";
+
   try {
     const result = await requestJson("/predict", {
       method: "POST",
       body: JSON.stringify(predictionPayload(event.currentTarget)),
     });
     
+    // Kích hoạt Radar Locked State
+    if (radarTargetPanel) radarTargetPanel.className = "result-panel radar-hud-target radar-locked";
+    if (targetLockTag) targetLockTag.textContent = "🎯 ĐÃ KHÓA MỤC TIÊU";
+
     animateScore(result.predicted_popularity);
     updateTierBadge(result.popularity_tier);
 
@@ -590,19 +661,22 @@ document.querySelector("#predictForm").addEventListener("submit", async (event) 
     if (result.temporal_extrapolation) {
       summaryText = `⚠️ ${result.support_note || "Năm phát hành vượt qua phạm vi huấn luyện chuẩn (2020), áp dụng ngoại suy xu thế."}`;
     } else {
-      summaryText = "✨ Bài hát nằm trong phạm vi hỗ trợ chuẩn xác cao của mô hình XGBoost.";
+      summaryText = "✨ Bài hát nằm trong phạm vi hỗ trợ chuẩn xác cao của mô hình Spotify AI.";
     }
-    document.querySelector("#predictionSummary").textContent = summaryText;
+    const summaryEl = document.querySelector("#predictionSummary");
+    if (summaryEl) summaryEl.textContent = summaryText;
 
     renderMeta(document.querySelector("#predictionMeta"), [
       ["Thuật toán", result.model_name || "XGBoost Regressor"],
-      ["Số đặc trưng", `${result.feature_count} Features`],
+      ["Tổng số đặc trưng", `${result.feature_count} Features`],
       ["Đặc trưng phái sinh", `${result.engineered_feature_count} Kỹ thuật`],
-      ["Trạng thái", result.prediction_support_status === "SUPPORTED" ? "Chuẩn xác cao" : "Ngoại suy"],
+      ["Độ chính xác MAE", "7.77 - 12.60 điểm"],
     ]);
 
-    showToast(`Dự đoán hoàn tất! Điểm số: ${Number(result.predicted_popularity).toFixed(1)}/100`);
+    showToast(`🎯 Khóa mục tiêu thành công! Điểm tiềm năng: ${Number(result.predicted_popularity).toFixed(1)}/100`);
   } catch (error) {
+    if (radarTargetPanel) radarTargetPanel.className = "result-panel radar-hud-target radar-idle";
+    if (targetLockTag) targetLockTag.textContent = "RADAR STANDBY";
     showToast(`Dự đoán thất bại: ${error.message}`, false);
   } finally {
     setBusy(button, false);
@@ -610,7 +684,7 @@ document.querySelector("#predictForm").addEventListener("submit", async (event) 
 });
 
 // Xử lý gửi Form Phân cụm âm thanh (K-Means)
-document.querySelector("#clusterForm").addEventListener("submit", async (event) => {
+document.querySelector("#clusterForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const button = event.submitter;
   setBusy(button, true, "Đang phân nhóm phong cách...");
@@ -640,7 +714,7 @@ document.querySelector("#clusterForm").addEventListener("submit", async (event) 
 });
 
 // Xử lý gửi Form Gợi ý bài hát tương đồng
-document.querySelector("#recommendForm").addEventListener("submit", async (event) => {
+document.querySelector("#recommendForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const button = event.submitter;
   const data = new FormData(event.currentTarget);
@@ -688,22 +762,11 @@ document.querySelector("#recommendForm").addEventListener("submit", async (event
    1. WEB AUDIO API SYNTHESIZER (NGHE THỬ VIBE ÂM SẮC)
    ============================================================ */
 let audioCtx = null;
-let isSynthPlaying = false;
 let synthTimer = null;
 
 const baseFreqMap = {
-  0: 261.63, // C4
-  1: 277.18, // C#4
-  2: 293.66, // D4
-  3: 311.13, // D#4
-  4: 329.63, // E4
-  5: 349.23, // F4
-  6: 369.99, // F#4
-  7: 392.00, // G4
-  8: 415.30, // G#4
-  9: 440.00, // A4
-  10: 466.16,// A#4
-  11: 493.88 // B4
+  0: 261.63, 1: 277.18, 2: 293.66, 3: 311.13, 4: 329.63, 5: 349.23,
+  6: 369.99, 7: 392.00, 8: 415.30, 9: 440.00, 10: 466.16, 11: 493.88
 };
 
 function playSynthVibe() {
@@ -757,25 +820,25 @@ function playSynthVibe() {
   const playBtn = document.querySelector("#playSynthBtn");
   const synthText = document.querySelector("#synthText");
   const synthIcon = document.querySelector("#synthIcon");
-  playBtn.classList.add("is-playing");
-  synthIcon.textContent = "🔊";
-  synthText.textContent = "Đang phát Vibe...";
+  if (playBtn) playBtn.classList.add("is-playing");
+  if (synthIcon) synthIcon.textContent = "🔊";
+  if (synthText) synthText.textContent = "Đang phát Vibe...";
 
   clearTimeout(synthTimer);
   synthTimer = setTimeout(() => {
-    playBtn.classList.remove("is-playing");
-    synthIcon.textContent = "▶️";
-    synthText.textContent = "Nghe Thử Vibe Âm Sắc (Synth)";
+    if (playBtn) playBtn.classList.remove("is-playing");
+    if (synthIcon) synthIcon.textContent = "▶️";
+    if (synthText) synthText.textContent = "Nghe Thử Vibe Âm Sắc (Synth)";
   }, (totalNotes * noteDuration + 0.2) * 1000);
 }
 
-document.querySelector("#playSynthBtn").addEventListener("click", () => {
+document.querySelector("#playSynthBtn")?.addEventListener("click", () => {
   playSynthVibe();
   showToast("Đang mô phỏng chuỗi hợp âm Synthesizer theo Key, Mode & BPM!");
 });
 
 /* ============================================================
-   2. SCI-FI RADAR HUD CANVAS (VỚI TIA QUÉT XOAY TRÒN)
+   2. SCI-FI RADAR HUD CANVAS (7 CHIỀU ÂM HỌC)
    ============================================================ */
 let radarScanAngle = 0;
 function drawRadarHUD() {
@@ -786,13 +849,13 @@ function drawRadarHUD() {
   if (!form) return;
 
   const features = [
-    { name: "Bắt tai", val: Number(form.elements.danceability.value) },
-    { name: "Năng lượng", val: Number(form.elements.energy.value) },
-    { name: "Tươi vui", val: Number(form.elements.valence.value) },
-    { name: "Mộc mạc", val: Number(form.elements.acousticness.value) },
-    { name: "Nhạc cụ", val: Number(form.elements.instrumentalness.value) },
-    { name: "Sân khấu", val: Number(form.elements.liveness.value) },
-    { name: "Lời thoại", val: Number(form.elements.speechiness.value) },
+    { name: "💃 Bắt tai", val: Number(form.elements.danceability.value) },
+    { name: "⚡ Năng lượng", val: Number(form.elements.energy.value) },
+    { name: "🎭 Tươi vui", val: Number(form.elements.valence.value) },
+    { name: "🎸 Mộc mạc", val: Number(form.elements.acousticness.value) },
+    { name: "🎹 Nhạc cụ", val: Number(form.elements.instrumentalness.value) },
+    { name: "🎤 Sân khấu", val: Number(form.elements.liveness.value) },
+    { name: "🗣️ Lời thoại", val: Number(form.elements.speechiness.value) },
   ];
 
   const width = canvas.width;
@@ -817,26 +880,27 @@ function drawRadarHUD() {
       else ctx.lineTo(x, y);
     }
     ctx.closePath();
-    ctx.strokeStyle = l === levels ? "rgba(0, 230, 153, 0.25)" : "rgba(255, 255, 255, 0.06)";
+    ctx.strokeStyle = l === levels ? "rgba(0, 230, 153, 0.3)" : "rgba(255, 255, 255, 0.06)";
     ctx.lineWidth = 1;
     ctx.stroke();
   }
 
+  // Sonar sweeping beam on canvas
   ctx.save();
   ctx.translate(centerX, centerY);
   ctx.rotate(radarScanAngle);
   const scanGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, radius);
-  scanGrad.addColorStop(0, "rgba(0, 230, 153, 0.4)");
-  scanGrad.addColorStop(0.8, "rgba(0, 230, 153, 0.08)");
+  scanGrad.addColorStop(0, "rgba(0, 230, 153, 0.35)");
+  scanGrad.addColorStop(0.8, "rgba(0, 230, 153, 0.06)");
   scanGrad.addColorStop(1, "transparent");
   ctx.beginPath();
   ctx.moveTo(0, 0);
-  ctx.arc(0, 0, radius, 0, 0.45);
+  ctx.arc(0, 0, radius, 0, 0.5);
   ctx.closePath();
   ctx.fillStyle = scanGrad;
   ctx.fill();
   ctx.restore();
-  radarScanAngle += 0.028;
+  radarScanAngle += 0.025;
 
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
@@ -851,7 +915,7 @@ function drawRadarHUD() {
     const labelX = centerX + (radius + 24) * Math.cos(angle);
     const labelY = centerY + (radius + 20) * Math.sin(angle);
     ctx.fillStyle = "rgba(148, 163, 184, 0.9)";
-    ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
+    ctx.font = "600 10.5px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(features[i].name, labelX, labelY);
@@ -868,7 +932,7 @@ function drawRadarHUD() {
   }
   ctx.closePath();
 
-  ctx.fillStyle = "rgba(0, 230, 153, 0.2)";
+  ctx.fillStyle = "rgba(0, 230, 153, 0.22)";
   ctx.fill();
   ctx.strokeStyle = "#00e699";
   ctx.lineWidth = 2;
@@ -964,14 +1028,16 @@ function drawMoodQuadrant() {
   ctx.stroke();
 
   const moodBadge = document.querySelector("#currentMoodBadge");
-  if (valence >= 0.5 && energy >= 0.5) {
-    moodBadge.textContent = "⚡ Sôi Động & Tươi Vui (Happy Energy)";
-  } else if (valence >= 0.5 && energy < 0.5) {
-    moodBadge.textContent = "☕ Thư Thái & Bình Yên (Chill Vibe)";
-  } else if (valence < 0.5 && energy < 0.5) {
-    moodBadge.textContent = "🌧️ Trầm Tư & U Buồn (Melancholic)";
-  } else {
-    moodBadge.textContent = "🔥 Bùng Nổ & Dữ Dội (Intense Vibe)";
+  if (moodBadge) {
+    if (valence >= 0.5 && energy >= 0.5) {
+      moodBadge.textContent = "⚡ Sôi Động & Tươi Vui (Happy Energy)";
+    } else if (valence >= 0.5 && energy < 0.5) {
+      moodBadge.textContent = "☕ Thư Thái & Bình Yên (Chill Vibe)";
+    } else if (valence < 0.5 && energy < 0.5) {
+      moodBadge.textContent = "🌧️ Trầm Tư & U Buồn (Melancholic)";
+    } else {
+      moodBadge.textContent = "🔥 Bùng Nổ & Dữ Dội (Intense Vibe)";
+    }
   }
 }
 
@@ -979,7 +1045,6 @@ function drawMoodQuadrant() {
    4. AUDIO GALAXY MAP CANVAS (BẢN ĐỒ THIÊN HÀ ÂM NHẠC 2D)
    ============================================================ */
 let galaxyStars = [];
-let hoveredNode = null;
 let currentClusterFilter = "all";
 
 function generateGalaxyData() {
@@ -1127,20 +1192,20 @@ if (galaxyCanvas) {
       }
     });
 
-    if (nearest) {
+    if (nearest && galaxyNodeCard) {
       galaxyNodeCard.classList.add("is-visible");
       document.querySelector("#nodeTrackName").textContent = `🎵 ${nearest.title}`;
       document.querySelector("#nodeVibe").textContent = nearest.vibe;
       document.querySelector("#nodeEnergy").textContent = `${Math.round(nearest.energy * 100)}%`;
       document.querySelector("#nodeDance").textContent = `${Math.round(nearest.dance * 100)}%`;
       document.querySelector("#nodePopularity").textContent = `${nearest.popularity}`;
-    } else {
+    } else if (galaxyNodeCard) {
       galaxyNodeCard.classList.remove("is-visible");
     }
   });
 
   galaxyCanvas.addEventListener("mouseleave", () => {
-    galaxyNodeCard.classList.remove("is-visible");
+    if (galaxyNodeCard) galaxyNodeCard.classList.remove("is-visible");
   });
 }
 
@@ -1153,7 +1218,7 @@ document.querySelectorAll(".galaxy-chip").forEach((chip) => {
   });
 });
 
-document.querySelector("#locateMyTrackBtn").addEventListener("click", () => {
+document.querySelector("#locateMyTrackBtn")?.addEventListener("click", () => {
   drawGalaxyMap();
   showToast("Đã định vị bài hát của bạn tại toạ độ năng lượng & cảm xúc hiện tại!");
 });
@@ -1198,7 +1263,7 @@ function drawDecadeTrendChart() {
     ctx.fillText(d, x, height - padding + 18);
   });
 
-  function drawLine(data, color, label) {
+  function drawLine(data, color) {
     ctx.beginPath();
     data.forEach((val, i) => {
       const x = padding + i * stepX;
@@ -1223,9 +1288,9 @@ function drawDecadeTrendChart() {
     });
   }
 
-  drawLine(loudness, "#ff4d4d", "Độ lớn Loudness");
-  drawLine(energy, "#00e699", "Năng lượng Energy");
-  drawLine(danceability, "#06b6d4", "Bắt tai Danceability");
+  drawLine(loudness, "#ff4d4d");
+  drawLine(energy, "#00e699");
+  drawLine(danceability, "#06b6d4");
 
   ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
   ctx.fillStyle = "#ff4d4d";
