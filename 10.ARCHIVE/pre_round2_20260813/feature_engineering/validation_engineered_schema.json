@@ -1,0 +1,42 @@
+{
+  "shape": [
+    85272,
+    31
+  ],
+  "features": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature",
+    "explicit",
+    "mode",
+    "release_month_sin",
+    "release_month_cos",
+    "year_in_decade",
+    "duration_log",
+    "duration_squared",
+    "energy_danceability",
+    "energy_valence",
+    "danceability_valence",
+    "acousticness_instrumentalness",
+    "energy_liveness",
+    "speechiness_explicit",
+    "tempo_danceability",
+    "loudness_energy"
+  ],
+  "feature_count": 31,
+  "nan_count": 0,
+  "inf_count": 0
+}

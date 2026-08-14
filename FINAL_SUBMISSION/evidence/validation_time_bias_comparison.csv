@@ -1,0 +1,4 @@
+Model,Evaluation Scope,With-Time RMSE,No-Time RMSE,No-Time minus With-Time RMSE,Interpretation
+Linear Regression,validation 2018,19.793128746776336,22.525810544632684,2.7326817978563476,positive means time features improved validation RMSE
+Random Forest,validation 2018,16.704076254127664,20.45271818983808,3.748641935710417,positive means time features improved validation RMSE
+XGBoost,validation 2018,16.597462350644864,20.061089437896545,3.4636270872516803,positive means time features improved validation RMSE

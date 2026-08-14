@@ -1,0 +1,5 @@
+Partition,Scope,Rows
+Selection Train,release_year <= 2017,543611
+Validation,release_year == 2018,10936
+Development,release_year < 2019,554547
+Final Test,release_year >= 2019,32125

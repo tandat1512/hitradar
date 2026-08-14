@@ -1,0 +1,14 @@
+Feature,Exists,Dtype,Missing Count,Infinite Count,Status
+key_sin,True,float64,0,0,PASS
+key_cos,True,float64,0,0,PASS
+dance_energy,True,float64,0,0,PASS
+positive_energy,True,float64,0,0,PASS
+acoustic_energy_balance,True,float64,0,0,PASS
+dance_valence,True,float64,0,0,PASS
+acoustic_instrumental,True,float64,0,0,PASS
+tempo_energy,True,float64,0,0,PASS
+energy_vs_period_avg,True,float64,0,0,PASS
+dance_vs_period_avg,True,float64,0,0,PASS
+mood_quadrant,True,str,0,0,PASS
+duration_category,True,string,0,0,PASS
+tempo_category,True,string,0,0,PASS

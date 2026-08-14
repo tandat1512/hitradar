@@ -1,0 +1,15 @@
+Feature,Exists,Dtype,Missing Count,Infinite Count,Leakage Check,Decision,Status
+key_sin,True,float64,0,0,Automated PASS,KEEP,PASS
+key_cos,True,float64,0,0,Automated PASS,KEEP,PASS
+dance_energy,True,float64,0,0,Automated PASS,KEEP,PASS
+positive_energy,True,float64,0,0,Automated PASS,KEEP,PASS
+acoustic_energy_balance,True,float64,0,0,Automated PASS,KEEP,PASS
+dance_valence,True,float64,0,0,Automated PASS,KEEP,PASS
+acoustic_instrumental,True,float64,0,0,Automated PASS,KEEP,PASS
+tempo_energy,True,float64,0,0,Automated PASS,KEEP,PASS
+energy_vs_period_avg,True,float64,0,0,Automated PASS,KEEP,PASS
+dance_vs_period_avg,True,float64,0,0,Automated PASS,KEEP,PASS
+energy_loudness,True,float64,0,0,Automated PASS,KEEP,PASS
+mood_quadrant,True,str,0,0,Automated PASS,KEEP,PASS
+duration_category,True,string,0,0,Automated PASS,KEEP,PASS
+tempo_category,True,string,0,0,Automated PASS,KEEP,PASS

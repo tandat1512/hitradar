@@ -1,0 +1,12 @@
+{
+  "feature_selection_method": "train_only_temporal_cv",
+  "baseline_rmse": 16.0892657597094,
+  "best_experiment_rmse": 15.9134624550514,
+  "improvement": 0.17580330465799854,
+  "improvement_pct": 1.0926745028865374,
+  "threshold_pct": 0.1,
+  "engineered_selected": true,
+  "best_experiment": "EXP23-A10",
+  "selected_feature_count": 33,
+  "generation_session_id": "FE23-20260719193118"
+}

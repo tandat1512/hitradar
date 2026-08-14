@@ -1,0 +1,17 @@
+Feature,Dependencies,Forbidden Dependencies,Unknown Dependencies,Audit Type,Status
+key_sin,key,,,Automated dependency audit,PASS
+key_cos,key,,,Automated dependency audit,PASS
+dance_energy,"danceability, energy",,,Automated dependency audit,PASS
+positive_energy,"energy, valence",,,Automated dependency audit,PASS
+acoustic_energy_balance,"acousticness, energy",,,Automated dependency audit,PASS
+dance_valence,"danceability, valence",,,Automated dependency audit,PASS
+acoustic_instrumental,"acousticness, instrumentalness",,,Automated dependency audit,PASS
+tempo_energy,"energy, tempo",,,Automated dependency audit,PASS
+energy_vs_period_avg,"energy, release_year",,,Automated dependency audit,PASS
+dance_vs_period_avg,"danceability, release_year",,,Automated dependency audit,PASS
+energy_loudness,"energy, loudness",,,Automated dependency audit,PASS
+speechiness_log,speechiness,,,Automated dependency audit,PASS
+instrumentalness_log,instrumentalness,,,Automated dependency audit,PASS
+mood_quadrant,"energy, valence",,,Automated dependency audit,PASS
+duration_category,duration_min,,,Automated dependency audit,PASS
+tempo_category,tempo,,,Automated dependency audit,PASS

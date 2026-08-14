@@ -1,0 +1,20 @@
+[
+  "duration_min",
+  "release_year",
+  "danceability",
+  "energy",
+  "loudness",
+  "speechiness",
+  "acousticness",
+  "instrumentalness",
+  "liveness",
+  "valence",
+  "tempo",
+  "explicit",
+  "mode",
+  "release_month",
+  "decade",
+  "release_precision",
+  "key",
+  "time_signature"
+]

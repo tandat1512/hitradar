@@ -1,0 +1,16 @@
+# Exact versions used to execute and validate Notebooks 05-07 on 2026-08-13.
+numpy==2.5.2
+pandas==3.0.5
+scikit-learn==1.9.0
+xgboost==3.4.0
+joblib==1.5.3
+pyarrow==24.0.0
+fastapi==0.141.1
+uvicorn==0.52.2
+pydantic==2.13.4
+streamlit==1.61.1
+requests==2.34.2
+matplotlib==3.11.1
+seaborn==0.13.2
+nbformat==5.11.0
+nbclient==0.11.0

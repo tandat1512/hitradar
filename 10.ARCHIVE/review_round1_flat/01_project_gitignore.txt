@@ -1,0 +1,89 @@
+# ============================================================
+# Raw data — không commit CSV/ZIP/JSON gốc lên Git
+# ============================================================
+1.DỮ_LIỆU/1.1.raw/*.csv
+1.DỮ_LIỆU/1.1.raw/*.zip
+1.DỮ_LIỆU/1.1.raw/*.json
+1.DỮ_LIỆU/1.1.raw/*.parquet
+
+# ============================================================
+# Temp / extracted files
+# ============================================================
+6.TAI_LIEU/6.1.bao_cao/_extracted/
+9.SCRIPTS/_audit_results.json
+*.docx
+*.pptx
+*.xlsx
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ============================================================
+# Virtual environments
+# ============================================================
+.venv/
+venv/
+env/
+ENV/
+
+# ============================================================
+# Jupyter Notebooks
+# ============================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+scratch/runtime_packages/
+scratch/jupyter_kernel/
+scratch/jupyter_config/
+scratch/jupyter_data/
+scratch/jupyter_runtime/
+scratch/ipython/
+
+# ============================================================
+# Model artifacts (lớn, sinh ra từ pipeline — không commit)
+# ============================================================
+4.MODELS/4.1.trained/*.pkl
+4.MODELS/4.1.trained/*.joblib
+4.MODELS/4.2.evaluation/*.pkl
+
+# ============================================================
+# Environment / secrets
+# ============================================================
+.env
+*.env
+5.UNG_DUNG/5.3.config/.env
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# IDE
+# ============================================================
+.vscode/
+.idea/
+*.suo
+*.user
+
+# ============================================================
+# Feature 2.1 — Split ID files (large, regeneratable)
+# ============================================================
+7.ML/7.4.splits/*_ids.parquet
+
+*.rar
+
+7.ML/7.7.model_training/models/EXP24-RF-FINAL-001.joblib
+
+7.ML/7.7.model_training/models/runner_up_bundle.joblib

@@ -1,0 +1,52 @@
+{
+  "pipeline_type": "FeatureEngineeringTransformer",
+  "pipeline_path": "E:\\D\u1ef1 \u00e1n 1 hitrada\\hitradar\\7.ML\\7.6.feature_engineering\\feature_engineering_pipeline.joblib",
+  "pipeline_sha256": "6482960a7817caa3927f0920cac699989b04019b3e6562c7daa87828789e5128",
+  "selected_features": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature",
+    "explicit",
+    "mode",
+    "release_month_sin",
+    "release_month_cos",
+    "year_in_decade",
+    "duration_log",
+    "duration_squared",
+    "energy_danceability",
+    "energy_valence",
+    "danceability_valence",
+    "acousticness_instrumentalness",
+    "energy_liveness",
+    "speechiness_explicit",
+    "tempo_danceability",
+    "loudness_energy"
+  ],
+  "duration_thresholds": {
+    "q25": 2.8193,
+    "q50": 3.5173,
+    "q75": 4.4389
+  },
+  "train_shape": [
+    415524,
+    31
+  ],
+  "validation_shape": [
+    85272,
+    31
+  ],
+  "generated_at": "2026-07-19T19:37:02.786879"
+}

@@ -1,0 +1,26 @@
+{
+  "experiment_id": "EXP23-BASELINE",
+  "feature_count": 18,
+  "train_rows": 415524,
+  "validation_rows": 85272,
+  "fit_split": "train",
+  "evaluation_split": "validation",
+  "model": "Ridge",
+  "model_parameters": {
+    "alpha": 1.0,
+    "random_state": 1512
+  },
+  "train": {
+    "MAE": 9.353929961893435,
+    "RMSE": 12.175149498393953,
+    "R2": 0.40408056478449983
+  },
+  "validation": {
+    "MAE": 12.2800652001153,
+    "RMSE": 16.0892657597094,
+    "R2": -0.0066005644549420595
+  },
+  "runtime_seconds": 2.2337822914123535,
+  "random_state": 1512,
+  "test_used": false
+}

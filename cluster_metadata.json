@@ -1,0 +1,19 @@
+{
+  "chosen_k": 3,
+  "selection_rule": "maximum sampled silhouette",
+  "features": [
+    "duration_min",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo"
+  ],
+  "target_used": false,
+  "time_used": false,
+  "rows": 586672
+}

@@ -1,0 +1,132 @@
+{
+  "policy": "Raw canonical evidence retained; FINAL_SUBMISSION copies sanitized.",
+  "files_scanned": 51,
+  "files_sanitized": 11,
+  "sanitized_files": [
+    {
+      "file": "evidence/public_path_hotfix_test_results.json",
+      "replacement_counts": {
+        "project_root": 1
+      }
+    },
+    {
+      "file": "evidence/round4_environment_install.log",
+      "replacement_counts": {
+        "project_root": 94,
+        "user_cache": 3,
+        "other_absolute_paths": 1
+      }
+    },
+    {
+      "file": "evidence/round4_environment_validation.json",
+      "replacement_counts": {
+        "project_root": 1
+      }
+    },
+    {
+      "file": "evidence/round4_notebook_execution_status.json",
+      "replacement_counts": {
+        "project_root": 1
+      }
+    },
+    {
+      "file": "evidence/round4_test_results.json",
+      "replacement_counts": {
+        "project_root": 1
+      }
+    },
+    {
+      "file": "evidence/shap_requirement_status.json",
+      "replacement_counts": {
+        "downloads": 1
+      }
+    },
+    {
+      "file": "FINAL_AUDIT_REPORT.md",
+      "replacement_counts": {
+        "project_root": 1
+      }
+    },
+    {
+      "file": "GIT_EVIDENCE.md",
+      "replacement_counts": {
+        "project_root": 94,
+        "user_cache": 3,
+        "downloads": 1,
+        "other_absolute_paths": 20
+      }
+    },
+    {
+      "file": "notebooks/05_feature_engineering.ipynb",
+      "replacement_counts": {
+        "project_root": 3,
+        "other_absolute_paths": 9
+      }
+    },
+    {
+      "file": "notebooks/06_machine_learning.ipynb",
+      "replacement_counts": {
+        "project_root": 1
+      }
+    },
+    {
+      "file": "notebooks/07_ai_deployment.ipynb",
+      "replacement_counts": {
+        "project_root": 2
+      }
+    }
+  ],
+  "replacement_counts": {
+    "project_root": 199,
+    "python_executable": 0,
+    "user_home": 0,
+    "user_cache": 6,
+    "downloads": 2,
+    "temp": 0,
+    "other_absolute_paths": 30
+  },
+  "raw_canonical_files_modified": false,
+  "raw_canonical_checksums": [
+    {
+      "canonical_file": "5.UNG_DUNG/validation/round4_environment_install.log",
+      "before_sha256": "923d30064c4baba01377075dd3cc6e10f3834dbaa8dc664a2026521ca0512df2",
+      "after_sha256": "923d30064c4baba01377075dd3cc6e10f3834dbaa8dc664a2026521ca0512df2",
+      "unchanged": true
+    },
+    {
+      "canonical_file": "5.UNG_DUNG/validation/round4_environment_validation.json",
+      "before_sha256": "c925b44f1b199e64541eff939b2690e85c3e10bf90fd3eaa5e003ef835336163",
+      "after_sha256": "c925b44f1b199e64541eff939b2690e85c3e10bf90fd3eaa5e003ef835336163",
+      "unchanged": true
+    },
+    {
+      "canonical_file": "5.UNG_DUNG/validation/round4_notebook_execution_status.json",
+      "before_sha256": "2c9a45ec67683d2f387c5c06ce101647ce4d8c2f437f8701cc1480c93c5529f0",
+      "after_sha256": "2c9a45ec67683d2f387c5c06ce101647ce4d8c2f437f8701cc1480c93c5529f0",
+      "unchanged": true
+    },
+    {
+      "canonical_file": "5.UNG_DUNG/validation/round4_test_results.json",
+      "before_sha256": "161a88396c74a74a47cc85bf7c9916313f5575fba2540662f1da3ecb4f4b7ba9",
+      "after_sha256": "161a88396c74a74a47cc85bf7c9916313f5575fba2540662f1da3ecb4f4b7ba9",
+      "unchanged": true
+    }
+  ],
+  "public_submission_scan_passed": true,
+  "remaining_sensitive_absolute_paths": [],
+  "model_integrity": {
+    "notebook_06_retrained": false,
+    "model_sha256_before": "ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047",
+    "model_sha256_after": "ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047",
+    "model_unchanged": true,
+    "final_metrics_sha256_before": "f426407214e0e4ac11b9d4cee8f7c6218a7092216a9d20bec62fe8af37833edf",
+    "final_metrics_sha256_after": "f426407214e0e4ac11b9d4cee8f7c6218a7092216a9d20bec62fe8af37833edf",
+    "final_metrics_unchanged": true,
+    "clipped_test_metrics": {
+      "MAE": 16.20159882222829,
+      "RMSE": 20.59495229457929,
+      "R2": 0.2590257250611695
+    }
+  },
+  "status": "PASS"
+}

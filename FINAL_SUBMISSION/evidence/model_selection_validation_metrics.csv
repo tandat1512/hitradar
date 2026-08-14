@@ -1,0 +1,19 @@
+Experiment,Model,Prediction Variant,Feature Count,MAE,RMSE,R2,Fit Scope,Evaluation Scope
+Engineered With-Time,XGBoost,"Clipped [0,100]",32,12.600404895193488,16.597462350644864,0.4197294430576878,selection train,validation 2018
+Baseline With-Time,XGBoost,"Clipped [0,100]",18,12.670251718763502,16.6826169460047,0.413759920569692,selection train,validation 2018
+Engineered With-Time,Random Forest,"Clipped [0,100]",32,12.741017369733973,16.704076254127664,0.41225075714094905,selection train,validation 2018
+Baseline With-Time,Random Forest,"Clipped [0,100]",18,12.83545892717782,16.85580266189979,0.4015249814194537,selection train,validation 2018
+Engineered With-Time,Linear Regression,"Clipped [0,100]",32,16.205409123122514,19.793128746776336,0.17476801994653468,selection train,validation 2018
+Engineered No-Time,XGBoost,"Clipped [0,100]",26,16.687435932096363,20.061089437896545,0.15227268138206673,selection train,validation 2018
+Baseline With-Time,Linear Regression,"Clipped [0,100]",18,16.670607543345014,20.437123000171916,0.12019450923566632,selection train,validation 2018
+Engineered No-Time,Random Forest,"Clipped [0,100]",26,17.05137256239349,20.45271818983808,0.11885127041321886,selection train,validation 2018
+Engineered No-Time,Linear Regression,"Clipped [0,100]",26,19.312844889270366,22.525810544632684,-0.06882844879042582,selection train,validation 2018
+Engineered With-Time,XGBoost,Raw,32,12.619090274733919,16.601458853649266,0.4194499627157443,selection train,validation 2018
+Baseline With-Time,XGBoost,Raw,18,12.687726855467073,16.686322798228392,0.4134994386070453,selection train,validation 2018
+Engineered With-Time,Random Forest,Raw,32,12.741017369733973,16.704076254127664,0.41225075714094905,selection train,validation 2018
+Baseline With-Time,Random Forest,Raw,18,12.83545892717782,16.85580266189979,0.4015249814194537,selection train,validation 2018
+Engineered With-Time,Linear Regression,Raw,32,16.205409123122514,19.793128746776336,0.17476801994653468,selection train,validation 2018
+Engineered No-Time,XGBoost,Raw,26,16.690891721110788,20.062062469514927,0.1521904440248445,selection train,validation 2018
+Baseline With-Time,Linear Regression,Raw,18,16.670607543345014,20.437123000171916,0.12019450923566632,selection train,validation 2018
+Engineered No-Time,Random Forest,Raw,26,17.05137256239349,20.45271818983808,0.11885127041321886,selection train,validation 2018
+Engineered No-Time,Linear Regression,Raw,26,19.313046197708424,22.526396432969673,-0.06888404921065927,selection train,validation 2018

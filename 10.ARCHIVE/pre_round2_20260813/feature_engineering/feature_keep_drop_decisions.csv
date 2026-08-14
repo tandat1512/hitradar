@@ -1,0 +1,17 @@
+Feature,Decision,Decision Reason
+key_sin,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+key_cos,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+dance_energy,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+positive_energy,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+acoustic_energy_balance,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+dance_valence,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+acoustic_instrumental,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+tempo_energy,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+energy_vs_period_avg,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+dance_vs_period_avg,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+energy_loudness,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+speechiness_log,DROP,DROP: exact monotonic rank redundancy with retained raw speechiness.
+instrumentalness_log,DROP,DROP: exact monotonic rank redundancy with retained raw instrumentalness.
+mood_quadrant,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+duration_category,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."
+tempo_category,KEEP,"KEEP: executable, valid, leakage-safe candidate with EDA/domain rationale."

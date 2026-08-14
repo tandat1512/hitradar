@@ -1,0 +1,23 @@
+[
+  {
+    "Notebook":"05_feature_engineering.ipynb",
+    "Code Cells":11,
+    "Executed":11,
+    "Errors":0,
+    "Status":"PASS"
+  },
+  {
+    "Notebook":"06_machine_learning.ipynb",
+    "Code Cells":7,
+    "Executed":7,
+    "Errors":0,
+    "Status":"PASS"
+  },
+  {
+    "Notebook":"07_ai_deployment.ipynb",
+    "Code Cells":5,
+    "Executed":5,
+    "Errors":0,
+    "Status":"PASS"
+  }
+]

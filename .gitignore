@@ -41,6 +41,12 @@ ENV/
 # ============================================================
 .ipynb_checkpoints/
 *.ipynb_checkpoints
+scratch/runtime_packages/
+scratch/jupyter_kernel/
+scratch/jupyter_config/
+scratch/jupyter_data/
+scratch/jupyter_runtime/
+scratch/ipython/
 
 # ============================================================
 # Model artifacts (lớn, sinh ra từ pipeline — không commit)
@@ -48,6 +54,11 @@ ENV/
 4.MODELS/4.1.trained/*.pkl
 4.MODELS/4.1.trained/*.joblib
 4.MODELS/4.2.evaluation/*.pkl
+4.MODELS/hitradar_popularity/*.joblib
+4.MODELS/hitradar_secondary/*.joblib
+4.MODELS/hitradar_secondary/*.parquet
+5.DATA/processed/features_engineered.parquet
+4.MODELS/4.2.evaluation/*test_predictions*.parquet
 
 # ============================================================
 # Environment / secrets

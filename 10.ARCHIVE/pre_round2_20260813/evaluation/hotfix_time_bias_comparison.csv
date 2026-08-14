@@ -1,0 +1,4 @@
+Model,With-Time RMSE,No-Time RMSE,No-Time minus With-Time RMSE,Interpretation
+Linear Regression,22.700190773595025,24.733624027773548,2.0334332541785223,positive means time features improve held-out RMSE
+Random Forest,20.683873219011296,23.179309564726037,2.49543634571474,positive means time features improve held-out RMSE
+XGBoost,20.59495229457929,22.963481872093784,2.3685295775144937,positive means time features improve held-out RMSE

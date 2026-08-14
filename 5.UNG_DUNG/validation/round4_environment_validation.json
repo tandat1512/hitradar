@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-08-14T05:57:25.822682+00:00",
+  "python_version": "3.12.13",
+  "python_executable": "D:\\Hitradar\\hitradar-main\\.venv_round4\\Scripts\\python.exe",
+  "requirements_file": "5.UNG_DUNG/5.3.config/requirements.txt",
+  "requirements_install_status": "PASS",
+  "http_client_package": "httpx2",
+  "http_client_version": "2.10.0",
+  "fastapi_version": "0.141.1",
+  "starlette_version": "1.3.1",
+  "xgboost_version": "3.4.0",
+  "scikit_learn_version": "1.9.0",
+  "numpy_version": "2.5.2",
+  "pandas_version": "3.0.5",
+  "joblib_version": "1.5.3",
+  "pip_version": "26.2.1",
+  "fastapi_testclient_smoke": "PASS",
+  "pip_index_httpx2_version_verified": "2.10.0",
+  "install_log": "5.UNG_DUNG/validation/round4_environment_install.log",
+  "status": "PASS"
+}

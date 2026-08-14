@@ -1,0 +1,901 @@
+Task Checklist for Each Notebook
+NOTEBOOK 01: DATA UNDERSTANDING (01_data_understanding.ipynb)
+Mục tiêu
+Hiểu bài toán và bộ dữ liệu, đánh giá chất lượng dữ liệu, xác định cấu trúc dữ liệu và chuẩn bị cho các bước xử lý tiếp theo.
+I. Hiểu bài toán
+Giới thiệu bài toán AI cần giải quyết.
+Biến mục tiêu (Target).
+II. Tìm hiểu Dataset
+Mô tả Dataset.
+Danh sách các file dữ liệu.
+Data Dictionary (mô tả các cột  dữ liệu quan trọng).
+Nếu Dataset có nhiều bảng
+Xác định bảng chính (Main Table / Fact Table).
+Xác định các bảng phụ (Dimension / Transaction Tables).
+Vai trò của từng bảng.
+Xác định mức dữ liệu (Grain), ví dụ:
+Rossmann: 1 dòng = 1 cửa hàng trong 1 ngày.
+Home Credit: 1 dòng = 1 khách hàng.
+III. Khảo sát dữ liệu của bảng chính
+1. Đọc dữ liệu
+Đọc file CSV.
+Hiển thị một vài dòng đầu (head()).
+2. Kích thước dữ liệu
+Số dòng.
+Số cột.
+Bộ nhớ sử dụng (Memory Usage).
+3. Khảo sát cấu trúc
+Danh sách các cột.
+Kiểu dữ liệu (info()).
+Thống kê kiểu dữ liệu (int, float, object, datetime...).
+Thống kê số lượng giá trị khác nhau (nunique()).
+Tỷ lệ giá trị khác nhau (Unique Ratio).
+4. Thống kê mô tả dữ liệu
+Sử dụng describe() để phân tích:
+Số lượng bản ghi (Count).
+Giá trị trung bình (Mean).
+Trung vị (Median).
+Độ lệch chuẩn (Standard Deviation).
+Giá trị nhỏ nhất (Min).
+Giá trị lớn nhất (Max).
+Các phân vị (25%, 50%, 75%).
+IV. Kiểm tra chất lượng dữ liệu của bảng chính
+1. Missing Values
+Số lượng Missing.
+Tỷ lệ Missing (%).
+2. Duplicate
+Kiểm tra bản ghi trùng.
+3. Giá trị sai logic (bất thường)
+Ví dụ:
+Sales âm.
+Customers âm.
+Giá trị ngoài phạm vi.
+Giá trị không hợp lệ.
+V. Khảo sát các nhóm dữ liệu của bảng chính
+Numeric
+Thống kê mô tả.
+Histogram (nếu cần).
+Category
+value_counts().
+Số lượng nhóm.
+Bar (nếu  cần)
+Date
+Min Date.
+Max Date.
+Khoảng thời gian.
+Số ngày.
+Target
+Phân bố Target.
+Missing của Target.
+Histogram hoặc Boxplot đơn giản.
+VI. Khảo sát dữ liệu của bảng phụ aaa
+1. Xem dữ liệu và các cột
+2. Xem kiểu dữ liệu
+3. Thống kê mô tả
+4. Kiểm tra Missing Values & Duplicates
+5. Phân tích các cột phân loại
+6. Xem thông tin bộ nhớ - Memory
+VII. Kiểm tra quan hệ giữa các bảng (nếu có)
+Primary Key
+Có trùng khóa chính không?
+Foreign Key
+Có khóa ngoại bị thiếu không?
+Kiểm tra Join
+Join được không?
+Có mất dữ liệu không?
+Quan hệ giữa các bảng (1–1, 1–N, N–N).
+VIII. Đánh giá sơ bộ
+Những cột được giả định là quan trọng (dựa trên mục tiêu bài toán và Data Dictionary).
+Những cột có nhiều Missing.
+Những cột cần xử lý.
+Những cột cần Feature Engineering.
+Lưu ý: Đây chỉ là đánh giá ban đầu, chưa phải kết luận cuối cùng. Các giả thuyết sẽ được kiểm chứng trong Notebook 04 (EDA) và Notebook 05 (Feature Engineering).
+IV. Kết luận
+Ví dụ:
+Dataset có bao nhiêu bản ghi.
+Có bao nhiêu bảng.
+Có Missing hay không.
+Có Duplicate hay không.
+Dữ liệu đã sẵn sàng để đưa vào PostgreSQL.
+Chuẩn bị cho Notebook 02.
+Trường hợp Dataset có quá nhiều bảng
+Ví dụ: dataset Home Credit, Olist, MIMIC, Instacart.  Nên bổ sung:
+1. Danh sách toàn bộ bảng
+2. Sơ đồ quan hệ (ER đơn giản)
+Ví dụ:
+application_train
+├── bureau
+├── previous_application
+├── installments_payments
+├── POS_CASH_balance
+└── credit_card_balance
+3. Xác định bảng trung tâm (Fact Table)
+Ví dụ: application_train
+Đây là bảng trung tâm của bài toán.
+4. Phân loại các bảng
+Fact Table.
+Dimension Table.
+Transaction Table.
+Điều này giúp người đọc hiểu vai trò của từng bảng.
+Trường hợp Dataset có quá nhiều cột (150–300 cột)
+Không nên phân tích từng cột.
+1. Chia nhóm cột
+Ví dụ:
+Customer Information.
+Financial Information.
+Credit History.
+Demographic.
+Time Information.
+Target.
+2. Chỉ phân tích các cột quan trọng
+Dựa trên:
+Mục tiêu bài toán.
+Data Dictionary.
+Vai trò của cột (ID, Target, Date, Foreign Key, Numeric, Category).
+Kiến thức nghiệp vụ (Business Knowledge).
+Lưu ý: Đây chỉ là giả thuyết ban đầu và sẽ được kiểm chứng ở Notebook 04 (EDA) và Notebook 05 (Feature Engineering).
+3. Thống kê theo nhóm cột
+Ví dụ:
+Bao nhiêu Numeric.
+Bao nhiêu Category.
+Bao nhiêu Date.
+Bao nhiêu ID.
+4. Không in toàn bộ dữ liệu
+Không nên:
+In toàn bộ 300 tên cột.
+Chạy describe() cho toàn bộ 300 cột.
+Chạy value_counts() cho tất cả các cột phân loại.
+Chỉ khảo sát những nhóm hoặc những cột có ý nghĩa.
+Pipeline của dự án
+Cuối Notebook nên giới thiệu pipeline của toàn bộ dự án:
+Notebook 01: Data Understanding
+↓
+Notebook 02: PostgreSQL & Data Pipeline
+↓
+Notebook 03: Data Cleaning
+↓
+Notebook 04: EDA & Visualization
+↓
+Notebook 05: Feature Engineering
+↓
+Notebook 06: Machine Learning
+↓
+Notebook 07: AI Deployment (FastAPI + Streamlit)
+Notebook 01 cần trả lời 4 câu hỏi cốt lõi
+Dữ liệu đang có là gì? (Business & Data Understanding)
+Dữ liệu có đáng tin cậy không? (Data Quality Assessment)
+Dữ liệu được tổ chức và liên kết như thế nào? (Structure, Keys & Relationships)
+Cần chuẩn bị gì cho các bước tiếp theo? (Pipeline Planning)
+Nếu Notebook 01 trả lời được đầy đủ bốn câu hỏi này thì dù Dataset chỉ có 2 bảng như Rossmann hay hàng chục bảng với hàng trăm cột như Home Credit, người đọc vẫn có thể nắm được toàn bộ bức tranh của dự án trước khi chuyển sang Notebook 02. Theo mình, đây là phiên bản đã đủ tổng quát để dùng làm checklist chuẩn cho hầu hết các dự án AI sử dụng dữ liệu dạng bảng.
+NOTEBOOK 02: POSTGRESQL DATA PIPELINE ( 02_postgresql_pipeline.ipynb )
+I. Giới thiệu
+Mục tiêu của notebook: là notebook xây dựng nền tảng dữ liệu cho toàn bộ dự án AI.
+Vai trò của PostgreSQL trong dự án:
+Pipeline dữ liệu sẽ xây dựng.
+CSV → Import PostgreSQL → Join / Aggregation →  Flat Table → Notebook 03
+II. Tạo Database và table
+Thực hiện trong pgAdmin4, ghi lệnh trong notebook để báo cáo:
+Tạo Database ,đặt tên tùy ý
+Tạo table , dùng lệnh CREATE TABLE ….
+Tên các cột trong table phải đúng thứ tự các cột trong file CSV, chính xác kiểu dữ liệu
+Có thể dùng file SQL riêng.
+III. Import dữ liệu
+1. Thực hiện trong pgAdmin4, ghi lệnh trong notebook để báo cáo:
+Thực hiện thủ công trong pgAdmin với từng bảng
+Hoặc dùng lệnh COPY table_name  FROM 'path/file/csv'
+2. Kiểm tra dữ liệu sau Import: COUNT(*)…
+IV. Tối ưu Database
+Tạo Index Ví dụ CREATE INDEX   tên_index   ON tên_bảng(tên_cộtt)
+Tạo quan hệ nếu cần
+V. Join dữ liệu
+Ví dụ :  Sales  JOIN Store
+kiểm tra số dòng
+kiểm tra mất dữ liệu
+VI. Tạo Flat Table / View
+Tạo flat table, ví dụ :
+CREATE TABLE sales_joined AS
+SELECT
+s.*,
+st.store_type,
+st.assortment,
+st.competition_distance,
+st.competition_open_since_month,
+st.competition_open_since_year,
+st.promo2,
+promo2_since_week,
+promo2_since_year,
+promo2_interval
+FROM sales s
+LEFT JOIN stores st ON s.store = st.store
+hoặc tạo view
+CREATE VIEW vw_sales_store AS
+SELECT
+s.*,
+st.store_type,
+st.assortment,
+st.competition_distance,
+st.competition_open_since_month,
+st.competition_open_since_year,
+st.promo2,
+promo2_since_week,
+promo2_since_year,
+promo2_interval
+FROM sales s
+LEFT JOIN stores st ON s.store = st.store;
+Chú ý  2 trường hợp sau:
+a. Nếu dataset rất nhiều cột (chẳng hạn 100–500 cột) Không nên Join tất cả mà chỉ Join các cột  cần thiết
+b. Nếu Dataset có nhiều bảng (Home Credit, Olist, MIMIC, Instacart,...) Khi join làm nhân bảng dữ liệu của bảng chính thì :
+- Phải tạo các bảng summary trước
+- Sau đó join bảng chính với các bảng summary , nhằm tránh làm nhân bảng các dòng ở bảng chính. Ví dụ với Home Credit:
+application_train
+├── bureau
+├── previous_application
+├── installments_payments
+├── POS_CASH_balance
+└── credit_card_balance
+Việc tạo các bảng summary là nhằm để cho mỗi khách hàng chỉ còn đúng một dòng. rồi mới join với bảng chính:
+Từ bảng bureau → tạo bảng bureau_summary
+Từ bảng previous_application → tạo bảng previous_summary
+Từ installments_payments → tạo bảng installments_summary
+Từ credit_card_balance → tạo bảng credit_card_summary
+Các hàm dùng để tổng hợp gồm:  COUNT , SUM, AVG , MIN , MAX , STD , mới nhất, cũ nhất… Những đặc trưng này sẽ được sử dụng ở bước Feature Engineering.
+Ví dụ tạo bảng bureau_summary :
+CREATE TABLE bureau_summary AS
+SELECT
+sk_id_curr,
+COUNT(*) AS bureau_count,
+AVG(days_credit) AS avg_days_credit,
+MAX(days_credit) AS latest_credit,
+MIN(days_credit) AS earliest_credit,
+AVG(amt_credit_sum) AS avg_credit,
+MAX(amt_credit_sum) AS max_credit,
+SUM(amt_credit_sum) AS total_credit
+FROM bureau
+GROUP BY sk_id_curr;
+Kết quả
+Mỗi khách hàng chỉ còn 1 dòng.
+Ví dụ tạo bảng previous_summary :
+CREATE TABLE previous_summary AS
+SELECT
+sk_id_curr,
+COUNT(*) AS previous_count,
+AVG(amt_application) AS avg_application,
+AVG(amt_credit) AS avg_previous_credit,
+MAX(amt_credit) AS max_previous_credit,
+SUM(amt_credit) AS total_previous_credit
+FROM previous_application
+GROUP BY sk_id_curr;
+Sau đó mới tạo flat table bằng cách join bảng chính với các bảng summary
+CREATE TABLE application_flat AS
+SELECT
+a.*,
+b.bureau_count,
+b.avg_credit,
+b.total_credit,
+p.previous_count,
+p.avg_previous_credit
+FROM application_train a
+LEFT JOIN bureau_summary b ON a.sk_id_curr = b.sk_id_curr
+LEFT JOIN previous_summary p ON a.sk_id_curr = p.sk_id_curr
+VII. Kết nối database từ Python
+1. Cài đặt thư viện
+psycopg2
+SQLAlchemy
+2. Import thư viện vào notebook
+2. Kết nối PostgreSQL
+Tạo Connection
+Kiểm tra kết nối thành công
+Ví dụ
+SELECT version();
+SELECT current_database();
+IX. Tổng hợp dữ liệu (Aggregation)
+Ví dụ
+GROUP BY Store
+GROUP BY Month
+GROUP BY Promo
+Mục tiêu
+tạo dữ liệu tổng hợp
+chuẩn bị Feature Engineering
+IV. Kiểm tra Performance (nếu cần)
+Mục đích xem tốc độ kết nối
+X. Kết luận
+Ví dụ
+Import thành công
+Join thành công
+Tạo Flat Table
+Chuẩn bị Notebook 03
+Notebook 02 cần trả lời được 4 câu hỏi cốt lõi:
+Dữ liệu đã được đưa vào PostgreSQL đúng chưa?
+Import, kiểu dữ liệu, khóa chính, chỉ mục, kiểm tra số dòng.
+Làm thế nào để tích hợp dữ liệu từ nhiều bảng?
+Join đúng quan hệ, kiểm tra mất dữ liệu, tránh nhân bản bản ghi.
+Dữ liệu nào sẽ được dùng cho Machine Learning?
+Tạo Flat Table hoặc View, hoặc với dataset phức tạp thì tạo các bảng Summary rồi ghép thành một bảng cuối cùng có mỗi đối tượng học đúng một dòng.
+Pipeline dữ liệu đã sẵn sàng cho Notebook 03 chưa?
+Sau notebook này, toàn bộ các notebook tiếp theo (03 đến 07) chỉ nên đọc dữ liệu từ PostgreSQL thay vì quay lại đọc CSV, giúp quy trình nhất quán và gần với cách triển khai trong doanh nghiệp.
+NOTEBOOK 03: DATA CLEANING ( 03_data_cleaning.ipynb )
+I. Giới thiệu
+Mục tiêu của notebook: biến dữ liệu sau khi tích hợp từ PostgreSQL thành dữ liệu sạch, nhất quán và sẵn sàng cho EDA
+Vai trò của Data Cleaning trong quy trình AI: Làm dữ liêu sạch , không còn thiếu, không còn trùng lặp, không có sai logic. Đủ , rõ nghĩa.
+Pipeline xử lý dữ liệu:
+Read SQL → Missing Values → Duplicate →  Outlier → Logic Validation → Save Clean Data →  Notebook 04 (EDA)
+II. Đọc dữ liệu
+Đọc dữ liệu từ PostgreSQL (pd.read_sql()) , hhông đọc lại CSV.
+Kiểm tra số dòng, số cột, xem head…
+III. Làm sạch dữ liệu
+1. Xử lý Missing Values
+Ví dụ
+Median
+Mean
+Mode
+Unknown
+Xóa cột
+Xóa dòng
+Quan trọng là cần giải thích vì sao chọn phương pháp đó.
+Thêm markdown giải thích lựa chọn.
+2. Xử lý Duplicate
+Xóa Duplicate nếu cần.
+Báo số lượng bản ghi bị loại bỏ, còn lại
+3. Xử lý Outlier
+Phát hiện bằng IQR hoặc Z-score.
+Trực quan Before.
+Trực quan After.
+Quan trọng: Không phải Outlier nào cũng nên xóa. Ví dụ doanh số cao ngày lễ thường là dữ liệu đúng.
+4. Xử lý dữ liệu sai logic (bất thường)
+Ví dụ:
+Sales âm.
+Customers âm.
+Giá trị ngoài phạm vi.
+Giá trị không hợp lệ.
+Xóa dòng hoặc điền lại  giá trị hợp lý tùy bài toán.
+V. Đánh giá sau Cleaning
+Sau khi xử lý nên kiểm tra lại
+Shape.
+Missing.
+Duplicate.
+Data Type.
+Memory Usage.
+Bảng tổng hợp  trước và sau làm sạch:
+VI. Lưu dữ liệu
+Lưu dữ liệu đã làm sạch vào PostgreSQL.
+Đặt tên bảng rõ ràng (ví dụ: sales_cleaned).
+VII. Kết luận
+Ví dụ
+Đã xử lý Missing.
+Đã loại bỏ Duplicate.
+Đã xử lý Outlier.
+Đã kiểm tra Logic.
+Dữ liệu sẵn sàng cho Notebook 04.
+Nếu Dataset có nhiều bảng
+Ví dụ: Home Credit, Olist, Instacart thì nên bổ sung.
+1. Cleaning theo từng bảng
+Ví dụ
+application_train
+↓
+bureau
+↓
+previous_application
+↓
+credit_card_balance
+↓
+installments_payments
+Không nên chỉ Cleaning bảng chính.
+2. Kiểm tra khóa Join sau Cleaning
+Ví dụ
+Có mất Foreign Key không.
+Có làm sai quan hệ giữa các bảng không.
+3. Kiểm tra tính nhất quán
+Ví dụ
+Cleaning xong
+↓
+Join thử lại
+↓
+Có bị mất dữ liệu không.
+Nếu Dataset có quá nhiều cột
+Ví dụ 150–300 cột. Không nên xử lý từng cột thủ công. Nên chia nhóm:
+1. Chia theo kiểu dữ liệu
+Numeric
+Category
+Date
+ID
+Text
+2. Chia theo mức độ Missing . Ví dụ
+Missing < 5%
+Missing 5–30%
+Missing > 30%
+Mỗi nhóm áp dụng một chiến lược xử lý phù hợp.
+3. Xử lý theo nhóm. Ví dụ:
+Numeric → Median
+Category → Mode
+Datetime → Forward Fill
+Text → Unknown
+Không viết hàng trăm dòng code cho từng cột.
+4. Loại bỏ cột không cần thiết. Ví dụ
+Constant Column.
+Duplicate Column.
+Unique Ratio quá cao (ID thuần túy).
+Missing quá lớn và không có giá trị phân tích.
+Lưu ý: Không xóa chỉ vì thiếu nhiều, mà cần xem xét ý nghĩa nghiệp vụ.
+5. Ghi lại Cleaning Rule. Nên có bảng.
+Điều này giúp notebook dễ mở rộng cho các dataset lớn.
+Nên bổ sung Data Cleaning Pipeline
+PostgreSQL
+↓
+Read SQL
+↓
+Quality Assessment
+↓
+Missing
+↓
+Duplicate
+↓
+Invalid Values
+↓
+Outlier
+↓
+Logic Validation
+↓
+Data Type Standardization
+↓
+Save Clean Table
+↓
+Notebook 04
+Notebook 03 không chỉ trả lời câu hỏi "Làm sạch dữ liệu như thế nào?", mà cần trả lời được bốn câu hỏi cốt lõi:
+Dữ liệu đang gặp những vấn đề gì?
+Missing, Duplicate, kiểu dữ liệu, giá trị không hợp lệ, Outlier, lỗi nghiệp vụ.
+Nhóm đã xử lý từng vấn đề bằng phương pháp nào và vì sao chọn phương pháp đó?
+Không chỉ có code mà cần có giải thích ngắn gọn.
+Chất lượng dữ liệu đã thay đổi như thế nào sau khi làm sạch?
+Có so sánh Before/After bằng bảng hoặc biểu đồ.
+Dữ liệu đã sẵn sàng cho EDA và Feature Engineering chưa?
+Sau notebook này, các notebook tiếp theo chỉ làm việc với bảng dữ liệu đã được làm sạch, bảo đảm pipeline rõ ràng và nhất quán.
+NOTEBOOK 04: EXPLORATORY DATA ANALYSIS  & VISUALIZATION ( 04_eda_visualization.ipynb )
+I. Giới thiệu
+Mục tiêu của EDA: Hiểu sâu dữ liệu, tìm các yếu tố ảnh hưởng đến doanh số và xây dựng nền tảng cho Feature Engineering ở Notebook 05.
+Vai trò của EDA trong dự án Machine Learning.
+Mối liên hệ giữa Data Cleaning và Feature Engineering:
+Notebook 03  Data Cleaning →  Notebook 04 : EDA & Visualization
+→ Notebook 05 : Feature Engineering
+II. Đọc dữ liệu
+Đọc dữ liệu từ PostgreSQL (pd.read_sql()).
+Không đọc lại CSV.
+Kiểm tra Shape.
+III. Khám phá dữ liệu (Exploratory Data Analysis)
+1. Phân tích biến mục tiêu (Target Analysis)
+Ví dụ
+Histogram Sales.
+Boxplot Sales.
+Xem thống kê mô tả
+Mục tiêu: Hiểu đặc điểm của biến cần dự báo.
+2. Phân tích đơn biến (Univariate Analysis)
+Ví dụ
+Customers.
+StoreType.
+Holiday.
+Mục tiêu: Hiểu từng biến riêng lẻ.
+3. Phân tích tương quan với biến mục tiêu
+Ví dụ
+Promo → Sales.
+StoreType → Sales.
+Holiday → Sales.
+Customers → Sales.
+Mục tiêu: Xác định các yếu tố ảnh hưởng đến doanh số.
+4. Phân tích đa biến (Multivariate Analysis)
+Ví dụ
+Promo + StoreType → Sales.
+Holiday + Promo → Sales.
+Customers + Promo → Sales.
+5. Phân tích theo thời gian (Time Series Analysis)
+Ví dụ
+Theo năm.
+Theo tháng.
+Theo tuần.
+Theo ngày.
+Mục tiêu: Phát hiện xu hướng và tính mùa vụ của doanh số.
+6. Correlation Analysis
+Heatmap.
+Ma trận tương quan.
+Nhận xét các biến liên quan đến Sales.
+IV. Kết luận EDA
+Các phát hiện chính
+Doanh số có tính mùa vụ.
+Promo làm tăng doanh số.
+Customers tương quan mạnh với Sales.
+StoreType ảnh hưởng đến doanh số.
+Holiday tạo ra sự biến động doanh số.
+Competition Distance có tác động đến doanh số.
+Đây là phần tóm tắt giúp người đọc nắm được toàn bộ kết quả EDA.
+V. Liên kết sang Notebook 05
+Các kết quả phân tích và các yếu tố ảnh hưởng đến doanh số được xác định trong Notebook 04 sẽ là cơ sở để đề xuất, xây dựng và đánh giá các đặc trưng mới (Feature Engineering) trong Notebook 05 nhằm nâng cao chất lượng mô hình dự báo.
+Theo mình, chỉ cần như vậy là đủ.
+Có thể cải thiện
+1. Chuyển từ "phân tích theo cột" sang "phân tích theo câu hỏi"
+Thay vì trình bày lần lượt từng cột, nên tổ chức notebook theo các câu hỏi như:
+Doanh số phân bố như thế nào?
+Những yếu tố thời gian ảnh hưởng đến doanh số?
+Khuyến mãi có ảnh hưởng đến doanh số không?
+Đặc điểm cửa hàng ảnh hưởng đến doanh số như thế nào?
+Khách hàng tác động đến doanh số ra sao?
+Cách trình bày này giúp notebook có mạch logic và dễ theo dõi hơn.
+2. Tăng phần Business Interpretation
+Sau mỗi biểu đồ nên bổ sung thêm một đoạn ngắn:
+Kết quả này có ý nghĩa gì đối với bài toán dự báo doanh số?
+Thay vì chỉ mô tả biểu đồ.
+Nếu Dataset có rất nhiều cột Ví dụ Home Credit, Olist, Instacart.
+thì không nên phân tích toàn bộ các cột. Nên:
+1. Chia nhóm biến
+Numeric.
+Category.
+Date.
+Target.
+ID.
+2. Phân tích theo chủ đề Ví dụ
+Nhóm thông tin khách hàng.
+Nhóm khoản vay.
+Nhóm giao dịch.
+Nhóm cửa hàng.
+Nhóm thời gian.
+3. Chỉ tập trung vào các biến quan trọng
+Lựa chọn dựa trên:
+Ý nghĩa nghiệp vụ.
+Mức độ liên quan đến biến mục tiêu.
+Khả năng hỗ trợ xây dựng mô hình.
+4. Sử dụng Correlation Ranking
+Xếp hạng các biến có tương quan cao với Target để ưu tiên phân tích.
+5. Tự động khảo sát dữ liệu ban đầu
+Có thể sử dụng:
+ydata-profiling
+Sweetviz
+để tạo báo cáo tổng quan, sau đó thực hiện EDA thủ công đối với các nhóm biến quan trọng.
+Notebook 04 cần trả lời được 4 câu hỏi cốt lõi:
+Dữ liệu có đặc điểm gì?
+Phân bố, xu hướng, mối quan hệ giữa các biến.
+Những yếu tố nào ảnh hưởng đến doanh số?
+Thông qua trực quan hóa và phân tích.
+Các kết quả đó có ý nghĩa gì đối với bài toán dự báo?
+Không chỉ mô tả biểu đồ mà còn giải thích ý nghĩa nghiệp vụ.
+Các phát hiện này sẽ được sử dụng như thế nào ở bước tiếp theo?
+Là nền tảng để nhóm đề xuất, xây dựng và đánh giá Feature Engineering trong Notebook 05.
+NOTEBOOK 05: FEATURE ENGINEERING ( 05_feature_engineering.ipynb )
+I. Giới thiệu
+Mục tiêu của Feature Engineering: Thiết kế, xây dựng, đánh giá và lựa chọn các đặc trưng (Feature) nhằm nâng cao chất lượng mô hình dự báo doanh số.
+Vai trò của Feature Engineering trong Machine Learning.
+Mối liên hệ giữa Notebook 04 và Notebook 05.
+Notebook 04: EDA & Visualization
+↓
+Notebook 05 : Feature Engineering
+↓
+Notebook 06 :  Machine Learning
+II. Đọc dữ liệu
+Đọc dữ liệu đã được làm sạch từ PostgreSQL.
+Kiểm tra Shape.
+III. Ý tưởng xây dựng Feature
+Dựa trên các kết quả phân tích ở Notebook 04, nhóm lựa chọn một số hướng Feature Engineering để thử nghiệm. Ví dụ
+Lưu ý: Đây chỉ là ý tưởng, chưa khẳng định Feature sẽ tốt.
+IV. Xây dựng Feature
+1. Time Features
+Year
+Month
+Quarter
+Week
+Day of Week
+Weekend
+2. Lag / Rolling Features (nếu có)
+Sales Lag 7
+Sales Lag 30
+Rolling Mean
+3. Interaction Features
+Promo × Holiday
+Promo × StoreType
+Competition × Promo
+2. Promotion Features
+Promo Active
+Promo Duration
+Promo2
+3. Competition Features
+Competition Age
+Competition Distance Group
+4. Store Features
+StoreType Encoding
+Assortment Encoding
+Đây là nhóm Feature rất mạnh đối với bài toán Forecasting.
+V. Đánh giá Feature
+Xem tương quan với mục tiêu
+Feature Importance.
+SHAP (nâng cao).
+VI. Lựa chọn Feature
+Điều này giúp thể hiện tư duy chọn lọc thay vì giữ tất cả các Feature.
+VIII. Trực quan sau Feature Engineering
+Histogram Feature.
+Boxplot Feature.
+Correlation.
+Heatmap.
+So sánh trước và sau khi tạo Feature.
+IX. Lưu dữ liệu
+Lưu dữ liệu đã có Feature mới vào PostgreSQL.
+Ví dụ bảng  sales_features
+X. Kết luận
+Đã xây dựng các Feature mới.
+Đã đánh giá hiệu quả của từng nhóm Feature.
+Đã lựa chọn các Feature phù hợp.
+Dataset sẵn sàng cho Notebook 06.
+Cuối notebook 5 nên có đoạn: Bộ dữ liệu sau Feature Engineering sẽ được sử dụng để huấn luyện và so sánh các mô hình Machine Learning trong Notebook 06 nhằm đánh giá mức độ đóng góp của các Feature mới đối với khả năng dự báo doanh số.
+Notebook 05 cần trả lời được 5 câu hỏi cốt lõi:
+Dựa trên kết quả EDA, nhóm sẽ thử xây dựng những Feature nào?
+Chuyển các quan sát ở Notebook 04 thành ý tưởng Feature.
+Các Feature được xây dựng như thế nào?
+Tạo các nhóm Feature (Time, Promotion, Competition, Store, Interaction, Lag...).
+Các Feature mới có thực sự hữu ích không?
+Đánh giá bằng trực quan, tương quan và các chỉ số phù hợp.
+Feature nào nên giữ và Feature nào nên loại bỏ?
+Không phải tất cả Feature đều được đưa sang bước huấn luyện.
+Bộ dữ liệu sau Feature Engineering đã sẵn sàng cho Machine Learning chưa?
+Lưu bộ dữ liệu hoàn chỉnh để sử dụng ở Notebook 06.
+NOTEBOOK 06: MACHINE LEARNING ( 06_machine_learning.ipynb )
+I. Giới thiệu
+Mục tiêu của Notebook: Huấn luyện, đánh giá, so sánh các mô hình Machine Learning và lựa chọn mô hình tốt nhất để triển khai dự báo doanh số.
+Vai trò của Machine Learning trong dự án.
+Mối liên hệ giữa Notebook 05 và Notebook 07.
+Notebook 05: Feature Engineering
+↓
+Notebook 06: Machine Learning
+↓
+Notebook 07 : Prediction Demo
+II. Đọc dữ liệu
+Đọc dữ liệu từ PostgreSQL (sales_features).
+Kiểm tra kích thước dữ liệu.
+Kiểm tra kiểu dữ liệu.
+Xác định Feature và Target.
+III. Chuẩn bị dữ liệu
+Lựa chọn Feature đầu vào.
+Chọn biến mục tiêu (Sales).
+Xử lý Encoding.
+Loại bỏ các cột không sử dụng.
+Chia tập Train/Test theo thời gian (Time-based Split).
+IV. Giới thiệu các mô hình
+Linear Regression
+Random Forest Regressor
+XGBoost Regressor
+Mỗi mô hình đều có:
+Giới thiệu ngắn.
+Ưu điểm.
+Trường hợp sử dụng.
+V. Huấn luyện mô hình
+Đối với từng mô hình, có Train, Predict, Evaluate. Ví dụ
+1. Linear Regression
+Huấn luyện.
+Dự đoán.
+Đánh giá.
+2. Random Forest
+Huấn luyện.
+Dự đoán.
+Đánh giá.
+Có thêm:
+Feature Importance.
+3. XGBoost
+Huấn luyện.
+Dự đoán.
+Đánh giá.
+VI. Đánh giá mô hình
+Các chỉ số:
+MAE.
+RMSE.
+R².
+So sánh giữa các mô hình.
+VII. Trực quan kết quả dự đoán
+Đề xuất bổ sung. Ví dụ
+1. So sánh Actual và Predicted
+Line Chart.
+Scatter Plot.
+Giúp quan sát mức độ bám sát dữ liệu thực tế.
+2. Residual Plot
+Hiển thị:
+Residual = Actual - Prediction
+Giúp đánh giá sai số của mô hình.
+3. Histogram của Residual
+Quan sát phân bố sai số.
+4. Bảng so sánh
+Giúp kiểm tra trực tiếp một số kết quả dự báo.
+VIII. Feature Importance
+Hiển thị:
+Top Feature.
+Biểu đồ Feature Importance.
+Nhận xét.
+Liên hệ với Notebook 05:
+Feature nào thực sự đóng góp cho mô hình.
+IX. So sánh các mô hình
+Bảng tổng hợp. Ví dụ
+X. Lựa chọn mô hình cuối cùng
+Giải thích:
+Vì sao chọn XGBoost?
+Vì sao không chọn Random Forest?
+Vì sao không chọn Linear Regression?
+Không chỉ dựa vào RMSE mà còn cân nhắc:
+Độ chính xác.
+Khả năng tổng quát.
+Thời gian huấn luyện.
+Khả năng triển khai.
+XI. Lưu mô hình
+Ví dụ
+model.pkl
+scaler.pkl (nếu có)
+Để sử dụng ở Notebook 07.
+XII. Kết luận
+Đã huấn luyện nhiều mô hình.
+Đã đánh giá và so sánh.
+Đã lựa chọn mô hình tốt nhất.
+Mô hình sẵn sàng triển khai dự báo.
+Những điểm nhóm đã làm tốt
+Đọc dữ liệu từ PostgreSQL thay vì CSV.
+Chuẩn bị dữ liệu đầy đủ.
+Chia Train/Test theo thời gian (Time-based Split).
+Huấn luyện nhiều mô hình.
+Có giới thiệu từng mô hình.
+Đánh giá bằng MAE, RMSE và R².
+Có Feature Importance.
+Có bảng so sánh các mô hình.
+Lưu mô hình để sử dụng ở Notebook 07.
+Cuối notebook 6 nên có đoạn:
+Mô hình có kết quả tốt nhất sẽ được lưu và sử dụng trong Notebook 07 để xây dựng chương trình dự báo và Dashboard tương tác.
+Notebook 06 cần trả lời được 5 câu hỏi cốt lõi:
+Bộ dữ liệu sau Feature Engineering đã sẵn sàng để huấn luyện chưa?
+Chuẩn bị dữ liệu và chia Train/Test phù hợp.
+Mô hình nào dự báo tốt nhất?
+Huấn luyện và so sánh nhiều thuật toán.
+Các Feature mới có thực sự mang lại hiệu quả không?
+Đánh giá thông qua Feature Importance và chất lượng mô hình.
+Kết quả dự báo có đáng tin cậy không?
+Trực quan hóa Actual vs Predicted, Residual và các chỉ số đánh giá.
+Mô hình nào sẽ được triển khai ở Notebook 07?
+Lựa chọn, lưu mô hình và chuẩn bị cho bước xây dựng API và Dashboard.
+NOTEBOOK 07: AI DEPLOYMENT VỚI FASTAPI VÀ STREAMLIT (07_deployment.ipynb )
+Mục tiêu: Triển khai mô hình Machine Learning thành một ứng dụng Web hoàn chỉnh, cho phép người dùng dự đoán doanh số thông qua REST API và Dashboard tương tác.
+I. Giới thiệu
+Giới thiệu AI Deployment.
+Vai trò của Deployment trong dự án AI.
+Mối liên hệ giữa Notebook 06 và Notebook 07:
+Notebook 06  Machine Learning
+↓
+Notebook 07 :  AI Deployment
+↓
+Người sử dụng
+II. Chuẩn bị môi trường
+Cài đặt thư viện.
+Chuẩn bị requirements.txt.
+Kiểm tra cấu trúc thư mục dự án.
+III. Chuẩn bị mô hình
+Load model.pkl.
+Load scaler.pkl (nếu có).
+Kiểm tra mô hình.
+Chuẩn bị dữ liệu đầu vào.
+IV. Xây dựng REST API với FastAPI
+Ví dụ
+Tạo api.py.
+Định nghĩa API.
+Load mô hình.
+Định nghĩa Input bằng Pydantic.
+Xử lý dự báo.
+Trả kết quả JSON.
+Các Endpoint:
+/
+/predict
+/predict_batch
+V. Kiểm thử API
+Chạy bằng Uvicorn.
+Kiểm tra Swagger UI.
+Kiểm tra dữ liệu đầu vào.
+Kiểm tra kết quả trả về.
+VI. Xây dựng Dashboard với Streamlit
+Ví dụ
+streamlit_app.py.
+Sidebar.
+Form nhập dữ liệu.
+Nút Predict.
+Hiển thị kết quả dự báo.
+VII. Xây dựng ứng dụng nhiều trang
+Có thể gồm:
+pages/
+Dashboard.
+Prediction.
+Store Information.
+Transactions.
+Model Information.
+VIII. Trực quan kết quả dự báo
+KPI doanh số dự báo.
+Biểu đồ cột hoặc đường.
+So sánh doanh số dự báo với dữ liệu tham chiếu (nếu có).
+Hiển thị thông tin đầu vào và kết quả dự báo.
+Giúp Dashboard trực quan và dễ sử dụng hơn.
+IX. Kiến trúc hệ thống
+Ví dụ
+Người dùng
+▼
+Streamlit Dashboard
+▼
+REST API
+▼
+FastAPI
+▼
+Model.pkl , PostgreSQL
+Giúp người đọc hiểu toàn bộ luồng xử lý của ứng dụng.
+XI. Hướng dẫn chạy ứng dụng
+Chạy FastAPI: uvicorn app.api:app --reload
+Chạy Streamlit :  streamlit run app/streamlit_app.py
+Kiểm tra:
+Swagger UI.
+Dashboard.
+Chức năng dự báo.
+XII. Kết luận
+Ví dụ
+Mô hình đã được triển khai thành công.
+API hoạt động ổn định.
+Dashboard cho phép người dùng tương tác và dự báo doanh số.
+Hệ thống sẵn sàng cho việc trình diễn hoặc mở rộng.
+Notebook 07 cần trả lời được 5 câu hỏi cốt lõi:
+Làm thế nào để triển khai mô hình Machine Learning thành một ứng dụng thực tế?
+Xây dựng Backend bằng FastAPI và giao diện bằng Streamlit.
+Người dùng sẽ tương tác với mô hình như thế nào?
+Thông qua Dashboard và các chức năng dự báo.
+Làm thế nào để kết nối mô hình với API và cơ sở dữ liệu?
+Load mô hình, xây dựng REST API và truy cập PostgreSQL.
+Ứng dụng đã sẵn sàng để sử dụng chưa?
+Hướng dẫn chạy, kiểm thử API và Dashboard.
+Dự án AI đã hoàn chỉnh từ dữ liệu đến triển khai chưa?
+Kết nối toàn bộ pipeline từ Data Understanding → PostgreSQL → Data Cleaning → EDA → Feature Engineering → Machine Learning → AI Deployment.
+Tổng kết các notebooks:
+Notebook 01: Dữ liệu là gì?
+Notebook 02: Dữ liệu được lưu trữ và xử lý trong PostgreSQL như thế nào?
+Notebook 03: Dữ liệu được làm sạch ra sao?
+Notebook 04: Dữ liệu có những đặc điểm và quy luật gì?
+Notebook 05: Có thể xây dựng những Feature nào để cải thiện mô hình?
+Notebook 06: Mô hình nào dự báo tốt nhất?
+Notebook 07 : Làm thế nào để người dùng cuối có thể sử dụng mô hình AI này thông qua một ứng dụng Web?
+Đó cũng là bước hoàn thiện toàn bộ vòng đời của dự án Machine Learning, từ dữ liệu thô đến một sản phẩm AI có thể sử dụng trong thực tế.
+[TABLE 1]
+Bảng | Số dòng | Số cột | Vai trò
+application_train | 307.511 | 122 | Bảng chính
+bureau | 1.716.428 | 17 | Lịch sử tín dụng
+previous_application | 1.670.214 | 37 | Khoản vay trước
+... | ... | ... | ...
+[TABLE 2]
+SK_ID_CURR | bureau_count | avg_credit | max_credit
+100001 | 7 | 520000 | 1200000
+100002 | 3 | 180000 | 350000
+[TABLE 3]
+Hạng mục | Before | After
+Rows | ... | ...
+Columns | ... | ...
+Missing | ... | ...
+Duplicate | ... | ...
+Outlier | ... | ...
+Invalid Values | ... | ...
+[TABLE 4]
+Nhóm cột | Phương pháp
+Numeric | Median
+Category | Mode
+Datetime | Forward Fill
+Text | Unknown
+Constant | Drop
+[TABLE 5]
+Quan sát từ EDA | Ý tưởng Feature
+Promo ảnh hưởng Sales | Promo Features
+Có tính mùa vụ | Time Features
+StoreType khác nhau | Encoding
+Competition ảnh hưởng | Competition Features
+Quan hệ theo thời gian | Lag Features
+[TABLE 6]
+Feature | Kết quả
+Month | Giữ
+WeekOfYear | Giữ
+Promo Active | Giữ
+Competition Age | Giữ
+Promo Duration | Loại
+Month Name | Loại
+[TABLE 7]
+Actual | Predicted | Error
+... | ... | ...
+[TABLE 8]
+Model | MAE | RMSE | R²
+Linear Regression | ... | ... | ...
+Random Forest | ... | ... | ...
+XGBoost | ... | ... | ...

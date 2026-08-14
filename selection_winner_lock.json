@@ -1,0 +1,22 @@
+{
+  "locked_at_utc": "2026-08-13T15:56:51.716773+00:00",
+  "selection_protocol": "fit release_year <= 2017; evaluate release_year == 2018; minimum clipped validation RMSE, MAE then stable lexical tie-break",
+  "selection_winner_experiment": "Engineered With-Time",
+  "selection_winner_model": "XGBoost",
+  "include_engineered": true,
+  "include_time": true,
+  "validation_clipped_metrics": {
+    "MAE": 12.600404895193488,
+    "RMSE": 16.597462350644864,
+    "R2": 0.4197294430576878
+  },
+  "fit_scope": "selection train",
+  "evaluation_scope": "validation 2018",
+  "final_test_labels_observed": false,
+  "final_test_labels_observed_field_scope": "before corrected Round-2 winner lock",
+  "final_test_labels_observed_before_round2_lock": false,
+  "historically_never_observed_claim": false,
+  "historical_holdout_note": "The 2019+ horizon was not used for corrected Round-2 winner selection, but had been inspected during an earlier development iteration.",
+  "validation_metrics_file": "model_selection_validation_metrics.csv",
+  "validation_metrics_sha256": "e111412d7cf3974fab6dcb8de0e8fe8d1bededdf3ab866386d4e53bc1e43e3c1"
+}

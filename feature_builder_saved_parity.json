@@ -1,0 +1,7 @@
+{
+  "rows_checked": 10000,
+  "fit_scope": "release_year < 2019",
+  "numeric_allclose": true,
+  "categorical_exact": true,
+  "status": "PASS"
+}

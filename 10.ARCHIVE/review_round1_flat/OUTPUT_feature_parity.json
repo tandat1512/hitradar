@@ -1,0 +1,6 @@
+{
+  "rows_checked": 10000,
+  "numeric_allclose": true,
+  "categorical_exact": true,
+  "status": "PASS"
+}

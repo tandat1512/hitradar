@@ -1,0 +1,106 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "Test": "Model load",
+      "Status": "PASS"
+    },
+    {
+      "Test": "GET /health",
+      "Status": "PASS"
+    },
+    {
+      "Test": "POST /predict valid raw input",
+      "Status": "PASS"
+    },
+    {
+      "Test": "Invalid range rejected",
+      "Status": "PASS"
+    },
+    {
+      "Test": "Engineered input rejected",
+      "Status": "PASS"
+    },
+    {
+      "Test": "Direct/API prediction parity",
+      "Status": "PASS"
+    },
+    {
+      "Test": "Feature names and order",
+      "Status": "PASS"
+    },
+    {
+      "Test": "Streamlit source present",
+      "Status": "PASS"
+    }
+  ],
+  "health": {
+    "status": "ready",
+    "model_loaded": true,
+    "model_name": "XGBRegressor",
+    "raw_input_count": 17,
+    "engineered_feature_count": 13,
+    "model_feature_count": 31
+  },
+  "valid_prediction": {
+    "predicted_popularity": 40.8421,
+    "popularity_tier": "emerging",
+    "model_name": "XGBoost",
+    "engineered_feature_count": 13,
+    "feature_count": 31
+  },
+  "invalid_status_code": 422,
+  "extra_engineered_field_status_code": 422,
+  "raw_input_features": [
+    "duration_min",
+    "explicit",
+    "release_year",
+    "release_month",
+    "release_precision",
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "time_signature"
+  ],
+  "model_features": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "explicit",
+    "mode",
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature",
+    "key_sin",
+    "key_cos",
+    "dance_energy",
+    "positive_energy",
+    "acoustic_energy_balance",
+    "dance_valence",
+    "acoustic_instrumental",
+    "tempo_energy",
+    "energy_vs_period_avg",
+    "dance_vs_period_avg",
+    "mood_quadrant",
+    "duration_category",
+    "tempo_category"
+  ]
+}

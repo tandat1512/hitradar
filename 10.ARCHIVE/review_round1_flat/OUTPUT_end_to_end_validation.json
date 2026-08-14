@@ -1,0 +1,69 @@
+{
+  "pipeline": {
+    "raw_columns_ok": true,
+    "feature_engineering_ok": true,
+    "model_features": 18,
+    "prediction_raw": 37.2030029296875,
+    "prediction_clipped": 37.2030029296875,
+    "status": "PASS"
+  },
+  "health": {
+    "status": "ready",
+    "model_loaded": true,
+    "model_name": "XGBRegressor",
+    "final_experiment": "Baseline With-Time",
+    "raw_input_count": 17,
+    "model_feature_count": 18,
+    "cluster_ready": true,
+    "recommender_ready": true
+  },
+  "prediction": {
+    "predicted_popularity": 37.203,
+    "popularity_tier": "emerging",
+    "model_name": "XGBoost",
+    "engineered_feature_count": 0,
+    "feature_count": 18
+  },
+  "cluster": {
+    "cluster": 0,
+    "chosen_k": 3,
+    "feature_count": 10
+  },
+  "recommendation": {
+    "query_track_id": "0HOqINudNgQFpg1le5Hnqe",
+    "recommendations": [
+      {
+        "track_id": "2YSuy9tg3xtb2sKhvMRT3b",
+        "cosine_similarity": 0.9508025646209717
+      },
+      {
+        "track_id": "5Nn2Dj7OQsGL6pgQ9iIzPp",
+        "cosine_similarity": 0.9472640156745911
+      },
+      {
+        "track_id": "06DXs2hBRdjNs1qE1iYCQQ",
+        "cosine_similarity": 0.9464622735977173
+      },
+      {
+        "track_id": "7vGxMdSqL9dSZsoSnOnLL6",
+        "cosine_similarity": 0.9403258562088013
+      },
+      {
+        "track_id": "6BWRvw630R8z2vNMok6quI",
+        "cosine_similarity": 0.9348998665809631
+      }
+    ],
+    "feature_count": 12,
+    "metadata_note": "Local ML-ready dataset has track_id but no track/artist names; no metadata was fabricated."
+  },
+  "streamlit": {
+    "exceptions": 0,
+    "tabs": [
+      "Overview",
+      "Popularity Prediction",
+      "Song Clustering",
+      "Similar Songs"
+    ],
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "raw_input_features": [
+    "duration_min",
+    "explicit",
+    "release_year",
+    "release_month",
+    "release_precision",
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "time_signature"
+  ],
+  "baseline_model_features": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "explicit",
+    "mode",
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature"
+  ],
+  "candidate_engineered_features": [
+    "key_sin",
+    "key_cos",
+    "dance_energy",
+    "positive_energy",
+    "acoustic_energy_balance",
+    "dance_valence",
+    "acoustic_instrumental",
+    "tempo_energy",
+    "energy_vs_period_avg",
+    "dance_vs_period_avg",
+    "energy_loudness",
+    "speechiness_log",
+    "instrumentalness_log",
+    "mood_quadrant",
+    "duration_category",
+    "tempo_category"
+  ],
+  "selected_engineered_features": [
+    "key_sin",
+    "key_cos",
+    "dance_energy",
+    "positive_energy",
+    "acoustic_energy_balance",
+    "dance_valence",
+    "acoustic_instrumental",
+    "tempo_energy",
+    "energy_vs_period_avg",
+    "dance_vs_period_avg",
+    "energy_loudness",
+    "mood_quadrant",
+    "duration_category",
+    "tempo_category"
+  ],
+  "dropped_engineered_feature_reasons": {
+    "speechiness_log": "DROP only after the selection-train audit verifies near-exact monotonic rank redundancy (>=0.999) with retained raw speechiness; log1p adds no ordering information for the current model contract.",
+    "instrumentalness_log": "DROP only after the selection-train audit verifies near-exact monotonic rank redundancy (>=0.999) with retained raw instrumentalness; log1p adds no ordering information for the current model contract."
+  },
+  "feature_dependencies": {
+    "key_sin": [
+      "key"
+    ],
+    "key_cos": [
+      "key"
+    ],
+    "dance_energy": [
+      "danceability",
+      "energy"
+    ],
+    "positive_energy": [
+      "energy",
+      "valence"
+    ],
+    "acoustic_energy_balance": [
+      "acousticness",
+      "energy"
+    ],
+    "dance_valence": [
+      "danceability",
+      "valence"
+    ],
+    "acoustic_instrumental": [
+      "acousticness",
+      "instrumentalness"
+    ],
+    "tempo_energy": [
+      "energy",
+      "tempo"
+    ],
+    "energy_vs_period_avg": [
+      "energy",
+      "release_year"
+    ],
+    "dance_vs_period_avg": [
+      "danceability",
+      "release_year"
+    ],
+    "energy_loudness": [
+      "energy",
+      "loudness"
+    ],
+    "speechiness_log": [
+      "speechiness"
+    ],
+    "instrumentalness_log": [
+      "instrumentalness"
+    ],
+    "mood_quadrant": [
+      "energy",
+      "valence"
+    ],
+    "duration_category": [
+      "duration_min"
+    ],
+    "tempo_category": [
+      "tempo"
+    ]
+  },
+  "learned_statistic_features": [
+    "dance_vs_period_avg",
+    "duration_category",
+    "energy_vs_period_avg",
+    "tempo_category"
+  ],
+  "dependency_leakage_audit_status": "PASS",
+  "model_features": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "explicit",
+    "mode",
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature",
+    "key_sin",
+    "key_cos",
+    "dance_energy",
+    "positive_energy",
+    "acoustic_energy_balance",
+    "dance_valence",
+    "acoustic_instrumental",
+    "tempo_energy",
+    "energy_vs_period_avg",
+    "dance_vs_period_avg",
+    "energy_loudness",
+    "mood_quadrant",
+    "duration_category",
+    "tempo_category"
+  ],
+  "cluster_features": [
+    "duration_min",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo"
+  ],
+  "recommendation_features": [
+    "duration_min",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "key_sin",
+    "key_cos"
+  ],
+  "candidate_engineered_feature_count": 16,
+  "selected_engineered_feature_count": 14,
+  "target_association_scope": "release_year <= 2017",
+  "test_start_year": 2019,
+  "target": "target_popularity",
+  "target_note": "target_popularity is the internal ML target name corresponding to Spotify popularity (0-100).",
+  "identifier": "track_id",
+  "cluster_is_model_feature": false,
+  "target_is_model_feature": false
+}

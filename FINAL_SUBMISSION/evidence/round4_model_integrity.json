@@ -1,0 +1,24 @@
+{
+  "verified_at_utc": "2026-08-14T06:04:22.971912+00:00",
+  "notebook_06_retrained": false,
+  "production_model": {
+    "path": "4.MODELS/hitradar_popularity/popularity_pipeline.joblib",
+    "size_bytes": 802217,
+    "pre_round4_sha256": "ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047",
+    "current_sha256": "ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047",
+    "unchanged": true
+  },
+  "final_metrics_artifact": {
+    "path": "4.MODELS/hitradar_popularity/final_test_metrics.json",
+    "pre_round4_sha256": "f426407214e0e4ac11b9d4cee8f7c6218a7092216a9d20bec62fe8af37833edf",
+    "current_sha256": "f426407214e0e4ac11b9d4cee8f7c6218a7092216a9d20bec62fe8af37833edf",
+    "unchanged": true,
+    "winner": "Engineered With-Time / XGBoost",
+    "clipped_test_metrics": {
+      "MAE": 16.20159882222829,
+      "RMSE": 20.59495229457929,
+      "R2": 0.2590257250611695
+    }
+  },
+  "status": "PASS"
+}

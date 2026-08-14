@@ -1,0 +1,9 @@
+{
+  "transform_preserves_learned_statistics": true,
+  "statistics_independent_of_y_values": true,
+  "association_builder_fit_scope": "release_year <= 2017",
+  "association_builder_fit_rows": 543611,
+  "later_raw_distribution_changes_preserve_association_statistics": true,
+  "fit_design_note": "sklearn may pass y for API compatibility; FeatureBuilder.fit never reads y",
+  "status": "PASS"
+}

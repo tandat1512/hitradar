@@ -1,0 +1,17 @@
+Feature,Decision,Decision Reason
+key_sin,KEEP,KEEP: first coordinate of a two-dimensional cyclic key representation.
+key_cos,KEEP,KEEP: complementary coordinate preserves key-cycle geometry with key_sin.
+dance_energy,KEEP,KEEP: nonlinear danceability-by-energy interaction for additive model classes.
+positive_energy,KEEP,KEEP: nonlinear valence-by-energy interaction representing positive intensity.
+acoustic_energy_balance,KEEP,"KEEP: bounded relative balance, not a claim of low source correlation."
+dance_valence,KEEP,KEEP: nonlinear danceability-by-valence interaction motivated by binned EDA.
+acoustic_instrumental,KEEP,KEEP: joint acoustic/instrumental texture signal despite source correlation.
+tempo_energy,KEEP,KEEP: speed-by-energy interaction can expose intensity unavailable additively.
+energy_vs_period_avg,KEEP,KEEP: contextual deviation from train-only decade energy reference.
+dance_vs_period_avg,KEEP,KEEP: contextual deviation from train-only decade dance reference.
+energy_loudness,KEEP,KEEP: explicit energy-by-loudness interaction; high correlation is acknowledged.
+speechiness_log,DROP,DROP only after the development-data audit verifies near-exact monotonic rank redundancy (>=0.999) with retained raw speechiness; log1p adds no ordering information for the current model contract. Measured development |Spearman|=1.000000.
+instrumentalness_log,DROP,DROP only after the development-data audit verifies near-exact monotonic rank redundancy (>=0.999) with retained raw instrumentalness; log1p adds no ordering information for the current model contract. Measured development |Spearman|=1.000000.
+mood_quadrant,KEEP,KEEP: interpretable categorical regime using normalized domain midpoints.
+duration_category,KEEP,KEEP: train-quantile duration regime captures nonlinear duration behavior.
+tempo_category,KEEP,KEEP: train-quantile tempo regime captures nonlinear tempo behavior.

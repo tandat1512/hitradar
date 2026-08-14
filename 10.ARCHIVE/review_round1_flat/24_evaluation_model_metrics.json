@@ -1,0 +1,138 @@
+{
+  "final_model": "XGBoost",
+  "selection_rule": "lowest engineered test RMSE, tie-break by MAE",
+  "test_start_year": 2019,
+  "train_rows": 554547,
+  "test_rows": 32125,
+  "raw_input_feature_count": 17,
+  "model_feature_count": 31,
+  "engineered_feature_count": 13,
+  "final_test_metrics": {
+    "MAE": 16.29134750366211,
+    "RMSE": 20.573562753567987,
+    "R2": 0.26056408882141113
+  },
+  "experiments": [
+    {
+      "Experiment": "Baseline",
+      "Model": "XGBoost",
+      "MAE": 16.313207626342773,
+      "RMSE": 20.579572367474622,
+      "R2": 0.2601320743560791,
+      "Train Rows": 554547,
+      "Test Rows": 32125,
+      "Raw Input Features": 17,
+      "Engineered Features": 0,
+      "Runtime Seconds": 7.4771725999999035
+    },
+    {
+      "Experiment": "Baseline",
+      "Model": "Random Forest",
+      "MAE": 16.520659303756368,
+      "RMSE": 20.707796481726756,
+      "R2": 0.25088356382872157,
+      "Train Rows": 554547,
+      "Test Rows": 32125,
+      "Raw Input Features": 17,
+      "Engineered Features": 0,
+      "Runtime Seconds": 31.51989169999979
+    },
+    {
+      "Experiment": "Baseline",
+      "Model": "Linear Regression",
+      "MAE": 18.633607075416602,
+      "RMSE": 22.913068363122186,
+      "R2": 0.08283377865033903,
+      "Train Rows": 554547,
+      "Test Rows": 32125,
+      "Raw Input Features": 17,
+      "Engineered Features": 0,
+      "Runtime Seconds": 4.0150674999999865
+    },
+    {
+      "Experiment": "Engineered",
+      "Model": "XGBoost",
+      "MAE": 16.29134750366211,
+      "RMSE": 20.573562753567987,
+      "R2": 0.26056408882141113,
+      "Train Rows": 554547,
+      "Test Rows": 32125,
+      "Raw Input Features": 17,
+      "Engineered Features": 13,
+      "Runtime Seconds": 10.575744499999928
+    },
+    {
+      "Experiment": "Engineered",
+      "Model": "Random Forest",
+      "MAE": 16.64580049386045,
+      "RMSE": 20.777035130226633,
+      "R2": 0.245865693160071,
+      "Train Rows": 554547,
+      "Test Rows": 32125,
+      "Raw Input Features": 17,
+      "Engineered Features": 13,
+      "Runtime Seconds": 53.69643840000026
+    },
+    {
+      "Experiment": "Engineered",
+      "Model": "Linear Regression",
+      "MAE": 18.303899730841966,
+      "RMSE": 22.69255942072206,
+      "R2": 0.10040193527037466,
+      "Train Rows": 554547,
+      "Test Rows": 32125,
+      "Raw Input Features": 17,
+      "Engineered Features": 13,
+      "Runtime Seconds": 7.199554300000273
+    }
+  ],
+  "feature_engineering_effect": [
+    {
+      "Model": "Linear Regression",
+      "MAE Change (FE-Baseline)": -0.32970734457463635,
+      "RMSE Change (FE-Baseline)": -0.22050894240012653,
+      "R2 Change (FE-Baseline)": 0.017568156620035635,
+      "FE Improved RMSE": true
+    },
+    {
+      "Model": "Random Forest",
+      "MAE Change (FE-Baseline)": 0.1251411901040811,
+      "RMSE Change (FE-Baseline)": 0.06923864849987638,
+      "R2 Change (FE-Baseline)": -0.005017870668650559,
+      "FE Improved RMSE": false
+    },
+    {
+      "Model": "XGBoost",
+      "MAE Change (FE-Baseline)": -0.021860122680664062,
+      "RMSE Change (FE-Baseline)": -0.00600961390663457,
+      "R2 Change (FE-Baseline)": 0.00043201446533203125,
+      "FE Improved RMSE": true
+    }
+  ],
+  "error_by_popularity_group": [
+    {
+      "popularity_group": "low",
+      "Rows": 8293,
+      "MAE": 26.510934926111492,
+      "Bias": -24.67975059976869
+    },
+    {
+      "popularity_group": "emerging",
+      "Rows": 8400,
+      "MAE": 7.262422685481253,
+      "Bias": -0.9312228272358577
+    },
+    {
+      "popularity_group": "medium",
+      "Rows": 12728,
+      "MAE": 12.982451193786263,
+      "Bias": 12.861649120070794
+    },
+    {
+      "popularity_group": "high",
+      "Rows": 2704,
+      "MAE": 28.572259997298733,
+      "Bias": 28.572259997298733
+    }
+  ]
+}

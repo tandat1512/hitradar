@@ -1,0 +1,17 @@
+Feature,Formula,Type,Expected Benefit,EDA Source
+key_sin,sin(2*pi*(key mod 12)/12),numeric,"NB04 correlation review: key is cyclic, so endpoints 0/11 must be adjacent.",Notebook 04 — EDA
+key_cos,cos(2*pi*(key mod 12)/12),numeric,NB04 correlation review: complementary coordinate required for cyclic key.,Notebook 04 — EDA
+dance_energy,danceability * energy,numeric,NB04 audio distributions/correlation: danceability and energy may act jointly.,Notebook 04 — EDA
+positive_energy,valence * energy,numeric,NB04 nonlinear bins: valence and energy jointly describe intensity/mood.,Notebook 04 — EDA
+acoustic_energy_balance,acousticness / (acousticness + energy + epsilon),numeric,NB04 audio distributions: acousticness and energy oppose each other strongly.,Notebook 04 — EDA
+dance_valence,danceability * valence,numeric,NB04 nonlinear bins: danceability and valence show non-additive patterns.,Notebook 04 — EDA
+acoustic_instrumental,acousticness * instrumentalness,numeric,NB04 right-skew review: acoustic/instrumental content co-occurs.,Notebook 04 — EDA
+tempo_energy,tempo * energy,numeric,NB04 audio review: speed and energy jointly express intensity.,Notebook 04 — EDA
+energy_vs_period_avg,energy - train decade energy mean,numeric,NB04 decade trends show energy changes over time.,Notebook 04 — EDA
+dance_vs_period_avg,danceability - train decade danceability mean,numeric,NB04 decade trends show danceability changes over time.,Notebook 04 — EDA
+energy_loudness,energy * loudness,numeric,NB04 correlation review: loudness and energy are related but not identical.,Notebook 04 — EDA
+speechiness_log,"log1p(max(speechiness, 0))",numeric,NB04 distribution review: speechiness is right-skewed.,Notebook 04 — EDA
+instrumentalness_log,"log1p(max(instrumentalness, 0))",numeric,NB04 distribution review: instrumentalness is right-skewed.,Notebook 04 — EDA
+mood_quadrant,energy/valence quadrants at normalized midpoint 0.5,categorical,NB04 normalized audio review supports interpretable mood quadrants.,Notebook 04 — EDA
+duration_category,short/standard/long from train q33/q67,categorical,NB04 duration/time trends show nonlinear duration behavior.,Notebook 04 — EDA
+tempo_category,four bins from train q25/q50/q75,categorical,NB04 nonlinear binned plots motivate tempo regimes.,Notebook 04 — EDA

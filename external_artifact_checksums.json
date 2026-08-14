@@ -1,0 +1,34 @@
+[
+  {
+    "canonical_path": "4.MODELS/hitradar_popularity/popularity_pipeline.joblib",
+    "size_bytes": 802217,
+    "sha256": "ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047",
+    "round4_note": "external canonical artifact; not duplicated in snapshot",
+    "pre_round4_sha256": "ffed368b79f5ff221b83fbbe070a1c87a0e474a695a351bb8fbfe18d83bec047",
+    "unchanged_from_pre_round4": true
+  },
+  {
+    "canonical_path": "4.MODELS/hitradar_secondary/kmeans_pipeline.joblib",
+    "size_bytes": 168925,
+    "sha256": "44f99f12bad43f50a8913821360f40aa8c9caec306923a7adb208023909670bc",
+    "round4_note": "external canonical artifact; not duplicated in snapshot"
+  },
+  {
+    "canonical_path": "4.MODELS/hitradar_secondary/content_recommender.joblib",
+    "size_bytes": 49913861,
+    "sha256": "849d9be06f3338295cfa40ba084014f751203aa7b600d2310a03fcbe390a3ec4",
+    "round4_note": "external canonical artifact; not duplicated in snapshot"
+  },
+  {
+    "canonical_path": "5.DATA/processed/ml_ready_dataset.parquet",
+    "size_bytes": 26440492,
+    "sha256": "be198ad6303400534dc455e334ee4d9f1b1613a415c5ee7848179501f8c98770",
+    "round4_note": "external canonical artifact; not duplicated in snapshot"
+  },
+  {
+    "canonical_path": "5.DATA/processed/features_engineered.parquet",
+    "size_bytes": 61465009,
+    "sha256": "02f656211714ff5be3b4da509f14442fbd5b01b86ae47d53292e9775ca96c3b8",
+    "round4_note": "external canonical artifact; not duplicated in snapshot"
+  }
+]

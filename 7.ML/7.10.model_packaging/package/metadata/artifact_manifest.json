@@ -103,8 +103,8 @@
     "package_relative_path": "runtime/inference_pipeline.py",
     "artifact_type": "runtime",
     "producer_phase": "2.7-P2",
-    "bytes": 6525,
-    "sha256": "6a54f86cfb87059a2a4276ce970f74797649255ad3c28f23286a0f44a51570c7",
+    "bytes": 6345,
+    "sha256": "34ef2ebe49bf82923806e926115c2c86eb186735dd637f8cbe3b624a18dd8ffa",
     "exists": true,
     "load_required": true,
     "runtime_required": true

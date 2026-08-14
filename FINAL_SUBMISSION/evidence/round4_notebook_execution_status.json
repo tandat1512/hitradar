@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-08-14T06:04:23.207057+00:00",
+  "kernel_name": "hitradar-round4",
+  "python_version": "3.12.13",
+  "python_executable": "<PROJECT_ROOT>\\.venv_round4\\Scripts\\python.exe",
+  "xgboost_version": "3.4.0",
+  "scikit_learn_version": "1.9.0",
+  "notebooks": [
+    {
+      "notebook": "05_feature_engineering.ipynb",
+      "code_cells": 11,
+      "executed_cells": 11,
+      "error_outputs": 0,
+      "status": "PASS",
+      "round4_execution": "executed_in_round4"
+    },
+    {
+      "notebook": "06_machine_learning.ipynb",
+      "code_cells": 7,
+      "executed_cells": 7,
+      "error_outputs": 0,
+      "status": "PASS",
+      "round4_execution": "preserved_round2_execution_not_retrained"
+    },
+    {
+      "notebook": "07_ai_deployment.ipynb",
+      "code_cells": 5,
+      "executed_cells": 5,
+      "error_outputs": 0,
+      "status": "PASS",
+      "round4_execution": "executed_in_round4"
+    }
+  ],
+  "status": "PASS"
+}

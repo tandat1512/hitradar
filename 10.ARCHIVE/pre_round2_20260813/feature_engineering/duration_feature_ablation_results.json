@@ -1,0 +1,132 @@
+{
+  "EXP23-D0": {
+    "experiment_id": "EXP23-D0",
+    "feature_count": 18,
+    "train_rows": 415524,
+    "validation_rows": 85272,
+    "fit_split": "train",
+    "evaluation_split": "validation",
+    "model": "Ridge",
+    "model_parameters": {
+      "alpha": 1.0,
+      "random_state": 1512
+    },
+    "train": {
+      "MAE": 9.353929961893435,
+      "RMSE": 12.175149498393953,
+      "R2": 0.40408056478449983
+    },
+    "validation": {
+      "MAE": 12.2800652001153,
+      "RMSE": 16.0892657597094,
+      "R2": -0.0066005644549420595
+    },
+    "runtime_seconds": 1.9907112121582031,
+    "random_state": 1512,
+    "test_used": false
+  },
+  "EXP23-D1": {
+    "experiment_id": "EXP23-D1",
+    "feature_count": 19,
+    "train_rows": 415524,
+    "validation_rows": 85272,
+    "fit_split": "train",
+    "evaluation_split": "validation",
+    "model": "Ridge",
+    "model_parameters": {
+      "alpha": 1.0,
+      "random_state": 1512
+    },
+    "train": {
+      "MAE": 9.355501089979716,
+      "RMSE": 12.168600746633295,
+      "R2": 0.40472145694075956
+    },
+    "validation": {
+      "MAE": 12.258476462424486,
+      "RMSE": 16.045440523583213,
+      "R2": -0.001124313797115084
+    },
+    "runtime_seconds": 2.020641803741455,
+    "random_state": 1512,
+    "test_used": false
+  },
+  "EXP23-D2": {
+    "experiment_id": "EXP23-D2",
+    "feature_count": 19,
+    "train_rows": 415524,
+    "validation_rows": 85272,
+    "fit_split": "train",
+    "evaluation_split": "validation",
+    "model": "Ridge",
+    "model_parameters": {
+      "alpha": 1.0,
+      "random_state": 1512
+    },
+    "train": {
+      "MAE": 9.354663013962387,
+      "RMSE": 12.171846038946555,
+      "R2": 0.404403900218008
+    },
+    "validation": {
+      "MAE": 12.272837420829351,
+      "RMSE": 16.07398438466383,
+      "R2": -0.0046893602955742075
+    },
+    "runtime_seconds": 1.9505746364593506,
+    "random_state": 1512,
+    "test_used": false
+  },
+  "EXP23-D3": {
+    "experiment_id": "EXP23-D3",
+    "feature_count": 19,
+    "train_rows": 415524,
+    "validation_rows": 85272,
+    "fit_split": "train",
+    "evaluation_split": "validation",
+    "model": "Ridge",
+    "model_parameters": {
+      "alpha": 1.0,
+      "random_state": 1512
+    },
+    "train": {
+      "MAE": 9.351478950977812,
+      "RMSE": 12.164218322696843,
+      "R2": 0.40515014931513293
+    },
+    "validation": {
+      "MAE": 12.256717368725113,
+      "RMSE": 16.03162647441218,
+      "R2": 0.0005987460722238769
+    },
+    "runtime_seconds": 2.428612232208252,
+    "random_state": 1512,
+    "test_used": false
+  },
+  "EXP23-D4": {
+    "experiment_id": "EXP23-D4",
+    "feature_count": 22,
+    "train_rows": 415524,
+    "validation_rows": 85272,
+    "fit_split": "train",
+    "evaluation_split": "validation",
+    "model": "Ridge",
+    "model_parameters": {
+      "alpha": 1.0,
+      "random_state": 1512
+    },
+    "train": {
+      "MAE": 9.351483402989082,
+      "RMSE": 12.163990898265324,
+      "R2": 0.4051723919485518
+    },
+    "validation": {
+      "MAE": 12.255300880837176,
+      "RMSE": 16.029625083216725,
+      "R2": 0.0008482613689169138
+    },
+    "runtime_seconds": 2.5864644050598145,
+    "random_state": 1512,
+    "test_used": false
+  }
+}

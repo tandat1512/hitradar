@@ -1,0 +1,121 @@
+{
+  "pipeline": {
+    "raw_columns_ok": true,
+    "feature_engineering_ok": true,
+    "model_features": 32,
+    "prediction_raw": 38.5617790222168,
+    "prediction_clipped": 38.5617790222168,
+    "status": "PASS"
+  },
+  "api_direct_prediction_parity": true,
+  "prediction_support_policy": {
+    "product_support_end_year": 2020,
+    "observed_data_max_year": 2021,
+    "final_holdout_max_year": 2021,
+    "year_2020": {
+      "predicted_popularity": 25.9825,
+      "popularity_tier": "low",
+      "model_name": "XGBoost",
+      "engineered_feature_count": 14,
+      "feature_count": 32,
+      "prediction_support_status": "within_product_support",
+      "temporal_extrapolation": false,
+      "support_note": "The release year is within HitRadar's documented product-support cutoff through 2020. Observed data coverage is reported separately and is not a support guarantee.",
+      "train_end_year": 2018,
+      "product_support_end_year": 2020,
+      "observed_data_max_year": 2021,
+      "final_holdout_max_year": 2021
+    },
+    "year_2026": {
+      "predicted_popularity": 25.9825,
+      "popularity_tier": "low",
+      "model_name": "XGBoost",
+      "engineered_feature_count": 14,
+      "feature_count": 32,
+      "prediction_support_status": "temporal_extrapolation",
+      "temporal_extrapolation": true,
+      "support_note": "The model was trained through 2018. The product support cutoff is 2020. Predictions after 2020 are treated as temporal extrapolations. Observed dataset/final-holdout coverage is reported separately and does not extend the product support guarantee.",
+      "train_end_year": 2018,
+      "product_support_end_year": 2020,
+      "observed_data_max_year": 2021,
+      "final_holdout_max_year": 2021
+    },
+    "warning_does_not_change_prediction": true,
+    "status": "PASS"
+  },
+  "loaded_estimator": "XGBRegressor",
+  "metadata_winner_model": "XGBoost",
+  "health": {
+    "status": "ready",
+    "model_ready": true,
+    "cluster_ready": true,
+    "recommender_ready": true,
+    "model_file_exists": true,
+    "cluster_file_exists": true,
+    "recommender_file_exists": true,
+    "model_name": "XGBRegressor",
+    "selection_winner_experiment": "Engineered With-Time",
+    "raw_input_count": 17,
+    "model_feature_count": 32,
+    "load_errors": {}
+  },
+  "prediction": {
+    "predicted_popularity": 38.5618,
+    "popularity_tier": "emerging",
+    "model_name": "XGBoost",
+    "engineered_feature_count": 14,
+    "feature_count": 32,
+    "prediction_support_status": "within_product_support",
+    "temporal_extrapolation": false,
+    "support_note": "The release year is within HitRadar's documented product-support cutoff through 2020. Observed data coverage is reported separately and is not a support guarantee.",
+    "train_end_year": 2018,
+    "product_support_end_year": 2020,
+    "observed_data_max_year": 2021,
+    "final_holdout_max_year": 2021
+  },
+  "cluster": {
+    "cluster": 0,
+    "chosen_k": 3,
+    "feature_count": 10
+  },
+  "recommendation": {
+    "query_track_id": "0HOqINudNgQFpg1le5Hnqe",
+    "recommendations": [
+      {
+        "track_id": "2YSuy9tg3xtb2sKhvMRT3b",
+        "cosine_similarity": 0.9508025646209717
+      },
+      {
+        "track_id": "5Nn2Dj7OQsGL6pgQ9iIzPp",
+        "cosine_similarity": 0.9472640156745911
+      },
+      {
+        "track_id": "06DXs2hBRdjNs1qE1iYCQQ",
+        "cosine_similarity": 0.9464622735977173
+      },
+      {
+        "track_id": "7vGxMdSqL9dSZsoSnOnLL6",
+        "cosine_similarity": 0.9403258562088013
+      },
+      {
+        "track_id": "6BWRvw630R8z2vNMok6quI",
+        "cosine_similarity": 0.9348998665809631
+      }
+    ],
+    "feature_count": 12,
+    "metadata_note": "Local ML-ready dataset has track_id but no track/artist names; no metadata was fabricated."
+  },
+  "streamlit": {
+    "exceptions": 0,
+    "tabs": [
+      "Overview",
+      "Popularity Prediction",
+      "Song Clustering",
+      "Similar Songs"
+    ],
+    "year_2020_warning_count": 0,
+    "year_2026_warning_count": 1,
+    "year_2026_warning": "The model was trained through 2018. The product support cutoff is 2020. Predictions after 2020 are treated as temporal extrapolations. Observed dataset/final-holdout coverage is reported separately and does not extend the product support guarantee.",
+    "status": "PASS"
+  }
+}

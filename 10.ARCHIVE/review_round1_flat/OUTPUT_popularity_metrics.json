@@ -1,0 +1,61 @@
+{
+  "final_experiment": "Baseline With-Time",
+  "final_model": "XGBoost",
+  "include_engineered": false,
+  "include_time": true,
+  "model_features": [
+    "duration_min",
+    "release_year",
+    "danceability",
+    "energy",
+    "loudness",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "explicit",
+    "mode",
+    "release_month",
+    "decade",
+    "release_precision",
+    "key",
+    "time_signature"
+  ],
+  "selected_engineered_features": [
+    "key_sin",
+    "key_cos",
+    "dance_energy",
+    "positive_energy",
+    "acoustic_energy_balance",
+    "dance_valence",
+    "acoustic_instrumental",
+    "tempo_energy",
+    "energy_vs_period_avg",
+    "dance_vs_period_avg",
+    "energy_loudness",
+    "mood_quadrant",
+    "duration_category",
+    "tempo_category"
+  ],
+  "selection_pool": "all eligible experiments and all three algorithms",
+  "selection_metric": "minimum clipped [0,100] RMSE; MAE tie-break",
+  "final_test_metrics": {
+    "MAE": 16.302256945988663,
+    "RMSE": 20.576374478882588,
+    "R2": 0.26036192381561674
+  },
+  "raw_test_metrics": {
+    "MAE": 16.313207854634246,
+    "RMSE": 20.57957188127152,
+    "R2": 0.26013203839056875
+  },
+  "residual_convention": "actual - prediction; positive means underprediction",
+  "parity_test": {
+    "rows_checked": 10000,
+    "numeric_allclose": true,
+    "categorical_exact": true,
+    "status": "PASS"
+  }
+}
