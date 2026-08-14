@@ -1,6 +1,6 @@
 # HitRadar / HitRadar Pro
 
-HitRadar is a Spotify track analytics project whose main task is popularity regression. Secondary tasks provide KMeans audio clustering and content-based track recommendations. The repository also includes FastAPI and Streamlit interfaces for the validated model artifacts.
+HitRadar is a Spotify track analytics project whose main task is popularity regression. Secondary tasks provide KMeans audio clustering and content-based track recommendations. The repository includes a FastAPI backend and a static HTML/CSS/JS frontend for the validated model artifacts.
 
 ## Dataset overview
 
@@ -11,7 +11,7 @@ The canonical processed table contains 586,672 tracks with observed `release_yea
 - `src/`: shared feature engineering, modeling, evaluation, prediction policy, clustering, and recommendation logic.
 - `3.NOTEBOOKS/`: notebook workflow and executed Round-4 snapshots.
 - `4.MODELS/`: small model metadata and evaluation evidence; binary models stay local.
-- `5.UNG_DUNG/`: FastAPI backend, Streamlit frontend, requirements, and validation evidence.
+- `5.UNG_DUNG/`: FastAPI backend, static frontend, requirements, and validation evidence.
 - `7.ML/`: feature contracts and project ML evidence.
 - `9.SCRIPTS/`: reproducibility, validation, and submission-generation scripts.
 - `tests/`: automated integration and governance tests.
@@ -49,11 +49,11 @@ These results are modest and should not be interpreted as causal or uniformly ac
 
 ## Feature engineering
 
-Round 4 evaluates 16 candidate engineered features and selects 14. The shared `FeatureBuilder` implements interactions, cyclical key encoding, duration/tempo categories, time-derived signals, and leakage-safe train-fitted period statistics. Training, API, Streamlit, and direct prediction use the same feature contract.
+Round 4 evaluates 16 candidate engineered features and selects 14. The shared `FeatureBuilder` implements interactions, cyclical key encoding, duration/tempo categories, time-derived signals, and leakage-safe train-fitted period statistics. Training, API, frontend, and direct prediction use the same feature contract.
 
 ## Deployment
 
-The backend is under `5.UNG_DUNG/5.1.backend_api/`; the Streamlit UI is under `5.UNG_DUNG/5.2.frontend/`. Predictions after the product-support cutoff of 2020 remain available but are explicitly labeled temporal extrapolations.
+The backend is under `5.UNG_DUNG/5.1.backend_api/`; the static UI is under `5.UNG_DUNG/5.2.frontend/`. Predictions after the product-support cutoff of 2020 remain available but are explicitly labeled temporal extrapolations.
 
 ## Reproducibility and setup
 
@@ -71,7 +71,7 @@ Large runtime/data artifacts are excluded from the current tracked submission tr
 
 ```powershell
 .\.venv_round4\Scripts\python -m uvicorn 5.UNG_DUNG.5.1.backend_api.api:app
-.\.venv_round4\Scripts\python -m streamlit run .\5.UNG_DUNG\5.2.frontend\streamlit_app.py
+.\.venv_round4\Scripts\python .\scripts\run_frontend.py
 ```
 
 If module import rules in a shell do not accept dotted numeric directories, run the API with the repository's documented launcher or import the app by file path as demonstrated in the test suite.
@@ -85,7 +85,7 @@ If module import rules in a shell do not accept dotted numeric directories, run 
 .\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_repository.py
 ```
 
-The latest final repository suite records 70 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, repository-wide path sanitization (including ANSI/Jupyter tracebacks), canonical PostgreSQL notebook governance, artifact tracking, canonical notebook paths, and XLSX/DOCX readability.
+The latest final repository suite records 71 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, static frontend contract behavior, recommendation self-exclusion, environment evidence, manifest integrity, repository-wide path sanitization (including ANSI/Jupyter tracebacks), canonical PostgreSQL notebook governance, artifact tracking, canonical notebook paths, and XLSX/DOCX readability.
 
 ## Limitations
 

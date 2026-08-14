@@ -16,7 +16,6 @@ import joblib
 import numpy as np
 import pandas as pd
 from fastapi.testclient import TestClient
-from streamlit.testing.v1 import AppTest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -358,28 +357,46 @@ class DeploymentTest(unittest.TestCase):
         frame = pd.DataFrame([self.raw])[RAW_INPUT_FEATURES]
         self.assertTrue(np.allclose(self.pipeline.predict(frame), reloaded.predict(frame)))
 
-    def test_streamlit_has_exactly_four_tabs(self):
-        app_path = ROOT / "5.UNG_DUNG" / "5.2.frontend" / "streamlit_app.py"
-        app_test = AppTest.from_file(str(app_path)).run(timeout=40)
-        self.assertFalse(app_test.exception)
-        self.assertEqual(
-            [tab.label for tab in app_test.tabs],
-            ["Overview", "Popularity Prediction", "Song Clustering", "Similar Songs"],
-        )
+    def test_static_frontend_contains_required_workflows(self):
+        frontend = ROOT / "5.UNG_DUNG" / "5.2.frontend"
+        html = (frontend / "index.html").read_text(encoding="utf-8")
+        script = (frontend / "app.js").read_text(encoding="utf-8")
+        css = (frontend / "styles.css").read_text(encoding="utf-8")
+        for filename in ("index.html", "app.js", "styles.css"):
+            self.assertTrue((frontend / filename).is_file())
+        self.assertFalse((frontend / "streamlit_app.py").exists())
+        for view in ("predict", "cluster", "recommend", "insights"):
+            self.assertIn(f'data-view="{view}"', html)
+            self.assertIn(f'data-view-panel="{view}"', html)
+        for field in RAW_INPUT_FEATURES:
+            self.assertIn(f'name="{field}"', html)
+        self.assertIn("canvas", html)
+        self.assertIn("requestAnimationFrame", script)
+        self.assertIn("backdrop-filter", css)
 
-    def test_streamlit_2026_warning_visible_and_2020_warning_absent(self):
-        app_path = ROOT / "5.UNG_DUNG" / "5.2.frontend" / "streamlit_app.py"
-        app_test = AppTest.from_file(str(app_path)).run(timeout=40)
-        self.assertFalse(app_test.exception)
-        self.assertEqual([warning.value for warning in app_test.warning], [])
-        release_year = next(item for item in app_test.number_input if item.label == "Release year")
-        future_app = release_year.set_value(2026).run(timeout=40)
-        self.assertFalse(future_app.exception)
-        warnings = [warning.value for warning in future_app.warning]
-        self.assertEqual(len(warnings), 1)
-        self.assertIn("product support cutoff", warnings[0])
-        self.assertIn("temporal extrapolation", warnings[0])
+    def test_static_frontend_calls_backend_contract_and_warns_on_2026(self):
+        frontend = ROOT / "5.UNG_DUNG" / "5.2.frontend"
+        html = (frontend / "index.html").read_text(encoding="utf-8")
+        script = (frontend / "app.js").read_text(encoding="utf-8")
+        self.assertIn("product-support cutoff", html)
+        self.assertIn("temporal extrapolation", html)
+        self.assertIn("year <= 2020", script)
+        self.assertIn('requestJson("/predict"', script)
+        self.assertIn('requestJson("/cluster"', script)
+        self.assertIn("/recommend/${trackId}?n=${n}", script)
+        self.assertIn('requestJson("/health"', script)
         self.assertEqual(PRODUCT_SUPPORT_END_YEAR, 2020)
+
+    def test_backend_allows_static_frontend_cors(self):
+        response = self.client.options(
+            "/predict",
+            headers={
+                "Origin": "http://localhost:8501",
+                "Access-Control-Request-Method": "POST",
+            },
+        )
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertEqual(response.headers["access-control-allow-origin"], "http://localhost:8501")
 
 
 class FinalSubmissionTest(unittest.TestCase):
@@ -422,7 +439,7 @@ class FinalSubmissionTest(unittest.TestCase):
             "notebooks/05_feature_engineering.ipynb", "notebooks/06_machine_learning.ipynb",
             "notebooks/07_ai_deployment.ipynb", "src/features.py", "src/evaluation.py",
             "src/modeling.py", "src/secondary_tasks.py", "src/prediction_policy.py",
-            "deployment/api.py", "deployment/prediction.py", "deployment/streamlit_app.py",
+            "deployment/api.py", "deployment/prediction.py",
             "evidence/candidate_feature_evaluation.csv", "evidence/round4_test_results.json",
             "evidence/round4_end_to_end_validation.json", "evidence/temporal_year_coverage.json",
             "evidence/round4_environment_validation.json", "evidence/round4_notebook_execution_status.json",
@@ -433,6 +450,16 @@ class FinalSubmissionTest(unittest.TestCase):
         ]
         missing = [relative for relative in required if not (submission / relative).is_file()]
         self.assertEqual(missing, [])
+        static_frontend = [
+            "deployment/frontend/index.html",
+            "deployment/frontend/styles.css",
+            "deployment/frontend/app.js",
+        ]
+        legacy_streamlit = "deployment/streamlit_app.py"
+        self.assertTrue(
+            all((submission / relative).is_file() for relative in static_frontend)
+            or (submission / legacy_streamlit).is_file()
+        )
 
     def test_final_readme_has_no_control_characters(self):
         text = (ROOT / "FINAL_SUBMISSION" / "README_FINAL_SUBMISSION.md").read_text(encoding="utf-8")

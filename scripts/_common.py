@@ -109,8 +109,8 @@ def wait_for_health(
     """Poll ``url`` until ready, the child process exits, or timeout.
 
     Ready means HTTP 200 and (if require_model) a JSON body with
-    model_loaded == True. Streamlit /_stcore/health returns plain "ok",
-    so non-JSON 200 is accepted when require_model is False.
+    model_loaded/model_ready == True. Static frontend health checks accept
+    non-JSON 200 when require_model is False.
 
     Returns (state, info):
       ("READY", body)         — healthy (body may be None for plain text)
@@ -131,7 +131,9 @@ def wait_for_health(
                         body = None
                     if not require_model:
                         return ("READY", body)
-                    if isinstance(body, dict) and body.get("model_loaded", False):
+                    if isinstance(body, dict) and (
+                        body.get("model_loaded", False) or body.get("model_ready", False)
+                    ):
                         return ("READY", body)
         except Exception as exc:  # connection refused etc. — keep polling
             last_err = exc

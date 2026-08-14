@@ -2,10 +2,12 @@
 
 from functools import lru_cache
 import json
+import os
 from pathlib import Path
 import sys
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import joblib
 import numpy as np
 import pandas as pd
@@ -54,6 +56,19 @@ app = FastAPI(
     title="HitRadar Pro API",
     version="3.0.0",
     description="RAW INPUT -> shared feature logic -> model/cluster/recommendation",
+)
+
+_default_origins = "http://127.0.0.1:8501,http://localhost:8501"
+_cors_origins = [
+    origin.strip()
+    for origin in os.getenv("HITRADAR_CORS_ORIGINS", _default_origins).split(",")
+    if origin.strip()
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_cors_origins,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
 )
 
 

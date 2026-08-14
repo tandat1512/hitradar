@@ -69,7 +69,7 @@ def smoke():
 response = TestClient(app).get("/smoke")
 assert response.status_code == 200 and response.json() == {"ok": True}
 
-names = ["pip", "httpx2", "fastapi", "starlette", "xgboost", "scikit-learn", "numpy", "pandas", "joblib", "streamlit", "nbformat", "nbclient"]
+names = ["pip", "httpx2", "fastapi", "starlette", "xgboost", "scikit-learn", "numpy", "pandas", "joblib", "nbformat", "nbclient"]
 print(json.dumps({
     "python_version": platform.python_version(),
     "python_executable": sys.executable,

@@ -1,0 +1,69 @@
+{
+  "dict_artists": {
+    "n_keys": 573856,
+    "total_assignments": 8864472,
+    "n_unique_genres": 1079349,
+    "empty_count": 126904,
+    "empty_ratio": 22.1143,
+    "sample_genres": [
+      "0001ZVMPt41Vwzt1zsmuzp",
+      "0001cekkfdEBoMlwVQvpLg",
+      "0001wHqxbF2YYRQxGdbyER",
+      "0002XY9y3JhjzTZqNCqEcv",
+      "00045gNg7mLEf9UY9yhD0t",
+      "0007DSGSwy4e3PdpExQESD",
+      "0009LMJQT62wdZVgnM4vBy",
+      "0009v6e5hmLdAqSFTLcKry",
+      "000AK4sjc0Np5MbCQ6JC1U",
+      "000BblCiHJeKvtiq5aiHOs",
+      "000Cz1Pts8aGpDLBvrc4wi",
+      "000Dq0VqTZpxOP6jQMscVL",
+      "000ESzt0wlQI41YbKYGIkf",
+      "000Gam69yUQckclDmjLvlL",
+      "000NbZqISnuKaqmw33JxTV",
+      "000Nolc0A0ZuWkFzNYVYdU",
+      "000QJOWUPdmFGneapRPzMx",
+      "000UmiuzgqlUjKHpvIWmAo",
+      "000UxvYLQuybj6iVRRCAw1",
+      "000WMX8CCUlKyWxaOasSNZ",
+      "000dicAA3QWT6m118rFXLO",
+      "000isQj1PXwsP5kJF0F1Fi",
+      "000nr5NQY4yigOdegZaKoV",
+      "000p4jMMhpEHq1h6PFCyO1",
+      "000rFz8r7IQznjS1qjIsyk",
+      "000rOFFfUyGGzKmB8XYIuu",
+      "000s6SnJAGVnsoT33VKcSW",
+      "000sD0EGScyHwmiRNF0RRP",
+      "000spuc3oKgwYmfg5IE26s",
+      "000vMR3cHSTJ88w3PJWHJB"
+    ]
+  },
+  "release_date": {
+    "format_counts": {
+      "YYYY-MM-DD": 448081,
+      "YYYY": 136489,
+      "YYYY-MM": 2102
+    },
+    "min_year": 1900,
+    "max_year": 2021,
+    "parse_errors": 0
+  },
+  "outliers": {
+    "time_signature_zero": 337,
+    "tempo_zero": 328,
+    "duration_ms_min": 3344,
+    "duration_ms_max": 5621218,
+    "duration_short_lt10s": 26,
+    "duration_long_gt60min": 83,
+    "loudness_max": 5.376
+  },
+  "missing_values": {
+    "tracks": {
+      "name": 71
+    },
+    "artists": {
+      "followers": 11,
+      "name": 3
+    }
+  }
+}

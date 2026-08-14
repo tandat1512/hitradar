@@ -97,8 +97,8 @@ desktop.ini
 # ============================================================
 7.ML/7.4.splits/*_ids.parquet
 
-*.rar
-
-7.ML/7.7.model_training/models/EXP24-RF-FINAL-001.joblib
-
 7.ML/7.7.model_training/models/runner_up_bundle.joblib
+
+# Jupyter local runtimes
+.jupyter_*
+HitRadar_Pro_Notebooks_Executed.zip

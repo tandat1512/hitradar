@@ -1,26 +1,4 @@
-"""HitRadar Pro — run_all (Feature 3.6.8).
-
-Starts the full demo stack: FastAPI backend, waits for real /health
-readiness (model_loaded == true), then starts Streamlit, then monitors
-both until Ctrl+C, then cleans up only the processes it created.
-
-    python scripts/run_all.py
-
-Flow:
-    validate config
-      → start backend process
-      → poll /health (no fixed sleep)
-      → ready?  NO  → stop backend, exit nonzero
-                YES → start frontend process
-      → print URLs
-      → monitor both children
-      → Ctrl+C / child failure → cleanup both children
-
-Environment overrides:
-    BACKEND_HOST / BACKEND_PORT / BACKEND_HEALTH_TIMEOUT
-    STREAMLIT_SERVER_PORT / BACKEND_BASE_URL
-    ARTIFACTS_PATH
-"""
+"""Run the HitRadar Pro backend and static frontend together."""
 from __future__ import annotations
 
 import os
@@ -41,28 +19,31 @@ from _common import (
 )
 
 BACKEND_DIR = REPO_ROOT / "5.UNG_DUNG" / "5.1.backend_api"
-FRONTEND_DIR = REPO_ROOT / "epic3" / "feature_3_3" / "frontend"
+FRONTEND_DIR = REPO_ROOT / "5.UNG_DUNG" / "5.2.frontend"
+
+
+def _frontend_port() -> int:
+    if "FRONTEND_PORT" not in os.environ and "STREAMLIT_SERVER_PORT" in os.environ:
+        os.environ["FRONTEND_PORT"] = os.environ["STREAMLIT_SERVER_PORT"]
+    return parse_port("FRONTEND_PORT", 8501, "frontend")
 
 
 def main() -> int:
     host = os.getenv("BACKEND_HOST", "127.0.0.1")
     backend_port = parse_port("BACKEND_PORT", 8000, "BACKEND_PORT")
-    frontend_port = parse_port("STREAMLIT_SERVER_PORT", 8501, "frontend")
+    frontend_port = _frontend_port()
     health_timeout = float(os.getenv("BACKEND_HEALTH_TIMEOUT", "120"))
-    base_url = os.getenv("BACKEND_BASE_URL", f"http://localhost:{backend_port}").rstrip("/")
 
-    # ── Validate config / artifacts ────────────────────────────────────────────
     log("CHECK", f"Repo root: {REPO_ROOT}")
     if not (BACKEND_DIR / "api.py").exists():
         die("ERROR", f"Backend entrypoint not found: {BACKEND_DIR / 'api.py'}")
-    if not (FRONTEND_DIR / "app.py").exists():
-        die("ERROR", f"Frontend entrypoint not found: {FRONTEND_DIR / 'app.py'}")
+    if not (FRONTEND_DIR / "index.html").exists():
+        die("ERROR", f"Frontend entrypoint not found: {FRONTEND_DIR / 'index.html'}")
 
     root = resolve_artifact_root()
     if not check_backend_artifacts(root):
         return 1
 
-    # ── Ports ──────────────────────────────────────────────────────────────────
     assert_port_free(host, backend_port, "backend")
     assert_port_free("127.0.0.1", frontend_port, "frontend")
     log("CHECK", f"Backend port {backend_port} and frontend port {frontend_port} are free")
@@ -70,34 +51,42 @@ def main() -> int:
     backend = None
     frontend = None
     try:
-        # ── Start backend ──────────────────────────────────────────────────────
         env = dict(os.environ)
         env.setdefault("ARTIFACTS_PATH", str(root))
-        cmd = [sys.executable, "-m", "uvicorn", "api:app", "--host", host, "--port", str(backend_port)]
-        log("START", f"Backend: {' '.join(cmd)}")
-        backend = spawn(cmd, BACKEND_DIR, env=env)
+        cors_origin = f"http://localhost:{frontend_port},http://127.0.0.1:{frontend_port}"
+        env.setdefault("HITRADAR_CORS_ORIGINS", cors_origin)
+
+        backend_cmd = [sys.executable, "-m", "uvicorn", "api:app", "--host", host, "--port", str(backend_port)]
+        log("START", f"Backend: {' '.join(backend_cmd)}")
+        backend = spawn(backend_cmd, BACKEND_DIR, env=env)
 
         health_url = f"http://{host}:{backend_port}/health"
-        state, info = wait_for_health(health_url, health_timeout, interval=0.5,
-                                      child=backend, require_model=True)
+        state, info = wait_for_health(health_url, health_timeout, interval=0.5, child=backend, require_model=True)
         if state == "PROCESS_EXITED":
             die("ERROR", f"Backend exited before /health ready (exit code {info}). See log above.", 3)
         if state == "TIMEOUT":
-            die("ERROR", f"/health not ready within {health_timeout}s at {health_url} "
-                         f"(model may still be loading, or artifacts/config are wrong).", 3)
-        log("READY", f"Backend healthy: http://{host}:{backend_port}  (model_loaded=true)")
+            die("ERROR", f"/health not ready within {health_timeout}s at {health_url}.", 3)
+        log("READY", f"Backend healthy: http://{host}:{backend_port}")
 
-        # ── Start frontend ─────────────────────────────────────────────────────
-        assert_port_free("127.0.0.1", frontend_port, "frontend")
-        fcmd = [sys.executable, "-m", "streamlit", "run", "app.py",
-                "--server.port", str(frontend_port), "--server.headless", "true"]
-        env["BACKEND_BASE_URL"] = base_url
-        log("START", f"Frontend: {' '.join(fcmd)}")
-        frontend = spawn(fcmd, FRONTEND_DIR, env=env)
+        frontend_cmd = [
+            sys.executable,
+            "-m",
+            "http.server",
+            str(frontend_port),
+            "--bind",
+            "127.0.0.1",
+            "--directory",
+            str(FRONTEND_DIR),
+        ]
+        log("START", f"Frontend: {' '.join(frontend_cmd)}")
+        frontend = spawn(frontend_cmd, FRONTEND_DIR, env=env)
 
         fstate, finfo = wait_for_health(
-            f"http://127.0.0.1:{frontend_port}/_stcore/health",
-            timeout=60.0, interval=0.5, child=frontend, require_model=False,
+            f"http://127.0.0.1:{frontend_port}/",
+            timeout=60.0,
+            interval=0.5,
+            child=frontend,
+            require_model=False,
         )
         if fstate == "PROCESS_EXITED":
             die("ERROR", f"Frontend exited before ready (exit code {finfo}). Stopping backend.", 3)
@@ -113,7 +102,6 @@ def main() -> int:
         print("=" * 60)
         print()
 
-        # ── Monitor ────────────────────────────────────────────────────────────
         while True:
             if backend.poll() is not None:
                 log("ERROR", f"Backend exited unexpectedly (code {backend.returncode}). Stopping frontend.")
@@ -129,18 +117,16 @@ def main() -> int:
                 frontend.wait(timeout=1.0)
             except subprocess.TimeoutExpired:
                 pass
-
         return 1
-
     except KeyboardInterrupt:
-        log("STOP", "Ctrl+C received — shutting down demo.")
+        log("STOP", "Ctrl+C received - shutting down demo.")
         return 0
     finally:
         if frontend is not None:
             terminate_child(frontend, "frontend")
         if backend is not None:
             terminate_child(backend, "backend")
-        log("STOP", "Demo stopped. Orphan processes owned by launcher: 0 (verified by teardown).")
+        log("STOP", "Demo stopped. Orphan processes owned by launcher: 0.")
 
 
 if __name__ == "__main__":
