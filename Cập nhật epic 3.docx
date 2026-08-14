@@ -1,0 +1,333 @@
+# CẬP NHẬT EPIC 3: PRODUCTIZATION & DEPLOYMENT
+## Phiên bản hoàn chỉnh theo tư duy EPIC 1 & 2
+
+---
+
+## TỔNG QUAN
+
+EPIC 3 là giai đoạn cuối cùng, biến model artifacts từ EPIC 2 thành sản phẩm hoàn chỉnh có thể demo và bảo vệ. EPIC 3 tập trung vào:
+- **FastAPI backend**: Expose model qua API
+- **Streamlit frontend**: UI cho user tương tác
+- **Documentation**: Báo cáo, slide, user manual
+- **Defense preparation**: Demo + Q&A
+
+EPIC 3 KHÔNG train model mới, KHÔNG sửa data. Chỉ đóng gói và trình bày.
+
+---
+
+## ĐỊNH NGHĨA EPIC 3
+
+### EPIC 3 chịu trách nhiệm:
+- Nhận model artifacts từ EPIC 2
+- Xây FastAPI backend (predict, explain, what-if)
+- Xây Streamlit frontend (multi-page)
+- Tích hợp SHAP explanation vào UI
+- Benchmark performance
+- Viết tài liệu + slide bảo vệ
+- Demo + Q&A
+
+### EPIC 3 KHÔNG chịu trách nhiệm:
+- Train model mới (EPIC 2 đã làm)
+- Sửa data (EPIC 1 đã làm)
+- Feature engineering (EPIC 2 đã làm)
+- Thay đổi model architecture
+
+---
+
+## CẤU TRÚC 6 FEATURES CỦA EPIC 3
+
+### Feature 3.0: Product Contract & Scope Lock [P0] ⭐
+
+**Mục đích:** Khóa phạm vi trước khi code, tránh lan sang EPIC 1 hoặc EPIC 2.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.0.1 | Xác nhận mục tiêu EPIC 3 | P0 | 1h |
+| 3.0.2 | Xác định input từ EPIC 2 | P0 | 1h |
+| 3.0.3 | Xác định deliverables cuối cùng | P0 | 1h |
+| 3.0.4 | Ranh giới EPIC 3 | P0 | 0.5h |
+| 3.0.5 | API contract | P0 | 2h |
+| 3.0.6 | UI/UX requirements | P0 | 1h |
+| 3.0.7 | Definition of Done | P0 | 1h |
+
+**Tại sao cần API contract?**
+Để EPIC 3 biết chính xác API cần nhận gì, trả gì. Nếu không, Streamlit sẽ không biết gọi API thế nào.
+
+---
+
+### Feature 3.1: FastAPI Backend Development [P0] ⭐
+
+**Mục đích:** Xây FastAPI backend phục vụ prediction, explain, what-if.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.1.1 | Setup FastAPI project structure | P0 | 2h |
+| 3.1.2 | Load model artifacts | P0 | 1h |
+| 3.1.3 | Validate feature_names.json | P0 | 0.5h |
+| 3.1.4 | Endpoint POST /predict | P0 | 3h |
+| 3.1.5 | Endpoint POST /explain | P0 | 3h |
+| 3.1.6 | Endpoint POST /what-if | P0 | 2h |
+| 3.1.7 | Endpoint GET /health | P0 | 0.5h |
+| 3.1.8 | Endpoint GET /model-info | P0 | 1h |
+| 3.1.9 | CORS middleware | P0 | 0.5h |
+| 3.1.10 | Error handling | P0 | 1h |
+| 3.1.11 | Benchmark prediction latency | P0 | 1h |
+| 3.1.12 | Test API với Postman | P0 | 1h |
+| 3.1.13 | Write OpenAPI docs | P1 | 1h |
+
+**Tại sao benchmark latency?**
+Nếu model predict 1 sample mất > 100ms, Streamlit sẽ chậm. Cần đảm bảo app chạy nhanh để demo mượt.
+
+**Tại sao cần CORS middleware?**
+Streamlit chạy trên port 8501, FastAPI chạy trên port 8000. Browser sẽ block request cross-origin nếu không có CORS.
+
+---
+
+### Feature 3.2: Streamlit Frontend Development [P0] ⭐
+
+**Mục đích:** Xây Streamlit frontend multi-page cho user tương tác.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.2.1 | Setup Streamlit multi-page app | P0 | 2h |
+| 3.2.2 | Trang chủ - Overview | P0 | 2h |
+| 3.2.3 | Tab 1 - Dự đoán Popularity | P0 | 4h |
+| 3.2.4 | Tab 2 - What-If Simulator | P0 | 3h |
+| 3.2.5 | Tab 3 - Xu hướng 100 năm | P0 | 3h |
+| 3.2.6 | Tab 4 - Model Info | P0 | 2h |
+| 3.2.7 | Styling & UX | P1 | 2h |
+| 3.2.8 | Error handling UI | P0 | 1h |
+| 3.2.9 | Cross-browser testing | P1 | 1h |
+
+**Tại sao multi-page?**
+Để user dễ navigate, không bị overload thông tin. Mỗi tab tập trung vào 1 chức năng.
+
+**Tại sao cần styling?**
+Streamlit default nhìn khá "basic". Custom CSS giúp app nhìn chuyên nghiệp hơn, ghi điểm khi demo.
+
+---
+
+### Feature 3.3: Integration & Testing [P0] ⭐
+
+**Mục đích:** Kết nối Streamlit ↔ FastAPI, test end-to-end.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.3.1 | Connect Streamlit → FastAPI | P0 | 2h |
+| 3.3.2 | Handle CORS errors | P0 | 1h |
+| 3.3.3 | End-to-end testing | P0 | 3h |
+| 3.3.4 | Performance optimization | P0 | 2h |
+| 3.3.5 | Fix bugs | P0 | 2h |
+| 3.3.6 | Test trên máy sạch | P0 | 1h |
+| 3.3.7 | Prepare backup demo | P0 | 1h |
+
+**Tại sao test trên máy sạch?**
+Máy dev đã cài đủ dependencies, nhưng máy thầy có thể chưa. Test trên máy sạch để đảm bảo app chạy được everywhere.
+
+**Tại sao cần backup demo?**
+Nếu ngày bảo vệ app crash (mạng lỗi, port conflict...), có video/screenshot để demo thay thế.
+
+---
+
+### Feature 3.4: Documentation [P1]
+
+**Mục đích:** Tài liệu hóa toàn bộ dự án.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.4.1 | Viết báo cáo tổng hợp | P1 | 6h |
+| 3.4.2 | Viết phụ lục kỹ thuật | P1 | 2h |
+| 3.4.3 | Viết user manual | P1 | 2h |
+| 3.4.4 | Viết README.md | P1 | 2h |
+| 3.4.5 | Tạo requirements.txt | P1 | 0.5h |
+
+**Tại sao báo cáo quan trọng?**
+Báo cáo là 1 trong 5 cột điểm. Báo cáo tốt = điểm cao, dù demo có thể không hoàn hảo.
+
+---
+
+### Feature 3.5: Defense Preparation [P0] ⭐
+
+**Mục đích:** Chuẩn bị demo + Q&A cho ngày bảo vệ.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.5.1 | Tạo slide bảo vệ | P0 | 4h |
+| 3.5.2 | Rehearse demo | P0 | 2h |
+| 3.5.3 | Prepare Q&A | P0 | 3h |
+| 3.5.4 | Phân công người thuyết trình | P0 | 1h |
+| 3.5.5 | Final checklist | P0 | 1h |
+
+**Tại sao cần rehearse demo?**
+Demo lần đầu thường có lỗi (port conflict, model không load...). Rehearse trước để fix sớm.
+
+**Tại sao cần prepare Q&A?**
+Thầy hay hỏi xoáy vào:
+- Hạn chế dataset (không có user behavior)
+- Tại sao chọn XGBoost
+- SHAP giải thích thế nào
+- Model có bias không
+
+Có chuẩn bị trước = tự tin hơn khi bảo vệ.
+
+---
+
+### Feature 3.6: Final Delivery [P0] ⭐
+
+**Mục đích:** Nộp bài + bảo vệ.
+
+**Các tasks:**
+
+| Task | Mô tả | Priority | Estimate |
+|------|-------|----------|----------|
+| 3.6.1 | Upload code lên GitHub | P0 | 0.5h |
+| 3.6.2 | Nộp báo cáo + slide | P0 | 0.5h |
+| 3.6.3 | Demo cho thầy | P0 | 0.5h |
+| 3.6.4 | Bảo vệ dự án | P0 | 0.5h |
+| 3.6.5 | Retrospective EPIC 3 | P1 | 1h |
+
+---
+
+## TỔNG HỢP TASKS THEO PRIORITY
+
+### P0 - Must-have (35 tasks, ~55h)
+- Feature 3.0: 7 tasks
+- Feature 3.1: 12 tasks (trừ 3.1.13)
+- Feature 3.2: 8 tasks (trừ 3.2.7, 3.2.9)
+- Feature 3.3: 7 tasks
+- Feature 3.5: 5 tasks
+- Feature 3.6: 4 tasks (trừ 3.6.5)
+
+### P1 - Should-have (8 tasks, ~18h)
+- Feature 3.4: 5 tasks
+- Task 3.1.13, 3.2.7, 3.2.9
+
+**Tổng: 43 tasks, ~73h**
+
+Với nhóm 4 người, 6 buổi (Sprint 3):
+- Tổng giờ làm việc: 4 người × 6 buổi × 4h/buổi = 96h
+- P0 tasks: 55h (57% thời gian)
+- P1 tasks: 18h (19% thời gian)
+- Buffer: 23h (24% thời gian)
+
+→ **Khả thi!**
+
+---
+
+## DEFINITION OF DONE CHO EPIC 3
+
+EPIC 3 chỉ được xem là hoàn thành khi có đủ:
+
+| Nhóm | Deliverable bắt buộc |
+|------|---------------------|
+| FastAPI | 4 endpoints chạy ổn định (/predict, /explain, /what-if, /model-info) |
+| Streamlit | 4 tabs hoàn chỉnh (Overview, Predict, What-if, Trends) |
+| Integration | Streamlit ↔ FastAPI kết nối thành công |
+| Performance | Prediction latency < 100ms/sample |
+| Documentation | Báo cáo + slide + README + user manual |
+| Demo | App chạy ổn định trên máy sạch |
+| Defense | Slide hoàn chỉnh, rehearse demo, prepare Q&A |
+| Delivery | Code trên GitHub, báo cáo nộp, demo thành công |
+
+---
+
+## THỨ TỰ THỰC THI EPIC 3
+
+### Lát cắt 1 (Buổi 13): Setup FastAPI + Endpoint /predict
+- Mục tiêu: Có API cơ bản, predict được
+- Tasks: 3.0.1-3.0.7, 3.1.1-3.1.4, 3.1.7
+
+### Lát cắt 2 (Buổi 14): Endpoint /explain + /what-if + Setup Streamlit
+- Mục tiêu: Có đầy đủ API, bắt đầu UI
+- Tasks: 3.1.5-3.1.6, 3.1.8-3.1.10, 3.2.1-3.2.2
+
+### Lát cắt 3 (Buổi 15): Streamlit Tab 1 + Tab 2
+- Mục tiêu: Có UI dự đoán + what-if
+- Tasks: 3.2.3-3.2.4, 3.3.1-3.3.2
+
+### Lát cắt 4 (Buổi 16): Streamlit Tab 3 + Tab 4 + Integration
+- Mục tiêu: UI hoàn chỉnh, kết nối thành công
+- Tasks: 3.2.5-3.2.6, 3.3.3-3.3.5
+
+### Lát cắt 5 (Buổi 17): Documentation + Defense prep
+- Mục tiêu: Có báo cáo + slide, rehearse demo
+- Tasks: 3.4.1-3.4.5, 3.5.1-3.5.4
+
+### Lát cắt 6 (Buổi 18): Final delivery + Defense
+- Mục tiêu: Nộp bài + bảo vệ
+- Tasks: 3.5.5, 3.6.1-3.6.5
+
+---
+
+## CHECKLIST TRƯỚC KHI CODE EPIC 3
+
+### Bước 1: Đọc handoff từ EPIC 2
+- [ ] Đọc `handoff_to_epic3.md`
+- [ ] Đọc `model_card.md`
+- [ ] Kiểm tra artifacts: model.pkl, scaler.pkl, encoder.pkl, feature_names.json
+
+### Bước 2: Test load model
+- [ ] Load model.pkl thành công
+- [ ] Predict với sample data
+- [ ] Kiểm tra output đúng
+
+### Bước 3: Quyết định API endpoints
+- [ ] POST /predict (input/output format)
+- [ ] POST /explain (SHAP values)
+- [ ] POST /what-if (before/after)
+- [ ] GET /model-info (metrics, feature importance)
+
+### Bước 4: Quyết định UI structure
+- [ ] Multi-page hay single-page?
+- [ ] Tabs nào?
+- [ ] Mockup UI từ EPIC 2
+
+### Bước 5: Quyết định documentation structure
+- [ ] Báo cáo: chương nào?
+- [ ] Slide: bao nhiêu slides?
+- [ ] README: sections nào?
+
+### Bước 6: Phân công nhóm
+- [ ] Ai làm FastAPI?
+- [ ] Ai làm Streamlit?
+- [ ] Ai làm documentation?
+- [ ] Ai rehearse demo?
+
+---
+
+## KẾT LUẬN
+
+EPIC 3 hoàn chỉnh nên đi theo tư duy:
+**Product Contract → FastAPI → Streamlit → Integration → Documentation → Defense → Delivery**
+
+Không nên bắt đầu bằng code ngay. Việc cần làm tiếp theo là:
+1. Đọc handoff từ EPIC 2
+2. Chốt Product Contract (API endpoints, UI structure)
+3. Chốt documentation structure
+4. Phân công nhóm
+5. Lập thứ tự thực thi
+
+Khi 5 thứ đó rõ ràng, code EPIC 3 sẽ rất mượt và ít sửa lại.
+
+---
+
+**File này đã được điều chỉnh dựa trên tư duy của EPIC 1 & 2:**
+- Feature 0: Contract & Scope Lock
+- Prioritization P0/P1
+- Estimate thời gian
+- Definition of Done
+- Lát cắt thực thi
+
+**Ngày cập nhật:** 2026-07-03
