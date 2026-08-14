@@ -1,14 +1,8 @@
 {
   "policy": "Raw canonical evidence retained; FINAL_SUBMISSION copies sanitized.",
   "files_scanned": 51,
-  "files_sanitized": 11,
+  "files_sanitized": 10,
   "sanitized_files": [
-    {
-      "file": "evidence/public_path_hotfix_test_results.json",
-      "replacement_counts": {
-        "project_root": 1
-      }
-    },
     {
       "file": "evidence/round4_environment_install.log",
       "replacement_counts": {
@@ -53,7 +47,7 @@
         "project_root": 94,
         "user_cache": 3,
         "downloads": 1,
-        "other_absolute_paths": 20
+        "other_absolute_paths": 23
       }
     },
     {
@@ -77,13 +71,13 @@
     }
   ],
   "replacement_counts": {
-    "project_root": 199,
+    "project_root": 198,
     "python_executable": 0,
     "user_home": 0,
     "user_cache": 6,
     "downloads": 2,
     "temp": 0,
-    "other_absolute_paths": 30
+    "other_absolute_paths": 33
   },
   "raw_canonical_files_modified": false,
   "raw_canonical_checksums": [

@@ -1,14 +1,99 @@
 # HitRadar / HitRadar Pro
 
-The current canonical handoff is under `FINAL_SUBMISSION/`. Run notebooks in
-order: Notebook 05 → Notebook 06 → Notebook 07.
+HitRadar is a Spotify track analytics project whose main task is popularity regression. Secondary tasks provide KMeans audio clustering and content-based track recommendations. The repository also includes FastAPI and Streamlit interfaces for the validated model artifacts.
 
-Temporal governance remains `release_year <= 2017` for selection train, 2018
-for validation, `<2019` for final refit, and `>=2019` for the final temporal
-holdout. The corrected Round-2 pipeline did not use the 2019+ horizon for
-winner selection, but that same horizon had been inspected during an earlier
-development iteration.
+## Dataset overview
 
-Deployment allows post-2020 predictions with an explicit temporal-
-extrapolation warning. See `FINAL_SUBMISSION/README_FINAL_SUBMISSION.md` for
-setup commands, evidence, limitations, and the submission manifest.
+The canonical processed table contains 586,672 tracks with observed `release_year` values from 1900 through 2021. This processed coverage is distinct from the source dataset's advertised 1921–2020 range. Large source and processed datasets are intentionally not committed; checksums and relative artifact locations are recorded in `FINAL_SUBMISSION/evidence/external_artifact_checksums.json`.
+
+## Project architecture
+
+- `src/`: shared feature engineering, modeling, evaluation, prediction policy, clustering, and recommendation logic.
+- `3.NOTEBOOKS/`: notebook workflow and executed Round-4 snapshots.
+- `4.MODELS/`: small model metadata and evaluation evidence; binary models stay local.
+- `5.UNG_DUNG/`: FastAPI backend, Streamlit frontend, requirements, and validation evidence.
+- `7.ML/`: feature contracts and project ML evidence.
+- `9.SCRIPTS/`: reproducibility, validation, and submission-generation scripts.
+- `tests/`: automated integration and governance tests.
+- `FINAL_SUBMISSION/`: sanitized public evidence snapshot and manifest.
+- `7.QUAN_LY_DU_AN/`: existing project-management evidence.
+
+## Notebook flow
+
+The public workflow is NB01 → NB07. The final ML handoff is:
+
+1. `3.NOTEBOOKS/3.5.feature_engineering/05_feature_engineering.ipynb`
+2. `3.NOTEBOOKS/3.6.modeling/06_machine_learning.ipynb`
+3. `3.NOTEBOOKS/3.7.demo/07_ai_deployment.ipynb`
+
+Notebook 05 creates and validates executable engineered columns. Notebook 06 performs temporal model selection and final evaluation. Notebook 07 validates deployment behavior. Historical or superseded materials are kept under `10.ARCHIVE/` rather than treated as canonical notebooks.
+
+## Temporal model-selection protocol
+
+- Selection train: `release_year <= 2017`
+- Validation: `release_year == 2018`
+- Final refit: `release_year < 2019`
+- Final temporal holdout: `release_year >= 2019`
+
+The 2019+ horizon was not used for corrected Round-2 winner selection, but it had been inspected during an earlier development iteration. The repository therefore does not describe it as historically untouched or never observed.
+
+## Locked final model and metrics
+
+The locked winner is **Engineered With-Time / XGBoost**. Committed evidence reports clipped final-holdout metrics:
+
+- MAE: `16.201599`
+- RMSE: `20.594952`
+- R²: `0.259026`
+
+These results are modest and should not be interpreted as causal or uniformly accurate across popularity levels.
+
+## Feature engineering
+
+Round 4 evaluates 16 candidate engineered features and selects 14. The shared `FeatureBuilder` implements interactions, cyclical key encoding, duration/tempo categories, time-derived signals, and leakage-safe train-fitted period statistics. Training, API, Streamlit, and direct prediction use the same feature contract.
+
+## Deployment
+
+The backend is under `5.UNG_DUNG/5.1.backend_api/`; the Streamlit UI is under `5.UNG_DUNG/5.2.frontend/`. Predictions after the product-support cutoff of 2020 remain available but are explicitly labeled temporal extrapolations.
+
+## Reproducibility and setup
+
+Validated evidence uses Python 3.12. From the repository root:
+
+```powershell
+py -3.12 -m venv .venv_round4
+.\.venv_round4\Scripts\python -m pip install --upgrade pip
+.\.venv_round4\Scripts\python -m pip install -r .\5.UNG_DUNG\5.3.config\requirements.txt
+```
+
+The binary model and processed parquet artifacts are not stored in normal Git history. Place locally supplied artifacts at the canonical paths listed in `FINAL_SUBMISSION/evidence/external_artifact_checksums.json` and verify their SHA-256 values before validation.
+
+## Running the interfaces
+
+```powershell
+.\.venv_round4\Scripts\python -m uvicorn 5.UNG_DUNG.5.1.backend_api.api:app
+.\.venv_round4\Scripts\python -m streamlit run .\5.UNG_DUNG\5.2.frontend\streamlit_app.py
+```
+
+If module import rules in a shell do not accept dotted numeric directories, run the API with the repository's documented launcher or import the app by file path as demonstrated in the test suite.
+
+## Validation and tests
+
+```powershell
+.\.venv_round4\Scripts\python .\9.SCRIPTS\run_public_path_hotfix_tests.py
+.\.venv_round4\Scripts\python .\9.SCRIPTS\validate_public_submission.py
+```
+
+The latest public-path suite records 51 tests with 0 failures, 0 errors, and 0 skips. Tests cover feature contracts, temporal isolation, saved-pipeline parity, API/TestClient behavior, Streamlit AppTest behavior, recommendation self-exclusion, environment evidence, manifest integrity, and public-path sanitization.
+
+## Limitations
+
+- Overall R² remains modest and high-popularity tracks are underpredicted more strongly.
+- Time variables are influential, which increases temporal distribution-shift risk.
+- Post-2020 predictions are outside the stated product-support period.
+- KMeans separation is modest (best silhouette approximately 0.242).
+- Recommendation evidence does not include a human relevance study or complete title/artist metadata.
+- Final evidence is predictive and descriptive, not causal.
+
+## Final submission and evidence
+
+`FINAL_SUBMISSION/` is a sanitized public snapshot, not a standalone runtime bundle. It contains executed notebook snapshots, shared source, deployment code, tests, small evidence files, a final audit report, and a checksum manifest. Canonical raw execution evidence and large artifacts remain local for audit and reproducibility.

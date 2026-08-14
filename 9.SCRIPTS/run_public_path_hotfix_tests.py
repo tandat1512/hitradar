@@ -11,6 +11,8 @@ from pathlib import Path
 import sys
 import unittest
 
+from submission_sanitizer import sanitize_public_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 TEST_FILE = ROOT / "tests" / "test_feature_pipeline.py"
@@ -26,11 +28,15 @@ def main() -> int:
     suite = unittest.defaultTestLoader.loadTestsFromModule(module)
     stream = io.StringIO()
     result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
+    public_python_executable, _ = sanitize_public_text(
+        str(Path(sys.executable).resolve()),
+        project_root=ROOT,
+    )
     payload = {
         "executed_at_utc": datetime.now(timezone.utc).isoformat(),
         "scope": "full suite including public submission path sanitization",
         "python_version": platform.python_version(),
-        "python_executable": sys.executable,
+        "python_executable": public_python_executable,
         "test_file": TEST_FILE.relative_to(ROOT).as_posix(),
         "tests_run": result.testsRun,
         "failures": len(result.failures),

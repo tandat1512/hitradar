@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-14T06:57:10.893553+00:00",
+  "generated_at_utc": "2026-08-14T08:45:34.169468+00:00",
   "mode": "final",
   "package_type": "submission_evidence_snapshot",
   "standalone_runnable": false,
@@ -95,13 +95,13 @@
     },
     {
       "path": "evidence/public_evidence_sanitization.json",
-      "size_bytes": 4126,
-      "sha256": "53db6b93e6a780ae0f9493bc7dc318dc45fdec9efe79b2191eb527c900c9dbbb"
+      "size_bytes": 3980,
+      "sha256": "3c63ebe4abaa726443f5fefa1422033abfc5e4ad2e58820465475859d26e3b5c"
     },
     {
       "path": "evidence/public_path_hotfix_test_results.json",
       "size_bytes": 386,
-      "sha256": "a3c909c55b7ac4cbb8c416a925da680c31d30740e2d0c1ebd5883a276c18a546"
+      "sha256": "48941f83f1d72e843ec9e45174f4f9e52a3772c4b05412bebb386775dfad470d"
     },
     {
       "path": "evidence/recommendation_examples.csv",
@@ -171,12 +171,12 @@
     {
       "path": "FINAL_AUDIT_REPORT.md",
       "size_bytes": 5705,
-      "sha256": "7cce0a1bfa0c355b8dbf297562e27857f9006b4c5c733e6f34cddd699be36a35"
+      "sha256": "fb63d880615fff73d05b3caa62abcfd0e08bc3aac54da3e7e8903ab9efc3210a"
     },
     {
       "path": "GIT_EVIDENCE.md",
-      "size_bytes": 111828,
-      "sha256": "df2be2d110a547f6bff94996a0aa685fd2a72b6c5550c6adc1efe0101d800c5a"
+      "size_bytes": 69058,
+      "sha256": "258b8d9ceb214550edd066b8b177a6238909cc05f00529ccb418d575b48e9b3f"
     },
     {
       "path": "notebooks/05_feature_engineering.ipynb",
@@ -200,8 +200,8 @@
     },
     {
       "path": "scripts/generate_final_submission.py",
-      "size_bytes": 33522,
-      "sha256": "d7c2c19673b5bc557850498283a684a7f764340d58797215a2ebd6018b860aed"
+      "size_bytes": 33980,
+      "sha256": "86a476851a8fad4e4d0cb931ee23ee04402ec05133c4bb04e568bf84357b9282"
     },
     {
       "path": "scripts/generate_temporal_year_coverage.py",
@@ -215,8 +215,8 @@
     },
     {
       "path": "scripts/run_public_path_hotfix_tests.py",
-      "size_bytes": 1765,
-      "sha256": "ff2c8e53ce4f33b67a087539440cd9fb7305c31e3be1e7c525c7caf632803250"
+      "size_bytes": 1964,
+      "sha256": "c8c6ede89b3bc1f9ad47992f90a3df12d293bd9fec24460b565f08a634fbb0be"
     },
     {
       "path": "scripts/run_round4_tests.py",
@@ -260,8 +260,8 @@
     },
     {
       "path": "tests/test_feature_pipeline.py",
-      "size_bytes": 28058,
-      "sha256": "f6a5f19ebc56d6e33fed49688193d93c21bb1aeabf4578cf16756b25e096b84e"
+      "size_bytes": 28566,
+      "sha256": "bc534c75e87d9bceb5b923c3c7adeabb97356fe46afa431d348c838e31209032"
     }
   ]
 }

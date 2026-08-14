@@ -1,7 +1,7 @@
 """Deterministic public-path sanitization for the HitRadar submission snapshot.
 
-Canonical evidence remains untouched.  These helpers operate only on copies under
-``FINAL_SUBMISSION`` and report categories/counts without retaining matched values.
+These helpers sanitize public evidence and submission copies while reporting
+categories/counts without retaining matched values.
 """
 
 from __future__ import annotations

@@ -191,7 +191,17 @@ def collect_git_evidence() -> str:
     commands = [
         ["git", "status", "--short"], ["git", "branch", "--show-current"],
         ["git", "log", "--oneline", "--decorate", "-n", "20"],
-        ["git", "branch", "--list"], ["git", "remote", "-v"], ["git", "diff", "--", "."],
+        ["git", "branch", "--list"], ["git", "remote", "-v"],
+        [
+            "git", "diff", "--", ".",
+            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
+            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
+        ],
+        [
+            "git", "diff", "--cached", "--", ".",
+            ":(exclude)FINAL_SUBMISSION/GIT_EVIDENCE.md",
+            ":(exclude)FINAL_SUBMISSION/SUBMISSION_MANIFEST.json",
+        ],
     ]
     sections = ["# Git Evidence", "", "All output below was collected from the actual working tree."]
     for command in commands:
@@ -204,7 +214,9 @@ def collect_git_evidence() -> str:
             errors="replace",
             check=False,
         )
-        sections += ["", f"## `{' '.join(command)}`", "", "```text", completed.stdout or completed.stderr or "(no output)", "```"]
+        raw_output = completed.stdout or completed.stderr or "(no output)"
+        output = "\n".join(line.rstrip() for line in raw_output.splitlines())
+        sections += ["", f"## `{' '.join(command)}`", "", "```text", output, "```"]
     return "\n".join(sections) + "\n"
 
 
