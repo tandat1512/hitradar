@@ -9,7 +9,15 @@ import re
 import shutil
 from typing import Any
 
-from validate_public_repository import ROOT, TEXT_SUFFIXES, scan_path_text, scan_text, tracked_files
+from validate_public_repository import (
+    ROOT,
+    PATTERN_IMPLEMENTATION_FILES,
+    TEXT_SUFFIXES,
+    scan_path_text,
+    scan_text,
+    strip_ansi,
+    tracked_files,
+)
 
 
 PRIVATE_ROOT = ROOT / "scratch" / "private_evidence" / "pre_repository_sanitization"
@@ -46,6 +54,7 @@ def _portable_project_path(raw: str) -> str:
 
 
 def sanitize_string(text: str) -> str:
+    text = strip_ansi(text)
     root_variants = {str(ROOT), str(ROOT).replace("\\", "/")}
     for variant in sorted(root_variants, key=len, reverse=True):
         text = re.sub(re.escape(variant), "<PROJECT_ROOT>", text, flags=re.IGNORECASE)
@@ -119,6 +128,8 @@ def main() -> int:
     candidates = []
     for path in tracked_files():
         if path.suffix.lower() not in TEXT_SUFFIXES:
+            continue
+        if path.relative_to(ROOT).as_posix() in PATTERN_IMPLEMENTATION_FILES:
             continue
         text = scan_path_text(path)
         if scan_text(text):

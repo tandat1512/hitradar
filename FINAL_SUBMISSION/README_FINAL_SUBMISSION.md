@@ -26,6 +26,7 @@ The 2019+ horizon was not used for corrected Round-2 winner selection, but had b
 - KMeans separation is modest; recommendation has no human relevance study or fabricated artist/title metadata.
 - Git evidence is **verifiable**.
 - SHAP status: **not_added_optional_advanced_item**; it was not added because the inspected checklist labels it as an advanced, not mandatory, item.
+- PostgreSQL Notebook 02: **DOCUMENTED_LIMITATION**. It was not re-executed because PostgreSQL service/credentials were unavailable in the review environment. No current successful database execution is claimed; prior ingestion and validation evidence is retained.
 
 ## A. Run from the canonical repository root
 
@@ -48,7 +49,7 @@ $env:HITRADAR_KERNEL_NAME="hitradar-round4"
 
 ## B. Inspect the FINAL_SUBMISSION snapshot
 
-- `notebooks/`: canonical notebook snapshots (Notebook 06 is preserved, not retrained in Round 4).
+- `notebooks/`: canonical Notebook 02/05/06/07 snapshots. Notebook 02 is a clean not-re-executed snapshot; Notebook 06 is preserved and not retrained in Round 4.
 - `src/`: shared-source snapshot.
 - `deployment/`: API/schema/UI snapshot and the single current requirements file.
 - `evidence/`: feature, model, environment, temporal coverage, tests, checksums, and execution evidence.

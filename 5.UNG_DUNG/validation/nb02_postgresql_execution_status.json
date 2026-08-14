@@ -1,0 +1,14 @@
+{
+  "notebook": "3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb",
+  "final_hotfix_execution": "not_reexecuted",
+  "reason": "postgresql_unavailable_in_review_environment",
+  "successful_execution_claimed": false,
+  "saved_error_outputs": 0,
+  "hardcoded_password_fallback": false,
+  "credentials_required": [
+    "POSTGRES_PASSWORD",
+    "PGPASSWORD"
+  ],
+  "prior_postgresql_evidence_retained": true,
+  "status": "DOCUMENTED_LIMITATION"
+}

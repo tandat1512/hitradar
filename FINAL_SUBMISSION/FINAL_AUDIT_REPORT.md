@@ -76,17 +76,25 @@ Kernel: **hitradar-round4**; Python **3.12.13**.
 | 06_machine_learning.ipynb | 7 | 7 | 0 | PASS | preserved_round2_execution_not_retrained |
 | 07_ai_deployment.ipynb | 5 | 5 | 0 | PASS | executed_in_round4 |
 
-## M. Automated Tests
+## M. PostgreSQL Notebook 02 status
 
-Tests **62**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
+Historical PostgreSQL ingestion and validation evidence remains available. Notebook 02 was not re-executed in the final repository hotfix because PostgreSQL service/credentials were unavailable in the review environment.
 
-Public-path hotfix full suite: **62** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+The notebook contains no saved failure traceback, no hardcoded password fallback, and no current successful-execution claim. To reproduce it, configure the HitRadar PostgreSQL database and set `POSTGRES_PASSWORD` or `PGPASSWORD`.
 
-## N. Final Submission Semantics
+Status: **DOCUMENTED_LIMITATION / REPRODUCIBLE WHEN POSTGRESQL IS AVAILABLE**.
+
+## N. Automated Tests
+
+Tests **68**, failures **0**, errors **0**, skipped **0**, status **PASS**, Python **3.12.13**.
+
+Public-path hotfix full suite: **68** tests, failures **0**, errors **0**, skipped **0**, status **PASS**.
+
+## O. Final Submission Semantics
 
 `FINAL_SUBMISSION` is a **submission/evidence snapshot**, not standalone runnable. Canonical repository, data, and external models remain required. Manifest metadata states these semantics explicitly.
 
-## O. External Artifact Checksums
+## P. External Artifact Checksums
 
 | canonical_path | size_bytes | sha256 |
 |---|---|---|
@@ -100,22 +108,23 @@ Public-path hotfix full suite: **62** tests, failures **0**, errors **0**, skipp
 
 Production model unchanged from pre-Round-4 checksum: **True**.
 
-## P. Git Evidence
+## Q. Git Evidence
 
 Git evidence is **verifiable from real Git metadata**; unavailable evidence is not labeled PASS.
 
-## Q. SHAP Status
+## R. SHAP Status
 
 SHAP was not added because the readable checklist labels it as an advanced item, not an explicit mandatory requirement. Existing importance/error evidence is descriptive, not causal.
 
-## R. Evidence Path Sanitization
+## S. Evidence Path Sanitization
 
 Machine-specific absolute paths and local usernames are sanitized in the tracked repository and the public `FINAL_SUBMISSION` snapshot. Pre-sanitization raw evidence is retained only in ignored local storage under `scratch/private_evidence/`; it is excluded from the public package. Original and sanitized checksums are recorded for audit.
 
-## S. Remaining Limitations
+## T. Remaining Limitations
 
 - Model performance is modest and the high-popularity tail remains difficult.
 - Time variables are influential, increasing temporal-shift risk.
 - Post-2020 predictions are temporal extrapolations even when observed rows exist later.
 - KMeans silhouette is modest; recommendation has no human relevance study or title/artist metadata.
+- Notebook 02 was not re-executed because PostgreSQL was unavailable in the review environment; no current successful database execution is claimed.
 - Git history and PR evidence are verifiable from real Git metadata.

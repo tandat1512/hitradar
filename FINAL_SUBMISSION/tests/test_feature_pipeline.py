@@ -552,6 +552,90 @@ class FinalSubmissionTest(unittest.TestCase):
         )
 
 
+class FinalReviewGovernanceTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.nb02_path = ROOT / "3.NOTEBOOKS" / "3.2.postgresql" / "02_postgresql_pipeline.ipynb"
+        cls.nb02 = json.loads(cls.nb02_path.read_text(encoding="utf-8"))
+        cls.notebook_text = "\n".join(
+            "".join(cell.get("source", [])) for cell in cls.nb02["cells"]
+        )
+        validator_path = ROOT / "9.SCRIPTS" / "validate_public_repository.py"
+        spec = importlib.util.spec_from_file_location("final_review_path_validator", validator_path)
+        cls.validator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.validator)
+
+    def test_path_scanner_detects_ansi_and_json_escaped_windows_paths(self):
+        ansi_traceback = (
+            "\x1b[36mFile \x1b[39m\x1b[32m"
+            r"<ABSOLUTE_PATH> án 1 hitrada\.venv\Lib\site-packages\psycopg2\__init__.py"
+            "\x1b[39m"
+        )
+        escaped_json_path = r'<ABSOLUTE_PATH>'
+        self.assertIn("windows_absolute", self.validator.scan_text(ansi_traceback))
+        self.assertIn("windows_absolute", self.validator.scan_text(escaped_json_path))
+        self.assertEqual(self.validator.scan_text("<PROJECT_ROOT>/file.json"), {})
+
+    def test_nb02_is_clean_and_explicitly_unexecuted(self):
+        self.assertTrue(self.nb02_path.is_file())
+        code_cells = [cell for cell in self.nb02["cells"] if cell["cell_type"] == "code"]
+        self.assertTrue(code_cells)
+        self.assertTrue(all(cell.get("execution_count") is None for cell in code_cells))
+        self.assertEqual(sum(len(cell.get("outputs", [])) for cell in code_cells), 0)
+        self.assertFalse(any(
+            output.get("output_type") == "error"
+            for cell in code_cells for output in cell.get("outputs", [])
+        ))
+
+    def test_nb02_credentials_are_environment_only(self):
+        forbidden = (
+            r"POSTGRES_PASSWORD['\"]?\s*,\s*['\"]123456",
+            r"password\s*=\s*['\"]123456['\"]",
+        )
+        for pattern in forbidden:
+            self.assertNotRegex(self.notebook_text, pattern)
+        self.assertIn(
+            'os.getenv("POSTGRES_PASSWORD") or os.getenv("PGPASSWORD")',
+            self.notebook_text,
+        )
+        self.assertIn("password=password", self.notebook_text)
+
+    def test_nb02_status_wording_and_path_hygiene(self):
+        lowered = self.notebook_text.lower()
+        self.assertIn("not re-executed", lowered)
+        self.assertIn("no successful postgresql execution is claimed", lowered)
+        notebook_scan = self.validator.scan_text(self.validator.scan_path_text(self.nb02_path))
+        self.assertEqual(notebook_scan, {})
+
+    def test_nb02_status_evidence_is_truthful(self):
+        evidence = json.loads(
+            (ROOT / "5.UNG_DUNG" / "validation" / "nb02_postgresql_execution_status.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(evidence["final_hotfix_execution"], "not_reexecuted")
+        self.assertFalse(evidence["successful_execution_claimed"])
+        self.assertEqual(evidence["saved_error_outputs"], 0)
+        self.assertFalse(evidence["hardcoded_password_fallback"])
+        self.assertTrue(evidence["prior_postgresql_evidence_retained"])
+        self.assertEqual(evidence["status"], "DOCUMENTED_LIMITATION")
+
+    def test_shap_evidence_has_no_stale_zero_byte_docx_status(self):
+        evidence = json.loads(
+            (ROOT / "5.UNG_DUNG" / "validation" / "shap_requirement_status.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(evidence["decision"], "not_added_optional_advanced_item")
+        self.assertFalse(evidence["shap_added"])
+        docx_sources = [item for item in evidence["sources_inspected"] if item["path"].endswith(".docx")]
+        self.assertEqual(len(docx_sources), 4)
+        current_docx = [item for item in docx_sources if item["path"].startswith("6.TAI_LIEU/")]
+        self.assertEqual(len(current_docx), 3)
+        self.assertTrue(all(item["status"] == "valid_current_deliverable" for item in current_docx))
+        self.assertFalse(any("zero_byte" in item["status"] for item in current_docx))
+
+
 class FinalRepositoryHygieneTest(unittest.TestCase):
     @staticmethod
     def git_files() -> list[str]:

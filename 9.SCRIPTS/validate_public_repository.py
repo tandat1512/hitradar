@@ -22,9 +22,12 @@ TEXT_SUFFIXES = {
     ".py", ".toml", ".txt", ".yaml", ".yml",
 }
 SAFE_PLACEHOLDER = re.compile(r"<(?:PROJECT_ROOT|USER_HOME|LOCAL_USER_CACHE|USER_DOWNLOADS|TEMP_DIR)>")
+ANSI_ESCAPE_RE = re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])")
 SENSITIVE_PATTERNS = {
-    "windows_user_profile": re.compile(r"(?i)(?<![A-Za-z0-9_])[A-Z]:[\\/]+Users[\\/]+[^\\/\s]+"),
-    "windows_absolute": re.compile(r"(?i)(?<![A-Za-z0-9_])[A-Z]:[\\/]+(?![\\/])[^\s\"'<>|]+"),
+    "windows_user_profile": re.compile(r"(?i)(?<![A-Za-z0-9_])[a-z]:[\\/]+Users[\\/]+[^\\/\s]+"),
+    "windows_absolute": re.compile(
+        r"(?i)(?<![A-Za-z0-9_])[a-z]:[\\/]+(?![\\/])[^\r\n\"'<>|]+"
+    ),
     "unc_path": re.compile(r"(?<!\\)\\\\[^\\\s]+\\[^\\\s]+"),
     "unix_user_home": re.compile(r"(?i)(?:/home/[^/\s]+|/Users/[^/\s]+)(?=/|\s|$)"),
     "unix_temp": re.compile(r"(?i)(?:/tmp|/var/tmp|/mnt/data)(?=/|\s|$)"),
@@ -34,7 +37,14 @@ PATTERN_IMPLEMENTATION_FILES = {
     "9.SCRIPTS/sanitize_tracked_repository.py",
     "9.SCRIPTS/submission_sanitizer.py",
     "9.SCRIPTS/validate_public_repository.py",
+    "tests/test_feature_pipeline.py",
 }
+
+
+def strip_ansi(text: str) -> str:
+    """Remove terminal/Jupyter ANSI control sequences before path matching."""
+
+    return ANSI_ESCAPE_RE.sub("", text)
 
 
 def tracked_files(root: Path = ROOT) -> list[Path]:
@@ -51,7 +61,7 @@ def tracked_files(root: Path = ROOT) -> list[Path]:
 def scan_text(text: str) -> dict[str, int]:
     # Keep a neutral token so escaped separators on either side of a valid
     # placeholder cannot collapse into a false UNC path.
-    scrubbed = SAFE_PLACEHOLDER.sub("PORTABLE_PLACEHOLDER", text)
+    scrubbed = SAFE_PLACEHOLDER.sub("PORTABLE_PLACEHOLDER", strip_ansi(text))
     return {
         category: len(pattern.findall(scrubbed))
         for category, pattern in SENSITIVE_PATTERNS.items()
@@ -62,11 +72,11 @@ def scan_text(text: str) -> dict[str, int]:
 def scan_path_text(path: Path) -> str:
     raw = path.read_text(encoding="utf-8-sig", errors="replace")
     if path.suffix.lower() not in {".json", ".ipynb"}:
-        return raw
+        return strip_ansi(raw)
     try:
         payload = json.loads(raw)
     except json.JSONDecodeError:
-        return raw
+        return strip_ansi(raw)
     strings: list[str] = []
 
     def collect(value: object) -> None:
@@ -80,7 +90,7 @@ def scan_path_text(path: Path) -> str:
             strings.append(value)
 
     collect(payload)
-    return "\n".join(strings)
+    return strip_ansi("\n".join(strings))
 
 
 def scan_paths(paths: Iterable[Path], root: Path = ROOT) -> tuple[int, list[dict[str, object]]]:

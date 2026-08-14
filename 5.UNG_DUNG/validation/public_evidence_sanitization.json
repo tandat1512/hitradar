@@ -1,8 +1,15 @@
 {
   "policy": "Tracked evidence is sanitized; private raw originals are retained only under ignored local scratch/private_evidence and excluded from the public repository.",
-  "files_scanned": 51,
-  "files_sanitized": 0,
-  "sanitized_files": [],
+  "files_scanned": 53,
+  "files_sanitized": 1,
+  "sanitized_files": [
+    {
+      "file": "tests/test_feature_pipeline.py",
+      "replacement_counts": {
+        "other_absolute_paths": 2
+      }
+    }
+  ],
   "replacement_counts": {
     "project_root": 0,
     "python_executable": 0,
@@ -10,7 +17,7 @@
     "user_cache": 0,
     "downloads": 0,
     "temp": 0,
-    "other_absolute_paths": 0
+    "other_absolute_paths": 2
   },
   "tracked_evidence_sanitized": true,
   "private_raw_evidence_excluded": true,
@@ -45,7 +52,7 @@
     {
       "canonical_file": "5.UNG_DUNG/validation/round4_test_results.json",
       "private_raw_sha256": "161a88396c74a74a47cc85bf7c9916313f5575fba2540662f1da3ecb4f4b7ba9",
-      "tracked_sanitized_sha256": "9d691f73c9d4038b4b779bd752d5859ce6e665e93806143622833f50519e7b93",
+      "tracked_sanitized_sha256": "cc4dc29556c17902539abb5ebb2b54a0c049bf93d4a92ddaf534a8664351dbd7",
       "private_raw_copy_available_locally": true,
       "tracked_public_copy_sanitized": true,
       "unchanged_during_generation": true,

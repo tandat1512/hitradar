@@ -10,16 +10,19 @@
     },
     {
       "path": "6.TAI_LIEU/6.1.bao_cao/bao_cao_tong_hop.docx",
-      "status": "unverifiable_zero_byte_file"
+      "status": "valid_current_deliverable",
+      "evidence": "Non-zero readable DOCX container. It does not independently establish SHAP as a mandatory requirement."
     },
     {
       "path": "6.TAI_LIEU/6.1.bao_cao/phu_luc_ky_thuat.docx",
-      "status": "unverifiable_zero_byte_file"
+      "status": "valid_current_deliverable",
+      "evidence": "Non-zero readable DOCX container. It records SHAP as optional/advanced and does not change the existing decision."
     },
     {
       "path": "6.TAI_LIEU/6.1.bao_cao/huong_dan_su_dung.docx",
-      "status": "unverifiable_zero_byte_file"
+      "status": "valid_current_deliverable",
+      "evidence": "Non-zero readable DOCX container. It does not independently establish SHAP as a mandatory requirement."
     }
   ],
-  "interpretation_note": "A text match for Shape is not a SHAP requirement; the exact checklist phrase SHAP (nâng cao) was reviewed in context."
+  "interpretation_note": "A text match for Shape is not a SHAP requirement; the exact checklist phrase SHAP (nâng cao) was reviewed in context. Current DOCX deliverables are readable, but their restoration does not create a new mandatory SHAP requirement."
 }

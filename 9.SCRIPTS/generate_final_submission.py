@@ -134,6 +134,7 @@ def safe_reset_submission() -> None:
 
 
 COPY_MAP = {
+    "3.NOTEBOOKS/3.2.postgresql/02_postgresql_pipeline.ipynb": "notebooks/02_postgresql_pipeline.ipynb",
     "3.NOTEBOOKS/3.5.feature_engineering/05_feature_engineering.ipynb": "notebooks/05_feature_engineering.ipynb",
     "3.NOTEBOOKS/3.6.modeling/06_machine_learning.ipynb": "notebooks/06_machine_learning.ipynb",
     "3.NOTEBOOKS/3.7.demo/07_ai_deployment.ipynb": "notebooks/07_ai_deployment.ipynb",
@@ -170,6 +171,7 @@ COPY_MAP = {
     "5.UNG_DUNG/validation/round4_test_results.json": "evidence/round4_test_results.json",
     "5.UNG_DUNG/validation/round4_model_integrity.json": "evidence/round4_model_integrity.json",
     "5.UNG_DUNG/validation/shap_requirement_status.json": "evidence/shap_requirement_status.json",
+    "5.UNG_DUNG/validation/nb02_postgresql_execution_status.json": "evidence/nb02_postgresql_execution_status.json",
     "5.UNG_DUNG/validation/public_path_hotfix_test_results.json": "evidence/public_path_hotfix_test_results.json",
     "tests/test_feature_pipeline.py": "tests/test_feature_pipeline.py",
     "9.SCRIPTS/run_round4_tests.py": "scripts/run_round4_tests.py",
@@ -215,7 +217,7 @@ def collect_git_evidence() -> str:
     return "\n".join(sections) + "\n"
 
 
-def write_readme(final_metrics: dict, coverage: dict, integrity: dict, shap: dict) -> str:
+def write_readme(final_metrics: dict, coverage: dict, integrity: dict, shap: dict, nb02: dict) -> str:
     commands = "\n".join(CANONICAL_COMMANDS)
     late_year_rows = {
         year: rows for year, rows in coverage["rows_by_year"].items()
@@ -249,6 +251,7 @@ Main task: Spotify popularity regression. Secondary tasks: audio clustering and 
 - KMeans separation is modest; recommendation has no human relevance study or fabricated artist/title metadata.
 - Git evidence is **{'verifiable' if (ROOT / '.git').exists() else 'not verifiable in this workspace'}**.
 - SHAP status: **{shap['decision']}**; it was not added because the inspected checklist labels it as an advanced, not mandatory, item.
+- PostgreSQL Notebook 02: **{nb02['status']}**. It was not re-executed because PostgreSQL service/credentials were unavailable in the review environment. No current successful database execution is claimed; prior ingestion and validation evidence is retained.
 
 ## A. Run from the canonical repository root
 
@@ -260,7 +263,7 @@ These commands require the full repository, canonical `4.MODELS/` and `5.DATA/` 
 
 ## B. Inspect the FINAL_SUBMISSION snapshot
 
-- `notebooks/`: canonical notebook snapshots (Notebook 06 is preserved, not retrained in Round 4).
+- `notebooks/`: canonical Notebook 02/05/06/07 snapshots. Notebook 02 is a clean not-re-executed snapshot; Notebook 06 is preserved and not retrained in Round 4.
 - `src/`: shared-source snapshot.
 - `deployment/`: API/schema/UI snapshot and the single current requirements file.
 - `evidence/`: feature, model, environment, temporal coverage, tests, checksums, and execution evidence.
@@ -313,6 +316,7 @@ def main(final_mode: bool) -> None:
     e2e = load_json(VALIDATION_DIR / "round4_end_to_end_validation.json")
     integrity = load_json(VALIDATION_DIR / "round4_model_integrity.json")
     shap = load_json(VALIDATION_DIR / "shap_requirement_status.json")
+    nb02 = load_json(VALIDATION_DIR / "nb02_postgresql_execution_status.json")
     tests_path = VALIDATION_DIR / "round4_test_results.json"
     if not tests_path.exists():
         tests_path.write_text(json.dumps({
@@ -348,6 +352,10 @@ def main(final_mode: bool) -> None:
     assert e2e["streamlit"]["year_2020_warning_count"] == 0
     assert e2e["streamlit"]["year_2026_warning_count"] >= 1
     assert integrity["status"] == "PASS" and integrity["notebook_06_retrained"] is False
+    assert nb02["final_hotfix_execution"] == "not_reexecuted"
+    assert nb02["successful_execution_claimed"] is False
+    assert nb02["saved_error_outputs"] == 0
+    assert nb02["hardcoded_password_fallback"] is False
     if final_mode:
         assert tests["status"] == "PASS" and tests["skipped"] == 0
         assert tests["python_version"].startswith("3.12.")
@@ -395,7 +403,7 @@ def main(final_mode: bool) -> None:
     (SUBMISSION / "evidence" / "external_artifact_checksums.json").write_text(
         json.dumps(external, indent=2), encoding="utf-8"
     )
-    write_readme(final_metrics, coverage, integrity, shap)
+    write_readme(final_metrics, coverage, integrity, shap, nb02)
 
     late_rows = pd.DataFrame([
         {"Year": int(year), "Rows": rows}
@@ -476,40 +484,49 @@ Kernel: **{notebook_status['kernel_name']}**; Python **{notebook_status['python_
 
 {markdown_table(notebook_table, 0)}
 
-## M. Automated Tests
+## M. PostgreSQL Notebook 02 status
+
+Historical PostgreSQL ingestion and validation evidence remains available. Notebook 02 was not re-executed in the final repository hotfix because PostgreSQL service/credentials were unavailable in the review environment.
+
+The notebook contains no saved failure traceback, no hardcoded password fallback, and no current successful-execution claim. To reproduce it, configure the HitRadar PostgreSQL database and set `POSTGRES_PASSWORD` or `PGPASSWORD`.
+
+Status: **{nb02['status']} / REPRODUCIBLE WHEN POSTGRESQL IS AVAILABLE**.
+
+## N. Automated Tests
 
 Tests **{tests['tests_run']}**, failures **{tests['failures']}**, errors **{tests['errors']}**, skipped **{tests['skipped']}**, status **{tests['status']}**, Python **{tests['python_version']}**.
 
 Public-path hotfix full suite: **{hotfix_tests['tests_run']}** tests, failures **{hotfix_tests['failures']}**, errors **{hotfix_tests['errors']}**, skipped **{hotfix_tests['skipped']}**, status **{hotfix_tests['status']}**.
 
-## N. Final Submission Semantics
+## O. Final Submission Semantics
 
 `FINAL_SUBMISSION` is a **submission/evidence snapshot**, not standalone runnable. Canonical repository, data, and external models remain required. Manifest metadata states these semantics explicitly.
 
-## O. External Artifact Checksums
+## P. External Artifact Checksums
 
 {markdown_table(external_table, 0)}
 
 Production model unchanged from pre-Round-4 checksum: **{integrity['production_model']['unchanged']}**.
 
-## P. Git Evidence
+## Q. Git Evidence
 
 Git evidence is **{git_status}**; unavailable evidence is not labeled PASS.
 
-## Q. SHAP Status
+## R. SHAP Status
 
 SHAP was not added because the readable checklist labels it as an advanced item, not an explicit mandatory requirement. Existing importance/error evidence is descriptive, not causal.
 
-## R. Evidence Path Sanitization
+## S. Evidence Path Sanitization
 
 Machine-specific absolute paths and local usernames are sanitized in the tracked repository and the public `FINAL_SUBMISSION` snapshot. Pre-sanitization raw evidence is retained only in ignored local storage under `scratch/private_evidence/`; it is excluded from the public package. Original and sanitized checksums are recorded for audit.
 
-## S. Remaining Limitations
+## T. Remaining Limitations
 
 - Model performance is modest and the high-popularity tail remains difficult.
 - Time variables are influential, increasing temporal-shift risk.
 - Post-{coverage['product_support_end_year']} predictions are temporal extrapolations even when observed rows exist later.
 - KMeans silhouette is modest; recommendation has no human relevance study or title/artist metadata.
+- Notebook 02 was not re-executed because PostgreSQL was unavailable in the review environment; no current successful database execution is claimed.
 - Git history and PR evidence are {git_status}.
 """
     assert_clean_generated_markdown(report)

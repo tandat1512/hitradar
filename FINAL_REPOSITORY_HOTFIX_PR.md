@@ -7,6 +7,8 @@
 - Stops tracking large processed datasets and runtime model artifacts while preserving the local files and publishing relative-path SHA-256 checksums.
 - Restores the three project-management workbooks, three coursework Word documents, SQL-folder guidance, and retrospective notes with non-fabricated provenance labels.
 - Regenerates `FINAL_SUBMISSION` as a non-standalone evidence snapshot with manifest integrity, public/private evidence semantics, and current test evidence.
+- Leaves Notebook 02 in a clean, password-safe, explicitly not-re-executed state: the hardcoded password fallback and saved failure traceback are removed.
+- Hardens repository path detection for ANSI/Jupyter traceback strings, JSON-escaped Windows paths, mixed slashes, and lower-case drive letters; regression tests cover the former false negative.
 
 ## Locked artifacts
 
@@ -19,7 +21,7 @@ Notebook 06 was preserved and was not retrained. The production model and final 
 
 ## Validation
 
-- Full Python 3.12 suite: 62 tests, 0 failures, 0 errors, 0 skips.
+- Full Python 3.12 suite: 68 tests, 0 failures, 0 errors, 0 skips.
 - `FINAL_SUBMISSION` path scan: 51 text-like files scanned, 0 sensitive matches.
 - Current tracked repository path scan: PASS, 0 findings.
 - Submission manifest, model checksum, final-metrics checksum, and public/private evidence policy: PASS.
@@ -28,7 +30,9 @@ Notebook 06 was preserved and was not retrained. The production model and final 
 
 ## Explicit limitation
 
-Notebook 02 was not executed because PostgreSQL was unavailable in the local environment. This PR does not claim full Notebook 02/database validation and therefore does not claim complete external-audit readiness.
+Notebook 02 was intentionally left in a clean not-re-executed state because PostgreSQL was unavailable in the review environment. Historical PostgreSQL ingestion and validation evidence is retained. No successful Notebook 02 execution is claimed by this PR.
+
+The notebook now reads credentials only from `POSTGRES_PASSWORD` or `PGPASSWORD`; its hardcoded fallback and saved failure traceback were removed. The repository-wide path scanner was hardened and regression-tested against ANSI/Jupyter traceback paths.
 
 ## Package semantics
 

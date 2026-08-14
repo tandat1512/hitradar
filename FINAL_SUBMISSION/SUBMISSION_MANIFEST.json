@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-14T10:18:22.368783+00:00",
+  "generated_at_utc": "2026-08-14T10:50:00.611516+00:00",
   "mode": "final",
   "package_type": "submission_evidence_snapshot",
   "standalone_runnable": false,
@@ -8,7 +8,7 @@
   "public_path_sanitization": true,
   "tracked_evidence_sanitized": true,
   "private_raw_evidence_excluded": true,
-  "file_count_excluding_manifest": 50,
+  "file_count_excluding_manifest": 52,
   "requirements_files": [
     "deployment/requirements.txt"
   ],
@@ -95,14 +95,19 @@
       "sha256": "e111412d7cf3974fab6dcb8de0e8fe8d1bededdf3ab866386d4e53bc1e43e3c1"
     },
     {
+      "path": "evidence/nb02_postgresql_execution_status.json",
+      "size_bytes": 449,
+      "sha256": "f8f8d0240bf1c994ee80e5716a836b80aeec8ff9a4977a04b735d55c9e7e4ffc"
+    },
+    {
       "path": "evidence/public_evidence_sanitization.json",
-      "size_bytes": 3257,
-      "sha256": "ae3665d145773f57afe74f332566ade83fc905ab6dde479c40703a757ce28be0"
+      "size_bytes": 3399,
+      "sha256": "eca0b0d9162c206cb8ec4c2141b046c679c1a97216af62ed7b9b9c2fa0b52230"
     },
     {
       "path": "evidence/public_path_hotfix_test_results.json",
       "size_bytes": 386,
-      "sha256": "e57a4e928f9bb3dd3e10b2e33ffd1634ac9fa76fc5e53f9a05a58990f7226c83"
+      "sha256": "e88fb1742a553c95dfb42a1532df58f1b56b08957ef902f2b8849bf41410a3d7"
     },
     {
       "path": "evidence/recommendation_examples.csv",
@@ -142,7 +147,7 @@
     {
       "path": "evidence/round4_test_results.json",
       "size_bytes": 312,
-      "sha256": "9d691f73c9d4038b4b779bd752d5859ce6e665e93806143622833f50519e7b93"
+      "sha256": "cc4dc29556c17902539abb5ebb2b54a0c049bf93d4a92ddaf534a8664351dbd7"
     },
     {
       "path": "evidence/selection_winner_lock.json",
@@ -151,8 +156,8 @@
     },
     {
       "path": "evidence/shap_requirement_status.json",
-      "size_bytes": 1199,
-      "sha256": "adbad50e8f72327e635423c2389b09c09d8793d8bd92cdc800ff24153447e5c9"
+      "size_bytes": 1675,
+      "sha256": "6f5ef3082e30db8ccada006847ecfeb106e801d86a76dcf6030874839c3f98bd"
     },
     {
       "path": "evidence/temporal_year_coverage.json",
@@ -171,13 +176,18 @@
     },
     {
       "path": "FINAL_AUDIT_REPORT.md",
-      "size_bytes": 6018,
-      "sha256": "f2164ea42d5f2fb24bd542c10e22667d1754d0a0710386ddf965d1fc95f2816b"
+      "size_bytes": 6746,
+      "sha256": "26daf2bd13916ae06c89f23b5c2de992bb6da82026ab99c7bcca051b2611df0d"
     },
     {
       "path": "GIT_EVIDENCE.md",
-      "size_bytes": 5488,
-      "sha256": "021e69669306d4b8098fba8327db3a833b0260b8e7da6de6c7d589edb874dfe4"
+      "size_bytes": 6680,
+      "sha256": "0c65987646e90ca923d1d0c1475bfb2ea35be6795f81f5a0ca1e8f884bc67d3b"
+    },
+    {
+      "path": "notebooks/02_postgresql_pipeline.ipynb",
+      "size_bytes": 12804,
+      "sha256": "7f23d01c9db53ec8fe67992394046514210add9b0b321e3835244e8d06b204a7"
     },
     {
       "path": "notebooks/05_feature_engineering.ipynb",
@@ -196,13 +206,13 @@
     },
     {
       "path": "README_FINAL_SUBMISSION.md",
-      "size_bytes": 4177,
-      "sha256": "90ab259d60183166bbf980ad4190933dc350efc0202446e22dc7776fc5e3389d"
+      "size_bytes": 4506,
+      "sha256": "67aaecec725e57e82bdab866fec68c268dd11c2380726d6bfbff5704a0580816"
     },
     {
       "path": "scripts/generate_final_submission.py",
-      "size_bytes": 36055,
-      "sha256": "e8e136ddd2668de7730f333a478566fc79bdd89d63682b14d9dd20ae1fa12649"
+      "size_bytes": 37611,
+      "sha256": "163354dbfc9463743fa25a79379bdcf4d32b355dc25ca8f434d234bf533b6d59"
     },
     {
       "path": "scripts/generate_temporal_year_coverage.py",
@@ -261,8 +271,8 @@
     },
     {
       "path": "tests/test_feature_pipeline.py",
-      "size_bytes": 35105,
-      "sha256": "adbbcf2dc3eaebb85ef562d83865ded200704d4e6d39076665e92f0dd00e3343"
+      "size_bytes": 39543,
+      "sha256": "22fdea71159939d907d5ed4914e45b6d8660ec5e02f89b6c69bfdb47c35c41c9"
     }
   ]
 }
