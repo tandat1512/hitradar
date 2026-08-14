@@ -6,7 +6,7 @@
     {
       "file": "evidence/public_path_hotfix_test_results.json",
       "replacement_counts": {
-        "project_root": 1
+        "other_absolute_paths": 1
       }
     },
     {
@@ -53,7 +53,7 @@
         "project_root": 94,
         "user_cache": 3,
         "downloads": 1,
-        "other_absolute_paths": 20
+        "other_absolute_paths": 25
       }
     },
     {
@@ -77,13 +77,13 @@
     }
   ],
   "replacement_counts": {
-    "project_root": 199,
+    "project_root": 198,
     "python_executable": 0,
     "user_home": 0,
     "user_cache": 6,
     "downloads": 2,
     "temp": 0,
-    "other_absolute_paths": 30
+    "other_absolute_paths": 36
   },
   "raw_canonical_files_modified": false,
   "raw_canonical_checksums": [

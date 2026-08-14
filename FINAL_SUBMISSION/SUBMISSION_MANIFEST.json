@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-14T06:57:10.893553+00:00",
+  "generated_at_utc": "2026-08-14T08:09:55.362478+00:00",
   "mode": "final",
   "package_type": "submission_evidence_snapshot",
   "standalone_runnable": false,
@@ -95,13 +95,13 @@
     },
     {
       "path": "evidence/public_evidence_sanitization.json",
-      "size_bytes": 4126,
-      "sha256": "53db6b93e6a780ae0f9493bc7dc318dc45fdec9efe79b2191eb527c900c9dbbb"
+      "size_bytes": 4134,
+      "sha256": "2ecfa01e79bc287932b9c380a3fd2d431688eb1bf9f119e7482afc82f4928105"
     },
     {
       "path": "evidence/public_path_hotfix_test_results.json",
-      "size_bytes": 386,
-      "sha256": "a3c909c55b7ac4cbb8c416a925da680c31d30740e2d0c1ebd5883a276c18a546"
+      "size_bytes": 352,
+      "sha256": "4d0c536e03c0dcd1cbd3560a7fe8be3d5d2671614dc53650b4c1d390de0a2f49"
     },
     {
       "path": "evidence/recommendation_examples.csv",
@@ -175,8 +175,8 @@
     },
     {
       "path": "GIT_EVIDENCE.md",
-      "size_bytes": 111828,
-      "sha256": "df2be2d110a547f6bff94996a0aa685fd2a72b6c5550c6adc1efe0101d800c5a"
+      "size_bytes": 73942,
+      "sha256": "98f2d1d6ac6c4a9c29b42dea5357fc13c1388e5ac94c71d7c03f35376530da4e"
     },
     {
       "path": "notebooks/05_feature_engineering.ipynb",
@@ -200,8 +200,8 @@
     },
     {
       "path": "scripts/generate_final_submission.py",
-      "size_bytes": 33522,
-      "sha256": "d7c2c19673b5bc557850498283a684a7f764340d58797215a2ebd6018b860aed"
+      "size_bytes": 33980,
+      "sha256": "86a476851a8fad4e4d0cb931ee23ee04402ec05133c4bb04e568bf84357b9282"
     },
     {
       "path": "scripts/generate_temporal_year_coverage.py",

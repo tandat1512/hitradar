@@ -32,6 +32,7 @@ build/
 # Virtual environments
 # ============================================================
 .venv/
+.venv*/
 venv/
 env/
 ENV/
@@ -58,6 +59,7 @@ scratch/ipython/
 4.MODELS/hitradar_secondary/*.joblib
 4.MODELS/hitradar_secondary/*.parquet
 5.DATA/processed/features_engineered.parquet
+5.DATA/processed/*.parquet
 4.MODELS/4.2.evaluation/*test_predictions*.parquet
 
 # ============================================================
@@ -81,6 +83,11 @@ desktop.ini
 .idea/
 *.suo
 *.user
+
+# Local validation cache / temporary sync files
+.cache/
+.tmp/
+*.tmp
 
 # ============================================================
 # Feature 2.1 — Split ID files (large, regeneratable)
