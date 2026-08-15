@@ -384,7 +384,11 @@ function renderMeta(container, rows) {
 /* ============================================================
    RADIAL DONUT GAUGE CHART (180° FLAT HORIZONTAL BASELINE)
    ============================================================ */
-function drawRadialGauge(score = 0) {
+let isGaugeScanning = false;
+let gaugeScanAngle = Math.PI;
+let gaugeScanRaf = null;
+
+function drawRadialGauge(score = 0, isScanning = false) {
   const canvas = document.querySelector("#gaugeCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
@@ -425,6 +429,24 @@ function drawRadialGauge(score = 0) {
     ctx.fillText(`${tickVal}`, tx, ty);
   });
 
+  if (isScanning) {
+    // Sonar radar sweep animation
+    const sweepArc = 0.55;
+    const sweepStart = gaugeScanAngle - sweepArc;
+    const grad = ctx.createLinearGradient(0, centerY, width, centerY);
+    grad.addColorStop(0, "rgba(37, 99, 235, 0.1)");
+    grad.addColorStop(0.5, "#2563eb");
+    grad.addColorStop(1, "#38bdf8");
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, Math.max(startAngle, sweepStart), Math.min(endAngle, gaugeScanAngle));
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = lineWidth + 2;
+    ctx.lineCap = "round";
+    ctx.stroke();
+    return;
+  }
+
   // 2. Active Progress Colored Arc
   if (score > 0) {
     const clampedScore = Math.max(0, Math.min(100, score));
@@ -442,6 +464,24 @@ function drawRadialGauge(score = 0) {
     ctx.lineCap = "round";
     ctx.stroke();
   }
+}
+
+function startGaugeScanning() {
+  isGaugeScanning = true;
+  gaugeScanAngle = Math.PI;
+  function scanLoop() {
+    if (!isGaugeScanning) return;
+    gaugeScanAngle += 0.06;
+    if (gaugeScanAngle > Math.PI * 2 + 0.5) gaugeScanAngle = Math.PI;
+    drawRadialGauge(0, true);
+    gaugeScanRaf = requestAnimationFrame(scanLoop);
+  }
+  scanLoop();
+}
+
+function stopGaugeScanning() {
+  isGaugeScanning = false;
+  if (gaugeScanRaf) cancelAnimationFrame(gaugeScanRaf);
 }
 
 // Cập nhật điểm số, Radial Gauge & Phân hạng
@@ -504,6 +544,13 @@ function updateRangeOutputs(root = document) {
         output.value = input.step === "1" ? input.value : Number(input.value).toFixed(2);
       }
     }
+
+    // Dynamic 2-color track progress
+    const min = Number(input.min) || 0;
+    const max = Number(input.max) || 1;
+    const val = Number(input.value);
+    const pct = ((val - min) / (max - min)) * 100;
+    input.style.background = `linear-gradient(to right, #2563eb 0%, #2563eb ${pct}%, #e2e8f0 ${pct}%, #e2e8f0 100%)`;
   });
 }
 
@@ -685,18 +732,33 @@ document.querySelector("#loadDemoTrack")?.addEventListener("click", () => {
   showToast("Đã nạp Spotify Track ID mẫu.");
 });
 
-// Xử lý gửi Form Dự đoán
+// Xử lý gửi Form Dự đoán với Radar Sweep và Loading State
 document.querySelector("#predictForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const button = event.submitter || document.querySelector("#predictSubmitBtn");
-  setBusy(button, true, "Đang tính toán mô hình...");
+  button.disabled = true;
+  button.innerHTML = '<span class="btn-spinner"></span> Đang phân tích dữ liệu âm học...';
+
+  const scoreValue = document.querySelector("#scoreValue");
+  if (scoreValue) scoreValue.textContent = "--";
+  const tierBadge = document.querySelector("#tierLabel");
+  if (tierBadge) {
+    tierBadge.className = "tier-badge";
+    tierBadge.textContent = "ĐANG TÍNH TOÁN...";
+  }
+
+  startGaugeScanning();
 
   try {
-    const result = await requestJson("/predict", {
-      method: "POST",
-      body: JSON.stringify(predictionPayload(event.currentTarget)),
-    });
+    const [result] = await Promise.all([
+      requestJson("/predict", {
+        method: "POST",
+        body: JSON.stringify(predictionPayload(event.currentTarget)),
+      }),
+      new Promise((resolve) => setTimeout(resolve, 600)),
+    ]);
 
+    stopGaugeScanning();
     animateScore(result.predicted_popularity);
     updateTierBadge(result.popularity_tier);
 
@@ -720,9 +782,12 @@ document.querySelector("#predictForm")?.addEventListener("submit", async (event)
     drawBenchmarkRadar();
     showToast(`Dự đoán hoàn tất: ${Number(result.predicted_popularity).toFixed(1)} / 100 điểm`);
   } catch (error) {
+    stopGaugeScanning();
+    drawRadialGauge(0);
     showToast(`Dự đoán thất bại: ${error.message}`, false);
   } finally {
-    setBusy(button, false);
+    button.disabled = false;
+    button.innerHTML = '<span class="btn-icon">⚡</span><span>Chạy Suy Luận Mô Hình XGBoost</span>';
   }
 });
 
@@ -804,6 +869,8 @@ document.querySelector("#recommendForm")?.addEventListener("submit", async (even
 /* ============================================================
    1. FEATURE ATTRIBUTION WATERFALL CHART (CLEAN & FLOATING)
    ============================================================ */
+let hoveredWaterfallIndex = -1;
+
 function drawWaterfallChart() {
   const canvas = document.querySelector("#waterfallCanvas");
   if (!canvas) return;
@@ -855,17 +922,22 @@ function drawWaterfallChart() {
   features.forEach((feat, i) => {
     const y = paddingTop + i * rowHeight + rowHeight / 2;
     const barWidth = (Math.abs(feat.val) / maxVal) * ((width - paddingLeft - paddingRight) / 2 - 20);
+    const isHovered = i === hoveredWaterfallIndex;
 
     // Label
-    ctx.fillStyle = "#475569";
-    ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
+    ctx.fillStyle = isHovered ? "#1e40af" : "#475569";
+    ctx.font = isHovered ? "800 11px 'Plus Jakarta Sans', sans-serif" : "600 11px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "right";
     ctx.textBaseline = "middle";
     ctx.fillText(feat.name, paddingLeft - 10, y);
 
     // Bar
     const isPositive = feat.val >= 0;
-    ctx.fillStyle = isPositive ? "#2563eb" : "#d97706";
+    if (isHovered) {
+      ctx.fillStyle = isPositive ? "#1d4ed8" : "#b45309";
+    } else {
+      ctx.fillStyle = isPositive ? "#2563eb" : "#d97706";
+    }
 
     const barX = isPositive ? centerX : centerX - barWidth;
     ctx.beginPath();
@@ -878,6 +950,75 @@ function drawWaterfallChart() {
     ctx.textAlign = isPositive ? "left" : "right";
     const textX = isPositive ? centerX + barWidth + 6 : centerX - barWidth - 6;
     ctx.fillText((isPositive ? "+" : "") + feat.val.toFixed(1), textX, y);
+  });
+}
+
+// Hover Event for Waterfall Canvas
+const waterfallCanvas = document.querySelector("#waterfallCanvas");
+const waterfallTooltip = document.querySelector("#waterfallTooltip");
+
+if (waterfallCanvas) {
+  waterfallCanvas.addEventListener("mousemove", (e) => {
+    const rect = waterfallCanvas.getBoundingClientRect();
+    const scaleY = waterfallCanvas.height / rect.height;
+    const mouseY = (e.clientY - rect.top) * scaleY;
+    
+    const paddingTop = 12;
+    const paddingBottom = 12;
+    const rowHeight = (waterfallCanvas.height - paddingTop - paddingBottom) / 6;
+    const idx = Math.floor((mouseY - paddingTop) / rowHeight);
+
+    if (idx >= 0 && idx < 6) {
+      if (idx !== hoveredWaterfallIndex) {
+        hoveredWaterfallIndex = idx;
+        drawWaterfallChart();
+      }
+
+      if (waterfallTooltip) {
+        const form = document.querySelector("#predictForm");
+        const year = Number(form.elements.release_year.value) || 2020;
+        const dance = Number(form.elements.danceability.value) || 0.76;
+        const energy = Number(form.elements.energy.value) || 0.72;
+        const loudness = Number(form.elements.loudness.value) || -5.5;
+        const acoustic = Number(form.elements.acousticness.value) || 0.12;
+        const explicit = form.elements.explicit ? form.elements.explicit.checked : false;
+
+        const tooltipsInfo = [
+          { label: "Decade / Year", val: (year - 2000) * 0.68, desc: year >= 2000 ? "Phát hành giai đoạn hiện đại đóng góp điểm tích cực" : "Giai đoạn lịch sử có trọng số phân phối riêng" },
+          { label: "Danceability", val: (dance - 0.5) * 22.0, desc: dance >= 0.6 ? "Độ bắt tai cao là yếu tố then chốt gia tăng điểm phổ biến" : "Độ bắt tai thấp làm giảm khả năng viral vũ đạo" },
+          { label: "Energy", val: (energy - 0.5) * 16.0, desc: energy >= 0.65 ? "Mức năng lượng mạnh mẽ thúc đẩy chỉ số kích thích người nghe" : "Năng lượng nhẹ nhàng phù hợp không gian thư giãn" },
+          { label: "Loudness", val: (loudness + 10) * 0.5, desc: loudness >= -8 ? "Cường độ âm thanh chuẩn hóa mang lại cảm giác hiện đại" : "Độ lớn âm thanh dịu nhẹ" },
+          { label: "Acousticness", val: -(acoustic - 0.3) * 12.0, desc: acoustic <= 0.3 ? "Tỷ lệ mộc thấp phù hợp thị hiếu nhạc số đại chúng" : "Độ mộc cao có xu hướng kén người nghe trên BXH thương mại" },
+          { label: "Explicit Flag", val: explicit ? 3.8 : 0, desc: explicit ? "Gắn nhãn Explicit tăng mức độ thảo luận trên playlist" : "Bản thu chuẩn mực không chứa yếu tố nhạy cảm" }
+        ];
+
+        const item = tooltipsInfo[idx];
+        const isPos = item.val >= 0;
+        waterfallTooltip.innerHTML = `
+          <div style="font-weight: 800; color: ${isPos ? '#93c5fd' : '#fcd34d'}; font-family: var(--font-mono);">
+            ${item.label} (${isPos ? '+' : ''}${item.val.toFixed(1)} ΔScore)
+          </div>
+          <div style="font-size: 0.72rem; color: #cbd5e1; margin-top: 3px;">
+            ${item.desc}
+          </div>
+        `;
+        waterfallTooltip.classList.add("is-visible");
+        const tooltipX = Math.min(rect.width - 240, Math.max(10, e.clientX - rect.left - 100));
+        const tooltipY = Math.max(10, e.clientY - rect.top - 60);
+        waterfallTooltip.style.left = `${tooltipX}px`;
+        waterfallTooltip.style.top = `${tooltipY}px`;
+      }
+    } else {
+      hoveredWaterfallIndex = -1;
+      drawWaterfallChart();
+      if (waterfallTooltip) waterfallTooltip.classList.remove("is-visible");
+    }
+  });
+
+  waterfallCanvas.addEventListener("mouseleave", () => {
+    hoveredWaterfallIndex = -1;
+    drawWaterfallChart();
+    if (waterfallTooltip) waterfallTooltip.classList.remove("is-visible");
   });
 }
 
