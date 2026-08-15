@@ -986,18 +986,23 @@ body {
   display: block;
 }
 
-/* 100% Perfectly Centered Inside the Arc Dome */
+/* Score Overlay - Geometry:
+   Canvas 240x135, centerY=125, radius=86, lineWidth=12
+   Arc top outer edge = 125-86+6 = 45px  →  safe zone starts at ~50px
+   Available height inside dome = 125-45 = 80px
+   font 2.4rem ≈ 38px + subscript 12px + gap 4px = 54px total
+   Start at top=53px → center of 80px zone = 53+(80-54)/2 ≈ 53+13 = 66px midpoint ✓ */
 .gauge-score-overlay {
   position: absolute;
-  top: 48px;
+  top: 52px;
+  bottom: 14px;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1px;
-  line-height: 1;
+  gap: 2px;
   pointer-events: none;
 }
 
@@ -1009,25 +1014,25 @@ body {
 }
 
 .score-main-value {
-  font-size: 2.9rem;
+  font-size: 2.4rem;
   font-weight: 900;
   font-family: var(--font-sans);
   color: var(--brand-primary);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   line-height: 1;
   transition: color 0.3s ease;
 }
 
 .score-max-anchor {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 700;
   font-family: var(--font-mono);
   color: var(--text-muted);
-  opacity: 0.7;
-  letter-spacing: 0;
+  opacity: 0.65;
+  letter-spacing: 0.2px;
   text-align: center;
-  margin-top: 2px;
+  text-transform: uppercase;
 }
 
 /* Placed safely below the gauge canvas (ABSOLUTELY ZERO OVERLAP) */
