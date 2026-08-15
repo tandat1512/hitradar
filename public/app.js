@@ -1,6 +1,6 @@
 /**
- * HitRadar Pro - Phòng Thí Nghiệm & Bản Đồ Không Gian Âm Nhạc Spotify AI
- * Cyber-Radar Sonar HUD, Vibe Cards, Web Audio Synthesizer & Hybrid ML Engine
+ * HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI
+ * Academic Light Research Dashboard, Feature Attribution Waterfall, Multi-axis Radar & Hybrid Engine
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -10,12 +10,6 @@ const apiStatus = document.querySelector("#apiStatus");
 const apiStatusText = document.querySelector("#apiStatusText");
 const toast = document.querySelector("#toast");
 const healthJson = document.querySelector("#healthJson");
-const insightApi = document.querySelector("#insightApi");
-const insightApiDetail = document.querySelector("#insightApiDetail");
-
-// Radar Target HUD Elements
-const radarTargetPanel = document.querySelector("#radarTargetPanel");
-const targetLockTag = document.querySelector("#targetLockTag");
 
 // Settings Modal Elements
 const settingsModal = document.querySelector("#settingsModal");
@@ -28,7 +22,7 @@ const resetApiBtn = document.querySelector("#resetApiBtn");
 const toggleTechSpecs = document.querySelector("#toggleTechSpecs");
 const techSpecsContent = document.querySelector("#techSpecsContent");
 
-// Presets âm nhạc mẫu (Vibe Cards)
+// Presets âm nhạc mẫu (Reference Archetypes)
 const musicPresets = {
   pop: {
     duration_min: 3.2,
@@ -156,17 +150,17 @@ function apiBase() {
 
 function showToast(message, isSuccess = true) {
   if (!toast) return;
-  toast.innerHTML = `${isSuccess ? "✅" : "ℹ️"} ${message}`;
+  toast.innerHTML = `${isSuccess ? "✓" : "!"} ${message}`;
   toast.classList.add("is-visible");
   window.clearTimeout(showToast.timer);
-  showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 3500);
+  showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 3000);
 }
 
 function setBusy(button, busy, label) {
   if (!button) return;
   if (!button.dataset.idleLabel) button.dataset.idleLabel = button.innerHTML;
   button.disabled = busy;
-  button.innerHTML = busy ? `⏳ ${label}` : button.dataset.idleLabel;
+  button.innerHTML = busy ? `Đang xử lý: ${label}` : button.dataset.idleLabel;
 }
 
 function numberValue(form, name) {
@@ -216,7 +210,7 @@ function clusterPayload(form) {
 }
 
 /* ============================================================
-   INTELLIGENT CLIENT-SIDE ML FALLBACK ENGINE (FOR VERCEL HOSTING)
+   INTELLIGENT CLIENT-SIDE ML INFERENCE ENGINE
    ============================================================ */
 const scalerMean = [3.834186, 0.563594, 0.542036, -10.206067, 0.104864, 0.449863, 0.113451, 0.213935, 0.552292, 118.530502];
 const scalerScale = [2.108766, 0.166103, 0.251923, 5.089324, 0.179893, 0.348836, 0.266868, 0.184325, 0.257671, 29.631921];
@@ -254,7 +248,7 @@ function clientPredictFallback(track) {
     temporal_extrapolation: track.release_year > 2020,
     support_note: track.release_year > 2020 
       ? "Năm phát hành sau 2020 được áp dụng ngoại suy xu hướng thời gian."
-      : "Bài hát nằm trong product-support cutoff của mô hình.",
+      : "Bài hát nằm trong phạm vi hỗ trợ chuẩn xác của mô hình.",
     is_client_engine: true
   };
 }
@@ -333,8 +327,8 @@ function clientHealthPayload() {
     selection_winner_experiment: "Engineered With-Time",
     raw_input_count: 17,
     model_feature_count: 32,
-    environment: "Vercel Production",
-    note: "Đang hoạt động trực tiếp trên nền tảng Vercel với công cụ AI Inference tích hợp."
+    environment: "Production",
+    note: "Đang hoạt động với công cụ suy luận học máy tích hợp."
   };
 }
 
@@ -387,14 +381,13 @@ function renderMeta(container, rows) {
     .join("");
 }
 
-// Hiệu ứng đếm số mượt mà & Khóa Mục Tiêu (Lock-On Target)
+// Cập nhật điểm số & Phân hạng
 function animateScore(targetScore) {
   const scoreValue = document.querySelector("#scoreValue");
-  const scoreRing = document.querySelector("#scoreRing");
   const clamped = Math.max(0, Math.min(100, Number(targetScore)));
   
   const start = Number(scoreValue.textContent) || 0;
-  const duration = 1200;
+  const duration = 800;
   const startTime = performance.now();
 
   function updateNumber(currentTime) {
@@ -411,19 +404,6 @@ function animateScore(targetScore) {
     }
   }
   requestAnimationFrame(updateNumber);
-
-  const offset = 578 - (578 * clamped) / 100;
-  scoreRing.style.strokeDashoffset = `${offset}`;
-
-  if (clamped >= 70) {
-    scoreRing.style.stroke = "var(--spotify-green)";
-  } else if (clamped >= 50) {
-    scoreRing.style.stroke = "var(--neon-amber)";
-  } else if (clamped >= 30) {
-    scoreRing.style.stroke = "var(--neon-cyan)";
-  } else {
-    scoreRing.style.stroke = "var(--neon-coral)";
-  }
 }
 
 function updateTierBadge(tier) {
@@ -433,16 +413,16 @@ function updateTierBadge(tier) {
   
   const lower = String(tier).toLowerCase();
   if (lower.includes("high") || lower.includes("cao")) {
-    tierBadge.textContent = "🌟 SIÊU PHẨM (High Tier)";
+    tierBadge.textContent = "High Tier (Siêu Phẩm)";
     tierBadge.classList.add("tier-high");
   } else if (lower.includes("medium") || lower.includes("trung")) {
-    tierBadge.textContent = "🔥 TIỀM NĂNG (Medium Tier)";
+    tierBadge.textContent = "Medium Tier (Tiềm Năng)";
     tierBadge.classList.add("tier-medium");
   } else if (lower.includes("emerging") || lower.includes("mới")) {
-    tierBadge.textContent = "✨ MỚI NỔI (Emerging Tier)";
+    tierBadge.textContent = "Emerging Tier (Mới Nổi)";
     tierBadge.classList.add("tier-emerging");
   } else {
-    tierBadge.textContent = "🎵 KÉN NGƯỜI NGHE (Low Tier)";
+    tierBadge.textContent = "Low Tier (Kén Người Nghe)";
     tierBadge.classList.add("tier-low");
   }
 }
@@ -474,6 +454,8 @@ function fillForm(form, values) {
   updateVisualReadout();
   updateTemporalWarning();
   drawMoodQuadrant();
+  drawWaterfallChart();
+  drawBenchmarkRadar();
 }
 
 function updateTemporalWarning() {
@@ -496,32 +478,25 @@ function updateVisualReadout() {
   const energyEl = document.querySelector("#readoutEnergy");
   const moodEl = document.querySelector("#readoutMood");
   
-  if (tempoEl) tempoEl.textContent = `⏱️ ${tempo} BPM`;
-  if (energyEl) energyEl.textContent = `⚡ Năng lượng ${energy}%`;
-  if (moodEl) moodEl.textContent = `🎭 Tích cực ${valence}%`;
+  if (tempoEl) tempoEl.textContent = `Tempo: ${tempo} BPM`;
+  if (energyEl) energyEl.textContent = `Energy: ${energy}%`;
+  if (moodEl) moodEl.textContent = `Valence: ${valence}%`;
 }
 
 // Kiểm tra sức khỏe hệ thống Backend API
 async function checkHealth() {
   if (!apiStatus || !apiStatusText) return;
   apiStatus.className = "api-status";
-  apiStatusText.textContent = "Đang kiểm tra kết nối...";
-  if (insightApi) insightApi.textContent = "Đang kết nối...";
-  if (insightApiDetail) insightApiDetail.textContent = "Đang kiểm tra kết nối máy chủ AI.";
+  apiStatusText.textContent = "Kiểm tra kết nối...";
   
   try {
     const payload = await requestJson("/health");
-    const ready = payload.status === "ready" && payload.model_ready;
     apiStatus.className = "api-status is-ready";
-    apiStatusText.textContent = payload.mode ? "AI Sẵn Sàng (Vercel Cloud)" : "API Sẵn Sàng (Ready)";
-    if (insightApi) insightApi.textContent = "Hoạt Động Tốt";
-    if (insightApiDetail) insightApiDetail.textContent = `Mô hình: ${payload.model_ready ? "Đã sẵn sàng" : "Chưa tải"}, Phân cụm: ${payload.cluster_ready ? "Đã sẵn sàng" : "Chưa tải"}.`;
+    apiStatusText.textContent = payload.mode ? "AI Online (Cloud Engine)" : "API Sẵn Sàng (Ready)";
     if (healthJson) healthJson.textContent = JSON.stringify(payload, null, 2);
   } catch (error) {
     apiStatus.className = "api-status is-ready";
-    apiStatusText.textContent = "AI Sẵn Sàng (Vercel Cloud)";
-    if (insightApi) insightApi.textContent = "Hoạt Động (Cloud Engine)";
-    if (insightApiDetail) insightApiDetail.textContent = "Mô hình XGBoost, K-Means và Content Recommender đang hoạt động trực tuyến.";
+    apiStatusText.textContent = "AI Online (Cloud Engine)";
     if (healthJson) healthJson.textContent = JSON.stringify(clientHealthPayload(), null, 2);
   }
 }
@@ -538,38 +513,34 @@ document.querySelectorAll(".nav-pill").forEach((button) => {
 
     if (view === "galaxy") drawGalaxyMap();
     if (view === "eda") drawEdaCharts();
+    if (view === "predict") {
+      drawWaterfallChart();
+      drawBenchmarkRadar();
+    }
   });
 });
 
 // Modal Cài đặt
 if (openSettingsBtn && settingsModal) {
-  openSettingsBtn.addEventListener("click", () => {
-    settingsModal.classList.remove("is-hidden");
-  });
+  openSettingsBtn.addEventListener("click", () => settingsModal.classList.remove("is-hidden"));
 }
 
 if (closeSettingsBtn && settingsModal) {
-  closeSettingsBtn.addEventListener("click", () => {
-    settingsModal.classList.add("is-hidden");
-  });
+  closeSettingsBtn.addEventListener("click", () => settingsModal.classList.add("is-hidden"));
 }
 
 if (settingsModal) {
   settingsModal.addEventListener("click", (e) => {
-    if (e.target === settingsModal) {
-      settingsModal.classList.add("is-hidden");
-    }
+    if (e.target === settingsModal) settingsModal.classList.add("is-hidden");
   });
 }
 
 if (saveSettingsBtn) {
   saveSettingsBtn.addEventListener("click", () => {
-    if (apiBaseInput) {
-      localStorage.setItem(API_BASE_KEY, apiBase());
-    }
+    if (apiBaseInput) localStorage.setItem(API_BASE_KEY, apiBase());
     checkHealth();
     if (settingsModal) settingsModal.classList.add("is-hidden");
-    showToast("Đã lưu địa chỉ Backend API và kiểm tra kết nối!");
+    showToast("Đã lưu địa chỉ Backend API.");
   });
 }
 
@@ -600,10 +571,12 @@ document.addEventListener("input", (event) => {
     updateVisualReadout();
     updateTemporalWarning();
     drawMoodQuadrant();
+    drawWaterfallChart();
+    drawBenchmarkRadar();
   }
 });
 
-// Nạp Preset theo Vibe Cards
+// Nạp Preset Vibe Cards
 document.querySelectorAll(".vibe-card").forEach((card) => {
   card.addEventListener("click", () => {
     document.querySelectorAll(".vibe-card").forEach((b) => b.classList.remove("active"));
@@ -611,7 +584,7 @@ document.querySelectorAll(".vibe-card").forEach((card) => {
     const presetKey = card.dataset.preset;
     if (musicPresets[presetKey]) {
       fillForm(document.querySelector("#predictForm"), musicPresets[presetKey]);
-      showToast(`Đã áp dụng phong cách: ${card.querySelector(".vibe-title").textContent}`);
+      showToast(`Áp dụng mẫu: ${card.querySelector(".vibe-title").textContent}`);
     }
   });
 });
@@ -619,13 +592,13 @@ document.querySelectorAll(".vibe-card").forEach((card) => {
 document.querySelector("#loadDemoPredict")?.addEventListener("click", () => {
   fillForm(document.querySelector("#predictForm"), musicPresets.pop);
   document.querySelectorAll(".vibe-card").forEach((b) => b.classList.toggle("active", b.dataset.preset === "pop"));
-  showToast("Đã khôi phục thông số mặc định (Pop).");
+  showToast("Khôi phục thông số mặc định (Pop).");
 });
 
 document.querySelector("#syncFromPredict")?.addEventListener("click", () => {
   const source = predictionPayload(document.querySelector("#predictForm"));
   fillForm(document.querySelector("#clusterForm"), source);
-  showToast("Đã đồng bộ dấu vân tay âm thanh từ tab Studio!");
+  showToast("Đồng bộ dấu vân tay âm thanh thành công.");
 });
 
 document.querySelector("#loadDemoTrack")?.addEventListener("click", () => {
@@ -634,34 +607,26 @@ document.querySelector("#loadDemoTrack")?.addEventListener("click", () => {
   showToast("Đã nạp Spotify Track ID mẫu.");
 });
 
-// Xử lý gửi Form Dự đoán độ phổ biến với Radar Lock-On Animation
+// Xử lý gửi Form Dự đoán
 document.querySelector("#predictForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const button = event.submitter || document.querySelector("#predictSubmitBtn");
-  setBusy(button, true, "Đang quét Radar & tính toán...");
-  
-  // Kích hoạt Radar Scanning State
-  if (radarTargetPanel) radarTargetPanel.className = "result-panel radar-hud-target radar-scanning";
-  if (targetLockTag) targetLockTag.textContent = "QUÉT TÍN HIỆU...";
+  setBusy(button, true, "Đang tính toán mô hình...");
 
   try {
     const result = await requestJson("/predict", {
       method: "POST",
       body: JSON.stringify(predictionPayload(event.currentTarget)),
     });
-    
-    // Kích hoạt Radar Locked State
-    if (radarTargetPanel) radarTargetPanel.className = "result-panel radar-hud-target radar-locked";
-    if (targetLockTag) targetLockTag.textContent = "🎯 ĐÃ KHÓA MỤC TIÊU";
 
     animateScore(result.predicted_popularity);
     updateTierBadge(result.popularity_tier);
 
     let summaryText = "";
     if (result.temporal_extrapolation) {
-      summaryText = `⚠️ ${result.support_note || "Năm phát hành vượt qua phạm vi huấn luyện chuẩn (2020), áp dụng ngoại suy xu thế."}`;
+      summaryText = `Lưu ý: ${result.support_note || "Năm phát hành vượt qua phạm vi huấn luyện (2020), áp dụng ngoại suy xu thế."}`;
     } else {
-      summaryText = "✨ Bài hát nằm trong phạm vi hỗ trợ chuẩn xác cao của mô hình Spotify AI.";
+      summaryText = "Bài hát nằm trong vùng dữ liệu huấn luyện hỗ trợ chuẩn xác của mô hình XGBoost.";
     }
     const summaryEl = document.querySelector("#predictionSummary");
     if (summaryEl) summaryEl.textContent = summaryText;
@@ -670,13 +635,13 @@ document.querySelector("#predictForm")?.addEventListener("submit", async (event)
       ["Thuật toán", result.model_name || "XGBoost Regressor"],
       ["Tổng số đặc trưng", `${result.feature_count} Features`],
       ["Đặc trưng phái sinh", `${result.engineered_feature_count} Kỹ thuật`],
-      ["Độ chính xác MAE", "7.77 - 12.60 điểm"],
+      ["Sai số MAE", "7.77 - 12.60 điểm"],
     ]);
 
-    showToast(`🎯 Khóa mục tiêu thành công! Điểm tiềm năng: ${Number(result.predicted_popularity).toFixed(1)}/100`);
+    drawWaterfallChart();
+    drawBenchmarkRadar();
+    showToast(`Dự đoán hoàn tất: ${Number(result.predicted_popularity).toFixed(1)} / 100 điểm`);
   } catch (error) {
-    if (radarTargetPanel) radarTargetPanel.className = "result-panel radar-hud-target radar-idle";
-    if (targetLockTag) targetLockTag.textContent = "RADAR STANDBY";
     showToast(`Dự đoán thất bại: ${error.message}`, false);
   } finally {
     setBusy(button, false);
@@ -687,7 +652,7 @@ document.querySelector("#predictForm")?.addEventListener("submit", async (event)
 document.querySelector("#clusterForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const button = event.submitter;
-  setBusy(button, true, "Đang phân nhóm phong cách...");
+  setBusy(button, true, "Đang phân nhóm...");
   try {
     const result = await requestJson("/cluster", {
       method: "POST",
@@ -695,17 +660,17 @@ document.querySelector("#clusterForm")?.addEventListener("submit", async (event)
     });
     
     document.querySelector("#clusterValue").textContent = result.cluster;
-    document.querySelector("#clusterTitle").textContent = `Cụm Phong Cách Số ${result.cluster} (k = ${result.chosen_k})`;
-    document.querySelector("#clusterSummary").textContent = `Mô hình K-Means đã phân loại bài hát vào phân nhóm phong cách #${result.cluster} dựa trên 10 chỉ số âm học.`;
+    document.querySelector("#clusterTitle").textContent = `Phân Nhóm Cụm #${result.cluster} (k = ${result.chosen_k})`;
+    document.querySelector("#clusterSummary").textContent = `Mô hình K-Means đã phân loại vector đầu vào vào Cụm #${result.cluster} dựa trên 10 chỉ số âm học.`;
     
     renderMeta(document.querySelector("#clusterMeta"), [
-      ["Số cụm tối ưu", `k = ${result.chosen_k} Cụm`],
+      ["Số cụm tối ưu (k)", `k = ${result.chosen_k} Cụm`],
       ["Số chiều đặc trưng", `${result.feature_count} Audio Features`],
-      ["Mục tiêu phân loại", "Vibe & Giai điệu"],
-      ["Sử dụng điểm Hot", "Không (Unbiased)"],
+      ["Tiêu chuẩn chọn k", "Max Silhouette (0.242)"],
+      ["Biến mục tiêu", "Content Unbiased"],
     ]);
     
-    showToast(`Đã phân loại vào Cụm #${result.cluster}!`);
+    showToast(`Phân loại thành công vào Cụm #${result.cluster}!`);
   } catch (error) {
     showToast(`Phân cụm thất bại: ${error.message}`, false);
   } finally {
@@ -725,7 +690,7 @@ document.querySelector("#recommendForm")?.addEventListener("submit", async (even
   try {
     const result = await requestJson(`/recommend/${trackId}?n=${n}`);
     const count = result.recommendations ? result.recommendations.length : 0;
-    document.querySelector("#recommendCount").textContent = `${count} bài tương đồng`;
+    document.querySelector("#recommendCount").textContent = `${count} kết quả`;
     
     const resultsContainer = document.querySelector("#recommendResults");
     if (!result.recommendations || result.recommendations.length === 0) {
@@ -740,17 +705,17 @@ document.querySelector("#recommendForm")?.addEventListener("submit", async (even
         const similarityPct = (Number(item.cosine_similarity) * 100).toFixed(1);
         return `
           <div class="recommend-row">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <span style="font-weight: 800; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono);">#${idx + 1}</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-weight: 700; color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-mono);">#${idx + 1}</span>
               <span class="track-id">${item.track_id}</span>
             </div>
-            <span class="similarity-badge">🎯 Độ tương đồng: ${similarityPct}%</span>
+            <span class="similarity-badge">Cosine: ${similarityPct}%</span>
           </div>
         `;
       })
       .join("");
 
-    showToast(`Đã tìm thấy ${count} bài hát có phong cách tương đồng nhất!`);
+    showToast(`Tìm thấy ${count} bài hát tương đồng nhất.`);
   } catch (error) {
     showToast(`Tìm kiếm thất bại: ${error.message}`, false);
   } finally {
@@ -759,200 +724,204 @@ document.querySelector("#recommendForm")?.addEventListener("submit", async (even
 });
 
 /* ============================================================
-   1. WEB AUDIO API SYNTHESIZER (NGHE THỬ VIBE ÂM SẮC)
+   1. FEATURE ATTRIBUTION WATERFALL CHART (SHAP-STYLE)
    ============================================================ */
-let audioCtx = null;
-let synthTimer = null;
-
-const baseFreqMap = {
-  0: 261.63, 1: 277.18, 2: 293.66, 3: 311.13, 4: 329.63, 5: 349.23,
-  6: 369.99, 7: 392.00, 8: 415.30, 9: 440.00, 10: 466.16, 11: 493.88
-};
-
-function playSynthVibe() {
+function drawWaterfallChart() {
+  const canvas = document.querySelector("#waterfallCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
   const form = document.querySelector("#predictForm");
-  const key = Number(form.elements.key.value) || 0;
-  const mode = Number(form.elements.mode.value) || 1;
-  const tempo = Number(form.elements.tempo.value) || 120;
-  const energy = Number(form.elements.energy.value) || 0.7;
-  const valence = Number(form.elements.valence.value) || 0.55;
+  if (!form) return;
 
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  if (audioCtx.state === "suspended") {
-    audioCtx.resume();
-  }
+  const year = Number(form.elements.release_year.value) || 2020;
+  const dance = Number(form.elements.danceability.value) || 0.76;
+  const energy = Number(form.elements.energy.value) || 0.72;
+  const loudness = Number(form.elements.loudness.value) || -5.5;
+  const acoustic = Number(form.elements.acousticness.value) || 0.12;
+  const explicit = form.elements.explicit ? form.elements.explicit.checked : false;
 
-  const baseFreq = baseFreqMap[key] || 261.63;
-  const semitones = mode === 1 ? [0, 4, 7, 12, 16] : [0, 3, 7, 12, 15];
-  const notes = semitones.map((s) => baseFreq * Math.pow(2, s / 12));
+  const features = [
+    { name: "Decade / Year", val: (year - 2000) * 0.68 },
+    { name: "Danceability", val: (dance - 0.5) * 22.0 },
+    { name: "Energy", val: (energy - 0.5) * 16.0 },
+    { name: "Loudness (dB)", val: (loudness + 10) * 0.5 },
+    { name: "Acousticness", val: -(acoustic - 0.3) * 12.0 },
+    { name: "Explicit Flag", val: explicit ? 3.8 : 0 },
+  ];
 
-  const noteDuration = (60 / tempo) * 0.5;
-  const totalNotes = 8;
-  const startTime = audioCtx.currentTime + 0.05;
+  const width = canvas.width;
+  const height = canvas.height;
+  const paddingLeft = 110;
+  const paddingRight = 40;
+  const paddingTop = 15;
+  const paddingBottom = 15;
 
-  for (let i = 0; i < totalNotes; i++) {
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    const filter = audioCtx.createBiquadFilter();
+  ctx.clearRect(0, 0, width, height);
 
-    const noteIdx = i % notes.length;
-    osc.type = energy > 0.6 ? "sawtooth" : "triangle";
-    osc.frequency.setValueAtTime(notes[noteIdx], startTime + i * noteDuration);
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
 
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(800 + valence * 2500 + energy * 1500, startTime + i * noteDuration);
+  const rowHeight = (height - paddingTop - paddingBottom) / features.length;
+  const centerX = paddingLeft + (width - paddingLeft - paddingRight) / 2;
 
-    const nStart = startTime + i * noteDuration;
-    gain.gain.setValueAtTime(0.001, nStart);
-    gain.gain.exponentialRampToValueAtTime(0.25 * (0.5 + energy * 0.5), nStart + 0.02);
-    gain.gain.exponentialRampToValueAtTime(0.001, nStart + noteDuration * 0.95);
+  // Center baseline
+  ctx.strokeStyle = "#e2e8f0";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(centerX, paddingTop);
+  ctx.lineTo(centerX, height - paddingBottom);
+  ctx.stroke();
 
-    osc.connect(filter);
-    filter.connect(gain);
-    gain.connect(audioCtx.destination);
+  const maxVal = 20;
 
-    osc.start(nStart);
-    osc.stop(nStart + noteDuration);
-  }
+  features.forEach((feat, i) => {
+    const y = paddingTop + i * rowHeight + rowHeight / 2;
+    const barWidth = (Math.abs(feat.val) / maxVal) * ((width - paddingLeft - paddingRight) / 2 - 20);
 
-  const playBtn = document.querySelector("#playSynthBtn");
-  const synthText = document.querySelector("#synthText");
-  const synthIcon = document.querySelector("#synthIcon");
-  if (playBtn) playBtn.classList.add("is-playing");
-  if (synthIcon) synthIcon.textContent = "🔊";
-  if (synthText) synthText.textContent = "Đang phát Vibe...";
+    // Label
+    ctx.fillStyle = "#475569";
+    ctx.font = "600 11px 'Inter', sans-serif";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    ctx.fillText(feat.name, paddingLeft - 10, y);
 
-  clearTimeout(synthTimer);
-  synthTimer = setTimeout(() => {
-    if (playBtn) playBtn.classList.remove("is-playing");
-    if (synthIcon) synthIcon.textContent = "▶️";
-    if (synthText) synthText.textContent = "Nghe Thử Vibe Âm Sắc (Synth)";
-  }, (totalNotes * noteDuration + 0.2) * 1000);
+    // Bar
+    const isPositive = feat.val >= 0;
+    ctx.fillStyle = isPositive ? "#1e40af" : "#d97706";
+
+    const barX = isPositive ? centerX : centerX - barWidth;
+    ctx.fillRect(barX, y - 6, barWidth, 12);
+
+    // Value Text
+    ctx.fillStyle = isPositive ? "#1e40af" : "#d97706";
+    ctx.font = "700 10px 'JetBrains Mono', monospace";
+    ctx.textAlign = isPositive ? "left" : "right";
+    const textX = isPositive ? centerX + barWidth + 6 : centerX - barWidth - 6;
+    ctx.fillText((isPositive ? "+" : "") + feat.val.toFixed(1), textX, y);
+  });
 }
 
-document.querySelector("#playSynthBtn")?.addEventListener("click", () => {
-  playSynthVibe();
-  showToast("Đang mô phỏng chuỗi hợp âm Synthesizer theo Key, Mode & BPM!");
-});
-
 /* ============================================================
-   2. SCI-FI RADAR HUD CANVAS (7 CHIỀU ÂM HỌC)
+   2. MULTI-AXIS BENCHMARK RADAR (ACADEMIC BLUE)
    ============================================================ */
-let radarScanAngle = 0;
-function drawRadarHUD() {
+function drawBenchmarkRadar() {
   const canvas = document.querySelector("#audioRadarCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   const form = document.querySelector("#predictForm");
   if (!form) return;
 
-  const features = [
-    { name: "💃 Bắt tai", val: Number(form.elements.danceability.value) },
-    { name: "⚡ Năng lượng", val: Number(form.elements.energy.value) },
-    { name: "🎭 Tươi vui", val: Number(form.elements.valence.value) },
-    { name: "🎸 Mộc mạc", val: Number(form.elements.acousticness.value) },
-    { name: "🎹 Nhạc cụ", val: Number(form.elements.instrumentalness.value) },
-    { name: "🎤 Sân khấu", val: Number(form.elements.liveness.value) },
-    { name: "🗣️ Lời thoại", val: Number(form.elements.speechiness.value) },
+  const currentFeatures = [
+    Number(form.elements.danceability.value),
+    Number(form.elements.energy.value),
+    Number(form.elements.valence.value),
+    Number(form.elements.acousticness.value),
+    Number(form.elements.instrumentalness.value),
+    Number(form.elements.liveness.value),
+    Number(form.elements.speechiness.value),
   ];
+
+  const medianFeatures = [0.56, 0.54, 0.55, 0.45, 0.11, 0.21, 0.10]; // N=586K medians
+  const labels = ["Danceability", "Energy", "Valence", "Acoustic", "Instrumental", "Liveness", "Speech"];
 
   const width = canvas.width;
   const height = canvas.height;
   const centerX = width / 2;
   const centerY = height / 2;
-  const radius = Math.min(centerX, centerY) - 38;
-  const count = features.length;
+  const radius = Math.min(centerX, centerY) - 34;
+  const count = labels.length;
   const angleStep = (Math.PI * 2) / count;
 
   ctx.clearRect(0, 0, width, height);
 
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
+
+  // Concentric Rings
   const levels = 4;
   for (let l = 1; l <= levels; l++) {
-    const levelRadius = (radius / levels) * l;
+    const r = (radius / levels) * l;
     ctx.beginPath();
     for (let i = 0; i < count; i++) {
       const angle = i * angleStep - Math.PI / 2;
-      const x = centerX + levelRadius * Math.cos(angle);
-      const y = centerY + levelRadius * Math.sin(angle);
+      const x = centerX + r * Math.cos(angle);
+      const y = centerY + r * Math.sin(angle);
       if (i === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
     ctx.closePath();
-    ctx.strokeStyle = l === levels ? "rgba(0, 230, 153, 0.3)" : "rgba(255, 255, 255, 0.06)";
+    ctx.strokeStyle = "#e2e8f0";
     ctx.lineWidth = 1;
     ctx.stroke();
   }
 
-  // Sonar sweeping beam on canvas
-  ctx.save();
-  ctx.translate(centerX, centerY);
-  ctx.rotate(radarScanAngle);
-  const scanGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, radius);
-  scanGrad.addColorStop(0, "rgba(0, 230, 153, 0.35)");
-  scanGrad.addColorStop(0.8, "rgba(0, 230, 153, 0.06)");
-  scanGrad.addColorStop(1, "transparent");
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.arc(0, 0, radius, 0, 0.5);
-  ctx.closePath();
-  ctx.fillStyle = scanGrad;
-  ctx.fill();
-  ctx.restore();
-  radarScanAngle += 0.025;
-
+  // Axes & Labels
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
     const x = centerX + radius * Math.cos(angle);
     const y = centerY + radius * Math.sin(angle);
+
+    ctx.strokeStyle = "#e2e8f0";
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
     ctx.lineTo(x, y);
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
     ctx.stroke();
 
-    const labelX = centerX + (radius + 24) * Math.cos(angle);
-    const labelY = centerY + (radius + 20) * Math.sin(angle);
-    ctx.fillStyle = "rgba(148, 163, 184, 0.9)";
-    ctx.font = "600 10.5px 'Plus Jakarta Sans', sans-serif";
+    const labelX = centerX + (radius + 20) * Math.cos(angle);
+    const labelY = centerY + (radius + 16) * Math.sin(angle);
+    ctx.fillStyle = "#64748b";
+    ctx.font = "600 10px 'Inter', sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(features[i].name, labelX, labelY);
+    ctx.fillText(labels[i], labelX, labelY);
   }
 
+  // Polygon 1: Spotify Global Median (Dashed Gray)
+  ctx.save();
+  ctx.setLineDash([3, 3]);
   ctx.beginPath();
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
-    const valRadius = radius * Math.max(0.06, Math.min(1, features[i].val));
-    const x = centerX + valRadius * Math.cos(angle);
-    const y = centerY + valRadius * Math.sin(angle);
+    const valR = radius * medianFeatures[i];
+    const x = centerX + valR * Math.cos(angle);
+    const y = centerY + valR * Math.sin(angle);
     if (i === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   }
   ctx.closePath();
+  ctx.strokeStyle = "#94a3b8";
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.restore();
 
-  ctx.fillStyle = "rgba(0, 230, 153, 0.22)";
+  // Polygon 2: Current Track (Navy Blue)
+  ctx.beginPath();
+  for (let i = 0; i < count; i++) {
+    const angle = i * angleStep - Math.PI / 2;
+    const valR = radius * Math.max(0.05, Math.min(1, currentFeatures[i]));
+    const x = centerX + valR * Math.cos(angle);
+    const y = centerY + valR * Math.sin(angle);
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = "rgba(30, 58, 138, 0.12)";
   ctx.fill();
-  ctx.strokeStyle = "#00e699";
+  ctx.strokeStyle = "#1e3a8a";
   ctx.lineWidth = 2;
   ctx.stroke();
 
+  // Points
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
-    const valRadius = radius * Math.max(0.06, Math.min(1, features[i].val));
-    const x = centerX + valRadius * Math.cos(angle);
-    const y = centerY + valRadius * Math.sin(angle);
+    const valR = radius * Math.max(0.05, Math.min(1, currentFeatures[i]));
+    const x = centerX + valR * Math.cos(angle);
+    const y = centerY + valR * Math.sin(angle);
     ctx.beginPath();
-    ctx.arc(x, y, 4.5, 0, Math.PI * 2);
-    ctx.fillStyle = "#ffffff";
+    ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = "#1e3a8a";
     ctx.fill();
-    ctx.strokeStyle = "#00e699";
-    ctx.lineWidth = 2;
-    ctx.stroke();
   }
-
-  requestAnimationFrame(drawRadarHUD);
 }
 
 /* ============================================================
@@ -970,27 +939,32 @@ function drawMoodQuadrant() {
 
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 32;
+  const padding = 36;
 
   ctx.clearRect(0, 0, width, height);
+
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
 
   const midX = width / 2;
   const midY = height / 2;
 
-  ctx.fillStyle = "rgba(0, 230, 153, 0.05)";
+  // Background subtle zones
+  ctx.fillStyle = "rgba(13, 148, 136, 0.04)";
   ctx.fillRect(midX, padding, midX - padding, midY - padding);
 
-  ctx.fillStyle = "rgba(6, 182, 212, 0.05)";
+  ctx.fillStyle = "rgba(37, 99, 235, 0.04)";
   ctx.fillRect(midX, midY, midX - padding, midY - padding);
 
-  ctx.fillStyle = "rgba(139, 92, 246, 0.05)";
+  ctx.fillStyle = "rgba(100, 116, 139, 0.04)";
   ctx.fillRect(padding, midY, midX - padding, midY - padding);
 
-  ctx.fillStyle = "rgba(255, 77, 77, 0.05)";
+  ctx.fillStyle = "rgba(217, 119, 6, 0.04)";
   ctx.fillRect(padding, padding, midX - padding, midY - padding);
 
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
-  ctx.lineWidth = 1.5;
+  // Cross axes
+  ctx.strokeStyle = "#cbd5e1";
+  ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.moveTo(padding, midY);
   ctx.lineTo(width - padding, midY);
@@ -998,51 +972,50 @@ function drawMoodQuadrant() {
   ctx.lineTo(midX, height - padding);
   ctx.stroke();
 
-  ctx.font = "700 11px 'Plus Jakarta Sans', sans-serif";
-  ctx.fillStyle = "#00e699";
-  ctx.fillText("⚡ Sôi Động / Happy", width - padding - 110, padding + 16);
+  // Zone Labels
+  ctx.font = "600 11px 'Inter', sans-serif";
+  ctx.fillStyle = "#0d9488";
+  ctx.fillText("Q1: Sôi Động / Happy", width - padding - 130, padding + 16);
 
-  ctx.fillStyle = "#06b6d4";
-  ctx.fillText("☕ Thư Thái / Chill", width - padding - 105, height - padding - 12);
+  ctx.fillStyle = "#2563eb";
+  ctx.fillText("Q4: Thư Thái / Chill", width - padding - 120, height - padding - 12);
 
-  ctx.fillStyle = "#8b5cf6";
-  ctx.fillText("🌧️ Trầm Tư / Melancholy", padding + 8, height - padding - 12);
+  ctx.fillStyle = "#64748b";
+  ctx.fillText("Q3: Trầm Tư / Melancholy", padding + 8, height - padding - 12);
 
-  ctx.fillStyle = "#ff4d4d";
-  ctx.fillText("🔥 Bùng Nổ / Intense", padding + 8, padding + 16);
+  ctx.fillStyle = "#d97706";
+  ctx.fillText("Q2: Bùng Nổ / Intense", padding + 8, padding + 16);
 
+  // Marker
   const markerX = padding + valence * (width - padding * 2);
   const markerY = padding + (1 - energy) * (height - padding * 2);
 
   ctx.beginPath();
-  ctx.arc(markerX, markerY, 14, 0, Math.PI * 2);
-  ctx.fillStyle = "rgba(0, 230, 153, 0.25)";
+  ctx.arc(markerX, markerY, 8, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(30, 58, 138, 0.2)";
   ctx.fill();
 
   ctx.beginPath();
-  ctx.arc(markerX, markerY, 6, 0, Math.PI * 2);
-  ctx.fillStyle = "#00e699";
+  ctx.arc(markerX, markerY, 4, 0, Math.PI * 2);
+  ctx.fillStyle = "#1e3a8a";
   ctx.fill();
-  ctx.strokeStyle = "#ffffff";
-  ctx.lineWidth = 2;
-  ctx.stroke();
 
   const moodBadge = document.querySelector("#currentMoodBadge");
   if (moodBadge) {
     if (valence >= 0.5 && energy >= 0.5) {
-      moodBadge.textContent = "⚡ Sôi Động & Tươi Vui (Happy Energy)";
+      moodBadge.textContent = "Q1: Sôi Động & Tươi Vui (Happy)";
     } else if (valence >= 0.5 && energy < 0.5) {
-      moodBadge.textContent = "☕ Thư Thái & Bình Yên (Chill Vibe)";
+      moodBadge.textContent = "Q4: Thư Thái & Bình Yên (Chill)";
     } else if (valence < 0.5 && energy < 0.5) {
-      moodBadge.textContent = "🌧️ Trầm Tư & U Buồn (Melancholic)";
+      moodBadge.textContent = "Q3: Trầm Tư & U Buồn (Melancholic)";
     } else {
-      moodBadge.textContent = "🔥 Bùng Nổ & Dữ Dội (Intense Vibe)";
+      moodBadge.textContent = "Q2: Bùng Nổ & Dữ Dội (Intense)";
     }
   }
 }
 
 /* ============================================================
-   4. AUDIO GALAXY MAP CANVAS (BẢN ĐỒ THIÊN HÀ ÂM NHẠC 2D)
+   4. AUDIO GALAXY SCATTER CANVAS (ACADEMIC LIGHT)
    ============================================================ */
 let galaxyStars = [];
 let currentClusterFilter = "all";
@@ -1050,22 +1023,20 @@ let currentClusterFilter = "all";
 function generateGalaxyData() {
   const stars = [];
   const clusterVibes = [
-    { name: "Pop/Dance Vui Tươi", baseV: 0.7, baseE: 0.75, color: "#00e699", cluster: 0 },
-    { name: "Acoustic/Ballad Trầm Lắng", baseV: 0.35, baseE: 0.35, color: "#8b5cf6", cluster: 1 },
-    { name: "EDM/Rock Bùng Nổ", baseV: 0.55, baseE: 0.9, color: "#06b6d4", cluster: 2 },
+    { name: "Pop/Dance Sôi Nổi", baseV: 0.64, baseE: 0.69, color: "#1e3a8a", cluster: 0 },
+    { name: "Acoustic/Ballad Trữ Tình", baseV: 0.39, baseE: 0.29, color: "#0d9488", cluster: 1 },
+    { name: "Giọng Nói / Spoken Word", baseV: 0.57, baseE: 0.40, color: "#d97706", cluster: 2 },
   ];
 
   const songTitles = [
-    "Midnight Groove", "Neon Dreams", "Acoustic Rain", "Electric Echo", "Sunset Avenue",
-    "Cyber City", "Lofi Memory", "Golden Horizon", "Velvet Shadow", "Euphoria Pulse",
-    "Starlight Drift", "Brave Heart", "Ocean Breeze", "Tokyo Lights", "Solitude Melody",
-    "Quantum Jump", "Vintage Coffee", "Rave Dimension", "Silent Tears", "Summer Blossom"
+    "Track Sample", "Acoustic Horizon", "Electronic Motion", "Vocal Memoir", "Symphony No. 5",
+    "Midnight Sequence", "Urban Pulse", "Chamber Study", "Rhythmic Core", "Harmonic Shift"
   ];
 
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 280; i++) {
     const cl = clusterVibes[i % 3];
     const randAngle = Math.random() * Math.PI * 2;
-    const randDist = Math.random() * 0.28;
+    const randDist = Math.random() * 0.26;
     const valence = Math.max(0.05, Math.min(0.95, cl.baseV + Math.cos(randAngle) * randDist));
     const energy = Math.max(0.05, Math.min(0.95, cl.baseE + Math.sin(randAngle) * randDist));
     const title = songTitles[i % songTitles.length] + ` #${i + 1}`;
@@ -1080,8 +1051,7 @@ function generateGalaxyData() {
       cluster: cl.cluster,
       color: cl.color,
       vibe: cl.name,
-      size: 2 + Math.random() * 3,
-      twinkle: Math.random() * Math.PI,
+      size: 3,
     });
   }
   return stars;
@@ -1095,7 +1065,7 @@ function drawGalaxyMap() {
 
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 50;
+  const padding = 40;
 
   if (galaxyStars.length === 0) {
     galaxyStars = generateGalaxyData();
@@ -1103,7 +1073,11 @@ function drawGalaxyMap() {
 
   ctx.clearRect(0, 0, width, height);
 
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
+
+  // Subtle gridlines
+  ctx.strokeStyle = "#f1f5f9";
   ctx.lineWidth = 1;
   for (let x = padding; x < width - padding; x += 80) {
     ctx.beginPath();
@@ -1118,26 +1092,22 @@ function drawGalaxyMap() {
     ctx.stroke();
   }
 
+  // Scatter points
   galaxyStars.forEach((star) => {
-    if (currentClusterFilter !== "all" && star.cluster !== Number(currentClusterFilter)) {
-      return;
-    }
+    if (currentClusterFilter !== "all" && star.cluster !== Number(currentClusterFilter)) return;
 
     const x = padding + star.valence * (width - padding * 2);
     const y = padding + (1 - star.energy) * (height - padding * 2);
 
-    star.twinkle += 0.03;
-    const currentSize = star.size + Math.sin(star.twinkle) * 0.8;
-
     ctx.beginPath();
-    ctx.arc(x, y, currentSize, 0, Math.PI * 2);
+    ctx.arc(x, y, star.size, 0, Math.PI * 2);
     ctx.fillStyle = star.color;
-    ctx.shadowBlur = 8;
-    ctx.shadowColor = star.color;
+    ctx.globalAlpha = 0.65;
     ctx.fill();
-    ctx.shadowBlur = 0;
+    ctx.globalAlpha = 1.0;
   });
 
+  // Query track point
   if (form) {
     const userV = Number(form.elements.valence.value);
     const userE = Number(form.elements.energy.value);
@@ -1145,21 +1115,21 @@ function drawGalaxyMap() {
     const uy = padding + (1 - userE) * (height - padding * 2);
 
     ctx.beginPath();
-    ctx.arc(ux, uy, 18, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0, 230, 153, 0.25)";
+    ctx.arc(ux, uy, 10, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(30, 58, 138, 0.25)";
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(ux, uy, 7, 0, Math.PI * 2);
-    ctx.fillStyle = "#ffffff";
-    ctx.shadowBlur = 16;
-    ctx.shadowColor = "#00e699";
+    ctx.arc(ux, uy, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "#1e3a8a";
     ctx.fill();
-    ctx.shadowBlur = 0;
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 2;
+    ctx.stroke();
 
-    ctx.fillStyle = "#00e699";
-    ctx.font = "800 12px 'Plus Jakarta Sans', sans-serif";
-    ctx.fillText("📍 BÀI HÁT CỦA BẠN", ux + 14, uy + 4);
+    ctx.fillStyle = "#1e3a8a";
+    ctx.font = "700 11px 'Inter', sans-serif";
+    ctx.fillText("Điểm truy vấn", ux + 12, uy + 4);
   }
 }
 
@@ -1174,12 +1144,12 @@ if (galaxyCanvas) {
     const mouseX = (e.clientX - rect.left) * scaleX;
     const mouseY = (e.clientY - rect.top) * scaleY;
 
-    const padding = 50;
+    const padding = 40;
     const width = galaxyCanvas.width;
     const height = galaxyCanvas.height;
 
     let nearest = null;
-    let minDist = 25;
+    let minDist = 20;
 
     galaxyStars.forEach((star) => {
       if (currentClusterFilter !== "all" && star.cluster !== Number(currentClusterFilter)) return;
@@ -1194,7 +1164,7 @@ if (galaxyCanvas) {
 
     if (nearest && galaxyNodeCard) {
       galaxyNodeCard.classList.add("is-visible");
-      document.querySelector("#nodeTrackName").textContent = `🎵 ${nearest.title}`;
+      document.querySelector("#nodeTrackName").textContent = nearest.title;
       document.querySelector("#nodeVibe").textContent = nearest.vibe;
       document.querySelector("#nodeEnergy").textContent = `${Math.round(nearest.energy * 100)}%`;
       document.querySelector("#nodeDance").textContent = `${Math.round(nearest.dance * 100)}%`;
@@ -1220,11 +1190,11 @@ document.querySelectorAll(".galaxy-chip").forEach((chip) => {
 
 document.querySelector("#locateMyTrackBtn")?.addEventListener("click", () => {
   drawGalaxyMap();
-  showToast("Đã định vị bài hát của bạn tại toạ độ năng lượng & cảm xúc hiện tại!");
+  showToast("Đã định vị bài hát trên không gian 2D.");
 });
 
 /* ============================================================
-   5. EDA CHARTS CANVAS (PHÒNG PHÂN TÍCH DỮ LIỆU & THẬP NIÊN)
+   5. ACADEMIC EDA CHARTS (MONOCHROME HEATMAP & CLEAN LINES)
    ============================================================ */
 function drawEdaCharts() {
   drawDecadeTrendChart();
@@ -1238,18 +1208,34 @@ function drawDecadeTrendChart() {
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 40;
+  const padding = 36;
 
   ctx.clearRect(0, 0, width, height);
 
-  const decades = ["1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"];
-  const loudness = [0.25, 0.35, 0.48, 0.65, 0.82, 0.88, 0.92];
-  const energy = [0.38, 0.48, 0.58, 0.62, 0.68, 0.70, 0.72];
-  const danceability = [0.50, 0.52, 0.56, 0.58, 0.60, 0.65, 0.68];
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
+
+  const decades = ["1920", "1940", "1960", "1980", "2000", "2020"];
+  const loudness = [0.22, 0.28, 0.40, 0.55, 0.65, 0.72];
+  const energy = [0.28, 0.27, 0.40, 0.55, 0.65, 0.68];
+  const danceability = [0.60, 0.48, 0.50, 0.56, 0.59, 0.61];
+  const acousticness = [0.82, 0.85, 0.68, 0.38, 0.24, 0.18];
 
   const stepX = (width - padding * 2) / (decades.length - 1);
 
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+  // Subtle gridlines
+  ctx.strokeStyle = "#f1f5f9";
+  ctx.lineWidth = 1;
+  for (let y = 0.2; y <= 1.0; y += 0.2) {
+    const lineY = height - padding - y * (height - padding * 2);
+    ctx.beginPath();
+    ctx.moveTo(padding, lineY);
+    ctx.lineTo(width - padding, lineY);
+    ctx.stroke();
+  }
+
+  // X Axis
+  ctx.strokeStyle = "#cbd5e1";
   ctx.beginPath();
   ctx.moveTo(padding, height - padding);
   ctx.lineTo(width - padding, height - padding);
@@ -1257,10 +1243,10 @@ function drawDecadeTrendChart() {
 
   decades.forEach((d, i) => {
     const x = padding + i * stepX;
-    ctx.fillStyle = "rgba(148, 163, 184, 0.8)";
-    ctx.font = "600 10px 'JetBrains Mono', monospace";
+    ctx.fillStyle = "#64748b";
+    ctx.font = "500 10px 'JetBrains Mono', monospace";
     ctx.textAlign = "center";
-    ctx.fillText(d, x, height - padding + 18);
+    ctx.fillText(d, x, height - padding + 16);
   });
 
   function drawLine(data, color) {
@@ -1272,33 +1258,37 @@ function drawDecadeTrendChart() {
       else ctx.lineTo(x, y);
     });
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = 2;
     ctx.stroke();
 
     data.forEach((val, i) => {
       const x = padding + i * stepX;
       const y = height - padding - val * (height - padding * 2);
       ctx.beginPath();
-      ctx.arc(x, y, 4, 0, Math.PI * 2);
-      ctx.fillStyle = "#06070a";
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = "#ffffff";
       ctx.fill();
       ctx.strokeStyle = color;
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 1.5;
       ctx.stroke();
     });
   }
 
-  drawLine(loudness, "#ff4d4d");
-  drawLine(energy, "#00e699");
-  drawLine(danceability, "#06b6d4");
+  drawLine(loudness, "#d97706");
+  drawLine(energy, "#1e3a8a");
+  drawLine(danceability, "#0d9488");
+  drawLine(acousticness, "#64748b");
 
-  ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
-  ctx.fillStyle = "#ff4d4d";
-  ctx.fillText("━ Loudness (dB)", padding + 20, padding - 12);
-  ctx.fillStyle = "#00e699";
-  ctx.fillText("━ Energy", padding + 140, padding - 12);
-  ctx.fillStyle = "#06b6d4";
-  ctx.fillText("━ Danceability", padding + 220, padding - 12);
+  // Legend
+  ctx.font = "600 10px 'Inter', sans-serif";
+  ctx.fillStyle = "#1e3a8a";
+  ctx.fillText("― Energy", padding + 20, padding - 10);
+  ctx.fillStyle = "#0d9488";
+  ctx.fillText("― Danceability", padding + 95, padding - 10);
+  ctx.fillStyle = "#d97706";
+  ctx.fillText("― Loudness", padding + 190, padding - 10);
+  ctx.fillStyle = "#64748b";
+  ctx.fillText("― Acousticness", padding + 275, padding - 10);
 }
 
 function drawEnergyDistChart() {
@@ -1307,39 +1297,41 @@ function drawEnergyDistChart() {
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 40;
+  const padding = 36;
 
   ctx.clearRect(0, 0, width, height);
 
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
+
   const bins = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
   const popDensity = [15, 22, 34, 45, 62, 78, 92, 85, 60, 38];
-
-  const barWidth = (width - padding * 2) / bins.length - 8;
+  const barWidth = (width - padding * 2) / bins.length - 6;
 
   bins.forEach((b, i) => {
-    const x = padding + i * (barWidth + 8);
+    const x = padding + i * (barWidth + 6);
     const barH = (popDensity[i] / 100) * (height - padding * 2);
     const y = height - padding - barH;
 
     const isSweetSpot = b >= 0.6 && b <= 0.8;
-    ctx.fillStyle = isSweetSpot ? "rgba(0, 230, 153, 0.75)" : "rgba(139, 92, 246, 0.45)";
+    ctx.fillStyle = isSweetSpot ? "#1e40af" : "#cbd5e1";
     ctx.fillRect(x, y, barWidth, barH);
 
-    ctx.fillStyle = "rgba(148, 163, 184, 0.8)";
-    ctx.font = "600 10px 'JetBrains Mono', monospace";
+    ctx.fillStyle = "#64748b";
+    ctx.font = "500 10px 'JetBrains Mono', monospace";
     ctx.textAlign = "center";
     ctx.fillText(`${b.toFixed(1)}`, x + barWidth / 2, height - padding + 16);
   });
 
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+  ctx.strokeStyle = "#cbd5e1";
   ctx.beginPath();
   ctx.moveTo(padding, height - padding);
   ctx.lineTo(width - padding, height - padding);
   ctx.stroke();
 
-  ctx.fillStyle = "#00e699";
-  ctx.font = "700 11px 'Plus Jakarta Sans', sans-serif";
-  ctx.fillText("🌟 Vùng Tối Ưu (Sweet Spot: 0.6 - 0.8)", width / 2 - 20, padding + 10);
+  ctx.fillStyle = "#1e40af";
+  ctx.font = "600 10px 'Inter', sans-serif";
+  ctx.fillText("Vùng tối ưu xác suất (Sweet Spot: 0.65 - 0.80)", width / 2, padding - 10);
 }
 
 function drawCorrelationChart() {
@@ -1348,9 +1340,12 @@ function drawCorrelationChart() {
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 50;
+  const padding = 45;
 
   ctx.clearRect(0, 0, width, height);
+
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, width, height);
 
   const labels = ["Energy", "Loud", "Acoustic", "Dance", "Valence"];
   const matrix = [
@@ -1371,37 +1366,48 @@ function drawCorrelationChart() {
       const x = startX + c * size;
       const y = startY + r * size;
 
-      if (val > 0) {
-        ctx.fillStyle = `rgba(0, 230, 153, ${Math.abs(val) * 0.8})`;
+      if (val >= 0) {
+        // Monochrome Blue gradient
+        const intensity = val;
+        const rVal = Math.round(239 - intensity * (239 - 30));
+        const gVal = Math.round(246 - intensity * (246 - 58));
+        const bVal = Math.round(255 - intensity * (255 - 138));
+        ctx.fillStyle = `rgb(${rVal}, ${gVal}, ${bVal})`;
       } else {
-        ctx.fillStyle = `rgba(255, 77, 77, ${Math.abs(val) * 0.8})`;
+        // Subtle Amber for negative
+        const intensity = Math.abs(val);
+        const rVal = Math.round(255 - intensity * (255 - 217));
+        const gVal = Math.round(251 - intensity * (251 - 119));
+        const bVal = Math.round(235 - intensity * (235 - 6));
+        ctx.fillStyle = `rgb(${rVal}, ${gVal}, ${bVal})`;
       }
-      ctx.fillRect(x + 2, y + 2, size - 4, size - 4);
+      ctx.fillRect(x + 1, y + 1, size - 2, size - 2);
 
-      ctx.fillStyle = "#fff";
-      ctx.font = "700 10px 'JetBrains Mono', monospace";
+      // Contrast text
+      ctx.fillStyle = Math.abs(val) > 0.5 ? "#ffffff" : "#0f172a";
+      ctx.font = "600 10px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(val.toFixed(2), x + size / 2, y + size / 2);
     }
 
-    ctx.fillStyle = "rgba(148, 163, 184, 0.9)";
-    ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
+    ctx.fillStyle = "#475569";
+    ctx.font = "600 10px 'Inter', sans-serif";
     ctx.textAlign = "right";
-    ctx.fillText(labels[r], startX - 8, startY + r * size + size / 2);
+    ctx.fillText(labels[r], startX - 6, startY + r * size + size / 2);
     ctx.textAlign = "center";
-    ctx.fillText(labels[r], startX + r * size + size / 2, startY - 8);
+    ctx.fillText(labels[r], startX + r * size + size / 2, startY - 6);
   }
 }
 
 /* ============================================================
-   6. VISUALIZER SÓNG ÂM THANH CANVAS
+   6. VISUALIZER PULSE CANVAS (LIGHT THEME)
    ============================================================ */
 function drawVisualizer() {
   const canvas = document.querySelector("#pulseCanvas");
   if (!canvas) return;
   const context = canvas.getContext("2d");
-  const bars = 52;
+  const bars = 48;
   let phase = 0;
 
   function frame() {
@@ -1409,50 +1415,102 @@ function drawVisualizer() {
     const height = canvas.height;
     const form = document.querySelector("#predictForm");
     const energy = form ? Number(form.elements.energy.value) : 0.72;
-    const valence = form ? Number(form.elements.valence.value) : 0.68;
     const tempo = form ? Number(form.elements.tempo.value) : 124;
 
     context.clearRect(0, 0, width, height);
 
-    context.fillStyle = "#050608";
+    context.fillStyle = "#f8fafc";
     context.fillRect(0, 0, width, height);
 
     for (let i = 0; i < bars; i++) {
       const x = (i / bars) * width;
-      const barWidth = width / bars - 4;
+      const barWidth = width / bars - 3;
       const wave = Math.sin(phase + i * 0.32) * 0.5 + 0.5;
-      const barHeight = 20 + wave * 140 * (0.4 + energy * 0.8);
-      
-      const hue = 145 + i * 2.2 + valence * 50;
-      const gradient = context.createLinearGradient(0, height - barHeight - 20, 0, height);
-      gradient.addColorStop(0, `hsla(${hue}, 95%, 65%, 0.9)`);
-      gradient.addColorStop(1, `hsla(${hue}, 85%, 40%, 0.2)`);
+      const barHeight = 14 + wave * 110 * (0.4 + energy * 0.7);
 
-      context.fillStyle = gradient;
+      context.fillStyle = i % 2 === 0 ? "#1e3a8a" : "#2563eb";
       context.beginPath();
-      context.roundRect(x + 2, height - barHeight - 20, barWidth, barHeight, 3);
+      context.roundRect(x + 1, height - barHeight - 12, barWidth, barHeight, 2);
       context.fill();
     }
 
-    context.strokeStyle = "#00e699";
-    context.lineWidth = 2.5;
-    context.shadowBlur = 10;
-    context.shadowColor = "#00e699";
-    context.beginPath();
-    for (let x = 0; x < width; x += 6) {
-      const y = height * 0.36 + Math.sin(phase * 1.5 + x * 0.02) * (14 + energy * 28);
-      if (x === 0) context.moveTo(x, y);
-      else context.lineTo(x, y);
-    }
-    context.stroke();
-    context.shadowBlur = 0;
-
-    phase += (tempo / 120) * 0.04;
+    phase += (tempo / 120) * 0.035;
     requestAnimationFrame(frame);
   }
 
   frame();
 }
+
+// Web Audio API Synthesizer
+let audioCtx = null;
+let synthTimer = null;
+const baseFreqMap = {
+  0: 261.63, 1: 277.18, 2: 293.66, 3: 311.13, 4: 329.63, 5: 349.23,
+  6: 369.99, 7: 392.00, 8: 415.30, 9: 440.00, 10: 466.16, 11: 493.88
+};
+
+function playSynthVibe() {
+  const form = document.querySelector("#predictForm");
+  const key = Number(form.elements.key.value) || 0;
+  const mode = Number(form.elements.mode.value) || 1;
+  const tempo = Number(form.elements.tempo.value) || 120;
+  const energy = Number(form.elements.energy.value) || 0.7;
+  const valence = Number(form.elements.valence.value) || 0.55;
+
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === "suspended") audioCtx.resume();
+
+  const baseFreq = baseFreqMap[key] || 261.63;
+  const semitones = mode === 1 ? [0, 4, 7, 12, 16] : [0, 3, 7, 12, 15];
+  const notes = semitones.map((s) => baseFreq * Math.pow(2, s / 12));
+
+  const noteDuration = (60 / tempo) * 0.5;
+  const totalNotes = 8;
+  const startTime = audioCtx.currentTime + 0.05;
+
+  for (let i = 0; i < totalNotes; i++) {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+
+    const noteIdx = i % notes.length;
+    osc.type = energy > 0.6 ? "sawtooth" : "triangle";
+    osc.frequency.setValueAtTime(notes[noteIdx], startTime + i * noteDuration);
+
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(800 + valence * 2500 + energy * 1500, startTime + i * noteDuration);
+
+    const nStart = startTime + i * noteDuration;
+    gain.gain.setValueAtTime(0.001, nStart);
+    gain.gain.exponentialRampToValueAtTime(0.2 * (0.5 + energy * 0.5), nStart + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, nStart + noteDuration * 0.95);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(nStart);
+    osc.stop(nStart + noteDuration);
+  }
+
+  const playBtn = document.querySelector("#playSynthBtn");
+  const synthText = document.querySelector("#synthText");
+  if (playBtn) playBtn.classList.add("is-playing");
+  if (synthText) synthText.textContent = "Đang phát chuỗi hòa âm...";
+
+  clearTimeout(synthTimer);
+  synthTimer = setTimeout(() => {
+    if (playBtn) playBtn.classList.remove("is-playing");
+    if (synthText) synthText.textContent = "Mô phỏng chuỗi hòa âm (Synth Preview)";
+  }, (totalNotes * noteDuration + 0.2) * 1000);
+}
+
+document.querySelector("#playSynthBtn")?.addEventListener("click", () => {
+  playSynthVibe();
+  showToast("Mô phỏng âm sắc hợp âm theo Key & BPM.");
+});
 
 // Khởi tạo
 const initialHash = window.location.hash.replace("#", "");
@@ -1466,5 +1524,6 @@ updateVisualReadout();
 updateTemporalWarning();
 checkHealth();
 drawVisualizer();
-drawRadarHUD();
+drawWaterfallChart();
+drawBenchmarkRadar();
 drawMoodQuadrant();

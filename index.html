@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#06070a">
-    <title>HitRadar Pro - Trí Tuệ Nhân Tạo Dự Đoán & Bản Đồ Âm Nhạc Spotify AI</title>
+    <meta name="theme-color" content="#f8fafc">
+    <title>HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="ambient-grid" aria-hidden="true"></div>
     
     <!-- Top Navigation Bar -->
     <header class="topbar">
@@ -16,38 +15,38 @@
         <span class="brand-mark">HR</span>
         <div class="brand-text">
           <strong>HitRadar Pro</strong>
-          <small>AI Music Intelligence & EDA Lab</small>
+          <small>Data Science & Audio Intelligence Lab</small>
         </div>
       </a>
 
-      <nav class="nav-pills" aria-label="Chuyển đổi màn hình">
+      <nav class="nav-pills" aria-label="Chuyển đổi phân hệ nghiên cứu">
         <button class="nav-pill is-active" type="button" data-view="predict">
-          <span>🎯</span> Studio Dự Đoán
+          Mô Hình Dự Đoán
         </button>
         <button class="nav-pill" type="button" data-view="galaxy">
-          <span>🌌</span> Bản Đồ Thiên Hà
+          Chiếu Không Gian 2D
         </button>
         <button class="nav-pill" type="button" data-view="eda">
-          <span>📈</span> Khám Phá EDA
+          Khám Phá EDA & Thống Kê
         </button>
         <button class="nav-pill" type="button" data-view="cluster">
-          <span>🔮</span> Phân Cụm Vibe AI
+          Phân Cụm K-Means
         </button>
         <button class="nav-pill" type="button" data-view="recommend">
-          <span>🎧</span> Gợi Ý Tương Tự
+          Gợi Ý Tương Đồng
         </button>
         <button class="nav-pill" type="button" data-view="insights">
-          <span>📊</span> Đánh Giá Model
+          Đánh Giá Mô Hình
         </button>
       </nav>
 
       <div class="topbar-actions">
         <div class="api-status is-ready" id="apiStatus" aria-live="polite">
           <span class="status-dot"></span>
-          <span id="apiStatusText">AI Sẵn Sàng</span>
+          <span id="apiStatusText">AI Inference Online</span>
         </div>
-        <button class="settings-btn" id="openSettingsBtn" type="button" title="Cài đặt kết nối API" aria-label="Cài đặt kết nối API">
-          <span>⚙️ Cài đặt</span>
+        <button class="settings-btn" id="openSettingsBtn" type="button" title="Cài đặt kết nối API">
+          Cài đặt API
         </button>
       </div>
     </header>
@@ -55,114 +54,102 @@
     <!-- Main Content Shell -->
     <main class="app-shell">
       
-      <!-- Hero / Command Band -->
+      <!-- Hero / Research Overview Band -->
       <section class="command-band">
         <div class="command-copy">
-          <p class="eyebrow">⚡ Nền tảng phân tích & chấm điểm tiềm năng bài hát 2026</p>
-          <h1>Phòng thí nghiệm âm nhạc số: Dự đoán, Bản đồ & EDA.</h1>
+          <p class="eyebrow">Báo cáo Nghiên cứu & Dự báo Khả năng Thành Hit</p>
+          <h1>Phòng thí nghiệm Phân tích Đặc tính Âm học & Xu hướng Spotify</h1>
           <p class="lede">
-            Trải nghiệm không gian phân tích âm thanh đa chiều: Quét tín hiệu Radar tìm kiếm bản hit tương lai, 
-            khám phá bản đồ thiên hà 580K+ bài hát Spotify, giải mã cảm xúc âm nhạc và phân tích xu hướng lịch sử.
+            Nền tảng ứng dụng mô hình Gradient Boosting (XGBoost) kết hợp kỹ thuật trích xuất 14 đặc trưng phái sinh 
+            trên tập dữ liệu 586,672 bài hát Spotify (1920 – 2021) nhằm định lượng tiềm năng bài hát và giải mã không gian âm học đa chiều.
           </p>
           
           <div class="quick-metrics" aria-label="Thông tin nhanh mô hình">
-            <span class="metric-tag">Trí tuệ nhân tạo: <b>Spotify AI Engine</b></span>
-            <span class="metric-tag">Độ chính xác tương đương: <b>~84% - 92.2%</b></span>
-            <span class="metric-tag">Cơ sở dữ liệu: <b>586,672 bài hát Spotify</b></span>
+            <span class="metric-tag">Mô hình: <b>XGBoost Regressor (32 Features)</b></span>
+            <span class="metric-tag">Độ chính xác MAE: <b>7.77 – 12.60 điểm</b></span>
+            <span class="metric-tag">Kích thước mẫu: <b>N = 586,672</b></span>
           </div>
 
-          <!-- Preset Vibe Cards & Web Audio Preview -->
+          <!-- Preset Reference Archetypes -->
           <div class="preset-section">
             <div class="preset-header">
-              <span class="preset-title">✨ Chọn phong cách trải nghiệm nhanh (1-Click Presets):</span>
+              <span class="preset-title">Mẫu dữ liệu tham chiếu (Reference Archetypes):</span>
               <button class="synth-preview-btn" type="button" id="playSynthBtn">
-                <span id="synthIcon">▶️</span> <span id="synthText">Nghe Thử Vibe Âm Sắc (Synth)</span>
+                <span id="synthText">Mô phỏng chuỗi hòa âm (Synth Preview)</span>
               </button>
             </div>
             
             <div class="vibe-cards-grid">
               <div class="vibe-card active" data-preset="pop">
-                <div class="vibe-card-glow"></div>
                 <div class="vibe-card-top">
-                  <span class="vibe-icon">💃</span>
+                  <strong class="vibe-title">Pop Thịnh Hành</strong>
                   <span class="vibe-tag">124 BPM</span>
                 </div>
-                <strong class="vibe-title">Pop Thịnh Hành</strong>
-                <p class="vibe-desc">Bắt tai, tươi vui, năng lượng cao bùng nổ.</p>
+                <p class="vibe-desc">Bắt tai cao (0.76), Năng lượng (0.72), Major C.</p>
               </div>
 
               <div class="vibe-card" data-preset="edm">
-                <div class="vibe-card-glow"></div>
                 <div class="vibe-card-top">
-                  <span class="vibe-icon">⚡</span>
+                  <strong class="vibe-title">EDM Điện Tử</strong>
                   <span class="vibe-tag">128 BPM</span>
                 </div>
-                <strong class="vibe-title">EDM Sôi Động</strong>
-                <p class="vibe-desc">Drop bass cực mạnh, vũ trường náo nhiệt.</p>
+                <p class="vibe-desc">Năng lượng cực đại (0.91), Loudness -3.8dB.</p>
               </div>
 
               <div class="vibe-card" data-preset="synthwave">
-                <div class="vibe-card-glow"></div>
                 <div class="vibe-card-top">
-                  <span class="vibe-icon">🌆</span>
+                  <strong class="vibe-title">Synthwave 80s</strong>
                   <span class="vibe-tag">128 BPM</span>
                 </div>
-                <strong class="vibe-title">Synthwave 80s</strong>
-                <p class="vibe-desc">Âm hưởng Retro hoài niệm & không gian Cyber.</p>
+                <p class="vibe-desc">Nhạc cụ cao (0.60), Năng lượng (0.85), Minor G.</p>
               </div>
 
               <div class="vibe-card" data-preset="ballad">
-                <div class="vibe-card-glow"></div>
                 <div class="vibe-card-top">
-                  <span class="vibe-icon">🎸</span>
+                  <strong class="vibe-title">Acoustic Ballad</strong>
                   <span class="vibe-tag">78 BPM</span>
                 </div>
-                <strong class="vibe-title">Ballad Acoustic</strong>
-                <p class="vibe-desc">Mộc mạc, trữ tình, da diết sâu lắng.</p>
+                <p class="vibe-desc">Độ mộc mạc cao (0.78), Nhịp độ chậm (78 BPM).</p>
               </div>
 
               <div class="vibe-card" data-preset="lofi">
-                <div class="vibe-card-glow"></div>
                 <div class="vibe-card-top">
-                  <span class="vibe-icon">☕</span>
+                  <strong class="vibe-title">Lofi Chill</strong>
                   <span class="vibe-tag">85 BPM</span>
                 </div>
-                <strong class="vibe-title">Lofi Chillout</strong>
-                <p class="vibe-desc">Thư thái, êm dịu, phù hợp học tập & chill.</p>
+                <p class="vibe-desc">Nhạc cụ (0.85), Mộc mạc (0.65), Minor A.</p>
               </div>
 
               <div class="vibe-card" data-preset="rock">
-                <div class="vibe-card-glow"></div>
                 <div class="vibe-card-top">
-                  <span class="vibe-icon">🔥</span>
+                  <strong class="vibe-title">Rock Động Lực</strong>
                   <span class="vibe-tag">142 BPM</span>
                 </div>
-                <strong class="vibe-title">Rock Bùng Nổ</strong>
-                <p class="vibe-desc">Mạnh mẽ, guitar điện rực lửa & nhiệt huyết.</p>
+                <p class="vibe-desc">Năng lượng cao (0.88), Nhịp nhanh (142 BPM).</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="visual-console" aria-label="Bộ hiển thị sóng âm thanh">
-          <canvas id="pulseCanvas" width="560" height="240"></canvas>
+        <div class="visual-console" aria-label="Mô phỏng phổ dao động sóng âm">
+          <canvas id="pulseCanvas" width="560" height="220"></canvas>
           <div class="console-readout">
-            <span id="readoutTempo">⏱️ 124 BPM</span>
-            <span id="readoutEnergy">⚡ Năng lượng 72%</span>
-            <span id="readoutMood">🎭 Tích cực 68%</span>
+            <span id="readoutTempo">Tempo: 124 BPM</span>
+            <span id="readoutEnergy">Energy: 72%</span>
+            <span id="readoutMood">Valence: 68%</span>
           </div>
         </div>
       </section>
 
-      <!-- VIEW 1: DỰ ĐOÁN & STUDIO (PREDICT) -->
+      <!-- VIEW 1: STUDIO SUY LUẬN & PHÂN RÃ ĐẶC TRƯNG -->
       <section class="view is-active" id="view-predict" data-view-panel="predict">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Dự đoán điểm số Spotify</p>
-            <h2>Chấm điểm tiềm năng bài hát (Popularity Score 0 - 100)</h2>
+            <p class="eyebrow">Phân hệ 1: Suy Luận Điểm Số & Phân Rã Đặc Trưng</p>
+            <h2>Chấm điểm tiềm năng bài hát (Popularity Metric 0 - 100)</h2>
           </div>
           <p class="section-subtitle">
-            ✨ Trí tuệ nhân tạo Spotify AI phân tích 32 khía cạnh âm thanh độc quyền để dự đoán khả năng thành hit của bài hát.
+            Hệ thống tính toán điểm số kỳ vọng bằng mô hình XGBoost với 32 đặc trưng, phân rã mức độ đóng góp của từng thuộc tính và định vị trên ma trận phân vị.
           </p>
         </div>
 
@@ -170,29 +157,29 @@
           <!-- Form nhập thông số bài hát -->
           <form class="tool-panel" id="predictForm">
             <div class="panel-title">
-              <h3>Thông số cấu hình bài hát (Audio Profile)</h3>
-              <button class="ghost-button" type="button" id="loadDemoPredict">🔄 Khôi phục mặc định</button>
+              <h3>Cấu hình vector đặc trưng âm học (Input Features)</h3>
+              <button class="ghost-button" type="button" id="loadDemoPredict">Khôi phục mặc định</button>
             </div>
 
             <!-- Metadata cơ bản -->
             <div class="form-grid">
-              <label>⏱️ Thời lượng (Phút) 
+              <label>Thời lượng (Phút) 
                 <input name="duration_min" type="number" min="0.1" max="60" step="0.1" value="3.2" required>
               </label>
-              <label>📅 Năm phát hành 
+              <label>Năm phát hành (Release Year) 
                 <input name="release_year" id="releaseYearInput" type="number" min="1900" max="2100" step="1" value="2020" required>
               </label>
-              <label>🗓️ Tháng phát hành 
+              <label>Tháng phát hành (Month) 
                 <input name="release_month" type="number" min="1" max="12" step="1" value="7" required>
               </label>
-              <label>🎯 Độ chính xác ngày 
+              <label>Độ chính xác ngày (Precision) 
                 <select name="release_precision">
                   <option value="day">Ngày cụ thể (Day)</option>
                   <option value="month">Theo tháng (Month)</option>
                   <option value="year">Theo năm (Year)</option>
                 </select>
               </label>
-              <label>🎵 Giọng nhạc (Key)
+              <label>Giọng nhạc (Key)
                 <select name="key">
                   <option value="0">C (Đô)</option><option value="1">C# (Đô thăng)</option><option value="2">D (Rê)</option>
                   <option value="3">D# (Rê thăng)</option><option value="4">E (Mi)</option><option value="5">F (Fa)</option>
@@ -200,429 +187,488 @@
                   <option value="9">A (La)</option><option value="10">A# (La thăng)</option><option value="11">B (Si)</option>
                 </select>
               </label>
-              <label>🎼 Điệu tính (Mode)
+              <label>Điệu tính (Mode)
                 <select name="mode">
-                  <option value="1">Trưởng (Major)</option>
-                  <option value="0">Thứ (Minor)</option>
+                  <option value="1">Trưởng (Major - 1)</option>
+                  <option value="0">Thứ (Minor - 0)</option>
                 </select>
               </label>
               <label class="switch-row">
                 <input name="explicit" type="checkbox">
-                <span>🔞 Chứa từ ngữ nhạy cảm (Explicit)</span>
+                <span>Chứa từ ngữ nhạy cảm (Explicit)</span>
               </label>
             </div>
 
-            <!-- Sliders đặc tính âm học trực quan với icon -->
-            <span class="slider-group-title">Dấu vân tay âm học (Audio Fingerprint):</span>
+            <!-- Sliders đặc tính âm học -->
+            <span class="slider-group-title">Chỉ số âm học chuẩn hóa (Normalized Audio Space [0.00, 1.00]):</span>
             <div class="slider-grid" data-slider-scope="predict">
               <label>
-                <div class="slider-head"><span>💃 Độ bắt tai (Danceability)</span><output>0.76</output></div>
+                <div class="slider-head"><span>Độ bắt tai (Danceability)</span><output>0.76</output></div>
                 <input name="danceability" type="range" min="0" max="1" step="0.01" value="0.76">
               </label>
               <label>
-                <div class="slider-head"><span>⚡ Năng lượng (Energy)</span><output>0.72</output></div>
+                <div class="slider-head"><span>Năng lượng (Energy)</span><output>0.72</output></div>
                 <input name="energy" type="range" min="0" max="1" step="0.01" value="0.72">
               </label>
               <label>
-                <div class="slider-head"><span>🎭 Cảm xúc tươi vui (Valence)</span><output>0.68</output></div>
+                <div class="slider-head"><span>Cảm xúc tích cực (Valence)</span><output>0.68</output></div>
                 <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
               </label>
               <label>
-                <div class="slider-head"><span>🎸 Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
+                <div class="slider-head"><span>Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
                 <input name="acousticness" type="range" min="0" max="1" step="0.01" value="0.12">
               </label>
               <label>
-                <div class="slider-head"><span>🎹 Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
+                <div class="slider-head"><span>Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
                 <input name="instrumentalness" type="range" min="0" max="1" step="0.01" value="0.00">
               </label>
               <label>
-                <div class="slider-head"><span>🎤 Biểu diễn sống (Liveness)</span><output>0.14</output></div>
+                <div class="slider-head"><span>Biểu diễn trực tiếp (Liveness)</span><output>0.14</output></div>
                 <input name="liveness" type="range" min="0" max="1" step="0.01" value="0.14">
               </label>
               <label>
-                <div class="slider-head"><span>🗣️ Tỷ lệ giọng nói (Speechiness)</span><output>0.06</output></div>
+                <div class="slider-head"><span>Tỷ lệ lời thoại (Speechiness)</span><output>0.06</output></div>
                 <input name="speechiness" type="range" min="0" max="1" step="0.01" value="0.06">
               </label>
             </div>
 
             <!-- Kỹ thuật âm thanh -->
             <div class="form-grid compact">
-              <label>🔊 Độ lớn âm thanh (Loudness dB) 
+              <label>Độ lớn âm thanh (Loudness dB) 
                 <input name="loudness" type="number" min="-80" max="10" step="0.1" value="-5.5" required>
               </label>
-              <label>⏱️ Tốc độ nhịp (Tempo BPM) 
+              <label>Tốc độ nhịp (Tempo BPM) 
                 <input name="tempo" id="tempoInput" type="number" min="1" max="300" step="0.1" value="124" required>
               </label>
-              <label>🎼 Số chỉ nhịp (Time Signature) 
+              <label>Số chỉ nhịp (Time Signature) 
                 <input name="time_signature" type="number" min="1" max="7" step="1" value="4" required>
               </label>
             </div>
 
-            <p class="inline-warning is-hidden" id="temporalWarning">
-              ⚠️ Năm phát hành sau 2020 là ngoại suy thời gian (Temporal extrapolation). Kết quả vẫn được tính toán chuẩn xác.
+            <p class="inline-warning is-hidden" id="temporalWarning" style="color: var(--accent-amber); font-size: 0.8rem;">
+              Lưu ý: Năm phát hành sau 2020 được phân loại là ngoại suy thời gian (Temporal extrapolation).
             </p>
             
-            <button class="primary-button cta-shimmer" type="submit" id="predictSubmitBtn">
-              <span class="cta-icon">🚀</span>
-              <span class="cta-text">Chạy Dự Đoán Tiềm Năng Bài Hát</span>
+            <button class="primary-button" type="submit" id="predictSubmitBtn">
+              Chạy Suy Luận Mô Hình XGBoost
             </button>
           </form>
 
-          <!-- Cột trung tâm Radar Command Console & Lock-On Target -->
+          <!-- Cột hiển thị kết quả khoa học -->
           <div class="radar-command-console">
             
-            <!-- RADAR SONAR TARGET LOCK-ON GAUGE -->
-            <aside class="result-panel radar-hud-target radar-idle" id="radarTargetPanel" aria-live="polite">
+            <!-- KPI Điểm số & Khoảng tin cậy -->
+            <aside class="result-panel" id="radarTargetPanel" aria-live="polite">
               
-              <!-- 4 Corner Reticle Lock Brackets -->
-              <div class="lock-bracket lock-tl"></div>
-              <div class="lock-bracket lock-tr"></div>
-              <div class="lock-bracket lock-bl"></div>
-              <div class="lock-bracket lock-br"></div>
-
-              <!-- Compass Degree Markers -->
-              <div class="radar-compass-ring">
-                <span class="compass-deg deg-0">000°</span>
-                <span class="compass-deg deg-90">090°</span>
-                <span class="compass-deg deg-180">180°</span>
-                <span class="compass-deg deg-270">270°</span>
+              <div class="score-kpi-block">
+                <div class="score-main">
+                  <span class="kpi-sub">ĐIỂM DỰ BÁO PHỔ BIẾN (POPULARITY SCORE)</span>
+                  <div class="score-main-value" id="scoreValue">-- <span>/ 100</span></div>
+                  <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
+                </div>
+                <span class="tier-badge" id="tierLabel">CHƯA PHÂN HẠNG</span>
               </div>
 
-              <!-- Radar Sonar Orbit -->
-              <div class="score-orbit sonar-screen">
-                <!-- Concentric Rings & Crosshair Grid -->
-                <div class="sonar-grid-overlay">
-                  <div class="sonar-ring ring-1"></div>
-                  <div class="sonar-ring ring-2"></div>
-                  <div class="sonar-ring ring-3"></div>
-                  <div class="sonar-axis axis-h"></div>
-                  <div class="sonar-axis axis-v"></div>
-                  <!-- Rotating Sonar Ray -->
-                  <div class="sonar-sweep-ray" id="sonarRay"></div>
-                </div>
-
-                <svg viewBox="0 0 220 220" role="img" aria-label="Điểm dự đoán">
-                  <circle class="score-track" cx="110" cy="110" r="92"></circle>
-                  <circle class="score-ring" id="scoreRing" cx="110" cy="110" r="92"></circle>
-                </svg>
-                
-                <div class="score-display">
-                  <span class="target-lock-tag" id="targetLockTag">RADAR STANDBY</span>
-                  <span id="scoreValue">--</span>
-                  <small>/ 100 ĐIỂM</small>
-                </div>
-              </div>
-
-              <span class="tier-badge" id="tierLabel">SẴN SÀNG QUÉT MỤC TIÊU</span>
-              
               <p class="prediction-summary" id="predictionSummary">
-                Chọn thẻ phong cách hoặc tùy chỉnh các thanh trượt và nhấn nút dự đoán để khóa mục tiêu tiềm năng.
+                Chọn mẫu tham chiếu hoặc điều chỉnh các tham số đầu vào để mô hình tính toán điểm số và phân rã đóng góp đặc trưng.
               </p>
 
-              <!-- Sci-Fi Radar HUD Canvas (7 Chiều Âm Học) Đặt Trung Tâm -->
-              <div class="radar-box">
-                <div class="radar-box-header">
-                  <span class="radar-box-title">Cyber Radar HUD (7 Chiều Âm Học)</span>
-                  <span class="radar-live-indicator">LIVE MULTI-AXIS</span>
+              <!-- Feature Attribution Waterfall Chart -->
+              <div class="attribution-card">
+                <div class="attribution-card-header">
+                  <span class="attribution-title">Phân Rã Mức Đóng Góp Đặc Trưng (Feature Impact ΔScore)</span>
+                  <span class="attribution-subtitle">SHAP-style Attribution</span>
                 </div>
-                <canvas id="audioRadarCanvas" width="280" height="260"></canvas>
+                <canvas id="waterfallCanvas" width="480" height="190"></canvas>
               </div>
 
-              <!-- Collapsible Tech Specs Tooltip -->
+              <!-- Radar Benchmark So Sánh Chuẩn Toàn Cầu -->
+              <div class="radar-box">
+                <div class="radar-box-header">
+                  <span class="radar-box-title">Đa Chiều So Sánh Với Trung Vị Toàn Tập (Global Median Benchmark)</span>
+                  <span class="radar-live-indicator">N = 586K Benchmark</span>
+                </div>
+                <canvas id="audioRadarCanvas" width="480" height="230"></canvas>
+              </div>
+
+              <!-- Collapsible Tech Specs -->
               <div class="tech-specs-toggle">
                 <button class="tech-toggle-btn" type="button" id="toggleTechSpecs">
-                  <span>ℹ️ Chi tiết kỹ thuật mô hình AI</span>
+                  <span>Thông số kỹ thuật thuật toán & mô hình</span>
                   <span class="toggle-arrow">▾</span>
                 </button>
                 <div class="tech-specs-content is-collapsed" id="techSpecsContent">
                   <dl class="meta-list" id="predictionMeta">
                     <div class="meta-item"><dt>Thuật toán</dt><dd>XGBoost Regressor</dd></div>
                     <div class="meta-item"><dt>Tổng số đặc trưng</dt><dd>32 Features</dd></div>
-                    <div class="meta-item"><dt>Đặc trưng phái sinh</dt><dd>14 Kỹ thuật</dd></div>
-                    <div class="meta-item"><dt>Độ chính xác MAE</dt><dd>7.77 - 12.60 điểm</dd></div>
+                    <div class="meta-item"><dt>Kỹ thuật phái sinh</dt><dd>14 Kỹ thuật</dd></div>
+                    <div class="meta-item"><dt>Sai số MAE</dt><dd>7.77 - 12.60 điểm</dd></div>
                   </dl>
                 </div>
               </div>
             </aside>
 
-            <!-- Mood Quadrant 2D Matrix -->
+            <!-- Mood Quadrant Matrix -->
             <div class="mood-matrix-box">
               <div class="panel-title">
-                <h3>Ma Trận Cảm Xúc 4 Góc (Mood Quadrant)</h3>
-                <span class="metric-tag" id="currentMoodBadge">Sôi động & Tươi vui</span>
+                <h3>Không gian Cảm xúc 2 Chiều (Valence - Energy Quadrant)</h3>
+                <span class="metric-tag" id="currentMoodBadge">Sôi động / Happy</span>
               </div>
-              <canvas id="moodQuadrantCanvas" width="400" height="280"></canvas>
+              <canvas id="moodQuadrantCanvas" width="480" height="240"></canvas>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- VIEW 2: BẢN ĐỒ THIÊN HÀ ÂM NHẠC (GALAXY MAP) -->
+      <!-- VIEW 2: CHIẾU KHÔNG GIAN 2D & TỌA ĐỘ TRỌNG TÂM -->
       <section class="view" id="view-galaxy" data-view-panel="galaxy">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Multidimensional Music Space</p>
-            <h2>Bản Đồ Không Gian Thiên Hà Âm Nhạc (Audio Constellation Map)</h2>
+            <p class="eyebrow">Phân hệ 2: Không Gian Chiếu & Tọa Độ Trọng Tâm</p>
+            <h2>Bản đồ phân tán đặc tính âm học (Feature Projection Space)</h2>
           </div>
-          <p>Mỗi vì sao đại diện cho một bản nhạc Spotify trong không gian 2D (Energy vs Valence). Vị trí bài hát của bạn được đánh dấu bằng node phát sáng màu xanh Neon.</p>
+          <p class="section-subtitle">
+            Trực quan hóa sự phân bố của các bản nhạc trong không gian 2 chiều (Energy vs Valence). Vị trí bài hát truy vấn được đánh dấu bằng điểm tham chiếu màu xanh Navy.
+          </p>
         </div>
 
         <div class="galaxy-map-container">
           <div class="galaxy-map-toolbar">
             <div class="galaxy-filter-group">
-              <button class="galaxy-chip active" type="button" data-cluster-filter="all">🌌 Tất Cả Chòm Sao (All Clusters)</button>
-              <button class="galaxy-chip" type="button" data-cluster-filter="0">✨ Cụm 0: Năng Lượng & Sôi Nổi</button>
-              <button class="galaxy-chip" type="button" data-cluster-filter="1">☕ Cụm 1: Mộc Mạc & Trầm Lắng</button>
-              <button class="galaxy-chip" type="button" data-cluster-filter="2">⚡ Cụm 2: Điện Tử & Bùng Nổ</button>
+              <button class="galaxy-chip active" type="button" data-cluster-filter="all">Tất Cả Phân Nhóm (All Clusters)</button>
+              <button class="galaxy-chip" type="button" data-cluster-filter="0">Cụm 0: Năng Lượng & Pop/Dance (61.5%)</button>
+              <button class="galaxy-chip" type="button" data-cluster-filter="1">Cụm 1: Mộc Mạc & Trữ Tình (33.9%)</button>
+              <button class="galaxy-chip" type="button" data-cluster-filter="2">Cụm 2: Giọng Nói & Podcast (4.6%)</button>
             </div>
-            <div style="display: flex; gap: 10px; align-items: center;">
-              <span class="metric-tag">Tương tác: <b>Rê chuột để quét thông tin bài hát</b></span>
-              <button class="ghost-button" type="button" id="locateMyTrackBtn">🎯 Định vị bài hát của tôi</button>
-            </div>
+            <button class="ghost-button" type="button" id="locateMyTrackBtn">Định vị tọa độ bài hát</button>
           </div>
 
           <div class="galaxy-canvas-wrapper">
-            <canvas id="galaxyCanvas" width="1400" height="520"></canvas>
+            <canvas id="galaxyCanvas" width="1300" height="500"></canvas>
             <div class="galaxy-node-card" id="galaxyNodeCard">
-              <strong id="nodeTrackName" style="color: #fff; font-size: 0.95rem;">Tên bài hát</strong>
-              <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 4px; color: var(--text-secondary);">
-                <span>Vibe: <b id="nodeVibe" style="color: var(--spotify-green);">--</b></span>
-                <span>Năng lượng: <b id="nodeEnergy">--</b> | Bắt tai: <b id="nodeDance">--</b></span>
-                <span>Độ phổ biến ước tính: <b id="nodePopularity" style="color: var(--neon-cyan);">--</b>/100</span>
+              <strong id="nodeTrackName">Tên bản ghi mẫu</strong>
+              <div style="margin-top: 4px; display: flex; flex-direction: column; gap: 2px; color: var(--text-secondary);">
+                <span>Phân nhóm: <b id="nodeVibe" style="color: var(--primary-navy);">--</b></span>
+                <span>Energy: <b id="nodeEnergy">--</b> | Danceability: <b id="nodeDance">--</b></span>
+                <span>Popularity: <b id="nodePopularity" style="color: var(--primary-teal);">--</b> / 100</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- VIEW 3: PHÒNG KHÁM PHÁ DỮ LIỆU EDA (EDA LAB) -->
+      <!-- VIEW 3: KHÁM PHÁ DỮ LIỆU EDA & THỐNG KÊ MÔ TẢ -->
       <section class="view" id="view-eda" data-view-panel="eda">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Exploratory Data Analysis (EDA)</p>
-            <h2>Phân Tích Dữ Liệu Lịch Sử & Xu Hướng Âm Nhạc Spotify</h2>
+            <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô Tả</p>
+            <h2>Phân tích xu hướng thập niên & tương quan đa biến</h2>
           </div>
-          <p>Trực quan hóa xu hướng âm nhạc qua 6 thập kỷ (1960 - 2020) và mối tương quan giữa các thuộc tính âm học với độ phổ biến thực tế.</p>
+          <p class="section-subtitle">
+            Trích xuất quy luật tiến hóa âm nhạc qua 10 thập kỷ (1920 – 2020) và ma trận hệ số tương quan Pearson chuẩn hóa trên 586,672 bài hát.
+          </p>
         </div>
 
         <div class="eda-grid">
           <!-- Chart 1: Xu hướng thập niên -->
           <div class="eda-card">
             <div class="panel-title">
-              <h3>1. Tiến hóa Âm nhạc qua các Thập kỷ (1960s – 2020s)</h3>
-              <span class="metric-tag">Độ lớn Loudness tăng +4.5dB</span>
+              <h3>1. Tiến hóa Đặc tính Âm học qua các Thập kỷ (1920 – 2020)</h3>
+              <span class="metric-tag">Loudness tăng +4.5dB</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">
-              Biểu đồ thể hiện xu hướng tăng dần của độ lớn âm thanh (Loudness War) và mức năng lượng trung bình qua từng giai đoạn lịch sử âm nhạc.
+            <p style="font-size: 0.84rem; color: var(--text-secondary);">
+              Xu hướng tăng của độ lớn âm thanh (Loudness) và mức năng lượng (Energy) theo thời gian, đối lập với sự suy giảm của độ mộc mạc (Acousticness).
             </p>
-            <canvas class="eda-chart-canvas" id="decadeTrendCanvas" width="600" height="280"></canvas>
+            <canvas class="eda-chart-canvas" id="decadeTrendCanvas" width="600" height="260"></canvas>
           </div>
 
           <!-- Chart 2: Tương quan Năng lượng & Điểm phổ biến -->
           <div class="eda-card">
             <div class="panel-title">
-              <h3>2. Phân bố Điểm số Phổ biến theo Mức Năng Lượng</h3>
-              <span class="metric-tag">Điểm ngọt (Sweet Spot): 0.65 – 0.80</span>
+              <h3>2. Phân Bố Mật Độ Điểm Số & Vùng Tối Ưu (Sweet Spot)</h3>
+              <span class="metric-tag">Optimal: 0.65 – 0.80</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">
-              Bài hát có mức năng lượng trong khoảng 65% - 80% có tỷ lệ đạt điểm phổ biến cao nhất trên nền tảng Spotify.
+            <p style="font-size: 0.84rem; color: var(--text-secondary);">
+              Bài hát có mức năng lượng trong khoảng 65% – 80% có xác suất đạt điểm số thị trường cao nhất trên nền tảng Spotify.
             </p>
-            <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="280"></canvas>
+            <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="260"></canvas>
           </div>
 
-          <!-- Chart 3: Tương quan thuộc tính âm học -->
+          <!-- Chart 3: Ma trận tương quan làm dịu -->
           <div class="eda-card">
             <div class="panel-title">
-              <h3>3. Ma Trận Tương Quan Âm Học (Feature Correlation)</h3>
-              <span class="metric-tag">Energy & Loudness (+0.78)</span>
+              <h3>3. Ma Trận Hệ Số Tương Quan Pearson (Feature Correlation)</h3>
+              <span class="metric-tag">r(Energy, Loudness) = +0.78</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">
-              Acousticness có tương quan nghịch mạnh với Energy (-0.72). Các bài hát Danceability cao thường đi kèm Valence tươi vui (+0.54).
+            <p style="font-size: 0.84rem; color: var(--text-secondary);">
+              Ma trận tương quan đơn sắc thể hiện mối liên hệ thuận giữa Energy - Loudness (+0.78) và tương quan nghịch giữa Energy - Acousticness (-0.72).
             </p>
-            <canvas class="eda-chart-canvas" id="correlationCanvas" width="600" height="280"></canvas>
+            <canvas class="eda-chart-canvas" id="correlationCanvas" width="600" height="260"></canvas>
           </div>
 
-          <!-- Chart 4: Thống kê tổng quan bộ dữ liệu -->
+          <!-- Chart 4: KPI Blocks Thống Kê Mô Tả Chuẩn Mực -->
           <div class="eda-card">
             <div class="panel-title">
-              <h3>4. Trích Xuất Thống Kê Quan Trọng (Key Takeaways)</h3>
-              <span class="metric-tag">586,672 bài hát</span>
+              <h3>4. Thống Kê Mô Tả Tập Dữ Liệu Huấn Luyện (Descriptive Statistics)</h3>
+              <span class="metric-tag">N = 586,672</span>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
-              <div class="meta-item">
-                <dt>Thời lượng trung bình</dt>
-                <dd>3.82 Phút (~229s)</dd>
+            <div class="kpi-grid">
+              <div class="kpi-block">
+                <span class="kpi-value">586,672</span>
+                <span class="kpi-label">Tổng số bản ghi mẫu</span>
+                <span class="kpi-sub">1920 – 2021 Data Horizon</span>
               </div>
-              <div class="meta-item">
-                <dt>Tỷ lệ bài hát Trưởng (Major)</dt>
-                <dd>67.4% Toàn tập</dd>
+              <div class="kpi-block">
+                <span class="kpi-value">3.82 Phút</span>
+                <span class="kpi-label">Thời lượng trung bình</span>
+                <span class="kpi-sub">Độ lệch chuẩn: 2.11 min</span>
               </div>
-              <div class="meta-item">
-                <dt>Tốc độ nhịp phổ biến nhất</dt>
-                <dd>120 – 128 BPM</dd>
+              <div class="kpi-block">
+                <span class="kpi-value">67.4%</span>
+                <span class="kpi-label">Tỷ lệ điệu Trưởng (Major)</span>
+                <span class="kpi-sub">32.6% Điệu Thứ (Minor)</span>
               </div>
-              <div class="meta-item">
-                <dt>Giọng nhạc xuất hiện nhiều nhất</dt>
-                <dd>C (Đô) & G (Sol)</dd>
+              <div class="kpi-block">
+                <span class="kpi-value">120 – 128</span>
+                <span class="kpi-label">Dải nhịp độ phổ biến (BPM)</span>
+                <span class="kpi-sub">Phổ biến nhất: C (Đô) & G (Sol)</span>
               </div>
             </div>
-            <p style="font-size: 0.85rem; color: var(--spotify-green); margin-top: 10px; font-weight: 600;">
-              💡 Mẹo sản xuất: Các bài hát Pop hiện đại có xu hướng rút ngắn thời lượng xuống dưới 3.5 phút và tăng độ bắt tai (Danceability > 0.70).
-            </p>
           </div>
         </div>
       </section>
 
-      <!-- VIEW 4: PHÂN CỤM VIBE ÂM THANH (CLUSTER) -->
+      <!-- VIEW 4: PHÂN CỤM TOÁN HỌC K-MEANS -->
       <section class="view" id="view-cluster" data-view-panel="cluster">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Audio Clustering (K-Means AI)</p>
-            <h2>Phân cụm phong cách & Vibe âm nhạc</h2>
+            <p class="eyebrow">Phân hệ 4: Nghiên Cứu Phân Cụm Toán Học K-Means</p>
+            <h2>Phân loại phân nhóm âm nhạc thuần nội dung (Content-Only Clustering)</h2>
           </div>
-          <p>Thuật toán gom cụm thuần túy dựa trên bản sắc âm thanh (Audio Content), không phụ thuộc vào độ nổi tiếng hay năm phát hành.</p>
+          <p class="section-subtitle">
+            Thuật toán K-Means phân cụm trên 10 chiều âm học chuẩn hóa, kiểm định số cụm tối ưu k=3 bằng phương pháp Silhouette & Elbow.
+          </p>
         </div>
 
         <div class="work-grid two">
           <form class="tool-panel" id="clusterForm">
             <div class="panel-title">
-              <h3>Dấu vân tay âm thanh (Audio Fingerprint)</h3>
-              <button class="ghost-button" type="button" id="syncFromPredict">📥 Đồng bộ từ tab Studio</button>
+              <h3>Vector tham số âm học (Cluster Input)</h3>
+              <button class="ghost-button" type="button" id="syncFromPredict">Đồng bộ từ Studio</button>
             </div>
 
             <div class="slider-grid" data-slider-scope="cluster">
               <label>
-                <div class="slider-head"><span>💃 Độ bắt tai (Danceability)</span><output>0.76</output></div>
+                <div class="slider-head"><span>Độ bắt tai (Danceability)</span><output>0.76</output></div>
                 <input name="danceability" type="range" min="0" max="1" step="0.01" value="0.76">
               </label>
               <label>
-                <div class="slider-head"><span>⚡ Năng lượng (Energy)</span><output>0.72</output></div>
+                <div class="slider-head"><span>Năng lượng (Energy)</span><output>0.72</output></div>
                 <input name="energy" type="range" min="0" max="1" step="0.01" value="0.72">
               </label>
               <label>
-                <div class="slider-head"><span>🗣️ Tỷ lệ giọng nói (Speechiness)</span><output>0.06</output></div>
+                <div class="slider-head"><span>Tỷ lệ lời thoại (Speechiness)</span><output>0.06</output></div>
                 <input name="speechiness" type="range" min="0" max="1" step="0.01" value="0.06">
               </label>
               <label>
-                <div class="slider-head"><span>🎸 Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
+                <div class="slider-head"><span>Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
                 <input name="acousticness" type="range" min="0" max="1" step="0.01" value="0.12">
               </label>
               <label>
-                <div class="slider-head"><span>🎹 Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
+                <div class="slider-head"><span>Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
                 <input name="instrumentalness" type="range" min="0" max="1" step="0.01" value="0.00">
               </label>
               <label>
-                <div class="slider-head"><span>🎤 Biểu diễn sống (Liveness)</span><output>0.14</output></div>
+                <div class="slider-head"><span>Biểu diễn trực tiếp (Liveness)</span><output>0.14</output></div>
                 <input name="liveness" type="range" min="0" max="1" step="0.01" value="0.14">
               </label>
               <label>
-                <div class="slider-head"><span>🎭 Độ tươi vui (Valence)</span><output>0.68</output></div>
+                <div class="slider-head"><span>Cảm xúc tích cực (Valence)</span><output>0.68</output></div>
                 <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
               </label>
             </div>
 
             <div class="form-grid compact">
-              <label>⏱️ Thời lượng (Phút) 
+              <label>Thời lượng (Phút) 
                 <input name="duration_min" type="number" min="0.1" max="60" step="0.1" value="3.2" required>
               </label>
-              <label>🔊 Độ lớn âm thanh (Loudness dB) 
+              <label>Độ lớn âm thanh (Loudness dB) 
                 <input name="loudness" type="number" min="-80" max="10" step="0.1" value="-5.5" required>
               </label>
-              <label>⏱️ Tốc độ nhịp (Tempo BPM) 
+              <label>Tốc độ nhịp (Tempo BPM) 
                 <input name="tempo" type="number" min="1" max="300" step="0.1" value="124" required>
               </label>
             </div>
 
-            <button class="primary-button" type="submit">🔮 Xác Định Cụm Phong Cách Âm Nhạc</button>
+            <button class="primary-button" type="submit">Phân Loại Cụm Phong Cách Âm Nhạc</button>
           </form>
 
           <aside class="result-panel" aria-live="polite">
-            <div class="cluster-number-display">
-              <span id="clusterValue">--</span>
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div class="cluster-number-display">
+                <span id="clusterValue">--</span>
+              </div>
+              <div>
+                <h3 id="clusterTitle" style="font-size: 1.25rem; font-weight: 700; color: var(--primary-navy);">Chưa xác định phân nhóm</h3>
+                <span class="kpi-sub">Tối ưu theo Silhouette Score: k = 3</span>
+              </div>
             </div>
-            <h3 id="clusterTitle" style="font-family: var(--font-display); font-size: 1.4rem;">Chưa xác định cụm</h3>
+            
             <p class="prediction-summary" id="clusterSummary">
-              Nhập các chỉ số âm học hoặc đồng bộ từ tab Studio để mô hình K-Means phân loại phong cách bài hát.
+              Mô hình K-Means so sánh khoảng cách Euclidean của vector đầu vào tới 3 tâm cụm phân bố để gán nhãn phong cách.
             </p>
+
             <dl class="meta-list" id="clusterMeta">
-              <div class="meta-item"><dt>Số cụm tối ưu (k)</dt><dd>k = 3</dd></div>
-              <div class="meta-item"><dt>Đặc trưng sử dụng</dt><dd>10 Audio Features</dd></div>
-              <div class="meta-item"><dt>Mục tiêu phân loại</dt><dd>Vibe & Tone</dd></div>
-              <div class="meta-item"><dt>Sử dụng độ nổi tiếng</dt><dd>Không (Unbiased)</dd></div>
+              <div class="meta-item"><dt>Số cụm tối ưu (k)</dt><dd>k = 3 Cụm</dd></div>
+              <div class="meta-item"><dt>Số chiều đặc trưng</dt><dd>10 Audio Features</dd></div>
+              <div class="meta-item"><dt>Tiêu chuẩn chọn k</dt><dd>Max Silhouette (0.242)</dd></div>
+              <div class="meta-item"><dt>Biến mục tiêu</dt><dd>Content Unbiased</dd></div>
             </dl>
           </aside>
         </div>
       </section>
 
-      <!-- VIEW 5: GỢI Ý BÀI HÁT TƯƠNG TỰ (RECOMMENDATIONS) -->
+      <!-- VIEW 5: GỢI Ý BÀI HÁT TƯƠNG ĐỒNG -->
       <section class="view" id="view-recommend" data-view-panel="recommend">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Content-Based Recommendation</p>
-            <h2>Gợi ý bài hát tương đồng theo Spotify Track ID</h2>
+            <p class="eyebrow">Phân hệ 5: Bộ Gợi Ý Tương Đồng Theo Nội Dung</p>
+            <h2>Truy vấn bài hát có đặc tính âm học tương đồng (Cosine Similarity)</h2>
           </div>
-          <p>Sử dụng khoảng cách Cosine Similarity giữa vector đặc trưng âm học để tìm những bài hát có cấu trúc tương tự nhất.</p>
+          <p class="section-subtitle">
+            Tính toán khoảng cách Cosine Similarity giữa vector đặc trưng của bài hát truy vấn với toàn bộ kho dữ liệu để tìm ra các bản nhạc đồng nhất về cấu trúc âm thanh.
+          </p>
         </div>
 
         <div class="work-grid two">
           <form class="tool-panel" id="recommendForm">
             <div class="panel-title">
-              <h3>Truy vấn bài hát gốc</h3>
-              <button class="ghost-button" type="button" id="loadDemoTrack">🎵 Nạp Track ID mẫu</button>
+              <h3>Truy vấn theo Spotify Track ID</h3>
+              <button class="ghost-button" type="button" id="loadDemoTrack">Nạp Track ID mẫu</button>
             </div>
             <label>Spotify Track ID
               <input name="track_id" type="text" placeholder="Ví dụ: 00OQsMilg3NJQ365MDUnFJ" autocomplete="off" required>
             </label>
             <label>
-              <div class="slider-head"><span>Số lượng bài gợi ý mong muốn</span><output>5 bài</output></div>
+              <div class="slider-head"><span>Số lượng kết quả đề xuất (k)</span><output>5 bài</output></div>
               <input name="n" type="range" min="1" max="20" step="1" value="5">
             </label>
-            <button class="primary-button" type="submit">🎧 Tìm Danh Sách Bài Tương Đồng</button>
+            <button class="primary-button" type="submit">Tìm Danh Sách Bài Hát Tương Đồng</button>
           </form>
 
           <aside class="table-panel" aria-live="polite">
             <div class="panel-title">
-              <h3>Danh sách đề xuất tương đồng</h3>
+              <h3>Danh sách đề xuất theo độ tương đồng Cosine</h3>
               <span class="metric-tag" id="recommendCount">0 kết quả</span>
             </div>
             <div id="recommendResults" class="empty-state">
-              Chưa có kết quả. Vui lòng nhập mã Spotify Track ID và bấm tìm kiếm.
+              Chưa có dữ liệu truy vấn. Vui lòng nhập mã Spotify Track ID để tìm kiếm.
             </div>
           </aside>
         </div>
       </section>
 
-      <!-- VIEW 6: THÔNG SỐ & ĐÁNH GIÁ MÔ HÌNH (INSIGHTS) -->
+      <!-- VIEW 6: ĐÁNH GIÁ MÔ HÌNH & LEADERBOARD -->
       <section class="view" id="view-insights" data-view-panel="insights">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Model Performance & Metrics</p>
-            <h2>Báo cáo hiệu năng & Đánh giá độ chính xác mô hình</h2>
+            <p class="eyebrow">Phân hệ 6: Đánh Giá Hiệu Năng & Kiểm Định Mô Hình</p>
+            <h2>Báo cáo kiểm định thực nghiệm (Model Selection & Diagnostics)</h2>
           </div>
-          <p>Mô hình XGBoost với kiến trúc xử lý tách bạch giữa đặc trưng âm thanh và suy luận backend.</p>
+          <p class="section-subtitle">
+            Tổng hợp kết quả kiểm định trên tập Validation (2018) và Holdout Final Test (2019+) so sánh giữa các kiến trúc học máy.
+          </p>
         </div>
 
         <div class="insight-grid">
           <article class="insight-card">
-            <span>Trạng thái kết nối API</span>
-            <strong id="insightApi">Đang kiểm tra...</strong>
-            <p id="insightApiDetail">Đang gọi endpoint /health để kiểm tra độ sẵn sàng của các models.</p>
+            <span>MÔ HÌNH CHIẾN THẮNG</span>
+            <strong>XGBoost Regressor</strong>
+            <p>MAE = 12.60 (Validation 2018) và 16.20 (Final Test Horizon 2019+).</p>
           </article>
           <article class="insight-card">
-            <span>Độ chính xác quy đổi</span>
-            <strong>~84% – 92.2%</strong>
-            <p>Sai số trung bình MAE chỉ 12.6 điểm (Validation 2018) và 16.2 điểm (Test 2019+ trên thang 100).</p>
+            <span>HỆ SỐ XÁC ĐỊNH (R²)</span>
+            <strong>R² = 0.420</strong>
+            <p>Mô hình giải thích 42.0% phương sai điểm số trên tập kiểm định 2018.</p>
           </article>
           <article class="insight-card">
-            <span>Mốc hỗ trợ thời gian</span>
-            <strong>Năm 2020</strong>
-            <p>Dự đoán các bài hát sau mốc 2020 được phân loại là ngoại suy xu hướng thời gian.</p>
+            <span>QUY TRÌNH PHÂN CHIA THỜI GIAN</span>
+            <strong>Temporal Split Protocol</strong>
+            <p>Fit: 1920 – 2017 (554K bài) | Val: 2018 | Test: 2019 – 2021 (32K bài).</p>
           </article>
         </div>
 
+        <!-- Leaderboard 6 Thí Nghiệm -->
         <div class="accuracy-table-box">
           <div class="panel-title">
-            <h3>Báo cáo sai số theo phân khúc bài hát (Final Test Horizon 2019+)</h3>
+            <h3>Bảng đối sánh hiệu năng các mô hình thí nghiệm (Model Selection Leaderboard)</h3>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Thí nghiệm</th>
+                <th>Mô hình</th>
+                <th>Số đặc trưng</th>
+                <th>MAE (Val 2018)</th>
+                <th>RMSE (Val 2018)</th>
+                <th>R² Score</th>
+                <th>Đánh giá xếp hạng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Engineered With-Time</b></td>
+                <td><b>XGBoost (Selected Winner)</b></td>
+                <td>32 Features</td>
+                <td class="highlight">12.60 điểm</td>
+                <td class="highlight">16.60 điểm</td>
+                <td class="highlight">0.420</td>
+                <td>Hạng 1: Tối ưu MAE & RMSE toàn diện.</td>
+              </tr>
+              <tr>
+                <td>Baseline With-Time</td>
+                <td>XGBoost</td>
+                <td>18 Features</td>
+                <td>12.67 điểm</td>
+                <td>16.68 điểm</td>
+                <td>0.414</td>
+                <td>Hạng 2: Thiếu 14 đặc trưng phái sinh.</td>
+              </tr>
+              <tr>
+                <td>Engineered With-Time</td>
+                <td>Random Forest</td>
+                <td>32 Features</td>
+                <td>12.74 điểm</td>
+                <td>16.70 điểm</td>
+                <td>0.412</td>
+                <td>Hạng 3: Hiệu năng cao nhưng kích thước lớn.</td>
+              </tr>
+              <tr>
+                <td>Engineered With-Time</td>
+                <td>Linear Regression</td>
+                <td>32 Features</td>
+                <td>16.21 điểm</td>
+                <td>19.79 điểm</td>
+                <td>0.175</td>
+                <td>Hạng 4: Giới hạn của mô hình tuyến tính.</td>
+              </tr>
+              <tr>
+                <td>Engineered No-Time</td>
+                <td>XGBoost</td>
+                <td>26 Features</td>
+                <td>16.69 điểm</td>
+                <td>20.06 điểm</td>
+                <td>0.152</td>
+                <td>Hạng 5: Không có đặc trưng thời gian.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Sai Số Theo Phân Khúc -->
+        <div class="accuracy-table-box">
+          <div class="panel-title">
+            <h3>Báo cáo sai số theo phân khúc độ phổ biến (Final Test Horizon 2019+)</h3>
           </div>
           <table class="data-table">
             <thead>
@@ -630,7 +676,7 @@
                 <th>Phân khúc độ phổ biến</th>
                 <th>Số lượng mẫu</th>
                 <th>Sai số MAE (Thang 100)</th>
-                <th>Độ chính xác ước tính</th>
+                <th>Độ chính xác tương đương</th>
                 <th>Đặc điểm đánh giá</th>
               </tr>
             </thead>
@@ -661,7 +707,7 @@
                 <td>3,088 bài</td>
                 <td>26.93 điểm</td>
                 <td>~73.1%</td>
-                <td>Chịu ảnh hưởng lớn từ thương hiệu nghệ sĩ và chiến dịch viral TikTok.</td>
+                <td>Chịu ảnh hưởng lớn từ thương hiệu nghệ sĩ và chiến dịch viral.</td>
               </tr>
             </tbody>
           </table>
@@ -669,7 +715,7 @@
 
         <div class="accuracy-table-box">
           <div class="panel-title">
-            <h3>Dữ liệu thô từ máy chủ (/health response)</h3>
+            <h3>Dữ liệu thô phản hồi từ hệ thống (/health payload)</h3>
           </div>
           <pre class="health-json" id="healthJson">Đang tải dữ liệu payload...</pre>
         </div>
@@ -680,24 +726,21 @@
     <div class="modal-backdrop is-hidden" id="settingsModal">
       <div class="modal-card">
         <div class="modal-header">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 1.25rem;">⚙️</span>
-            <h3>Cài Đặt Máy Chủ API</h3>
-          </div>
-          <button class="modal-close-btn" id="closeSettingsBtn" type="button" aria-label="Đóng cài đặt">✕</button>
+          <h3>Cài Đặt Kết Nối Máy Chủ API</h3>
+          <button class="modal-close-btn" id="closeSettingsBtn" type="button">✕</button>
         </div>
         <div class="modal-body">
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
-            HitRadar Pro tự động chuyển sang chế độ <b>Cloud AI Engine</b> khi chạy trực tuyến. Nếu bạn muốn kết nối tới FastAPI Backend riêng, vui lòng nhập URL dưới đây:
+          <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 14px;">
+            HitRadar Pro tự động vận hành ở chế độ <b>Cloud AI Engine</b> trực tuyến. Nếu bạn muốn kết nối máy chủ FastAPI cục bộ hoặc máy chủ riêng, vui lòng nhập URL:
           </p>
-          <label class="api-field modal-field">
-            <span>🔗 Địa chỉ Backend API:</span>
+          <label class="modal-field">
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary);">Địa chỉ Backend API:</span>
             <input id="apiBaseInput" type="url" value="http://127.0.0.1:8000" autocomplete="off" placeholder="http://127.0.0.1:8000">
           </label>
         </div>
         <div class="modal-footer">
           <button class="ghost-button" type="button" id="resetApiBtn">Khôi phục mặc định</button>
-          <button class="primary-button" type="button" id="saveSettingsBtn">💾 Lưu & Kiểm Tra Kết Nối</button>
+          <button class="primary-button" type="button" id="saveSettingsBtn" style="width: auto;">Lưu & Kiểm Tra</button>
         </div>
       </div>
     </div>
