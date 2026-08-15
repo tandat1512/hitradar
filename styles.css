@@ -989,31 +989,24 @@ body {
 /* 100% Perfectly Centered Inside the Arc Dome */
 .gauge-score-overlay {
   position: absolute;
-  top: 52px;
+  top: 56px;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   line-height: 1;
   pointer-events: none;
 }
 
 .score-main-value {
-  font-size: 2.35rem;
+  font-size: 3.1rem;
   font-weight: 900;
   font-family: var(--font-sans);
   color: var(--brand-primary);
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
   line-height: 1;
-}
-
-.score-scale-label {
-  font-size: 0.7rem;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--text-muted);
-  margin-top: 4px;
 }
 
 /* Placed safely below the gauge canvas (ABSOLUTELY ZERO OVERLAP) */
