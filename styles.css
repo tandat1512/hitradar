@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap');
 
 :root {
   color-scheme: light;
@@ -221,14 +221,14 @@ body {
   border-color: var(--brand-accent);
 }
 
-/* App Shell */
+/* App Shell with Enhanced Macro Spacing */
 .app-shell {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 28px clamp(16px, 4vw, 56px) 80px;
+  padding: 32px clamp(16px, 4vw, 56px) 96px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 42px; /* Generous breathing room */
 }
 
 /* ============================================================
@@ -407,7 +407,7 @@ body {
 .meter-progress-fill.fill-valence { background: var(--accent-amber); width: 68%; }
 
 /* ============================================================
-   REFERENCE ARCHETYPES (VIBE PRESET CARDS)
+   REFERENCE ARCHETYPES (OPTIMIZED TYPOGRAPHY)
    ============================================================ */
 .preset-section {
   display: flex;
@@ -462,7 +462,7 @@ body {
 
 .vibe-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
   gap: 10px;
 }
 
@@ -474,7 +474,7 @@ body {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   box-shadow: var(--shadow-subtle);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -520,17 +520,44 @@ body {
   color: var(--text-primary);
 }
 
-.vibe-desc {
-  font-size: 0.72rem;
-  color: var(--text-secondary);
-  line-height: 1.35;
+/* Optimized Micro-Chips for Archetype Cards */
+.vibe-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
 }
 
-/* Views & Section Headers */
+.vibe-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.vibe-chip b {
+  color: var(--brand-primary);
+  font-family: var(--font-mono);
+  margin-left: 3px;
+  font-weight: 700;
+}
+
+.vibe-card.active .vibe-chip {
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Views & Section Headers with Generous Spacing */
 .view {
   display: none;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
+  padding-top: 8px; /* Enhanced Macro Separation */
 }
 
 .view.is-active {
@@ -548,15 +575,16 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   gap: 20px;
 }
 
 .section-head h2 {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.4px;
   color: var(--text-primary);
+  margin-top: 2px;
 }
 
 .section-subtitle {
@@ -571,7 +599,7 @@ body {
 .work-grid {
   display: grid;
   grid-template-columns: 1.25fr 1.1fr;
-  gap: 28px;
+  gap: 30px;
   align-items: start;
 }
 
@@ -1035,7 +1063,7 @@ body {
 .eda-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 26px;
 }
 
 .eda-card {
@@ -1188,7 +1216,7 @@ body {
 .galaxy-canvas-wrapper {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 520px;
   background: #ffffff;
   border-radius: var(--radius-sm);
   overflow: hidden;

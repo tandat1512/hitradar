@@ -1025,7 +1025,7 @@ function drawMoodQuadrant() {
 }
 
 /* ============================================================
-   4. AUDIO GALAXY SCATTER CANVAS (WITH HALO & CROSSHAIR DROP LINES)
+   4. AUDIO GALAXY SCATTER CANVAS (WITH HALO, DROP LINES & LEGEND OVERLAY)
    ============================================================ */
 let galaxyStars = [];
 let currentClusterFilter = "all";
@@ -1200,6 +1200,43 @@ function drawGalaxyMap() {
     ctx.textAlign = "left";
     ctx.fillText(`🎯 Điểm truy vấn (${userV.toFixed(2)}, ${userE.toFixed(2)})`, ux + 14, uy + 4);
   }
+
+  // Visual Legend Overlay Box (Top-Right)
+  const legendW = 210;
+  const legendH = 110;
+  const legendX = width - padding - legendW - 10;
+  const legendY = padding + 10;
+
+  ctx.fillStyle = "rgba(255, 255, 255, 0.94)";
+  ctx.strokeStyle = "#e2e8f0";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.roundRect(legendX, legendY, legendW, legendH, 8);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.font = "700 10px 'JetBrains Mono', monospace";
+  ctx.fillStyle = "#64748b";
+  ctx.textAlign = "left";
+  ctx.fillText("CHÚ GIẢI PHÂN NHÓM (LEGEND)", legendX + 12, legendY + 18);
+
+  const legendItems = [
+    { color: "#2563eb", label: "Cụm 0 (61.5%): Pop & Dance" },
+    { color: "#0d9488", label: "Cụm 1 (33.9%): Mộc Mạc & Trữ Tình" },
+    { color: "#d97706", label: "Cụm 2 (4.6%): Giọng Nói & Podcast" },
+  ];
+
+  legendItems.forEach((item, idx) => {
+    const itemY = legendY + 38 + idx * 20;
+    ctx.beginPath();
+    ctx.arc(legendX + 18, itemY, 4.5, 0, Math.PI * 2);
+    ctx.fillStyle = item.color;
+    ctx.fill();
+
+    ctx.font = "600 10.5px 'Plus Jakarta Sans', sans-serif";
+    ctx.fillStyle = "#1e293b";
+    ctx.fillText(item.label, legendX + 30, itemY + 3.5);
+  });
 }
 
 const galaxyCanvas = document.querySelector("#galaxyCanvas");
@@ -1470,7 +1507,7 @@ function drawCorrelationChart() {
 }
 
 /* ============================================================
-   6. VISUALIZER PULSE CANVAS (LIGHT THEME)
+   6. VISUALIZER PULSE CANVAS (VERTICAL GRADIENT + SCANNING PLAYHEAD)
    ============================================================ */
 function drawVisualizer() {
   const canvas = document.querySelector("#pulseCanvas");
@@ -1478,6 +1515,7 @@ function drawVisualizer() {
   const context = canvas.getContext("2d");
   const bars = 48;
   let phase = 0;
+  let playheadX = 0;
 
   function frame() {
     const width = canvas.width;
@@ -1496,12 +1534,36 @@ function drawVisualizer() {
       const barWidth = width / bars - 3;
       const wave = Math.sin(phase + i * 0.32) * 0.5 + 0.5;
       const barHeight = 10 + wave * 80 * (0.4 + energy * 0.7);
+      const barY = height - barHeight - 8;
 
-      context.fillStyle = i % 2 === 0 ? "#1e40af" : "#2563eb";
+      // Vertical Linear Gradient (Navy to Sky Blue)
+      const grad = context.createLinearGradient(0, height, 0, barY);
+      grad.addColorStop(0, "#1e40af");
+      grad.addColorStop(0.6, "#2563eb");
+      grad.addColorStop(1, "#38bdf8");
+
+      context.fillStyle = grad;
       context.beginPath();
-      context.roundRect(x + 1, height - barHeight - 8, barWidth, barHeight, 2);
+      context.roundRect(x + 1, barY, barWidth, barHeight, 2);
       context.fill();
     }
+
+    // Scanning Playhead Line (Coral Red)
+    context.strokeStyle = "rgba(239, 68, 68, 0.75)";
+    context.lineWidth = 1.5;
+    context.beginPath();
+    context.moveTo(playheadX, 4);
+    context.lineTo(playheadX, height - 4);
+    context.stroke();
+
+    // Playhead Top Indicator
+    context.fillStyle = "#ef4444";
+    context.beginPath();
+    context.arc(playheadX, 5, 3, 0, Math.PI * 2);
+    context.fill();
+
+    playheadX += (tempo / 120) * 1.8;
+    if (playheadX > width) playheadX = 0;
 
     phase += (tempo / 120) * 0.035;
     requestAnimationFrame(frame);

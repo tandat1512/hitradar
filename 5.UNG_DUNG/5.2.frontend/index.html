@@ -85,7 +85,11 @@
                   <strong class="vibe-title">Pop Thịnh Hành</strong>
                   <span class="vibe-badge-pill">124 BPM</span>
                 </div>
-                <p class="vibe-desc">Bắt tai cao (0.76), Năng lượng (0.72), Major C.</p>
+                <div class="vibe-chips-list">
+                  <span class="vibe-chip">Dance: <b>0.76</b></span>
+                  <span class="vibe-chip">Energy: <b>0.72</b></span>
+                  <span class="vibe-chip">Key: <b>C Major</b></span>
+                </div>
               </div>
 
               <div class="vibe-card" data-preset="edm">
@@ -93,7 +97,11 @@
                   <strong class="vibe-title">EDM Điện Tử</strong>
                   <span class="vibe-badge-pill">128 BPM</span>
                 </div>
-                <p class="vibe-desc">Năng lượng cực đại (0.91), Loudness -3.8dB.</p>
+                <div class="vibe-chips-list">
+                  <span class="vibe-chip">Energy: <b>0.91</b></span>
+                  <span class="vibe-chip">Loud: <b>-3.8dB</b></span>
+                  <span class="vibe-chip">Key: <b>F Minor</b></span>
+                </div>
               </div>
 
               <div class="vibe-card" data-preset="synthwave">
@@ -101,7 +109,11 @@
                   <strong class="vibe-title">Synthwave 80s</strong>
                   <span class="vibe-badge-pill">128 BPM</span>
                 </div>
-                <p class="vibe-desc">Nhạc cụ cao (0.60), Năng lượng (0.85), Minor G.</p>
+                <div class="vibe-chips-list">
+                  <span class="vibe-chip">Inst: <b>0.60</b></span>
+                  <span class="vibe-chip">Energy: <b>0.85</b></span>
+                  <span class="vibe-chip">Key: <b>G Minor</b></span>
+                </div>
               </div>
 
               <div class="vibe-card" data-preset="ballad">
@@ -109,7 +121,11 @@
                   <strong class="vibe-title">Acoustic Ballad</strong>
                   <span class="vibe-badge-pill">78 BPM</span>
                 </div>
-                <p class="vibe-desc">Độ mộc mạc cao (0.78), Nhịp độ chậm (78 BPM).</p>
+                <div class="vibe-chips-list">
+                  <span class="vibe-chip">Acoustic: <b>0.78</b></span>
+                  <span class="vibe-chip">Tempo: <b>78</b></span>
+                  <span class="vibe-chip">Key: <b>D Major</b></span>
+                </div>
               </div>
 
               <div class="vibe-card" data-preset="lofi">
@@ -117,7 +133,11 @@
                   <strong class="vibe-title">Lofi Chill</strong>
                   <span class="vibe-badge-pill">85 BPM</span>
                 </div>
-                <p class="vibe-desc">Nhạc cụ (0.85), Mộc mạc (0.65), Minor A.</p>
+                <div class="vibe-chips-list">
+                  <span class="vibe-chip">Inst: <b>0.85</b></span>
+                  <span class="vibe-chip">Acoustic: <b>0.65</b></span>
+                  <span class="vibe-chip">Key: <b>A Minor</b></span>
+                </div>
               </div>
 
               <div class="vibe-card" data-preset="rock">
@@ -125,13 +145,17 @@
                   <strong class="vibe-title">Rock Động Lực</strong>
                   <span class="vibe-badge-pill">142 BPM</span>
                 </div>
-                <p class="vibe-desc">Năng lượng cao (0.88), Nhịp nhanh (142 BPM).</p>
+                <div class="vibe-chips-list">
+                  <span class="vibe-chip">Energy: <b>0.88</b></span>
+                  <span class="vibe-chip">Tempo: <b>142</b></span>
+                  <span class="vibe-chip">Key: <b>E Major</b></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Real-time Acoustic Telemetry Mini-Dashboard (Replaces Dead Space) -->
+        <!-- Real-time Acoustic Telemetry Mini-Dashboard -->
         <div class="telemetry-dashboard" aria-label="Bảng điều khiển đặc tính âm học thời gian thực">
           <div class="telemetry-header">
             <span class="telemetry-title">Đặc tính âm học thời gian thực (Live Telemetry)</span>
@@ -377,7 +401,7 @@
           </div>
 
           <div class="galaxy-canvas-wrapper">
-            <canvas id="galaxyCanvas" width="1300" height="500"></canvas>
+            <canvas id="galaxyCanvas" width="1300" height="520"></canvas>
             <div class="galaxy-node-card" id="galaxyNodeCard">
               <strong id="nodeTrackName">Tên bản ghi mẫu</strong>
               <div style="margin-top: 4px; display: flex; flex-direction: column; gap: 2px; color: var(--text-secondary);">
