@@ -1789,7 +1789,7 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
   const height = canvas.height;
   const paddingLeft = 42;
   const paddingRight = 24;
-  const paddingTop = 20;
+  const paddingTop = 36;
   const paddingBottom = 42;
 
   ctx.clearRect(0, 0, width, height);
@@ -1808,11 +1808,23 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
   ctx.fillStyle = "rgba(37, 99, 235, 0.05)";
   ctx.fillRect(sweetStartX - 4, paddingTop, sweetWidth, plotHeight);
 
-  // Sweet spot label
-  ctx.fillStyle = "#2563eb";
-  ctx.font = "700 9.5px 'Plus Jakarta Sans', sans-serif";
+  // Sweet spot sleek badge on top with guaranteed clearance (NO OVERLAP)
+  const badgeX = sweetStartX + sweetWidth / 2 - 4;
+  const badgeY = 16;
+  
+  ctx.fillStyle = "#eff6ff";
+  ctx.strokeStyle = "#bfdbfe";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.roundRect(badgeX - 105, badgeY - 9, 210, 18, 9);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.fillStyle = "#1d4ed8";
+  ctx.font = "800 9px 'Plus Jakarta Sans', sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("VÙNG TỐI ƯU (SWEET SPOT 0.65 - 0.80)", sweetStartX + sweetWidth / 2 - 4, paddingTop + 12);
+  ctx.textBaseline = "middle";
+  ctx.fillText("VÙNG TỐI ƯU (SWEET SPOT 0.65 – 0.80)", badgeX, badgeY);
 
   // 2. Soft Horizontal Gridlines
   ctx.save();
@@ -1860,13 +1872,15 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
       ctx.fillStyle = isHovered ? "#1e40af" : "#2563eb";
       ctx.font = "700 9.5px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
-      ctx.fillText(`${data.energyBins[i]}%`, x + barWidth / 2, y - 5);
+      ctx.textBaseline = "alphabetic";
+      ctx.fillText(`${data.energyBins[i]}%`, x + barWidth / 2, y - 6);
     }
 
     // X Axis bin labels
     ctx.fillStyle = isHovered ? "#1e40af" : "#64748b";
     ctx.font = isHovered ? "700 10px 'JetBrains Mono', monospace" : "500 9.5px 'JetBrains Mono', monospace";
     ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
     ctx.fillText(`${b.toFixed(1)}`, x + barWidth / 2, height - paddingBottom + 16);
   });
 
