@@ -400,16 +400,25 @@
                 <div class="gauge-canvas-wrap">
                   <canvas id="gaugeCanvas" width="240" height="135"></canvas>
                   <div class="gauge-score-overlay">
-                    <div class="score-main-value" id="scoreValue">--</div>
+                    <div class="score-main-value-wrap">
+                      <span class="score-main-value" id="scoreValue">--</span>
+                    </div>
+                    <span class="score-max-anchor">trên 100 điểm</span>
                   </div>
                 </div>
                 <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
-                <span class="tier-badge" id="tierLabel">CHƯA PHÂN HẠNG</span>
               </div>
 
-              <p class="prediction-summary" id="predictionSummary">
-                Chọn mẫu tham chiếu hoặc điều chỉnh các tham số đầu vào để mô hình tính toán điểm số và phân rã đóng góp đặc trưng.
-              </p>
+              <!-- AI Verdict & Support Callout Box -->
+              <div class="ai-verdict-card" id="aiVerdictCard">
+                <div class="ai-verdict-header">
+                  <span class="tier-badge" id="tierLabel">CHƯA PHÂN HẠNG</span>
+                  <span class="verdict-tag">Nhận định AI</span>
+                </div>
+                <p class="prediction-summary" id="predictionSummary">
+                  Chọn mẫu tham chiếu hoặc điều chỉnh các tham số đầu vào để mô hình tính toán điểm số và phân rã đóng góp đặc trưng.
+                </p>
+              </div>
 
               <!-- Feature Attribution Waterfall Chart (Clean, Floating on White) -->
               <div class="attribution-card">

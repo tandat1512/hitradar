@@ -406,7 +406,7 @@ function drawRadialGauge(score = 0, isScanning = false) {
   const endAngle = Math.PI * 2;     // 360° flat horizontal
   const totalAngle = Math.PI;
 
-  // 1. Background Gray Track
+  // 1. Full 180° Background Track (Crisp, clearly visible track running 0 to 100)
   ctx.beginPath();
   ctx.arc(centerX, centerY, radius, startAngle, endAngle);
   ctx.strokeStyle = "#e2e8f0";
@@ -447,15 +447,28 @@ function drawRadialGauge(score = 0, isScanning = false) {
     return;
   }
 
-  // 2. Active Progress Colored Arc
+  // 2. Active Progress Arc with Semantic Dynamic Colors
   if (score > 0) {
     const clampedScore = Math.max(0, Math.min(100, score));
     const currentProgressAngle = startAngle + totalAngle * (clampedScore / 100);
     
     const grad = ctx.createLinearGradient(0, centerY, width, centerY);
-    grad.addColorStop(0, "#2563eb");
-    grad.addColorStop(0.5, "#0d9488");
-    grad.addColorStop(1, "#10b981");
+    if (clampedScore >= 70) {
+      // 70 - 100 (Hit Potential): Vibrant Sapphire Blue -> Emerald Green
+      grad.addColorStop(0, "#2563eb");
+      grad.addColorStop(0.5, "#0d9488");
+      grad.addColorStop(1, "#10b981");
+    } else if (clampedScore >= 40) {
+      // 40 - 69 (Emerging): Warm Amber / Golden Orange (Tone-sur-tone with Emerging badge!)
+      grad.addColorStop(0, "#f59e0b");
+      grad.addColorStop(0.5, "#d97706");
+      grad.addColorStop(1, "#b45309");
+    } else {
+      // 0 - 39 (Niche / Low): Slate Charcoal
+      grad.addColorStop(0, "#94a3b8");
+      grad.addColorStop(0.5, "#64748b");
+      grad.addColorStop(1, "#475569");
+    }
 
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, startAngle, currentProgressAngle);
@@ -499,12 +512,29 @@ function animateScore(targetScore) {
     const easeProgress = 1 - Math.pow(1 - progress, 3);
     const currentVal = start + (clamped - start) * easeProgress;
     scoreValue.textContent = currentVal.toFixed(1);
+
+    // Update dynamic text color matching score semantics
+    if (currentVal >= 70) {
+      scoreValue.style.color = "#1d4ed8";
+    } else if (currentVal >= 40) {
+      scoreValue.style.color = "#b45309";
+    } else {
+      scoreValue.style.color = "#475569";
+    }
+
     drawRadialGauge(currentVal);
 
     if (progress < 1) {
       requestAnimationFrame(updateNumber);
     } else {
       scoreValue.textContent = clamped.toFixed(1);
+      if (clamped >= 70) {
+        scoreValue.style.color = "#1d4ed8";
+      } else if (clamped >= 40) {
+        scoreValue.style.color = "#b45309";
+      } else {
+        scoreValue.style.color = "#475569";
+      }
       drawRadialGauge(clamped);
     }
   }
@@ -513,22 +543,28 @@ function animateScore(targetScore) {
 
 function updateTierBadge(tier) {
   const tierBadge = document.querySelector("#tierLabel");
+  const verdictCard = document.querySelector("#aiVerdictCard");
   if (!tierBadge) return;
   tierBadge.className = "tier-badge";
+  if (verdictCard) verdictCard.className = "ai-verdict-card";
   
   const lower = String(tier).toLowerCase();
   if (lower.includes("high") || lower.includes("cao")) {
     tierBadge.textContent = "🌟 Hit Potential (Siêu Phẩm)";
     tierBadge.classList.add("tier-high");
+    if (verdictCard) verdictCard.classList.add("tier-high");
   } else if (lower.includes("medium") || lower.includes("trung")) {
     tierBadge.textContent = "🚀 Trending Potential (Tiềm Năng)";
     tierBadge.classList.add("tier-medium");
+    if (verdictCard) verdictCard.classList.add("tier-medium");
   } else if (lower.includes("emerging") || lower.includes("mới")) {
     tierBadge.textContent = "📈 Emerging Track (Mới Nổi)";
     tierBadge.classList.add("tier-emerging");
+    if (verdictCard) verdictCard.classList.add("tier-emerging");
   } else {
     tierBadge.textContent = "🎙️ Niche / Low Tier";
     tierBadge.classList.add("tier-low");
+    if (verdictCard) verdictCard.classList.add("tier-low");
   }
 }
 
