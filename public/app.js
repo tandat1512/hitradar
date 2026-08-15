@@ -1,6 +1,6 @@
 /**
  * HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI
- * Academic Light Research Dashboard, Commercial-grade Radial Donut Gauge, Standalone Radar
+ * Academic Light Research Dashboard, 180° Radial Donut Gauge (Zero Overlap)
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -382,7 +382,7 @@ function renderMeta(container, rows) {
 }
 
 /* ============================================================
-   RADIAL DONUT GAUGE CHART (WITH 180° BACKGROUND TRACK)
+   RADIAL DONUT GAUGE CHART (180° FLAT HORIZONTAL BASELINE)
    ============================================================ */
 function drawRadialGauge(score = 0) {
   const canvas = document.querySelector("#gaugeCanvas");
@@ -392,17 +392,17 @@ function drawRadialGauge(score = 0) {
   const width = canvas.width;
   const height = canvas.height;
   const centerX = width / 2;
-  const centerY = height - 14;
-  const radius = 94;
-  const lineWidth = 14;
+  const centerY = height - 8;
+  const radius = 84;
+  const lineWidth = 12;
 
   ctx.clearRect(0, 0, width, height);
 
-  const startAngle = Math.PI * 0.85;
-  const endAngle = Math.PI * 2.15;
-  const totalAngle = endAngle - startAngle;
+  const startAngle = Math.PI;       // 180° flat horizontal
+  const endAngle = Math.PI * 2;     // 360° flat horizontal
+  const totalAngle = Math.PI;
 
-  // 1. Background Gray Track (Runs complete 180°+ arc)
+  // 1. Background Gray Track
   ctx.beginPath();
   ctx.arc(centerX, centerY, radius, startAngle, endAngle);
   ctx.strokeStyle = "#e2e8f0";
@@ -410,7 +410,7 @@ function drawRadialGauge(score = 0) {
   ctx.lineCap = "round";
   ctx.stroke();
 
-  // Subtle tick markers
+  // Subtle Tick Numbers (Outside Arc)
   const ticks = [0, 25, 50, 75, 100];
   ticks.forEach((tickVal) => {
     const tAngle = startAngle + totalAngle * (tickVal / 100);
@@ -419,13 +419,13 @@ function drawRadialGauge(score = 0) {
     const ty = centerY + tickR * Math.sin(tAngle);
 
     ctx.fillStyle = "#94a3b8";
-    ctx.font = "600 8.5px 'JetBrains Mono', monospace";
+    ctx.font = "700 8.5px 'JetBrains Mono', monospace";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(`${tickVal}`, tx, ty);
   });
 
-  // 2. Active Progress Colored Arc (Overlaid with vibrant gradient)
+  // 2. Active Progress Colored Arc
   if (score > 0) {
     const clampedScore = Math.max(0, Math.min(100, score));
     const currentProgressAngle = startAngle + totalAngle * (clampedScore / 100);

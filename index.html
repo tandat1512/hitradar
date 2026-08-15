@@ -392,17 +392,19 @@
           <!-- Cột hiển thị kết quả khoa học với Radial Gauge & Standalone Radar -->
           <div class="radar-command-console">
             
-            <!-- Result Widget với Radial Gauge -->
+            <!-- Result Widget với Radial Gauge (Zero Overlap) -->
             <aside class="result-panel" id="radarTargetPanel" aria-live="polite">
               
               <div class="score-gauge-container">
+                <span class="gauge-kpi-header">ĐIỂM DỰ BÁO PHỔ BIẾN (POPULARITY SCORE)</span>
                 <div class="gauge-canvas-wrap">
-                  <canvas id="gaugeCanvas" width="240" height="135"></canvas>
+                  <canvas id="gaugeCanvas" width="260" height="145"></canvas>
                   <div class="gauge-score-overlay">
-                    <div class="score-main-value" id="scoreValue">-- <span>/ 100</span></div>
-                    <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
+                    <div class="score-main-value" id="scoreValue">--</div>
+                    <span class="score-scale-label">/ 100 ĐIỂM</span>
                   </div>
                 </div>
+                <div class="score-confidence" id="confidenceInterval">Khoảng tin cậy: ±7.77 MAE (95% CI)</div>
                 <span class="tier-badge" id="tierLabel">CHƯA PHÂN HẠNG</span>
               </div>
 
@@ -495,7 +497,7 @@
       <!-- VIEW 3: KHÁM PHÁ DỮ LIỆU EDA & THỐNG KÊ MÔ TẢ -->
       <section class="view" id="view-eda" data-view-panel="eda">
         <div class="section-head">
-          <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô Tả</p>
+          <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô TẢ</p>
           <h2>Phân tích xu hướng thập niên & tương quan đa biến</h2>
           <p class="section-subtitle">
             Trích xuất quy luật tiến hóa âm nhạc qua 10 thập kỷ (1920 – 2020) và ma trận hệ số tương quan Pearson chuẩn hóa trên 586,672 bài hát.

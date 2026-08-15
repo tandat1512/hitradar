@@ -896,7 +896,7 @@ body {
 }
 
 /* ============================================================
-   RADIAL GAUGE & ATTRIBUTION RESULT PANEL
+   RADIAL GAUGE & ATTRIBUTION RESULT PANEL (ZERO OVERLAP FIXED)
    ============================================================ */
 .radar-command-console {
   display: flex;
@@ -924,31 +924,48 @@ body {
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 20px 24px 18px;
+  padding: 20px 20px 22px;
   position: relative;
+  gap: 6px;
+}
+
+.gauge-kpi-header {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 2px;
 }
 
 .gauge-canvas-wrap {
   position: relative;
   width: 240px;
-  height: 135px;
+  height: 125px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #gaugeCanvas {
   width: 240px;
-  height: 135px;
+  height: 125px;
   display: block;
 }
 
+/* Centered cleanly inside the arc dome */
 .gauge-score-overlay {
   position: absolute;
-  bottom: 8px;
+  top: 36px;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1;
+  pointer-events: none;
 }
 
 .score-main-value {
@@ -959,32 +976,41 @@ body {
   letter-spacing: -1px;
 }
 
-.score-main-value span {
-  font-size: 1rem;
-  font-weight: 600;
+.score-scale-label {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
   color: var(--text-muted);
+  margin-top: 4px;
 }
 
+/* Placed safely below the gauge canvas (ABSOLUTELY ZERO OVERLAP) */
 .score-confidence {
   font-size: 0.76rem;
   font-family: var(--font-mono);
   font-weight: 600;
   color: var(--brand-teal);
-  margin-top: 6px;
+  text-align: center;
+  background: #ffffff;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-subtle);
+  margin-top: 8px;
 }
 
 .tier-badge {
-  margin-top: 10px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 16px;
+  padding: 6px 18px;
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   font-weight: 800;
   font-family: var(--font-sans);
   background: var(--bg-muted);
   color: var(--text-secondary);
+  margin-top: 4px;
 }
 
 .tier-badge.tier-high {
