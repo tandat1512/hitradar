@@ -398,13 +398,13 @@
               <div class="score-gauge-container">
                 <span class="gauge-kpi-header">ĐIỂM DỰ BÁO PHỔ BIẾN (POPULARITY SCORE)</span>
                 <div class="gauge-canvas-wrap">
-                  <canvas id="gaugeCanvas" width="260" height="145"></canvas>
+                  <canvas id="gaugeCanvas" width="240" height="125"></canvas>
                   <div class="gauge-score-overlay">
                     <div class="score-main-value" id="scoreValue">--</div>
                     <span class="score-scale-label">/ 100 ĐIỂM</span>
                   </div>
                 </div>
-                <div class="score-confidence" id="confidenceInterval">Khoảng tin cậy: ±7.77 MAE (95% CI)</div>
+                <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
                 <span class="tier-badge" id="tierLabel">CHƯA PHÂN HẠNG</span>
               </div>
 
@@ -494,7 +494,7 @@
         </div>
       </section>
 
-      <!-- VIEW 3: KHÁM PHÁ DỮ LIỆU EDA & THỐNG KÊ MÔ TẢ -->
+      <!-- VIEW 3: KHÁM PHÁ DỮ LIỆU EDA & THỐNG KÊ MÔ TẢ (BI PLATFORM UPGRADE) -->
       <section class="view" id="view-eda" data-view-panel="eda">
         <div class="section-head">
           <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô TẢ</p>
@@ -504,69 +504,129 @@
           </p>
         </div>
 
+        <!-- Global BI Filters Toolbar -->
+        <div class="eda-toolbar">
+          <div class="eda-filter-group">
+            <label class="eda-filter-item">
+              <span class="filter-caption">Thể loại / Phân nhóm (Cohort):</span>
+              <select id="edaGenreFilter" class="eda-select">
+                <option value="all">Tất cả thể loại (Toàn tập 586K bản ghi)</option>
+                <option value="pop">Pop & Commercial Dance (N = 182K)</option>
+                <option value="acoustic">Acoustic & Folk Ballad (N = 145K)</option>
+                <option value="electronic">EDM, Dance & Club Electronic (N = 98K)</option>
+                <option value="rock">Rock, Metal & Alternative (N = 112K)</option>
+                <option value="hiphop">Hip-Hop, Rap & Urban (N = 49K)</option>
+              </select>
+            </label>
+
+            <label class="eda-filter-item">
+              <span class="filter-caption">Khung thời gian (Time Horizon):</span>
+              <select id="edaTimeFilter" class="eda-select">
+                <option value="all">Toàn bộ 100 năm (1920 – 2021)</option>
+                <option value="modern">Kỷ nguyên số (2000 – 2021)</option>
+                <option value="golden">Thời kỳ hoàng kim (1960 – 1999)</option>
+                <option value="early">Thời kỳ sơ khai (1920 – 1959)</option>
+              </select>
+            </label>
+
+            <label class="eda-filter-item">
+              <span class="filter-caption">Chế độ thống kê (Metric):</span>
+              <select id="edaMetricMode" class="eda-select">
+                <option value="mean">Giá trị trung bình (Mean Average)</option>
+                <option value="median">Trung vị phân vị (Median P50)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="eda-action-group">
+            <button class="ghost-button" type="button" id="exportEdaPngBtn" title="Xuất cụm biểu đồ EDA dưới dạng ảnh PNG">
+              <span>📥 Xuất Biểu Đồ (PNG)</span>
+            </button>
+            <button class="ghost-button" type="button" id="exportEdaCsvBtn" title="Tải bảng dữ liệu thống kê tổng hợp CSV">
+              <span>📊 Tải Dữ Liệu (CSV)</span>
+            </button>
+            <button class="ghost-button" type="button" id="printEdaReportBtn" title="In hoặc lưu báo cáo PDF chuẩn A4">
+              <span>📄 In Báo Cáo (PDF)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2x2 Equal Height Grid -->
         <div class="eda-grid">
           <!-- Chart 1: Xu hướng thập niên -->
-          <div class="eda-card">
+          <div class="eda-card" id="edaCard1">
             <div class="panel-title">
               <h3>1. Tiến hóa Đặc tính Âm học qua các Thập kỷ (1920 – 2020)</h3>
-              <span class="metric-tag">Loudness tăng +4.5dB</span>
+              <span class="metric-tag" id="tagDecadeTrend">Loudness tăng +4.5dB</span>
             </div>
-            <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            <p class="eda-card-desc">
               Xu hướng tăng của độ lớn âm thanh (Loudness) và mức năng lượng (Energy) theo thời gian, đối lập với sự suy giảm của độ mộc mạc (Acousticness).
             </p>
-            <canvas class="eda-chart-canvas" id="decadeTrendCanvas" width="600" height="260"></canvas>
+            <div class="eda-canvas-container">
+              <canvas class="eda-chart-canvas" id="decadeTrendCanvas" width="600" height="280"></canvas>
+              <div class="eda-tooltip" id="decadeTooltip"></div>
+            </div>
           </div>
 
           <!-- Chart 2: Tương quan Năng lượng & Điểm phổ biến -->
-          <div class="eda-card">
+          <div class="eda-card" id="edaCard2">
             <div class="panel-title">
               <h3>2. Phân Bố Mật Độ Điểm Số & Vùng Tối Ưu (Sweet Spot)</h3>
-              <span class="metric-tag">Optimal: 0.65 – 0.80</span>
+              <span class="metric-tag" id="tagEnergyDist">Optimal: 0.65 – 0.80</span>
             </div>
-            <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            <p class="eda-card-desc">
               Bài hát có mức năng lượng trong khoảng 65% – 80% có xác suất đạt điểm số thị trường cao nhất trên nền tảng Spotify.
             </p>
-            <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="260"></canvas>
+            <div class="eda-canvas-container">
+              <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="280"></canvas>
+              <div class="eda-tooltip" id="energyDistTooltip"></div>
+            </div>
           </div>
 
           <!-- Chart 3: Ma trận tương quan làm dịu -->
-          <div class="eda-card">
+          <div class="eda-card" id="edaCard3">
             <div class="panel-title">
               <h3>3. Ma Trận Hệ Số Tương Quan Pearson (Feature Correlation)</h3>
-              <span class="metric-tag">r(Energy, Loudness) = +0.78</span>
+              <span class="metric-tag" id="tagCorrelation">r(Energy, Loudness) = +0.78</span>
             </div>
-            <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            <p class="eda-card-desc">
               Ma trận tương quan đơn sắc thể hiện mối liên hệ thuận giữa Energy - Loudness (+0.78) và tương quan nghịch giữa Energy - Acousticness (-0.72).
             </p>
-            <canvas class="eda-chart-canvas" id="correlationCanvas" width="600" height="260"></canvas>
+            <div class="eda-canvas-container">
+              <canvas class="eda-chart-canvas" id="correlationCanvas" width="600" height="280"></canvas>
+              <div class="eda-tooltip" id="correlationTooltip"></div>
+            </div>
           </div>
 
           <!-- Chart 4: KPI Blocks Thống Kê Mô Tả Chuẩn Mực -->
-          <div class="eda-card">
+          <div class="eda-card" id="edaCard4">
             <div class="panel-title">
-              <h3>4. Thống Kê Mô Tả Tập Dữ Liệu Huấn Luyện (Descriptive Statistics)</h3>
-              <span class="metric-tag">N = 586,672</span>
+              <h3>4. Thống Kê Mô Tả Phân Vị & Quy Mô Mẫu (Descriptive Statistics)</h3>
+              <span class="metric-tag" id="tagKpiSample">N = 586,672</span>
             </div>
+            <p class="eda-card-desc">
+              Các chỉ số thống kê chuẩn hóa toàn tập theo cấu trúc phân vị, bám sát các đặc tính phân phối âm học thực nghiệm.
+            </p>
             <div class="kpi-grid">
               <div class="kpi-block">
-                <span class="kpi-value">586,672</span>
+                <span class="kpi-value" id="kpiSampleCount">586,672</span>
                 <span class="kpi-label">Tổng số bản ghi mẫu</span>
-                <span class="kpi-sub">1920 – 2021 Data Horizon</span>
+                <span class="kpi-sub" id="kpiDataHorizon">1920 – 2021 Data Horizon</span>
               </div>
               <div class="kpi-block">
-                <span class="kpi-value">3.82 Phút</span>
+                <span class="kpi-value" id="kpiAvgDuration">3.82 Phút</span>
                 <span class="kpi-label">Thời lượng trung bình</span>
-                <span class="kpi-sub">Độ lệch chuẩn: 2.11 min</span>
+                <span class="kpi-sub" id="kpiStdDuration">Độ lệch chuẩn: 2.11 min</span>
               </div>
               <div class="kpi-block">
-                <span class="kpi-value">67.4%</span>
+                <span class="kpi-value" id="kpiMajorRatio">67.4%</span>
                 <span class="kpi-label">Tỷ lệ điệu Trưởng (Major)</span>
-                <span class="kpi-sub">32.6% Điệu Thứ (Minor)</span>
+                <span class="kpi-sub" id="kpiMinorRatio">32.6% Điệu Thứ (Minor)</span>
               </div>
               <div class="kpi-block">
-                <span class="kpi-value">120 – 128</span>
+                <span class="kpi-value" id="kpiCommonBpm">120 – 128</span>
                 <span class="kpi-label">Dải nhịp độ phổ biến (BPM)</span>
-                <span class="kpi-sub">Phổ biến nhất: C (Đô) & G (Sol)</span>
+                <span class="kpi-sub" id="kpiKeyModes">Phổ biến nhất: C (Đô) & G (Sol)</span>
               </div>
             </div>
           </div>

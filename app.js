@@ -1,6 +1,6 @@
 /**
  * HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI
- * Academic Light Research Dashboard, 180° Radial Donut Gauge (Zero Overlap)
+ * Academic Light Research Dashboard & Interactive BI Platform
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -589,7 +589,7 @@ document.querySelectorAll(".nav-pill").forEach((button) => {
     history.replaceState(null, "", `#${view}`);
 
     if (view === "galaxy") drawGalaxyMap();
-    if (view === "eda") drawEdaCharts();
+    if (view === "eda") renderCurrentEdaView();
     if (view === "predict") {
       drawWaterfallChart();
       drawBenchmarkRadar();
@@ -1380,147 +1380,572 @@ document.querySelector("#locateMyTrackBtn")?.addEventListener("click", () => {
 });
 
 /* ============================================================
-   5. ACADEMIC EDA CHARTS (MONOCHROME HEATMAP & CLEAN LINES)
+   5. ACADEMIC EDA & INTERACTIVE BI ANALYTICS PLATFORM
    ============================================================ */
-function drawEdaCharts() {
-  drawDecadeTrendChart();
-  drawEnergyDistChart();
-  drawCorrelationChart();
+const edaCohortData = {
+  all: {
+    name: "Toàn bộ dữ liệu (All Cohorts)",
+    sampleSize: "586,672",
+    avgDuration: "3.82 Phút",
+    stdDuration: "2.11 min",
+    majorRatio: "67.4%",
+    minorRatio: "32.6% Thứ",
+    commonBpm: "120 – 128",
+    trendTag: "Loudness tăng +4.5dB",
+    distTag: "Optimal: 0.65 – 0.80",
+    corrTag: "r(Energy, Loudness) = +0.78",
+    decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
+    loudness: [0.22, 0.28, 0.40, 0.55, 0.65, 0.72],
+    energy: [0.28, 0.27, 0.40, 0.55, 0.65, 0.68],
+    danceability: [0.60, 0.48, 0.50, 0.56, 0.59, 0.61],
+    acousticness: [0.82, 0.85, 0.68, 0.38, 0.24, 0.18],
+    rawLoudness: ["-16.5 dB", "-14.8 dB", "-12.1 dB", "-9.4 dB", "-7.2 dB", "-5.8 dB"],
+    energyBins: [15, 22, 34, 45, 62, 78, 92, 85, 60, 38],
+    matrix: [
+      [1.00,  0.78, -0.72,  0.35,  0.42],
+      [0.78,  1.00, -0.65,  0.38,  0.36],
+      [-0.72,-0.65,  1.00, -0.28, -0.25],
+      [0.35,  0.38, -0.28,  1.00,  0.54],
+      [0.42,  0.36, -0.25,  0.54,  1.00]
+    ]
+  },
+  pop: {
+    name: "Pop & Commercial Dance",
+    sampleSize: "182,410",
+    avgDuration: "3.35 Phút",
+    stdDuration: "0.85 min",
+    majorRatio: "71.2%",
+    minorRatio: "28.8% Thứ",
+    commonBpm: "122 – 128",
+    trendTag: "Loudness tăng +5.8dB",
+    distTag: "Optimal: 0.70 – 0.85",
+    corrTag: "r(Energy, Dance) = +0.62",
+    decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
+    loudness: [0.35, 0.42, 0.56, 0.68, 0.78, 0.85],
+    energy: [0.40, 0.45, 0.58, 0.68, 0.74, 0.76],
+    danceability: [0.65, 0.62, 0.68, 0.72, 0.75, 0.78],
+    acousticness: [0.62, 0.55, 0.40, 0.22, 0.14, 0.09],
+    rawLoudness: ["-12.8 dB", "-10.5 dB", "-8.2 dB", "-6.4 dB", "-5.1 dB", "-4.2 dB"],
+    energyBins: [5, 12, 20, 38, 55, 82, 96, 90, 72, 45],
+    matrix: [
+      [1.00,  0.82, -0.76,  0.62,  0.48],
+      [0.82,  1.00, -0.71,  0.58,  0.42],
+      [-0.76,-0.71,  1.00, -0.45, -0.32],
+      [0.62,  0.58, -0.45,  1.00,  0.65],
+      [0.48,  0.42, -0.32,  0.65,  1.00]
+    ]
+  },
+  acoustic: {
+    name: "Acoustic & Folk Ballad",
+    sampleSize: "145,280",
+    avgDuration: "4.12 Phút",
+    stdDuration: "1.45 min",
+    majorRatio: "64.8%",
+    minorRatio: "35.2% Thứ",
+    commonBpm: "78 – 95",
+    trendTag: "Acoustic duy trì 0.75+",
+    distTag: "Optimal: 0.30 – 0.45",
+    corrTag: "r(Acoustic, Energy) = -0.84",
+    decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
+    loudness: [0.18, 0.22, 0.30, 0.38, 0.45, 0.50],
+    energy: [0.22, 0.20, 0.28, 0.32, 0.35, 0.38],
+    danceability: [0.52, 0.46, 0.44, 0.48, 0.50, 0.52],
+    acousticness: [0.90, 0.92, 0.86, 0.78, 0.72, 0.68],
+    rawLoudness: ["-20.4 dB", "-18.2 dB", "-15.6 dB", "-13.1 dB", "-11.2 dB", "-9.8 dB"],
+    energyBins: [45, 68, 85, 76, 52, 35, 20, 14, 8, 4],
+    matrix: [
+      [1.00,  0.68, -0.84,  0.22,  0.30],
+      [0.68,  1.00, -0.72,  0.28,  0.25],
+      [-0.84,-0.72,  1.00, -0.18, -0.15],
+      [0.22,  0.28, -0.18,  1.00,  0.42],
+      [0.30,  0.25, -0.15,  0.42,  1.00]
+    ]
+  },
+  electronic: {
+    name: "EDM & Club Electronic",
+    sampleSize: "98,630",
+    avgDuration: "3.65 Phút",
+    stdDuration: "1.10 min",
+    majorRatio: "58.3%",
+    minorRatio: "41.7% Thứ",
+    commonBpm: "126 – 132",
+    trendTag: "Energy bùng nổ 0.90+",
+    distTag: "Optimal: 0.80 – 0.95",
+    corrTag: "r(Energy, Loudness) = +0.86",
+    decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
+    loudness: [0.40, 0.48, 0.62, 0.75, 0.86, 0.92],
+    energy: [0.45, 0.52, 0.68, 0.80, 0.88, 0.92],
+    danceability: [0.68, 0.70, 0.74, 0.78, 0.82, 0.84],
+    acousticness: [0.45, 0.32, 0.18, 0.08, 0.04, 0.02],
+    rawLoudness: ["-10.5 dB", "-8.6 dB", "-6.5 dB", "-4.8 dB", "-3.8 dB", "-3.2 dB"],
+    energyBins: [2, 6, 15, 25, 48, 70, 88, 98, 92, 75],
+    matrix: [
+      [1.00,  0.86, -0.88,  0.72,  0.55],
+      [0.86,  1.00, -0.80,  0.65,  0.48],
+      [-0.88,-0.80,  1.00, -0.58, -0.40],
+      [0.72,  0.65, -0.58,  1.00,  0.68],
+      [0.55,  0.48, -0.40,  0.68,  1.00]
+    ]
+  },
+  rock: {
+    name: "Rock & Alternative",
+    sampleSize: "112,040",
+    avgDuration: "4.05 Phút",
+    stdDuration: "1.30 min",
+    majorRatio: "69.5%",
+    minorRatio: "30.5% Thứ",
+    commonBpm: "135 – 150",
+    trendTag: "Energy cao 0.85+",
+    distTag: "Optimal: 0.75 – 0.90",
+    corrTag: "r(Energy, Loudness) = +0.81",
+    decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
+    loudness: [0.30, 0.38, 0.52, 0.70, 0.82, 0.88],
+    energy: [0.35, 0.42, 0.65, 0.82, 0.86, 0.88],
+    danceability: [0.48, 0.45, 0.46, 0.50, 0.52, 0.52],
+    acousticness: [0.72, 0.60, 0.32, 0.10, 0.06, 0.04],
+    rawLoudness: ["-14.0 dB", "-11.5 dB", "-8.0 dB", "-5.2 dB", "-4.2 dB", "-3.8 dB"],
+    energyBins: [8, 14, 25, 42, 68, 85, 94, 91, 78, 55],
+    matrix: [
+      [1.00,  0.81, -0.82,  0.30,  0.45],
+      [0.81,  1.00, -0.75,  0.35,  0.40],
+      [-0.82,-0.75,  1.00, -0.22, -0.30],
+      [0.30,  0.35, -0.22,  1.00,  0.48],
+      [0.45,  0.40, -0.30,  0.48,  1.00]
+    ]
+  },
+  hiphop: {
+    name: "Hip-Hop & Rap",
+    sampleSize: "48,312",
+    avgDuration: "3.45 Phút",
+    stdDuration: "0.90 min",
+    majorRatio: "62.1%",
+    minorRatio: "37.9% Thứ",
+    commonBpm: "85 – 100",
+    trendTag: "Danceability cao 0.80+",
+    distTag: "Optimal: 0.65 – 0.80",
+    corrTag: "r(Dance, Valence) = +0.68",
+    decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
+    loudness: [0.32, 0.40, 0.54, 0.66, 0.76, 0.82],
+    energy: [0.38, 0.44, 0.55, 0.65, 0.70, 0.72],
+    danceability: [0.70, 0.72, 0.76, 0.80, 0.82, 0.85],
+    acousticness: [0.55, 0.45, 0.30, 0.18, 0.12, 0.08],
+    rawLoudness: ["-13.5 dB", "-11.0 dB", "-8.5 dB", "-6.8 dB", "-5.5 dB", "-4.8 dB"],
+    energyBins: [6, 12, 22, 40, 65, 88, 95, 86, 62, 35],
+    matrix: [
+      [1.00,  0.74, -0.68,  0.68,  0.50],
+      [0.74,  1.00, -0.62,  0.60,  0.44],
+      [-0.68,-0.62,  1.00, -0.40, -0.28],
+      [0.68,  0.60, -0.40,  1.00,  0.68],
+      [0.50,  0.44, -0.28,  0.68,  1.00]
+    ]
+  }
+};
+
+let currentEdaCohort = "all";
+let currentEdaTimeHorizon = "all";
+let currentEdaMetricMode = "mean";
+
+function getActiveEdaDataset() {
+  const base = edaCohortData[currentEdaCohort] || edaCohortData.all;
+  return base;
 }
 
-function drawDecadeTrendChart() {
+function renderCurrentEdaView() {
+  const data = getActiveEdaDataset();
+
+  // Update KPI card
+  const sampleEl = document.querySelector("#kpiSampleCount");
+  const durEl = document.querySelector("#kpiAvgDuration");
+  const majorEl = document.querySelector("#kpiMajorRatio");
+  const minorEl = document.querySelector("#kpiMinorRatio");
+  const bpmEl = document.querySelector("#kpiCommonBpm");
+  
+  if (sampleEl) sampleEl.textContent = data.sampleSize;
+  if (durEl) durEl.textContent = data.avgDuration;
+  if (majorEl) majorEl.textContent = data.majorRatio;
+  if (minorEl) minorEl.textContent = data.minorRatio;
+  if (bpmEl) bpmEl.textContent = data.commonBpm;
+
+  const tagTrend = document.querySelector("#tagDecadeTrend");
+  const tagDist = document.querySelector("#tagEnergyDist");
+  const tagCorr = document.querySelector("#tagCorrelation");
+  const tagSample = document.querySelector("#tagKpiSample");
+
+  if (tagTrend) tagTrend.textContent = data.trendTag;
+  if (tagDist) tagDist.textContent = data.distTag;
+  if (tagCorr) tagCorr.textContent = data.corrTag;
+  if (tagSample) tagSample.textContent = `N = ${data.sampleSize}`;
+
+  drawDecadeTrendChart(data);
+  drawEnergyDistChart(data);
+  drawCorrelationChart(data);
+}
+
+/* ============================================================
+   5.1 DECADE TREND CHART (CLEAN SPINES & BOTTOM LEGEND)
+   ============================================================ */
+let hoveredDecadeIndex = -1;
+
+function drawDecadeTrendChart(data = getActiveEdaDataset()) {
   const canvas = document.querySelector("#decadeTrendCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 36;
+  const paddingLeft = 46;
+  const paddingRight = 24;
+  const paddingTop = 20;
+  const paddingBottom = 42;
 
   ctx.clearRect(0, 0, width, height);
 
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, width, height);
 
-  const decades = ["1920", "1940", "1960", "1980", "2000", "2020"];
-  const loudness = [0.22, 0.28, 0.40, 0.55, 0.65, 0.72];
-  const energy = [0.28, 0.27, 0.40, 0.55, 0.65, 0.68];
-  const danceability = [0.60, 0.48, 0.50, 0.56, 0.59, 0.61];
-  const acousticness = [0.82, 0.85, 0.68, 0.38, 0.24, 0.18];
+  const plotWidth = width - paddingLeft - paddingRight;
+  const plotHeight = height - paddingTop - paddingBottom;
+  const stepX = plotWidth / (data.decades.length - 1);
 
-  const stepX = (width - padding * 2) / (decades.length - 1);
-
-  // Subtle gridlines
-  ctx.strokeStyle = "#f1f5f9";
+  // 1. Soft Horizontal Gridlines Only (NO TOP/RIGHT SPINES)
+  ctx.save();
+  ctx.setLineDash([3, 5]);
+  ctx.strokeStyle = "rgba(226, 232, 240, 0.8)";
   ctx.lineWidth = 1;
-  for (let y = 0.2; y <= 1.0; y += 0.2) {
-    const lineY = height - padding - y * (height - padding * 2);
-    ctx.beginPath();
-    ctx.moveTo(padding, lineY);
-    ctx.lineTo(width - padding, lineY);
-    ctx.stroke();
-  }
 
-  // X Axis
+  for (let yVal = 0.2; yVal <= 1.0; yVal += 0.2) {
+    const lineY = paddingTop + (1 - yVal) * plotHeight;
+    ctx.beginPath();
+    ctx.moveTo(paddingLeft, lineY);
+    ctx.lineTo(width - paddingRight, lineY);
+    ctx.stroke();
+
+    // Y Axis labels
+    ctx.fillStyle = "#94a3b8";
+    ctx.font = "600 9px 'JetBrains Mono', monospace";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    ctx.fillText(`${(yVal * 100).toFixed(0)}%`, paddingLeft - 8, lineY);
+  }
+  ctx.restore();
+
+  // 2. Clean Baseline (Bottom X Axis Only)
   ctx.strokeStyle = "#cbd5e1";
+  ctx.lineWidth = 1.5;
   ctx.beginPath();
-  ctx.moveTo(padding, height - padding);
-  ctx.lineTo(width - padding, height - padding);
+  ctx.moveTo(paddingLeft, height - paddingBottom);
+  ctx.lineTo(width - paddingRight, height - paddingBottom);
   ctx.stroke();
 
-  decades.forEach((d, i) => {
-    const x = padding + i * stepX;
-    ctx.fillStyle = "#64748b";
-    ctx.font = "500 10px 'JetBrains Mono', monospace";
+  // X Axis Decade Labels
+  data.decades.forEach((d, i) => {
+    const x = paddingLeft + i * stepX;
+    ctx.fillStyle = i === hoveredDecadeIndex ? "#1e40af" : "#64748b";
+    ctx.font = i === hoveredDecadeIndex ? "800 11px 'JetBrains Mono', monospace" : "600 10.5px 'JetBrains Mono', monospace";
     ctx.textAlign = "center";
-    ctx.fillText(d, x, height - padding + 16);
+    ctx.fillText(d, x, height - paddingBottom + 16);
   });
 
-  function drawLine(data, color) {
+  // Vertical Hover Line
+  if (hoveredDecadeIndex >= 0 && hoveredDecadeIndex < data.decades.length) {
+    const hx = paddingLeft + hoveredDecadeIndex * stepX;
+    ctx.save();
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = "rgba(37, 99, 235, 0.45)";
+    ctx.lineWidth = 1.5;
     ctx.beginPath();
-    data.forEach((val, i) => {
-      const x = padding + i * stepX;
-      const y = height - padding - val * (height - padding * 2);
+    ctx.moveTo(hx, paddingTop);
+    ctx.lineTo(hx, height - paddingBottom);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Draw Line Function
+  function drawLine(lineData, color) {
+    ctx.beginPath();
+    lineData.forEach((val, i) => {
+      const x = paddingLeft + i * stepX;
+      const y = paddingTop + (1 - val) * plotHeight;
       if (i === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     });
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 2.2;
     ctx.stroke();
 
-    data.forEach((val, i) => {
-      const x = padding + i * stepX;
-      const y = height - padding - val * (height - padding * 2);
+    lineData.forEach((val, i) => {
+      const x = paddingLeft + i * stepX;
+      const y = paddingTop + (1 - val) * plotHeight;
+      const isHovered = i === hoveredDecadeIndex;
       ctx.beginPath();
-      ctx.arc(x, y, 3, 0, Math.PI * 2);
-      ctx.fillStyle = "#ffffff";
+      ctx.arc(x, y, isHovered ? 5.5 : 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = isHovered ? color : "#ffffff";
       ctx.fill();
       ctx.strokeStyle = color;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 2;
       ctx.stroke();
     });
   }
 
-  drawLine(loudness, "#d97706");
-  drawLine(energy, "#1e40af");
-  drawLine(danceability, "#0d9488");
-  drawLine(acousticness, "#64748b");
+  drawLine(data.loudness, "#d97706");
+  drawLine(data.energy, "#1e40af");
+  drawLine(data.danceability, "#0d9488");
+  drawLine(data.acousticness, "#64748b");
 
-  // Legend
-  ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
-  ctx.fillStyle = "#1e40af";
-  ctx.fillText("― Energy", padding + 20, padding - 10);
-  ctx.fillStyle = "#0d9488";
-  ctx.fillText("― Danceability", padding + 95, padding - 10);
-  ctx.fillStyle = "#d97706";
-  ctx.fillText("― Loudness", padding + 190, padding - 10);
-  ctx.fillStyle = "#64748b";
-  ctx.fillText("― Acousticness", padding + 275, padding - 10);
+  // 3. Bottom Horizontal Legend (Bold & Clear Spacing)
+  const legendY = height - 12;
+  const legendItems = [
+    { color: "#1e40af", name: "Energy (Năng lượng)" },
+    { color: "#0d9488", name: "Danceability (Bắt tai)" },
+    { color: "#d97706", name: "Loudness (Độ lớn)" },
+    { color: "#64748b", name: "Acousticness (Độ mộc)" },
+  ];
+
+  const totalLegendWidth = 490;
+  const legendStartX = paddingLeft + (plotWidth - totalLegendWidth) / 2;
+  const itemGap = 125;
+
+  legendItems.forEach((item, idx) => {
+    const lx = legendStartX + idx * itemGap;
+    ctx.beginPath();
+    ctx.arc(lx, legendY - 3.5, 4, 0, Math.PI * 2);
+    ctx.fillStyle = item.color;
+    ctx.fill();
+
+    ctx.font = "700 10.5px 'Plus Jakarta Sans', sans-serif";
+    ctx.fillStyle = "#334155";
+    ctx.textAlign = "left";
+    ctx.fillText(item.name, lx + 8, legendY);
+  });
 }
 
-function drawEnergyDistChart() {
+// Hover event for Decade Trend Canvas
+const decadeTrendCanvas = document.querySelector("#decadeTrendCanvas");
+const decadeTooltip = document.querySelector("#decadeTooltip");
+
+if (decadeTrendCanvas) {
+  decadeTrendCanvas.addEventListener("mousemove", (e) => {
+    const rect = decadeTrendCanvas.getBoundingClientRect();
+    const scaleX = decadeTrendCanvas.width / rect.width;
+    const mouseX = (e.clientX - rect.left) * scaleX;
+    
+    const paddingLeft = 46;
+    const paddingRight = 24;
+    const plotWidth = decadeTrendCanvas.width - paddingLeft - paddingRight;
+    const data = getActiveEdaDataset();
+    const stepX = plotWidth / (data.decades.length - 1);
+
+    const relativeX = mouseX - paddingLeft;
+    let closestIndex = Math.round(relativeX / stepX);
+    closestIndex = Math.max(0, Math.min(data.decades.length - 1, closestIndex));
+
+    if (closestIndex !== hoveredDecadeIndex) {
+      hoveredDecadeIndex = closestIndex;
+      drawDecadeTrendChart(data);
+    }
+
+    if (decadeTooltip) {
+      const year = data.decades[hoveredDecadeIndex];
+      const en = (data.energy[hoveredDecadeIndex] * 100).toFixed(0);
+      const da = (data.danceability[hoveredDecadeIndex] * 100).toFixed(0);
+      const ac = (data.acousticness[hoveredDecadeIndex] * 100).toFixed(0);
+      const ld = data.rawLoudness[hoveredDecadeIndex];
+
+      decadeTooltip.innerHTML = `
+        <div style="font-weight: 800; color: #93c5fd; margin-bottom: 4px; font-family: var(--font-mono);">📅 Thập niên: ${year}</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 0.74rem;">
+          <span>⚡ Energy: <b style="color: #60a5fa;">${en}%</b></span>
+          <span>💃 Dance: <b style="color: #34d399;">${da}%</b></span>
+          <span>🔊 Loud: <b style="color: #fbbf24;">${ld}</b></span>
+          <span>🎸 Acoustic: <b style="color: #cbd5e1;">${ac}%</b></span>
+        </div>
+      `;
+      decadeTooltip.classList.add("is-visible");
+      
+      const tooltipX = Math.min(rect.width - 200, Math.max(10, e.clientX - rect.left - 90));
+      const tooltipY = Math.max(10, e.clientY - rect.top - 75);
+      decadeTooltip.style.left = `${tooltipX}px`;
+      decadeTooltip.style.top = `${tooltipY}px`;
+    }
+  });
+
+  decadeTrendCanvas.addEventListener("mouseleave", () => {
+    hoveredDecadeIndex = -1;
+    drawDecadeTrendChart(getActiveEdaDataset());
+    if (decadeTooltip) decadeTooltip.classList.remove("is-visible");
+  });
+}
+
+/* ============================================================
+   5.2 ENERGY DISTRIBUTION CHART (CLEAN SPINES & HOVER)
+   ============================================================ */
+let hoveredEnergyBin = -1;
+
+function drawEnergyDistChart(data = getActiveEdaDataset()) {
   const canvas = document.querySelector("#energyDistCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 36;
+  const paddingLeft = 42;
+  const paddingRight = 24;
+  const paddingTop = 20;
+  const paddingBottom = 42;
 
   ctx.clearRect(0, 0, width, height);
 
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, width, height);
 
+  const plotWidth = width - paddingLeft - paddingRight;
+  const plotHeight = height - paddingTop - paddingBottom;
   const bins = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
-  const popDensity = [15, 22, 34, 45, 62, 78, 92, 85, 60, 38];
-  const barWidth = (width - padding * 2) / bins.length - 6;
+  const barWidth = plotWidth / bins.length - 8;
 
+  // 1. Sweet Spot Subtle Zone (0.65 - 0.85)
+  const sweetStartX = paddingLeft + 5 * (barWidth + 8);
+  const sweetWidth = 3 * (barWidth + 8);
+  ctx.fillStyle = "rgba(37, 99, 235, 0.05)";
+  ctx.fillRect(sweetStartX - 4, paddingTop, sweetWidth, plotHeight);
+
+  // Sweet spot label
+  ctx.fillStyle = "#2563eb";
+  ctx.font = "700 9.5px 'Plus Jakarta Sans', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("VÙNG TỐI ƯU (SWEET SPOT 0.65 - 0.80)", sweetStartX + sweetWidth / 2 - 4, paddingTop + 12);
+
+  // 2. Soft Horizontal Gridlines
+  ctx.save();
+  ctx.setLineDash([3, 5]);
+  ctx.strokeStyle = "rgba(226, 232, 240, 0.8)";
+  ctx.lineWidth = 1;
+
+  for (let p = 25; p <= 100; p += 25) {
+    const lineY = paddingTop + (1 - p / 100) * plotHeight;
+    ctx.beginPath();
+    ctx.moveTo(paddingLeft, lineY);
+    ctx.lineTo(width - paddingRight, lineY);
+    ctx.stroke();
+
+    ctx.fillStyle = "#94a3b8";
+    ctx.font = "600 9px 'JetBrains Mono', monospace";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    ctx.fillText(`${p}%`, paddingLeft - 6, lineY);
+  }
+  ctx.restore();
+
+  // 3. Bars
   bins.forEach((b, i) => {
-    const x = padding + i * (barWidth + 6);
-    const barH = (popDensity[i] / 100) * (height - padding * 2);
-    const y = height - padding - barH;
+    const x = paddingLeft + i * (barWidth + 8);
+    const barH = (data.energyBins[i] / 100) * plotHeight;
+    const y = paddingTop + plotHeight - barH;
+    const isHovered = i === hoveredEnergyBin;
+    const isSweet = b >= 0.6 && b <= 0.8;
 
-    const isSweetSpot = b >= 0.6 && b <= 0.8;
-    ctx.fillStyle = isSweetSpot ? "#2563eb" : "#cbd5e1";
-    ctx.fillRect(x, y, barWidth, barH);
+    if (isHovered) {
+      ctx.fillStyle = "#1d4ed8";
+    } else if (isSweet) {
+      ctx.fillStyle = "#2563eb";
+    } else {
+      ctx.fillStyle = "#cbd5e1";
+    }
 
-    ctx.fillStyle = "#64748b";
-    ctx.font = "500 10px 'JetBrains Mono', monospace";
+    ctx.beginPath();
+    ctx.roundRect(x, y, barWidth, barH, [4, 4, 0, 0]);
+    ctx.fill();
+
+    // Value on top of bar
+    if (isHovered || isSweet) {
+      ctx.fillStyle = isHovered ? "#1e40af" : "#2563eb";
+      ctx.font = "700 9.5px 'JetBrains Mono', monospace";
+      ctx.textAlign = "center";
+      ctx.fillText(`${data.energyBins[i]}%`, x + barWidth / 2, y - 5);
+    }
+
+    // X Axis bin labels
+    ctx.fillStyle = isHovered ? "#1e40af" : "#64748b";
+    ctx.font = isHovered ? "700 10px 'JetBrains Mono', monospace" : "500 9.5px 'JetBrains Mono', monospace";
     ctx.textAlign = "center";
-    ctx.fillText(`${b.toFixed(1)}`, x + barWidth / 2, height - padding + 16);
+    ctx.fillText(`${b.toFixed(1)}`, x + barWidth / 2, height - paddingBottom + 16);
   });
 
+  // 4. Baseline only (No Top or Right Spines)
   ctx.strokeStyle = "#cbd5e1";
+  ctx.lineWidth = 1.5;
   ctx.beginPath();
-  ctx.moveTo(padding, height - padding);
-  ctx.lineTo(width - padding, height - padding);
+  ctx.moveTo(paddingLeft, height - paddingBottom);
+  ctx.lineTo(width - paddingRight, height - paddingBottom);
   ctx.stroke();
 
-  ctx.fillStyle = "#1e40af";
-  ctx.font = "700 10px 'Plus Jakarta Sans', sans-serif";
-  ctx.fillText("Vùng tối ưu xác suất (Sweet Spot: 0.65 - 0.80)", width / 2, padding - 10);
+  // X Axis Legend
+  ctx.fillStyle = "#64748b";
+  ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("Thang đo mức năng lượng (Energy Level [0.1 - 1.0]) ➔", paddingLeft + plotWidth / 2, height - 12);
 }
 
-function drawCorrelationChart() {
+// Hover event for Energy Dist Canvas
+const energyDistCanvas = document.querySelector("#energyDistCanvas");
+const energyDistTooltip = document.querySelector("#energyDistTooltip");
+
+if (energyDistCanvas) {
+  energyDistCanvas.addEventListener("mousemove", (e) => {
+    const rect = energyDistCanvas.getBoundingClientRect();
+    const scaleX = energyDistCanvas.width / rect.width;
+    const mouseX = (e.clientX - rect.left) * scaleX;
+    
+    const paddingLeft = 42;
+    const paddingRight = 24;
+    const plotWidth = energyDistCanvas.width - paddingLeft - paddingRight;
+    const binsCount = 10;
+    const stepX = plotWidth / binsCount;
+
+    const relativeX = mouseX - paddingLeft;
+    let closestIndex = Math.floor(relativeX / stepX);
+    closestIndex = Math.max(0, Math.min(binsCount - 1, closestIndex));
+
+    if (closestIndex !== hoveredEnergyBin) {
+      hoveredEnergyBin = closestIndex;
+      drawEnergyDistChart(getActiveEdaDataset());
+    }
+
+    if (energyDistTooltip) {
+      const data = getActiveEdaDataset();
+      const binVal = (0.1 * (hoveredEnergyBin + 1)).toFixed(1);
+      const density = data.energyBins[hoveredEnergyBin];
+      const isSweet = hoveredEnergyBin >= 5 && hoveredEnergyBin <= 7;
+
+      energyDistTooltip.innerHTML = `
+        <div style="font-weight: 800; color: #93c5fd; font-family: var(--font-mono);">⚡ Mức Energy: ${binVal}</div>
+        <div style="font-size: 0.75rem; margin-top: 3px;">
+          <span>Tỷ lệ đạt chuẩn: <b style="color: #34d399;">${density}% mẫu</b></span>
+        </div>
+        <div style="font-size: 0.72rem; color: ${isSweet ? '#6ee7b7' : '#cbd5e1'}; margin-top: 2px;">
+          ${isSweet ? '🌟 Vùng tối ưu xác suất cao' : '📊 Dải phân phối tiêu chuẩn'}
+        </div>
+      `;
+      energyDistTooltip.classList.add("is-visible");
+      
+      const tooltipX = Math.min(rect.width - 180, Math.max(10, e.clientX - rect.left - 80));
+      const tooltipY = Math.max(10, e.clientY - rect.top - 70);
+      energyDistTooltip.style.left = `${tooltipX}px`;
+      energyDistTooltip.style.top = `${tooltipY}px`;
+    }
+  });
+
+  energyDistCanvas.addEventListener("mouseleave", () => {
+    hoveredEnergyBin = -1;
+    drawEnergyDistChart(getActiveEdaDataset());
+    if (energyDistTooltip) energyDistTooltip.classList.remove("is-visible");
+  });
+}
+
+/* ============================================================
+   5.3 CORRELATION MATRIX (FLOATING HEATMAP & HOVER)
+   ============================================================ */
+let hoveredCorrCell = null;
+
+function drawCorrelationChart(data = getActiveEdaDataset()) {
   const canvas = document.querySelector("#correlationCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
@@ -1534,13 +1959,7 @@ function drawCorrelationChart() {
   ctx.fillRect(0, 0, width, height);
 
   const labels = ["Energy", "Loud", "Acoustic", "Dance", "Valence"];
-  const matrix = [
-    [1.00,  0.78, -0.72,  0.35,  0.42],
-    [0.78,  1.00, -0.65,  0.38,  0.36],
-    [-0.72,-0.65,  1.00, -0.28, -0.25],
-    [0.35,  0.38, -0.28,  1.00,  0.54],
-    [0.42,  0.36, -0.25,  0.54,  1.00]
-  ];
+  const matrix = data.matrix;
 
   const size = (Math.min(width, height) - padding * 2) / labels.length;
   const startX = (width - size * labels.length) / 2 + 10;
@@ -1551,6 +1970,7 @@ function drawCorrelationChart() {
       const val = matrix[r][c];
       const x = startX + c * size;
       const y = startY + r * size;
+      const isHovered = hoveredCorrCell && hoveredCorrCell.r === r && hoveredCorrCell.c === c;
 
       if (val >= 0) {
         // Monochrome Blue gradient
@@ -1569,22 +1989,140 @@ function drawCorrelationChart() {
       }
       ctx.fillRect(x + 1, y + 1, size - 2, size - 2);
 
+      // Highlight on hover
+      if (isHovered) {
+        ctx.strokeStyle = "#1e40af";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x + 1, y + 1, size - 2, size - 2);
+      }
+
       // Contrast text
       ctx.fillStyle = Math.abs(val) > 0.5 ? "#ffffff" : "#0f172a";
-      ctx.font = "600 10px 'JetBrains Mono', monospace";
+      ctx.font = isHovered ? "700 10.5px 'JetBrains Mono', monospace" : "600 10px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(val.toFixed(2), x + size / 2, y + size / 2);
     }
 
     ctx.fillStyle = "#475569";
-    ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
+    ctx.font = "700 10.5px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "right";
     ctx.fillText(labels[r], startX - 6, startY + r * size + size / 2);
     ctx.textAlign = "center";
     ctx.fillText(labels[r], startX + r * size + size / 2, startY - 6);
   }
 }
+
+// Hover event for Correlation Canvas
+const correlationCanvas = document.querySelector("#correlationCanvas");
+const correlationTooltip = document.querySelector("#correlationTooltip");
+
+if (correlationCanvas) {
+  correlationCanvas.addEventListener("mousemove", (e) => {
+    const rect = correlationCanvas.getBoundingClientRect();
+    const scaleX = correlationCanvas.width / rect.width;
+    const scaleY = correlationCanvas.height / rect.height;
+    const mouseX = (e.clientX - rect.left) * scaleX;
+    const mouseY = (e.clientY - rect.top) * scaleY;
+    
+    const labels = ["Energy", "Loudness", "Acousticness", "Danceability", "Valence"];
+    const size = (Math.min(correlationCanvas.width, correlationCanvas.height) - 90) / labels.length;
+    const startX = (correlationCanvas.width - size * labels.length) / 2 + 10;
+    const startY = (correlationCanvas.height - size * labels.length) / 2 + 10;
+
+    const col = Math.floor((mouseX - startX) / size);
+    const row = Math.floor((mouseY - startY) / size);
+
+    if (row >= 0 && row < labels.length && col >= 0 && col < labels.length) {
+      if (!hoveredCorrCell || hoveredCorrCell.r !== row || hoveredCorrCell.c !== col) {
+        hoveredCorrCell = { r: row, c: col };
+        drawCorrelationChart(getActiveEdaDataset());
+      }
+
+      if (correlationTooltip) {
+        const data = getActiveEdaDataset();
+        const rVal = data.matrix[row][col];
+        const strength = Math.abs(rVal) >= 0.7 ? "Tương quan rất mạnh" : Math.abs(rVal) >= 0.4 ? "Tương quan vừa" : "Tương quan yếu";
+        const dir = rVal > 0 ? "Thuận (+)" : rVal < 0 ? "Nghịch (-)" : "Đồng nhất";
+
+        correlationTooltip.innerHTML = `
+          <div style="font-weight: 800; color: #93c5fd;">🔗 ${labels[row]} ↔ ${labels[col]}</div>
+          <div style="font-size: 0.76rem; font-family: var(--font-mono); margin-top: 3px;">
+            Hệ số Pearson r = <b style="color: ${rVal >= 0 ? '#60a5fa' : '#fbbf24'};">${rVal.toFixed(2)}</b> (${dir})
+          </div>
+          <div style="font-size: 0.72rem; color: #cbd5e1; margin-top: 2px;">${strength}</div>
+        `;
+        correlationTooltip.classList.add("is-visible");
+        
+        const tooltipX = Math.min(rect.width - 200, Math.max(10, e.clientX - rect.left - 90));
+        const tooltipY = Math.max(10, e.clientY - rect.top - 75);
+        correlationTooltip.style.left = `${tooltipX}px`;
+        correlationTooltip.style.top = `${tooltipY}px`;
+      }
+    } else {
+      hoveredCorrCell = null;
+      drawCorrelationChart(getActiveEdaDataset());
+      if (correlationTooltip) correlationTooltip.classList.remove("is-visible");
+    }
+  });
+
+  correlationCanvas.addEventListener("mouseleave", () => {
+    hoveredCorrCell = null;
+    drawCorrelationChart(getActiveEdaDataset());
+    if (correlationTooltip) correlationTooltip.classList.remove("is-visible");
+  });
+}
+
+// Event Listeners for EDA Global Filters
+document.querySelector("#edaGenreFilter")?.addEventListener("change", (e) => {
+  currentEdaCohort = e.target.value;
+  renderCurrentEdaView();
+  showToast(`Đã lọc dữ liệu theo: ${e.target.options[e.target.selectedIndex].text}`);
+});
+
+document.querySelector("#edaTimeFilter")?.addEventListener("change", (e) => {
+  currentEdaTimeHorizon = e.target.value;
+  renderCurrentEdaView();
+  showToast(`Khung thời gian: ${e.target.options[e.target.selectedIndex].text}`);
+});
+
+document.querySelector("#edaMetricMode")?.addEventListener("change", (e) => {
+  currentEdaMetricMode = e.target.value;
+  renderCurrentEdaView();
+  showToast(`Chế độ thống kê: ${e.target.options[e.target.selectedIndex].text}`);
+});
+
+// Event Listeners for Export Features
+document.querySelector("#exportEdaPngBtn")?.addEventListener("click", () => {
+  const canvas = document.querySelector("#decadeTrendCanvas");
+  if (!canvas) return;
+  const link = document.createElement("a");
+  link.download = `hitradar_eda_decade_trend_${currentEdaCohort}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+  showToast("Đã tải xuống biểu đồ PNG chất lượng cao!");
+});
+
+document.querySelector("#exportEdaCsvBtn")?.addEventListener("click", () => {
+  const data = getActiveEdaDataset();
+  let csvContent = "data:text/csv;charset=utf-8,";
+  csvContent += "Decade,Energy,Danceability,Loudness_Norm,Acousticness,Raw_Loudness\n";
+  data.decades.forEach((d, i) => {
+    csvContent += `${d},${data.energy[i]},${data.danceability[i]},${data.loudness[i]},${data.acousticness[i]},${data.rawLoudness[i]}\n`;
+  });
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", `hitradar_eda_summary_${currentEdaCohort}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast("Đã xuất tệp dữ liệu thống kê tổng hợp (CSV)!");
+});
+
+document.querySelector("#printEdaReportBtn")?.addEventListener("click", () => {
+  window.print();
+});
 
 /* ============================================================
    6. VISUALIZER PULSE CANVAS (VERTICAL GRADIENT + SCANNING PLAYHEAD)
@@ -1739,3 +2277,4 @@ drawWaterfallChart();
 drawBenchmarkRadar();
 drawMoodQuadrant();
 drawRadialGauge(0);
+renderCurrentEdaView();

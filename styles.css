@@ -668,12 +668,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 12px;
+  padding: 6px 14px;
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
   color: var(--text-secondary);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -1205,61 +1205,177 @@ body {
 }
 
 /* ============================================================
-   EDA LAB & KPI BLOCKS (ELEVATED CARDS)
+   EDA LAB, GLOBAL BI FILTERS & EQUAL HEIGHT 2X2 GRID
    ============================================================ */
+.eda-toolbar {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 22px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.eda-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.eda-filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-caption {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.eda-select {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.eda-select:focus {
+  border-color: var(--brand-accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.eda-action-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 2x2 Equal Height Grid */
 .eda-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 26px;
+  align-items: stretch;
 }
 
 .eda-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 26px;
+  padding: 24px;
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 440px;
   gap: 12px;
+  position: relative;
+}
+
+.eda-card-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.eda-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #ffffff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .eda-chart-canvas {
   width: 100%;
-  height: 260px;
+  height: 280px;
   display: block;
   background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
+  border: none;
 }
 
-/* Clean KPI Blocks Grid */
+/* Floating Interactive Tooltip for Canvas */
+.eda-tooltip {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.94);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  z-index: 60;
+  box-shadow: var(--shadow-dropdown);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.eda-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Equal Height KPI Blocks Grid in Card 4 */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px 24px;
-  margin-top: 10px;
+  gap: 16px 20px;
+  height: 280px;
+  align-content: center;
+  background: var(--bg-subtle);
+  padding: 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
 }
 
 .kpi-block {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .kpi-value {
-  font-size: 1.95rem;
+  font-size: 1.85rem;
   font-weight: 900;
   color: var(--brand-primary);
   font-family: var(--font-sans);
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.5px;
 }
 
 .kpi-label {
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-top: 4px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
 }
 
 .kpi-sub {
@@ -1599,12 +1715,33 @@ body {
   pointer-events: auto;
 }
 
+/* Print Optimization */
+@media print {
+  .topbar, .command-band, .nav-pills, .topbar-actions, .eda-toolbar, .toast, .modal-backdrop {
+    display: none !important;
+  }
+  .app-shell {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .eda-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+  .eda-card {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    break-inside: avoid;
+  }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .command-band { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .eda-grid { grid-template-columns: 1fr; }
   .slider-paired-grid { grid-template-columns: 1fr; }
+  .eda-toolbar { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 768px) {
