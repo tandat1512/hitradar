@@ -392,8 +392,8 @@ function drawRadialGauge(score = 0) {
   const width = canvas.width;
   const height = canvas.height;
   const centerX = width / 2;
-  const centerY = height - 8;
-  const radius = 84;
+  const centerY = height - 10;
+  const radius = 86;
   const lineWidth = 12;
 
   ctx.clearRect(0, 0, width, height);

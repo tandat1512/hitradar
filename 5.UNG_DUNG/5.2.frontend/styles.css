@@ -945,7 +945,7 @@ body {
 .gauge-canvas-wrap {
   position: relative;
   width: 240px;
-  height: 125px;
+  height: 135px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -953,14 +953,14 @@ body {
 
 #gaugeCanvas {
   width: 240px;
-  height: 125px;
+  height: 135px;
   display: block;
 }
 
-/* Centered cleanly inside the arc dome */
+/* 100% Perfectly Centered Inside the Arc Dome */
 .gauge-score-overlay {
   position: absolute;
-  top: 36px;
+  top: 52px;
   left: 0;
   right: 0;
   display: flex;
@@ -971,15 +971,16 @@ body {
 }
 
 .score-main-value {
-  font-size: 2.6rem;
+  font-size: 2.35rem;
   font-weight: 900;
   font-family: var(--font-sans);
   color: var(--brand-primary);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+  line-height: 1;
 }
 
 .score-scale-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-family: var(--font-mono);
   font-weight: 700;
   color: var(--text-muted);
@@ -998,7 +999,7 @@ body {
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-subtle);
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .tier-badge {
