@@ -1628,11 +1628,12 @@ function drawDecadeTrendChart(data = getActiveEdaDataset()) {
   }
   ctx.restore();
 
-  // 2. Clean Baseline (Bottom X Axis Only)
+  // 2. Clean L-Shape Spine (Left Y & Bottom X Axis Only, NO Top, NO Right)
   ctx.strokeStyle = "#cbd5e1";
-  ctx.lineWidth = 1.5;
+  ctx.lineWidth = 1.2;
   ctx.beginPath();
-  ctx.moveTo(paddingLeft, height - paddingBottom);
+  ctx.moveTo(paddingLeft, paddingTop);
+  ctx.lineTo(paddingLeft, height - paddingBottom);
   ctx.lineTo(width - paddingRight, height - paddingBottom);
   ctx.stroke();
 
@@ -1869,11 +1870,12 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
     ctx.fillText(`${b.toFixed(1)}`, x + barWidth / 2, height - paddingBottom + 16);
   });
 
-  // 4. Baseline only (No Top or Right Spines)
+  // 4. Clean L-Shape Spine (Left Y & Bottom X, NO Top, NO Right)
   ctx.strokeStyle = "#cbd5e1";
-  ctx.lineWidth = 1.5;
+  ctx.lineWidth = 1.2;
   ctx.beginPath();
-  ctx.moveTo(paddingLeft, height - paddingBottom);
+  ctx.moveTo(paddingLeft, paddingTop);
+  ctx.lineTo(paddingLeft, height - paddingBottom);
   ctx.lineTo(width - paddingRight, height - paddingBottom);
   ctx.stroke();
 

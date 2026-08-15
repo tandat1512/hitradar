@@ -669,20 +669,22 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: var(--bg-subtle);
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
   color: var(--text-secondary);
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: var(--shadow-subtle);
   transition: all 0.15s ease;
+  white-space: nowrap;
 }
 
 .ghost-button:hover {
-  background: var(--bg-muted);
-  color: var(--text-primary);
-  border-color: var(--border-subtle);
+  background: var(--bg-subtle);
+  color: var(--brand-primary);
+  border-color: var(--brand-accent);
 }
 
 /* Form Inputs Grid */
@@ -1205,48 +1207,47 @@ body {
 }
 
 /* ============================================================
-   EDA LAB, GLOBAL BI FILTERS & EQUAL HEIGHT 2X2 GRID
+   EDA LAB, INTEGRATED CONTROL PANEL & REFINED KPI GRID
    ============================================================ */
 .eda-toolbar {
-  background: var(--bg-surface);
+  background: #f8fafc;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 16px 22px;
-  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  box-shadow: var(--shadow-subtle);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px 20px;
 }
 
 .eda-filter-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 18px;
+  gap: 12px 18px;
 }
 
 .eda-filter-item {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
 }
 
 .filter-caption {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-family: var(--font-mono);
   font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .eda-select {
-  background: var(--bg-subtle);
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 7px 12px;
+  padding: 6px 12px;
   font-size: 0.82rem;
   font-weight: 600;
   font-family: var(--font-sans);
@@ -1258,7 +1259,6 @@ body {
 
 .eda-select:focus {
   border-color: var(--brand-accent);
-  background: #ffffff;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
@@ -1267,6 +1267,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+  border-left: 1px solid var(--border-color);
+  padding-left: 14px;
 }
 
 /* 2x2 Equal Height Grid */
@@ -1302,8 +1304,7 @@ body {
   position: relative;
   width: 100%;
   height: 280px;
-  background: #ffffff;
-  border-radius: var(--radius-sm);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1315,6 +1316,7 @@ body {
   display: block;
   background: #ffffff;
   border: none;
+  outline: none;
 }
 
 /* Floating Interactive Tooltip for Canvas */
@@ -1343,23 +1345,34 @@ body {
   transform: translateY(0);
 }
 
-/* Equal Height KPI Blocks Grid in Card 4 */
+/* Equal Height & Sharp Aligned KPI Blocks in Card 4 */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px 20px;
+  gap: 14px;
   height: 280px;
-  align-content: center;
-  background: var(--bg-subtle);
-  padding: 22px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
+  align-content: stretch;
 }
 
 .kpi-block {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  gap: 3px;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.15s ease;
+}
+
+.kpi-block:hover {
+  background: #ffffff;
+  border-color: var(--brand-accent);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
 }
 
 .kpi-value {
@@ -1367,8 +1380,9 @@ body {
   font-weight: 900;
   color: var(--brand-primary);
   font-family: var(--font-sans);
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.5px;
+  text-align: left;
 }
 
 .kpi-label {
@@ -1376,12 +1390,15 @@ body {
   font-weight: 700;
   color: var(--text-primary);
   margin-top: 2px;
+  text-align: left;
 }
 
 .kpi-sub {
   font-size: 0.72rem;
   font-family: var(--font-mono);
+  font-weight: 500;
   color: var(--text-muted);
+  text-align: left;
 }
 
 /* Table Panel & Data Tables */
@@ -1742,6 +1759,7 @@ body {
   .eda-grid { grid-template-columns: 1fr; }
   .slider-paired-grid { grid-template-columns: 1fr; }
   .eda-toolbar { flex-direction: column; align-items: flex-start; }
+  .eda-action-group { border-left: none; padding-left: 0; }
 }
 
 @media (max-width: 768px) {
