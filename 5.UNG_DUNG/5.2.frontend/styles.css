@@ -41,7 +41,7 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  /* Premium Academic Soft Drop Shadows (Elevates Cards from Surface) */
+  /* Premium Academic Soft Drop Shadows */
   --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
   --shadow-card-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.09), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
   --shadow-subtle: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
@@ -221,14 +221,14 @@ body {
   border-color: var(--brand-accent);
 }
 
-/* App Shell with Enhanced Macro Spacing */
+/* App Shell */
 .app-shell {
   max-width: 1440px;
   margin: 0 auto;
   padding: 32px clamp(16px, 4vw, 56px) 96px;
   display: flex;
   flex-direction: column;
-  gap: 42px; /* Generous breathing room */
+  gap: 40px;
 }
 
 /* ============================================================
@@ -407,7 +407,7 @@ body {
 .meter-progress-fill.fill-valence { background: var(--accent-amber); width: 68%; }
 
 /* ============================================================
-   REFERENCE ARCHETYPES (OPTIMIZED TYPOGRAPHY)
+   REFERENCE ARCHETYPES (FIX: NO TEXT WRAPPING / CẮT CHỮ)
    ============================================================ */
 .preset-section {
   display: flex;
@@ -460,10 +460,11 @@ body {
   color: #ffffff;
 }
 
+/* Widened minmax to prevent text clipping */
 .vibe-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
 }
 
 .vibe-card {
@@ -474,7 +475,7 @@ body {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   box-shadow: var(--shadow-subtle);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -496,6 +497,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 6px;
 }
 
 .vibe-badge-pill {
@@ -504,8 +506,9 @@ body {
   font-weight: 700;
   color: var(--text-muted);
   background: var(--bg-subtle);
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
+  white-space: nowrap;
 }
 
 .vibe-card.active .vibe-badge-pill {
@@ -514,30 +517,33 @@ body {
   box-shadow: 0 1px 3px rgba(37, 99, 235, 0.15);
 }
 
+/* Prevent title from wrapping / clipping */
 .vibe-title {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 800;
   color: var(--text-primary);
+  white-space: nowrap;
+  letter-spacing: -0.2px;
 }
 
-/* Optimized Micro-Chips for Archetype Cards */
+/* Micro-Chips for Archetype Cards */
 .vibe-chips-list {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  margin-top: 2px;
 }
 
 .vibe-chip {
   display: inline-flex;
   align-items: center;
-  font-size: 0.7rem;
-  line-height: 1.45;
+  font-size: 0.68rem;
+  line-height: 1.4;
   color: var(--text-secondary);
   background: var(--bg-subtle);
-  padding: 1px 6px;
+  padding: 2px 6px;
   border-radius: 4px;
   border: 1px solid rgba(226, 232, 240, 0.8);
+  white-space: nowrap;
 }
 
 .vibe-chip b {
@@ -552,12 +558,13 @@ body {
   border-color: rgba(37, 99, 235, 0.2);
 }
 
-/* Views & Section Headers with Generous Spacing */
+/* ============================================================
+   VIEWS & ALIGNED SECTION HEADERS (FIX: NO RIGHT DISPLACEMENT)
+   ============================================================ */
 .view {
   display: none;
   flex-direction: column;
-  gap: 32px;
-  padding-top: 8px; /* Enhanced Macro Separation */
+  gap: 28px;
 }
 
 .view.is-active {
@@ -570,13 +577,14 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Left-aligned natural reading order header */
 .section-head {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 16px;
-  gap: 20px;
+  padding-bottom: 14px;
+  gap: 6px;
 }
 
 .section-head h2 {
@@ -584,15 +592,14 @@ body {
   font-weight: 800;
   letter-spacing: -0.4px;
   color: var(--text-primary);
-  margin-top: 2px;
 }
 
 .section-subtitle {
   color: var(--text-secondary);
-  font-size: 0.88rem;
-  max-width: 560px;
-  text-align: right;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  max-width: 860px;
+  text-align: left;
+  line-height: 1.6;
 }
 
 /* Work Grid Layout */
@@ -616,7 +623,7 @@ body {
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
 }
 
 .panel-title {
@@ -658,7 +665,7 @@ body {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .form-grid.compact {
@@ -709,7 +716,9 @@ body {
   cursor: pointer;
 }
 
-/* Sliders Grid */
+/* ============================================================
+   2-COLUMN PAIRED SLIDERS GRID WITH TOOLTIPS
+   ============================================================ */
 .slider-group-title {
   font-size: 0.78rem;
   font-family: var(--font-mono);
@@ -720,13 +729,13 @@ body {
   margin-top: 4px;
 }
 
-.slider-grid {
+.slider-paired-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 14px 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
 }
 
-.slider-grid label {
+.slider-paired-grid label {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -738,14 +747,68 @@ body {
   align-items: center;
 }
 
-.slider-grid output {
+.slider-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Tooltip ( i ) Icon */
+.info-tip {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  cursor: help;
+}
+
+.info-tip:hover {
+  background: var(--brand-accent);
+  color: #ffffff;
+}
+
+.info-tip .tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  padding: 8px 10px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.35;
+  border-radius: 6px;
+  box-shadow: var(--shadow-dropdown);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease;
+  z-index: 50;
+}
+
+.info-tip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-paired-grid output {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--brand-accent);
 }
 
-.slider-grid input[type="range"] {
+.slider-paired-grid input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -756,7 +819,7 @@ body {
   cursor: pointer;
 }
 
-.slider-grid input[type="range"]::-webkit-slider-thumb {
+.slider-paired-grid input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 16px;
@@ -769,7 +832,7 @@ body {
   transition: transform 0.1s ease;
 }
 
-.slider-grid input[type="range"]::-webkit-slider-thumb:hover {
+.slider-paired-grid input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.25);
 }
 
@@ -806,7 +869,7 @@ body {
 }
 
 /* ============================================================
-   INFERENCE & ATTRIBUTION PANEL
+   RADIAL GAUGE & ATTRIBUTION RESULT PANEL
    ============================================================ */
 .radar-command-console {
   display: flex;
@@ -825,51 +888,72 @@ body {
   gap: 20px;
 }
 
-/* Score & Confidence Interval KPI Block */
-.score-kpi-block {
+/* Radial Gauge Container Box */
+.score-gauge-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 18px 22px;
+  padding: 20px 24px 16px;
+  position: relative;
 }
 
-.score-main {
+.gauge-canvas-wrap {
+  position: relative;
+  width: 240px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+}
+
+#gaugeCanvas {
+  width: 240px;
+  height: 130px;
+  display: block;
+}
+
+.gauge-score-overlay {
+  position: absolute;
+  bottom: 6px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  line-height: 1;
 }
 
 .score-main-value {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   font-weight: 900;
   font-family: var(--font-sans);
   color: var(--brand-primary);
-  line-height: 1;
   letter-spacing: -1px;
 }
 
 .score-main-value span {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-muted);
 }
 
 .score-confidence {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-family: var(--font-mono);
   font-weight: 600;
   color: var(--brand-teal);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .tier-badge {
+  margin-top: 10px;
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
+  gap: 6px;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 800;
   font-family: var(--font-sans);
   background: var(--bg-muted);
@@ -883,40 +967,44 @@ body {
 }
 
 .tier-badge.tier-medium {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.tier-badge.tier-emerging {
   background: #fef3c7;
   color: #b45309;
   border: 1px solid #fde68a;
 }
 
-.tier-badge.tier-emerging {
-  background: #e0f2fe;
-  color: #0369a1;
-  border: 1px solid #bae6fd;
-}
-
 .tier-badge.tier-low {
-  background: #fee2e2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
 }
 
 .prediction-summary {
   font-size: 0.86rem;
   color: var(--text-secondary);
   line-height: 1.55;
+  text-align: center;
 }
 
-/* Feature Attribution Waterfall Chart Card */
+/* Feature Attribution Waterfall Chart Card (Clean, No Bounding Box) */
 .attribution-card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  background: #ffffff;
 }
 
 .attribution-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .attribution-title {
@@ -937,8 +1025,7 @@ body {
   height: 190px;
   display: block;
   background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
+  border: none;
 }
 
 /* Radar Benchmark Box */
@@ -1186,7 +1273,6 @@ body {
   gap: 6px;
 }
 
-/* Refined Pill Filter Buttons (No solid dark block) */
 .galaxy-chip {
   padding: 6px 14px;
   background: #ffffff;
@@ -1458,6 +1544,7 @@ body {
   .command-band { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .eda-grid { grid-template-columns: 1fr; }
+  .slider-paired-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {

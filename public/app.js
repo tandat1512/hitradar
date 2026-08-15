@@ -1,6 +1,6 @@
 /**
  * HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI
- * Academic Light Research Dashboard, Telemetry Mini-Dashboard, Feature Attribution Waterfall, Multi-axis Radar
+ * Academic Light Research Dashboard, Radial Donut Gauge, Feature Attribution Waterfall, Multi-axis Radar
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -381,7 +381,53 @@ function renderMeta(container, rows) {
     .join("");
 }
 
-// Cập nhật điểm số & Phân hạng
+/* ============================================================
+   RADIAL DONUT GAUGE CHART
+   ============================================================ */
+function drawRadialGauge(score = 0) {
+  const canvas = document.querySelector("#gaugeCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  const width = canvas.width;
+  const height = canvas.height;
+  const centerX = width / 2;
+  const centerY = height - 12;
+  const radius = 94;
+  const lineWidth = 12;
+
+  ctx.clearRect(0, 0, width, height);
+
+  const startAngle = Math.PI * 0.85;
+  const endAngle = Math.PI * 2.15;
+  const totalAngle = endAngle - startAngle;
+
+  // Background Track
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+  ctx.strokeStyle = "#e2e8f0";
+  ctx.lineWidth = lineWidth;
+  ctx.lineCap = "round";
+  ctx.stroke();
+
+  // Progress Arc
+  if (score > 0) {
+    const currentProgressAngle = startAngle + totalAngle * (Math.max(0, Math.min(100, score)) / 100);
+    const grad = ctx.createLinearGradient(0, centerY, width, centerY);
+    grad.addColorStop(0, "#2563eb");
+    grad.addColorStop(0.5, "#0d9488");
+    grad.addColorStop(1, "#10b981");
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, startAngle, currentProgressAngle);
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = "round";
+    ctx.stroke();
+  }
+}
+
+// Cập nhật điểm số, Radial Gauge & Phân hạng
 function animateScore(targetScore) {
   const scoreValue = document.querySelector("#scoreValue");
   const clamped = Math.max(0, Math.min(100, Number(targetScore)));
@@ -396,11 +442,13 @@ function animateScore(targetScore) {
     const easeProgress = 1 - Math.pow(1 - progress, 3);
     const currentVal = start + (clamped - start) * easeProgress;
     scoreValue.textContent = currentVal.toFixed(1);
+    drawRadialGauge(currentVal);
 
     if (progress < 1) {
       requestAnimationFrame(updateNumber);
     } else {
       scoreValue.textContent = clamped.toFixed(1);
+      drawRadialGauge(clamped);
     }
   }
   requestAnimationFrame(updateNumber);
@@ -413,16 +461,16 @@ function updateTierBadge(tier) {
   
   const lower = String(tier).toLowerCase();
   if (lower.includes("high") || lower.includes("cao")) {
-    tierBadge.textContent = "High Tier (Siêu Phẩm)";
+    tierBadge.textContent = "🌟 Hit Potential (Siêu Phẩm)";
     tierBadge.classList.add("tier-high");
   } else if (lower.includes("medium") || lower.includes("trung")) {
-    tierBadge.textContent = "Medium Tier (Tiềm Năng)";
+    tierBadge.textContent = "🚀 Trending Potential (Tiềm Năng)";
     tierBadge.classList.add("tier-medium");
   } else if (lower.includes("emerging") || lower.includes("mới")) {
-    tierBadge.textContent = "Emerging Tier (Mới Nổi)";
+    tierBadge.textContent = "📈 Emerging Track (Mới Nổi)";
     tierBadge.classList.add("tier-emerging");
   } else {
-    tierBadge.textContent = "Low Tier (Kén Người Nghe)";
+    tierBadge.textContent = "🎙️ Niche / Low Tier";
     tierBadge.classList.add("tier-low");
   }
 }
@@ -433,6 +481,8 @@ function updateRangeOutputs(root = document) {
     if (output) {
       if (input.name === "n") {
         output.value = `${input.value} bài`;
+      } else if (input.name === "loudness") {
+        output.value = `${Number(input.value).toFixed(1)} dB`;
       } else {
         output.value = input.step === "1" ? input.value : Number(input.value).toFixed(2);
       }
@@ -526,6 +576,7 @@ document.querySelectorAll(".nav-pill").forEach((button) => {
     if (view === "predict") {
       drawWaterfallChart();
       drawBenchmarkRadar();
+      drawRadialGauge(Number(document.querySelector("#scoreValue")?.textContent) || 0);
     }
   });
 });
@@ -734,7 +785,7 @@ document.querySelector("#recommendForm")?.addEventListener("submit", async (even
 });
 
 /* ============================================================
-   1. FEATURE ATTRIBUTION WATERFALL CHART (SHAP-STYLE)
+   1. FEATURE ATTRIBUTION WATERFALL CHART (CLEAN & FLOATING)
    ============================================================ */
 function drawWaterfallChart() {
   const canvas = document.querySelector("#waterfallCanvas");
@@ -763,8 +814,8 @@ function drawWaterfallChart() {
   const height = canvas.height;
   const paddingLeft = 110;
   const paddingRight = 40;
-  const paddingTop = 15;
-  const paddingBottom = 15;
+  const paddingTop = 12;
+  const paddingBottom = 12;
 
   ctx.clearRect(0, 0, width, height);
 
@@ -774,7 +825,7 @@ function drawWaterfallChart() {
   const rowHeight = (height - paddingTop - paddingBottom) / features.length;
   const centerX = paddingLeft + (width - paddingLeft - paddingRight) / 2;
 
-  // Center baseline
+  // Center subtle vertical baseline
   ctx.strokeStyle = "#e2e8f0";
   ctx.lineWidth = 1;
   ctx.beginPath();
@@ -800,7 +851,9 @@ function drawWaterfallChart() {
     ctx.fillStyle = isPositive ? "#2563eb" : "#d97706";
 
     const barX = isPositive ? centerX : centerX - barWidth;
-    ctx.fillRect(barX, y - 6, barWidth, 12);
+    ctx.beginPath();
+    ctx.roundRect(barX, y - 6, barWidth, 12, 3);
+    ctx.fill();
 
     // Value Text
     ctx.fillStyle = isPositive ? "#1e40af" : "#d97706";
@@ -1658,3 +1711,4 @@ drawVisualizer();
 drawWaterfallChart();
 drawBenchmarkRadar();
 drawMoodQuadrant();
+drawRadialGauge(0);

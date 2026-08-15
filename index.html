@@ -200,13 +200,12 @@
 
       <!-- VIEW 1: STUDIO SUY LUẬN & PHÂN RÃ ĐẶC TRƯNG -->
       <section class="view is-active" id="view-predict" data-view-panel="predict">
+        <!-- Natural left-aligned hierarchy header -->
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Phân hệ 1: Suy Luận Điểm Số & Phân Rã Đặc Trưng</p>
-            <h2>Chấm điểm tiềm năng bài hát (Popularity Metric 0 - 100)</h2>
-          </div>
+          <p class="eyebrow">Phân hệ 1: Suy Luận Điểm Số & Phân Rã Đặc Trưng</p>
+          <h2>Chấm điểm tiềm năng bài hát (Popularity Metric 0 - 100)</h2>
           <p class="section-subtitle">
-            Hệ thống tính toán điểm số kỳ vọng bằng mô hình XGBoost với 32 đặc trưng, phân rã mức độ đóng góp của từng thuộc tính và định vị trên ma trận phân vị.
+            Hệ thống tính toán điểm số kỳ vọng bằng mô hình XGBoost với 32 đặc trưng, phân rã mức độ đóng góp của từng thuộc tính và định vị trên ma trận phân vị chuẩn mực.
           </p>
         </div>
 
@@ -256,44 +255,121 @@
               </label>
             </div>
 
-            <!-- Sliders đặc tính âm học -->
+            <!-- Paired 2-Column Sliders with Tooltips -->
             <span class="slider-group-title">Chỉ số âm học chuẩn hóa (Normalized Audio Space [0.00, 1.00]):</span>
-            <div class="slider-grid" data-slider-scope="predict">
+            <div class="slider-paired-grid" data-slider-scope="predict">
+              
+              <!-- Pair 1: Danceability & Energy -->
               <label>
-                <div class="slider-head"><span>Độ bắt tai (Danceability)</span><output>0.76</output></div>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Độ bắt tai (Danceability)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Mức độ kích thích vũ đạo dựa trên nhịp điệu, tempo và độ ổn định của phách.</span>
+                    </span>
+                  </span>
+                  <output>0.76</output>
+                </div>
                 <input name="danceability" type="range" min="0" max="1" step="0.01" value="0.76">
               </label>
+
               <label>
-                <div class="slider-head"><span>Năng lượng (Energy)</span><output>0.72</output></div>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Năng lượng (Energy)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Thước đo cường độ, tốc độ, độ ồn và cảm giác mãnh liệt của bài hát.</span>
+                    </span>
+                  </span>
+                  <output>0.72</output>
+                </div>
                 <input name="energy" type="range" min="0" max="1" step="0.01" value="0.72">
               </label>
+
+              <!-- Pair 2: Acousticness & Instrumentalness -->
               <label>
-                <div class="slider-head"><span>Cảm xúc tích cực (Valence)</span><output>0.68</output></div>
-                <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
-              </label>
-              <label>
-                <div class="slider-head"><span>Độ mộc mạc (Acousticness)</span><output>0.12</output></div>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Độ mộc mạc (Acousticness)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Xác suất bản nhạc được thu âm hoàn toàn bằng các nhạc cụ mộc tự nhiên.</span>
+                    </span>
+                  </span>
+                  <output>0.12</output>
+                </div>
                 <input name="acousticness" type="range" min="0" max="1" step="0.01" value="0.12">
               </label>
+
               <label>
-                <div class="slider-head"><span>Tỷ lệ nhạc cụ (Instrumentalness)</span><output>0.00</output></div>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Tỷ lệ nhạc cụ (Instrumentalness)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Dự đoán bài hát không chứa giọng hát (nhạc không lời / instrumental).</span>
+                    </span>
+                  </span>
+                  <output>0.00</output>
+                </div>
                 <input name="instrumentalness" type="range" min="0" max="1" step="0.01" value="0.00">
               </label>
+
+              <!-- Pair 3: Valence & Speechiness -->
               <label>
-                <div class="slider-head"><span>Biểu diễn trực tiếp (Liveness)</span><output>0.14</output></div>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Cảm xúc tích cực (Valence)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Thang đo cảm xúc: giá trị cao mang lại cảm giác vui vẻ, phấn khởi; giá trị thấp u buồn.</span>
+                    </span>
+                  </span>
+                  <output>0.68</output>
+                </div>
+                <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
+              </label>
+
+              <label>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Tỷ lệ lời thoại (Speechiness)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Mức độ hiện diện của từ ngữ đọc/nói trong bản nhạc (Rap, Podcast, Talk).</span>
+                    </span>
+                  </span>
+                  <output>0.06</output>
+                </div>
+                <input name="speechiness" type="range" min="0" max="1" step="0.01" value="0.06">
+              </label>
+
+              <!-- Pair 4: Liveness & Loudness -->
+              <label>
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Biểu diễn trực tiếp (Liveness)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Xác suất bản thu được ghi âm trực tiếp trước khán giả sân khấu.</span>
+                    </span>
+                  </span>
+                  <output>0.14</output>
+                </div>
                 <input name="liveness" type="range" min="0" max="1" step="0.01" value="0.14">
               </label>
+
               <label>
-                <div class="slider-head"><span>Tỷ lệ lời thoại (Speechiness)</span><output>0.06</output></div>
-                <input name="speechiness" type="range" min="0" max="1" step="0.01" value="0.06">
+                <div class="slider-head">
+                  <span class="slider-title-wrap">
+                    Độ lớn âm thanh (Loudness dB)
+                    <span class="info-tip">i
+                      <span class="tooltip-text">Cường độ âm thanh tổng thể tính bằng Decibel (dB) trung bình toàn bài.</span>
+                    </span>
+                  </span>
+                  <output>-5.5 dB</output>
+                </div>
+                <input name="loudness" type="range" min="-60" max="5" step="0.5" value="-5.5">
               </label>
             </div>
 
             <!-- Kỹ thuật âm thanh -->
             <div class="form-grid compact">
-              <label>Độ lớn âm thanh (Loudness dB) 
-                <input name="loudness" type="number" min="-80" max="10" step="0.1" value="-5.5" required>
-              </label>
               <label>Tốc độ nhịp (Tempo BPM) 
                 <input name="tempo" id="tempoInput" type="number" min="1" max="300" step="0.1" value="124" required>
               </label>
@@ -311,17 +387,19 @@
             </button>
           </form>
 
-          <!-- Cột hiển thị kết quả khoa học -->
+          <!-- Cột hiển thị kết quả khoa học với Radial Gauge -->
           <div class="radar-command-console">
             
-            <!-- KPI Điểm số & Khoảng tin cậy -->
+            <!-- Result Widget với Radial Gauge -->
             <aside class="result-panel" id="radarTargetPanel" aria-live="polite">
               
-              <div class="score-kpi-block">
-                <div class="score-main">
-                  <span class="kpi-sub">ĐIỂM DỰ BÁO PHỔ BIẾN (POPULARITY SCORE)</span>
-                  <div class="score-main-value" id="scoreValue">-- <span>/ 100</span></div>
-                  <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
+              <div class="score-gauge-container">
+                <div class="gauge-canvas-wrap">
+                  <canvas id="gaugeCanvas" width="240" height="130"></canvas>
+                  <div class="gauge-score-overlay">
+                    <div class="score-main-value" id="scoreValue">-- <span>/ 100</span></div>
+                    <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
+                  </div>
                 </div>
                 <span class="tier-badge" id="tierLabel">CHƯA PHÂN HẠNG</span>
               </div>
@@ -330,7 +408,7 @@
                 Chọn mẫu tham chiếu hoặc điều chỉnh các tham số đầu vào để mô hình tính toán điểm số và phân rã đóng góp đặc trưng.
               </p>
 
-              <!-- Feature Attribution Waterfall Chart -->
+              <!-- Feature Attribution Waterfall Chart (Clean, No Bounding Box) -->
               <div class="attribution-card">
                 <div class="attribution-card-header">
                   <span class="attribution-title">Phân Rã Mức Đóng Góp Đặc Trưng (Feature Impact ΔScore)</span>
@@ -380,10 +458,8 @@
       <!-- VIEW 2: CHIẾU KHÔNG GIAN 2D & TỌA ĐỘ TRỌNG TÂM -->
       <section class="view" id="view-galaxy" data-view-panel="galaxy">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Phân hệ 2: Không Gian Chiếu & Tọa Độ Trọng Tâm</p>
-            <h2>Bản đồ phân tán đặc tính âm học (Feature Projection Space)</h2>
-          </div>
+          <p class="eyebrow">Phân hệ 2: Không Gian Chiếu & Tọa Độ Trọng Tâm</p>
+          <h2>Bản đồ phân tán đặc tính âm học (Feature Projection Space)</h2>
           <p class="section-subtitle">
             Trực quan hóa sự phân bố của các bản nhạc trong không gian 2 chiều (Energy vs Valence). Vị trí bài hát truy vấn được đánh dấu bằng điểm tham chiếu màu xanh Navy nổi bật kèm đường gióng tọa độ.
           </p>
@@ -417,10 +493,8 @@
       <!-- VIEW 3: KHÁM PHÁ DỮ LIỆU EDA & THỐNG KÊ MÔ TẢ -->
       <section class="view" id="view-eda" data-view-panel="eda">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô Tả</p>
-            <h2>Phân tích xu hướng thập niên & tương quan đa biến</h2>
-          </div>
+          <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô Tả</p>
+          <h2>Phân tích xu hướng thập niên & tương quan đa biến</h2>
           <p class="section-subtitle">
             Trích xuất quy luật tiến hóa âm nhạc qua 10 thập kỷ (1920 – 2020) và ma trận hệ số tương quan Pearson chuẩn hóa trên 586,672 bài hát.
           </p>
@@ -498,10 +572,8 @@
       <!-- VIEW 4: PHÂN CỤM TOÁN HỌC K-MEANS -->
       <section class="view" id="view-cluster" data-view-panel="cluster">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Phân hệ 4: Nghiên Cứu Phân Cụm Toán Học K-Means</p>
-            <h2>Phân loại phân nhóm âm nhạc thuần nội dung (Content-Only Clustering)</h2>
-          </div>
+          <p class="eyebrow">Phân hệ 4: Nghiên Cứu Phân Cụm Toán Học K-Means</p>
+          <h2>Phân loại phân nhóm âm nhạc thuần nội dung (Content-Only Clustering)</h2>
           <p class="section-subtitle">
             Thuật toán K-Means phân cụm trên 10 chiều âm học chuẩn hóa, kiểm định số cụm tối ưu k=3 bằng phương pháp Silhouette & Elbow.
           </p>
@@ -514,7 +586,7 @@
               <button class="ghost-button" type="button" id="syncFromPredict">Đồng bộ từ Studio</button>
             </div>
 
-            <div class="slider-grid" data-slider-scope="cluster">
+            <div class="slider-paired-grid" data-slider-scope="cluster">
               <label>
                 <div class="slider-head"><span>Độ bắt tai (Danceability)</span><output>0.76</output></div>
                 <input name="danceability" type="range" min="0" max="1" step="0.01" value="0.76">
@@ -543,14 +615,15 @@
                 <div class="slider-head"><span>Cảm xúc tích cực (Valence)</span><output>0.68</output></div>
                 <input name="valence" type="range" min="0" max="1" step="0.01" value="0.68">
               </label>
+              <label>
+                <div class="slider-head"><span>Độ lớn âm thanh (Loudness dB)</span><output>-5.5 dB</output></div>
+                <input name="loudness" type="range" min="-60" max="5" step="0.5" value="-5.5">
+              </label>
             </div>
 
             <div class="form-grid compact">
               <label>Thời lượng (Phút) 
                 <input name="duration_min" type="number" min="0.1" max="60" step="0.1" value="3.2" required>
-              </label>
-              <label>Độ lớn âm thanh (Loudness dB) 
-                <input name="loudness" type="number" min="-80" max="10" step="0.1" value="-5.5" required>
               </label>
               <label>Tốc độ nhịp (Tempo BPM) 
                 <input name="tempo" type="number" min="1" max="300" step="0.1" value="124" required>
@@ -588,10 +661,8 @@
       <!-- VIEW 5: GỢI Ý BÀI HÁT TƯƠNG ĐỒNG -->
       <section class="view" id="view-recommend" data-view-panel="recommend">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Phân hệ 5: Bộ Gợi Ý Tương Đồng Theo Nội Dung</p>
-            <h2>Truy vấn bài hát có đặc tính âm học tương đồng (Cosine Similarity)</h2>
-          </div>
+          <p class="eyebrow">Phân hệ 5: Bộ Gợi Ý Tương Đồng Theo Nội Dung</p>
+          <h2>Truy vấn bài hát có đặc tính âm học tương đồng (Cosine Similarity)</h2>
           <p class="section-subtitle">
             Tính toán khoảng cách Cosine Similarity giữa vector đặc trưng của bài hát truy vấn với toàn bộ kho dữ liệu để tìm ra các bản nhạc đồng nhất về cấu trúc âm thanh.
           </p>
@@ -628,10 +699,8 @@
       <!-- VIEW 6: ĐÁNH GIÁ MÔ HÌNH & LEADERBOARD -->
       <section class="view" id="view-insights" data-view-panel="insights">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Phân hệ 6: Đánh Giá Hiệu Năng & Kiểm Định Mô Hình</p>
-            <h2>Báo cáo kiểm định thực nghiệm (Model Selection & Diagnostics)</h2>
-          </div>
+          <p class="eyebrow">Phân hệ 6: Đánh Giá Hiệu Năng & Kiểm Định Mô Hình</p>
+          <h2>Báo cáo kiểm định thực nghiệm (Model Selection & Diagnostics)</h2>
           <p class="section-subtitle">
             Tổng hợp kết quả kiểm định trên tập Validation (2018) và Holdout Final Test (2019+) so sánh giữa các kiến trúc học máy.
           </p>
