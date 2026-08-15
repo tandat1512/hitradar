@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f8fafc">
+    <meta name="theme-color" content="#f4f6f9">
     <title>HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
@@ -83,7 +83,7 @@
               <div class="vibe-card active" data-preset="pop">
                 <div class="vibe-card-top">
                   <strong class="vibe-title">Pop Thịnh Hành</strong>
-                  <span class="vibe-tag">124 BPM</span>
+                  <span class="vibe-badge-pill">124 BPM</span>
                 </div>
                 <p class="vibe-desc">Bắt tai cao (0.76), Năng lượng (0.72), Major C.</p>
               </div>
@@ -91,7 +91,7 @@
               <div class="vibe-card" data-preset="edm">
                 <div class="vibe-card-top">
                   <strong class="vibe-title">EDM Điện Tử</strong>
-                  <span class="vibe-tag">128 BPM</span>
+                  <span class="vibe-badge-pill">128 BPM</span>
                 </div>
                 <p class="vibe-desc">Năng lượng cực đại (0.91), Loudness -3.8dB.</p>
               </div>
@@ -99,7 +99,7 @@
               <div class="vibe-card" data-preset="synthwave">
                 <div class="vibe-card-top">
                   <strong class="vibe-title">Synthwave 80s</strong>
-                  <span class="vibe-tag">128 BPM</span>
+                  <span class="vibe-badge-pill">128 BPM</span>
                 </div>
                 <p class="vibe-desc">Nhạc cụ cao (0.60), Năng lượng (0.85), Minor G.</p>
               </div>
@@ -107,7 +107,7 @@
               <div class="vibe-card" data-preset="ballad">
                 <div class="vibe-card-top">
                   <strong class="vibe-title">Acoustic Ballad</strong>
-                  <span class="vibe-tag">78 BPM</span>
+                  <span class="vibe-badge-pill">78 BPM</span>
                 </div>
                 <p class="vibe-desc">Độ mộc mạc cao (0.78), Nhịp độ chậm (78 BPM).</p>
               </div>
@@ -115,7 +115,7 @@
               <div class="vibe-card" data-preset="lofi">
                 <div class="vibe-card-top">
                   <strong class="vibe-title">Lofi Chill</strong>
-                  <span class="vibe-tag">85 BPM</span>
+                  <span class="vibe-badge-pill">85 BPM</span>
                 </div>
                 <p class="vibe-desc">Nhạc cụ (0.85), Mộc mạc (0.65), Minor A.</p>
               </div>
@@ -123,7 +123,7 @@
               <div class="vibe-card" data-preset="rock">
                 <div class="vibe-card-top">
                   <strong class="vibe-title">Rock Động Lực</strong>
-                  <span class="vibe-tag">142 BPM</span>
+                  <span class="vibe-badge-pill">142 BPM</span>
                 </div>
                 <p class="vibe-desc">Năng lượng cao (0.88), Nhịp nhanh (142 BPM).</p>
               </div>
@@ -131,12 +131,45 @@
           </div>
         </div>
 
-        <div class="visual-console" aria-label="Mô phỏng phổ dao động sóng âm">
-          <canvas id="pulseCanvas" width="560" height="220"></canvas>
-          <div class="console-readout">
-            <span id="readoutTempo">Tempo: 124 BPM</span>
-            <span id="readoutEnergy">Energy: 72%</span>
-            <span id="readoutMood">Valence: 68%</span>
+        <!-- Real-time Acoustic Telemetry Mini-Dashboard (Replaces Dead Space) -->
+        <div class="telemetry-dashboard" aria-label="Bảng điều khiển đặc tính âm học thời gian thực">
+          <div class="telemetry-header">
+            <span class="telemetry-title">Đặc tính âm học thời gian thực (Live Telemetry)</span>
+            <span class="telemetry-badge">LIVE METRICS</span>
+          </div>
+
+          <canvas id="pulseCanvas" width="560" height="180"></canvas>
+
+          <div class="telemetry-meters-grid">
+            <div class="telemetry-meter-box">
+              <div class="meter-header">
+                <span class="meter-name">Nhịp độ (Tempo)</span>
+              </div>
+              <div class="meter-value" id="readoutTempo">124 BPM</div>
+              <div class="meter-progress-track">
+                <div class="meter-progress-fill fill-tempo" id="meterFillTempo" style="width: 41%;"></div>
+              </div>
+            </div>
+
+            <div class="telemetry-meter-box">
+              <div class="meter-header">
+                <span class="meter-name">Năng lượng (Energy)</span>
+              </div>
+              <div class="meter-value" id="readoutEnergy">72%</div>
+              <div class="meter-progress-track">
+                <div class="meter-progress-fill fill-energy" id="meterFillEnergy" style="width: 72%;"></div>
+              </div>
+            </div>
+
+            <div class="telemetry-meter-box">
+              <div class="meter-header">
+                <span class="meter-name">Cảm xúc (Valence)</span>
+              </div>
+              <div class="meter-value" id="readoutMood">68%</div>
+              <div class="meter-progress-track">
+                <div class="meter-progress-fill fill-valence" id="meterFillValence" style="width: 68%;"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -328,14 +361,14 @@
             <h2>Bản đồ phân tán đặc tính âm học (Feature Projection Space)</h2>
           </div>
           <p class="section-subtitle">
-            Trực quan hóa sự phân bố của các bản nhạc trong không gian 2 chiều (Energy vs Valence). Vị trí bài hát truy vấn được đánh dấu bằng điểm tham chiếu màu xanh Navy.
+            Trực quan hóa sự phân bố của các bản nhạc trong không gian 2 chiều (Energy vs Valence). Vị trí bài hát truy vấn được đánh dấu bằng điểm tham chiếu màu xanh Navy nổi bật kèm đường gióng tọa độ.
           </p>
         </div>
 
         <div class="galaxy-map-container">
           <div class="galaxy-map-toolbar">
             <div class="galaxy-filter-group">
-              <button class="galaxy-chip active" type="button" data-cluster-filter="all">Tất Cả Phân Nhóm (All Clusters)</button>
+              <button class="galaxy-chip active" type="button" data-cluster-filter="all">Tất Cả Phân Nhóm</button>
               <button class="galaxy-chip" type="button" data-cluster-filter="0">Cụm 0: Năng Lượng & Pop/Dance (61.5%)</button>
               <button class="galaxy-chip" type="button" data-cluster-filter="1">Cụm 1: Mộc Mạc & Trữ Tình (33.9%)</button>
               <button class="galaxy-chip" type="button" data-cluster-filter="2">Cụm 2: Giọng Nói & Podcast (4.6%)</button>
@@ -348,9 +381,9 @@
             <div class="galaxy-node-card" id="galaxyNodeCard">
               <strong id="nodeTrackName">Tên bản ghi mẫu</strong>
               <div style="margin-top: 4px; display: flex; flex-direction: column; gap: 2px; color: var(--text-secondary);">
-                <span>Phân nhóm: <b id="nodeVibe" style="color: var(--primary-navy);">--</b></span>
+                <span>Phân nhóm: <b id="nodeVibe" style="color: var(--brand-primary);">--</b></span>
                 <span>Energy: <b id="nodeEnergy">--</b> | Danceability: <b id="nodeDance">--</b></span>
-                <span>Popularity: <b id="nodePopularity" style="color: var(--primary-teal);">--</b> / 100</span>
+                <span>Popularity: <b id="nodePopularity" style="color: var(--brand-teal);">--</b> / 100</span>
               </div>
             </div>
           </div>
@@ -509,7 +542,7 @@
                 <span id="clusterValue">--</span>
               </div>
               <div>
-                <h3 id="clusterTitle" style="font-size: 1.25rem; font-weight: 700; color: var(--primary-navy);">Chưa xác định phân nhóm</h3>
+                <h3 id="clusterTitle" style="font-size: 1.25rem; font-weight: 800; color: var(--brand-primary);">Chưa xác định phân nhóm</h3>
                 <span class="kpi-sub">Tối ưu theo Silhouette Score: k = 3</span>
               </div>
             </div>

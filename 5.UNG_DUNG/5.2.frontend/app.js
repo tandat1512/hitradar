@@ -1,6 +1,6 @@
 /**
  * HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI
- * Academic Light Research Dashboard, Feature Attribution Waterfall, Multi-axis Radar & Hybrid Engine
+ * Academic Light Research Dashboard, Telemetry Mini-Dashboard, Feature Attribution Waterfall, Multi-axis Radar
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -467,10 +467,11 @@ function updateTemporalWarning() {
   }
 }
 
+// Cập nhật Mini-Dashboard Telemetry với Progress Bars
 function updateVisualReadout() {
   const predictForm = document.querySelector("#predictForm");
   if (!predictForm) return;
-  const tempo = predictForm.elements.tempo.value;
+  const tempo = Number(predictForm.elements.tempo.value) || 120;
   const energy = Math.round(Number(predictForm.elements.energy.value) * 100);
   const valence = Math.round(Number(predictForm.elements.valence.value) * 100);
   
@@ -478,9 +479,18 @@ function updateVisualReadout() {
   const energyEl = document.querySelector("#readoutEnergy");
   const moodEl = document.querySelector("#readoutMood");
   
-  if (tempoEl) tempoEl.textContent = `Tempo: ${tempo} BPM`;
-  if (energyEl) energyEl.textContent = `Energy: ${energy}%`;
-  if (moodEl) moodEl.textContent = `Valence: ${valence}%`;
+  if (tempoEl) tempoEl.textContent = `${tempo} BPM`;
+  if (energyEl) energyEl.textContent = `${energy}%`;
+  if (moodEl) moodEl.textContent = `${valence}%`;
+
+  // Cập nhật thanh tiến trình Fill Bars
+  const fillTempo = document.querySelector("#meterFillTempo");
+  const fillEnergy = document.querySelector("#meterFillEnergy");
+  const fillValence = document.querySelector("#meterFillValence");
+
+  if (fillTempo) fillTempo.style.width = `${Math.min(100, Math.max(10, (tempo / 220) * 100))}%`;
+  if (fillEnergy) fillEnergy.style.width = `${energy}%`;
+  if (fillValence) fillValence.style.width = `${valence}%`;
 }
 
 // Kiểm tra sức khỏe hệ thống Backend API
@@ -780,14 +790,14 @@ function drawWaterfallChart() {
 
     // Label
     ctx.fillStyle = "#475569";
-    ctx.font = "600 11px 'Inter', sans-serif";
+    ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "right";
     ctx.textBaseline = "middle";
     ctx.fillText(feat.name, paddingLeft - 10, y);
 
     // Bar
     const isPositive = feat.val >= 0;
-    ctx.fillStyle = isPositive ? "#1e40af" : "#d97706";
+    ctx.fillStyle = isPositive ? "#2563eb" : "#d97706";
 
     const barX = isPositive ? centerX : centerX - barWidth;
     ctx.fillRect(barX, y - 6, barWidth, 12);
@@ -870,7 +880,7 @@ function drawBenchmarkRadar() {
     const labelX = centerX + (radius + 20) * Math.cos(angle);
     const labelY = centerY + (radius + 16) * Math.sin(angle);
     ctx.fillStyle = "#64748b";
-    ctx.font = "600 10px 'Inter', sans-serif";
+    ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(labels[i], labelX, labelY);
@@ -894,7 +904,7 @@ function drawBenchmarkRadar() {
   ctx.stroke();
   ctx.restore();
 
-  // Polygon 2: Current Track (Navy Blue)
+  // Polygon 2: Current Track (Sapphire Blue)
   ctx.beginPath();
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
@@ -905,9 +915,9 @@ function drawBenchmarkRadar() {
     else ctx.lineTo(x, y);
   }
   ctx.closePath();
-  ctx.fillStyle = "rgba(30, 58, 138, 0.12)";
+  ctx.fillStyle = "rgba(37, 99, 235, 0.12)";
   ctx.fill();
-  ctx.strokeStyle = "#1e3a8a";
+  ctx.strokeStyle = "#2563eb";
   ctx.lineWidth = 2;
   ctx.stroke();
 
@@ -919,7 +929,7 @@ function drawBenchmarkRadar() {
     const y = centerY + valR * Math.sin(angle);
     ctx.beginPath();
     ctx.arc(x, y, 3.5, 0, Math.PI * 2);
-    ctx.fillStyle = "#1e3a8a";
+    ctx.fillStyle = "#1e40af";
     ctx.fill();
   }
 }
@@ -973,7 +983,7 @@ function drawMoodQuadrant() {
   ctx.stroke();
 
   // Zone Labels
-  ctx.font = "600 11px 'Inter', sans-serif";
+  ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
   ctx.fillStyle = "#0d9488";
   ctx.fillText("Q1: Sôi Động / Happy", width - padding - 130, padding + 16);
 
@@ -992,12 +1002,12 @@ function drawMoodQuadrant() {
 
   ctx.beginPath();
   ctx.arc(markerX, markerY, 8, 0, Math.PI * 2);
-  ctx.fillStyle = "rgba(30, 58, 138, 0.2)";
+  ctx.fillStyle = "rgba(37, 99, 235, 0.25)";
   ctx.fill();
 
   ctx.beginPath();
   ctx.arc(markerX, markerY, 4, 0, Math.PI * 2);
-  ctx.fillStyle = "#1e3a8a";
+  ctx.fillStyle = "#2563eb";
   ctx.fill();
 
   const moodBadge = document.querySelector("#currentMoodBadge");
@@ -1015,7 +1025,7 @@ function drawMoodQuadrant() {
 }
 
 /* ============================================================
-   4. AUDIO GALAXY SCATTER CANVAS (ACADEMIC LIGHT)
+   4. AUDIO GALAXY SCATTER CANVAS (WITH HALO & CROSSHAIR DROP LINES)
    ============================================================ */
 let galaxyStars = [];
 let currentClusterFilter = "all";
@@ -1023,7 +1033,7 @@ let currentClusterFilter = "all";
 function generateGalaxyData() {
   const stars = [];
   const clusterVibes = [
-    { name: "Pop/Dance Sôi Nổi", baseV: 0.64, baseE: 0.69, color: "#1e3a8a", cluster: 0 },
+    { name: "Pop/Dance Sôi Nổi", baseV: 0.64, baseE: 0.69, color: "#2563eb", cluster: 0 },
     { name: "Acoustic/Ballad Trữ Tình", baseV: 0.39, baseE: 0.29, color: "#0d9488", cluster: 1 },
     { name: "Giọng Nói / Spoken Word", baseV: 0.57, baseE: 0.40, color: "#d97706", cluster: 2 },
   ];
@@ -1065,7 +1075,7 @@ function drawGalaxyMap() {
 
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 40;
+  const padding = 44;
 
   if (galaxyStars.length === 0) {
     galaxyStars = generateGalaxyData();
@@ -1076,21 +1086,45 @@ function drawGalaxyMap() {
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, width, height);
 
-  // Subtle gridlines
-  ctx.strokeStyle = "#f1f5f9";
+  // Soft subtle dashed gridlines (50% opacity)
+  ctx.save();
+  ctx.setLineDash([3, 6]);
+  ctx.strokeStyle = "rgba(226, 232, 240, 0.7)";
   ctx.lineWidth = 1;
-  for (let x = padding; x < width - padding; x += 80) {
+
+  for (let x = padding; x < width - padding; x += 90) {
     ctx.beginPath();
     ctx.moveTo(x, padding);
     ctx.lineTo(x, height - padding);
     ctx.stroke();
   }
-  for (let y = padding; y < height - padding; y += 60) {
+  for (let y = padding; y < height - padding; y += 70) {
     ctx.beginPath();
     ctx.moveTo(padding, y);
     ctx.lineTo(width - padding, y);
     ctx.stroke();
   }
+  ctx.restore();
+
+  // Axes lines
+  ctx.strokeStyle = "#cbd5e1";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(padding, height - padding);
+  ctx.lineTo(width - padding, height - padding);
+  ctx.moveTo(padding, padding);
+  ctx.lineTo(padding, height - padding);
+  ctx.stroke();
+
+  // Axis Labels
+  ctx.fillStyle = "#64748b";
+  ctx.font = "600 11px 'Plus Jakarta Sans', sans-serif";
+  ctx.fillText("Cảm xúc (Valence) ➔", width - padding - 120, height - padding + 24);
+  ctx.save();
+  ctx.translate(padding - 26, padding + 110);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText("Năng lượng (Energy) ➔", 0, 0);
+  ctx.restore();
 
   // Scatter points
   galaxyStars.forEach((star) => {
@@ -1102,34 +1136,69 @@ function drawGalaxyMap() {
     ctx.beginPath();
     ctx.arc(x, y, star.size, 0, Math.PI * 2);
     ctx.fillStyle = star.color;
-    ctx.globalAlpha = 0.65;
+    ctx.globalAlpha = 0.6;
     ctx.fill();
     ctx.globalAlpha = 1.0;
   });
 
-  // Query track point
+  // Query track point (Prominent Star/Halo + 2 Crosshair Drop Lines)
   if (form) {
     const userV = Number(form.elements.valence.value);
     const userE = Number(form.elements.energy.value);
     const ux = padding + userV * (width - padding * 2);
     const uy = padding + (1 - userE) * (height - padding * 2);
 
+    // Drop Line 1: To X-Axis (Valence)
+    ctx.save();
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = "rgba(30, 64, 175, 0.6)";
+    ctx.lineWidth = 1.5;
     ctx.beginPath();
-    ctx.arc(ux, uy, 10, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(30, 58, 138, 0.25)";
+    ctx.moveTo(ux, uy);
+    ctx.lineTo(ux, height - padding);
+    ctx.stroke();
+
+    // Drop Line 2: To Y-Axis (Energy)
+    ctx.beginPath();
+    ctx.moveTo(ux, uy);
+    ctx.lineTo(padding, uy);
+    ctx.stroke();
+    ctx.restore();
+
+    // Axis Tick Badges for Query Coordinates
+    ctx.fillStyle = "#1e40af";
+    ctx.font = "700 10px 'JetBrains Mono', monospace";
+    ctx.textAlign = "center";
+    ctx.fillText(`V: ${userV.toFixed(2)}`, ux, height - padding + 14);
+
+    ctx.textAlign = "right";
+    ctx.fillText(`E: ${userE.toFixed(2)}`, padding - 6, uy + 4);
+
+    // Halo Effect (Translucent outer ring)
+    ctx.beginPath();
+    ctx.arc(ux, uy, 16, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(37, 99, 235, 0.18)";
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(ux, uy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = "#1e3a8a";
+    ctx.arc(ux, uy, 9, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(37, 99, 235, 0.4)";
+    ctx.fill();
+
+    // Core Point
+    ctx.beginPath();
+    ctx.arc(ux, uy, 5.5, 0, Math.PI * 2);
+    ctx.fillStyle = "#1e40af";
     ctx.fill();
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    ctx.fillStyle = "#1e3a8a";
-    ctx.font = "700 11px 'Inter', sans-serif";
-    ctx.fillText("Điểm truy vấn", ux + 12, uy + 4);
+    // Label
+    ctx.fillStyle = "#1e40af";
+    ctx.font = "800 12px 'Plus Jakarta Sans', sans-serif";
+    ctx.textAlign = "left";
+    ctx.fillText(`🎯 Điểm truy vấn (${userV.toFixed(2)}, ${userE.toFixed(2)})`, ux + 14, uy + 4);
   }
 }
 
@@ -1144,7 +1213,7 @@ if (galaxyCanvas) {
     const mouseX = (e.clientX - rect.left) * scaleX;
     const mouseY = (e.clientY - rect.top) * scaleY;
 
-    const padding = 40;
+    const padding = 44;
     const width = galaxyCanvas.width;
     const height = galaxyCanvas.height;
 
@@ -1275,13 +1344,13 @@ function drawDecadeTrendChart() {
   }
 
   drawLine(loudness, "#d97706");
-  drawLine(energy, "#1e3a8a");
+  drawLine(energy, "#1e40af");
   drawLine(danceability, "#0d9488");
   drawLine(acousticness, "#64748b");
 
   // Legend
-  ctx.font = "600 10px 'Inter', sans-serif";
-  ctx.fillStyle = "#1e3a8a";
+  ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
+  ctx.fillStyle = "#1e40af";
   ctx.fillText("― Energy", padding + 20, padding - 10);
   ctx.fillStyle = "#0d9488";
   ctx.fillText("― Danceability", padding + 95, padding - 10);
@@ -1314,7 +1383,7 @@ function drawEnergyDistChart() {
     const y = height - padding - barH;
 
     const isSweetSpot = b >= 0.6 && b <= 0.8;
-    ctx.fillStyle = isSweetSpot ? "#1e40af" : "#cbd5e1";
+    ctx.fillStyle = isSweetSpot ? "#2563eb" : "#cbd5e1";
     ctx.fillRect(x, y, barWidth, barH);
 
     ctx.fillStyle = "#64748b";
@@ -1330,7 +1399,7 @@ function drawEnergyDistChart() {
   ctx.stroke();
 
   ctx.fillStyle = "#1e40af";
-  ctx.font = "600 10px 'Inter', sans-serif";
+  ctx.font = "700 10px 'Plus Jakarta Sans', sans-serif";
   ctx.fillText("Vùng tối ưu xác suất (Sweet Spot: 0.65 - 0.80)", width / 2, padding - 10);
 }
 
@@ -1392,7 +1461,7 @@ function drawCorrelationChart() {
     }
 
     ctx.fillStyle = "#475569";
-    ctx.font = "600 10px 'Inter', sans-serif";
+    ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "right";
     ctx.fillText(labels[r], startX - 6, startY + r * size + size / 2);
     ctx.textAlign = "center";
@@ -1419,18 +1488,18 @@ function drawVisualizer() {
 
     context.clearRect(0, 0, width, height);
 
-    context.fillStyle = "#f8fafc";
+    context.fillStyle = "#ffffff";
     context.fillRect(0, 0, width, height);
 
     for (let i = 0; i < bars; i++) {
       const x = (i / bars) * width;
       const barWidth = width / bars - 3;
       const wave = Math.sin(phase + i * 0.32) * 0.5 + 0.5;
-      const barHeight = 14 + wave * 110 * (0.4 + energy * 0.7);
+      const barHeight = 10 + wave * 80 * (0.4 + energy * 0.7);
 
-      context.fillStyle = i % 2 === 0 ? "#1e3a8a" : "#2563eb";
+      context.fillStyle = i % 2 === 0 ? "#1e40af" : "#2563eb";
       context.beginPath();
-      context.roundRect(x + 1, height - barHeight - 12, barWidth, barHeight, 2);
+      context.roundRect(x + 1, height - barHeight - 8, barWidth, barHeight, 2);
       context.fill();
     }
 
