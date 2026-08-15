@@ -200,7 +200,7 @@
 
       <!-- VIEW 1: STUDIO SUY LUẬN & PHÂN RÃ ĐẶC TRƯNG -->
       <section class="view is-active" id="view-predict" data-view-panel="predict">
-        <!-- Natural left-aligned hierarchy header -->
+        <!-- Natural left-aligned hierarchy header with optimal line-length -->
         <div class="section-head">
           <p class="eyebrow">Phân hệ 1: Suy Luận Điểm Số & Phân Rã Đặc Trưng</p>
           <h2>Chấm điểm tiềm năng bài hát (Popularity Metric 0 - 100)</h2>
@@ -214,7 +214,7 @@
           <form class="tool-panel" id="predictForm">
             <div class="panel-title">
               <h3>Cấu hình vector đặc trưng âm học (Input Features)</h3>
-              <button class="ghost-button" type="button" id="loadDemoPredict">Khôi phục mặc định</button>
+              <button class="text-link-btn" type="button" id="loadDemoPredict">↺ Khôi phục mặc định</button>
             </div>
 
             <!-- Metadata cơ bản -->
@@ -382,12 +382,14 @@
               Lưu ý: Năm phát hành sau 2020 được phân loại là ngoại suy thời gian (Temporal extrapolation).
             </p>
             
+            <!-- High-Impact Elevated CTA Button -->
             <button class="primary-button" type="submit" id="predictSubmitBtn">
-              Chạy Suy Luận Mô Hình XGBoost
+              <span class="btn-icon">⚡</span>
+              <span>Chạy Suy Luận Mô Hình XGBoost</span>
             </button>
           </form>
 
-          <!-- Cột hiển thị kết quả khoa học với Radial Gauge -->
+          <!-- Cột hiển thị kết quả khoa học với Radial Gauge & Standalone Radar -->
           <div class="radar-command-console">
             
             <!-- Result Widget với Radial Gauge -->
@@ -395,7 +397,7 @@
               
               <div class="score-gauge-container">
                 <div class="gauge-canvas-wrap">
-                  <canvas id="gaugeCanvas" width="240" height="130"></canvas>
+                  <canvas id="gaugeCanvas" width="240" height="135"></canvas>
                   <div class="gauge-score-overlay">
                     <div class="score-main-value" id="scoreValue">-- <span>/ 100</span></div>
                     <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
@@ -408,22 +410,13 @@
                 Chọn mẫu tham chiếu hoặc điều chỉnh các tham số đầu vào để mô hình tính toán điểm số và phân rã đóng góp đặc trưng.
               </p>
 
-              <!-- Feature Attribution Waterfall Chart (Clean, No Bounding Box) -->
+              <!-- Feature Attribution Waterfall Chart (Clean, Floating on White) -->
               <div class="attribution-card">
                 <div class="attribution-card-header">
                   <span class="attribution-title">Phân Rã Mức Đóng Góp Đặc Trưng (Feature Impact ΔScore)</span>
                   <span class="attribution-subtitle">SHAP-style Attribution</span>
                 </div>
                 <canvas id="waterfallCanvas" width="480" height="190"></canvas>
-              </div>
-
-              <!-- Radar Benchmark So Sánh Chuẩn Toàn Cầu -->
-              <div class="radar-box">
-                <div class="radar-box-header">
-                  <span class="radar-box-title">Đa Chiều So Sánh Với Trung Vị Toàn Tập (Global Median Benchmark)</span>
-                  <span class="radar-live-indicator">N = 586K Benchmark</span>
-                </div>
-                <canvas id="audioRadarCanvas" width="480" height="230"></canvas>
               </div>
 
               <!-- Collapsible Tech Specs -->
@@ -442,6 +435,15 @@
                 </div>
               </div>
             </aside>
+
+            <!-- Standalone Elevated Radar Benchmark Card -->
+            <div class="radar-standalone-card">
+              <div class="radar-card-header">
+                <span class="radar-card-title">Đa Chiều So Sánh Với Trung Vị Toàn Tập (Benchmark Radar)</span>
+                <span class="radar-card-badge">N = 586K Global Median</span>
+              </div>
+              <canvas id="audioRadarCanvas" width="520" height="270"></canvas>
+            </div>
 
             <!-- Mood Quadrant Matrix -->
             <div class="mood-matrix-box">

@@ -46,6 +46,7 @@
   --shadow-card-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.09), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
   --shadow-subtle: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
   --shadow-dropdown: 0 12px 30px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  --shadow-cta: 0 6px 20px -2px rgba(37, 99, 235, 0.35), 0 2px 6px -1px rgba(37, 99, 235, 0.2);
 }
 
 * {
@@ -407,7 +408,7 @@ body {
 .meter-progress-fill.fill-valence { background: var(--accent-amber); width: 68%; }
 
 /* ============================================================
-   REFERENCE ARCHETYPES (FIX: NO TEXT WRAPPING / CẮT CHỮ)
+   REFERENCE ARCHETYPES (PIXEL-PERFECT COMMERCIAL GRADE)
    ============================================================ */
 .preset-section {
   display: flex;
@@ -460,10 +461,9 @@ body {
   color: #ffffff;
 }
 
-/* Widened minmax to prevent text clipping */
 .vibe-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
   gap: 12px;
 }
 
@@ -471,11 +471,11 @@ body {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 12px 14px;
+  padding: 14px 16px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   box-shadow: var(--shadow-subtle);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -497,52 +497,53 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .vibe-badge-pill {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  background: var(--bg-subtle);
-  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  background: #f1f5f9;
+  padding: 3px 8px;
   border-radius: var(--radius-full);
   white-space: nowrap;
+  border: 1px solid #e2e8f0;
 }
 
 .vibe-card.active .vibe-badge-pill {
-  color: var(--brand-primary);
+  color: var(--brand-accent);
   background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.3);
   box-shadow: 0 1px 3px rgba(37, 99, 235, 0.15);
 }
 
-/* Prevent title from wrapping / clipping */
 .vibe-title {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--text-primary);
   white-space: nowrap;
   letter-spacing: -0.2px;
 }
 
-/* Micro-Chips for Archetype Cards */
 .vibe-chips-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 5px;
+  line-height: 1.55;
 }
 
 .vibe-chip {
   display: inline-flex;
   align-items: center;
   font-size: 0.68rem;
-  line-height: 1.4;
+  line-height: 1.45;
   color: var(--text-secondary);
-  background: var(--bg-subtle);
-  padding: 2px 6px;
+  background: #f8fafc;
+  padding: 3px 7px;
   border-radius: 4px;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid #e2e8f0;
   white-space: nowrap;
 }
 
@@ -555,11 +556,11 @@ body {
 
 .vibe-card.active .vibe-chip {
   background: #ffffff;
-  border-color: rgba(37, 99, 235, 0.2);
+  border-color: rgba(37, 99, 235, 0.25);
 }
 
 /* ============================================================
-   VIEWS & ALIGNED SECTION HEADERS (FIX: NO RIGHT DISPLACEMENT)
+   VIEWS & ALIGNED HEADERS (MAX-WIDTH 680PX FOR OPTIMAL READING)
    ============================================================ */
 .view {
   display: none;
@@ -577,7 +578,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Left-aligned natural reading order header */
 .section-head {
   display: flex;
   flex-direction: column;
@@ -594,10 +594,11 @@ body {
   color: var(--text-primary);
 }
 
+/* Optimal reading max-width (avoid edge-to-edge stretching) */
 .section-subtitle {
   color: var(--text-secondary);
   font-size: 0.9rem;
-  max-width: 860px;
+  max-width: 680px;
   text-align: left;
   line-height: 1.6;
 }
@@ -635,9 +636,32 @@ body {
 }
 
 .panel-title h3 {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--text-primary);
+}
+
+/* Right-aligned Minimal Text Link */
+.text-link-btn {
+  background: transparent;
+  border: none;
+  color: var(--brand-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.text-link-btn:hover {
+  color: var(--brand-primary);
+  background: var(--brand-accent-light);
+  text-decoration: underline;
 }
 
 .ghost-button {
@@ -716,9 +740,7 @@ body {
   cursor: pointer;
 }
 
-/* ============================================================
-   2-COLUMN PAIRED SLIDERS GRID WITH TOOLTIPS
-   ============================================================ */
+/* 2-Column Paired Sliders Grid */
 .slider-group-title {
   font-size: 0.78rem;
   font-family: var(--font-mono);
@@ -779,7 +801,7 @@ body {
   bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 210px;
   padding: 8px 10px;
   background: #0f172a;
   color: #ffffff;
@@ -836,36 +858,41 @@ body {
   transform: scale(1.25);
 }
 
-/* Primary Action Button */
+/* Elevated High-Impact CTA Button */
 .primary-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
-  padding: 13px 24px;
-  background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
   color: #ffffff;
   border: none;
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-  transition: all 0.15s ease;
+  box-shadow: var(--shadow-cta);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .primary-button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #172554, var(--brand-primary));
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  box-shadow: 0 8px 24px -2px rgba(37, 99, 235, 0.45), 0 3px 8px -1px rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
 }
 
 .primary-button:disabled {
   opacity: 0.65;
   cursor: not-allowed;
+  transform: none;
+}
+
+.primary-button .btn-icon {
+  font-size: 1.1rem;
 }
 
 /* ============================================================
@@ -897,27 +924,27 @@ body {
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 20px 24px 16px;
+  padding: 20px 24px 18px;
   position: relative;
 }
 
 .gauge-canvas-wrap {
   position: relative;
   width: 240px;
-  height: 130px;
+  height: 135px;
   display: flex;
   justify-content: center;
 }
 
 #gaugeCanvas {
   width: 240px;
-  height: 130px;
+  height: 135px;
   display: block;
 }
 
 .gauge-score-overlay {
   position: absolute;
-  bottom: 6px;
+  bottom: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -925,7 +952,7 @@ body {
 }
 
 .score-main-value {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 900;
   font-family: var(--font-sans);
   color: var(--brand-primary);
@@ -991,7 +1018,7 @@ body {
   text-align: center;
 }
 
-/* Feature Attribution Waterfall Chart Card (Clean, No Bounding Box) */
+/* Feature Attribution Waterfall Chart Card */
 .attribution-card {
   display: flex;
   flex-direction: column;
@@ -1028,40 +1055,47 @@ body {
   border: none;
 }
 
-/* Radar Benchmark Box */
-.radar-box {
+/* Standalone Elevated Benchmark Radar Card */
+.radar-standalone-card {
   width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
 }
 
-.radar-box-header {
+.radar-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
 }
 
-.radar-box-title {
-  font-size: 0.8rem;
+.radar-card-title {
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--text-primary);
 }
 
-.radar-live-indicator {
-  font-size: 0.7rem;
+.radar-card-badge {
+  font-size: 0.72rem;
   font-family: var(--font-mono);
   font-weight: 700;
   color: var(--brand-teal);
+  background: var(--brand-teal-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(13, 148, 136, 0.2);
 }
 
 #audioRadarCanvas {
   width: 100%;
-  height: 230px;
+  height: 270px;
   display: block;
 }
 

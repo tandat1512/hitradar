@@ -1,6 +1,6 @@
 /**
  * HitRadar Pro - Nền Tảng Nghiên Cứu & Dự Đoán Âm Nhạc Spotify AI
- * Academic Light Research Dashboard, Radial Donut Gauge, Feature Attribution Waterfall, Multi-axis Radar
+ * Academic Light Research Dashboard, Commercial-grade Radial Donut Gauge, Standalone Radar
  */
 
 const API_BASE_KEY = "hitradar.apiBase";
@@ -160,7 +160,7 @@ function setBusy(button, busy, label) {
   if (!button) return;
   if (!button.dataset.idleLabel) button.dataset.idleLabel = button.innerHTML;
   button.disabled = busy;
-  button.innerHTML = busy ? `Đang xử lý: ${label}` : button.dataset.idleLabel;
+  button.innerHTML = busy ? `Đang tính toán: ${label}` : button.dataset.idleLabel;
 }
 
 function numberValue(form, name) {
@@ -382,7 +382,7 @@ function renderMeta(container, rows) {
 }
 
 /* ============================================================
-   RADIAL DONUT GAUGE CHART
+   RADIAL DONUT GAUGE CHART (WITH 180° BACKGROUND TRACK)
    ============================================================ */
 function drawRadialGauge(score = 0) {
   const canvas = document.querySelector("#gaugeCanvas");
@@ -392,9 +392,9 @@ function drawRadialGauge(score = 0) {
   const width = canvas.width;
   const height = canvas.height;
   const centerX = width / 2;
-  const centerY = height - 12;
+  const centerY = height - 14;
   const radius = 94;
-  const lineWidth = 12;
+  const lineWidth = 14;
 
   ctx.clearRect(0, 0, width, height);
 
@@ -402,7 +402,7 @@ function drawRadialGauge(score = 0) {
   const endAngle = Math.PI * 2.15;
   const totalAngle = endAngle - startAngle;
 
-  // Background Track
+  // 1. Background Gray Track (Runs complete 180°+ arc)
   ctx.beginPath();
   ctx.arc(centerX, centerY, radius, startAngle, endAngle);
   ctx.strokeStyle = "#e2e8f0";
@@ -410,9 +410,26 @@ function drawRadialGauge(score = 0) {
   ctx.lineCap = "round";
   ctx.stroke();
 
-  // Progress Arc
+  // Subtle tick markers
+  const ticks = [0, 25, 50, 75, 100];
+  ticks.forEach((tickVal) => {
+    const tAngle = startAngle + totalAngle * (tickVal / 100);
+    const tickR = radius + 12;
+    const tx = centerX + tickR * Math.cos(tAngle);
+    const ty = centerY + tickR * Math.sin(tAngle);
+
+    ctx.fillStyle = "#94a3b8";
+    ctx.font = "600 8.5px 'JetBrains Mono', monospace";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(`${tickVal}`, tx, ty);
+  });
+
+  // 2. Active Progress Colored Arc (Overlaid with vibrant gradient)
   if (score > 0) {
-    const currentProgressAngle = startAngle + totalAngle * (Math.max(0, Math.min(100, score)) / 100);
+    const clampedScore = Math.max(0, Math.min(100, score));
+    const currentProgressAngle = startAngle + totalAngle * (clampedScore / 100);
+    
     const grad = ctx.createLinearGradient(0, centerY, width, centerY);
     grad.addColorStop(0, "#2563eb");
     grad.addColorStop(0.5, "#0d9488");
@@ -865,7 +882,7 @@ function drawWaterfallChart() {
 }
 
 /* ============================================================
-   2. MULTI-AXIS BENCHMARK RADAR (ACADEMIC BLUE)
+   2. STANDALONE MULTI-AXIS BENCHMARK RADAR (HIGH CLARITY)
    ============================================================ */
 function drawBenchmarkRadar() {
   const canvas = document.querySelector("#audioRadarCanvas");
@@ -885,13 +902,13 @@ function drawBenchmarkRadar() {
   ];
 
   const medianFeatures = [0.56, 0.54, 0.55, 0.45, 0.11, 0.21, 0.10]; // N=586K medians
-  const labels = ["Danceability", "Energy", "Valence", "Acoustic", "Instrumental", "Liveness", "Speech"];
+  const labels = ["Danceability", "Energy", "Valence", "Acoustic", "Instrumental", "Liveness", "Speechiness"];
 
   const width = canvas.width;
   const height = canvas.height;
   const centerX = width / 2;
   const centerY = height / 2;
-  const radius = Math.min(centerX, centerY) - 34;
+  const radius = Math.min(centerX, centerY) - 40;
   const count = labels.length;
   const angleStep = (Math.PI * 2) / count;
 
@@ -918,22 +935,22 @@ function drawBenchmarkRadar() {
     ctx.stroke();
   }
 
-  // Axes & Labels
+  // Axes & High-contrast Labels
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
     const x = centerX + radius * Math.cos(angle);
     const y = centerY + radius * Math.sin(angle);
 
-    ctx.strokeStyle = "#e2e8f0";
+    ctx.strokeStyle = "#cbd5e1";
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
     ctx.lineTo(x, y);
     ctx.stroke();
 
-    const labelX = centerX + (radius + 20) * Math.cos(angle);
-    const labelY = centerY + (radius + 16) * Math.sin(angle);
-    ctx.fillStyle = "#64748b";
-    ctx.font = "600 10px 'Plus Jakarta Sans', sans-serif";
+    const labelX = centerX + (radius + 24) * Math.cos(angle);
+    const labelY = centerY + (radius + 18) * Math.sin(angle);
+    ctx.fillStyle = "#334155";
+    ctx.font = "700 11px 'Plus Jakarta Sans', sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(labels[i], labelX, labelY);
@@ -941,7 +958,7 @@ function drawBenchmarkRadar() {
 
   // Polygon 1: Spotify Global Median (Dashed Gray)
   ctx.save();
-  ctx.setLineDash([3, 3]);
+  ctx.setLineDash([4, 4]);
   ctx.beginPath();
   for (let i = 0; i < count; i++) {
     const angle = i * angleStep - Math.PI / 2;
@@ -953,7 +970,7 @@ function drawBenchmarkRadar() {
   }
   ctx.closePath();
   ctx.strokeStyle = "#94a3b8";
-  ctx.lineWidth = 1.5;
+  ctx.lineWidth = 1.8;
   ctx.stroke();
   ctx.restore();
 
@@ -968,10 +985,10 @@ function drawBenchmarkRadar() {
     else ctx.lineTo(x, y);
   }
   ctx.closePath();
-  ctx.fillStyle = "rgba(37, 99, 235, 0.12)";
+  ctx.fillStyle = "rgba(37, 99, 235, 0.14)";
   ctx.fill();
   ctx.strokeStyle = "#2563eb";
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 2.2;
   ctx.stroke();
 
   // Points
@@ -981,10 +998,20 @@ function drawBenchmarkRadar() {
     const x = centerX + valR * Math.cos(angle);
     const y = centerY + valR * Math.sin(angle);
     ctx.beginPath();
-    ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
     ctx.fillStyle = "#1e40af";
     ctx.fill();
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
   }
+
+  // Legend at bottom
+  ctx.font = "600 10.5px 'Plus Jakarta Sans', sans-serif";
+  ctx.fillStyle = "#2563eb";
+  ctx.fillText("― Bài hát hiện tại", centerX - 70, height - 12);
+  ctx.fillStyle = "#64748b";
+  ctx.fillText("--- Trung vị toàn cầu (N=586K)", centerX + 70, height - 12);
 }
 
 /* ============================================================
@@ -1078,7 +1105,7 @@ function drawMoodQuadrant() {
 }
 
 /* ============================================================
-   4. AUDIO GALAXY SCATTER CANVAS (WITH HALO, DROP LINES & LEGEND OVERLAY)
+   4. AUDIO GALAXY SCATTER CANVAS
    ============================================================ */
 let galaxyStars = [];
 let currentClusterFilter = "all";
