@@ -533,7 +533,7 @@
             <label class="eda-filter-item">
               <span class="filter-caption">Khung thời gian (Time Horizon):</span>
               <select id="edaTimeFilter" class="eda-select">
-                <option value="all">Phạm vi trực quan hóa (1920 – 2021; dataset 1900 – 2021)</option>
+                <option value="all">Dữ liệu quan sát: 1900 – 2021 · Mốc biểu đồ: 1920 – 2020</option>
                 <option value="modern">Kỷ nguyên số (2000 – 2021)</option>
                 <option value="golden">Thời kỳ hoàng kim (1960 – 1999)</option>
                 <option value="early">Thời kỳ sơ khai (1920 – 1959)</option>
@@ -567,7 +567,7 @@
           <!-- Chart 1: Xu hướng thập niên -->
           <div class="eda-card" id="edaCard1">
             <div class="panel-title">
-              <h3>1. Tiến hóa Đặc tính Âm học — phạm vi trực quan hóa 1920 – 2020</h3>
+              <h3>1. Tiến hóa Đặc tính Âm học — các mốc 1920 – 2020</h3>
               <span class="metric-tag" id="tagDecadeTrend">Loudness tăng +4.5dB</span>
             </div>
             <p class="eda-card-desc">
@@ -583,10 +583,10 @@
           <div class="eda-card" id="edaCard2">
             <div class="panel-title">
               <h3>2. Phân Bố Mật Độ Theo Mức Energy</h3>
-              <span class="metric-tag" id="tagEnergyDist">Vùng quan sát: 0.65 – 0.80</span>
+              <span class="metric-tag" id="tagEnergyDist">Vùng quan sát: 0.60 – 0.80</span>
             </div>
             <p class="eda-card-desc">
-              Trong trực quan hóa EDA, vùng Energy 0.65 – 0.80 được đánh dấu là vùng quan sát có mật độ cao; kết quả này không hàm ý quan hệ nhân quả hay xác suất thành hit.
+              Trong trực quan hóa EDA, vùng Energy 0.60 – 0.80 được đánh dấu để tham chiếu; kết quả này không hàm ý quan hệ nhân quả hay xác suất thành hit. Các cột là chỉ số mật độ tương đối đã chuẩn hóa cho trực quan hóa, không phải tỷ lệ phần trăm mẫu.
             </p>
             <div class="eda-canvas-container">
               <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="280"></canvas>

@@ -63,7 +63,7 @@
           <div class="quick-metrics" aria-label="Thông tin nhanh mô hình">
             <span class="metric-tag">Mô hình: <b>XGBoost Regressor (32 Features)</b></span>
             <span class="metric-tag">MAE: <b>12.60 (Validation 2018) · 16.20 (Final Test 2019+)</b></span>
-            <span class="metric-tag">Dữ liệu huấn luyện: <b>586,672 bài hát Spotify</b></span>
+            <span class="metric-tag">Quy mô dataset: <b>586,672 bài hát Spotify</b></span>
           </div>
 
           <!-- Preset selector & Web Audio Preview -->
@@ -306,14 +306,14 @@
             <p class="eyebrow">Exploratory Data Analysis (EDA)</p>
             <h2>Phân Tích Dữ Liệu Lịch Sử & Xu Hướng Âm Nhạc Spotify</h2>
           </div>
-          <p>Trực quan hóa xu hướng âm nhạc qua 6 thập kỷ (1960 - 2020) và mối tương quan giữa các thuộc tính âm học với độ phổ biến thực tế.</p>
+          <p>Dataset có phạm vi quan sát 1900 – 2021; biểu đồ sử dụng các mốc từ 1920 đến 2020 để trực quan hóa xu hướng và mối tương quan giữa các thuộc tính âm học với độ phổ biến thực tế.</p>
         </div>
 
         <div class="eda-grid">
           <!-- Chart 1: Xu hướng thập niên -->
           <div class="eda-card">
             <div class="panel-title">
-              <h3>1. Tiến hóa Âm nhạc qua các Thập kỷ (1960s – 2020s)</h3>
+              <h3>1. Tiến hóa Âm nhạc — các mốc 1920 – 2020</h3>
               <span class="metric-tag">Độ lớn Loudness tăng +4.5dB</span>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-secondary);">
@@ -326,10 +326,10 @@
           <div class="eda-card">
             <div class="panel-title">
               <h3>2. Phân bố Mật độ theo Mức Energy</h3>
-              <span class="metric-tag">Vùng quan sát: 0.65 – 0.80</span>
+              <span class="metric-tag">Vùng quan sát: 0.60 – 0.80</span>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-secondary);">
-              Trong trực quan hóa EDA, vùng Energy 0.65 – 0.80 được đánh dấu là vùng quan sát có mật độ cao; kết quả này không hàm ý quan hệ nhân quả hay xác suất thành hit.
+              Trong trực quan hóa EDA, vùng Energy 0.60 – 0.80 được đánh dấu để tham chiếu; kết quả này không hàm ý quan hệ nhân quả hay xác suất thành hit. Các cột là chỉ số mật độ tương đối đã chuẩn hóa cho trực quan hóa, không phải tỷ lệ phần trăm mẫu.
             </p>
             <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="280"></canvas>
           </div>
