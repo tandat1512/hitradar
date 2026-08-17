@@ -248,7 +248,7 @@ function clientPredictFallback(track) {
     temporal_extrapolation: track.release_year > 2020,
     support_note: track.release_year > 2020 
       ? "Năm phát hành sau 2020 được áp dụng ngoại suy xu hướng thời gian."
-      : "Bài hát nằm trong phạm vi hỗ trợ chuẩn xác của mô hình.",
+      : "Bài hát nằm trong phạm vi hỗ trợ thời gian của mô hình.",
     is_client_engine: true
   };
 }
@@ -802,7 +802,7 @@ document.querySelector("#predictForm")?.addEventListener("submit", async (event)
     if (result.temporal_extrapolation) {
       summaryText = `Lưu ý: ${result.support_note || "Năm phát hành vượt qua phạm vi huấn luyện (2020), áp dụng ngoại suy xu thế."}`;
     } else {
-      summaryText = "Bài hát nằm trong vùng dữ liệu huấn luyện hỗ trợ chuẩn xác của mô hình XGBoost.";
+      summaryText = "Bài hát nằm trong phạm vi dữ liệu được mô hình XGBoost hỗ trợ.";
     }
     const summaryEl = document.querySelector("#predictionSummary");
     if (summaryEl) summaryEl.textContent = summaryText;
@@ -811,7 +811,7 @@ document.querySelector("#predictForm")?.addEventListener("submit", async (event)
       ["Thuật toán", result.model_name || "XGBoost Regressor"],
       ["Tổng số đặc trưng", `${result.feature_count} Features`],
       ["Đặc trưng phái sinh", `${result.engineered_feature_count} Kỹ thuật`],
-      ["Sai số MAE", "7.77 - 12.60 điểm"],
+      ["Sai số MAE", "12.60 (Validation 2018) · 16.20 (Final Test 2019+)"],
     ]);
 
     drawWaterfallChart();
@@ -1569,7 +1569,7 @@ const edaCohortData = {
     minorRatio: "32.6% Thứ",
     commonBpm: "120 – 128",
     trendTag: "Loudness tăng +4.5dB",
-    distTag: "Optimal: 0.65 – 0.80",
+    distTag: "Vùng quan sát: 0.60 – 0.80",
     corrTag: "r(Energy, Loudness) = +0.78",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.22, 0.28, 0.40, 0.55, 0.65, 0.72],
@@ -1595,7 +1595,7 @@ const edaCohortData = {
     minorRatio: "28.8% Thứ",
     commonBpm: "122 – 128",
     trendTag: "Loudness tăng +5.8dB",
-    distTag: "Optimal: 0.70 – 0.85",
+    distTag: "Vùng quan sát: 0.60 – 0.80",
     corrTag: "r(Energy, Dance) = +0.62",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.35, 0.42, 0.56, 0.68, 0.78, 0.85],
@@ -1621,7 +1621,7 @@ const edaCohortData = {
     minorRatio: "35.2% Thứ",
     commonBpm: "78 – 95",
     trendTag: "Acoustic duy trì 0.75+",
-    distTag: "Optimal: 0.30 – 0.45",
+    distTag: "Vùng quan sát: 0.60 – 0.80",
     corrTag: "r(Acoustic, Energy) = -0.84",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.18, 0.22, 0.30, 0.38, 0.45, 0.50],
@@ -1647,7 +1647,7 @@ const edaCohortData = {
     minorRatio: "41.7% Thứ",
     commonBpm: "126 – 132",
     trendTag: "Energy bùng nổ 0.90+",
-    distTag: "Optimal: 0.80 – 0.95",
+    distTag: "Vùng quan sát: 0.60 – 0.80",
     corrTag: "r(Energy, Loudness) = +0.86",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.40, 0.48, 0.62, 0.75, 0.86, 0.92],
@@ -1673,7 +1673,7 @@ const edaCohortData = {
     minorRatio: "30.5% Thứ",
     commonBpm: "135 – 150",
     trendTag: "Energy cao 0.85+",
-    distTag: "Optimal: 0.75 – 0.90",
+    distTag: "Vùng quan sát: 0.60 – 0.80",
     corrTag: "r(Energy, Loudness) = +0.81",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.30, 0.38, 0.52, 0.70, 0.82, 0.88],
@@ -1699,7 +1699,7 @@ const edaCohortData = {
     minorRatio: "37.9% Thứ",
     commonBpm: "85 – 100",
     trendTag: "Danceability cao 0.80+",
-    distTag: "Optimal: 0.65 – 0.80",
+    distTag: "Vùng quan sát: 0.60 – 0.80",
     corrTag: "r(Dance, Valence) = +0.68",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.32, 0.40, 0.54, 0.66, 0.76, 0.82],
@@ -1979,14 +1979,14 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
   const bins = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
   const barWidth = plotWidth / bins.length - 8;
 
-  // 1. Sweet Spot Subtle Zone (0.65 - 0.85)
-  const sweetStartX = paddingLeft + 5 * (barWidth + 8);
-  const sweetWidth = 3 * (barWidth + 8);
+  // 1. Highlighted Energy-bin zone (0.60 - 0.80)
+  const highlightStartX = paddingLeft + 5 * (barWidth + 8);
+  const highlightWidth = 3 * (barWidth + 8);
   ctx.fillStyle = "rgba(37, 99, 235, 0.05)";
-  ctx.fillRect(sweetStartX - 4, paddingTop, sweetWidth, plotHeight);
+  ctx.fillRect(highlightStartX - 4, paddingTop, highlightWidth, plotHeight);
 
-  // Sweet spot sleek badge on top with guaranteed clearance (NO OVERLAP)
-  const badgeX = sweetStartX + sweetWidth / 2 - 4;
+  // Observed-density badge on top with guaranteed clearance (NO OVERLAP)
+  const badgeX = highlightStartX + highlightWidth / 2 - 4;
   const badgeY = 16;
   
   ctx.fillStyle = "#eff6ff";
@@ -2001,7 +2001,7 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
   ctx.font = "800 9px 'Plus Jakarta Sans', sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("VÙNG TỐI ƯU (SWEET SPOT 0.65 – 0.80)", badgeX, badgeY);
+  ctx.fillText("VÙNG QUAN SÁT (ENERGY 0.60 – 0.80)", badgeX, badgeY);
 
   // 2. Soft Horizontal Gridlines
   ctx.save();
@@ -2020,7 +2020,7 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
     ctx.font = "600 9px 'JetBrains Mono', monospace";
     ctx.textAlign = "right";
     ctx.textBaseline = "middle";
-    ctx.fillText(`${p}%`, paddingLeft - 6, lineY);
+    ctx.fillText(`${p}`, paddingLeft - 6, lineY);
   }
   ctx.restore();
 
@@ -2030,11 +2030,11 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
     const barH = (data.energyBins[i] / 100) * plotHeight;
     const y = paddingTop + plotHeight - barH;
     const isHovered = i === hoveredEnergyBin;
-    const isSweet = b >= 0.6 && b <= 0.8;
+    const isHighlightedBin = b >= 0.6 && b <= 0.8;
 
     if (isHovered) {
       ctx.fillStyle = "#1d4ed8";
-    } else if (isSweet) {
+    } else if (isHighlightedBin) {
       ctx.fillStyle = "#2563eb";
     } else {
       ctx.fillStyle = "#cbd5e1";
@@ -2045,12 +2045,12 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
     ctx.fill();
 
     // Value on top of bar
-    if (isHovered || isSweet) {
+    if (isHovered || isHighlightedBin) {
       ctx.fillStyle = isHovered ? "#1e40af" : "#2563eb";
       ctx.font = "700 9.5px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
       ctx.textBaseline = "alphabetic";
-      ctx.fillText(`${data.energyBins[i]}%`, x + barWidth / 2, y - 6);
+      ctx.fillText(`${data.energyBins[i]}`, x + barWidth / 2, y - 6);
     }
 
     // X Axis bin labels
@@ -2106,15 +2106,15 @@ if (energyDistCanvas) {
       const data = getActiveEdaDataset();
       const binVal = (0.1 * (hoveredEnergyBin + 1)).toFixed(1);
       const density = data.energyBins[hoveredEnergyBin];
-      const isSweet = hoveredEnergyBin >= 5 && hoveredEnergyBin <= 7;
+      const isHighlightedBin = hoveredEnergyBin >= 5 && hoveredEnergyBin <= 7;
 
       energyDistTooltip.innerHTML = `
         <div style="font-weight: 800; color: #93c5fd; font-family: var(--font-mono);">⚡ Mức Energy: ${binVal}</div>
         <div style="font-size: 0.75rem; margin-top: 3px;">
-          <span>Tỷ lệ đạt chuẩn: <b style="color: #34d399;">${density}% mẫu</b></span>
+          <span>Chỉ số mật độ tương đối: <b style="color: #34d399;">${density} / 100</b></span>
         </div>
-        <div style="font-size: 0.72rem; color: ${isSweet ? '#6ee7b7' : '#cbd5e1'}; margin-top: 2px;">
-          ${isSweet ? '🌟 Vùng tối ưu xác suất cao' : '📊 Dải phân phối tiêu chuẩn'}
+        <div style="font-size: 0.72rem; color: ${isHighlightedBin ? '#6ee7b7' : '#cbd5e1'}; margin-top: 2px;">
+          ${isHighlightedBin ? '📍 Vùng mật độ được đánh dấu' : '📊 Dải mật độ quan sát'}
         </div>
       `;
       energyDistTooltip.classList.add("is-visible");

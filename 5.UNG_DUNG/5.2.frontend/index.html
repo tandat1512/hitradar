@@ -61,12 +61,12 @@
           <h1>Phòng thí nghiệm Phân tích Đặc tính Âm học & Xu hướng Spotify</h1>
           <p class="lede">
             Nền tảng ứng dụng mô hình Gradient Boosting (XGBoost) kết hợp kỹ thuật trích xuất 14 đặc trưng phái sinh 
-            trên tập dữ liệu 586,672 bài hát Spotify (1920 – 2021) nhằm định lượng tiềm năng bài hát và giải mã không gian âm học đa chiều.
+            trên tập dữ liệu 586,672 bài hát Spotify (1900 – 2021) nhằm định lượng tiềm năng bài hát và giải mã không gian âm học đa chiều.
           </p>
           
           <div class="quick-metrics" aria-label="Thông tin nhanh mô hình">
             <span class="metric-tag">Mô hình: <b>XGBoost Regressor (32 Features)</b></span>
-            <span class="metric-tag">Độ chính xác MAE: <b>7.77 – 12.60 điểm</b></span>
+            <span class="metric-tag">MAE: <b>12.60 (Validation 2018) · 16.20 (Final Test 2019+)</b></span>
             <span class="metric-tag">Kích thước mẫu: <b>N = 586,672</b></span>
           </div>
 
@@ -406,7 +406,7 @@
                     <span class="score-max-anchor">trên 100 điểm</span>
                   </div>
                 </div>
-                <div class="score-confidence" id="confidenceInterval">Độ tin cậy: ±7.77 MAE (95% CI)</div>
+                <div class="score-confidence" id="confidenceInterval">Sai số tham chiếu tổng thể: MAE 16.20 điểm (Final Test 2019–2021)</div>
               </div>
 
               <!-- AI Verdict & Support Callout Box -->
@@ -424,7 +424,7 @@
               <div class="attribution-card">
                 <div class="attribution-card-header">
                   <span class="attribution-title">Phân Rã Mức Đóng Góp Đặc Trưng (Feature Impact ΔScore)</span>
-                  <span class="attribution-subtitle">SHAP-style Attribution</span>
+                  <span class="attribution-subtitle">Local Feature-Impact Approximation (không phải SHAP)</span>
                 </div>
                 <div class="waterfall-canvas-container">
                   <canvas id="waterfallCanvas" width="480" height="190"></canvas>
@@ -443,7 +443,7 @@
                     <div class="meta-item"><dt>Thuật toán</dt><dd>XGBoost Regressor</dd></div>
                     <div class="meta-item"><dt>Tổng số đặc trưng</dt><dd>32 Features</dd></div>
                     <div class="meta-item"><dt>Kỹ thuật phái sinh</dt><dd>14 Kỹ thuật</dd></div>
-                    <div class="meta-item"><dt>Sai số MAE</dt><dd>7.77 - 12.60 điểm</dd></div>
+                    <div class="meta-item"><dt>Sai số MAE</dt><dd>12.60 (Validation 2018) · 16.20 (Final Test 2019+)</dd></div>
                   </dl>
                 </div>
               </div>
@@ -511,7 +511,7 @@
           <p class="eyebrow">Phân hệ 3: Khám Phá Dữ Liệu Lịch Sử & Thống Kê Mô TẢ</p>
           <h2>Phân tích xu hướng thập niên & tương quan đa biến</h2>
           <p class="section-subtitle">
-            Trích xuất quy luật tiến hóa âm nhạc qua 10 thập kỷ (1920 – 2020) và ma trận hệ số tương quan Pearson chuẩn hóa trên 586,672 bài hát.
+            Trực quan hóa xu hướng từ mốc 1920 đến 2020 trên tập dữ liệu có phạm vi quan sát đầy đủ 1900 – 2021, cùng ma trận hệ số tương quan Pearson chuẩn hóa trên 586,672 bài hát.
           </p>
         </div>
 
@@ -533,7 +533,7 @@
             <label class="eda-filter-item">
               <span class="filter-caption">Khung thời gian (Time Horizon):</span>
               <select id="edaTimeFilter" class="eda-select">
-                <option value="all">Toàn bộ 100 năm (1920 – 2021)</option>
+                <option value="all">Dữ liệu quan sát: 1900 – 2021 · Mốc biểu đồ: 1920 – 2020</option>
                 <option value="modern">Kỷ nguyên số (2000 – 2021)</option>
                 <option value="golden">Thời kỳ hoàng kim (1960 – 1999)</option>
                 <option value="early">Thời kỳ sơ khai (1920 – 1959)</option>
@@ -567,7 +567,7 @@
           <!-- Chart 1: Xu hướng thập niên -->
           <div class="eda-card" id="edaCard1">
             <div class="panel-title">
-              <h3>1. Tiến hóa Đặc tính Âm học qua các Thập kỷ (1920 – 2020)</h3>
+              <h3>1. Tiến hóa Đặc tính Âm học — các mốc 1920 – 2020</h3>
               <span class="metric-tag" id="tagDecadeTrend">Loudness tăng +4.5dB</span>
             </div>
             <p class="eda-card-desc">
@@ -582,11 +582,11 @@
           <!-- Chart 2: Tương quan Năng lượng & Điểm phổ biến -->
           <div class="eda-card" id="edaCard2">
             <div class="panel-title">
-              <h3>2. Phân Bố Mật Độ Điểm Số & Vùng Tối Ưu (Sweet Spot)</h3>
-              <span class="metric-tag" id="tagEnergyDist">Optimal: 0.65 – 0.80</span>
+              <h3>2. Phân Bố Mật Độ Theo Mức Energy</h3>
+              <span class="metric-tag" id="tagEnergyDist">Vùng quan sát: 0.60 – 0.80</span>
             </div>
             <p class="eda-card-desc">
-              Bài hát có mức năng lượng trong khoảng 65% – 80% có xác suất đạt điểm số thị trường cao nhất trên nền tảng Spotify.
+              Trong trực quan hóa EDA, vùng Energy 0.60 – 0.80 được đánh dấu để tham chiếu; kết quả này không hàm ý quan hệ nhân quả hay xác suất thành hit. Các cột là chỉ số mật độ tương đối đã chuẩn hóa cho trực quan hóa, không phải tỷ lệ phần trăm mẫu.
             </p>
             <div class="eda-canvas-container">
               <canvas class="eda-chart-canvas" id="energyDistCanvas" width="600" height="280"></canvas>
@@ -622,7 +622,7 @@
               <div class="kpi-block">
                 <span class="kpi-value" id="kpiSampleCount">586,672</span>
                 <span class="kpi-label">Tổng số bản ghi mẫu</span>
-                <span class="kpi-sub" id="kpiDataHorizon">1920 – 2021 Data Horizon</span>
+                <span class="kpi-sub" id="kpiDataHorizon">1900 – 2021 Data Horizon</span>
               </div>
               <div class="kpi-block">
                 <span class="kpi-value" id="kpiAvgDuration">3.82 Phút</span>
@@ -795,7 +795,7 @@
           <article class="insight-card">
             <span>QUY TRÌNH PHÂN CHIA THỜI GIAN</span>
             <strong>Temporal Split Protocol</strong>
-            <p>Fit: 1920 – 2017 (554K bài) | Val: 2018 | Test: 2019 – 2021 (32K bài).</p>
+            <p>Fit: 1900–2017 (543,611 bài) | Val: 2018 (10,936 bài) | Test: 2019–2021 (32,125 bài).<br>Development / Final Refit: release_year &lt; 2019 (554,547 bài).</p>
           </article>
         </div>
 
@@ -870,45 +870,51 @@
         <div class="accuracy-table-box">
           <div class="panel-title">
             <h3>Báo cáo sai số theo phân khúc độ phổ biến (Final Test Horizon 2019+)</h3>
+            <span class="metric-tag">Bias = actual − prediction · dương: underprediction · âm: overprediction</span>
           </div>
           <table class="data-table">
             <thead>
               <tr>
                 <th>Phân khúc độ phổ biến</th>
                 <th>Số lượng mẫu</th>
-                <th>Sai số MAE (Thang 100)</th>
-                <th>Độ chính xác tương đương</th>
+                <th>MAE</th>
+                <th>RMSE</th>
+                <th>Bias</th>
                 <th>Đặc điểm đánh giá</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><b>Mới nổi (Emerging: 30 - 49)</b></td>
-                <td>7,760 bài</td>
-                <td class="highlight">7.77 điểm</td>
-                <td class="highlight">~92.2%</td>
-                <td>Dự đoán cực kỳ chuẩn xác, độ nhạy cao với các giai điệu bắt tai.</td>
-              </tr>
-              <tr>
-                <td><b>Trung bình (Medium: 50 - 69)</b></td>
-                <td>13,122 bài</td>
-                <td class="highlight">11.92 điểm</td>
-                <td class="highlight">~88.1%</td>
-                <td>Độ chính xác cao, bám sát các bản hit tầm trung thị trường.</td>
-              </tr>
-              <tr>
-                <td><b>Thấp / Kén nghe (Low: 0 - 29)</b></td>
+                <td><b>Thấp (Low: 0–29)</b></td>
                 <td>8,155 bài</td>
-                <td>27.05 điểm</td>
-                <td>~73.0%</td>
-                <td>Mô hình có xu hướng dự đoán cao hơn thực tế (Overprediction).</td>
+                <td>27.0481</td>
+                <td>30.9612</td>
+                <td>−25.4394</td>
+                <td>Bias âm cho thấy mô hình overpredict trung bình 25.4394 điểm.</td>
               </tr>
               <tr>
-                <td><b>Siêu Hit (High: 70 - 100)</b></td>
+                <td><b>Mới nổi (Emerging: 30–49)</b></td>
+                <td>7,760 bài</td>
+                <td class="highlight">7.7677</td>
+                <td class="highlight">10.1908</td>
+                <td>−1.8176</td>
+                <td>Sai số thấp nhất trong các phân khúc được đánh giá.</td>
+              </tr>
+              <tr>
+                <td><b>Trung bình (Medium: 50–69)</b></td>
+                <td>13,122 bài</td>
+                <td>11.9230</td>
+                <td>14.0613</td>
+                <td>+11.6627</td>
+                <td>Bias dương cho thấy mô hình underpredict trung bình 11.6627 điểm.</td>
+              </tr>
+              <tr>
+                <td><b>Cao (High: 70–100)</b></td>
                 <td>3,088 bài</td>
-                <td>26.93 điểm</td>
-                <td>~73.1%</td>
-                <td>Chịu ảnh hưởng lớn từ thương hiệu nghệ sĩ và chiến dịch viral.</td>
+                <td>26.9326</td>
+                <td>27.9257</td>
+                <td>+26.9326</td>
+                <td>Bias dương cho thấy mô hình underpredict trung bình 26.9326 điểm.</td>
               </tr>
             </tbody>
           </table>
