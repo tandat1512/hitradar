@@ -811,7 +811,7 @@ document.querySelector("#predictForm")?.addEventListener("submit", async (event)
       ["Thuật toán", result.model_name || "XGBoost Regressor"],
       ["Tổng số đặc trưng", `${result.feature_count} Features`],
       ["Đặc trưng phái sinh", `${result.engineered_feature_count} Kỹ thuật`],
-      ["Sai số MAE", "7.77 - 12.60 điểm"],
+      ["Sai số MAE", "12.60 (Validation 2018) · 16.20 (Final Test 2019+)"],
     ]);
 
     drawWaterfallChart();
@@ -1569,7 +1569,7 @@ const edaCohortData = {
     minorRatio: "32.6% Thứ",
     commonBpm: "120 – 128",
     trendTag: "Loudness tăng +4.5dB",
-    distTag: "Optimal: 0.65 – 0.80",
+    distTag: "Vùng quan sát: 0.65 – 0.80",
     corrTag: "r(Energy, Loudness) = +0.78",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.22, 0.28, 0.40, 0.55, 0.65, 0.72],
@@ -1595,7 +1595,7 @@ const edaCohortData = {
     minorRatio: "28.8% Thứ",
     commonBpm: "122 – 128",
     trendTag: "Loudness tăng +5.8dB",
-    distTag: "Optimal: 0.70 – 0.85",
+    distTag: "Vùng quan sát: 0.70 – 0.85",
     corrTag: "r(Energy, Dance) = +0.62",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.35, 0.42, 0.56, 0.68, 0.78, 0.85],
@@ -1621,7 +1621,7 @@ const edaCohortData = {
     minorRatio: "35.2% Thứ",
     commonBpm: "78 – 95",
     trendTag: "Acoustic duy trì 0.75+",
-    distTag: "Optimal: 0.30 – 0.45",
+    distTag: "Vùng quan sát: 0.30 – 0.45",
     corrTag: "r(Acoustic, Energy) = -0.84",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.18, 0.22, 0.30, 0.38, 0.45, 0.50],
@@ -1647,7 +1647,7 @@ const edaCohortData = {
     minorRatio: "41.7% Thứ",
     commonBpm: "126 – 132",
     trendTag: "Energy bùng nổ 0.90+",
-    distTag: "Optimal: 0.80 – 0.95",
+    distTag: "Vùng quan sát: 0.80 – 0.95",
     corrTag: "r(Energy, Loudness) = +0.86",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.40, 0.48, 0.62, 0.75, 0.86, 0.92],
@@ -1673,7 +1673,7 @@ const edaCohortData = {
     minorRatio: "30.5% Thứ",
     commonBpm: "135 – 150",
     trendTag: "Energy cao 0.85+",
-    distTag: "Optimal: 0.75 – 0.90",
+    distTag: "Vùng quan sát: 0.75 – 0.90",
     corrTag: "r(Energy, Loudness) = +0.81",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.30, 0.38, 0.52, 0.70, 0.82, 0.88],
@@ -1699,7 +1699,7 @@ const edaCohortData = {
     minorRatio: "37.9% Thứ",
     commonBpm: "85 – 100",
     trendTag: "Danceability cao 0.80+",
-    distTag: "Optimal: 0.65 – 0.80",
+    distTag: "Vùng quan sát: 0.65 – 0.80",
     corrTag: "r(Dance, Valence) = +0.68",
     decades: ["1920", "1940", "1960", "1980", "2000", "2020"],
     loudness: [0.32, 0.40, 0.54, 0.66, 0.76, 0.82],
@@ -1979,13 +1979,13 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
   const bins = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
   const barWidth = plotWidth / bins.length - 8;
 
-  // 1. Sweet Spot Subtle Zone (0.65 - 0.85)
+  // 1. Highlighted observed-density zone (0.65 - 0.80)
   const sweetStartX = paddingLeft + 5 * (barWidth + 8);
   const sweetWidth = 3 * (barWidth + 8);
   ctx.fillStyle = "rgba(37, 99, 235, 0.05)";
   ctx.fillRect(sweetStartX - 4, paddingTop, sweetWidth, plotHeight);
 
-  // Sweet spot sleek badge on top with guaranteed clearance (NO OVERLAP)
+  // Observed-density badge on top with guaranteed clearance (NO OVERLAP)
   const badgeX = sweetStartX + sweetWidth / 2 - 4;
   const badgeY = 16;
   
@@ -2001,7 +2001,7 @@ function drawEnergyDistChart(data = getActiveEdaDataset()) {
   ctx.font = "800 9px 'Plus Jakarta Sans', sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("VÙNG TỐI ƯU (SWEET SPOT 0.65 – 0.80)", badgeX, badgeY);
+  ctx.fillText("VÙNG QUAN SÁT (MẬT ĐỘ 0.65 – 0.80)", badgeX, badgeY);
 
   // 2. Soft Horizontal Gridlines
   ctx.save();
@@ -2111,10 +2111,10 @@ if (energyDistCanvas) {
       energyDistTooltip.innerHTML = `
         <div style="font-weight: 800; color: #93c5fd; font-family: var(--font-mono);">⚡ Mức Energy: ${binVal}</div>
         <div style="font-size: 0.75rem; margin-top: 3px;">
-          <span>Tỷ lệ đạt chuẩn: <b style="color: #34d399;">${density}% mẫu</b></span>
+          <span>Mật độ quan sát: <b style="color: #34d399;">${density}% mẫu</b></span>
         </div>
         <div style="font-size: 0.72rem; color: ${isSweet ? '#6ee7b7' : '#cbd5e1'}; margin-top: 2px;">
-          ${isSweet ? '🌟 Vùng tối ưu xác suất cao' : '📊 Dải phân phối tiêu chuẩn'}
+          ${isSweet ? '📍 Vùng mật độ được đánh dấu' : '📊 Dải mật độ quan sát'}
         </div>
       `;
       energyDistTooltip.classList.add("is-visible");
